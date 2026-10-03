@@ -4,8 +4,8 @@ Two lockfiles govern every build:
 
 | File | Used by | Contents |
 |---|---|---|
-| `prod.lock.txt` | CI test jobs, container image | Pinned production runtime deps only |
-| `dev.lock.txt`  | CI static/security jobs | prod + pinned test/lint/audit toolchain |
+| `prod.lock.txt` | Container image, runtime smoke, dependency audit | Pinned production runtime deps only |
+| `dev.lock.txt`  | CI test and static/security jobs | prod + pinned test/lint/audit toolchain |
 
 Dev tooling is deliberately kept OUT of the production runtime set so the
 container image never ships pytest/ruff/mypy/pip-audit.
