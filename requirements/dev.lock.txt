@@ -1,0 +1,17 @@
+# ODAR development/test lockfile (separate from the prod runtime set).
+#
+# prod runtime pins + the verification toolchain, all version-verified in the
+# environment where the full suite passed.  Regenerate per
+# requirements/README.md.
+
+-r prod.lock.txt
+
+pytest==9.0.3
+pluggy==1.6.0
+iniconfig==2.3.0
+
+# static analysis + dependency security gates (all MANDATORY in CI)
+ruff==0.16.10
+mypy==2.4.0
+pip_audit==2.10.1
+cyclonedx-python-lib==11.12.0

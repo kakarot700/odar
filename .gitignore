@@ -1,0 +1,58 @@
+# Python bytecode and package/build outputs
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+wheels/
+pip-wheel-metadata/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Test, coverage, lint, and type-check caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+
+# Local secrets and environment configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Local SQLite/job stores and generated run output
+*.db
+*.sqlite
+*.sqlite3
+odar_jobs.db*
+odar_output/*
+*.log
+
+# AI/model download caches
+.cache/
+**/.cache/
+.huggingface/
+
+# Temporary sandbox/workspace data
+.odar_sandbox/
+.tmp/
+tmp/
+temp/
+
+# IDE and operating-system metadata
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db

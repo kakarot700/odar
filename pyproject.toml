@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "odar-engine"
+version = "3.0.0"
+description = "A governed agentic research engine with evidence provenance, citation auditing, and security controls."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = ["research", "agents", "llm", "retrieval", "provenance", "citations", "python", "security"]
+
+# Zero-cost runtime dependencies. `torch` is intentionally NOT pinned here:
+# install the free CPU-only wheel first (see README / install commands) to
+# keep the total footprint and cost at $0.  The `anthropic` SDK is free to
+# install; inference cost stays $0 via the LocalPolicyModel unless a key is
+# explicitly provided.
+dependencies = [
+    "networkx>=3.0",
+    "requests>=2.31",
+    "numpy>=1.24",
+    "duckduckgo-search>=6.1",
+    "trafilatura>=1.9",
+    "sentence-transformers>=2.6",
+    "anthropic>=0.40",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.5", "mypy>=1.10", "pip-audit>=2.7"]
+
+[tool.setuptools.packages.find]
+include = ["odar*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# Default command is deterministic and fully OFFLINE: integration (network /
+# model download) and e2e (live CLI runs) are excluded unless requested with -m.
+addopts = "-v -m 'not integration and not e2e'"
+markers = [
+    "integration: tests that touch the network or download models",
+    "security: security regression tests (SSRF, injection, sandbox)",
+    "adversarial: tests that actively try to fool the system",
+    "e2e: end-to-end CLI runs (may use live network; excluded from default)",
+    "performance: latency/throughput benchmark tests",
+]
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W"]
+ignore = ["E501"]

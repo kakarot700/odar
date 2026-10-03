@@ -1,0 +1,50 @@
+# Defense-in-depth SSRF policy for ODAR deployments.
+#
+# Application-layer checks (url_safety.py + pinned.py) are necessary but not
+# sufficient on their own.  Deployments MUST also restrict egress at the
+# network layer so that even a bypass cannot reach internal services.
+#
+# Example: Kubernetes NetworkPolicy for an ODAR worker namespace.
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: odar-worker-egress
+  namespace: odar
+spec:
+  podSelector:
+    matchLabels:
+      app: odar-worker
+  policyTypes:
+    - Egress
+  egress:
+    # Public internet research endpoints only.
+    - to:
+        - ipBlock:
+            cidr: 0.0.0.0/0
+            except:
+              - 10.0.0.0/8        # RFC1918
+              - 172.16.0.0/12     # RFC1918
+              - 192.168.0.0/16    # RFC1918
+              - 169.254.0.0/16    # link-local + cloud metadata
+              - 127.0.0.0/8       # loopback
+              - 100.64.0.0/10     # CGNAT
+              - fc00::/7          # IPv6 ULA
+              - fe80::/10         # IPv6 link-local
+              - ::1/128           # IPv6 loopback
+      ports:
+        - protocol: TCP
+          port: 80
+        - protocol: TCP
+          port: 443
+    # DNS only to the cluster resolver.
+    - to:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: kube-system
+      ports:
+        - protocol: UDP
+          port: 53
+---
+# Docker equivalent: run the container on a bridge network whose iptables
+# rules DROP the same CIDR ranges for the odar user's egress chain, and do
+# NOT use --network=host.
