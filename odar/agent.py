@@ -68,7 +68,7 @@ logger = logging.getLogger("odar.agent")
 JACCARD_DEDUP_THRESHOLD = 0.85
 MAX_ITERATIONS_DEFAULT = 10
 QUALITY_PLATEAU_PATIENCE = 2
-DEFAULT_ANTHROPIC_MODEL = "claude-sonnet-4-5"
+DEFAULT_ANTHROPIC_MODEL = "claude-sonnet-5-5"
 SYSTEM_PROMPT = (
     "You are ODAR, a rigorous research agent. Use tools to gather evidence, "
     "execute numeric work inside the hardened sandbox, falsify your own "
@@ -356,12 +356,25 @@ def build_anthropic_request(
     }
 
 
+def resolve_anthropic_model(explicit: Optional[str] = None) -> str:
+    """Model id precedence: explicit argument > ``ODAR_ANTHROPIC_MODEL`` > default.
+
+    Lets a deployment point at any Anthropic-compatible endpoint/model (set
+    together with ``ODAR_ANTHROPIC_BASE_URL``) without changing the product
+    default.
+    """
+    for candidate in (explicit, os.environ.get("ODAR_ANTHROPIC_MODEL")):
+        if candidate and candidate.strip():
+            return candidate.strip()
+    return DEFAULT_ANTHROPIC_MODEL
+
+
 class AnthropicSDKAdapter:
     """Native official-SDK model adapter (``anthropic.AsyncAnthropic``)."""
 
     def __init__(
         self,
-        model: str = DEFAULT_ANTHROPIC_MODEL,
+        model: Optional[str] = None,
         api_key: Optional[str] = None,
         max_tokens: int = 1024,
         system_prompt: str = SYSTEM_PROMPT,
@@ -381,7 +394,7 @@ class AnthropicSDKAdapter:
                 "ANTHROPIC_API_KEY is not set; the zero-cost LocalPolicyModel "
                 "is used instead of the paid SDK adapter"
             )
-        self.model = model
+        self.model = resolve_anthropic_model(model)
         self.max_tokens = max_tokens
         self.system_prompt = system_prompt
         client_kwargs: Dict[str, Any] = {"api_key": resolved_key}

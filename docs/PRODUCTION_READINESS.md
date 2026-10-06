@@ -77,11 +77,12 @@ Classification legend:
    reliably as a neural NLI model**: localized-negation heuristics were
    added (contradiction branch), but certification without the neural
    stack is impossible by design — findings stay PROVISIONAL.
-10. **Anthropic model lifecycle**: the locked Anthropic SDK emits a
-    deprecation warning for the configured default model
-    `claude-sonnet-4-5` and reports an end-of-life date of November 30, 2026.
-    Select and verify a replacement before that date; this repository upload
-    does not change the model choice.
+10. **Anthropic model lifecycle**: the default model moved from
+    `claude-sonnet-4-5` (deprecated 2026-09-30, retiring 2026-11-30) to
+    Anthropic's recommended replacement `claude-sonnet-5-5` (retirement not
+    sooner than 2027-09-28). The request payload sets no `temperature`,
+    `top_p` or `top_k`, which newer models reject. Live verification against
+    the real Anthropic API is tracked separately.
 
 ## Concrete verification evidence (Phase-4 final pass)
 

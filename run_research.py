@@ -51,7 +51,9 @@ def build_engine(
     if args.model == "llm":
         from odar.agent import AnthropicSDKAdapter
 
-        adapter = AnthropicSDKAdapter(base_url=args.base_url or None)
+        adapter = AnthropicSDKAdapter(
+            model=getattr(args, "llm_model", None), base_url=args.base_url or None
+        )
         model = NativeToolUseController(adapter=adapter)
     else:
         model = ScriptedResearchController()
@@ -301,6 +303,11 @@ def build_parser() -> argparse.ArgumentParser:
         default="llm" if os.environ.get("ANTHROPIC_API_KEY") else "scripted",
     )
     p_run.add_argument("--base-url", default=os.environ.get("ODAR_ANTHROPIC_BASE_URL"))
+    p_run.add_argument(
+        "--llm-model",
+        default=os.environ.get("ODAR_ANTHROPIC_MODEL"),
+        help="Anthropic(-compatible) model id for --model llm (default: claude-sonnet-5-5)",
+    )
     p_run.add_argument("--max-iterations", type=int, default=12)
     p_run.add_argument("--max-search", type=int, default=6)
     p_run.add_argument("--max-fetch", type=int, default=4)
@@ -329,6 +336,11 @@ def build_parser() -> argparse.ArgumentParser:
         default="llm" if os.environ.get("ANTHROPIC_API_KEY") else "scripted",
     )
     p_resume.add_argument("--base-url", default=os.environ.get("ODAR_ANTHROPIC_BASE_URL"))
+    p_resume.add_argument(
+        "--llm-model",
+        default=os.environ.get("ODAR_ANTHROPIC_MODEL"),
+        help="Anthropic(-compatible) model id for --model llm (default: claude-sonnet-5-5)",
+    )
     p_resume.add_argument("--max-iterations", type=int, default=12)
     p_resume.add_argument("--max-search", type=int, default=6)
     p_resume.add_argument("--max-fetch", type=int, default=4)
