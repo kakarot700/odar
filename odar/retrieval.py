@@ -492,6 +492,31 @@ class ZeroCostSearch:
         return hits
 
 
+PDF_CONTENT_TYPE = "application/pdf"
+MAX_PDF_BYTES = 25_000_000
+MAX_PDF_PAGES = 80
+
+
+def _pdf_to_text(data: bytes, max_pages: int = MAX_PDF_PAGES) -> str:
+    """Extract text from a PDF body; errors come back as a NUL-prefixed marker."""
+    try:
+        import io
+
+        from pypdf import PdfReader  # optional dependency (pip install odar[pdf])
+    except ImportError:
+        return "\x00pdf-error: PDF support needs the optional 'pypdf' package"
+    try:
+        reader = PdfReader(io.BytesIO(data))
+        if reader.is_encrypted:
+            return "\x00pdf-error: encrypted PDF"
+        parts = []
+        for page in reader.pages[: max(1, int(max_pages))]:
+            parts.append(page.extract_text() or "")
+        return "\n".join(parts)
+    except Exception as exc:  # noqa: BLE001 - malformed PDFs are common
+        return f"\x00pdf-error: unreadable PDF ({type(exc).__name__})"
+
+
 class PageExtractor:
     """Fetch a URL and distil it to capped, clean text via trafilatura.
 
@@ -516,6 +541,9 @@ class PageExtractor:
         max_response_bytes: int = MAX_RESPONSE_BYTES,
         max_redirects: int = MAX_REDIRECTS,
         cancellation_token: Optional[Any] = None,
+        allow_pdf: bool = False,
+        max_pdf_bytes: int = MAX_PDF_BYTES,
+        max_pdf_pages: int = MAX_PDF_PAGES,
     ) -> None:
         self.session = session or build_pooled_session()
         self.session.headers.setdefault("User-Agent", USER_AGENT)
@@ -524,9 +552,20 @@ class PageExtractor:
         self.max_response_bytes = int(max_response_bytes)
         self.max_redirects = int(max_redirects)
         self.token = cancellation_token
+        # PDF support is opt-in (ODAR Check): binary bodies get their own,
+        # larger byte cap and a page cap so a hostile PDF cannot stall parsing.
+        self.allow_pdf = bool(allow_pdf)
+        self.max_pdf_bytes = int(max_pdf_bytes)
+        self.max_pdf_pages = int(max_pdf_pages)
 
     # ------------------------------------------------------------------ #
     def _safe_fetch(self, url: str) -> Tuple[int, str, str, str]:
+        status, final_url, content_type, body = self._safe_fetch_bytes(url)
+        if content_type == PDF_CONTENT_TYPE:
+            return status, final_url, content_type, _pdf_to_text(body, self.max_pdf_pages)
+        return status, final_url, content_type, body.decode("utf-8", "replace")
+
+    def _safe_fetch_bytes(self, url: str) -> Tuple[int, str, str, bytes]:
         """Fetch with per-hop SSRF validation.
 
         Returns ``(status, final_url, content_type, text)``; raises
@@ -554,15 +593,21 @@ class PageExtractor:
                 current = urljoin(current, location)
                 continue
             content_type = (response.headers.get("Content-Type") or "").split(";")[0].strip().lower()
+            is_pdf = self.allow_pdf and (
+                content_type == PDF_CONTENT_TYPE
+                or (
+                    content_type in ("", "application/octet-stream")
+                    and urlparse(current).path.lower().endswith(".pdf")
+                )
+            )
+            if is_pdf:
+                content_type = PDF_CONTENT_TYPE
+            byte_cap = self.max_pdf_bytes if is_pdf else self.max_response_bytes
             declared_length = response.headers.get("Content-Length")
-            if (
-                declared_length
-                and declared_length.isdigit()
-                and int(declared_length) > self.max_response_bytes
-            ):
+            if declared_length and declared_length.isdigit() and int(declared_length) > byte_cap:
                 response.close()
                 raise RuntimeError(f"declared body size {declared_length} exceeds limit")
-            if content_type and content_type not in ALLOWED_CONTENT_TYPES:
+            if content_type and not is_pdf and content_type not in ALLOWED_CONTENT_TYPES:
                 response.close()
                 raise RuntimeError(f"content-type '{content_type}' not allowed")
             chunks: List[bytes] = []
@@ -570,13 +615,12 @@ class PageExtractor:
             try:
                 for chunk in response.iter_content(chunk_size=65536):
                     total += len(chunk)
-                    if total > self.max_response_bytes:
+                    if total > byte_cap:
                         raise RuntimeError("response body exceeded byte cap")
                     chunks.append(chunk)
             finally:
                 response.close()
-            body = b"".join(chunks).decode("utf-8", "replace")
-            return response.status_code, current, content_type, body
+            return response.status_code, current, content_type, b"".join(chunks)
         raise RuntimeError(f"too many redirects (> {self.max_redirects})")
 
     # ------------------------------------------------------------------ #
@@ -602,12 +646,18 @@ class PageExtractor:
                 url=url, ok=False, error=f"HTTP {status}", http_status=status, resolved_url=final_url
             )
 
-        title_match = _TITLE_RE.search(raw_html)
+        title_match = _TITLE_RE.search(raw_html) if content_type != PDF_CONTENT_TYPE else None
         title = strip_tags(title_match.group(1))[:200] if title_match else ""
 
         text = ""
         engine = "none"
-        if _HAS_TRAFILATURA:
+        if content_type == PDF_CONTENT_TYPE:
+            text, engine = raw_html, "pypdf"
+            if text.startswith("\x00pdf-error:"):
+                return ExtractedPage(
+                    url=url, ok=False, error=text[1:], http_status=status, resolved_url=final_url
+                )
+        elif _HAS_TRAFILATURA:
             try:
                 extracted = _trafilatura.extract(
                     raw_html,
@@ -620,7 +670,7 @@ class PageExtractor:
                     engine = "trafilatura"
             except Exception as exc:
                 logger.warning("trafilatura failed for %s: %s", url, exc)
-        if not text:
+        if not text and content_type != PDF_CONTENT_TYPE:
             text = self._naive_extract(raw_html)
             engine = "naive-tag-strip"
 

@@ -255,21 +255,133 @@ def test_soft_404_redirect_to_homepage_is_dead():
     assert report.claims[0].verdict == DEAD_LINK
 
 
-def test_llm_adjudicates_borderline_but_never_grants_supported():
+TOWER_DOC = "The tower was completed in 1889 by a famous engineer [1].\n\n[1] https://facts.example/tower\n"
+TOWER_QUOTE = "The tower was completed in 1889 for the world fair in Paris."
+
+
+def _reply(verdict, quote):
+    return lambda system, prompt: json.dumps({"verdict": verdict, "quote": quote, "reason": "test"})
+
+
+def test_paraphrase_judge_reads_passages_and_grants_partial():
     calls = []
 
     def complete(system, prompt):
         calls.append(prompt)
-        return '{"verdict": "PARTIAL", "reason": "same topic"}'
+        return _reply("PARTIAL", TOWER_QUOTE)(system, prompt)
 
-    checker = _checker(complete=complete)
-    # 'tower completed 1889 world fair Paris famous engineer' -> overlap 6/8 (borderline)
-    report = checker.run(
-        "The tower was completed in 1889 by a famous engineer [1].\n\n[1] https://facts.example/tower\n"
-    )
+    report = _checker(complete=complete).run(TOWER_DOC)
     result = report.claims[0]
     assert result.verdict == PARTIAL and result.citations[0].judged_by == "nli+llm"
-    assert any("QUOTE" in c for c in calls)
+    assert result.citations[0].quote == TOWER_QUOTE
+    assert any("PASSAGES" in c and "[P1]" in c for c in calls)
+
+
+def test_paraphrase_judge_supports_reworded_claim_with_verbatim_quote():
+    report = _checker(complete=_reply("SUPPORTED", TOWER_QUOTE)).run(TOWER_DOC)
+    assert report.claims[0].verdict == SUPPORTED
+    assert "reworded" in report.claims[0].citations[0].note
+
+
+def test_paraphrase_judge_rejects_invented_evidence():
+    fake = "The tower was designed by a famous engineer named Gustave Eiffel in 1889."
+    report = _checker(complete=_reply("SUPPORTED", fake)).run(TOWER_DOC)
+    assert report.claims[0].verdict == WRONG_SOURCE
+
+
+def test_paraphrase_judge_requires_numbers_in_quote():
+    doc = "The tower was completed in 1889 by a famous engineer and cost 7 million francs [1].\n\n[1] https://facts.example/tower\n"
+    report = _checker(complete=_reply("SUPPORTED", TOWER_QUOTE)).run(doc)
+    assert report.claims[0].verdict in (PARTIAL, WRONG_SOURCE)
+
+
+def test_llm_overrules_spurious_nli_contradiction():
+    doc = "The tower was never completed in 1889 for the world fair in Paris [1].\n\n[1] https://facts.example/tower\n"
+    report = _checker(complete=_reply("NOT_SUPPORTED", "")).run(doc)
+    # The page itself carries no negation, so the model's "no" overrules NLI.
+    assert report.claims[0].verdict == WRONG_SOURCE
+    confirmed = _checker(complete=_reply("CONTRADICTED", TOWER_QUOTE)).run(doc)
+    assert confirmed.claims[0].verdict == CONTRADICTED
+
+
+def _tiny_pdf(text):
+    stream = f"BT /F1 12 Tf 72 720 Td ({text}) Tj ET".encode()
+    objs = [
+        b"<< /Type /Catalog /Pages 2 0 R >>",
+        b"<< /Type /Pages /Kids [3 0 R] /Count 1 >>",
+        b"<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R "
+        b"/Resources << /Font << /F1 5 0 R >> >> >>",
+        b"<< /Length " + str(len(stream)).encode() + b" >>\nstream\n" + stream + b"\nendstream",
+        b"<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>",
+    ]
+    out = b"%PDF-1.4\n"
+    offsets = []
+    for i, obj in enumerate(objs, 1):
+        offsets.append(len(out))
+        out += f"{i} 0 obj\n".encode() + obj + b"\nendobj\n"
+    xref = len(out)
+    out += f"xref\n0 {len(objs) + 1}\n0000000000 65535 f \n".encode()
+    out += b"".join(f"{o:010d} 00000 n \n".encode() for o in offsets)
+    out += f"trailer << /Size {len(objs) + 1} /Root 1 0 R >>\nstartxref\n{xref}\n%%EOF".encode()
+    return out
+
+
+class _PdfResponse:
+    status_code = 200
+
+    def __init__(self, body, content_type="application/pdf"):
+        self.body = body
+        self.headers = {"Content-Type": content_type, "Content-Length": str(len(body))}
+
+    def iter_content(self, chunk_size=65536):
+        yield self.body
+
+    def close(self):
+        pass
+
+
+class _PdfSession:
+    headers: dict = {}
+
+    def __init__(self, body, content_type="application/pdf"):
+        self.response = _PdfResponse(body, content_type)
+
+    def get(self, *args, **kwargs):
+        return self.response
+
+
+def _offline_dns(monkeypatch):
+    import odar.retrieval as retrieval
+    from odar.url_safety import validate_url as real_validate
+
+    monkeypatch.setattr(
+        retrieval, "validate_url", lambda url, resolve_dns=True: real_validate(url, resolve_dns=False)
+    )
+
+
+def test_pdf_citation_is_read_when_enabled(monkeypatch):
+    import pytest
+
+    pytest.importorskip("pypdf")
+    from odar.retrieval import PageExtractor
+
+    _offline_dns(monkeypatch)
+    body = _tiny_pdf("Human-caused warming reached about 1.07 degrees Celsius.")
+    page = PageExtractor(session=_PdfSession(body), allow_pdf=True).extract("https://www.ipcc.ch/spm.pdf")
+    assert page.ok and page.engine == "pypdf" and "1.07 degrees" in page.text
+
+
+def test_pdf_refused_by_default_and_broken_pdf_reported(monkeypatch):
+    from odar.retrieval import PageExtractor
+
+    _offline_dns(monkeypatch)
+    body = _tiny_pdf("hello world")
+    page = PageExtractor(session=_PdfSession(body)).extract("https://www.ipcc.ch/spm.pdf")
+    assert not page.ok and "not allowed" in (page.error or "")
+    broken = PageExtractor(session=_PdfSession(b"%PDF-1.4 garbage"), allow_pdf=True).extract(
+        "https://x.example/a.pdf"
+    )
+    assert not broken.ok and "pdf" in (broken.error or "").lower()
 
 
 def test_injection_page_is_quarantined_and_flagged():
@@ -397,3 +509,18 @@ def test_archive_outage_never_claims_fabricated():
     cit = report.claims[0].citations[0]
     assert report.claims[0].verdict == DEAD_LINK
     assert "fabricated" not in cit.note and "archive check unavailable" in cit.note
+
+
+def test_explicit_negation_contradiction_survives_llm_hedge():
+    class NegPage(FakeExtractor):
+        def extract(self, url):
+            page = super().extract(url)
+            page.text = "The tower was not completed in 1889 for the world fair in Paris. " + FILLER * 3
+            return page
+
+    checker = _checker(complete=_reply("NOT_SUPPORTED", ""))
+    checker.extractor = NegPage()
+    report = checker.run(
+        "The tower was completed in 1889 for the world fair in Paris [1].\n\n[1] https://facts.example/tower\n"
+    )
+    assert report.claims[0].verdict == CONTRADICTED
