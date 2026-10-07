@@ -605,11 +605,44 @@ _CITE_RE = re.compile(r"\[(\d{1,3})\]")
 _SENT_RE = re.compile(r"(?<=[.!?])\s+|(?<=\])\s+(?=[A-Z])")
 
 
-def validate_synthesis(text: str, fact_count: int) -> str:
-    """Keep only sentences whose every citation marker resolves to a fact.
+_NAME_RE = re.compile(r"\b[A-Z][\w'’.-]*[A-Za-z0-9]|\b[A-Z]\b")
+_NUM_RE = re.compile(r"\d+(?:[.,]\d+)*")
 
-    Uncited sentences and sentences citing non-existent facts are dropped,
-    so the prose can never carry an unsourced statement.
+
+def _ungrounded_terms(sentence: str, cited_text: str) -> List[str]:
+    """Proper names and numbers in ``sentence`` that the cited facts lack.
+
+    The benchmark caught the synthesiser attributing a CBO figure to
+    "Moody's Analytics"; every name and number it writes must come from the
+    facts it cites (or the question).
+    """
+    body = _CITE_RE.sub(" ", sentence)
+    haystack = cited_text.lower()
+    missing: List[str] = []
+    words = body.split()
+    first = words[0] if words else ""
+    for match in _NAME_RE.finditer(body):
+        term = match.group(0).rstrip(".")
+        if match.start() == body.find(first) and term == first.strip("\"'(“").rstrip(".,;:"):
+            continue  # sentence-initial capital is not a name signal
+        if term.lower() not in haystack:
+            missing.append(term)
+    for match in _NUM_RE.finditer(body):
+        if match.group(0) not in cited_text:
+            missing.append(match.group(0))
+    return missing
+
+
+def validate_synthesis(
+    text: str, fact_count: int, facts: Optional[List[str]] = None, objective: str = ""
+) -> str:
+    """Keep only sentences whose every citation marker resolves to a fact
+    and (when ``facts`` are given) whose names and numbers are grounded in
+    the facts they cite.
+
+    Uncited sentences, sentences citing non-existent facts and sentences
+    adding unsupported names/numbers are dropped, so the prose can never
+    carry an unsourced statement.
     """
     kept_paragraphs: List[str] = []
     for paragraph in re.split(r"\n\s*\n", text or ""):
@@ -621,6 +654,10 @@ def validate_synthesis(text: str, fact_count: int) -> str:
             markers = [int(m) for m in _CITE_RE.findall(sentence)]
             if not markers or any(m < 1 or m > fact_count for m in markers):
                 continue
+            if facts is not None:
+                cited = " ".join(facts[m - 1] for m in set(markers)) + " " + objective
+                if _ungrounded_terms(sentence, cited):
+                    continue
             kept.append(sentence)
         if kept:
             kept_paragraphs.append(" ".join(kept))

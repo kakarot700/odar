@@ -21,7 +21,7 @@ from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional
 
 from odar.budget import Budget, BudgetExceeded, CancellationToken, CancelledError, Governor
-from odar.citation_auditor import CitationAuditor, normalize_span
+from odar.citation_auditor import CitationAuditor, normalize_span, split_sentences
 from odar.evidence import (
     CIRCULARITY_THRESHOLD,
     Claim,
@@ -100,7 +100,7 @@ def _candidate_sentences(text: str, minimum: int = 40, maximum: int = 260) -> Li
     sentences: List[str] = []
     seen: set = set()
     for line in (text or "").splitlines():
-        for part in _SENTENCE_SPLIT.split(line):
+        for part in split_sentences(line):
             part = normalize_span(part)
             if not (minimum <= len(part) <= maximum) or not part.endswith((".", "!")):
                 continue
@@ -767,7 +767,12 @@ class ResearchEngine:
                     self.governor,
                     max_tokens=900,
                 )
-                prose = validate_synthesis(sanitize_external_text(raw, max_chars=6000), len(facts))
+                prose = validate_synthesis(
+                    sanitize_external_text(raw, max_chars=6000),
+                    len(facts),
+                    facts=facts,
+                    objective=state.objective,
+                )
                 self.telemetry.count("answer_synthesized_llm")
             except (BudgetExceeded, ModelBackendError) as exc:
                 state.note(

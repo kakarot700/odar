@@ -486,3 +486,31 @@ class TestReportPolish:
         adapter = FakeAdapter(synthesis="COP30 launched a voluntary fossil fuel plan [1][1].")
         outcome = _engine(adapter, StubExtractor()).run(QUESTION)
         assert f"[[1]]({CB_URL})[[1]]({CB_URL})" not in outcome.synthesis
+
+
+class TestBenchmarkRound2:
+    """Second-round findings from the 2026-10-07 rerun (q3)."""
+
+    def test_abbreviation_does_not_split_claim(self):
+        from odar.citation_auditor import split_sentences
+
+        line = (
+            "Update, Feb. 9: A CBO report published Feb. 8 estimates a $15 minimum wage would reduce "
+            "employment in 2025 by 1.4 million workers. The average estimate is higher."
+        )
+        parts = split_sentences(line)
+        assert len(parts) == 2 and parts[0].startswith("Update, Feb. 9")
+
+    def test_synthesis_drops_unsupported_attribution(self):
+        facts = [
+            "A CBO report published Feb. 8 estimates a $15 minimum wage would reduce employment by 1.4 million."
+        ]
+        text = (
+            "Moody's Analytics estimates 1.4 million job losses [1]. "
+            "The CBO estimates employment would fall by 1.4 million [1]. "
+            "It would cost 2.7 million jobs [1]."
+        )
+        assert (
+            validate_synthesis(text, 1, facts=facts)
+            == "The CBO estimates employment would fall by 1.4 million [1]."
+        )

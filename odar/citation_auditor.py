@@ -87,12 +87,40 @@ def normalize_span(text: str) -> str:
     return span
 
 
+_ABBREVIATIONS = {
+    "jan", "feb", "mar", "apr", "jun", "jul", "aug", "sep", "sept", "oct", "nov", "dec",
+    "mr", "mrs", "ms", "dr", "prof", "sr", "jr", "st", "no", "vol", "fig", "eq", "ch",
+    "vs", "etc", "al", "approx", "est", "inc", "ltd", "co", "corp", "dept", "gov", "u.s", "u.k", "e.g", "i.e",
+}  # fmt: skip
+
+
+def split_sentences(line: str) -> List[str]:
+    """Split one line into sentences without breaking after abbreviations
+    ("Feb. 8", "Dr. Card", "U.S. data") or before a lower-case/digit
+    continuation - a broken split produced subject-less claims such as
+    "8 estimates a $15 minimum wage would ..." in the 2026-10-07 benchmark."""
+    parts = _SENTENCE_RE.split(line or "")
+    merged: List[str] = []
+    for part in parts:
+        if merged:
+            prev = merged[-1]
+            last_word = prev.rstrip(".!?").rsplit(None, 1)[-1].lower() if prev.strip() else ""
+            starts_continuation = bool(part) and (part[0].islower() or part[0].isdigit())
+            if prev.endswith(".") and (
+                last_word.strip("(\"'") in _ABBREVIATIONS or len(last_word) == 1 or starts_continuation
+            ):
+                merged[-1] = prev + " " + part
+                continue
+        merged.append(part)
+    return merged
+
+
 def _sentence_split(text: str) -> List[str]:
     """Sentence spans; line breaks are hard boundaries (headlines, nav items)."""
     spans: List[str] = []
     seen: set = set()
     for line in (text or "").splitlines():
-        for part in _SENTENCE_RE.split(line):
+        for part in split_sentences(line):
             span = normalize_span(part)
             if len(span) < 3 or len(_WORD_RE.findall(span)) < 2:
                 continue
