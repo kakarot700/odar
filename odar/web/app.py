@@ -15,6 +15,11 @@ Programmatic use: create a key in the app (or ``POST /api/keys``) and send
 * per-key daily limit (``ODAR_KEY_DAILY_LIMIT``, 50)
 * ``ODAR_FOLLOWUPS_PER_HOUR`` (30) follow-up questions
 * ``ODAR_RETENTION_DAYS`` (30): runs older than this are deleted automatically
+* ``ODAR_ASK_PER_HOUR`` (60): fast "Ask" answers, a lighter separate budget
+* ``ODAR_DISCOVER_TTL_S`` (10800): how long Discover headlines stay cached
+
+Ask (``/api/ask``, ``/api/ask/stream``), threads, projects, images and Discover
+are added by :func:`_add_ask_routes`.
 """
 
 from __future__ import annotations
@@ -22,12 +27,13 @@ from __future__ import annotations
 import os
 import secrets
 import threading
+import time
 from concurrent.futures import ThreadPoolExecutor
-from typing import Any, Callable, Dict, Optional
+from typing import Any, Callable, Dict, List, Optional
 
 from fastapi import FastAPI, File, Form, HTTPException, Request, Response, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse, JSONResponse
+from fastapi.responses import FileResponse, JSONResponse, StreamingResponse
 from pydantic import BaseModel
 from fastapi.staticfiles import StaticFiles
 
@@ -64,6 +70,30 @@ class KeyBody(BaseModel):
     label: str = ""
 
 
+class AskStreamBody(BaseModel):
+    question: str
+    focus: str = "all"
+    thread_id: str = ""
+    project_id: str = ""
+    sources: str = "web"  # web | files | both
+    images: bool = True
+    verify: bool = True
+
+
+class ThreadPatch(BaseModel):
+    title: str
+
+
+class ProjectBody(BaseModel):
+    name: str
+    instructions: str = ""
+
+
+class ProjectPatch(BaseModel):
+    name: Optional[str] = None
+    instructions: Optional[str] = None
+
+
 def _public(run: Dict[str, Any], *, owner_view: bool) -> Dict[str, Any]:
     data = {
         k: run.get(k)
@@ -84,6 +114,8 @@ def create_app(
     references_runner: Optional[Runner] = None,
     url_reader: Optional[Callable[[str], Any]] = None,
     followup_fn: Optional[Callable[..., Dict[str, Any]]] = None,
+    ask_deps: Any = None,
+    discover_fn: Optional[Callable[[str], Any]] = None,
     max_workers: int = 2,
     synchronous: bool = False,
 ) -> FastAPI:
@@ -114,7 +146,7 @@ def create_app(
     app.add_middleware(
         CORSMiddleware,
         allow_origin_regex=r"chrome-extension://[a-p]{32}",
-        allow_methods=["GET", "POST", "DELETE"],
+        allow_methods=["GET", "POST", "PATCH", "DELETE"],
         allow_headers=["Authorization", "Content-Type"],
         allow_credentials=False,
     )
@@ -169,7 +201,12 @@ def create_app(
     @app.get("/settings", include_in_schema=False)
     @app.get("/runs/{run_id}", include_in_schema=False)
     @app.get("/r/{token}", include_in_schema=False)
-    def index(run_id: str = "", token: str = "") -> FileResponse:
+    @app.get("/home", include_in_schema=False)
+    @app.get("/new", include_in_schema=False)
+    @app.get("/c/{thread_id}", include_in_schema=False)
+    @app.get("/s/{token}", include_in_schema=False)
+    @app.get("/p/{project_id}", include_in_schema=False)
+    def index(run_id: str = "", token: str = "", thread_id: str = "", project_id: str = "") -> FileResponse:
         return FileResponse(os.path.join(STATIC, "index.html"), headers={"Cache-Control": "no-cache"})
 
     @app.get("/api/health")
@@ -348,16 +385,25 @@ def create_app(
         response.delete_cookie(COOKIE)
         return {"deleted_runs": deleted}
 
+    ask_hourly = _env_int("ODAR_ASK_PER_HOUR", 60)
+
+    def ask_subject(request: Request) -> str:
+        key = request.state.key
+        return f"askkey:{key['prefix']}" if key is not None else f"askip:{client_ip(request)}"
+
     @app.get("/api/limits")
     def limits(request: Request) -> Dict[str, Any]:
         key = request.state.key
+        ask_quota = {"ask_hourly_limit": ask_hourly, "ask_used_this_hour": store.used(ask_subject(request), 3600)}
         if key is not None:
             return {
                 "daily_limit": key["daily_limit"],
                 "used_today": store.used(f"key:{key['prefix']}", 86400),
+                **ask_quota,
             }
         ip = client_ip(request)
         return {
+            **ask_quota,
             "hourly_limit": ip_hourly,
             "used_this_hour": store.used(f"ip:{ip}", 3600),
             "daily_limit": ip_daily,
@@ -397,7 +443,334 @@ def create_app(
     def export_shared(token: str, fmt: str) -> Response:
         return _export(_shared(token), fmt)
 
+    _add_ask_routes(
+        app,
+        store,
+        owner_of=owner_of,
+        ask_subject=ask_subject,
+        ask_hourly=ask_hourly,
+        ask_deps=ask_deps,
+        discover_fn=discover_fn,
+    )
     return app
+
+
+def _add_ask_routes(
+    app: FastAPI,
+    store: RunStore,
+    *,
+    owner_of: Callable[[Request], str],
+    ask_subject: Callable[[Request], str],
+    ask_hourly: int,
+    ask_deps: Any,
+    discover_fn: Optional[Callable[[str], Any]],
+) -> None:
+    """Ask (streamed cited answers), threads, projects, images and Discover."""
+    import json as _json
+    from concurrent.futures import ThreadPoolExecutor as _Pool
+
+    from odar.web import ask as askmod
+    from odar.web.projects import MAX_FILES_PER_PROJECT, chunk_text
+
+    discover_ttl = _env_int("ODAR_DISCOVER_TTL_S", 10800)
+    discover_fn = discover_fn or askmod.discover_topic
+
+    def deps() -> Any:
+        if ask_deps is not None:
+            return ask_deps
+        askmod.warm_verifier()
+        from odar.scholar import Scholar, cached_http_get
+
+        return askmod.AskDeps(scholar=Scholar(get=cached_http_get(store)))
+
+    def own_thread(request: Request, thread_id: str) -> Dict[str, Any]:
+        thread = store.get_thread(thread_id)
+        if thread is None or thread["owner"] != owner_of(request):
+            raise HTTPException(404, "thread not found")
+        return thread
+
+    def own_project(request: Request, project_id: str) -> Dict[str, Any]:
+        project = store.get_project(project_id)
+        if project is None or project["owner"] != owner_of(request):
+            raise HTTPException(404, "project not found")
+        return project
+
+    def history_of(thread_id: str) -> List[Dict[str, Any]]:
+        turns: List[Dict[str, Any]] = []
+        for msg in store.messages(thread_id):
+            if msg["role"] == "user":
+                turns.append({"q": msg["content"], "a": "", "sources": []})
+            elif turns and msg["role"] == "assistant":
+                turns[-1]["a"] = msg["content"]
+                turns[-1]["sources"] = msg["data"].get("sources", [])
+        return [t for t in turns if t["a"]]
+
+    def prepare(request: Request, body: AskStreamBody) -> Dict[str, Any]:
+        question = " ".join(body.question.split())
+        if not 3 <= len(question) <= 600:
+            raise HTTPException(400, "ask a question of 3 to 600 characters")
+        focus = body.focus if body.focus in askmod.FOCUSES else None
+        if focus is None:
+            raise HTTPException(400, "focus must be one of " + ", ".join(askmod.FOCUSES))
+        if body.sources not in askmod.SOURCE_MODES:
+            raise HTTPException(400, "sources must be web, files or both")
+        owner = owner_of(request)
+        thread = own_thread(request, body.thread_id) if body.thread_id else None
+        project_id = thread["project_id"] if thread else body.project_id
+        project = own_project(request, project_id) if project_id else None
+        source_mode = body.sources if project else "web"
+        if not store.hit(ask_subject(request), 3600, ask_hourly):
+            raise HTTPException(429, "too many questions this hour; try again later")
+        history = history_of(thread["thread_id"]) if thread else []
+        if thread is None:
+            thread = store.create_thread(owner, question[:120], focus, project_id=project_id or "")
+        else:
+            store.update_thread(thread["thread_id"], focus=focus)
+        store.add_message(thread["thread_id"], "user", question, {"focus": focus, "sources_mode": source_mode})
+        return {
+            "thread": thread,
+            "question": question,
+            "focus": focus,
+            "history": history,
+            "instructions": project["instructions"] if project else "",
+            "chunks": store.project_chunks(project["project_id"]) if project and source_mode != "web" else [],
+            "source_mode": source_mode,
+            "images": body.images,
+            "verify": body.verify,
+        }
+
+    def events(ctx: Dict[str, Any]) -> Any:
+        thread = ctx["thread"]
+        tid = thread["thread_id"]
+        yield "thread", {
+            "thread_id": tid,
+            "share_token": thread["share_token"],
+            "title": thread["title"],
+            "project_id": thread["project_id"],
+        }
+        record: Dict[str, Any] = {"focus": ctx["focus"], "sources_mode": ctx["source_mode"]}
+        seq = 0
+        try:
+            for name, data in askmod.run_ask(
+                ctx["question"],
+                focus=ctx["focus"],
+                history=ctx["history"],
+                instructions=ctx["instructions"],
+                chunks=ctx["chunks"],
+                source_mode=ctx["source_mode"],
+                want_images=ctx["images"],
+                verify=ctx["verify"],
+                deps=deps(),
+            ):
+                if name == "sources":
+                    record["sources"] = data["sources"]
+                elif name == "images":
+                    record["images"] = data["images"]
+                elif name == "done":
+                    record["timing"] = data.get("timing", {})
+                    record["abstained"] = data.get("abstained", False)
+                    seq = store.add_message(tid, "assistant", data["answer"], record)
+                elif name == "verification":
+                    record["verification"] = data
+                    if seq:
+                        store.update_message(tid, seq, record)
+                elif name == "error":
+                    record["error"] = data.get("message", "")
+                    store.add_message(tid, "assistant", "", record)
+                yield name, data
+        except Exception as exc:  # noqa: BLE001 - the stream must end cleanly
+            yield "error", {"message": "Something went wrong answering that.", "detail": str(exc)[:200]}
+
+    def stream_response(ctx: Dict[str, Any]) -> StreamingResponse:
+        def body() -> Any:
+            yield ": ok\n\n"
+            for name, data in events(ctx):
+                yield askmod.sse(name, data)
+
+        return StreamingResponse(
+            body(),
+            media_type="text/event-stream",
+            headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"},
+        )
+
+    @app.post("/api/ask/stream")
+    def ask_stream(request: Request, body: AskStreamBody) -> StreamingResponse:
+        """Server-sent events: thread, sources, images, delta*, done, verification (or error)."""
+        return stream_response(prepare(request, body))
+
+    @app.get("/api/ask/stream")
+    def ask_stream_get(
+        request: Request,
+        q: str,
+        focus: str = "all",
+        thread_id: str = "",
+        project_id: str = "",
+        sources: str = "web",
+        images: bool = True,
+        verify: bool = True,
+    ) -> StreamingResponse:
+        """EventSource-friendly GET form of ``POST /api/ask/stream``."""
+        body = AskStreamBody(
+            question=q,
+            focus=focus,
+            thread_id=thread_id,
+            project_id=project_id,
+            sources=sources,
+            images=images,
+            verify=verify,
+        )
+        return stream_response(prepare(request, body))
+
+    @app.post("/api/ask")
+    def ask_json(request: Request, body: AskStreamBody) -> Dict[str, Any]:
+        """Same pipeline as the stream, returned as one JSON object."""
+        out: Dict[str, Any] = {}
+        answer = []
+        for name, data in events(prepare(request, body)):
+            if name == "delta":
+                answer.append(data["text"])
+            elif name in ("thread", "done"):
+                out.update(data)
+            else:
+                out[name] = data.get(name, data) if name in ("sources", "images") else data
+        out.setdefault("answer", "".join(answer))
+        return out
+
+    # ---------------- threads ----------------
+    @app.get("/api/threads")
+    def list_threads(request: Request, project_id: Optional[str] = None, limit: int = 50) -> Dict[str, Any]:
+        owner = owner_of(request)
+        return {"threads": store.list_threads(owner, project_id=project_id, limit=min(limit, 200)) if owner else []}
+
+    @app.get("/api/threads/{thread_id}")
+    def get_thread(request: Request, thread_id: str) -> Dict[str, Any]:
+        thread = own_thread(request, thread_id)
+        return {"thread": thread, "messages": store.messages(thread_id)}
+
+    @app.patch("/api/threads/{thread_id}")
+    def rename_thread(request: Request, thread_id: str, body: ThreadPatch) -> Dict[str, Any]:
+        own_thread(request, thread_id)
+        title = " ".join(body.title.split())
+        if not title:
+            raise HTTPException(400, "title can't be empty")
+        store.update_thread(thread_id, title=title)
+        return {"thread": store.get_thread(thread_id)}
+
+    @app.delete("/api/threads/{thread_id}")
+    def delete_thread(request: Request, thread_id: str) -> Dict[str, Any]:
+        own_thread(request, thread_id)
+        return {"deleted": store.delete_thread(thread_id)}
+
+    @app.get("/api/shared-threads/{token}")
+    def shared_thread(token: str) -> Dict[str, Any]:
+        thread = store.thread_by_token(token)
+        if thread is None:
+            raise HTTPException(404, "thread not found")
+        public = {k: thread[k] for k in ("title", "focus", "created", "updated", "share_token")}
+        return {"thread": public, "messages": store.messages(thread["thread_id"])}
+
+    # ---------------- projects ----------------
+    @app.post("/api/projects", status_code=201)
+    def create_project(request: Request, body: ProjectBody) -> Dict[str, Any]:
+        owner = owner_of(request)
+        name = " ".join(body.name.split())
+        if not name:
+            raise HTTPException(400, "give the project a name")
+        if len(store.list_projects(owner)) >= 20:
+            raise HTTPException(400, "at most 20 projects; delete one first")
+        return {"project": store.create_project(owner, name, body.instructions)}
+
+    @app.get("/api/projects")
+    def list_projects(request: Request) -> Dict[str, Any]:
+        return {"projects": store.list_projects(owner_of(request))}
+
+    @app.get("/api/projects/{project_id}")
+    def get_project(request: Request, project_id: str) -> Dict[str, Any]:
+        project = own_project(request, project_id)
+        return {
+            "project": project,
+            "files": store.list_files(project_id),
+            "threads": store.list_threads(owner_of(request), project_id=project_id),
+        }
+
+    @app.patch("/api/projects/{project_id}")
+    def update_project(request: Request, project_id: str, body: ProjectPatch) -> Dict[str, Any]:
+        own_project(request, project_id)
+        store.update_project(project_id, name=body.name, instructions=body.instructions)
+        return {"project": store.get_project(project_id)}
+
+    @app.delete("/api/projects/{project_id}")
+    def delete_project(request: Request, project_id: str) -> Dict[str, Any]:
+        own_project(request, project_id)
+        return {"deleted": store.delete_project(project_id)}
+
+    @app.post("/api/projects/{project_id}/files", status_code=201)
+    async def add_project_file(request: Request, project_id: str, file: UploadFile = File(...)) -> Dict[str, Any]:
+        own_project(request, project_id)
+        if len(store.list_files(project_id)) >= MAX_FILES_PER_PROJECT:
+            raise HTTPException(400, f"at most {MAX_FILES_PER_PROJECT} files per project")
+        data = await file.read(inputs.MAX_UPLOAD_BYTES + 1)
+        try:
+            text, kind = inputs.text_from_upload(file.filename or "", data)
+        except inputs.InputError as exc:
+            raise HTTPException(400, str(exc)) from exc
+        chunks = chunk_text(text)
+        return {"file": store.add_file(project_id, file.filename or "file", kind, text, chunks)}
+
+    @app.delete("/api/projects/{project_id}/files/{file_id}")
+    def delete_project_file(request: Request, project_id: str, file_id: str) -> Dict[str, Any]:
+        own_project(request, project_id)
+        return {"deleted": store.delete_file(project_id, file_id)}
+
+    # ---------------- images + discover ----------------
+    @app.get("/api/images")
+    def images(request: Request, q: str, n: int = 8) -> Dict[str, Any]:
+        """Image results (thumbnail + source page). The server never fetches image bytes."""
+        q = " ".join(q.split())[:300]
+        if len(q) < 2:
+            raise HTTPException(400, "q is required")
+        if not store.hit(f"img:{ask_subject(request)}", 3600, ask_hourly * 2):
+            raise HTTPException(429, "too many image searches this hour")
+        fn = ask_deps.images if ask_deps is not None else askmod.image_search
+        return {"images": fn(q)[: max(1, min(n, 12))]}
+
+    @app.get("/api/discover")
+    def discover(topic: str = "all") -> Dict[str, Any]:
+        """Headlines per topic, cached in SQLite (no LLM summaries; summarize on click via Ask)."""
+        topics = list(askmod.DISCOVER_TOPICS) if topic == "all" else [topic]
+        if any(t not in askmod.DISCOVER_TOPICS for t in topics):
+            raise HTTPException(400, "topic must be all or one of " + ", ".join(askmod.DISCOVER_TOPICS))
+        out: Dict[str, Any] = {}
+        missing = []
+        for t in topics:
+            hit = store.cache_get(f"discover:{t}")
+            if hit is not None:
+                out[t] = _json.loads(hit[1])
+            else:
+                missing.append(t)
+        if missing:
+            with _Pool(max_workers=len(missing)) as pool:
+                fresh = dict(zip(missing, pool.map(_discover_safe(discover_fn), missing)))
+            for t, items in fresh.items():
+                payload = {"items": items, "fetched": time.time()}
+                store.cache_put(f"discover:{t}", 200, _json.dumps(payload), discover_ttl if items else 600)
+                out[t] = payload
+        return {
+            "topics": [
+                {"id": t, "label": askmod.DISCOVER_TOPICS[t]["label"], **out[t]} for t in topics
+            ],
+            "ttl_s": discover_ttl,
+        }
+
+
+def _discover_safe(fn: Callable[[str], Any]) -> Callable[[str], Any]:
+    def run(topic: str) -> Any:
+        try:
+            return fn(topic)
+        except Exception:  # noqa: BLE001 - one topic failing leaves the others
+            return []
+
+    return run
 
 
 def __getattr__(name: str) -> Any:  # lazy ``uvicorn odar.web.app:app``
