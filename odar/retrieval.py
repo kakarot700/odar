@@ -10,7 +10,7 @@
   signatures and sanitized (invisible/control characters stripped) before it
   may enter any prompt or claim pool.
 * **Search cascade** (first tier that yields *gated* evidence wins):
-  1. ``duckduckgo_search``'s ``DDGS().text(...)`` (transparent fallback to
+  1. ``ddgs`` (or legacy ``duckduckgo_search``)'s ``DDGS().text(...)`` (transparent fallback to
      the successor ``ddgs`` package),
   2. direct DuckDuckGo HTML endpoint scraper with redirect resolution,
   3. Wikipedia Search API + OpenSearch fallback with REST summary
@@ -83,17 +83,17 @@ except Exception:  # pragma: no cover - import guard
 
 _DDGS: Any = None
 _DDGS_BACKEND: Optional[str] = None
-try:  # primary search backend (classic package name requested by spec)
-    from duckduckgo_search import DDGS as _ClassicDDGS
+try:  # maintained successor package: multi-backend (bing, brave, ddg, mojeek, ...)
+    from ddgs import DDGS as _SuccessorDDGS
 
-    _DDGS = _ClassicDDGS
-    _DDGS_BACKEND = "duckduckgo_search"
+    _DDGS = _SuccessorDDGS
+    _DDGS_BACKEND = "ddgs"
 except Exception:  # pragma: no cover - import guard
-    try:  # successor package (duckduckgo_search was renamed upstream)
-        from ddgs import DDGS as _SuccessorDDGS
+    try:  # legacy package name; 8.x is hard-wired to a single (bing) backend
+        from duckduckgo_search import DDGS as _ClassicDDGS
 
-        _DDGS = _SuccessorDDGS
-        _DDGS_BACKEND = "ddgs"
+        _DDGS = _ClassicDDGS
+        _DDGS_BACKEND = "duckduckgo_search"
     except Exception:
         _DDGS = None
         _DDGS_BACKEND = None
@@ -274,6 +274,10 @@ class ZeroCostSearch:
                         hits.append(SearchHit(url=url, title=title, snippet=snippet, engine=_DDGS_BACKEND))
                 if hits:
                     return hits
+                # Empty result sets are a common soft rate-limit signal:
+                # back off before the next attempt instead of hammering.
+                if attempt + 1 < self.max_retries:
+                    jittered_backoff(attempt, base=self.backoff_s / 2.0)
             except Exception as exc:  # rate limits, network hiccups, etc.
                 self.stats["ddgs_failures"] += 1
                 logger.warning("DDGS attempt %s failed: %s: %s", attempt + 1, type(exc).__name__, exc)

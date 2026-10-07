@@ -21,7 +21,7 @@ from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional
 
 from odar.budget import Budget, BudgetExceeded, CancellationToken, CancelledError, Governor
-from odar.citation_auditor import CitationAuditor
+from odar.citation_auditor import CitationAuditor, normalize_span
 from odar.evidence import (
     CIRCULARITY_THRESHOLD,
     Claim,
@@ -37,8 +37,12 @@ from odar.llm import (
     ModelBackendError,
     ModelDecision,
     NativeToolUseController,
+    SYNTH_SYSTEM_PROMPT,
+    LLMRefutationJudge,
     ScriptedResearchController,
     compact_query,
+    synthesis_prompt,
+    validate_synthesis,
 )
 from odar.research_state import ResearchState
 from odar.retrieval import PageExtractor, ZeroCostSearch
@@ -47,7 +51,7 @@ from odar.schemas import new_id
 from odar.source_quality import CLASS_WEIGHTS
 from odar.telemetry import TelemetryRecorder
 from odar.tools import GovernedExecutor
-from odar.trust import redact_secrets
+from odar.trust import redact_secrets, sanitize_external_text
 
 logger = logging.getLogger(__name__)
 
@@ -61,15 +65,56 @@ FALLBACK_FAIL = "fail"
 FALLBACK_EXPLICIT_SCRIPTED = "explicit-scripted"
 
 
+def _md_link(label: str, url: str) -> str:
+    """Clickable markdown link; brackets in titles are neutralised."""
+    clean = " ".join((label or url).replace("[", "(").replace("]", ")").split())[:160]
+    if not url:
+        return clean
+    return f"[{clean}]({url.replace(' ', '%20').replace(')', '%29')})"
+
+
+def _looks_like_headline(sentence: str) -> bool:
+    """Navigation items, headlines and bylines are not factual claims."""
+    words = sentence.split()
+    alpha = [w for w in words if w[:1].isalpha()]
+    if not alpha:
+        return True
+    capitalised = sum(1 for w in alpha if w[:1].isupper())
+    if len(alpha) >= 4 and capitalised / len(alpha) > 0.6:
+        return True  # Title Case Headline
+    head = sentence.split(":", 1)[0]
+    if ":" in sentence and len(head.split()) <= 4 and not sentence.rstrip().endswith("."):
+        return True  # "Interactive: Tracking ..." style section labels
+    return sentence.rstrip().endswith("?")  # questions are not assertions
+
+
 def _candidate_sentences(text: str, minimum: int = 40, maximum: int = 260) -> List[str]:
-    """Grammatically complete sentences only (mid-sentence truncations can
-    never be NLI-entailed, so they are excluded by construction)."""
+    """Grammatically complete declarative sentences only.
+
+    Line breaks are hard boundaries (headlines and nav items never fuse into
+    a "sentence"), trailing list enumerators are stripped, and headline /
+    question / label fragments are excluded: mid-sentence truncations and
+    page chrome can never be NLI-entailed meaningfully, so they are excluded
+    by construction.
+    """
     sentences: List[str] = []
-    for part in _SENTENCE_SPLIT.split(text or ""):
-        part = part.strip()
-        if minimum <= len(part) <= maximum and part.endswith((".", "!", "?")):
+    seen: set = set()
+    for line in (text or "").splitlines():
+        for part in _SENTENCE_SPLIT.split(line):
+            part = normalize_span(part)
+            if not (minimum <= len(part) <= maximum) or not part.endswith((".", "!")):
+                continue
+            if len(part.split()) < 8 or _looks_like_headline(part):
+                continue
+            if part.lower() in seen:
+                continue
+            seen.add(part.lower())
             sentences.append(part)
     return sentences
+
+
+MAX_CLAIMS = 12
+MAX_CLAIMS_PER_SOURCE = 3
 
 
 @dataclass
@@ -136,6 +181,10 @@ class ResearchEngine:
         self.checkpoint_sink = checkpoint_sink  # callback(state) per action
         self.fallback_policy = fallback_policy
         self._security_violations: List[str] = []
+        self._answer_cache: Dict[tuple, str] = {}
+        if isinstance(model, NativeToolUseController):
+            # Production path: NLI contradictions get a second opinion.
+            self.auditor.refutation_judge = LLMRefutationJudge(model, self.governor)
         # THE single governed execution boundary.
         self.executor = GovernedExecutor(
             governor=self.governor,
@@ -274,7 +323,7 @@ class ResearchEngine:
             # Engine-owned post-processing: extraction, evaluation,
             # contradiction examination.  The model never certifies anything.
             progressed = False
-            if state.sources and not state.claims:
+            if any(sid not in state.mined_source_ids for sid in state.sources):
                 self._action_extract_claims(state)
                 progressed = True
             pending_eval = [
@@ -283,7 +332,7 @@ class ResearchEngine:
                 if c.needs_evaluation or not state.evidence_for_claim(c.claim_id)
             ]
             if pending_eval and state.sources:
-                self._action_evaluate({"claim_ids": pending_eval[:4]}, state)
+                self._action_evaluate({"claim_ids": pending_eval[:6]}, state)
                 progressed = True
             open_conflicts = [c for c in state.contradictions if not c.get("examined")]
             if open_conflicts:
@@ -425,20 +474,40 @@ class ResearchEngine:
 
     # ------------------------------------------------------------------ #
     def _action_extract_claims(self, state: ResearchState) -> None:
+        """Mine candidate claims from sources not mined yet.
+
+        Incremental: every newly fetched source is mined once (so later
+        sources that cover a different facet of the question - e.g. VACUUM
+        after isolation levels - contribute claims), at most
+        ``MAX_CLAIMS_PER_SOURCE`` per source and ``MAX_CLAIMS`` per run,
+        best-quality sources first, most on-topic sentences first.
+        """
         if not state.sources:
             state.note("extract_claims skipped: no sources")
             return
+        unmined = [s for s in state.sources.values() if s.source_id not in state.mined_source_ids]
         best = sorted(
-            state.sources.values(),
+            unmined,
             key=lambda s: (CLASS_WEIGHTS.get(s.publisher_class, 0.3), len(s.extracted_text)),
             reverse=True,
         )
-        objective_tokens = set(compact_query(state.objective).split())
-        for source in best[:3]:
-            for sentence in _candidate_sentences(source.extracted_text):
-                tokens = {token.lower().strip(".,;:()[]") for token in sentence.split()}
-                if len(tokens & objective_tokens) < 2:
-                    continue
+        objective_tokens = set(compact_query(state.objective, max_terms=24).split())
+        added = 0
+        for source in best:
+            state.mined_source_ids.append(source.source_id)
+            if len(state.claims) >= MAX_CLAIMS:
+                continue
+            scored = []
+            for position, sentence in enumerate(_candidate_sentences(source.extracted_text)):
+                tokens = {token.lower().strip(".,;:()[]\"'") for token in sentence.split()}
+                hits = len(tokens & objective_tokens)
+                if hits >= 2:
+                    scored.append((-hits, position, sentence))
+            scored.sort()
+            taken = 0
+            for _neg, _pos, sentence in scored:
+                if taken >= MAX_CLAIMS_PER_SOURCE or len(state.claims) >= MAX_CLAIMS:
+                    break
                 if any(
                     detect_circularity(candidate.text, sentence) >= CIRCULARITY_THRESHOLD
                     for candidate in state.claims.values()
@@ -446,12 +515,10 @@ class ResearchEngine:
                     continue
                 claim = Claim(claim_id=new_id("clm"), text=sentence[:400], uncertainty=Uncertainty.UNCERTAIN)
                 state.add_claim(claim)
-                if len(state.claims) >= 6:
-                    break
-            if len(state.claims) >= 6:
-                break
+                taken += 1
+                added += 1
         state.record_action(f"extract_claims:{len(state.claims)}")
-        self.telemetry.count("claims_extracted", len(state.claims))
+        self.telemetry.count("claims_extracted", added)
 
     # ------------------------------------------------------------------ #
     def _action_evaluate(self, params: Dict[str, Any], state: ResearchState) -> None:
@@ -581,7 +648,17 @@ class ResearchEngine:
                 "explicitly configured fallback controller. Treat findings accordingly."
             )
             lines.append("")
+        source_numbers: Dict[str, int] = {}
         if certified:
+            claim_sources = self._claim_sources(state, certified)
+            for claim in certified:
+                for source_id in claim_sources[claim.claim_id]:
+                    source_numbers.setdefault(source_id, len(source_numbers) + 1)
+            answer = self._answer_text(state, certified, claim_sources, source_numbers)
+            if answer:
+                lines.append("## Answer (written only from the certified findings below)")
+                lines.append(answer)
+                lines.append("")
             lines.append("## Certified Findings (semantic NLI verification)")
             for claim in certified:
                 evidence = state.evidence_for_claim(claim.claim_id)
@@ -591,7 +668,7 @@ class ResearchEngine:
                     source = state.sources.get(e.source_id)
                     if source is not None:
                         lines.append(
-                            f"  - cited: [{source.source_id}] {source.title or source.url} "
+                            f"  - cited: [{source.source_id}] {_md_link(source.title or source.url, source.url)} "
                             f"(entailment p={e.entailment_probability:.2f}, evaluator: {e.evaluated_by})"
                         )
         if provisional:
@@ -636,7 +713,85 @@ class ResearchEngine:
                 "and excluded."
             )
         lines.append("- Uncertainty classification: " + state.uncertainty.value.replace("_", " "))
+        if source_numbers:
+            lines.append("")
+            lines.append("## Sources")
+            for source_id, number in sorted(source_numbers.items(), key=lambda item: item[1]):
+                source = state.sources[source_id]
+                lines.append(f"{number}. [{source_id}] {_md_link(source.title or source.url, source.url)}")
         return "\n".join(lines)
+
+    # ------------------------------------------------------------------ #
+    @staticmethod
+    def _claim_sources(state: ResearchState, certified: List[Claim]) -> Dict[str, List[str]]:
+        """claim_id -> ids of sources with a SUPPORTS span (strongest first)."""
+        mapping: Dict[str, List[str]] = {}
+        for claim in certified:
+            supports = sorted(
+                (e for e in state.evidence_for_claim(claim.claim_id) if e.relation is Relation.SUPPORTS),
+                key=lambda e: e.entailment_probability,
+                reverse=True,
+            )
+            ids: List[str] = []
+            for e in supports:
+                if e.source_id in state.sources and e.source_id not in ids:
+                    ids.append(e.source_id)
+            mapping[claim.claim_id] = ids[:3]
+        return mapping
+
+    def _answer_text(
+        self,
+        state: ResearchState,
+        certified: List[Claim],
+        claim_sources: Dict[str, List[str]],
+        source_numbers: Dict[str, int],
+    ) -> str:
+        """Readable answer composed ONLY from certified claims.
+
+        LLM path: the model rewrites the certified facts into prose; every
+        sentence must cite fact numbers, and uncited / unresolvable sentences
+        are dropped (``validate_synthesis``).  Offline path or model failure:
+        a deterministic composition of the certified sentences.  Fact markers
+        are rewritten into clickable source links.
+        """
+        key = tuple(c.claim_id for c in certified)
+        if key in self._answer_cache:
+            return self._answer_cache[key]
+        facts = [c.text for c in certified]
+        prose = ""
+        if isinstance(self.model, NativeToolUseController):
+            try:
+                raw = self.model.complete_text(
+                    synthesis_prompt(state.objective, facts),
+                    SYNTH_SYSTEM_PROMPT,
+                    self.governor,
+                    max_tokens=900,
+                )
+                prose = validate_synthesis(sanitize_external_text(raw, max_chars=6000), len(facts))
+                self.telemetry.count("answer_synthesized_llm")
+            except (BudgetExceeded, ModelBackendError) as exc:
+                state.note(
+                    f"answer synthesis unavailable ({type(exc).__name__}); deterministic composition used"
+                )
+                prose = ""
+        if not prose:
+            prose = " ".join(f"{fact.rstrip()} [{i}]" for i, fact in enumerate(facts, start=1))
+
+        def _link(match: "re.Match[str]") -> str:
+            index = int(match.group(1)) - 1
+            if not 0 <= index < len(certified):
+                return ""
+            refs = []
+            for source_id in claim_sources.get(certified[index].claim_id, [])[:2]:
+                source = state.sources[source_id]
+                refs.append(f"[[{source_numbers[source_id]}]]({source.url})")
+            return "".join(refs)
+
+        answer = re.sub(r"\[(\d{1,3})\]", _link, prose)
+        # Collapse repeated identical citations ("[[4]](u)[[4]](u)" -> once).
+        answer = re.sub(r"(\[\[\d+\]\]\([^)\s]*\))(?:\s*\1)+", r"\1", answer)
+        self._answer_cache[key] = answer
+        return answer
 
     def _action_synthesize(self, state: ResearchState, outcome: ResearchOutcome) -> None:
         if not state.supporting_claims() and not state.provisional_claims():

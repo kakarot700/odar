@@ -318,7 +318,7 @@ class ToolDispatcher:
 # --------------------------------------------------------------------------- #
 def build_anthropic_request(
     messages: List[Dict[str, Any]],
-    tools: List[ToolSpec],
+    tools: List[Any],
     model: str = DEFAULT_ANTHROPIC_MODEL,
     max_tokens: int = 1024,
     system_prompt: str = SYSTEM_PROMPT,
@@ -397,7 +397,9 @@ class AnthropicSDKAdapter:
         self.model = resolve_anthropic_model(model)
         self.max_tokens = max_tokens
         self.system_prompt = system_prompt
-        client_kwargs: Dict[str, Any] = {"api_key": resolved_key}
+        # Retries are owned by odar.llm.call_backend_with_retry (classified,
+        # governed, bounded); SDK-level retries would multiply them.
+        client_kwargs: Dict[str, Any] = {"api_key": resolved_key, "max_retries": 0}
         if base_url:  # allows pointing at a verified local/mock endpoint
             client_kwargs["base_url"] = base_url
         if request_timeout:
@@ -407,7 +409,7 @@ class AnthropicSDKAdapter:
     async def next_response(
         self,
         messages: List[Dict[str, Any]],
-        tools: List[ToolSpec],
+        tools: List[Any],  # ToolSpec objects or canonical dict schemas
         trace: AgentTrace,
     ) -> ModelEvent:
         payload = build_anthropic_request(
@@ -425,6 +427,23 @@ class AnthropicSDKAdapter:
             else:  # pragma: no cover - older SDK shapes
                 content.append(dict(block))
         return ModelEvent(role="assistant", content=content, stop_reason=response.stop_reason)
+
+    async def complete_text(self, prompt: str, system_prompt: str, max_tokens: int = 1024) -> str:
+        """Single tool-free completion (synthesis, adjudication)."""
+        response = await self._client.messages.create(
+            model=self.model,
+            max_tokens=max_tokens,
+            system=system_prompt,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        parts: List[str] = []
+        for block in response.content:
+            text = getattr(block, "text", None)
+            if text is None and isinstance(block, dict):
+                text = block.get("text")
+            if text:
+                parts.append(str(text))
+        return "\n".join(parts).strip()
 
 
 # --------------------------------------------------------------------------- #
