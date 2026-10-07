@@ -59,7 +59,7 @@ def build_engine(
         from odar.agent import AnthropicSDKAdapter
 
         adapter = AnthropicSDKAdapter(model=getattr(args, "llm_model", None), base_url=args.base_url or None)
-        model = NativeToolUseController(adapter=adapter)
+        model: Any = NativeToolUseController(adapter=adapter)
     else:
         model = ScriptedResearchController()
     telemetry = TelemetryRecorder()
@@ -414,6 +414,12 @@ def build_parser() -> argparse.ArgumentParser:
     p_cancel.add_argument("job_id")
     _add_db(p_cancel)
     p_cancel.set_defaults(func=cmd_cancel)
+
+    p_check = sub.add_parser("check", help="check which citations in a pasted answer hold up")
+    from odar.cli import add_check_arguments, cmd_check
+
+    add_check_arguments(p_check)
+    p_check.set_defaults(func=cmd_check)
 
     p_health = sub.add_parser("health", help="liveness/readiness report")
     _add_db(p_health)

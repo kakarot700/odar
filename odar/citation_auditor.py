@@ -104,7 +104,7 @@ def split_sentences(line: str) -> List[str]:
     for part in parts:
         if merged:
             prev = merged[-1]
-            last_word = prev.rstrip(".!?").rsplit(None, 1)[-1].lower() if prev.strip() else ""
+            last_word = (prev.rstrip(".!?").rsplit(None, 1) or [""])[-1].lower()
             starts_continuation = bool(part) and (part[0].islower() or part[0].isdigit())
             if prev.endswith(".") and (
                 last_word.strip("(\"'") in _ABBREVIATIONS or len(last_word) == 1 or starts_continuation

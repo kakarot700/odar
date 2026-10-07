@@ -26,6 +26,9 @@ dependencies = [
     "anthropic>=0.40",
 ]
 
+[project.scripts]
+odar = "odar.cli:main"
+
 [project.optional-dependencies]
 dev = ["pytest>=8.0", "ruff>=0.5", "mypy>=1.10", "pip-audit>=2.7"]
 
