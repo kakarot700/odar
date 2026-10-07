@@ -22,7 +22,7 @@ from __future__ import annotations
 import logging
 import math
 import re
-from typing import Any, Dict, List, Optional, Sequence
+from typing import Any, Dict, List, Optional, Sequence, Tuple
 
 from odar.evidence import (
     CIRCULARITY_THRESHOLD,
@@ -410,7 +410,10 @@ class CitationAuditor:
                 pieces = re.split(r"(?<=[;:,])\s+|\s+(?:and|but|while|whereas)\s+", span)
                 refined.extend(piece.strip() for piece in pieces if len(piece.strip()) >= 12)
             if len(refined) > len(spans):
-                spans = refined[: max(self.max_spans, self.min_spans)]
+                # Keep the whole sentences first: replacing them by clauses
+                # made a full-sentence claim from a short page unentailable.
+                extra = [piece for piece in refined if piece not in spans]
+                spans = (spans + extra)[: max(self.max_spans, self.min_spans)]
         return spans[: self.max_spans]
 
     @staticmethod
@@ -494,6 +497,25 @@ class CitationAuditor:
     # ------------------------------------------------------------------ #
     # Audit
     # ------------------------------------------------------------------ #
+    @property
+    def is_neural(self) -> bool:
+        self.ensure_scorer()
+        return not isinstance(self.scorer, DeterministicNLIScorer) and self.scorer_backend != (
+            "deterministic-lexical-fallback"
+        )
+
+    def entailment_scores(self, pairs: Sequence[Tuple[str, str]]) -> List[float]:
+        """P(entailment) for (premise, hypothesis) pairs; 0.0 on scorer failure."""
+        self.ensure_scorer()
+        if not pairs:
+            return []
+        try:
+            raw = self.scorer.predict([(p, h) for p, h in pairs])
+        except Exception as exc:  # degrade, never crash
+            logger.warning("entailment scoring failed: %s", exc)
+            return [0.0] * len(pairs)
+        return [softmax([float(v) for v in row])[1] for row in raw]
+
     def audit(self, claim: str, sources: Sequence[str]) -> ClaimAuditResult:
         """Score ``claim`` against span pools built from ``sources``."""
         self.ensure_scorer()

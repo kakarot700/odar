@@ -208,7 +208,7 @@ class GovernedExecutor:
     # ================================================================== #
     def evaluate_claim(self, claim: Claim, sources: List[SourceRecord], texts: List[str]):
         self._check_cancel()
-        self.governor.approve_model_call()
+        self.governor.approve_verification()
         if self.auditor is None:
             raise RuntimeError("executor has no auditor configured")
         started = time.perf_counter()

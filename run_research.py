@@ -42,18 +42,23 @@ def build_budget(args: argparse.Namespace, fast: bool) -> Budget:
         max_model_calls=max(4, int(args.max_model_calls * factor)),
         max_wall_clock_s=args.timeout,
         max_retries_per_call=2,
+        max_verifications=(
+            max(16, int(getattr(args, "max_verifications", 64) * factor))
+            if getattr(args, "mode", "single") == "deep"
+            else 0
+        ),
     )
 
 
 def build_engine(
     args: argparse.Namespace, jobstore: JobStore, job_id: str, budget: Budget, token: CancellationToken
 ) -> ResearchEngine:
+    if getattr(args, "mode", "single") == "deep":
+        return build_deep_engine(args, jobstore, job_id, budget, token)
     if args.model == "llm":
         from odar.agent import AnthropicSDKAdapter
 
-        adapter = AnthropicSDKAdapter(
-            model=getattr(args, "llm_model", None), base_url=args.base_url or None
-        )
+        adapter = AnthropicSDKAdapter(model=getattr(args, "llm_model", None), base_url=args.base_url or None)
         model = NativeToolUseController(adapter=adapter)
     else:
         model = ScriptedResearchController()
@@ -75,6 +80,38 @@ def build_engine(
         cancel_check=lambda: jobstore.is_cancel_requested(job_id),
         checkpoint_sink=_checkpoint,
         fallback_policy=policy,
+    )
+
+
+def build_deep_engine(
+    args: argparse.Namespace, jobstore: JobStore, job_id: str, budget: Budget, token: CancellationToken
+) -> ResearchEngine:
+    """Multi-agent pipeline; LLM roles routed across free models with fallback."""
+    from odar.deep import DeepResearchEngine
+    from odar.router import AnthropicMessagesClient, load_routes
+
+    client = AnthropicMessagesClient(base_url=args.base_url or None) if args.model == "llm" else None
+    routes = load_routes()
+    if getattr(args, "llm_model", None) and not os.environ.get("ODAR_MODEL_ROUTES"):
+        # An explicit --llm-model leads every role; defaults remain as fallbacks.
+        routes = {
+            role: [args.llm_model] + [m for m in models if m != args.llm_model]
+            for role, models in routes.items()
+        }
+
+    def _checkpoint(state: ResearchState) -> None:
+        jobstore.save_checkpoint(job_id, state.to_checkpoint())
+
+    return DeepResearchEngine(
+        client=client,
+        routes=routes,
+        max_subquestions=getattr(args, "subquestions", 4),
+        reflection_rounds=getattr(args, "reflection_rounds", 1),
+        budget=budget,
+        telemetry=TelemetryRecorder(),
+        token=token,
+        cancel_check=lambda: jobstore.is_cancel_requested(job_id),
+        checkpoint_sink=_checkpoint,
     )
 
 
@@ -308,6 +345,16 @@ def build_parser() -> argparse.ArgumentParser:
         default=os.environ.get("ODAR_ANTHROPIC_MODEL"),
         help="Anthropic(-compatible) model id for --model llm (default: claude-sonnet-5-5)",
     )
+    p_run.add_argument(
+        "--mode",
+        choices=("single", "deep"),
+        default="single",
+        help="single = one tool-use agent; deep = planner + parallel researchers + verifier + "
+        "reflection + section writers, LLM roles routed across models with fallback",
+    )
+    p_run.add_argument("--subquestions", type=int, default=4, help="deep mode: sub-questions to plan")
+    p_run.add_argument("--reflection-rounds", type=int, default=1, help="deep mode: gap-filling rounds")
+    p_run.add_argument("--max-verifications", type=int, default=64, help="deep mode: NLI verification budget")
     p_run.add_argument("--max-iterations", type=int, default=12)
     p_run.add_argument("--max-search", type=int, default=6)
     p_run.add_argument("--max-fetch", type=int, default=4)

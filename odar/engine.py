@@ -220,10 +220,7 @@ class ResearchEngine:
             backend=outcome.backend_state,
         )
         try:
-            if isinstance(self.model, NativeToolUseController):
-                self._run_tool_use_loop(state, outcome)
-            else:
-                self._run_scripted_loop(state, outcome)
+            self._dispatch_loop(state, outcome)
         except CancelledError:
             state.termination_status = "CANCELLED"
             self.telemetry.count("cancelled")
@@ -250,6 +247,14 @@ class ResearchEngine:
             degraded=outcome.degraded,
         )
         return outcome
+
+    def _dispatch_loop(self, state: ResearchState, outcome: ResearchOutcome) -> None:
+        """Run the reasoning loop for the configured controller (override
+        point for alternative pipelines, e.g. ``odar.deep``)."""
+        if isinstance(self.model, NativeToolUseController):
+            self._run_tool_use_loop(state, outcome)
+        else:
+            self._run_scripted_loop(state, outcome)
 
     # ================================================================== #
     # Scripted-controller loop (offline backend)
@@ -535,8 +540,16 @@ class ResearchEngine:
             new_since_eval = [sid for sid in source_ids if sid not in claim.evaluated_sources]
             if not new_since_eval and not claim.needs_evaluation and state.evidence_for_claim(claim_id):
                 continue
+            selector = params.get("source_selector")
+            if selector is not None:
+                # Multi-agent mode: verify against the claim's own
+                # sub-question sources plus the most related other sources.
+                chosen = list(selector(claim)) or sources
+                chosen_texts = [s.extracted_text for s in chosen]
+            else:
+                chosen, chosen_texts = sources, texts
             try:
-                result, items, gaps = self.executor.evaluate_claim(claim, sources, texts)
+                result, items, gaps = self.executor.evaluate_claim(claim, chosen, chosen_texts)
             except BudgetExceeded:
                 state.note("evidence evaluation denied (model budget)")
                 break

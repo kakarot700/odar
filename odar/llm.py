@@ -560,7 +560,7 @@ def parse_judgement(text: str) -> Optional[bool]:
 class LLMRefutationJudge:
     """Second-opinion adjudicator for NLI contradictions (governed + retried)."""
 
-    def __init__(self, controller: "NativeToolUseController", governor: Any, max_calls: int = 6) -> None:
+    def __init__(self, controller: Any, governor: Any, max_calls: int = 6) -> None:
         self.controller = controller
         self.governor = governor
         self.max_calls = int(max_calls)
