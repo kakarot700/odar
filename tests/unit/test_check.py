@@ -524,3 +524,48 @@ def test_explicit_negation_contradiction_survives_llm_hedge():
         "The tower was completed in 1889 for the world fair in Paris [1].\n\n[1] https://facts.example/tower\n"
     )
     assert report.claims[0].verdict == CONTRADICTED
+
+
+class FakeScholar:
+    def __init__(self):
+        from odar.scholar import Paper
+
+        self.paper = Paper(
+            title="Tower history",
+            authors=["Ann Lee"],
+            year=2001,
+            venue="J Hist",
+            doi="10.1/tower",
+            kind="journal-article",
+            abstract="The tower was completed in 1889 for the world fair in Paris and drew huge crowds.",
+        )
+
+    def suggest(self, text, rows=3):
+        return [self.paper]
+
+    def validate(self, raw, style="apa"):
+        from odar.scholar import NOT_FOUND, ReferenceCheck
+
+        return ReferenceCheck(raw=raw, status=NOT_FOUND, problems=["no such paper"])
+
+
+def test_academic_mode_labels_sources_checks_references_and_suggests_papers():
+    checker = _checker()
+    checker.scholar = FakeScholar()
+    doc = (
+        "The tower was completed in 1889 for the world fair in Paris.\n\n"
+        "The museum is open every day of the year [1].\n\n"
+        "References\n[1] https://facts.example/tower\n"
+        "[2] Doe, J. (2019). A history of imaginary towers. Fake Journal, 3, 1-9.\n"
+    )
+    report = checker.run(doc)
+    uncited = report.claims[0]
+    assert uncited.verdict == NO_CITATION
+    assert uncited.replacement and uncited.replacement.url == "https://doi.org/10.1/tower"
+    assert (
+        uncited.replacement.source_type == "peer-reviewed"
+        and "Lee, A. (2001)" in uncited.replacement.citation
+    )
+    assert report.claims[1].citations[0].source_type == "web"
+    assert len(report.references) == 1 and report.references[0]["status"] == "NOT FOUND"
+    assert report.to_dict()["references"]

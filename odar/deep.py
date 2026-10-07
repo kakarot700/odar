@@ -288,9 +288,11 @@ class DeepResearchEngine(ResearchEngine):
         max_claims: int = 40,
         reflection_rounds: int = 1,
         workers: int = 4,
+        scholar: Any = None,
         **kwargs: Any,
     ) -> None:
         super().__init__(model=None, **kwargs)
+        self.scholar = scholar  # odar.scholar.Scholar: adds papers from free academic APIs
         self.max_subquestions = max(1, min(int(max_subquestions), MAX_SUBQUESTIONS))
         self.results_per_query = int(results_per_query)
         self.fetch_per_subquestion = int(fetch_per_subquestion)
@@ -464,6 +466,35 @@ class DeepResearchEngine(ResearchEngine):
             sources=len(state.sources),
         )
 
+    def _academic_hits(self, question: str) -> List[Any]:
+        """Papers from free scholarly APIs as search hits (readable URL first: OA copy,
+        PubMed or arXiv page, then the DOI)."""
+        from odar.schemas import SearchHit
+
+        try:
+            papers = self.scholar.search(
+                question, rows=3, providers=("pubmed", "arxiv", "openalex", "crossref")
+            )
+        except Exception as exc:  # noqa: BLE001
+            self.telemetry.event("academic_search_failed", error=str(exc)[:120])
+            return []
+        hits = []
+        for paper in papers[:6]:
+            url = (
+                paper.open_access_url
+                or (paper.url if paper.provider in ("pubmed", "arxiv") else "")
+                or paper.link
+            )
+            if url.startswith("http"):
+                snippet = paper.abstract or f"{paper.venue} {paper.year or ''}"
+                hits.append(
+                    SearchHit(
+                        url=url, title=paper.title, snippet=snippet[:500], engine=f"scholar:{paper.provider}"
+                    )
+                )
+        self.telemetry.event("academic_search", hits=len(hits))
+        return hits
+
     def _researcher(self, state: ResearchState, sq: SubQuestion, queries: List[str]) -> List[Tuple[str, Any]]:
         hits: List[Any] = []
         for query in queries:
@@ -480,6 +511,13 @@ class DeepResearchEngine(ResearchEngine):
                         state.search_hit_urls.append(hit.url)
             hits.extend(found)
             self.telemetry.count("search_hits", len(found))
+        if self.scholar is not None:
+            papers = self._academic_hits(sq.question)
+            with self._lock:
+                for hit in papers:
+                    if hit.url not in state.search_hit_urls:
+                        state.search_hit_urls.append(hit.url)
+            hits.extend(papers)
         ranked = [r for r in rank_sources(sq.question, hits) if not r.duplicate_of]
         outcomes: List[Tuple[str, Any]] = []
         successes = attempts = 0
@@ -654,6 +692,7 @@ class DeepResearchEngine(ResearchEngine):
         if orphan:
             sections.append((SubQuestion(index=0, question="Other findings", queries=[]), orphan))
         summary_indices = [i for _sq, idx in sections for i in idx[:3]][:14]
+        self.telemetry.event("writing", sections=len(sections), claims=len(certified))
 
         def _write(job: Tuple[str, str, List[int], int]) -> str:
             kind, heading, indices, words = job

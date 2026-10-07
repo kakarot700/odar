@@ -31,10 +31,14 @@ odar = "odar.cli:main"
 
 [project.optional-dependencies]
 pdf = ["pypdf>=5.0"]
+web = ["fastapi>=0.110", "uvicorn>=0.29", "python-multipart>=0.0.9", "fpdf2>=2.7", "pypdf>=5.0"]
 dev = ["pytest>=8.0", "ruff>=0.5", "mypy>=1.10", "pip-audit>=2.7"]
 
 [tool.setuptools.packages.find]
 include = ["odar*"]
+
+[tool.setuptools.package-data]
+"odar.web" = ["static/*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

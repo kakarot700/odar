@@ -11,7 +11,7 @@ from __future__ import annotations
 
 import time
 from dataclasses import dataclass, field
-from typing import Any, Dict, List, Optional
+from typing import Any, Callable, Dict, List, Optional
 
 from odar.schemas import new_id
 from odar.trust import redact_secrets
@@ -34,11 +34,18 @@ class TelemetryRecorder:
         self.events: List[TelemetryEvent] = []
         self.counters: Dict[str, int] = {}
         self.latencies_ms: Dict[str, List[float]] = {}
+        # Optional live sink (the web app mirrors events as progress).
+        self.sink: Optional[Callable[[str, Dict[str, str]], None]] = None
 
     # ------------------------------------------------------------------ #
     def event(self, name: str, run_id: str = "", **data: Any) -> None:
         clean = {key: redact_secrets(str(value)) for key, value in data.items()}
         self.events.append(TelemetryEvent(name=name, ts=time.time(), run_id=run_id, data=clean))
+        if self.sink is not None:
+            try:
+                self.sink(name, {k: v[:300] for k, v in clean.items()})
+            except Exception:  # noqa: BLE001 - progress reporting must never break a run
+                pass
 
     def count(self, metric: str, amount: int = 1) -> None:
         self.counters[metric] = self.counters.get(metric, 0) + amount

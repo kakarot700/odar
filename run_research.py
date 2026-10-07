@@ -50,6 +50,19 @@ def build_budget(args: argparse.Namespace, fast: bool) -> Budget:
     )
 
 
+def _live_telemetry(jobstore: JobStore, job_id: str) -> TelemetryRecorder:
+    """Telemetry whose events are also appended to the job's event log (live progress)."""
+    telemetry = TelemetryRecorder()
+    telemetry.sink = lambda name, data: jobstore.append_event(job_id, f"telemetry.{name}", data)
+    return telemetry
+
+
+def _scholar() -> Any:
+    from odar.scholar import Scholar
+
+    return Scholar()
+
+
 def build_engine(
     args: argparse.Namespace, jobstore: JobStore, job_id: str, budget: Budget, token: CancellationToken
 ) -> ResearchEngine:
@@ -62,7 +75,7 @@ def build_engine(
         model: Any = NativeToolUseController(adapter=adapter)
     else:
         model = ScriptedResearchController()
-    telemetry = TelemetryRecorder()
+    telemetry = _live_telemetry(jobstore, job_id)
 
     def _checkpoint(state: ResearchState) -> None:
         jobstore.save_checkpoint(job_id, state.to_checkpoint())
@@ -107,8 +120,9 @@ def build_deep_engine(
         routes=routes,
         max_subquestions=getattr(args, "subquestions", 4),
         reflection_rounds=getattr(args, "reflection_rounds", 1),
+        scholar=_scholar() if getattr(args, "academic", False) else None,
         budget=budget,
-        telemetry=TelemetryRecorder(),
+        telemetry=_live_telemetry(jobstore, job_id),
         token=token,
         cancel_check=lambda: jobstore.is_cancel_requested(job_id),
         checkpoint_sink=_checkpoint,
@@ -351,6 +365,11 @@ def build_parser() -> argparse.ArgumentParser:
         default="single",
         help="single = one tool-use agent; deep = planner + parallel researchers + verifier + "
         "reflection + section writers, LLM roles routed across models with fallback",
+    )
+    p_run.add_argument(
+        "--academic",
+        action="store_true",
+        help="deep mode: also search free scholarly APIs (Crossref, PubMed, arXiv, OpenAlex)",
     )
     p_run.add_argument("--subquestions", type=int, default=4, help="deep mode: sub-questions to plan")
     p_run.add_argument("--reflection-rounds", type=int, default=1, help="deep mode: gap-filling rounds")

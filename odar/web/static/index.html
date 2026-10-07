@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ODAR · research you can check</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="/" data-nav>ODAR<span>research you can check</span></a>
+  <nav>
+    <a href="/" data-nav>New</a>
+    <a href="/history" data-nav>History</a>
+    <a href="/settings" data-nav>API &amp; privacy</a>
+  </nav>
+</header>
+
+<main id="view"></main>
+
+<template id="tpl-new">
+  <section class="card">
+    <div class="modes" role="tablist">
+      <button class="mode active" data-mode="research" role="tab">Research<small>Get a cited report</small></button>
+      <button class="mode" data-mode="check" role="tab">Check<small>Verify an AI answer's citations</small></button>
+      <button class="mode" data-mode="references" role="tab">References<small>Validate a bibliography, fix and format it</small></button>
+    </div>
+    <form id="run-form">
+      <div class="sources" role="tablist">
+        <button type="button" class="src active" data-src="text">Paste</button>
+        <button type="button" class="src" data-src="file">Upload PDF/DOCX</button>
+        <button type="button" class="src" data-src="url">Article URL</button>
+      </div>
+      <div class="pane" data-pane="text">
+        <textarea name="text" rows="9" placeholder=""></textarea>
+      </div>
+      <div class="pane hidden" data-pane="file">
+        <label class="drop"><input type="file" name="file" accept=".pdf,.docx,.txt,.md"><span>Choose a PDF, DOCX, TXT or MD file (max 10 MB). It is read in memory and not stored.</span></label>
+      </div>
+      <div class="pane hidden" data-pane="url">
+        <input type="url" name="url" placeholder="https://example.com/article or a Google Docs link (shared: anyone with the link)">
+      </div>
+      <div class="opts">
+        <label data-for="research"><input type="checkbox" name="verify" checked> Check every citation in the finished report</label>
+        <label data-for="check" class="hidden"><input type="checkbox" name="use_llm" checked> Use a free AI judge for reworded claims</label>
+        <label data-for="check" class="hidden"><input type="checkbox" name="keep_input"> Keep the checked text in my history</label>
+        <label data-for="research check"><input type="checkbox" name="academic" checked> Use academic sources (Crossref, PubMed, arXiv, OpenAlex)</label>
+        <label data-for="research check references">Citation style
+          <select name="style"><option value="apa">APA 7</option><option value="mla">MLA 9</option><option value="chicago">Chicago</option><option value="ieee">IEEE</option></select></label>
+        <label data-for="research check">Report language
+          <select name="language"><option value="auto">Same as input</option><option value="en">English</option><option value="hi">हिंदी (Hindi)</option></select></label>
+      </div>
+      <p class="err hidden" id="form-err"></p>
+      <button class="go" type="submit">Start</button>
+      <p class="hint" id="hint"></p>
+    </form>
+  </section>
+</template>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

@@ -164,6 +164,8 @@ class CitationVerdict:
     quote: str = ""
     note: str = ""
     judged_by: str = "nli"
+    source_type: str = ""
+    source_year: Optional[int] = None
 
 
 @dataclass
@@ -172,6 +174,8 @@ class Replacement:
     title: str
     quote: str
     entailment: float
+    source_type: str = ""
+    citation: str = ""  # formatted reference when the replacement is a paper
 
 
 @dataclass
@@ -185,6 +189,8 @@ class ClaimResult:
     replacement: Optional[Replacement] = None
     replacement_searched: bool = False
     note: str = ""
+    confidence: str = ""  # high | medium | low: how sure ODAR is of this verdict
+    freshness: str = ""  # warning when the backing source looks too old
 
 
 @dataclass
@@ -199,9 +205,17 @@ class CheckReport:
     evaluator: str
     elapsed_s: float
     usage: Dict[str, int]
+    references: List[Dict[str, Any]] = field(default_factory=list)
+    confidence: str = ""
+    language: str = "en"
+    translated: bool = False
 
     def to_dict(self) -> Dict[str, Any]:
         return {
+            "references": self.references,
+            "confidence": self.confidence,
+            "language": self.language,
+            "translated": self.translated,
             "check_id": self.check_id,
             "trust_score": self.trust_score,
             "grade": self.grade,
@@ -554,6 +568,38 @@ def _stem_overlap(text: str, claim: str) -> float:
     return len(stems & {t[:5] for t in content_tokens(text)}) / len(stems) if stems else 0.0
 
 
+def _confidence(result: ClaimResult) -> str:
+    """How sure the verdict is, from the strength of the evidence behind it."""
+    if result.verdict == UNVERIFIABLE:
+        return "low"
+    if result.verdict in (NO_CITATION, DEAD_LINK):
+        return "high"  # factual: there is no citation / the link is dead
+    best = next((c for c in result.citations if c.verdict == result.verdict), None)
+    if best is None:
+        return "medium"
+    if result.verdict == SUPPORTED:
+        strong = best.entailment >= 0.9 or ("llm" in best.judged_by and bool(best.quote))
+        return "high" if strong else "medium"
+    if result.verdict == CONTRADICTED:
+        return "high" if best.contradiction >= 0.9 else "medium"
+    return "medium"
+
+
+_REF_HEADING = re.compile(
+    r"^\s*#*\s*(references|bibliography|works cited|sources|citations)\s*:?\s*$", re.I | re.M
+)
+
+
+def _reference_section(text: str) -> str:
+    match = None
+    for match in _REF_HEADING.finditer(text):
+        pass
+    if match is not None:
+        return text[match.end() :]
+    lines = [ln for ln in text.splitlines() if re.match(r"^\s*(\[\d+\]|\d+[.)])\s+\S", ln)]
+    return "\n".join(lines)
+
+
 def _dedupe(items: Sequence[str]) -> List[str]:
     seen: Set[str] = set()
     out: List[str] = []
@@ -649,6 +695,9 @@ class CitationChecker:
         self.clock = clock
         self._lock = threading.Lock()
         self.trail: List[Dict[str, Any]] = []
+        self.on_event: Optional[Callable[[Dict[str, Any]], None]] = None
+        self.scholar: Any = None  # odar.scholar.Scholar when academic checks are on
+        self.citation_style = "apa"
         self.usage: Dict[str, int] = {
             "fetches": 0,
             "wayback_lookups": 0,
@@ -660,8 +709,14 @@ class CitationChecker:
 
     # ------------------------------------------------------------------ #
     def _log(self, kind: str, **data: Any) -> None:
+        entry = {"t": round(self.clock() - self._started, 2), "event": kind, **data}
         with self._lock:
-            self.trail.append({"t": round(self.clock() - self._started, 2), "event": kind, **data})
+            self.trail.append(entry)
+        if self.on_event is not None:
+            try:
+                self.on_event(entry)
+            except Exception:  # noqa: BLE001 - a progress sink must never break a check
+                pass
 
     def _count(self, key: str) -> None:
         with self._lock:
@@ -1025,7 +1080,36 @@ class CitationChecker:
         return WRONG_SOURCE, "", "the page is real but does not say this"
 
     # ------------------------------------------------------------------ #
+    def _scholarly_replacement(self, claim: Claim) -> Optional[Replacement]:
+        """A real paper whose abstract states the claim (checked by NLI, not trusted blindly)."""
+        from odar.scholar import format_citation
+
+        try:
+            papers = self.scholar.suggest(claim.text, rows=4) if self.scholar else []
+        except Exception as exc:  # noqa: BLE001
+            self._log("scholar", error=str(exc)[:120])
+            return None
+        self._log("scholar", query=claim.text[:120], hits=len(papers))
+        for paper in papers:
+            if not paper.abstract:
+                continue
+            result = self.score(claim.text, paper.abstract, paper.title)
+            if result["ent"] >= DEFAULT_THRESHOLD and result["con"] <= result["ent"]:
+                return Replacement(
+                    url=paper.link,
+                    title=paper.title,
+                    quote=result["quote"],
+                    entailment=round(result["ent"], 3),
+                    source_type="preprint" if paper.is_preprint else "peer-reviewed",
+                    citation=format_citation(paper, self.citation_style),
+                )
+        return None
+
     def find_replacement(self, claim: Claim, exclude: Sequence[str]) -> Optional[Replacement]:
+        if self.scholar is not None:
+            found = self._scholarly_replacement(claim)
+            if found is not None:
+                return found
         if self.searcher is None:
             return None
         self._count("searches")
@@ -1142,6 +1226,25 @@ class CitationChecker:
             exclude = [c.url for c in by_id[result.claim_id].citations if c.url]
             result.replacement = self.find_replacement(by_id[result.claim_id], exclude)
 
+        from odar.source_quality import quality_label
+
+        from odar.freshness import freshness_warning, source_year
+
+        for result in results:
+            for v in result.citations:
+                if v.url:
+                    v.source_type = quality_label(v.url)
+                    link_text = links[v.url].text if v.url in links else ""
+                    v.source_year = source_year(v.url, link_text)
+            backing = [v for v in result.citations if v.verdict in (SUPPORTED, PARTIAL)]
+            if backing:
+                newest = max((v.source_year for v in backing if v.source_year), default=None)
+                result.freshness = freshness_warning(result.claim, newest)
+            result.confidence = _confidence(result)
+            if result.replacement and not result.replacement.source_type:
+                result.replacement.source_type = quality_label(result.replacement.url)
+        references = self._check_references(text)
+
         counts = {v: 0 for v in VERDICT_RANK}
         for result in results:
             counts[result.verdict] += 1
@@ -1162,6 +1265,16 @@ class CitationChecker:
             if trust >= 60
             else "unreliable citations"
         )
+        unreadable = sum(1 for r in results if r.verdict == UNVERIFIABLE)
+        cited = sum(1 for r in results if r.verdict != NO_CITATION)
+        if trust is None or (cited and unreadable / cited > 0.5):
+            confidence = "low"  # abstain from a strong verdict: most sources could not be read
+            if trust is not None:
+                grade += " (low confidence: most cited pages were unreadable)"
+        elif sum(1 for r in results if r.confidence == "high") >= 0.6 * max(1, len(scored)):
+            confidence = "high"
+        else:
+            confidence = "medium"
         evaluator = f"{self.auditor.model_name}@{self.auditor.scorer_backend}/thr={DEFAULT_THRESHOLD}"
         self._log("done", trust_score=trust)
         return CheckReport(
@@ -1175,7 +1288,31 @@ class CitationChecker:
             evaluator=evaluator,
             elapsed_s=self.clock() - self._started,
             usage=dict(self.usage),
+            references=references,
+            confidence=confidence,
         )
+
+    # ------------------------------------------------------------------ #
+    def _check_references(self, text: str) -> List[Dict[str, Any]]:
+        """Validate academic-style references (DOI/arXiv/PMID or author-year-title)."""
+        if self.scholar is None:
+            return []
+        from odar.scholar import parse_reference, split_references
+
+        section = _reference_section(text)
+        out: List[Dict[str, Any]] = []
+        for raw in split_references(section)[:15]:
+            ref = parse_reference(raw)
+            scholarly = ref.doi or ref.arxiv_id or ref.pmid or (ref.year and len(ref.title.split()) >= 3)
+            if not scholarly or not self._time_left():
+                continue
+            self._count("searches")
+            check = self.scholar.validate(raw, self.citation_style)
+            if check.status == "NOT FOUND" and not check.suggestions:
+                check.suggestions = [p.to_dict() for p in self.scholar.suggest(ref.title or raw[:200])]
+            self._log("reference", ref=raw[:120], status=check.status)
+            out.append(check.to_dict())
+        return out
 
 
 def check_text(
@@ -1190,6 +1327,10 @@ def check_text(
     auditor: Optional[CitationAuditor] = None,
     searcher: Any = None,
     wayback: Any = None,
+    on_event: Optional[Callable[[Dict[str, Any]], None]] = None,
+    academic: bool = False,
+    scholar: Any = None,
+    citation_style: str = "apa",
 ) -> CheckReport:
     """Check every citation in ``text``; the web app's entry point.
 
@@ -1240,4 +1381,10 @@ def check_text(
         complete=complete,
         limits=limits,
     )
+    checker.on_event = on_event
+    if academic or scholar is not None:
+        from odar.scholar import Scholar
+
+        checker.scholar = scholar or Scholar()
+    checker.citation_style = citation_style
     return checker.run(text)
