@@ -553,6 +553,7 @@ def test_empty_search_is_retried_once():
                        extra={"search_retry_s": 0})
     names = [e for e, _ in ask.run_ask("Is Mars red?", want_images=False, deps=deps)]
     assert len(calls) == 2 and "done" in names
+    assert ask._keywords("What are the health effects of microplastics?") == "health effects microplastics"
 
 
 def test_answer_filter_hides_thinking_and_streams_inside_tags():

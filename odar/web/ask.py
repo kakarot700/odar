@@ -136,6 +136,17 @@ def _text_rows(ddgs: Any, query: str, n: int, budget_s: float = 20.0) -> List[Di
 # ---------------------------------------------------------------------- #
 # Search per focus
 # ---------------------------------------------------------------------- #
+_STOP = frozenset(
+    "what which who whom whose when where why how is are was were do does did the a an of in on for to and or "
+    "by with about according recent current main key there that this it its be been any".split()
+)
+
+
+def _keywords(query: str) -> str:
+    words = [w for w in re.findall(r"[\w'./%-]+", query) if w.lower() not in _STOP]
+    return " ".join(words) or query
+
+
 def search_sources(
     query: str, focus: str = "all", n: int = 6, ddgs: Any = None, scholar: Any = None
 ) -> List[Dict[str, Any]]:
@@ -920,9 +931,11 @@ def run_ask(
         kwargs = {"scholar": deps.scholar} if focus == "academic" and deps.scholar is not None else {}
         k = 6 if source_mode == "web" else 4
         found = deps.search(query, focus, k + 4, **kwargs)
-        if not found:  # free search backends drop requests now and then; one quiet retry
-            time.sleep(deps.extra.get("search_retry_s", 1.5))
-            found = deps.search(query, focus, k + 4, **kwargs)
+        for attempt, q in enumerate((query, _keywords(query))):
+            if found:
+                break  # free search backends drop requests now and then; retry, then retry with keywords
+            time.sleep(deps.extra.get("search_retry_s", 1.5) * (attempt + 1))
+            found = deps.search(q, focus, k + 4, **kwargs)
         # read the extra results too, then keep the ones we could read in full first
         deps.fetch(found)
         found = sorted(found, key=lambda x: not readable(x))[:k]
