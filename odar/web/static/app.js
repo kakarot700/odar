@@ -323,6 +323,17 @@ function makeTurn(parent, data = {}) {
     },
     verify(v) {
       st.verification = v;
+      if (v.answer && v.answer !== st.raw) {
+        st.raw = v.answer;
+        bubble.innerHTML = renderAnswer(st.raw);
+        wireCites(el, st);
+        const fixed = (v.repairs || []).length;
+        if (fixed) {
+          const meta = $(".meta", el);
+          meta.textContent += `${meta.textContent ? " · " : ""}${fixed} citation${fixed > 1 ? "s" : ""} corrected after checking`;
+          meta.classList.remove("hidden");
+        }
+      }
       const cits = v.citations || [];
       $$(".cite", el).forEach((b) => { const c = cits[+b.dataset.occ]; if (c) b.classList.add(c.verdict); });
       if (!cits.length) { $(".c-ver", el).innerHTML = ""; return; }

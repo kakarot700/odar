@@ -290,14 +290,19 @@ def test_ask_stream_events_order_and_thread_saved(tmp_path):
     assert done["answer"].startswith("Mars is the fourth planet from the Sun [1].")
     assert "[1][2]" in done["answer"] and done["timing"]["ttft_s"] is not None
     ver = dict(events)["verification"]["citations"]
-    assert [x["verdict"] for x in ver] == ["supported", "partial", "unsupported", "unsupported"]
+    # the cheese sentence failed against both sources, so the repair pass removed it
+    assert [x["verdict"] for x in ver] == ["supported", "partial"]
     assert ver[0]["quote"] and ver[0]["title"] == "Mars facts"
+    final = dict(events)["verification"]
+    assert "cheese" not in final["answer"] and final["answer"].startswith("Mars is the fourth planet")
+    assert final["repairs"][0]["action"] == "removed"
     tid = dict(events)["thread"]["thread_id"]
     thread = c.get(f"/api/threads/{tid}").json()
     roles = [m["role"] for m in thread["messages"]]
     assert roles == ["user", "assistant"]
     assert thread["messages"][1]["data"]["verification"]["counts"]["supported"] == 1
     assert thread["messages"][1]["data"]["images"][0]["domain"] == "britannica.com"
+    assert "cheese" not in thread["messages"][1]["content"]
 
 
 def test_followup_keeps_context(tmp_path):
@@ -470,3 +475,61 @@ def test_text_search_falls_back_across_backends():
     d = Flaky()
     out = ask.search_sources("northern lights", "all", 6, ddgs=d)
     assert d.backends == list(ask.TEXT_BACKENDS[:2]) and out[0]["domain"] == "example.org"
+
+
+# ---------------------------------------------------------------------- citation accuracy
+class RepairChecker:
+    """Source 2 holds the 1.8 kg figure; source 1 does not."""
+
+    def judge(self, claim, cit, link):
+        if "1.8 kg" in claim and "1.8 kg" in link.text:
+            return CitationVerdict(url=cit.url, marker=cit.marker, verdict=SUPPORTED, quote="a 1.8 kg difference")
+        if "calories" in claim and "calories" in link.text:
+            return CitationVerdict(url=cit.url, marker=cit.marker, verdict=SUPPORTED, quote="calories")
+        return CitationVerdict(url=cit.url, marker=cit.marker, verdict=WRONG_SOURCE)
+
+
+def _srcs():
+    return [
+        {"url": "https://a.org/x", "title": "A", "kind": "web", "fetched": True,
+         "text": "Fasting and cutting calories gave similar results overall."},
+        {"url": "https://b.org/y", "title": "B", "kind": "web", "fetched": True,
+         "text": "The trial found a 1.8 kg difference in weight after a year."},
+        {"url": "https://c.org/z", "title": "C", "kind": "web", "fetched": True,
+         "text": "Unrelated page about gardening tools."},
+    ]
+
+
+def test_repair_moves_marker_to_supporting_source():
+    answer = "Both cut calories with similar results [1]. One trial found a 1.8 kg difference in weight [1]."
+    res = ask.verify_answer(answer, _srcs(), checker=RepairChecker())
+    assert res["answer"] == "Both cut calories with similar results [1]. One trial found a 1.8 kg difference in weight [2]."
+    assert [c["verdict"] for c in res["citations"]] == ["supported", "supported"]
+    assert res["repairs"] == [{"claim": "One trial found a 1.8 kg difference in weight .", "from": 1, "to": 2,
+                               "action": "recited"}]
+
+
+def test_repair_removes_unsupported_sentence_and_meta_markers():
+    answer = ("Both cut calories with similar results [1]. The sources do not single out one key result [3]. "
+              "Fasting cures baldness in all adults [3].")
+    res = ask.verify_answer(answer, _srcs(), checker=RepairChecker())
+    assert "baldness" not in res["answer"]
+    assert "The sources do not single out one key result." in res["answer"]
+    assert [c["n"] for c in res["citations"]] == [1]
+
+
+def test_repair_off_keeps_answer():
+    answer = "Fasting cures baldness in all adults [3]."
+    res = ask.verify_answer(answer, _srcs(), checker=RepairChecker(), repair=False)
+    assert "answer" not in res and res["citations"][0]["verdict"] == "unsupported"
+
+
+def test_prompt_hides_snippet_only_pages_when_enough_are_readable():
+    srcs = _srcs() + [{"url": "https://d.org", "title": "D", "kind": "web", "snippet": "blocked page"}]
+    _, prompt = ask.build_prompt("fasting?", srcs)
+    assert "[4] D" not in prompt and "[2] B" in prompt
+    few = [srcs[0], srcs[3]]
+    _, prompt = ask.build_prompt("fasting?", few)
+    assert "[2] D (search snippet only)" in prompt
+    system, _ = ask.build_prompt("q", srcs)
+    assert "exactly" in system and "no marker" in system

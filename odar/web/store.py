@@ -434,12 +434,20 @@ class RunStore:
             self._conn.commit()
         return seq
 
-    def update_message(self, thread_id: str, seq: int, data: Dict[str, Any]) -> None:
+    def update_message(
+        self, thread_id: str, seq: int, data: Dict[str, Any], content: Optional[str] = None
+    ) -> None:
+        payload = json.dumps(data, ensure_ascii=False, default=str)
         with self._lock:
-            self._conn.execute(
-                "UPDATE messages SET data = ? WHERE thread_id = ? AND seq = ?",
-                (json.dumps(data, ensure_ascii=False, default=str), thread_id, seq),
-            )
+            if content is None:
+                self._conn.execute(
+                    "UPDATE messages SET data = ? WHERE thread_id = ? AND seq = ?", (payload, thread_id, seq)
+                )
+            else:
+                self._conn.execute(
+                    "UPDATE messages SET data = ?, content = ? WHERE thread_id = ? AND seq = ?",
+                    (payload, content, thread_id, seq),
+                )
             self._conn.commit()
 
     def messages(self, thread_id: str, limit: int = 200) -> List[Dict[str, Any]]:

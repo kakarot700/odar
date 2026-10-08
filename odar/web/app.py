@@ -573,7 +573,7 @@ def _add_ask_routes(
                 elif name == "verification":
                     record["verification"] = data
                     if seq:
-                        store.update_message(tid, seq, record)
+                        store.update_message(tid, seq, record, content=data.get("answer"))
                 elif name == "error":
                     record["error"] = data.get("message", "")
                     store.add_message(tid, "assistant", "", record)
@@ -631,6 +631,10 @@ def _add_ask_routes(
                 answer.append(data["text"])
             elif name in ("thread", "done"):
                 out.update(data)
+            elif name == "verification" and data.get("answer"):
+                out["draft_answer"] = out.get("answer", "")
+                out["answer"] = data["answer"]
+                out[name] = data
             else:
                 out[name] = data.get(name, data) if name in ("sources", "images") else data
         out.setdefault("answer", "".join(answer))
