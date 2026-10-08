@@ -159,9 +159,12 @@ def parallel_search(query: str, n: int = 10, timeout: float = 20.0) -> List[Dict
     import requests
 
     queries = [query]
+    if os.environ.get("ODAR_PLAN_QUERIES", "1") != "0":
+        queries += plan_queries(query)
     kw = _keywords(query)
-    if kw.lower() != query.lower():
+    if len(queries) == 1 and kw.lower() != query.lower():
         queries.append(kw)
+    queries = list(dict.fromkeys(queries))[:5]
     body = {
         "objective": query,
         "search_queries": queries,
@@ -468,40 +471,163 @@ def free_models(role: str = "writer") -> List[str]:
     return [m for m in routes.get(role) or routes.get("writer") or [] if m.endswith(":free")]
 
 
-def default_stream(system: str, prompt: str, max_tokens: int = 900) -> Iterator[str]:
-    """Stream text from the first free model that answers; falls back across routes."""
+OPENCODE_URL = "https://opencode.ai/zen/v1/chat/completions"
+
+
+def _anthropic_stream(model: str, system: str, prompt: str, max_tokens: int) -> Iterator[str]:
     import anthropic
 
-    key = os.environ.get("ANTHROPIC_API_KEY", "")
-    if not key:
-        raise RuntimeError("no model key configured (ANTHROPIC_API_KEY)")
-    kwargs: Dict[str, Any] = {"api_key": key, "max_retries": 0, "timeout": 45.0}
+    kwargs: Dict[str, Any] = {"api_key": os.environ.get("ANTHROPIC_API_KEY", ""), "max_retries": 0, "timeout": 45.0}
     if os.environ.get("ODAR_ANTHROPIC_BASE_URL"):
         kwargs["base_url"] = os.environ["ODAR_ANTHROPIC_BASE_URL"]
     client = anthropic.Anthropic(**kwargs)
-    models = free_models("writer")
-    if not models:
-        raise RuntimeError("no :free model route configured")
-    last: Optional[Exception] = None
-    for model in models:
-        emitted = False
-        try:
-            with client.messages.stream(
-                model=model, max_tokens=max_tokens, system=system, messages=[{"role": "user", "content": prompt}]
-            ) as stream:
-                for text in stream.text_stream:
-                    if text:
-                        emitted = True
-                        yield text
-            if emitted:
+    with client.messages.stream(
+        model=model, max_tokens=max_tokens, system=system, messages=[{"role": "user", "content": prompt}]
+    ) as stream:
+        for text in stream.text_stream:
+            if text:
+                yield text
+
+
+def _openai_stream(url: str, key: str, model: str, system: str, prompt: str, max_tokens: int) -> Iterator[str]:
+    """OpenAI-compatible chat/completions SSE (OpenCode Zen); reasoning deltas are skipped."""
+    import requests
+
+    body = {"model": model, "stream": True, "max_tokens": max_tokens,
+            "messages": [{"role": "system", "content": system}, {"role": "user", "content": prompt}]}
+    with requests.post(url, json=body, stream=True, timeout=(10, 45),
+                       headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"}) as r:
+        if r.status_code != 200:
+            raise RuntimeError(f"{model}: HTTP {r.status_code} {r.text[:160]}")
+        for line in r.iter_lines(decode_unicode=True):
+            if not line or not line.startswith("data:"):
+                continue
+            data = line[5:].strip()
+            if data == "[DONE]":
                 return
-            last = RuntimeError(f"{model} returned no text")
-        except Exception as exc:  # noqa: BLE001 - try the next free route
-            if emitted:
-                raise
-            logger.info("stream on %s failed: %s", model, exc)
-            last = exc
+            try:
+                delta = (json.loads(data).get("choices") or [{}])[0].get("delta") or {}
+            except ValueError:
+                continue
+            if delta.get("content"):
+                yield delta["content"]
+
+
+def writer_routes(role: str = "writer") -> List[Tuple[str, Callable[..., Iterator[str]]]]:
+    """Every free writing route we can reach, interleaved by provider so a race spans two networks."""
+    th: List[Tuple[str, Callable[..., Iterator[str]]]] = []
+    if os.environ.get("ANTHROPIC_API_KEY"):
+        for m in free_models(role):
+            th.append((m, lambda s, p, n, m=m: _anthropic_stream(m, s, p, n)))
+    oc: List[Tuple[str, Callable[..., Iterator[str]]]] = []
+    key = os.environ.get("OPENCODE_API_KEY", "")
+    if key:
+        for m in [x for x in os.environ.get("ODAR_OPENCODE_MODELS", "space-bunny-free").split(",") if x.strip()]:
+            oc.append((f"opencode/{m.strip()}",
+                       lambda s, p, n, m=m.strip(): _openai_stream(OPENCODE_URL, key, m, s, p, n)))
+    out: List[Tuple[str, Callable[..., Iterator[str]]]] = []
+    for i in range(max(len(th), len(oc))):
+        out += th[i:i + 1] + oc[i:i + 1]
+    return out
+
+
+def race_stream(routes: Sequence[Tuple[str, Callable[..., Iterator[str]]]], system: str, prompt: str,
+                max_tokens: int = 900, width: int = 2) -> Iterator[str]:
+    """Hedged generation: start ``width`` routes at once and stream whichever speaks first; the
+    losers are abandoned. When every racer fails, the next routes race in turn."""
+    import queue
+
+    last: Optional[Exception] = None
+    for start in range(0, len(routes), max(1, width)):
+        batch = routes[start:start + max(1, width)]
+        q: "queue.Queue[Tuple[int, str, Any]]" = queue.Queue()
+        stop = threading.Event()
+
+        def run(i: int, fn: Callable[..., Iterator[str]]) -> None:
+            try:
+                for chunk in fn(system, prompt, max_tokens):
+                    if stop.is_set():
+                        return
+                    q.put((i, "text", chunk))
+                q.put((i, "end", None))
+            except Exception as exc:  # noqa: BLE001 - reported through the queue
+                q.put((i, "error", exc))
+
+        for i, (_name, fn) in enumerate(batch):
+            threading.Thread(target=run, args=(i, fn), daemon=True, name=f"odar-race-{i}").start()
+        winner: Optional[int] = None
+        pending: Dict[int, List[str]] = {i: [] for i in range(len(batch))}
+        alive = set(range(len(batch)))
+        while alive:
+            try:
+                i, kind, val = q.get(timeout=60)
+            except queue.Empty:
+                last = RuntimeError("model race timed out")
+                break
+            if winner is not None and i != winner:
+                continue
+            if kind == "text":
+                if winner is None:
+                    pending[i].append(val)
+                    if not "".join(pending[i]).strip():
+                        continue
+                    winner = i
+                    logger.info("race won by %s", batch[i][0])
+                    yield "".join(pending[i])
+                else:
+                    yield val
+            elif kind == "end":
+                alive.discard(i)
+                if i == winner:
+                    stop.set()
+                    return
+                last = RuntimeError(f"{batch[i][0]} returned no text")
+            else:
+                alive.discard(i)
+                if i == winner:
+                    stop.set()
+                    raise val
+                logger.info("route %s failed: %s", batch[i][0], val)
+                last = val
+        stop.set()
     raise RuntimeError(f"every free model failed: {last}")
+
+
+def default_stream(system: str, prompt: str, max_tokens: int = 900) -> Iterator[str]:
+    """Stream from the fastest free model: Token Harbor and OpenCode routes race two at a time."""
+    routes = writer_routes()
+    if not routes:
+        raise RuntimeError("no free model route configured (ANTHROPIC_API_KEY / OPENCODE_API_KEY)")
+    yield from race_stream(routes, system, prompt, max_tokens, width=int(os.environ.get("ODAR_RACE_WIDTH", "2")))
+
+
+PLAN_SYSTEM = (
+    "You plan web searches. Given a QUESTION, write 2 to 4 short, distinct search queries that together "
+    "find authoritative sources for it (official bodies, papers, major outlets), one per line, no numbering, "
+    "nothing else."
+)
+
+
+def plan_queries(question: str, timeout_s: float = 7.0, stream: Optional[StreamFn] = None) -> List[str]:
+    """Agentic step: a fast model splits the question into sub-searches; [] when it is slow or fails."""
+    out: List[str] = []
+    done = threading.Event()
+
+    def work() -> None:
+        try:
+            text = "".join((stream or default_stream)(PLAN_SYSTEM, f"QUESTION: {question}", 200))
+            for line in text.splitlines():
+                line = re.sub(r"^[\s\-*\d.)\"']+|[\"']+$", "", line).strip()
+                if 3 <= len(line.split()) <= 16 and "<" not in line:
+                    out.append(line[:200])
+        except Exception as exc:  # noqa: BLE001
+            logger.info("query planning failed: %s", exc)
+        finally:
+            done.set()
+
+    threading.Thread(target=work, daemon=True, name="odar-plan").start()
+    done.wait(timeout_s)
+    return list(dict.fromkeys(out))[:4] if done.is_set() else []
 
 
 # ---------------------------------------------------------------------- #

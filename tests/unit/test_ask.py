@@ -70,6 +70,7 @@ class FakeDDGS:
 @pytest.fixture(autouse=True)
 def _no_paid_search(monkeypatch):
     monkeypatch.delenv("PARALLEL_API_KEY", raising=False)
+    monkeypatch.setenv("ODAR_PLAN_QUERIES", "0")
 
 
 
@@ -638,3 +639,50 @@ def test_parallel_search_maps_excerpts_and_falls_back(monkeypatch):
     assert ask.parallel_search("x", 5) == []
     monkeypatch.delenv("PARALLEL_API_KEY")
     assert ask.parallel_search("x", 5) == []
+
+
+def test_race_stream_takes_the_first_route_that_speaks():
+    import time as _t
+
+    def slow(s, p, n):
+        _t.sleep(0.5)
+        yield "slow answer [1]."
+
+    def fast(s, p, n):
+        yield " "
+        yield "fast "
+        yield "answer [1]."
+
+    out = "".join(ask.race_stream([("slow", slow), ("fast", fast)], "sys", "q", 50))
+    assert out == " fast answer [1]."
+
+
+def test_race_stream_falls_through_failures():
+    def bad(s, p, n):
+        raise RuntimeError("503")
+        yield ""  # pragma: no cover
+
+    def empty(s, p, n):
+        return iter(())
+
+    def good(s, p, n):
+        yield "ok [1]."
+
+    assert "".join(ask.race_stream([("a", bad), ("b", empty), ("c", good)], "s", "q", 10)) == "ok [1]."
+    with pytest.raises(RuntimeError):
+        list(ask.race_stream([("a", bad), ("b", empty)], "s", "q", 10))
+
+
+def test_plan_queries_parses_lines_and_respects_timeout():
+    def stream(s, p, n):
+        return iter(["1. WHO World Malaria Report 2024 key findings\n", "- malaria deaths 2023 estimate WHO\nok"])
+
+    qs = ask.plan_queries("malaria report?", stream=stream)
+    assert qs == ["WHO World Malaria Report 2024 key findings", "malaria deaths 2023 estimate WHO"]
+
+    def hang(s, p, n):
+        import time as _t
+        _t.sleep(2)
+        return iter(["late query one two"])
+
+    assert ask.plan_queries("x", timeout_s=0.2, stream=hang) == []
