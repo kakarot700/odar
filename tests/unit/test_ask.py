@@ -511,11 +511,17 @@ def test_repair_moves_marker_to_supporting_source():
 
 def test_repair_removes_unsupported_sentence_and_meta_markers():
     answer = ("Both cut calories with similar results [1]. The sources do not single out one key result [3]. "
+              "One summary states that a trial found a 1.8 kg difference in weight after a year [2]. "
               "Fasting cures baldness in all adults [3].")
     res = ask.verify_answer(answer, _srcs(), checker=RepairChecker())
-    assert "baldness" not in res["answer"]
-    assert "The sources do not single out one key result." in res["answer"]
-    assert [c["n"] for c in res["citations"]] == [1]
+    assert "baldness" not in res["answer"] and "single out" not in res["answer"]
+    assert "A trial found a 1.8 kg difference in weight after a year [2]." in res["answer"]
+    assert [c["n"] for c in res["citations"]] == [1, 2]
+
+
+def test_sentence_split_handles_closing_quotes():
+    pairs = ask.cited_pairs('They call it "key." The ejecta weighed 2.06 tonnes [4].')
+    assert pairs[0]["claim"] == "The ejecta weighed 2.06 tonnes ."
 
 
 def test_repair_off_keeps_answer():
@@ -532,7 +538,7 @@ def test_prompt_hides_snippet_only_pages_when_enough_are_readable():
     _, prompt = ask.build_prompt("fasting?", few)
     assert "[2] D (search snippet only)" in prompt
     system, _ = ask.build_prompt("q", srcs)
-    assert "exactly" in system and "no marker" in system
+    assert "exactly" in system and "One fact per sentence" in system
 
 
 def test_empty_search_is_retried_once():
