@@ -97,6 +97,10 @@ def cmd_serve(argv: List[str]) -> int:
     import os
 
     app = create_app(RunStore(args.db or os.environ.get("ODAR_WEB_DB", "odar_web.db")))
+    if os.environ.get("ODAR_NO_WARMUP") != "1":
+        from odar.web.ask import warm_verifier
+
+        warm_verifier()  # load the NLI model now so the first question isn't slow
     uvicorn.run(app, host=args.host, port=args.port)
     return 0
 

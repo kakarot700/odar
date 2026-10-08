@@ -929,11 +929,15 @@ def run_ask(
         "timing": {"search_s": search_s, "fetch_s": fetch_s, "ttft_s": ttft, "total_s": answer_s},
     }
     if verify:
+        vpool = ThreadPoolExecutor(max_workers=1, thread_name_prefix="odar-ask-verify-all")
+        vfut = vpool.submit(deps.verify, answer, sources)
         try:
-            result = deps.verify(answer, sources)
-        except Exception as exc:  # noqa: BLE001
+            result = vfut.result(timeout=deps.extra.get("verify_cap_s", 90.0))
+        except Exception as exc:  # noqa: BLE001 - includes the hard time cap
             logger.warning("verification failed: %s", exc)
-            result = {"citations": [], "counts": {}, "error": str(exc)[:200]}
+            result = {"citations": [], "counts": {}, "error": str(exc)[:200] or "verification timed out"}
+        finally:
+            vpool.shutdown(wait=False, cancel_futures=True)
         result["total_s"] = round(time.monotonic() - t0, 2)
         yield "verification", result
 
