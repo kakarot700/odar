@@ -538,7 +538,7 @@ def test_prompt_hides_snippet_only_pages_when_enough_are_readable():
     _, prompt = ask.build_prompt("fasting?", few)
     assert "[2] D (search snippet only)" in prompt
     system, _ = ask.build_prompt("q", srcs)
-    assert "exactly" in system and "one fact each" in system
+    assert "exactly" in system and "One fact per sentence" in system
 
 
 def test_empty_search_is_retried_once():
