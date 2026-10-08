@@ -653,8 +653,10 @@ def test_race_stream_takes_the_first_route_that_speaks():
         yield "fast "
         yield "answer [1]."
 
-    out = "".join(ask.race_stream([("slow", slow), ("fast", fast)], "sys", "q", 50))
+    out = "".join(ask.race_stream([("slow", slow), ("fast", fast)], "sys", "q", 50, hedge_after_s=0.05))
     assert out == " fast answer [1]."
+    # a quick first route wins before the backup is even started
+    assert "".join(ask.race_stream([("fast", fast), ("slow", slow)], "sys", "q", 50)) == " fast answer [1]."
 
 
 def test_race_stream_falls_through_failures():
@@ -701,3 +703,8 @@ def test_blocked_parallel_page_is_not_citable():
             {"url": "https://who.int/b", "kind": "web", "text": "y", "fetched": True, "excerpted": True}]
     ask.fetch_sources(rows, extractor=Ex())
     assert not ask.readable(rows[0]) and ask.readable(rows[1]) and rows[1]["text"] == "y"
+
+
+def test_fix_mojibake():
+    assert ask._fix_mojibake("2024\u00e2\u0080\u0099s 1.55\u00c2\u00b0C") == "2024\u2019s 1.55\u00b0C"
+    assert ask._fix_mojibake("plain") == "plain"

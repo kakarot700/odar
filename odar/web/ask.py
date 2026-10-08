@@ -150,6 +150,19 @@ def _keywords(query: str) -> str:
 PARALLEL_URL = "https://api.parallel.ai/v1/search"
 
 
+def _fix_mojibake(text: str) -> str:
+    """Undo UTF-8 read as Latin-1 ("2024â€™s", "1.55Â°C")."""
+    if "â" not in text and "Â" not in text:
+        return text
+    try:
+        return text.encode("cp1252").decode("utf-8")
+    except (UnicodeEncodeError, UnicodeDecodeError):
+        try:
+            return text.encode("latin-1").decode("utf-8")
+        except (UnicodeEncodeError, UnicodeDecodeError):
+            return text
+
+
 def parallel_search(query: str, n: int = 10, timeout: float = 20.0) -> List[Dict[str, Any]]:
     """Parallel Search API (paid, LLM-ready excerpts) when PARALLEL_API_KEY is set; [] otherwise
     or on any failure, so the free ddgs path takes over."""
@@ -181,7 +194,9 @@ def parallel_search(query: str, n: int = 10, timeout: float = 20.0) -> List[Dict
         return []
     out = []
     for row in rows:
-        text = "\n\n".join(x for x in (row.get("excerpts") or []) if x).strip()
+        text = _fix_mojibake("\n\n".join(x for x in (row.get("excerpts") or []) if x).strip())
+        url = re.sub(r"^http://", "https://", row.get("url") or "")
+        row = dict(row, url=url, title=_fix_mojibake(row.get("title") or ""))
         if not text:
             continue
         out.append(
@@ -339,8 +354,11 @@ def fetch_sources(
     def one(src: Dict[str, Any]) -> None:
         page = extractor.extract(src["url"])
         if src.get("excerpted"):
-            if getattr(page, "http_status", 0) in (401, 402, 403, 429, 451) or page.quarantined:
+            if getattr(page, "http_status", 0) in (401, 402, 403, 404, 410, 429, 451) or page.quarantined:
                 src["page_blocked"] = True
+            elif page.ok and page.text and len(page.text) > 400:
+                # cite what the reader will see on the page; the excerpts were only the search's view
+                src["text"] = page.text
             return
         if page.ok and page.text and not page.quarantined and len(page.text) > len(src.get("snippet", "")):
             src["text"], src["fetched"] = page.text, True
@@ -539,7 +557,7 @@ def writer_routes(role: str = "writer") -> List[Tuple[str, Callable[..., Iterato
 
 
 def race_stream(routes: Sequence[Tuple[str, Callable[..., Iterator[str]]]], system: str, prompt: str,
-                max_tokens: int = 900, width: int = 2) -> Iterator[str]:
+                max_tokens: int = 900, width: int = 2, hedge_after_s: float = 12.0) -> Iterator[str]:
     """Hedged generation: start ``width`` routes at once and stream whichever speaks first; the
     losers are abandoned. When every racer fails, the next routes race in turn."""
     import queue
@@ -560,15 +578,30 @@ def race_stream(routes: Sequence[Tuple[str, Callable[..., Iterator[str]]]], syst
             except Exception as exc:  # noqa: BLE001 - reported through the queue
                 q.put((i, "error", exc))
 
-        for i, (_name, fn) in enumerate(batch):
-            threading.Thread(target=run, args=(i, fn), daemon=True, name=f"odar-race-{i}").start()
+        def launch(i: int) -> None:
+            threading.Thread(target=run, args=(i, batch[i][1]), daemon=True, name=f"odar-race-{i}").start()
+
+        # the first route (best writer) starts alone; a backup joins only when it is slow or fails
+        launch(0)
+        started = {0}
+        t_start = time.monotonic()
         winner: Optional[int] = None
         pending: Dict[int, List[str]] = {i: [] for i in range(len(batch))}
-        alive = set(range(len(batch)))
-        while alive:
+        alive = {0}
+        while alive or len(started) < len(batch):
+            if winner is None and len(started) < len(batch) and (
+                not alive or time.monotonic() - t_start >= hedge_after_s
+            ):
+                nxt = len(started)
+                started.add(nxt)
+                alive.add(nxt)
+                launch(nxt)
+                t_start = time.monotonic()
             try:
-                i, kind, val = q.get(timeout=60)
+                i, kind, val = q.get(timeout=0.25 if winner is None and len(started) < len(batch) else 60)
             except queue.Empty:
+                if winner is None and len(started) < len(batch):
+                    continue
                 last = RuntimeError("model race timed out")
                 break
             if winner is not None and i != winner:
@@ -605,7 +638,8 @@ def default_stream(system: str, prompt: str, max_tokens: int = 900) -> Iterator[
     routes = writer_routes()
     if not routes:
         raise RuntimeError("no free model route configured (ANTHROPIC_API_KEY / OPENCODE_API_KEY)")
-    yield from race_stream(routes, system, prompt, max_tokens, width=int(os.environ.get("ODAR_RACE_WIDTH", "2")))
+    yield from race_stream(routes, system, prompt, max_tokens, width=int(os.environ.get("ODAR_RACE_WIDTH", "2")),
+                           hedge_after_s=float(os.environ.get("ODAR_HEDGE_AFTER_S", "12")))
 
 
 PLAN_SYSTEM = (
