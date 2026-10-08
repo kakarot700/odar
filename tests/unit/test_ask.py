@@ -686,3 +686,18 @@ def test_plan_queries_parses_lines_and_respects_timeout():
         return iter(["late query one two"])
 
     assert ask.plan_queries("x", timeout_s=0.2, stream=hang) == []
+
+
+def test_blocked_parallel_page_is_not_citable():
+    class Page:
+        def __init__(self, status):
+            self.http_status, self.ok, self.text, self.quarantined = status, status == 200, "", False
+
+    class Ex:
+        def extract(self, url):
+            return Page(403 if "lancet" in url else 200)
+
+    rows = [{"url": "https://thelancet.com/a", "kind": "web", "text": "x", "fetched": True, "excerpted": True},
+            {"url": "https://who.int/b", "kind": "web", "text": "y", "fetched": True, "excerpted": True}]
+    ask.fetch_sources(rows, extractor=Ex())
+    assert not ask.readable(rows[0]) and ask.readable(rows[1]) and rows[1]["text"] == "y"

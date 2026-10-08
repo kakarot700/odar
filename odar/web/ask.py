@@ -326,8 +326,9 @@ def fetch_sources(
 
     for s in sources:
         s.setdefault("text", s.get("snippet", ""))
-    # Parallel results already carry LLM-ready excerpts of the page: no second fetch needed
-    todo = [s for s in sources if s.get("kind") in FETCH_KINDS and s.get("url") and not s.get("excerpted")]
+    # Parallel results already carry LLM-ready excerpts; we still open the page once so a source the
+    # reader can't open (paywall, bot wall: HTTP 401/403/429) drops behind ones they can check
+    todo = [s for s in sources if s.get("kind") in FETCH_KINDS and s.get("url")]
     if not todo:
         return
     if extractor is None:
@@ -337,6 +338,10 @@ def fetch_sources(
 
     def one(src: Dict[str, Any]) -> None:
         page = extractor.extract(src["url"])
+        if src.get("excerpted"):
+            if getattr(page, "http_status", 0) in (401, 402, 403, 429, 451) or page.quarantined:
+                src["page_blocked"] = True
+            return
         if page.ok and page.text and not page.quarantined and len(page.text) > len(src.get("snippet", "")):
             src["text"], src["fetched"] = page.text, True
         elif page.quarantined:
@@ -387,6 +392,8 @@ _META = re.compile(
 
 def readable(src: Dict[str, Any]) -> bool:
     """A source the model may cite: a page we fetched in full, or a non-web source (abstract, file)."""
+    if src.get("page_blocked"):
+        return False
     return src.get("kind") not in FETCH_KINDS or bool(src.get("fetched"))
 
 
