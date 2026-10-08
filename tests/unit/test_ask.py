@@ -533,3 +533,17 @@ def test_prompt_hides_snippet_only_pages_when_enough_are_readable():
     assert "[2] D (search snippet only)" in prompt
     system, _ = ask.build_prompt("q", srcs)
     assert "exactly" in system and "no marker" in system
+
+
+def test_empty_search_is_retried_once():
+    calls = []
+
+    def search(q, focus, n, **kw):
+        calls.append(q)
+        return [] if len(calls) == 1 else [{"url": "https://a.org", "title": "A", "kind": "paper", "snippet": "Mars is red."}]
+
+    deps = ask.AskDeps(search=search, fetch=lambda s: None, stream=lambda *a: iter(["Mars is red [1]."]),
+                       verify=lambda a, s: {"citations": [], "counts": {}}, images=lambda q: [],
+                       extra={"search_retry_s": 0})
+    names = [e for e, _ in ask.run_ask("Is Mars red?", want_images=False, deps=deps)]
+    assert len(calls) == 2 and "done" in names

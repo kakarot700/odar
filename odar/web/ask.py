@@ -832,7 +832,12 @@ def run_ask(
     sources: List[Dict[str, Any]] = []
     if source_mode in ("web", "both"):
         kwargs = {"scholar": deps.scholar} if focus == "academic" and deps.scholar is not None else {}
-        sources += deps.search(query, focus, 6 if source_mode == "web" else 4, **kwargs)
+        k = 6 if source_mode == "web" else 4
+        found = deps.search(query, focus, k, **kwargs)
+        if not found:  # free search backends drop requests now and then; one quiet retry
+            time.sleep(deps.extra.get("search_retry_s", 1.5))
+            found = deps.search(query, focus, k, **kwargs)
+        sources += found
     if source_mode in ("files", "both") and chunks:
         sources += file_sources(question, chunks, k=5 if source_mode == "files" else 3)
     sources = sources[:MAX_SOURCES]
