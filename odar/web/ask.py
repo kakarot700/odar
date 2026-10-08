@@ -996,7 +996,11 @@ def run_ask(
             yield "error", {"message": "The free models are busy right now; the sources above are still useful.",
                             "detail": str(exc)[:200]}
             return
-    answer = normalize_markers(filt.text())
+    answer = filt.text()
+    if not _MARK.search(answer) and _MARK.search("".join(parts)):
+        # the tagged part came back empty or echoed the question; use the untagged text instead
+        answer = clean_leak(re.sub(r"<answer>.*?</answer>", " ", "".join(parts), flags=re.S)) or answer
+    answer = normalize_markers(answer)
     ev = images_event()
     if ev:
         yield ev
