@@ -553,3 +553,21 @@ def test_empty_search_is_retried_once():
                        extra={"search_retry_s": 0})
     names = [e for e, _ in ask.run_ask("Is Mars red?", want_images=False, deps=deps)]
     assert len(calls) == 2 and "done" in names
+
+
+def test_answer_filter_hides_thinking_and_streams_inside_tags():
+    f = ask.AnswerFilter()
+    chunks = ["Let me plan. Need [1] here.", " Draft: x <ans", "wer>Mars is red [1].", " It has two", " moons [2].</ans",
+              "wer> trailing notes"]
+    out = "".join(f.feed(c) for c in chunks) + f.finish()
+    assert out == "Mars is red [1]. It has two moons [2]."
+    assert f.text() == "Mars is red [1]. It has two moons [2]."
+
+
+def test_answer_filter_untagged_falls_back_to_whole_text():
+    f = ask.AnswerFilter()
+    assert f.feed("Mars is red [1].") == ""
+    assert f.finish() == "Mars is red [1]."
+    g = ask.AnswerFilter()
+    g.feed("thinking about it\nAnswer:\nMars is red [1].")
+    assert g.text() == "Mars is red [1]."
