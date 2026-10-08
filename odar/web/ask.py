@@ -147,6 +147,48 @@ def _keywords(query: str) -> str:
     return " ".join(words) or query
 
 
+PARALLEL_URL = "https://api.parallel.ai/v1/search"
+
+
+def parallel_search(query: str, n: int = 10, timeout: float = 20.0) -> List[Dict[str, Any]]:
+    """Parallel Search API (paid, LLM-ready excerpts) when PARALLEL_API_KEY is set; [] otherwise
+    or on any failure, so the free ddgs path takes over."""
+    key = os.environ.get("PARALLEL_API_KEY", "")
+    if not key:
+        return []
+    import requests
+
+    queries = [query]
+    kw = _keywords(query)
+    if kw.lower() != query.lower():
+        queries.append(kw)
+    body = {
+        "objective": query,
+        "search_queries": queries,
+        "mode": os.environ.get("ODAR_PARALLEL_MODE", "advanced"),
+        "advanced_settings": {"max_results": n, "excerpt_settings": {"max_chars_per_result": 4000}},
+    }
+    try:
+        r = requests.post(PARALLEL_URL, json=body, timeout=timeout,
+                          headers={"x-api-key": key, "Content-Type": "application/json"})
+        r.raise_for_status()
+        rows = r.json().get("results") or []
+    except Exception as exc:  # noqa: BLE001 - fall back to free search
+        logger.info("parallel search failed: %s", exc)
+        return []
+    out = []
+    for row in rows:
+        text = "\n\n".join(x for x in (row.get("excerpts") or []) if x).strip()
+        if not text:
+            continue
+        out.append(
+            {"url": row.get("url") or "", "title": _clean(row.get("title"), 300), "snippet": _clean(text, 600),
+             "text": text[:12000], "fetched": True, "excerpted": True, "kind": "web",
+             "date": parse_date(row.get("publish_date")), "publisher": ""}
+        )
+    return out
+
+
 def search_sources(
     query: str, focus: str = "all", n: int = 6, ddgs: Any = None, scholar: Any = None
 ) -> List[Dict[str, Any]]:
@@ -223,6 +265,9 @@ def search_sources(
                  "snippet": _clean(r.get("body"), 600), "kind": "forum", "date": "", "publisher": ""}
             )
     else:
+        out = parallel_search(query, n + 2)
+        if out:
+            return _finish(out, n)
         for r in _text_rows(ddgs, query, n + 2):
             out.append(
                 {"url": r.get("href") or "", "title": _clean(r.get("title"), 300),
@@ -278,7 +323,8 @@ def fetch_sources(
 
     for s in sources:
         s.setdefault("text", s.get("snippet", ""))
-    todo = [s for s in sources if s.get("kind") in FETCH_KINDS and s.get("url")]
+    # Parallel results already carry LLM-ready excerpts of the page: no second fetch needed
+    todo = [s for s in sources if s.get("kind") in FETCH_KINDS and s.get("url") and not s.get("excerpted")]
     if not todo:
         return
     if extractor is None:

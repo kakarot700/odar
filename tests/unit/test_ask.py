@@ -67,6 +67,11 @@ class FakeDDGS:
             {"title": "js", "image": "javascript:alert(1)", "thumbnail": "javascript:alert(1)", "url": "https://e.com"},
         ]
 
+@pytest.fixture(autouse=True)
+def _no_paid_search(monkeypatch):
+    monkeypatch.delenv("PARALLEL_API_KEY", raising=False)
+
+
 
 class FakeExtractor:
     def __init__(self, pages):
@@ -606,3 +611,30 @@ def test_planning_only_reply_is_asked_again():
     deltas = "".join(d["text"] for e, d in events if e == "delta")
     assert len(prompts) == 2 and ask.RETRY_NOTE.strip()[:20] in prompts[1]
     assert done["answer"] == "Mars is red [1]." and "Need to" not in deltas
+
+
+def test_parallel_search_maps_excerpts_and_falls_back(monkeypatch):
+    import requests
+
+    class R:
+        def raise_for_status(self):
+            pass
+
+        def json(self):
+            return {"results": [{"url": "https://who.int/r", "title": "WHO report", "publish_date": "2024-12-10",
+                                 "excerpts": ["263 million cases in 2023.", "597 000 deaths."]},
+                                {"url": "https://x.org", "title": "empty", "excerpts": []}]}
+
+    monkeypatch.setenv("PARALLEL_API_KEY", "k")
+    monkeypatch.setattr(requests, "post", lambda *a, **kw: R())
+    rows = ask.parallel_search("malaria report 2024", 5)
+    assert len(rows) == 1 and rows[0]["fetched"] and "597 000 deaths." in rows[0]["text"]
+    assert ask.readable(rows[0]) and rows[0]["date"].startswith("2024-12-10")
+
+    def boom(*a, **kw):
+        raise requests.ConnectionError("down")
+
+    monkeypatch.setattr(requests, "post", boom)
+    assert ask.parallel_search("x", 5) == []
+    monkeypatch.delenv("PARALLEL_API_KEY")
+    assert ask.parallel_search("x", 5) == []
