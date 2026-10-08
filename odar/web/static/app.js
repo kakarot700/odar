@@ -277,6 +277,7 @@ function handleEvent(turn, ev, d) {
     }
   } else if (ev === "sources") turn.sources(d.sources);
   else if (ev === "delta") turn.delta(d.text);
+  else if (ev === "reset") turn.reset();
   else if (ev === "done") turn.done(d);
   else if (ev === "images") turn.images(d.images);
   else if (ev === "verification") turn.verify(d);
@@ -302,6 +303,10 @@ function makeTurn(parent, data = {}) {
       $$(".src", el).forEach((a) => {
         if (a.dataset.file) a.onclick = (e) => { e.preventDefault(); showPop(a, sourcePop(st.sources[+a.dataset.i])); };
       });
+    },
+    reset() {
+      st.raw = "";
+      bubble.innerHTML = `<span class="typing"><i></i><i></i><i></i></span>`;
     },
     delta(text) {
       st.raw += text;

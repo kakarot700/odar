@@ -629,6 +629,8 @@ def _add_ask_routes(
         for name, data in events(prepare(request, body)):
             if name == "delta":
                 answer.append(data["text"])
+            elif name == "reset":
+                answer.clear()
             elif name in ("thread", "done"):
                 out.update(data)
             elif name == "verification" and data.get("answer"):

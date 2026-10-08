@@ -1273,8 +1273,13 @@ def run_ask(
         if not _MARK.search(answer) and _MARK.search("".join(parts)):
             # the tagged part came back empty or echoed the question; use the untagged text instead
             answer = clean_leak(re.sub(r"<answer>.*?</answer>", " ", "".join(parts), flags=re.S)) or answer
-        if answer_ok(answer) or shown or attempt == 1:
+        if answer_ok(answer) or attempt == 1:
             break
+        if shown:
+            # what streamed was not an answer (an echoed question, uncited text): clear it, ask once more
+            logger.info("streamed text had no citations; asking again")
+            yield "reset", {}
+            shown, ttft = False, None
     answer = normalize_markers(answer)
     ev = images_event()
     if ev:

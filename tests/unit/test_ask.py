@@ -715,3 +715,22 @@ def test_pubmed_reads_through_eutils_and_walls_are_not_pages():
     assert "eutils.ncbi.nlm.nih.gov" in retrieval._readable_mirror("https://pubmed.ncbi.nlm.nih.gov/38310910/")
     assert retrieval._readable_mirror("https://who.int/x") == "https://who.int/x"
     assert retrieval._CHALLENGE_RE.search("Enable cookies for pubmed.ncbi.nlm.nih.gov and reload this page")
+
+
+def test_echoed_question_is_cleared_and_asked_again():
+    prompts = []
+
+    def stream(system, prompt, n):
+        prompts.append(prompt)
+        if len(prompts) == 1:
+            return iter(["<answer>Is Mars red?</answer>"])
+        return iter(["<answer>Mars is red [1].</answer>"])
+
+    deps = ask.AskDeps(search=lambda q, f, n, **kw: [{"url": "https://a.org", "title": "A", "kind": "paper",
+                                                       "snippet": "Mars is red."}],
+                       fetch=lambda s: None, stream=stream, verify=lambda a, s: {"citations": [], "counts": {}},
+                       images=lambda q: [], extra={"search_retry_s": 0})
+    events = list(ask.run_ask("Is Mars red?", want_images=False, deps=deps))
+    names = [e for e, _ in events]
+    done = [d for e, d in events if e == "done"][0]
+    assert len(prompts) == 2 and "reset" in names and done["answer"] == "Mars is red [1]."
