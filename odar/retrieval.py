@@ -517,6 +517,29 @@ def _pdf_to_text(data: bytes, max_pages: int = MAX_PDF_PAGES) -> str:
         return f"\x00pdf-error: unreadable PDF ({type(exc).__name__})"
 
 
+_CHALLENGE_RE = re.compile(
+    r"enable (?:cookies|javascript)|verify (?:you are|that you're) (?:a )?human|are you a robot|"
+    r"checking your browser|just a moment|access denied|captcha",
+    re.IGNORECASE,
+)
+_PUBMED_RE = re.compile(r"^https?://pubmed\.ncbi\.nlm\.nih\.gov/(\d+)/?(?:[?#].*)?$", re.IGNORECASE)
+
+
+def _readable_mirror(url: str) -> str:
+    """Official machine-readable copy of pages that wall off scripted readers.
+
+    PubMed now answers non-browser clients with a cookie wall; NCBI's E-utilities
+    serve the same abstract as plain text.
+    """
+    m = _PUBMED_RE.match(url)
+    if m:
+        return (
+            "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi"
+            f"?db=pubmed&id={m.group(1)}&rettype=abstract&retmode=text"
+        )
+    return url
+
+
 class PageExtractor:
     """Fetch a URL and distil it to capped, clean text via trafilatura.
 
@@ -634,7 +657,7 @@ class PageExtractor:
         except UnsafeURLError as exc:
             return ExtractedPage(url=url, ok=False, error=f"unsafe URL rejected: {exc}", quarantined=True)
         try:
-            status, final_url, content_type, raw_html = self._safe_fetch(url)
+            status, final_url, content_type, raw_html = self._safe_fetch(_readable_mirror(url))
         except UnsafeURLError as exc:
             # Redirect chain or DNS resolved somewhere forbidden.
             return ExtractedPage(url=url, ok=False, error=f"unsafe fetch refused: {exc}", quarantined=True)
@@ -675,6 +698,11 @@ class PageExtractor:
             engine = "naive-tag-strip"
 
         text = _WHITESPACE_RE.sub(" ", text).strip()
+        if len(text) < 600 and _CHALLENGE_RE.search(text):
+            # a cookie / JavaScript / captcha wall, not the page a person sees
+            return ExtractedPage(
+                url=url, ok=False, error="bot challenge page", http_status=status, resolved_url=final_url
+            )
         if len(text) > self.max_chars:  # context-bloat cap
             text = text[: self.max_chars].rsplit(" ", 1)[0] + " [...capped]"
 

@@ -708,3 +708,10 @@ def test_blocked_parallel_page_is_not_citable():
 def test_fix_mojibake():
     assert ask._fix_mojibake("2024\u00e2\u0080\u0099s 1.55\u00c2\u00b0C") == "2024\u2019s 1.55\u00b0C"
     assert ask._fix_mojibake("plain") == "plain"
+
+
+def test_pubmed_reads_through_eutils_and_walls_are_not_pages():
+    from odar import retrieval
+    assert "eutils.ncbi.nlm.nih.gov" in retrieval._readable_mirror("https://pubmed.ncbi.nlm.nih.gov/38310910/")
+    assert retrieval._readable_mirror("https://who.int/x") == "https://who.int/x"
+    assert retrieval._CHALLENGE_RE.search("Enable cookies for pubmed.ncbi.nlm.nih.gov and reload this page")
