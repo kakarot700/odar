@@ -312,8 +312,8 @@ ANSWER_SYSTEM = (
     "Cite only the source whose own text states the point; never cite a source for something it does not say. "
     "Copy numbers, percentages, dates and names exactly as the source gives them (write 40,632, not "
     "'over 40,000'); never add a year, place or qualifier the source does not state. "
-    "One fact per sentence: keep sentences under 25 words and never join two figures, two organisations or "
-    "two findings with 'and', 'while' or a semicolon; write two sentences instead, each with its own marker. "
+    "Keep sentences short, about one fact each: give separate figures from different organisations or studies "
+    "their own sentences and markers. "
     "Every sentence carries a marker. State facts directly: never write about the sources themselves ('one "
     "summary states', 'another source notes', 'according to a perspective paper', 'the sources do not single "
     "out'); name an organisation only when the cited text names it. Open with the most direct cited fact, not "
@@ -506,13 +506,61 @@ class AnswerFilter:
         return (self.buf if end < 0 else self.buf[:end]).strip()
 
 
+_PLAN_STRONG = re.compile(
+    r"(?:\b(?:let'?s|let me|we should|we need|we must|i should|i need|i'll|hmm|word count|paraphrase|"
+    r"the rule|the instruction|citation markers?|each sentence|this sentence)\b|^\s*(?:answer|final answer)\s*:)",
+    re.I | re.M,
+)
+_PLAN_WEAK = re.compile(
+    r"\b(?:need to|better:|but that|that's fine|okay|draft|check:|craft|compact|rephrase|instead|maybe|"
+    r"should be|is fine|good\.)",
+    re.I,
+)
+
+
+def _is_planning(par: str) -> bool:
+    if re.search(r"\[\d{1,2}\]\s*(?:[:\"“]|says|states)", par):
+        return True  # talking about a source ("[3] says ...", "Also [1]: ...")
+    plain = _MARK.sub("", par)
+    return bool(_PLAN_STRONG.search(plain)) or len(_PLAN_WEAK.findall(plain)) >= 2 or par.count('"') >= 4
+
+
 def clean_leak(text: str) -> str:
-    """Untagged output: drop stray tags and, when the model drafted first, keep the last draft."""
+    """Drop stray tags and a model's thinking-out-loud. When notes and answer are mixed, keep the
+    last unbroken run of clean paragraphs (the final draft); otherwise return the text as is."""
     text = text.replace("<answer>", "").replace("</answer>", "")
-    m = list(re.finditer(r"(?im)^\s*(?:final answer|answer)\s*:\s*$", text))
+    m = list(re.finditer(r"(?im)^\s*(?:final answer|answer)\s*:\s*", text))
     if m:
-        text = text[m[-1].end():]
-    return text.strip()
+        tail = text[m[-1].end():].strip()
+        if _MARK.search(tail):
+            text = tail
+    pars = [p.strip() for p in re.split(r"\n\s*\n|\n(?=\S)", text) if p.strip()]
+    if not any(_is_planning(p) for p in pars):
+        return text.strip()
+    best: List[str] = []
+    run: List[str] = []
+    for p in pars:
+        if _is_planning(p):
+            run = []
+            continue
+        run.append(p)
+        if sum(bool(_MARK.search(x)) for x in run) >= sum(bool(_MARK.search(x)) for x in best):
+            best = list(run)
+    if best and not re.search(r"[.!?।\]]\s*$", best[-1]):
+        best = best[:-1]  # the model ran out of room mid-sentence
+    return "\n\n".join(best).strip() if any(_MARK.search(x) for x in best) else ""
+
+
+def answer_ok(answer: str) -> bool:
+    return bool(_MARK.search(answer)) and not any(
+        _is_planning(p) for p in re.split(r"\n\s*\n", answer) if p.strip()
+    )
+
+
+RETRY_NOTE = (
+    "\n\nYour last reply was planning notes, not an answer. Reply now with only the final answer between "
+    "<answer> and </answer>: short cited sentences, no notes, no discussion of the rules."
+)
 
 
 def normalize_markers(answer: str) -> str:
@@ -973,33 +1021,44 @@ def run_ask(
     system, prompt = build_prompt(question, sources, history, instructions)
     parts: List[str] = []
     ttft: Optional[float] = None
-    filt = AnswerFilter()
-    try:
-        for raw in deps.stream(system, prompt, 1400):
-            parts.append(raw)
-            delta = filt.feed(raw)
-            if not delta:
-                continue
-            if ttft is None:
-                ttft = round(time.monotonic() - t0, 2)
-            yield "delta", {"text": delta}
-        tail = filt.finish()
-        if tail:
-            ttft = ttft or round(time.monotonic() - t0, 2)
-            yield "delta", {"text": tail}
-    except Exception as exc:  # noqa: BLE001 - surface the failure; sources still stand
-        logger.warning("answer stream failed: %s", exc)
-        if not parts:
-            ev = images_event()
-            if ev:
-                yield ev
-            yield "error", {"message": "The free models are busy right now; the sources above are still useful.",
-                            "detail": str(exc)[:200]}
-            return
-    answer = filt.text()
-    if not _MARK.search(answer) and _MARK.search("".join(parts)):
-        # the tagged part came back empty or echoed the question; use the untagged text instead
-        answer = clean_leak(re.sub(r"<answer>.*?</answer>", " ", "".join(parts), flags=re.S)) or answer
+    answer = ""
+    shown = False
+    for attempt in range(2):
+        filt = AnswerFilter()
+        parts = []
+        try:
+            for raw in deps.stream(system, prompt if attempt == 0 else prompt + RETRY_NOTE, 1400):
+                parts.append(raw)
+                delta = filt.feed(raw)
+                if not delta:
+                    continue
+                shown = True
+                if ttft is None:
+                    ttft = round(time.monotonic() - t0, 2)
+                yield "delta", {"text": delta}
+            if filt.state == "before" and not clean_leak(filt.buf) and attempt == 0:
+                logger.info("answer came back as planning notes; asking again")
+                continue  # nothing shown yet: ask once more for the answer alone
+            tail = filt.finish()
+            if tail:
+                shown = True
+                ttft = ttft or round(time.monotonic() - t0, 2)
+                yield "delta", {"text": tail}
+        except Exception as exc:  # noqa: BLE001 - surface the failure; sources still stand
+            logger.warning("answer stream failed: %s", exc)
+            if not parts and not answer:
+                ev = images_event()
+                if ev:
+                    yield ev
+                yield "error", {"message": "The free models are busy right now; the sources above are still useful.",
+                                "detail": str(exc)[:200]}
+                return
+        answer = clean_leak(filt.text())
+        if not _MARK.search(answer) and _MARK.search("".join(parts)):
+            # the tagged part came back empty or echoed the question; use the untagged text instead
+            answer = clean_leak(re.sub(r"<answer>.*?</answer>", " ", "".join(parts), flags=re.S)) or answer
+        if answer_ok(answer) or shown or attempt == 1:
+            break
     answer = normalize_markers(answer)
     ev = images_event()
     if ev:

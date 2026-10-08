@@ -538,7 +538,7 @@ def test_prompt_hides_snippet_only_pages_when_enough_are_readable():
     _, prompt = ask.build_prompt("fasting?", few)
     assert "[2] D (search snippet only)" in prompt
     system, _ = ask.build_prompt("q", srcs)
-    assert "exactly" in system and "One fact per sentence" in system
+    assert "exactly" in system and "one fact each" in system
 
 
 def test_empty_search_is_retried_once():
@@ -572,3 +572,37 @@ def test_answer_filter_untagged_falls_back_to_whole_text():
     g = ask.AnswerFilter()
     g.feed("thinking about it\nAnswer:\nMars is red [1].")
     assert g.text() == "Mars is red [1]."
+
+
+def test_clean_leak_keeps_final_draft_and_drops_notes():
+    leaked = ("Need avoid 'and' joining two figures. So separate them [4].\n\n"
+              "Better: rephrase as one finding per sentence. Let's write.\n\n"
+              "Semaglutide cut cardiovascular death by 23% [4]. It cut MACE by 18% [4].\n\n"
+              "Trials show GLP-1 drugs reduce non-fatal stroke [5].")
+    out = ask.clean_leak(leaked)
+    assert out.startswith("Semaglutide cut") and "Need avoid" not in out and "[5]" in out
+
+
+def test_clean_leak_leaves_normal_answers_alone():
+    text = "The EU AI Act's draft was agreed in 2023 [1].\n\nBans apply from February 2025 [2]."
+    assert ask.clean_leak(text) == text
+
+
+def test_planning_only_reply_is_asked_again():
+    prompts = []
+
+    def stream(system, prompt, n):
+        prompts.append(prompt)
+        if len(prompts) == 1:
+            return iter(["Need to cite [1] for this. Let's write short sentences. Also [1]: \"Mars is"])
+        return iter(["<answer>Mars is red [1].</answer>"])
+
+    deps = ask.AskDeps(search=lambda q, f, n, **kw: [{"url": "https://a.org", "title": "A", "kind": "paper",
+                                                       "snippet": "Mars is red."}],
+                       fetch=lambda s: None, stream=stream, verify=lambda a, s: {"citations": [], "counts": {}},
+                       images=lambda q: [], extra={"search_retry_s": 0})
+    events = list(ask.run_ask("Is Mars red?", want_images=False, deps=deps))
+    done = [d for e, d in events if e == "done"][0]
+    deltas = "".join(d["text"] for e, d in events if e == "delta")
+    assert len(prompts) == 2 and ask.RETRY_NOTE.strip()[:20] in prompts[1]
+    assert done["answer"] == "Mars is red [1]." and "Need to" not in deltas
