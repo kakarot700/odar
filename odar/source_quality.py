@@ -206,3 +206,161 @@ def rank_sources(query: str, hits: Sequence, near_dup_threshold: float = 0.85) -
 
     ranked.sort(key=lambda r: (r.duplicate_of is not None, -r.weight, -r.relevance))
     return ranked
+
+
+# ---------------------------------------------------------------------- #
+# User-facing quality labels (web app, ODAR Check)
+# ---------------------------------------------------------------------- #
+QUALITY_LABELS = (
+    "peer-reviewed",
+    "preprint",
+    "government",
+    "academic",
+    "organization",
+    "encyclopedia",
+    "news",
+    "blog",
+    "forum",
+    "web",
+)
+_PREPRINT_HOSTS = (
+    "arxiv.org",
+    "biorxiv.org",
+    "medrxiv.org",
+    "ssrn.com",
+    "researchsquare.com",
+    "preprints.org",
+    "osf.io",
+    "chemrxiv.org",
+    "psyarxiv.com",
+)
+_JOURNAL_HOSTS = (
+    "doi.org",
+    "nature.com",
+    "sciencedirect.com",
+    "springer.com",
+    "link.springer.com",
+    "wiley.com",
+    "bmj.com",
+    "thelancet.com",
+    "nejm.org",
+    "jamanetwork.com",
+    "plos.org",
+    "frontiersin.org",
+    "mdpi.com",
+    "tandfonline.com",
+    "sagepub.com",
+    "academic.oup.com",
+    "cell.com",
+    "science.org",
+    "pnas.org",
+    "ieeexplore.ieee.org",
+    "dl.acm.org",
+    "aclanthology.org",
+    "pubs.acs.org",
+    "journals.plos.org",
+    "cochranelibrary.com",
+    "annualreviews.org",
+    "ncbi.nlm.nih.gov",
+    "pubmed.ncbi.nlm.nih.gov",
+    "europepmc.org",
+    "jstor.org",
+    "proceedings.neurips.cc",
+    "openreview.net",
+    "cambridge.org",
+)
+_GOV_EXTRA = (".gov", ".gov.in", ".nic.in", ".gov.uk", ".gov.au", ".gc.ca", ".europa.eu", ".mil", ".int")
+_ORG_EXTRA = ("who.int", "un.org", "worldbank.org", "imf.org", "oecd.org", "ipcc.ch", "unicef.org")
+_NEWS_EXTRA = (
+    "bloomberg.com",
+    "ft.com",
+    "wsj.com",
+    "npr.org",
+    "aljazeera.com",
+    "indianexpress.com",
+    "hindustantimes.com",
+    "timesofindia.indiatimes.com",
+    "livemint.com",
+    "scroll.in",
+    "theverge.com",
+    "wired.com",
+    "techcrunch.com",
+    "arstechnica.com",
+    "forbes.com",
+    "cnbc.com",
+    "axios.com",
+    "politico.com",
+    "time.com",
+    "theatlantic.com",
+    "vox.com",
+    "nbcnews.com",
+    "abcnews.go.com",
+    "cbsnews.com",
+    "usatoday.com",
+    "latimes.com",
+)
+_FORUM_EXTRA = (
+    "stackexchange.com",
+    "quora.com",
+    "reddit.com",
+    "news.ycombinator.com",
+    "stackoverflow.com",
+    "discourse",
+    "forum",
+    "community.",
+)
+_BLOG_EXTRA = (
+    "medium.com",
+    "substack.com",
+    "wordpress.com",
+    "blogspot.",
+    "dev.to",
+    "hashnode",
+    "ghost.io",
+    "tumblr.com",
+    "blog.",
+    "/blog",
+)
+
+
+def _host_match(domain: str, hosts: Sequence[str]) -> bool:
+    return any(domain == h or domain.endswith("." + h) for h in hosts)
+
+
+def quality_label(url: str, title: str = "") -> str:
+    """One plain-language label for how much weight a source deserves."""
+    domain = domain_of(url)
+    lower_url = (url or "").lower()
+    if not domain:
+        return "web"
+    if _host_match(domain, _PREPRINT_HOSTS):
+        return "preprint"
+    if _host_match(domain, _JOURNAL_HOSTS):
+        return "peer-reviewed"
+    if _host_match(domain, _ORG_EXTRA):
+        return "organization"
+    if any(domain.endswith(t) for t in _GOV_EXTRA):
+        return "government"
+    if any(domain.endswith(t) for t in _UNIVERSITY_TLDS) or domain.endswith(".edu"):
+        return "academic"
+    if domain.endswith("wikipedia.org") or domain in ("britannica.com", "www.britannica.com"):
+        return "encyclopedia"
+    if _host_match(domain, _FORUM_EXTRA) or any(h in domain for h in ("forum", "community.")):
+        return "forum"
+    if any(h in domain for h in _BLOG_EXTRA[:-2]) or domain.startswith("blog.") or "/blog" in lower_url:
+        return "blog"
+    if _host_match(domain, tuple(_NEWS_DOMAINS)) or _host_match(domain, _NEWS_EXTRA):
+        return "news"
+    cls = classify_source(url, title)
+    return {
+        "primary_research": "peer-reviewed",
+        "systematic_review": "peer-reviewed",
+        "meta_analysis": "peer-reviewed",
+        "government": "government",
+        "university": "academic",
+        "professional_organization": "organization",
+        "encyclopedia": "encyclopedia",
+        "news": "news",
+        "blog": "blog",
+        "forum": "forum",
+    }.get(cls, "web")

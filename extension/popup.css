@@ -1,0 +1,7 @@
+body{width:380px;font:14px/1.45 system-ui,sans-serif;margin:12px;color:#1a1a1a}
+h1{font-size:16px;margin:0 0 8px}textarea{width:100%;box-sizing:border-box;font:inherit;padding:6px;border:1px solid #ccc;border-radius:8px}
+.row{display:flex;gap:8px;justify-content:flex-end;margin:8px 0}button{font:inherit;padding:6px 10px;border-radius:8px;border:1px solid #ccc;background:#fff;cursor:pointer}
+.primary{background:#1d3fd8;color:#fff;border-color:#1d3fd8}#status{color:#555;margin:6px 0}
+.claim{border-top:1px solid #eee;padding:6px 0}.v{font-size:11px;font-weight:600;padding:1px 6px;border-radius:6px;color:#fff;background:#888}
+.v-SUPPORTED{background:#1f8a4c}.v-PARTIALLY{background:#c08a00}.v-CONTRADICTED,.v-WRONG,.v-DEAD{background:#c0392b}
+.score{font-size:22px;font-weight:700}.foot{font-size:12px;color:#777}a{color:#1d3fd8}

@@ -164,8 +164,13 @@ def make_engine(
     from odar.engine import ResearchEngine
     from odar.llm import NativeToolUseController
 
+    async def _no_backoff(_delay):  # retries are exercised, not waited for
+        return None
+
     controller = NativeToolUseController(
-        make_adapter(server, request_timeout=request_timeout), max_tool_turns=max_tool_turns
+        make_adapter(server, request_timeout=request_timeout),
+        max_tool_turns=max_tool_turns,
+        sleep=_no_backoff,
     )
     return ResearchEngine(
         model=controller,
@@ -202,10 +207,13 @@ class TestFiveTurnToolSession:
         engine = make_engine(mock_server, search, extractor)
         outcome = engine.run(QUESTION)
 
-        # The whole multi-turn exchange happened over the wire.
-        assert len(mock_server.requests) == 5
+        # The whole multi-turn exchange happened over the wire, followed by
+        # ONE tool-free answer-synthesis request over the certified facts.
+        tool_turns = [r for r in mock_server.requests if r.get("tools")]
+        assert len(tool_turns) == 5
+        assert len(mock_server.requests) - len(tool_turns) <= 1
         # Tool definitions advertised on every turn; canonical loop only.
-        for request in mock_server.requests:
+        for request in tool_turns:
             assert {t["name"] for t in request["tools"]} == {
                 "web_search",
                 "fetch_page",
@@ -227,7 +235,7 @@ class TestFiveTurnToolSession:
         assert engine.governor.counters["fetches"] == 2
         # Every wire model turn was approved; the evidence evaluation is an
         # additional governed model-call unit on top.
-        assert engine.governor.counters["model_calls"] >= len(mock_server.requests) == 5
+        assert engine.governor.counters["model_calls"] >= len(tool_turns) == 5
 
         # Engine-owned evaluation produced certified findings from the graph.
         assert outcome.state.supporting_claims(), "strong evidence should certify"
@@ -358,8 +366,10 @@ class TestBackendFailureSemantics:
         assert any("rate" in e.lower() for e in outcome.errors)
 
     def test_timeout_fails_explicitly(self, mock_server):
+        # Persistent timeout: retried with backoff, then fails explicitly.
         mock_server.script = [
             {
+                "repeat": True,
                 "status": 200,
                 "delay": 3.0,
                 "payload": {
@@ -377,6 +387,28 @@ class TestBackendFailureSemantics:
         outcome = engine.run(QUESTION)
         assert outcome.status == "FAILED"
         assert any("timeout" in e.lower() for e in outcome.errors)
+
+    def test_transient_timeout_recovers_with_retry(self, mock_server):
+        # One slow response, then the backend recovers: the run must NOT fail.
+        mock_server.script = [
+            {
+                "status": 200,
+                "delay": 1.5,
+                "payload": {
+                    "id": "m",
+                    "type": "message",
+                    "role": "assistant",
+                    "model": "x",
+                    "content": [],
+                    "stop_reason": "end_turn",
+                    "usage": {"input_tokens": 1, "output_tokens": 1},
+                },
+            }
+        ]
+        engine = make_engine(mock_server, StubSearch(), StubExtractor(), request_timeout=0.4)
+        outcome = engine.run(QUESTION)
+        assert outcome.status != "FAILED"
+        assert engine.governor.counters["retries"] >= 1
 
     def test_malformed_content_degrades_safely(self, mock_server):
         mock_server.script = [msg([{"type": "banana", "data": 1}], stop_reason="end_turn")]

@@ -151,9 +151,15 @@ class FinalAuditor:
         # already recorded in the evidence trail; they are exempt from the
         # factual-number grounding scan.
         factual_lines = [
-            line for line in synthesis_text.splitlines() if not line.lstrip().startswith("- cited:")
+            line
+            for line in synthesis_text.splitlines()
+            if not line.lstrip().startswith("- cited:")
+            and not re.match(r"\s*\d+\. \[src_[0-9a-f]+\]", line)  # Sources list (titles)
+            and not line.lstrip().startswith("#")  # headings restate the question/sub-questions
         ]
         factual_text = "\n".join(factual_lines)
+        # Link targets (source URLs) are provenance, not factual assertions.
+        factual_text = re.sub(r"\]\([^)\s]*\)", "]", factual_text)
         stray: List[str] = []
         for token in set(_NUMBER_RE.findall(factual_text)):
             value = float(token)

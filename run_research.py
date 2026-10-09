@@ -42,20 +42,40 @@ def build_budget(args: argparse.Namespace, fast: bool) -> Budget:
         max_model_calls=max(4, int(args.max_model_calls * factor)),
         max_wall_clock_s=args.timeout,
         max_retries_per_call=2,
+        max_verifications=(
+            max(16, int(getattr(args, "max_verifications", 64) * factor))
+            if getattr(args, "mode", "single") == "deep"
+            else 0
+        ),
     )
+
+
+def _live_telemetry(jobstore: JobStore, job_id: str) -> TelemetryRecorder:
+    """Telemetry whose events are also appended to the job's event log (live progress)."""
+    telemetry = TelemetryRecorder()
+    telemetry.sink = lambda name, data: jobstore.append_event(job_id, f"telemetry.{name}", data)
+    return telemetry
+
+
+def _scholar() -> Any:
+    from odar.scholar import Scholar
+
+    return Scholar()
 
 
 def build_engine(
     args: argparse.Namespace, jobstore: JobStore, job_id: str, budget: Budget, token: CancellationToken
 ) -> ResearchEngine:
+    if getattr(args, "mode", "single") == "deep":
+        return build_deep_engine(args, jobstore, job_id, budget, token)
     if args.model == "llm":
         from odar.agent import AnthropicSDKAdapter
 
-        adapter = AnthropicSDKAdapter(base_url=args.base_url or None)
-        model = NativeToolUseController(adapter=adapter)
+        adapter = AnthropicSDKAdapter(model=getattr(args, "llm_model", None), base_url=args.base_url or None)
+        model: Any = NativeToolUseController(adapter=adapter)
     else:
         model = ScriptedResearchController()
-    telemetry = TelemetryRecorder()
+    telemetry = _live_telemetry(jobstore, job_id)
 
     def _checkpoint(state: ResearchState) -> None:
         jobstore.save_checkpoint(job_id, state.to_checkpoint())
@@ -73,6 +93,39 @@ def build_engine(
         cancel_check=lambda: jobstore.is_cancel_requested(job_id),
         checkpoint_sink=_checkpoint,
         fallback_policy=policy,
+    )
+
+
+def build_deep_engine(
+    args: argparse.Namespace, jobstore: JobStore, job_id: str, budget: Budget, token: CancellationToken
+) -> ResearchEngine:
+    """Multi-agent pipeline; LLM roles routed across free models with fallback."""
+    from odar.deep import DeepResearchEngine
+    from odar.router import AnthropicMessagesClient, load_routes
+
+    client = AnthropicMessagesClient(base_url=args.base_url or None) if args.model == "llm" else None
+    routes = load_routes()
+    if getattr(args, "llm_model", None) and not os.environ.get("ODAR_MODEL_ROUTES"):
+        # An explicit --llm-model leads every role; defaults remain as fallbacks.
+        routes = {
+            role: [args.llm_model] + [m for m in models if m != args.llm_model]
+            for role, models in routes.items()
+        }
+
+    def _checkpoint(state: ResearchState) -> None:
+        jobstore.save_checkpoint(job_id, state.to_checkpoint())
+
+    return DeepResearchEngine(
+        client=client,
+        routes=routes,
+        max_subquestions=getattr(args, "subquestions", 4),
+        reflection_rounds=getattr(args, "reflection_rounds", 1),
+        scholar=_scholar() if getattr(args, "academic", False) else None,
+        budget=budget,
+        telemetry=_live_telemetry(jobstore, job_id),
+        token=token,
+        cancel_check=lambda: jobstore.is_cancel_requested(job_id),
+        checkpoint_sink=_checkpoint,
     )
 
 
@@ -301,6 +354,26 @@ def build_parser() -> argparse.ArgumentParser:
         default="llm" if os.environ.get("ANTHROPIC_API_KEY") else "scripted",
     )
     p_run.add_argument("--base-url", default=os.environ.get("ODAR_ANTHROPIC_BASE_URL"))
+    p_run.add_argument(
+        "--llm-model",
+        default=os.environ.get("ODAR_ANTHROPIC_MODEL"),
+        help="Anthropic(-compatible) model id for --model llm (default: claude-sonnet-5-5)",
+    )
+    p_run.add_argument(
+        "--mode",
+        choices=("single", "deep"),
+        default="single",
+        help="single = one tool-use agent; deep = planner + parallel researchers + verifier + "
+        "reflection + section writers, LLM roles routed across models with fallback",
+    )
+    p_run.add_argument(
+        "--academic",
+        action="store_true",
+        help="deep mode: also search free scholarly APIs (Crossref, PubMed, arXiv, OpenAlex)",
+    )
+    p_run.add_argument("--subquestions", type=int, default=4, help="deep mode: sub-questions to plan")
+    p_run.add_argument("--reflection-rounds", type=int, default=1, help="deep mode: gap-filling rounds")
+    p_run.add_argument("--max-verifications", type=int, default=64, help="deep mode: NLI verification budget")
     p_run.add_argument("--max-iterations", type=int, default=12)
     p_run.add_argument("--max-search", type=int, default=6)
     p_run.add_argument("--max-fetch", type=int, default=4)
@@ -329,6 +402,11 @@ def build_parser() -> argparse.ArgumentParser:
         default="llm" if os.environ.get("ANTHROPIC_API_KEY") else "scripted",
     )
     p_resume.add_argument("--base-url", default=os.environ.get("ODAR_ANTHROPIC_BASE_URL"))
+    p_resume.add_argument(
+        "--llm-model",
+        default=os.environ.get("ODAR_ANTHROPIC_MODEL"),
+        help="Anthropic(-compatible) model id for --model llm (default: claude-sonnet-5-5)",
+    )
     p_resume.add_argument("--max-iterations", type=int, default=12)
     p_resume.add_argument("--max-search", type=int, default=6)
     p_resume.add_argument("--max-fetch", type=int, default=4)
@@ -355,6 +433,12 @@ def build_parser() -> argparse.ArgumentParser:
     p_cancel.add_argument("job_id")
     _add_db(p_cancel)
     p_cancel.set_defaults(func=cmd_cancel)
+
+    p_check = sub.add_parser("check", help="check which citations in a pasted answer hold up")
+    from odar.cli import add_check_arguments, cmd_check
+
+    add_check_arguments(p_check)
+    p_check.set_defaults(func=cmd_check)
 
     p_health = sub.add_parser("health", help="liveness/readiness report")
     _add_db(p_health)

@@ -22,7 +22,7 @@ from __future__ import annotations
 import logging
 import math
 import re
-from typing import Any, List, Optional, Sequence
+from typing import Any, Dict, List, Optional, Sequence, Tuple
 
 from odar.evidence import (
     CIRCULARITY_THRESHOLD,
@@ -40,6 +40,16 @@ logger = logging.getLogger("odar.citation_auditor")
 
 DEFAULT_MODEL_NAME = "cross-encoder/nli-deberta-v3-small"
 DEFAULT_THRESHOLD = 0.75
+REFUTE_THRESHOLD = 0.5
+# A refutation must be ABOUT the claim: the span has to share a meaningful
+# part of the claim's content vocabulary.  Small NLI cross-encoders label
+# topically adjacent but unrelated sentences as "contradiction" (e.g. a
+# sentence about COP30 accommodation vs. a claim about COP30 negotiating
+# texts) - those are not refutations.
+# Accept when the span shares >= 3 of the claim's content tokens, or >= 2
+# covering at least half the claim (short claims).
+REFUTE_MIN_SHARED_TOKENS = 3
+REFUTE_SHORT_CLAIM_OVERLAP = 0.5
 MIN_SPANS = 4
 MAX_SPANS = 8
 CHUNK_SIZE = 300
@@ -54,9 +64,92 @@ def softmax(row: Sequence[float]) -> List[float]:
     return [value / total for value in exps]
 
 
+# Leading list markers ("4.", "(2)", "-", "*") and trailing enumerators that
+# page chrome leaves glued to headlines ("... summit\n4.").
+_LEADING_ENUM_RE = re.compile(r"^\s*(?:\(?\d{1,3}[.)]|[-*\u2022\u2013\u2014])\s+")
+_TRAILING_ENUM_RE = re.compile(r"\s+\(?\d{1,3}[.)]?\s*$")
+_WORD_RE = re.compile(r"[A-Za-z]{2,}")
+
+
+def normalize_span(text: str) -> str:
+    """Collapse whitespace and strip list enumerators from a span.
+
+    Navigation lists ("Interactive: ... summit 4." / "... summit 6.") used
+    to reach the NLI model as distinct premises that differed only in an
+    enumerator, which the cross-encoder scores as a hard contradiction.
+    """
+    span = " ".join((text or "").split())
+    previous = None
+    while previous != span:
+        previous = span
+        span = _LEADING_ENUM_RE.sub("", span)
+        span = _TRAILING_ENUM_RE.sub("", span).strip()
+    return span
+
+
+_ABBREVIATIONS = {
+    "jan", "feb", "mar", "apr", "jun", "jul", "aug", "sep", "sept", "oct", "nov", "dec",
+    "mr", "mrs", "ms", "dr", "prof", "sr", "jr", "st", "no", "vol", "fig", "eq", "ch",
+    "vs", "etc", "al", "approx", "est", "inc", "ltd", "co", "corp", "dept", "gov", "u.s", "u.k", "e.g", "i.e",
+}  # fmt: skip
+
+
+def split_sentences(line: str) -> List[str]:
+    """Split one line into sentences without breaking after abbreviations
+    ("Feb. 8", "Dr. Card", "U.S. data") or before a lower-case/digit
+    continuation - a broken split produced subject-less claims such as
+    "8 estimates a $15 minimum wage would ..." in the 2026-10-07 benchmark."""
+    parts = _SENTENCE_RE.split(line or "")
+    merged: List[str] = []
+    for part in parts:
+        if merged:
+            prev = merged[-1]
+            last_word = (prev.rstrip(".!?").rsplit(None, 1) or [""])[-1].lower()
+            starts_continuation = bool(part) and (part[0].islower() or part[0].isdigit())
+            if prev.endswith(".") and (
+                last_word.strip("(\"'") in _ABBREVIATIONS or len(last_word) == 1 or starts_continuation
+            ):
+                merged[-1] = prev + " " + part
+                continue
+        merged.append(part)
+    return merged
+
+
 def _sentence_split(text: str) -> List[str]:
-    parts = [part.strip() for part in _SENTENCE_RE.split(text or "")]
-    return [part for part in parts if len(part.strip()) >= 3]
+    """Sentence spans; line breaks are hard boundaries (headlines, nav items)."""
+    spans: List[str] = []
+    seen: set = set()
+    for line in (text or "").splitlines():
+        for part in split_sentences(line):
+            span = normalize_span(part)
+            if len(span) < 3 or len(_WORD_RE.findall(span)) < 2:
+                continue
+            key = span.lower()
+            if key in seen:
+                continue  # duplicate spans add no evidence, only noise
+            seen.add(key)
+            spans.append(span)
+    return spans
+
+
+def content_tokens(text: str) -> set:
+    return {t for t in tokenize(text or "") if t not in STOPWORDS}
+
+
+def is_about_claim(span: str, claim: str) -> bool:
+    """Topical gate for refutations (see REFUTE_MIN_SHARED_TOKENS)."""
+    shared = content_tokens(span) & content_tokens(claim)
+    if len(shared) >= REFUTE_MIN_SHARED_TOKENS:
+        return True
+    return len(shared) >= 2 and topical_overlap(span, claim) >= REFUTE_SHORT_CLAIM_OVERLAP
+
+
+def topical_overlap(span: str, claim: str) -> float:
+    """Share of the claim's content tokens that the span also mentions."""
+    claim_tokens = content_tokens(claim)
+    if not claim_tokens:
+        return 0.0
+    return len(content_tokens(span) & claim_tokens) / len(claim_tokens)
 
 
 def _chunk(sentence: str, size: int = CHUNK_SIZE) -> List[str]:
@@ -227,7 +320,14 @@ class DeterministicNLIScorer:
             premise_side = self._polarity_side(premise_tokens)
             claim_side = self._polarity_side(claim_set)
             antonym_swap = premise_side is not None and claim_side is not None and premise_side != claim_side
-            if (overlap >= 0.55 and (premise_negated != claim_negated or antonym_swap)) or localized_flip:
+            # Contradiction is a symmetric relation: measure contested overlap
+            # against the SMALLER side so (p, h) and (h, p) agree.
+            premise_content = premise_tokens - STOPWORDS
+            symmetric_overlap = len(shared_content) / max(
+                1, min(len(premise_content), len(claim_set - STOPWORDS) or 1)
+            )
+            contested = max(overlap, symmetric_overlap)
+            if (contested >= 0.55 and (premise_negated != claim_negated or antonym_swap)) or localized_flip:
                 rows.append([2.2, -1.5, 0.0])  # contradiction-dominant
             elif overlap >= 0.6:
                 rows.append([-1.8, 1.0 + 2.2 * overlap, -0.4])  # entailment-dominant
@@ -257,6 +357,11 @@ class CitationAuditor:
         self.device = device
         self.scorer = scorer
         self.scorer_backend = "injected" if scorer is not None else "uninitialized"
+        # Optional second-opinion adjudicator for NLI contradictions:
+        # ``judge(claim, span) -> True (genuine) | False (not a refutation) | None (unavailable)``.
+        # None keeps the refutation (conservative: never hide a conflict).
+        self.refutation_judge: Optional[Any] = None
+        self._judge_cache: Dict[str, Optional[bool]] = {}
 
     # ------------------------------------------------------------------ #
     # Scorer lifecycle
@@ -305,7 +410,10 @@ class CitationAuditor:
                 pieces = re.split(r"(?<=[;:,])\s+|\s+(?:and|but|while|whereas)\s+", span)
                 refined.extend(piece.strip() for piece in pieces if len(piece.strip()) >= 12)
             if len(refined) > len(spans):
-                spans = refined[: max(self.max_spans, self.min_spans)]
+                # Keep the whole sentences first: replacing them by clauses
+                # made a full-sentence claim from a short page unentailable.
+                extra = [piece for piece in refined if piece not in spans]
+                spans = (spans + extra)[: max(self.max_spans, self.min_spans)]
         return spans[: self.max_spans]
 
     @staticmethod
@@ -321,8 +429,93 @@ class CitationAuditor:
         return [span for _, _, span in scored]
 
     # ------------------------------------------------------------------ #
+    # Refutation gate
+    # ------------------------------------------------------------------ #
+    def _is_heuristic_scorer(self) -> bool:
+        return isinstance(self.scorer, DeterministicNLIScorer)
+
+    def confirm_refutations(
+        self, spans: Sequence[str], claim: str, probabilities: Sequence[Sequence[float]]
+    ) -> List[int]:
+        """Indices of spans whose contradiction signal is a GENUINE refutation.
+
+        Root cause of the COP30 false conflicts (2026-10-07 benchmark): a
+        claim was scored SUPPORTS by its own verbatim span (p_ent~0.98) and
+        REFUTES by (a) a near-identical navigation item differing only in a
+        list number, and (b) an unrelated sentence on the same topic, both
+        with p_con >= 0.5.  A refutation is therefore accepted only when:
+
+        1. contradiction dominates (p_con >= 0.5 and p_con > p_ent);
+        2. the span is about the claim (topical overlap gate);
+        3. for neural scorers, the contradiction is SYMMETRIC: NLI
+           contradiction is a symmetric relation, so the reversed pair
+           (claim as premise, span as hypothesis) must also score
+           p_con >= 0.5.  One-directional "contradiction" from a small
+           cross-encoder is neutral-with-noise, not counter-evidence.
+
+        The lexical fallback scorer is asymmetric by construction (it is
+        provisional and can never certify), so step 3 is skipped for it.
+        """
+        candidates: List[int] = []
+        for index, row in enumerate(probabilities):
+            p_con, p_ent = float(row[0]), float(row[1])
+            if p_con < REFUTE_THRESHOLD or p_con <= p_ent:
+                continue
+            if not is_about_claim(spans[index], claim):
+                continue
+            candidates.append(index)
+        if not candidates or self._is_heuristic_scorer():
+            return candidates
+        try:
+            raw = self.scorer.predict([(claim, spans[i]) for i in candidates])
+            reverse = [softmax([float(v) for v in row]) for row in raw]
+        except Exception as exc:  # cannot confirm -> do not refute
+            logger.warning("reverse NLI check failed (%s); refutations unconfirmed", exc)
+            return []
+        symmetric = [
+            i for i, row in zip(candidates, reverse) if row[0] >= REFUTE_THRESHOLD and row[0] > row[1]
+        ]
+        if not symmetric or self.refutation_judge is None:
+            return symmetric
+        # 4. Adjudication: even symmetric cross-encoder contradictions are
+        #    often "different event, same topic" (SNLI annotation artefact:
+        #    e.g. "the summit concluded in Belem" vs "Antalya will host next
+        #    year's summit").  A stronger judge, when configured, decides.
+        confirmed: List[int] = []
+        for index in symmetric:
+            key = content_hash_short(claim + "\u241e" + spans[index])
+            if key not in self._judge_cache:
+                try:
+                    self._judge_cache[key] = self.refutation_judge(claim, spans[index])
+                except Exception as exc:
+                    logger.warning("refutation judge failed (%s); keeping NLI refutation", exc)
+                    self._judge_cache[key] = None
+            if self._judge_cache[key] is not False:
+                confirmed.append(index)
+        return confirmed
+
+    # ------------------------------------------------------------------ #
     # Audit
     # ------------------------------------------------------------------ #
+    @property
+    def is_neural(self) -> bool:
+        self.ensure_scorer()
+        return not isinstance(self.scorer, DeterministicNLIScorer) and self.scorer_backend != (
+            "deterministic-lexical-fallback"
+        )
+
+    def entailment_scores(self, pairs: Sequence[Tuple[str, str]]) -> List[float]:
+        """P(entailment) for (premise, hypothesis) pairs; 0.0 on scorer failure."""
+        self.ensure_scorer()
+        if not pairs:
+            return []
+        try:
+            raw = self.scorer.predict([(p, h) for p, h in pairs])
+        except Exception as exc:  # degrade, never crash
+            logger.warning("entailment scoring failed: %s", exc)
+            return [0.0] * len(pairs)
+        return [softmax([float(v) for v in row])[1] for row in raw]
+
     def audit(self, claim: str, sources: Sequence[str]) -> ClaimAuditResult:
         """Score ``claim`` against span pools built from ``sources``."""
         self.ensure_scorer()
@@ -362,10 +555,11 @@ class CitationAuditor:
         probabilities = [softmax([float(value) for value in row]) for row in raw_scores]
         eligible_probs = [probabilities[i] for i in eligible]
         entailment_max = max(row[1] for row in eligible_probs)
-        contradiction_max = max(row[0] for row in eligible_probs)
+        confirmed = self.confirm_refutations(spans, claim, probabilities)
+        contradiction_max = max((probabilities[i][0] for i in confirmed), default=0.0)
         entailment_mean = sum(row[1] for row in eligible_probs) / len(eligible_probs)
 
-        if contradiction_max > entailment_max and contradiction_max >= 0.5:
+        if confirmed and contradiction_max > entailment_max and contradiction_max >= REFUTE_THRESHOLD:
             verdict = Verdict.CONTRADICTION
         elif entailment_max >= self.threshold:
             verdict = Verdict.ENTAILMENT
@@ -478,6 +672,7 @@ class CitationAuditor:
                 logger.warning("provenance scoring failed: %s", exc)
                 probs = [[0.0, 0.0, 1.0] for _ in ranked]
             claim_tokens = {t for t in tokenize(claim.text) if t not in STOPWORDS}
+            confirmed = set(self.confirm_refutations(ranked, claim.text, probs))
             for position, span in enumerate(ranked):
                 source_index = pool_source[ranked_pool_index[position]]
                 source = sources[source_index] if source_index < len(sources) else None
@@ -489,7 +684,7 @@ class CitationAuditor:
                     relation = Relation.CIRCULAR  # self-support: blocked
                 elif p_ent >= self.threshold:
                     relation = Relation.SUPPORTS
-                elif p_con >= 0.5 and p_con > p_ent:
+                elif position in confirmed:
                     relation = Relation.REFUTES
                 elif overlap == 0:
                     relation = Relation.IRRELEVANT

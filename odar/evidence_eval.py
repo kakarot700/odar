@@ -56,7 +56,10 @@ class SemanticStanceEvaluator:
             & {t for t in tokenize(hypothesis) if t not in STOPWORDS}
         )
         if p_con >= self.REFUTE_THRESHOLD and p_con > p_ent:
-            return Relation.REFUTES, p_con
+            # Same gate as certification: topical + (neural) symmetric check.
+            if self.auditor.confirm_refutations([snippet], hypothesis, [probs]):
+                return Relation.REFUTES, p_con
+            p_con = 0.0  # unconfirmed one-directional contradiction is noise
         if p_ent >= self.SUPPORT_THRESHOLD:
             return Relation.SUPPORTS, p_ent
         if max(p_ent, p_con) >= self.QUALIFY_THRESHOLD:

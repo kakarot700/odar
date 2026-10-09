@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<title>ODAR · answers you can check</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="tb-left">
+    <a class="icon-btn" href="/home" data-nav aria-label="Home" title="Home" id="btn-home"></a>
+    <a class="brand" href="/" data-nav aria-label="ODAR, new chat"><span class="logo">O</span>ODAR</a>
+  </div>
+  <div class="tb-right">
+    <button class="icon-btn" id="btn-search" aria-label="Search threads" title="Search"></button>
+    <a class="icon-btn" href="/settings" data-nav aria-label="Profile and settings" title="Profile &amp; settings" id="btn-profile"></a>
+  </div>
+</header>
+
+<div class="shell">
+  <aside class="sidebar" id="sidebar" aria-label="Threads and projects">
+    <a class="new-chat" href="/" data-nav>+ New chat</a>
+    <div class="side-sec"><div class="side-h">Projects <a href="/home#projects" data-nav class="side-more">New</a></div><div id="side-projects"></div></div>
+    <div class="side-sec"><div class="side-h">Threads</div><div id="side-threads"></div></div>
+    <div class="side-sec"><div class="side-h">Tools</div>
+      <a class="side-link" href="/new?mode=research" data-nav>Research report</a>
+      <a class="side-link" href="/new?mode=check" data-nav>Check an AI answer</a>
+      <a class="side-link" href="/new?mode=references" data-nav>Check references</a>
+      <a class="side-link" href="/history" data-nav>Run history</a>
+    </div>
+  </aside>
+  <main id="view" class="view"></main>
+</div>
+
+<div id="composer-wrap" class="composer-wrap hidden">
+  <div id="opts" class="opts hidden"></div>
+  <div id="attached" class="attached hidden"></div>
+  <form id="composer" class="composer" autocomplete="off">
+    <textarea id="q" rows="1" maxlength="60000" placeholder="Ask anything…" aria-label="Your question"></textarea>
+    <div class="comp-row">
+      <div class="comp-left">
+        <button type="button" class="chip" id="chip-mode" aria-haspopup="menu"></button>
+        <button type="button" class="chip" id="chip-focus" aria-haspopup="menu"></button>
+        <button type="button" class="chip hidden" id="chip-src" aria-haspopup="menu"></button>
+        <button type="button" class="icon-btn sm" id="btn-attach" aria-label="Attach a file" title="Attach PDF, DOCX, TXT or MD"></button>
+        <input type="file" id="file" accept=".pdf,.docx,.txt,.md" hidden>
+      </div>
+      <button type="submit" class="send" id="btn-send" aria-label="Send"></button>
+    </div>
+  </form>
+</div>
+
+<div id="menu" class="menu hidden" role="menu"></div>
+<div id="pop" class="pop hidden" role="dialog"></div>
+<div id="toast" class="toast hidden" role="status"></div>
+<div id="search" class="search-ov hidden" role="dialog" aria-label="Search">
+  <div class="search-box"><input id="search-q" placeholder="Search your threads and runs"><button class="icon-btn sm" id="search-x" aria-label="Close">✕</button></div>
+  <div id="search-res"></div>
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

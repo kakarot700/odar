@@ -31,6 +31,8 @@ class ResearchState:
     attempted_actions: List[str] = field(default_factory=list)
     failed_approaches: List[str] = field(default_factory=list)
     fetched_urls: List[str] = field(default_factory=list)
+    search_hit_urls: List[str] = field(default_factory=list)  # fetch allow-list (LLM path)
+    mined_source_ids: List[str] = field(default_factory=list)  # sources already mined for claims
     quarantined_urls: List[str] = field(default_factory=list)
     injection_blocked: int = 0
     iteration: int = 0
@@ -189,6 +191,8 @@ class ResearchState:
             "attempted_actions": self.attempted_actions,
             "failed_approaches": self.failed_approaches,
             "fetched_urls": self.fetched_urls,
+            "search_hit_urls": self.search_hit_urls,
+            "mined_source_ids": self.mined_source_ids,
             "quarantined_urls": self.quarantined_urls,
             "injection_blocked": self.injection_blocked,
             "unmet_conditions": self.unmet_conditions,
@@ -215,6 +219,8 @@ class ResearchState:
         state.attempted_actions = list(checkpoint.get("attempted_actions", []))
         state.failed_approaches = list(checkpoint.get("failed_approaches", []))
         state.fetched_urls = list(checkpoint.get("fetched_urls", []))
+        state.search_hit_urls = list(checkpoint.get("search_hit_urls", []))
+        state.mined_source_ids = list(checkpoint.get("mined_source_ids", []))
         state.quarantined_urls = list(checkpoint.get("quarantined_urls", []))
         state.injection_blocked = int(checkpoint.get("injection_blocked", 0))
         state.unmet_conditions = list(checkpoint.get("unmet_conditions", []))

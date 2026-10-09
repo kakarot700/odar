@@ -82,6 +82,10 @@ class Budget:
     max_dependency_depth: int = 8
     max_concurrent_fetches: int = 2
     max_extensions: int = 2
+    # NLI verifications (local cross-encoder, $0).  0 = legacy behaviour:
+    # each verification consumes a model-call unit.  >0 = separate budget,
+    # so model_calls counts real LLM requests only (multi-agent mode).
+    max_verifications: int = 0
 
     def to_dict(self) -> Dict[str, float]:
         return {k: float(v) for k, v in self.__dict__.items()}
@@ -106,6 +110,7 @@ class Governor:
             "sandbox_executions": 0,
             "model_calls": 0,
             "retries": 0,
+            "verifications": 0,
         }
         self.denials: List[Dict[str, object]] = []
         self.extensions: List[Dict[str, object]] = []
@@ -164,6 +169,18 @@ class Governor:
             if self.counters["model_calls"] >= self.budget.max_model_calls:
                 self._deny("model_calls", f"max {self.budget.max_model_calls} reached")
             self.counters["model_calls"] += 1
+
+    def approve_verification(self) -> None:
+        """One local NLI verification.  Uses its own budget when configured,
+        otherwise falls back to the model-call budget (legacy accounting)."""
+        if self.budget.max_verifications <= 0:
+            self.approve_model_call()
+            return
+        self._check_cancel()
+        with self._lock:
+            if self.counters["verifications"] >= self.budget.max_verifications:
+                self._deny("verifications", f"max {self.budget.max_verifications} reached")
+            self.counters["verifications"] += 1
 
     def approve_retry(self) -> None:
         self._check_cancel()

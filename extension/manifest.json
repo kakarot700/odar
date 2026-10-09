@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "ODAR Check",
+  "version": "0.1.0",
+  "description": "Check the citations in an AI answer or article: does each source really say what's claimed?",
+  "permissions": ["activeTab", "scripting", "storage", "contextMenus"],
+  "optional_host_permissions": ["https://*/*", "http://localhost/*", "http://127.0.0.1/*"],
+  "action": { "default_popup": "popup.html", "default_title": "ODAR Check" },
+  "background": { "service_worker": "background.js" },
+  "options_page": "options.html"
+}
