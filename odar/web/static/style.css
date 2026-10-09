@@ -160,6 +160,7 @@ body.with-rail .view,body.with-rail .composer-wrap{padding-left:max(16px,calc(2 
 /* inline citation chips: quiet until you need them */
 .cite{display:inline-grid;place-items:center;min-width:18px;height:18px;padding:0 5px;margin:0 1px;border-radius:9px;border:0;cursor:pointer;
   font-size:10.5px;font-weight:650;line-height:1;vertical-align:1.5px;background:var(--faint);color:var(--mute);transition:transform .12s,background .2s}
+.nw{white-space:nowrap}
 .cite:hover{transform:translateY(-1px);color:var(--ink)}
 .cite.supported{background:var(--ok-soft);color:var(--ok)}.cite.partial{background:var(--part-soft);color:var(--part)}
 .cite.unsupported{background:var(--bad-soft);color:var(--bad)}.cite.unchecked{background:var(--none-soft);color:var(--none)}

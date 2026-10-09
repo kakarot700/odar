@@ -5,31 +5,39 @@ pip install -e ".[web,pdf]"
 odar serve --port 8000            # http://127.0.0.1:8000
 ```
 
-The app is a texting-style assistant over a **live sky**, phone first (one narrow ~520 px column on
-desktop). Its look follows the Hark Pro design language, with ODAR's own name and "O" mark:
+The app is a texting-style assistant over a **live sky**, phone first (one narrow ~500 px column on
+desktop). Its look follows the Hark Pro design language, with ODAR's own name and "O" mark; the
+measured spec it was matched against (colours sampled from Hark's App Store screenshots, type scale,
+radii, components, motion) is in the project's `hark-research/HARK_UI_RESEARCH_v2.md`:
 
 * **Sky**: a full-screen canvas gradient that follows the local time of day (night, dawn, day, golden
   hour, dusk) with a few soft clouds drifting slowly (`js/sky.js`). It is drawn at quarter resolution
   (~20 fps), pauses while the tab is hidden, and is a still picture under `prefers-reduced-motion`.
-  Text tone follows the sky's brightness (light text at dusk and night); Profile → Text colour can force
-  Light or Dark. `?sky=dawn|day|golden|dusk|night` pins the sky for the session (`?sky=live` unpins), which
-  is handy for screenshots and demos.
-* **Frosted glass** everywhere: bubbles, top-bar controls, composer, cards, sheets and menus use
-  translucent fills, `backdrop-filter` blur, a hairline light border and a soft shadow. The chat fades
-  out under the top bar (the view is a masked fixed scroller). Font: Inter (variable, Latin subset,
-  SIL OFL, bundled in `static/fonts/`), system stack fallback.
-* **Top bar**: round glass Home button on the left; a centred segmented pill **Chat | Projects** (the active
-  segment is a solid white pill); a glass **Search** pill (an icon on phones) and your round avatar on the
-  right.
+  Text tone follows the sky's brightness (light text at dusk and night); Settings → System preferences →
+  Text colour can force Light or Dark. `?sky=dawn|day|golden|dusk|night` pins the sky for the session
+  (`?sky=live` unpins), which is handy for screenshots and demos.
+* **Light cards on frosted glass**: by day, assistant bubbles, link cards, receipts, page cards and
+  templates are opaque white with near-black ink (`#1d1d1f`); the top-bar controls, composer, action
+  cards and panels are translucent white with a heavy `backdrop-filter` blur and no borders. At dusk and
+  night the bubbles and glass turn dark navy with white text. The chat fades out under the top bar (the
+  view is a masked fixed scroller). Font: Inter (variable, Latin subset, SIL OFL, bundled in
+  `static/fonts/`), 16 px regular for messages, system stack fallback.
+* **Top bar**: a round glass **Search** button on the left; a centred segmented pill
+  **Home | Chat | Projects** whose active segment is a black pill that slides between tabs; your round
+  avatar (opens Settings) on the right.
 * **Chat** is one continuous thread (no "new chat" list), with no avatars, names or timestamps. ODAR's
-  answers arrive as **short bubbles** (one per paragraph; a heading rides with its text; tables get their
-  own wide bubble); your messages are pills on the right. While ODAR works, a **live work card** (a dark
-  rounded card) shows the sources being read as tiles (favicons and sites) and the step list, with
-  floating round glass buttons (expand for source titles and steps; stop), and under it a translucent
-  **status pill** whose one short phrase cross-fades as the work moves ("Searching PubMed, arXiv and
-  Crossref", "Reading 6 sources", "Writing the answer", "Checking quotes"). When done it folds into a
-  small pill ("Read 6 sources · checked 9 citations · 41s") that opens the steps.
-* **Composer**: a glass pill, "Ask ODAR", with **+** and a **mic** on the right; send appears once there
+  answers arrive as **short bubbles**: one per paragraph, and a plain paragraph longer than ~300
+  characters is split at sentence ends into bubbles of two or three sentences (a heading rides with its
+  text; lists stay whole; tables and code get their own wide bubble; a citation chip never wraps away
+  from its full stop). Your messages are translucent pills on the right. While ODAR works, a **live work
+  card** in the style of Hark's Handoff card shows the pages being read as white **page cards** (site,
+  serif title, text lines; the one being read is outlined) in a pale frosted container; inside it a
+  white **status pill** with a dotted spinner whose one short phrase cross-fades as the work moves
+  ("Searching PubMed, arXiv and Crossref", "Reading 6 sources", "Writing the answer", "Checking quotes"),
+  a **Steps** pill (opens the step list and source titles) and a round **stop** button; under it a ghost
+  pill names the current step and the elapsed time. When done it folds into a small ghost pill
+  ("Read 6 sources · checked 9 citations · 41s") that opens the steps.
+* **Composer**: a light borderless pill (inset a little from the thread on phones), "Ask ODAR", with **+** and a **mic** on the right; send appears once there
   is text, and turns into stop while an answer streams. The **+** menu holds the mode (Ask / Deep research
   / Check / References), the focus (All web, Academic, News, Discussions, YouTube; in projects: files /
   web / both), attach a file, and add to a project. Anything not default shows as a chip above the
@@ -38,17 +46,23 @@ desktop). Its look follows the Hark Pro design language, with ODAR's own name an
 * Each answer carries: quiet inline `[n]` citation chips coloured by verdict (tap one for a sheet with
   the verified quote, URL and supported / partly supported / not supported / not checked badge); a
   **trust** badge and a "N supported · M partial" line that opens every check; **link cards**, up to
-  three fanned, slightly rotated cards (image when the page's site has one in the image results,
-  otherwise a favicon tile, then title and site; tap opens the page) plus "All N sources" for the full
-  list; a fanned **photo** stack; and **follow-up chips** (full report, simpler, academic, latest news,
+  three white cards fanned at -3° / +3° with a white edge (image when the page's site has one in the
+  image results, otherwise a dark title tile in the site's hue with its name in a serif, then title and
+  site; tap opens the page) plus "All N sources" for the full
+  list (its sheet ends with a copyable **Cite these sources** text template); a fanned **photo** stack;
+  and **follow-up chips** (full report, simpler, academic, latest news,
   Hindi).
 * **Deep research, Check and References** runs started from the composer appear in the thread as the same
   live work card (pages being read as tiles, steps, status phrase from the run's newest event; expand
   opens the full run view, the other button minimises the card; runs cannot be stopped from the UI), then
-  a done pill, a glass **summary card** (report collapsed with "Read the full report", trust badge,
-  citation-check details) and a white **receipt card** (sources read, claims checked, trust score,
-  evidence) with a black **Download PDF** pill and Markdown, Word, Share link and "Ask about it".
-* **Home** (house button): **Action Cards**, frosted pills whose verb is an embedded white button, built
+  a done pill, a black **clock label** ("Open deep research", like Hark's scheduled-task label, linking
+  to the full run view), a white **summary card** (report collapsed with "Read the full report", trust
+  badge, citation-check details; a References run's bibliography is a copyable text template) and a
+  white **receipt card** in the style of Hark's order card (line items with values on the right, then a
+  footer band with the formats on the left and a black **Download PDF** pill on the right; Markdown,
+  Word, Share link and "Ask about it" underneath). Fenced code in answers renders as a **code card** with
+  Copy.
+* **Home** (Home tab): **Action Cards**, frosted rounded cards whose verb is an embedded white button, built
   from your real data: "Read your report on …", "Follow your deep research on …" (while one runs),
   "Verify citations in …" (opens the checks of your latest answer), "Continue research on …", "Try
   today's Discover: …", "Download your latest report as PDF", "Check an AI answer for fake citations".
@@ -56,19 +70,22 @@ desktop). Its look follows the Hark Pro design language, with ODAR's own name an
   partly / not supported tiles and a sparkline of trust scores across answers), Usage (questions and deep
   runs left with thin bars), Discover (topic tabs, the top story as the big line, a list with
   thumbnails), Activity (questions and runs per day, last 7 days), Reports (thumbnails list, download the
-  latest PDF) and Projects. Each panel has a small icon and a grey "Title · Subtitle" header, one big
-  insight sentence, a pale full-width button at the bottom, and **Reply**, which drops a prompt about it
-  into the composer. On screens 1180 px and wider, Home opens as a **left column next to the chat** (the
-  house button toggles it); on phones it is its own page with the composer (what you type there is asked
+  latest PDF) and Projects. Each panel has a grey "● Title · Subtitle" header (a coloured circle icon),
+  one big insight sentence (black lead, grey continuation), white tiles, thick bars, a near-white
+  full-width button at the bottom, and **Reply**, which drops a prompt about it
+  into the composer. On screens 1180 px and wider, Home opens as a **left column next to the chat**; on phones it is its own page with the composer (what you type there is asked
   in Chat). Pull down to refresh.
-* **Projects** tab: create, rename, delete; each project opens its own thread (the latest one continues;
+* **Projects** tab: a plain "Projects" heading with a black **+ New Project** pill; create, rename, delete; each project opens its own thread (the latest one continues;
   "New thread" starts fresh) with a **Files** sheet for uploads and custom instructions.
-* **Search** (or Ctrl/Cmd-K): searches thread titles, the messages of your 25 most recent threads and
-  report titles in the browser.
-* **Profile** sheet, in order: plan and usage, profile name (stored in this browser only), API keys,
-  language (English / हिंदी: app labels, and deep reports default to Hindi), text colour (Auto follows the
-  sky / Light / Dark), privacy and run history, about, sign out (a placeholder: there are no accounts yet;
-  data is tied to this browser).
+* **Search** (top-left button, or Ctrl/Cmd-K): searches project names and instructions, thread titles,
+  the messages of your 25 most recent threads and report titles in the browser, grouped as Projects,
+  Chats, Reports and Messages.
+* **Settings** sheet (avatar, or `/settings`), in Hark's order where ODAR has the thing: **Billing** (plan
+  and usage meters), **Profile** (name, stored in this browser only), **Connected apps** (API keys),
+  **System preferences** (language English / हिंदी: app labels, and deep reports default to Hindi; text
+  colour Auto / Light / Dark), **Security** (privacy, run history, delete everything), **Feedback** (opens
+  the GitHub issues page), **About**, **Sign out** (a placeholder: there are no accounts yet; data is tied
+  to this browser). Hark's Scheduled tasks and Wallets rows are left out because ODAR has neither.
 * Respects `prefers-reduced-motion` and safe-area insets. Plain HTML/CSS and ES modules in
   `odar/web/static/` (`app.js` plus `js/*.js`: `core`, `sky`, `chat`, `work`, `runs`, `home`, `projects`,
   `search`, `profile`, `md`), no build step and no CDN.

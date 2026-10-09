@@ -12,6 +12,8 @@ export function inlineMd(text, { cites = null } = {}) {
     .replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, (m, a, u) => LINK(u, a))
     .replace(/(^|[\s(])(https?:\/\/[^\s<)"]+)/g, (m, p, u) => `${p}${LINK(u, u.replace(/^https?:\/\/(www\.)?/, "").slice(0, 60))}`);
   if (cites) s = s.replace(/\[(\d{1,2})\]/g, (m, n) => cites(+n));
+  // keep a citation chip and the punctuation after it on one line
+  if (cites) s = s.replace(/(<button class="cite"[^>]*>\d+<\/button>)([.,;:!?)]+)/g, '<span class="nw">$1$2</span>');
   return s;
 }
 

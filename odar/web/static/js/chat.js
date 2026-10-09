@@ -471,7 +471,9 @@ function linkCard(s, i, st) {
   // No picture: a dark title card in the site's own hue with its name set in a serif, the way
   // link previews look when a page has no image.
   let hue = 0; for (const ch of site) hue = (hue * 31 + ch.charCodeAt(0)) % 360;
-  const word = site.split(".")[0] || site;
+  const labels = site.split(".");
+  while (labels.length > 1 && /^(com|org|net|edu|gov|co|in|ac|uk|io|ai|us|au|nic|res|info)$/i.test(labels[labels.length - 1])) labels.pop();
+  const word = labels[labels.length - 1] || site;
   const inner = `<span class="lc-img">${img ? `<img src="${esc(img)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ""}<span class="lc-ph" style="--h:${hue}">${favicon(s.domain, s.kind)}<span class="lc-word">${esc(word)}</span></span></span>
     <span class="lc-t">${esc(s.title)}</span><span class="lc-s">${esc(site)}<i>${s.n}</i></span>`;
   return s.kind === "file" || !s.url ? `<button class="lcard" style="--i:${i}" data-i="${s.n - 1}">${inner}</button>`
