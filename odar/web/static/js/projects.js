@@ -3,8 +3,8 @@ import { $, $$, esc, ICON, App, jfetch, jpost, toast, openSheet, closeSheet, ago
 import { uploadToProject } from "./chat.js";
 
 export async function showProjects(view, { add } = {}) {
-  view.innerHTML = `<div class="page-h"><div class="ph-t"><h1>Projects</h1><small>Files, instructions and a thread for each</small></div>
-    <div class="ph-a"><button class="glass-btn pill sm" id="pj-new">${ICON.plus}<span>New</span></button></div></div>
+  view.innerHTML = `<div class="page-h plain"><div class="ph-t"><h1>Projects</h1><small>Files, instructions and a thread for each</small></div>
+    <div class="ph-a"><button class="glass-btn pill sm" id="pj-new">${ICON.plus}<span>New Project</span></button></div></div>
     <div id="pj-list" class="proj-grid"><div class="skel tall"></div><div class="skel tall"></div></div>`;
   $("#pj-new").onclick = () => createSheet();
   if (add) createSheet();

@@ -53,6 +53,8 @@ export const ICON = {
   reply: P('<path d="M9.5 6.5 4.5 11.5l5 5"/><path d="M4.5 11.5h9a6 6 0 0 1 6 6v1"/>'),
   chart: P('<path d="M4 19.5h16"/><path d="M5.5 15.5 10 11l3 3 5.5-6"/>'),
   bolt: P('<path d="M13 3.5 5.5 13.5H12l-1 7 7.5-10H12z"/>'),
+  list: P('<path d="M9 6.5h11M9 12h11M9 17.5h11"/><circle cx="4.5" cy="6.5" r=".9" fill="currentColor"/><circle cx="4.5" cy="12" r=".9" fill="currentColor"/><circle cx="4.5" cy="17.5" r=".9" fill="currentColor"/>'),
+  clock: P('<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>'),
   news: P('<rect x="3.5" y="5" width="13" height="14.5" rx="2"/><path d="M16.5 9h4v8.5a2 2 0 0 1-4 0M7 9h6M7 12.5h6M7 16h4"/>'),
 };
 
@@ -78,7 +80,7 @@ export function applyTheme(theme = prefs.get("theme", "system")) {
 // ------------------------------------------------------------------ i18n (UI chrome only)
 const STR = {
   en: {
-    chat: "Chat", projects: "Projects", home: "Home", search: "Search", profile: "Profile",
+    chat: "Chat", projects: "Projects", home: "Home", search: "Search", profile: "Settings",
     ask_ph: "Ask ODAR", followup_ph: "Ask a follow-up", research_ph: "What should ODAR research?",
     check_ph: "Paste an AI answer with its links, or attach a file", references_ph: "Paste a reference list, one per line",
     hello: "Hi there", hello_sub: "Ask anything. Every citation gets checked against its source.",
@@ -191,6 +193,16 @@ export function sheetOpen() { return !$("#sheet").classList.contains("hidden"); 
     y0 = null;
   });
 })();
+
+// Copy buttons on code cards and text templates copy the card's text.
+document.addEventListener("click", async (e) => {
+  const b = e.target.closest("[data-copy]");
+  if (!b) return;
+  const src = b.closest(".tmpl")?.querySelector("[data-copy-src]");
+  if (!src) return;
+  const text = src.tagName === "OL" ? [...src.children].map((li, i) => `${i + 1}. ${li.textContent}`).join("\n") : src.innerText;
+  try { await navigator.clipboard.writeText(text); b.textContent = "Copied"; setTimeout(() => (b.textContent = "Copy"), 1600); } catch { toast("Couldn't copy"); }
+});
 
 export async function copyLink(url, label = "Link copied") {
   try { await navigator.clipboard.writeText(url); toast(label); } catch { prompt("Copy this link", url); }

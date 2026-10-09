@@ -1,4 +1,5 @@
-// Search overlay: client-side search over your threads (titles and messages) and reports.
+// Search overlay (Hark: top-left search across chats and projects): client-side search over your
+// projects, threads (titles and messages) and reports.
 import { $, $$, esc, ICON, App, jfetch, ago, prefs } from "./core.js";
 import { MODE_LABEL } from "./runs.js";
 
@@ -6,8 +7,9 @@ let corpus = null;
 let loading = null;
 
 async function loadCorpus() {
-  const [{ threads }, { runs }] = await Promise.all([jfetch("/api/threads?limit=200"), jfetch("/api/runs?limit=200")]);
+  const [{ threads }, { runs }, projects] = await Promise.all([jfetch("/api/threads?limit=200"), jfetch("/api/runs?limit=200"), jfetch("/api/projects").then((d) => d.projects).catch(() => [])]);
   const items = [];
+  projects.forEach((p) => items.push({ kind: "project", title: p.name, text: `${p.name} ${p.instructions || ""}`, sub: `${p.files} file${p.files === 1 ? "" : "s"}`, href: `/p/${p.project_id}`, t: p.updated || p.created }));
   const main = prefs.get("main", "");
   threads.forEach((th) => { if (th.thread_id === main) th.title = "Chat"; });
   const hrefOf = (th) => (th.project_id ? `/p/${th.project_id}?t=${th.thread_id}` : th.thread_id === main ? "/" : `/c/${th.thread_id}`);
@@ -52,7 +54,7 @@ export function openSearch() {
       res.innerHTML = recent.length ? `<div class="s-group">Recent</div><div class="list flat">${recent.map(row(needle)).join("")}</div>` : `<div class="empty">Your threads and reports show up here.</div>`;
     } else {
       const hits = corpus.filter((x) => x.text.toLowerCase().includes(needle));
-      const groups = [["thread", "Threads"], ["report", "Reports"], ["message", "Messages"]].map(([k, label]) => [label, hits.filter((x) => x.kind === k).sort((a, b) => b.t - a.t).slice(0, k === "message" ? 20 : 8)]).filter(([, l]) => l.length);
+      const groups = [["project", "Projects"], ["thread", "Chats"], ["report", "Reports"], ["message", "Messages"]].map(([k, label]) => [label, hits.filter((x) => x.kind === k).sort((a, b) => b.t - a.t).slice(0, k === "message" ? 20 : 8)]).filter(([, l]) => l.length);
       res.innerHTML = groups.length ? groups.map(([label, list]) => `<div class="s-group">${label}</div><div class="list flat">${list.map(row(needle)).join("")}</div>`).join("")
         : `<div class="empty">Nothing found. <a href="/?q=${encodeURIComponent(q.value.trim())}" data-nav>Ask ODAR instead</a></div>`;
     }
@@ -62,7 +64,7 @@ export function openSearch() {
   draw();
   loading = loadCorpus().catch(() => { corpus = corpus || []; }).finally(draw);
 }
-const row = (needle) => (x) => `<a class="li" href="${x.href}" data-nav><span class="li-ic">${x.kind === "report" ? ICON.doc : x.kind === "message" ? (x.role === "user" ? ICON.search : ICON.spark) : ICON.spark}</span>
+const row = (needle) => (x) => `<a class="li" href="${x.href}" data-nav><span class="li-ic">${x.kind === "project" ? ICON.folder : x.kind === "report" ? ICON.doc : x.kind === "message" ? (x.role === "user" ? ICON.search : ICON.spark) : ICON.spark}</span>
   <span class="lt">${x.kind === "message" ? snippet(x.text, needle) : esc(x.title)}<small>${x.kind === "message" ? esc(x.title) + " · " : x.sub ? esc(x.sub) + " · " : ""}${esc(ago(x.t))}</small></span></a>`;
 
 export function closeSearch() {

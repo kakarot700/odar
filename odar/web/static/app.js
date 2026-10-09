@@ -19,23 +19,21 @@ const syncTop = () => document.documentElement.style.setProperty("--top", $(".to
 syncTop();
 addEventListener("resize", syncTop);
 document.documentElement.lang = prefs.get("lang", "en");
-$("#btn-home").innerHTML = ICON.home;
 $("#btn-search .s-icon").innerHTML = ICON.search;
 App.refreshAvatar = () => { $("#btn-profile").innerHTML = `<span class="avatar">${avatarLetter() || ICON.user}</span>`; };
 App.refreshAvatar();
 App.relabel = () => {
+  $("#tab-home").textContent = t("home");
   $("#tab-chat").textContent = t("chat");
   $("#tab-projects").textContent = t("projects");
-  $("#btn-home").setAttribute("aria-label", t("home"));
-  $("#btn-search .s-label").textContent = t("search");
   $("#btn-search").setAttribute("aria-label", t("search"));
   $("#btn-profile").setAttribute("aria-label", t("profile"));
   syncComposer();
+  requestAnimationFrame(moveInd);
 };
 App.relabel();
 initComposer();
 initSearch();
-$("#btn-home").onclick = () => App.go(location.pathname === "/home" ? "/" : "/home");
 $("#btn-search").onclick = () => App.openSearch();
 $("#btn-profile").onclick = () => openProfile();
 App.reply = (text) => { composer(true); prefill(text); };
@@ -63,9 +61,19 @@ function setTab(tab) {
     b.classList.toggle("on", on);
     b.setAttribute("aria-selected", on);
   });
-  $("#btn-home").classList.toggle("on", tab === "home");
   document.body.classList.toggle("on-home", tab === "home");
+  moveInd();
 }
+// The black pill slides under the active tab (hidden when no tab is active).
+function moveInd() {
+  const on = $(".seg-tabs a.on"), ind = $(".seg-ind");
+  if (!ind) return;
+  ind.classList.toggle("off", !on);
+  if (on) { ind.style.width = on.offsetWidth + "px"; ind.style.transform = `translateX(${on.offsetLeft}px)`; }
+}
+addEventListener("resize", () => requestAnimationFrame(moveInd));
+document.fonts?.ready.then(() => moveInd());
+setTimeout(() => $(".seg-tabs").classList.add("anim"), 400);
 
 // Wide screens: Home is a left column next to the chat instead of its own page.
 const wide = () => matchMedia("(min-width: 1180px)").matches;

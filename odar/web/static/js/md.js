@@ -1,5 +1,5 @@
-// Small, safe Markdown renderer: headings, lists, quotes, rules, pipe tables, links,
-// bold/italic/code. Everything is escaped first; only whitelisted tags are produced.
+// Small, safe Markdown renderer: headings, lists, quotes, rules, pipe tables, fenced code
+// (a code card with Copy), links, bold/italic/code. Everything is escaped first; only whitelisted tags are produced.
 import { esc } from "./core.js";
 
 const LINK = (u, label) => `<a href="${u}" target="_blank" rel="noopener noreferrer">${label}</a>`;
@@ -32,6 +32,14 @@ export function renderMd(src, opts = {}) {
   const closeQuote = () => { if (quote.length) { out += `<blockquote>${quote.map(inl).join("<br>")}</blockquote>`; quote = []; } };
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i].trimEnd();
+    const fence = line.match(/^\s*```\s*([\w+#.-]*)/);
+    if (fence) {
+      closeList(); closeQuote();
+      const code = [];
+      for (i += 1; i < lines.length && !/^\s*```/.test(lines[i]); i++) code.push(lines[i]);
+      out += codeCard(code.join("\n"), fence[1]);
+      continue;
+    }
     // pipe table: a row with "|" followed by a separator row
     if (line.includes("|") && i + 1 < lines.length && isSep(lines[i + 1])) {
       closeList(); closeQuote();
@@ -64,6 +72,18 @@ export function renderMd(src, opts = {}) {
   }
   closeList(); closeQuote();
   return out;
+}
+
+// Hark's code card: a white card with the language and a Copy button over monospaced text.
+export function codeCard(code, langName = "") {
+  return `<div class="codecard tmpl"><div class="tmpl-h"><span>${esc(langName || "Code")}</span><button type="button" class="tmpl-copy" data-copy>Copy</button></div><pre data-copy-src><code>${esc(code)}</code></pre></div>`;
+}
+
+// A copyable text template (citations, a bibliography, a drafted message).
+export function textTemplate(title, lines, { ordered = false } = {}) {
+  const tag = ordered ? "ol" : "div";
+  const body = ordered ? lines.map((l) => `<li>${esc(l)}</li>`).join("") : lines.map((l) => `<p>${esc(l)}</p>`).join("");
+  return `<div class="tmpl"><div class="tmpl-h"><span>${esc(title)}</span><button type="button" class="tmpl-copy" data-copy>Copy</button></div><${tag} class="tmpl-b" data-copy-src>${body}</${tag}></div>`;
 }
 
 // Split a report into its title (first heading) and the rest.

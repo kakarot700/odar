@@ -1,7 +1,7 @@
 // The chat: one continuous thread (plus one per project), texting-style bubbles,
 // a composer pinned to the bottom, and rich cards rendered from the Ask stream.
 import { $, $$, esc, safeUrl, ICON, App, jfetch, jpost, prefs, t, lang, toast, openMenu, openSheet, closeSheet, copyLink, favicon, ago, scroller } from "./core.js";
-import { renderMd } from "./md.js";
+import { renderMd, textTemplate } from "./md.js";
 import { mountRun, MODE_LABEL, trustBadge } from "./runs.js";
 import { workCard, donePill } from "./work.js";
 
@@ -256,7 +256,7 @@ function makeTurn(data = {}, { live = false } = {}) {
     card = workCard(slot, {
       title: steps[0].label, steps,
       buttons: [
-        { id: "expand", icon: ICON.expand, label: "Show sources and steps", onClick: (b, api) => { const big = api.toggleBig(); b.innerHTML = big ? ICON.shrink : ICON.expand; } },
+        { id: "expand", icon: ICON.list, text: "Steps", label: "Show sources and steps", onClick: (b, api) => { b.classList.toggle("on", api.toggleBig()); } },
         { id: "stop", icon: ICON.x, label: t("stop"), onClick: () => { if (S.abort) S.abort.abort(); } },
       ],
     });
@@ -379,14 +379,17 @@ export function chunkAnswer(src) {
   const blocks = [];
   let cur = [];
   const push = () => { if (cur.length) blocks.push(cur.join("\n")); cur = []; };
+  let fenced = false;
   for (const line of String(src || "").replace(/\r/g, "").split("\n")) {
+    if (/^\s*```/.test(line)) { if (!fenced) push(); fenced = !fenced; cur.push(line); if (!fenced) push(); continue; }
+    if (fenced) { cur.push(line); continue; }
     if (!line.trim()) { push(); continue; }
     if (/^#{1,4}\s/.test(line)) push();
     cur.push(line);
   }
   push();
   const out = [];
-  for (const b of blocks) {
+  for (const b of blocks.flatMap(splitLong)) {
     const prev = out[out.length - 1];
     if (prev && /^#{1,4}\s[^\n]*$/.test(prev)) out[out.length - 1] = prev + "\n" + b; // lone heading joins the next block
     else if (prev && /:\s*$/.test(prev) && /^\s*([-*•]|\d+[.)])\s/.test(b)) out[out.length - 1] = prev + "\n" + b; // "lead-in:" + list
@@ -394,11 +397,30 @@ export function chunkAnswer(src) {
   }
   return out;
 }
+// Hark speaks in short bursts: a plain paragraph longer than ~300 characters is split at
+// sentence ends (after any [n] markers) into bubbles of two or three sentences.
+const LONG = 300;
+export function splitLong(block) {
+  if (block.length <= LONG || /^\s*```/.test(block) || /^\s*([-*•>|#]|\d+[.)])/m.test(block) || /\n/.test(block.trim())) return [block];
+  const SENT = /([.!?।]["”’)]*(?:\s*\[\d+\])*)\s+(?=["“‘(]?[A-Z0-9\u0900-\u097F])/g;
+  const parts = block.replace(SENT, (m, end, off, str) => (/\b(e\.g|i\.e|vs|Dr|Mr|Mrs|Ms|St|No|Fig|approx|U\.S)$/i.test(str.slice(Math.max(0, off - 7), off)) ? m : end + "\u0001")).split("\u0001");
+  if (!parts || parts.length < 3) return [block];
+  const out = [];
+  let cur = "";
+  for (const p of parts) {
+    const piece = p.trim();
+    if (!piece) continue;
+    if (cur && cur.length + piece.length > LONG * 0.85 && cur.length > 90) { out.push(cur); cur = piece; }
+    else cur = cur ? cur + " " + piece : piece;
+  }
+  if (cur) { if (out.length && cur.length < 60) out[out.length - 1] += " " + cur; else out.push(cur); }
+  return out.length ? out : [block];
+}
 function renderAnswer(src) {
   let occ = 0;
   const cites = (n) => `<button class="cite" data-n="${n}" data-occ="${occ++}" aria-label="Source ${n}">${n}</button>`;
   return chunkAnswer(src).map((c) => {
-    const table = /\|/.test(c) && /^\s*\|?\s*:?-{2,}/m.test(c);
+    const table = (/\|/.test(c) && /^\s*\|?\s*:?-{2,}/m.test(c)) || /^\s*```/.test(c);
     return `<div class="bubble${table ? " wide" : ""}">${renderMd(c, { cites })}</div>`;
   }).join("") || `<div class="bubble"><span class="typing"><i></i><i></i><i></i></span></div>`;
 }
@@ -446,8 +468,11 @@ function imageFor(st, s) {
 function linkCard(s, i, st) {
   const img = imageFor(st, s);
   const site = (s.domain || (s.kind === "file" ? "Your file" : "")).replace(/^www\./, "");
-  const letter = esc((site[0] || "?").toUpperCase());
-  const inner = `<span class="lc-img">${img ? `<img src="${esc(img)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ""}<span class="lc-ph" data-l="${letter}">${favicon(s.domain, s.kind)}</span></span>
+  // No picture: a dark title card in the site's own hue with its name set in a serif, the way
+  // link previews look when a page has no image.
+  let hue = 0; for (const ch of site) hue = (hue * 31 + ch.charCodeAt(0)) % 360;
+  const word = site.split(".")[0] || site;
+  const inner = `<span class="lc-img">${img ? `<img src="${esc(img)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ""}<span class="lc-ph" style="--h:${hue}">${favicon(s.domain, s.kind)}<span class="lc-word">${esc(word)}</span></span></span>
     <span class="lc-t">${esc(s.title)}</span><span class="lc-s">${esc(site)}<i>${s.n}</i></span>`;
   return s.kind === "file" || !s.url ? `<button class="lcard" style="--i:${i}" data-i="${s.n - 1}">${inner}</button>`
     : `<a class="lcard" style="--i:${i}" href="${esc(safeUrl(s.url))}" target="_blank" rel="noopener noreferrer">${inner}</a>`;
@@ -461,8 +486,16 @@ function renderSources(box, st) {
   $$("button.lcard", box).forEach((b) => (b.onclick = () => openSheet(citationBody(list[+b.dataset.i], null, false), { title: `Source ${list[+b.dataset.i].n}` })));
   $(".src-more", box).onclick = () => sourcesSheet(st);
 }
+// Sources as a list, then a copyable citation template (one line per web source).
+function citeLine(s) {
+  const site = (s.domain || "").replace(/^www\./, "");
+  const year = /^\d{4}/.test(String(s.date || "")) ? ` (${String(s.date).slice(0, 4)})` : "";
+  return `${s.title}.${year} ${site}. ${s.url}`.replace(/\s+/g, " ").trim();
+}
 function sourcesSheet(st) {
-  const body = openSheet(`<div class="list flat">${st.sources.map((s, i) => `<button class="li" data-i="${i}"><span class="li-ic fav-ic">${favicon(s.domain, s.kind)}</span><span class="lt">${esc(s.title)}<small>${esc((s.domain || (s.kind === "file" ? "your file" : "")).replace(/^www\./, ""))}${s.date ? " · " + esc(ago(s.date)) : ""}</small></span><span class="num">${s.n}</span></button>`).join("")}</div>`, { title: `${st.sources.length} ${t("sources")}`, tall: true });
+  const web = st.sources.filter((s) => s.url);
+  const body = openSheet(`<div class="list flat">${st.sources.map((s, i) => `<button class="li" data-i="${i}"><span class="li-ic fav-ic">${favicon(s.domain, s.kind)}</span><span class="lt">${esc(s.title)}<small>${esc((s.domain || (s.kind === "file" ? "your file" : "")).replace(/^www\./, ""))}${s.date ? " · " + esc(ago(s.date)) : ""}</small></span><span class="num">${s.n}</span></button>`).join("")}</div>
+    ${web.length ? textTemplate("Cite these sources", web.map(citeLine), { ordered: true }) : ""}`, { title: `${st.sources.length} ${t("sources")}`, tall: true });
   $$("[data-i]", body).forEach((b) => (b.onclick = () => { const s = st.sources[+b.dataset.i]; openSheet(citationBody(s, null, false), { title: `Source ${s.n}` }); }));
 }
 

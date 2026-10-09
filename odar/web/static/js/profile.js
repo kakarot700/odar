@@ -1,4 +1,4 @@
-// Profile sheet, in order: plan and usage, profile, API keys, language, theme, about, sign out.
+// Settings sheet (opened from the avatar): Billing, Profile, Connected apps, System preferences, Security, Feedback, About, Sign out.
 import { $, $$, esc, ICON, App, jfetch, jpost, prefs, applyTheme, openSheet, closeSheet, toast, copyLink } from "./core.js";
 
 function seg(name, options, cur) {
@@ -10,33 +10,39 @@ export function avatarLetter() {
   return n ? esc(n[0].toUpperCase()) : "";
 }
 
+// Settings, in Hark's order where ODAR has the thing: Billing (plan and usage), Profile,
+// Connected apps (API keys), System preferences (language, text colour), Security (privacy and
+// data), Feedback, About, Sign out. Each section is a white group under a grey heading.
 export function openProfile() {
   const name = prefs.get("name", "");
   const body = openSheet(`
-    <section class="ps"><div class="ps-h">Plan &amp; usage</div>
+    <div class="prof-card"><span class="avatar lg">${avatarLetter() || ICON.user}</span><div><b>${esc(name || "You")}</b><small>Free plan · data tied to this browser</small></div></div>
+    <section class="ps"><div class="ps-h">Billing</div><div class="ps-g">
       <div class="plan"><div><b>Free</b><small>Free models only · every citation checked</small></div><span class="pill">Beta</span></div>
-      <div id="ps-usage" class="usage"><div class="skel"></div></div></section>
-    <section class="ps"><div class="ps-h">Profile</div>
-      <div class="prof"><span class="avatar lg">${avatarLetter() || ICON.user}</span>
-        <label class="grow">Name shown in greetings<input class="field" id="ps-name" maxlength="40" value="${esc(name)}" placeholder="Your first name"></label></div>
-      <p class="note">No account needed: your threads, projects and keys are tied to this browser.</p></section>
-    <section class="ps"><div class="ps-h">API keys</div>
-      <p class="note">Use ODAR from scripts or the Chrome extension: <code>Authorization: Bearer &lt;key&gt;</code>. Docs at <a href="/api/docs">/api/docs</a>.</p>
+      <div id="ps-usage" class="usage"><div class="skel"></div></div></div></section>
+    <section class="ps"><div class="ps-h">Profile</div><div class="ps-g">
+      <label class="ps-row">Name shown in greetings<input class="field" id="ps-name" maxlength="40" value="${esc(name)}" placeholder="Your first name"></label>
+      <p class="note">No account needed: your threads, projects and keys are tied to this browser.</p></div></section>
+    <section class="ps"><div class="ps-h">Connected apps</div><div class="ps-g">
+      <p class="note">API keys let scripts and the Chrome extension use ODAR: <code>Authorization: Bearer &lt;key&gt;</code>. Docs at <a href="/api/docs">/api/docs</a>.</p>
       <div id="ps-keys"><div class="skel"></div></div>
-      <form id="ps-kform" class="inline-form"><input class="field" name="label" maxlength="60" placeholder="Label, e.g. chrome extension"><button class="btn sm">${ICON.key}Create key</button></form>
-      <div id="ps-kshow"></div></section>
-    <section class="ps"><div class="ps-h">Language</div>${seg("lang", [["en", "English"], ["hi", "हिंदी"]], prefs.get("lang", "en"))}
-      <p class="note">Hindi sets the app's labels and writes deep research reports in Hindi.</p></section>
-    <section class="ps"><div class="ps-h">Text colour</div>${seg("theme", [["system", "Auto"], ["light", "Light"], ["dark", "Dark"]], prefs.get("theme", "system"))}
-      <p class="note">Auto follows the sky behind the app: light by day, dark at dusk and night.</p></section>
-    <section class="ps"><div class="ps-h">Privacy</div>
+      <form id="ps-kform" class="inline-form"><input class="field" name="label" maxlength="60" placeholder="Label, e.g. chrome extension"><button class="btn sm black">${ICON.key}Create key</button></form>
+      <div id="ps-kshow"></div></div></section>
+    <section class="ps"><div class="ps-h">System preferences</div><div class="ps-g">
+      <div class="ps-row">Language${seg("lang", [["en", "English"], ["hi", "हिंदी"]], prefs.get("lang", "en"))}</div>
+      <p class="note">Hindi sets the app's labels and writes deep research reports in Hindi.</p>
+      <div class="ps-row">Text colour${seg("theme", [["system", "Auto"], ["light", "Light"], ["dark", "Dark"]], prefs.get("theme", "system"))}</div>
+      <p class="note">Auto follows the sky behind the app: light by day, dark at dusk and night.</p></div></section>
+    <section class="ps"><div class="ps-h">Security</div><div class="ps-g">
       <p class="note">Files attached to Check are read in memory and never stored. Project files are kept as text until you delete them. Share links are unlisted and not indexed. Threads and runs are deleted after the retention period.</p>
       <div class="ps-links"><a href="/history" data-nav>${ICON.doc}Run history</a></div>
-      <button class="btn danger block" id="ps-forget">Delete all my threads, projects, runs and keys</button></section>
-    <section class="ps"><div class="ps-h">About</div>
+      <button class="btn danger block" id="ps-forget">Delete all my threads, projects, runs and keys</button></div></section>
+    <section class="ps"><div class="ps-h">Feedback</div><div class="ps-g">
+      <a class="ps-link" href="https://github.com/kakarot700/odar/issues" target="_blank" rel="noopener noreferrer"><span>Send feedback or report a bad citation</span>${ICON.arrow}</a></div></section>
+    <section class="ps"><div class="ps-h">About</div><div class="ps-g">
       <p class="note"><b>ODAR</b> answers questions with sources and checks every citation against the page it cites: a local NLI model plus a verbatim-quote judge, on free models. Not offered on purpose: plagiarism detection or writing assignments.</p>
-      <div class="ps-links"><a href="/api/docs" target="_blank" rel="noopener">API docs</a></div></section>
-    <button class="btn block ghost" id="ps-signout">Sign out</button>`, { title: "Profile", tall: true });
+      <a class="ps-link" href="/api/docs" target="_blank" rel="noopener"><span>API docs</span>${ICON.arrow}</a></div></section>
+    <button class="btn block ps-out" id="ps-signout">Sign out</button>`, { title: "Settings", tall: true });
 
   $("#ps-name", body).onchange = (e) => { prefs.set("name", e.target.value.trim()); App.refreshAvatar(); toast("Saved"); };
   $$("[data-seg]", body).forEach((g) => $$("button", g).forEach((b) => (b.onclick = () => {

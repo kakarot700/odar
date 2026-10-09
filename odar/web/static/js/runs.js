@@ -1,7 +1,7 @@
 // Research / Check / References runs, rendered as cards: a live work card while the run
 // is going, then a summary card (report), a trust card (check) or a references card.
 import { $, esc, safeUrl, ICON, App, jfetch, jpost, openSheet, copyLink } from "./core.js";
-import { renderMd, splitTitle } from "./md.js";
+import { renderMd, splitTitle, textTemplate } from "./md.js";
 import { workCard, donePill, host } from "./work.js";
 
 export const MODE_LABEL = { research: "Deep research", check: "Citation check", references: "Reference check" };
@@ -103,17 +103,23 @@ function refsBody(refs) {
   </details>`).join("") || `<div class="empty">No references found.</div>`;
 }
 
-// Receipt-style card for a finished run: title, a few rows, a black pill action (Download PDF)
-// and the other exports as quiet links.
+// Receipt-style card for a finished run (Hark's order card): merchant header, line items with the
+// value on the right, then a footer band with the formats on the left and a black pill action
+// (Download PDF) on the right; the other actions sit underneath as quiet links.
 function orderCard(run, ctx, rows) {
   const base = ctx.id ? `/api/runs/${ctx.id}` : `/api/share/${ctx.token}`;
   const when = new Date((run.updated || run.created) * 1000).toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" });
   return `<div class="order">
-    <div class="or-h"><span class="logo">O</span><div class="or-who"><b>${esc(MODE_LABEL[run.mode] || "Report")}</b><small>ODAR · ${esc(when)}</small></div></div>
-    <div class="or-t">${esc(run.title)}</div>
+    <div class="or-h"><span class="logo">O</span><div class="or-who"><b>${esc(MODE_LABEL[run.mode] || "Report")}</b><small>${esc(run.title)}</small></div><span class="or-when">${esc(when)}</span></div>
     <div class="or-rows">${rows.filter(([, v]) => v != null && v !== "").map(([k, v]) => `<div><span>${esc(k)}</span><b>${esc(v)}</b></div>`).join("")}</div>
-    <a class="btn black block" href="${base}/export.pdf" download>${ICON.download}Download PDF</a>
+    <div class="or-foot"><span class="or-fmt">${ICON.doc}<span>PDF · Word · Markdown</span></span><a class="btn black" href="${base}/export.pdf" download>${ICON.download}Download PDF</a></div>
     <div class="or-links"><a href="${base}/export.md" download>Markdown</a><a href="${base}/export.docx" download>Word</a><button data-share>Share link</button>${ctx.id ? `<button data-ask-report>Ask about it</button>` : ""}</div></div>`;
+}
+
+// Hark's scheduled-task label: a black pill with a clock, bracketed to the bubble it belongs to.
+function runLabel(run, ctx) {
+  if (!ctx.id || location.pathname === `/runs/${ctx.id}`) return "";
+  return `<a class="sched" href="/runs/${esc(ctx.id)}" data-nav>${ICON.clock}<span>Open ${esc((MODE_LABEL[run.mode] || "report").toLowerCase())}</span></a>`;
 }
 
 function resultCard(run, ctx) {
@@ -139,7 +145,7 @@ function resultCard(run, ctx) {
   const chips = Object.entries(r.counts || {}).map(([k, v]) => `<span class="pill ${vclass(k)}">${esc(k)} ${v}</span>`).join("");
   return `<div class="card summary"><div class="summary-h"><span class="sh-ic">${ICON.table}</span><div><div class="eyebrow">Reference check</div><h3>${esc(run.title)}</h3></div></div>
     <div class="pills">${chips}</div><div class="claims">${refsBody(r.references || [])}</div>
-    ${(r.bibliography || []).length ? `<h4>Bibliography (${esc(String(r.style || "").toUpperCase())})</h4><ol class="bib">${r.bibliography.map((b) => `<li>${esc(b)}</li>`).join("")}</ol>` : ""}</div>
+    ${(r.bibliography || []).length ? textTemplate(`Bibliography · ${String(r.style || "").toUpperCase()}`, r.bibliography, { ordered: true }) : ""}</div>
     ${orderCard(run, ctx, [["References", (r.references || []).length], ["Style", String(r.style || "").toUpperCase()]])}`;
 }
 
@@ -205,7 +211,8 @@ export function mountRun(el, { id, token }, { onDone, onTick } = {}) {
         card = workCard(slot, {
           title: MODE_LABEL[run.mode] || run.mode, steps, started: run.created,
           buttons: [
-            { id: "expand", icon: ICON.expand, label: id && location.pathname !== `/runs/${id}` ? "Open full view" : "Show details", onClick: (b, w) => { if (id && location.pathname !== `/runs/${id}`) App.go(`/runs/${id}`); else { const big = w.toggleBig(); b.innerHTML = big ? ICON.shrink : ICON.expand; } } },
+            { id: "expand", icon: ICON.list, text: "Steps", label: "Show the steps", onClick: (b, w) => { b.classList.toggle("on", w.toggleBig()); } },
+            ...(id && location.pathname !== `/runs/${id}` ? [{ id: "open", icon: ICON.expand, label: "Open full view", onClick: () => App.go(`/runs/${id}`) }] : []),
             { id: "min", icon: ICON.chev, label: "Minimize", onClick: (b, w) => { const mini = w.minimize(); b.classList.toggle("flip", !mini); } },
           ],
         });
@@ -224,7 +231,7 @@ export function mountRun(el, { id, token }, { onDone, onTick } = {}) {
       body.innerHTML = `<div class="bubble err">This ${esc(MODE_LABEL[run.mode] || "run")} failed: ${esc(run.error || "unknown error")}</div>`;
     } else if (run.result) {
       donePill(slot, runSummary(run, log), steps);
-      body.innerHTML = resultCard(run, ctx);
+      body.innerHTML = runLabel(run, ctx) + resultCard(run, ctx);
       wire(el, run, ctx);
     }
     if (onTick) onTick(run);
