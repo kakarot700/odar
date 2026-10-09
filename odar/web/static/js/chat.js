@@ -95,7 +95,7 @@ export function syncComposer() {
   if (S.file) chips.push(`<span class="chip file">${ICON.file}<span>${esc(S.file.name)}</span><button type="button" id="unattach" aria-label="Remove file">${ICON.x}</button></span>`);
   $("#comp-chips").innerHTML = chips.join("");
   ta().placeholder = placeholder();
-  syncButtons();
+  autoGrow(); // a long placeholder can wrap; Chrome counts it in scrollHeight
   wireChips();
 }
 function plusMenu(anchor) {
@@ -283,7 +283,6 @@ function makeTurn(data = {}, { live = false } = {}) {
     } else if (v === "pending") bits.push(`<span class="vsum pending"><span class="spin"></span>${esc(t("verifying"))}…</span>`);
     if (st.timing.total_s != null) bits.push(`<span class="meta">${st.timing.total_s}s</span>`);
     if (st.repairs) bits.push(`<span class="meta">${st.repairs} citation${st.repairs > 1 ? "s" : ""} corrected</span>`);
-    if (st.stopped) bits.push(`<span class="meta">stopped</span>`);
     under.innerHTML = bits.join("");
     under.classList.toggle("hidden", !bits.length);
     const vb = $("[data-vsum]", under);
