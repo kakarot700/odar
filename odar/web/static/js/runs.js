@@ -1,7 +1,8 @@
 // Research / Check / References runs, rendered as cards: a live work card while the run
 // is going, then a summary card (report), a trust card (check) or a references card.
-import { $, esc, safeUrl, ICON, jfetch, jpost, openSheet, copyLink } from "./core.js";
+import { $, esc, safeUrl, ICON, App, jfetch, jpost, openSheet, copyLink } from "./core.js";
 import { renderMd, splitTitle } from "./md.js";
+import { workCard, donePill, host } from "./work.js";
 
 export const MODE_LABEL = { research: "Deep research", check: "Citation check", references: "Reference check" };
 const STEPS = {
@@ -27,21 +28,47 @@ function describe(e) {
   return `${esc(kind)}${bit ? ` · <span>${esc(bit)}</span>` : ""}`;
 }
 
-function elapsed(run) {
-  const s = Math.max(0, Date.now() / 1000 - (run.created || Date.now() / 1000));
-  return run.status === "QUEUED" ? "queued" : s < 60 ? `${Math.round(s)}s` : `${Math.floor(s / 60)} min`;
+// One short phrase for the status pill, from the run's newest event.
+function phrase(e) {
+  const k = e.kind.replace(/^telemetry\./, "");
+  const d = e.data || {};
+  const h = d.url ? host(d.url) : "";
+  if (/research_round/.test(k)) return d.sources ? `Read ${d.sources} sources so far` : "Reading sources";
+  if (/plan/.test(k)) return "Planning the research";
+  if (/academic_search/.test(k)) return "Searching PubMed, arXiv and Crossref";
+  if (/search/.test(k)) return d.query ? `Searching “${String(d.query).slice(0, 40)}”` : "Searching the web";
+  if (/reflection/.test(k)) return "Looking for gaps";
+  if (/writing/.test(k)) return d.sections ? `Writing ${d.sections} sections` : "Writing the report";
+  if (/parse|split/.test(k)) return d.claims ? `Splitting into ${d.claims} claims` : "Splitting into claims";
+  if (/fetch|opening/.test(k)) return h ? `Reading ${h}` : "Reading sources";
+  if (/wayback/.test(k)) return "Trying the Wayback Machine";
+  if (/paraphrase/.test(k)) return "Judging paraphrases";
+  if (/verify|judg|match/.test(k)) return "Checking quotes";
+  if (/replacement/.test(k)) return "Looking for better sources";
+  if (/translat/.test(k)) return "Translating";
+  if (/valid/.test(k)) return "Looking up each reference";
+  if (/format/.test(k)) return "Formatting the bibliography";
+  if (/start/.test(k)) return "Getting started";
+  return "";
 }
-function workCard(run, log) {
+function pagesOf(log) {
+  const seen = new Map();
+  log.forEach((e) => { const u = e.data && e.data.url; const h = u && host(u); if (h && !seen.has(h)) seen.set(h, { domain: h, title: u, done: /verify|judg/.test(e.kind) }); });
+  return [...seen.values()];
+}
+function stageIndex(run) {
   const steps = STEPS[run.mode] || STEPS.check;
   const stage = String(run.stage || "").toLowerCase();
-  let now = steps.findIndex(([, re]) => re.test(stage));
-  if (now < 0) now = 0;
-  const reads = log.filter((e) => /fetch|opening|read/.test(e.kind) && e.data && e.data.url).length;
-  return `<div class="card work live">
-    <div class="work-h"><span class="pulse"></span><b>${esc(MODE_LABEL[run.mode] || run.mode)}</b><small>${esc(elapsed(run))}</small></div>
-    <ol class="steps">${steps.map(([name], i) => `<li class="${i < now ? "done" : i === now ? "now" : ""}"><i></i><span>${esc(name)}${i === 1 && reads && i <= now ? ` <small>${reads} pages</small>` : ""}</span></li>`).join("")}</ol>
-    <div class="log">${log.slice(-4).map((e) => `<div>${describe(e)}</div>`).join("")}</div>
-    <div class="meta">Runs in the background. You can leave and come back.</div></div>`;
+  // research runs report their citation check as "citation check: <step>"
+  const i = /^citation check/.test(stage) ? steps.findIndex(([n]) => /citation/i.test(n)) : steps.findIndex(([, re]) => re.test(stage));
+  return i < 0 ? 0 : i;
+}
+function runSteps(run) { return (STEPS[run.mode] || STEPS.check).map(([label], i) => ({ id: "s" + i, label })); }
+function runSummary(run, log) {
+  const pages = pagesOf(log).length;
+  const checks = log.filter((e) => /^verify$|judge/.test(e.kind)).length;
+  const mins = Math.max(1, Math.round(((run.updated || run.created) - run.created) / 60));
+  return [MODE_LABEL[run.mode] || run.mode, pages ? `${pages} pages read` : "", checks ? `${checks} checks` : "", run.status === "COMPLETE" ? `${mins} min` : ""].filter(Boolean).join(" · ");
 }
 
 function vclass(v) { return "v-" + String(v).split(" ")[0].toLowerCase(); }
@@ -76,35 +103,44 @@ function refsBody(refs) {
   </details>`).join("") || `<div class="empty">No references found.</div>`;
 }
 
-function exportsRow(base, ctx) {
-  return `<div class="card-actions">${["md", "pdf", "docx"].map((f) => `<a class="btn sm" href="${base}/export.${f}" download>${ICON.download}${f.toUpperCase()}</a>`).join("")}
-    <button class="btn sm" data-share>${ICON.share}Share</button>${ctx.id ? `<button class="btn sm" data-ask-report>Ask about it</button>` : ""}</div>`;
+// Receipt-style card for a finished run: title, a few rows, a black pill action (Download PDF)
+// and the other exports as quiet links.
+function orderCard(run, ctx, rows) {
+  const base = ctx.id ? `/api/runs/${ctx.id}` : `/api/share/${ctx.token}`;
+  const when = new Date((run.updated || run.created) * 1000).toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" });
+  return `<div class="order">
+    <div class="or-h"><span class="logo">O</span><div class="or-who"><b>${esc(MODE_LABEL[run.mode] || "Report")}</b><small>ODAR · ${esc(when)}</small></div></div>
+    <div class="or-t">${esc(run.title)}</div>
+    <div class="or-rows">${rows.filter(([, v]) => v != null && v !== "").map(([k, v]) => `<div><span>${esc(k)}</span><b>${esc(v)}</b></div>`).join("")}</div>
+    <a class="btn black block" href="${base}/export.pdf" download>${ICON.download}Download PDF</a>
+    <div class="or-links"><a href="${base}/export.md" download>Markdown</a><a href="${base}/export.docx" download>Word</a><button data-share>Share link</button>${ctx.id ? `<button data-ask-report>Ask about it</button>` : ""}</div></div>`;
 }
 
 function resultCard(run, ctx) {
   const r = run.result || {};
-  const base = ctx.id ? `/api/runs/${ctx.id}` : `/api/share/${ctx.token}`;
   if (run.mode === "research") {
     const { title, body } = splitTitle(r.synthesis || "");
-    const score = r.citation_check ? r.citation_check.trust_score : null;
+    const cc = r.citation_check;
+    const score = cc ? cc.trust_score : null;
     const high = String(r.uncertainty).toUpperCase() === "HIGH";
+    const counters = (r.telemetry && r.telemetry.counters) || {};
     return `<div class="card summary">
-      <div class="summary-h">${ICON.doc}<div><div class="eyebrow">Report</div><h3>${esc(title || run.title)}</h3></div>${trustBadge(score)}</div>
+      <div class="summary-h"><span class="sh-ic">${ICON.doc}</span><div><div class="eyebrow">Report</div><h3>${esc(title || run.title)}</h3></div>${trustBadge(score)}</div>
       ${high ? `<p class="warn">Limited verified evidence: treat this as a starting point.</p>` : ""}
       <div class="report collapsed" lang="${r.language === "hi" ? "hi" : "en"}">${renderMd(body || "(no report was produced)")}</div>
       <button class="more-btn" data-expand>${ICON.chev}<span>Read the full report</span></button>
-      ${exportsRow(base, ctx)}
-      ${r.citation_check ? `<details class="sub"><summary>Citation check · ${esc(r.citation_check.grade || "")}</summary>${checkBody(r.citation_check)}</details>` : ""}
-      <div class="meta">uncertainty ${esc(r.uncertainty || "n/a")} · ${esc(r.status || "")}</div></div>`;
+      ${cc ? `<details class="sub"><summary>Citation check · ${esc(cc.grade || "")}</summary>${checkBody(cc)}</details>` : ""}</div>
+      ${orderCard(run, ctx, [["Sources read", counters.sources_added], ["Claims checked", cc ? (cc.claims || []).length : null], ["Trust score", score != null ? `${score} / 100` : null], ["Evidence", String(r.uncertainty || "").replace(/_/g, " ").toLowerCase()]])}`;
   }
   if (run.mode === "check") {
-    return `<div class="card summary"><div class="summary-h">${ICON.shield}<div><div class="eyebrow">Citation check</div><h3>${esc(run.title)}</h3></div></div>${checkBody(r)}${exportsRow(base, ctx)}</div>`;
+    return `<div class="card summary"><div class="summary-h"><span class="sh-ic">${ICON.shield}</span><div><div class="eyebrow">Citation check</div><h3>${esc(run.title)}</h3></div></div>${checkBody(r)}</div>
+      ${orderCard(run, ctx, [["Claims", (r.claims || []).length], ["Trust score", r.trust_score != null ? `${r.trust_score} / 100` : "n/a"], ["Verdict", r.grade || ""]])}`;
   }
   const chips = Object.entries(r.counts || {}).map(([k, v]) => `<span class="pill ${vclass(k)}">${esc(k)} ${v}</span>`).join("");
-  return `<div class="card summary"><div class="summary-h">${ICON.doc}<div><div class="eyebrow">Reference check</div><h3>${esc(run.title)}</h3></div></div>
+  return `<div class="card summary"><div class="summary-h"><span class="sh-ic">${ICON.table}</span><div><div class="eyebrow">Reference check</div><h3>${esc(run.title)}</h3></div></div>
     <div class="pills">${chips}</div><div class="claims">${refsBody(r.references || [])}</div>
-    ${(r.bibliography || []).length ? `<h4>Bibliography (${esc(String(r.style || "").toUpperCase())})</h4><ol class="bib">${r.bibliography.map((b) => `<li>${esc(b)}</li>`).join("")}</ol>` : ""}
-    ${exportsRow(base, ctx)}</div>`;
+    ${(r.bibliography || []).length ? `<h4>Bibliography (${esc(String(r.style || "").toUpperCase())})</h4><ol class="bib">${r.bibliography.map((b) => `<li>${esc(b)}</li>`).join("")}</ol>` : ""}</div>
+    ${orderCard(run, ctx, [["References", (r.references || []).length], ["Style", String(r.style || "").toUpperCase()]])}`;
 }
 
 function wire(el, run, ctx) {
@@ -142,14 +178,16 @@ export async function reportFollowups(id, title) {
   };
 }
 
-// Mount a run card into ``el`` and keep it updated until the run finishes.
-export function mountRun(el, { id, token }, { onDone } = {}) {
+// Mount a run card into ``el`` and keep it updated until the run finishes: a live work
+// card while it runs, then a done pill above the result card.
+export function mountRun(el, { id, token }, { onDone, onTick } = {}) {
   const api = id ? `/api/runs/${id}` : `/api/share/${token}`;
   const log = [];
-  let after = 0;
+  let after = 0, card = null;
   const poller = { timer: 0 };
   pollers.add(poller);
-  el.innerHTML = `<div class="card work live"><div class="work-h"><span class="pulse"></span><b>Loading…</b></div></div>`;
+  el.innerHTML = `<div class="work-slot"><div class="done-wrap"><span class="done-pill"><span class="spin"></span><span>Loading…</span></span></div></div><div class="run-body"></div>`;
+  const slot = $(".work-slot", el), body = $(".run-body", el);
   const tick = async () => {
     let data;
     try { data = await jfetch(`${api}?after=${after}`); }
@@ -161,18 +199,44 @@ export function mountRun(el, { id, token }, { onDone } = {}) {
     events.forEach((e) => { after = Math.max(after, e.seq); log.push(e); });
     const ctx = { id, token: token || run.share_token };
     const live = run.status === "RUNNING" || run.status === "QUEUED";
-    if (live) el.innerHTML = workCard(run, log);
-    else if (run.status === "FAILED") el.innerHTML = `<div class="bubble err">This ${esc(MODE_LABEL[run.mode] || "run")} failed: ${esc(run.error || "unknown error")}</div>`;
-    else if (run.result) { el.innerHTML = resultCard(run, ctx); wire(el, run, ctx); }
+    const steps = runSteps(run);
+    if (live) {
+      if (!card) {
+        card = workCard(slot, {
+          title: MODE_LABEL[run.mode] || run.mode, steps, started: run.created,
+          buttons: [
+            { id: "expand", icon: ICON.expand, label: id && location.pathname !== `/runs/${id}` ? "Open full view" : "Show details", onClick: (b, w) => { if (id && location.pathname !== `/runs/${id}`) App.go(`/runs/${id}`); else { const big = w.toggleBig(); b.innerHTML = big ? ICON.shrink : ICON.expand; } } },
+            { id: "min", icon: ICON.chev, label: "Minimize", onClick: (b, w) => { const mini = w.minimize(); b.classList.toggle("flip", !mini); } },
+          ],
+        });
+      }
+      const now = stageIndex(run);
+      card.steps(Object.fromEntries(steps.map((s, i) => [s.id, i < now ? "done" : i === now ? "now" : ""])));
+      card.title(run.status === "QUEUED" ? "Queued" : steps[now].label);
+      const pages = pagesOf(log);
+      const rounds = log.filter((e) => /research_round/.test(e.kind) && e.data && e.data.sources);
+      card.tiles(pages, false, rounds.length ? +rounds[rounds.length - 1].data.sources || 0 : 0);
+      card.more(`<div class="log">${log.slice(-6).map((e) => `<div>${describe(e)}</div>`).join("")}</div><div class="meta">Runs in the background. You can leave and come back.</div>`);
+      const last = [...log].reverse().map(phrase).find(Boolean);
+      card.status(run.status === "QUEUED" ? "Waiting for a free slot" : last || steps[now].label);
+    } else if (run.status === "FAILED") {
+      donePill(slot, `${MODE_LABEL[run.mode] || "Run"} failed`, steps, {}, false);
+      body.innerHTML = `<div class="bubble err">This ${esc(MODE_LABEL[run.mode] || "run")} failed: ${esc(run.error || "unknown error")}</div>`;
+    } else if (run.result) {
+      donePill(slot, runSummary(run, log), steps);
+      body.innerHTML = resultCard(run, ctx);
+      wire(el, run, ctx);
+    }
+    if (onTick) onTick(run);
     if (live && pollers.has(poller)) poller.timer = setTimeout(tick, 2000);
-    else { pollers.delete(poller); if (onDone) onDone(run); }
+    else { if (card) card.stopTimer(); pollers.delete(poller); if (onDone) onDone(run); }
   };
   tick();
 }
 
 // Standalone run page (/runs/:id, /r/:token: share links and the Chrome extension land here).
 export async function showRunPage(view, { id, token }) {
-  view.innerHTML = `<div class="page-h"><a class="icon-btn sm" href="/" data-nav aria-label="Back to chat">${ICON.back}</a><h1 id="run-title">Report</h1></div>
+  view.innerHTML = `<div class="page-h"><a class="glass-btn round sm" href="/" data-nav aria-label="Back to chat">${ICON.back}</a><div class="ph-t"><h1 id="run-title">Report</h1></div></div>
     <div class="thread"><div class="row me hidden" id="run-q"><div class="bubble"></div></div><div class="row bot wide"><div class="turn" id="run-card"></div></div></div>`;
   mountRun($("#run-card", view), { id, token }, {
     onDone: (run) => {
@@ -193,7 +257,7 @@ export async function showRunPage(view, { id, token }) {
 }
 
 export async function showHistoryPage(view) {
-  view.innerHTML = `<div class="page-h"><a class="icon-btn sm" href="/home" data-nav aria-label="Back">${ICON.back}</a><h1>Run history</h1></div><div id="hist" class="list"><div class="empty">Loading…</div></div>`;
+  view.innerHTML = `<div class="page-h"><a class="glass-btn round sm" href="/home" data-nav aria-label="Back">${ICON.back}</a><div class="ph-t"><h1>Run history</h1></div></div><div id="hist" class="list glass-card"><div class="empty">Loading…</div></div>`;
   try {
     const { runs } = await jfetch("/api/runs");
     $("#hist").innerHTML = runs.length ? runs.map((x) => `<a class="li" href="/runs/${x.run_id}" data-nav><span class="li-ic">${x.mode === "research" ? ICON.doc : ICON.shield}</span><span class="lt">${esc(x.title)}<small>${esc(MODE_LABEL[x.mode] || x.mode)} · ${new Date(x.created * 1000).toLocaleDateString()}</small></span><span class="pill st-${esc(x.status)}">${esc(x.status.toLowerCase())}</span></a>`).join("")

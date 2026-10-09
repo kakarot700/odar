@@ -46,6 +46,14 @@ export const ICON = {
   doc: P('<path d="M6.5 3.5h8l3 3v14h-11z"/><path d="M9 11h6M9 14.5h6M9 18h4"/>'),
   table: P('<rect x="3.5" y="5" width="17" height="14" rx="2"/><path d="M3.5 10h17M10 10v9"/>'),
   image: P('<rect x="3.5" y="5" width="17" height="14" rx="2.5"/><circle cx="9" cy="10" r="1.6"/><path d="m4.5 17.5 5-4.5 4 3.5 2.5-2 4 3"/>'),
+  mic: P('<rect x="9" y="3.5" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v2.5"/>'),
+  expand: P('<path d="M14 4.5h5.5V10M10 19.5H4.5V14M19.5 4.5 13.5 10.5M4.5 19.5l6-6"/>'),
+  shrink: P('<path d="M19.5 4.5 14 10M14 5.5V10h4.5M4.5 19.5 10 14M10 18.5V14H5.5"/>'),
+  arrow: P('<path d="M7 17 17 7M8.5 7H17v8.5"/>'),
+  reply: P('<path d="M9.5 6.5 4.5 11.5l5 5"/><path d="M4.5 11.5h9a6 6 0 0 1 6 6v1"/>'),
+  chart: P('<path d="M4 19.5h16"/><path d="M5.5 15.5 10 11l3 3 5.5-6"/>'),
+  bolt: P('<path d="M13 3.5 5.5 13.5H12l-1 7 7.5-10H12z"/>'),
+  news: P('<rect x="3.5" y="5" width="13" height="14.5" rx="2"/><path d="M16.5 9h4v8.5a2 2 0 0 1-4 0M7 9h6M7 12.5h6M7 16h4"/>'),
 };
 
 // The ODAR mark (kept from the original app: a bold "O" in a rounded square).
@@ -58,19 +66,20 @@ export const prefs = {
   del(k) { try { localStorage.removeItem("odar." + k); } catch { /* */ } },
 };
 
+// Theme: "system" (shown as Auto) follows the sky's brightness; light/dark force the tone.
+let skyTone = () => "light";
+export function setSkyToneSource(fn) { skyTone = fn; }
 export function applyTheme(theme = prefs.get("theme", "system")) {
-  document.documentElement.dataset.theme = theme;
-  const dark = theme === "dark" || (theme === "system" && matchMedia("(prefers-color-scheme: dark)").matches);
-  const meta = document.querySelector('meta[name="theme-color"]');
-  if (meta) meta.content = dark ? "#151412" : "#f7f4ef";
+  const root = document.documentElement;
+  root.dataset.theme = theme;
+  root.dataset.tone = theme === "light" || theme === "dark" ? theme : skyTone();
 }
-matchMedia("(prefers-color-scheme: dark)").addEventListener?.("change", () => applyTheme());
 
 // ------------------------------------------------------------------ i18n (UI chrome only)
 const STR = {
   en: {
     chat: "Chat", projects: "Projects", home: "Home", search: "Search", profile: "Profile",
-    ask_ph: "Message ODAR", followup_ph: "Ask a follow-up", research_ph: "What should ODAR research?",
+    ask_ph: "Ask ODAR", followup_ph: "Ask a follow-up", research_ph: "What should ODAR research?",
     check_ph: "Paste an AI answer with its links, or attach a file", references_ph: "Paste a reference list, one per line",
     hello: "Hi there", hello_sub: "Ask anything. Every citation gets checked against its source.",
     morning: "Good morning", afternoon: "Good afternoon", evening: "Good evening",
@@ -120,14 +129,18 @@ export function toast(msg) {
 }
 
 // ------------------------------------------------------------------ menu (anchored list)
+// items: [id, label, sub, on, icon] rows; ["-", "Section title"] starts a section.
 export function openMenu(anchor, items, onPick) {
   const m = $("#menu");
-  m.innerHTML = items.map(([id, label, sub, on]) => `<button role="menuitemradio" aria-checked="${on ? "true" : "false"}" data-id="${esc(id)}" class="${on ? "on" : ""}"><span>${esc(label)}${sub ? `<small>${esc(sub)}</small>` : ""}</span>${on ? ICON.check : ""}</button>`).join("");
+  m.innerHTML = items.map(([id, label, sub, on, ic]) => id === "-" ? `<div class="m-sec">${esc(label)}</div>`
+    : id === "chips" ? `<div class="m-chips">${label.map(([cid, clabel, con]) => `<button role="menuitemradio" aria-checked="${con ? "true" : "false"}" data-id="${esc(cid)}" class="m-chip ${con ? "on" : ""}">${esc(clabel)}</button>`).join("")}</div>`
+    : `<button role="menuitemradio" aria-checked="${on ? "true" : "false"}" data-id="${esc(id)}" class="${on ? "on" : ""}">${ic ? `<span class="m-ic">${ic}</span>` : ""}<span class="m-t">${esc(label)}${sub ? `<small>${esc(sub)}</small>` : ""}</span>${on ? ICON.check : ""}</button>`).join("");
   m.classList.remove("hidden");
   const r = anchor.getBoundingClientRect();
   const h = m.offsetHeight, w = m.offsetWidth;
-  m.style.left = Math.max(8, Math.min(r.left, innerWidth - w - 8)) + "px";
-  m.style.top = (r.top - h - 8 > 8 ? r.top - h - 8 : r.bottom + 8) + "px";
+  m.style.left = Math.max(8, Math.min(anchor.closest(".composer") ? r.right - w + 6 : r.left, innerWidth - w - 8)) + "px";
+  const below = r.top < innerHeight / 2;
+  m.style.top = (below ? Math.min(r.bottom + 8, innerHeight - h - 8) : Math.max(8, r.top - h - 8)) + "px";
   $$("button", m).forEach((b) => (b.onclick = (e) => { e.stopPropagation(); closeMenu(); onPick(b.dataset.id); }));
   const first = $("button", m); if (first) first.focus({ preventScroll: true });
 }
@@ -140,7 +153,7 @@ export function openSheet(html, { title = "", onClose = null, tall = false } = {
   const root = $("#sheet");
   const panel = $(".sheet-panel", root);
   panel.classList.toggle("tall", tall);
-  $(".sheet-body", root).innerHTML = (title ? `<div class="sheet-h"><h2>${esc(title)}</h2><button class="icon-btn sm" data-close aria-label="Close">${ICON.x}</button></div>` : "") + html;
+  $(".sheet-body", root).innerHTML = (title ? `<div class="sheet-h"><h2>${esc(title)}</h2><button class="glass-btn round sm" data-close aria-label="Close">${ICON.x}</button></div>` : "") + html;
   root.classList.remove("hidden");
   requestAnimationFrame(() => root.classList.add("open"));
   sheetClose = onClose;
@@ -189,3 +202,6 @@ export function favicon(domain, kind) {
   const letter = esc(domain.replace(/^www\./, "")[0].toUpperCase());
   return `<span class="fav" data-l="${letter}"><img src="https://${esc(domain)}/favicon.ico" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></span>`;
 }
+
+// The element that scrolls the page (the view is a fixed scroller under the top bar).
+export const scroller = () => document.getElementById("view");

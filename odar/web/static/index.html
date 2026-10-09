@@ -4,41 +4,48 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#f7f4ef">
+<meta name="theme-color" content="#5d86bd">
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="ODAR answers your questions with sources and checks every citation against the page it cites.">
 <title>ODAR · answers you can check</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%231d1b18'/%3E%3Ctext x='16' y='22.5' font-family='system-ui,sans-serif' font-size='18' font-weight='800' text-anchor='middle' fill='%23f7f4ef'%3EO%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="/static/fonts/InterVariable-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/static/style.css">
-<script>try{var th=localStorage.getItem("odar.theme")||"system";document.documentElement.dataset.theme=th;}catch(e){}</script>
+<script>
+/* First paint: guess the sky's tone from the clock (sky.js refines it) so text never flashes. */
+try{var d=document.documentElement,p=localStorage.getItem("odar.theme")||"system",f=new URLSearchParams(location.search).get("sky")||sessionStorage.getItem("odar.sky")||"",h=new Date().getHours()+new Date().getMinutes()/60;
+var dark=f?/dusk|night/.test(f):(h<5.6||h>=18.6);d.dataset.theme=p;d.dataset.tone=p==="light"||p==="dark"?p:(dark?"dark":"light");}catch(e){}
+</script>
 </head>
 <body>
+<canvas id="sky" class="sky" aria-hidden="true"></canvas>
 <a class="skip" href="#view">Skip to content</a>
 <header class="topbar">
-  <div class="tb-row">
-    <button class="icon-btn" id="btn-home" aria-label="Home"></button>
-    <a class="brand" id="brand" href="/" data-nav aria-label="ODAR chat">ODAR</a>
-    <div class="tb-right">
-      <button class="icon-btn" id="btn-search" aria-label="Search" title="Search (Ctrl K)"></button>
-      <button class="icon-btn" id="btn-profile" aria-label="Profile" title="Profile &amp; settings"></button>
-    </div>
-  </div>
-  <nav class="tabs" role="tablist" aria-label="Sections">
+  <button class="glass-btn round" id="btn-home" aria-label="Home"></button>
+  <nav class="seg-tabs" role="tablist" aria-label="Sections">
     <a role="tab" id="tab-chat" data-tab="chat" href="/" data-nav>Chat</a>
     <a role="tab" id="tab-projects" data-tab="projects" href="/projects" data-nav>Projects</a>
   </nav>
+  <div class="tb-right">
+    <button class="glass-btn pill" id="btn-search" title="Search (Ctrl K)"><span class="s-icon"></span><span class="s-label">Search</span></button>
+    <button class="avatar-btn" id="btn-profile" aria-label="Profile" title="Profile &amp; settings"></button>
+  </div>
 </header>
 
+<aside id="rail" class="rail hidden" aria-label="Home"></aside>
 <main id="view" class="view" tabindex="-1"></main>
 
 <div id="composer-wrap" class="composer-wrap hidden">
   <div class="comp-inner">
     <div id="comp-chips" class="comp-chips"></div>
     <form id="composer" class="composer" autocomplete="off">
-      <button type="button" class="icon-btn sm attach" id="btn-attach" aria-label="Attach a file" title="Attach PDF, DOCX, TXT or MD"></button>
       <input type="file" id="file" accept=".pdf,.docx,.txt,.md" hidden>
-      <textarea id="q" rows="1" maxlength="60000" placeholder="Message ODAR" aria-label="Message"></textarea>
-      <button type="submit" class="send" id="btn-send" aria-label="Send"></button>
+      <textarea id="q" rows="1" maxlength="60000" placeholder="Ask ODAR" aria-label="Message"></textarea>
+      <div class="comp-btns">
+        <button type="button" class="comp-ic" id="btn-plus" data-menu aria-haspopup="menu" aria-label="Attach and modes"></button>
+        <button type="button" class="comp-ic hidden" id="btn-mic" aria-label="Dictate"></button>
+        <button type="submit" class="send hidden" id="btn-send" aria-label="Send"></button>
+      </div>
     </form>
   </div>
 </div>
@@ -51,7 +58,7 @@
 </div>
 <div id="search" class="search-ov hidden" role="dialog" aria-label="Search">
   <div class="search-panel">
-    <div class="search-box"><span class="s-ic" id="search-ic"></span><input id="search-q" placeholder="Search threads, messages and reports" aria-label="Search"><button class="icon-btn sm" id="search-x" aria-label="Close search"></button></div>
+    <div class="search-box"><span class="s-ic" id="search-ic"></span><input id="search-q" placeholder="Search threads, messages and reports" aria-label="Search"><button class="glass-btn round sm" id="search-x" aria-label="Close search"></button></div>
     <div id="search-res"></div>
   </div>
 </div>

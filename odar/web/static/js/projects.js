@@ -4,7 +4,7 @@ import { uploadToProject } from "./chat.js";
 
 export async function showProjects(view, { add } = {}) {
   view.innerHTML = `<div class="page-h"><div class="ph-t"><h1>Projects</h1><small>Files, instructions and a thread for each</small></div>
-    <div class="ph-a"><button class="btn primary sm" id="pj-new">${ICON.plus}New</button></div></div>
+    <div class="ph-a"><button class="glass-btn pill sm" id="pj-new">${ICON.plus}<span>New</span></button></div></div>
     <div id="pj-list" class="proj-grid"><div class="skel tall"></div><div class="skel tall"></div></div>`;
   $("#pj-new").onclick = () => createSheet();
   if (add) createSheet();
@@ -15,7 +15,7 @@ export async function showProjects(view, { add } = {}) {
         <a class="proj-main" href="/p/${p.project_id}" data-nav><span class="proj-ic">${esc((p.name[0] || "P").toUpperCase())}</span>
           <span class="proj-t">${esc(p.name)}<small>${p.files} file${p.files === 1 ? "" : "s"} · ${esc(ago(p.updated || p.created))}</small>
           ${p.instructions ? `<span class="proj-ins">${esc(p.instructions.slice(0, 90))}</span>` : ""}</span></a>
-        <button class="icon-btn sm" data-more="${p.project_id}" data-menu aria-label="Project options">${ICON.more}</button></div>`).join("")
+        <button class="glass-btn round sm" data-more="${p.project_id}" data-menu aria-label="Project options">${ICON.more}</button></div>`).join("")
       : `<div class="empty-card">${ICON.folder}<h3>No projects yet</h3><p>A project keeps your files (PDF, DOCX, TXT, MD) and custom instructions together. Questions inside it can search your files, the web, or both.</p><button class="btn primary" id="pj-first">${ICON.plus}Create a project</button></div>`;
     const first = $("#pj-first", view); if (first) first.onclick = () => createSheet();
     $$("[data-more]", box).forEach((b) => (b.onclick = (e) => {

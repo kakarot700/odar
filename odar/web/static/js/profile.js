@@ -27,7 +27,8 @@ export function openProfile() {
       <div id="ps-kshow"></div></section>
     <section class="ps"><div class="ps-h">Language</div>${seg("lang", [["en", "English"], ["hi", "हिंदी"]], prefs.get("lang", "en"))}
       <p class="note">Hindi sets the app's labels and writes deep research reports in Hindi.</p></section>
-    <section class="ps"><div class="ps-h">Theme</div>${seg("theme", [["light", "Light"], ["dark", "Dark"], ["system", "System"]], prefs.get("theme", "system"))}</section>
+    <section class="ps"><div class="ps-h">Text colour</div>${seg("theme", [["system", "Auto"], ["light", "Light"], ["dark", "Dark"]], prefs.get("theme", "system"))}
+      <p class="note">Auto follows the sky behind the app: light by day, dark at dusk and night.</p></section>
     <section class="ps"><div class="ps-h">Privacy</div>
       <p class="note">Files attached to Check are read in memory and never stored. Project files are kept as text until you delete them. Share links are unlisted and not indexed. Threads and runs are deleted after the retention period.</p>
       <div class="ps-links"><a href="/history" data-nav>${ICON.doc}Run history</a></div>
