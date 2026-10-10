@@ -150,14 +150,32 @@ export function closeMenu() { $("#menu").classList.add("hidden"); }
 document.addEventListener("click", (e) => { if (!e.target.closest("#menu") && !e.target.closest("[data-menu]")) closeMenu(); });
 
 // ------------------------------------------------------------------ bottom sheet
-let sheetClose = null;
+// Slides up on a spring; drag it down (from the grabber, or anywhere once its content is
+// scrolled to the top) to dismiss: it follows the finger, the scrim fades with it, and a quick
+// flick or a pull past a third of its height closes it, otherwise it springs back.
+let sheetClose = null, sheetTimer = 0;
+export const reducedMotion = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
+// will-change only while something is moving, then dropped so layers don't pile up.
+export function willChange(el, prop, ms = 600) {
+  if (!el) return;
+  el.style.willChange = prop;
+  clearTimeout(el._wc); el._wc = setTimeout(() => { el.style.willChange = ""; }, ms);
+}
 export function openSheet(html, { title = "", onClose = null, tall = false } = {}) {
   const root = $("#sheet");
   const panel = $(".sheet-panel", root);
+  clearTimeout(sheetTimer);
   panel.classList.toggle("tall", tall);
+  panel.style.transform = ""; $(".sheet-scrim", root).style.opacity = "";
   $(".sheet-body", root).innerHTML = (title ? `<div class="sheet-h"><h2>${esc(title)}</h2><button class="glass-btn round sm" data-close aria-label="Close">${ICON.x}</button></div>` : "") + html;
+  const wasOpen = root.classList.contains("open");
   root.classList.remove("hidden");
-  requestAnimationFrame(() => root.classList.add("open"));
+  if (!wasOpen) {
+    willChange(panel, "transform", 700);
+    panel.scrollTop = 0;
+    // two frames: the closed position must be painted before the transition starts
+    requestAnimationFrame(() => requestAnimationFrame(() => root.classList.add("open")));
+  }
   sheetClose = onClose;
   $$("[data-close]", root).forEach((b) => (b.onclick = closeSheet));
   panel.focus({ preventScroll: true });
@@ -166,32 +184,62 @@ export function openSheet(html, { title = "", onClose = null, tall = false } = {
 export function closeSheet() {
   const root = $("#sheet");
   if (root.classList.contains("hidden")) return;
-  root.classList.remove("open");
-  setTimeout(() => root.classList.add("hidden"), 220);
+  const panel = $(".sheet-panel", root);
+  willChange(panel, "transform", 400);
+  root.classList.remove("open", "dragging");
+  panel.style.transform = ""; $(".sheet-scrim", root).style.opacity = "";
+  clearTimeout(sheetTimer);
+  sheetTimer = setTimeout(() => root.classList.add("hidden"), reducedMotion() ? 0 : 340);
   const cb = sheetClose; sheetClose = null;
   if (cb) cb();
 }
 export function sheetOpen() { return !$("#sheet").classList.contains("hidden"); }
 
-// Drag the sheet down to dismiss (touch).
 (function sheetDrag() {
-  let y0 = null, dy = 0;
+  let y0 = null, dy = 0, lastY = 0, lastT = 0, v = 0, dragging = false, raf = 0;
+  const root = () => $("#sheet"), panel = () => $(".sheet-panel");
+  const paint = () => {
+    raf = 0;
+    const h = panel().offsetHeight || 1;
+    panel().style.transform = `translateY(${dy}px)`;
+    $(".sheet-scrim").style.opacity = String(Math.max(0, 1 - dy / h));
+  };
   document.addEventListener("touchstart", (e) => {
-    const grab = e.target.closest(".sheet-grab, .sheet-h");
-    if (!grab) return;
-    y0 = e.touches[0].clientY; dy = 0;
+    if (!root().classList.contains("open") || matchMedia("(min-width:720px)").matches) return;
+    const p = e.target.closest(".sheet-panel");
+    if (!p) return;
+    // from the grabber or title always; from the content only when it is scrolled to the top
+    if (!e.target.closest(".sheet-grab, .sheet-h") && p.scrollTop > 0) return;
+    y0 = lastY = e.touches[0].clientY; lastT = e.timeStamp; dy = 0; v = 0; dragging = false;
   }, { passive: true });
   document.addEventListener("touchmove", (e) => {
     if (y0 == null) return;
-    dy = Math.max(0, e.touches[0].clientY - y0);
-    $(".sheet-panel").style.transform = `translateY(${dy}px)`;
+    const y = e.touches[0].clientY;
+    const d = y - y0;
+    if (!dragging) {
+      if (d < 6) { if (d < -6) y0 = null; return; } // scrolling up the content: not a drag
+      dragging = true; root().classList.add("dragging"); panel().style.willChange = "transform";
+    }
+    // rubber band above the resting position
+    dy = d > 0 ? d : d / 4;
+    const dt = Math.max(1, e.timeStamp - lastT);
+    v = 0.8 * ((y - lastY) / dt) + 0.2 * v; lastY = y; lastT = e.timeStamp;
+    if (!raf) raf = requestAnimationFrame(paint);
   }, { passive: true });
-  document.addEventListener("touchend", () => {
+  const end = () => {
     if (y0 == null) return;
-    $(".sheet-panel").style.transform = "";
-    if (dy > 90) closeSheet();
     y0 = null;
-  });
+    if (!dragging) return;
+    dragging = false;
+    if (raf) { cancelAnimationFrame(raf); raf = 0; }
+    root().classList.remove("dragging");
+    panel().style.willChange = "";
+    const h = panel().offsetHeight || 1;
+    if (dy > h / 3 || (v > 0.55 && dy > 24)) closeSheet();
+    else { panel().style.transform = ""; $(".sheet-scrim").style.opacity = ""; }
+  };
+  document.addEventListener("touchend", end, { passive: true });
+  document.addEventListener("touchcancel", end, { passive: true });
 })();
 
 // Copy buttons on code cards and text templates copy the card's text.

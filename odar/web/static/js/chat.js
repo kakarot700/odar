@@ -1,9 +1,10 @@
 // The chat: one continuous thread (plus one per project), texting-style bubbles,
 // a composer pinned to the bottom, and rich cards rendered from the Ask stream.
-import { $, $$, esc, safeUrl, ICON, App, jfetch, jpost, prefs, t, lang, toast, openMenu, openSheet, closeSheet, copyLink, favicon, ago, scroller } from "./core.js";
+import { $, $$, esc, safeUrl, ICON, App, jfetch, jpost, prefs, t, lang, toast, openMenu, openSheet, closeSheet, copyLink, favicon, ago, scroller, reducedMotion } from "./core.js";
 import { renderMd, textTemplate } from "./md.js";
 import { mountRun, MODE_LABEL, trustBadge } from "./runs.js";
 import { workCard, donePill } from "./work.js";
+import { skyHold } from "./sky.js";
 
 export const FOCUS = {
   all: ["All web", "Search the whole web"],
@@ -39,16 +40,121 @@ export const S = {
 };
 
 let view = null;
+const SKEL_THREAD = `<div class="skel-thread" aria-busy="true" aria-label="Loading"><div class="skel-b me"></div><div class="skel-b tall"></div><div class="skel-b"></div><div class="skel-b me"></div><div class="skel-b tall"></div></div>`;
 let lastVerified = null; // the newest answer with checked citations (Home's "Verify" opens it)
 App.openVerify = () => { if (lastVerified) verificationSheet(lastVerified); else toast("No checked answer yet"); };
 const threadEl = () => (view ? $("#thread", view) : null);
 
 // ------------------------------------------------------------------ scrolling
 // The view is a fixed scroller (so the chat can fade out under the top bar).
-const nearBottom = () => { const v = scroller(); return v.scrollTop + v.clientHeight > v.scrollHeight - 160; };
-let stick = true;
+// While an answer streams the view follows it smoothly (an eased chase toward the bottom, one
+// step per frame, so growing content never jerks the page). Scrolling up by hand (wheel, touch
+// drag, keys) stops the follow; coming back near the bottom resumes it.
+const nearBottom = (px = 160) => { const v = scroller(); return v.scrollTop + v.clientHeight > v.scrollHeight - px; };
+let stick = true, follow = 0;
+function chase() {
+  follow = 0;
+  if (!stick) return;
+  const v = scroller();
+  const d = v.scrollHeight - v.clientHeight - v.scrollTop;
+  if (d <= 0.5) return;
+  v.scrollTop += d < 2 ? d : Math.max(1, d * 0.2);
+  follow = requestAnimationFrame(chase);
+}
 export function toBottom(force = false) {
-  if (force || stick) requestAnimationFrame(() => { const v = scroller(); v.scrollTo({ top: v.scrollHeight, behavior: force ? "auto" : "smooth" }); });
+  if (force) {
+    stick = true;
+    if (follow) { cancelAnimationFrame(follow); follow = 0; }
+    requestAnimationFrame(() => { const v = scroller(); v.scrollTop = v.scrollHeight; });
+    return;
+  }
+  if (!stick) return;
+  if (reducedMotion()) { requestAnimationFrame(() => { const v = scroller(); v.scrollTop = v.scrollHeight; }); return; }
+  if (!follow) follow = requestAnimationFrame(chase);
+}
+function letGo() { stick = false; if (follow) { cancelAnimationFrame(follow); follow = 0; } }
+function watchUserScroll() {
+  const v = scroller();
+  let ty = null;
+  v.addEventListener("wheel", (e) => { if (e.deltaY < 0) letGo(); }, { passive: true });
+  v.addEventListener("touchstart", (e) => { ty = e.touches[0].clientY; }, { passive: true });
+  v.addEventListener("touchmove", (e) => { if (ty != null && e.touches[0].clientY - ty > 4) letGo(); }, { passive: true });
+  v.addEventListener("touchend", () => { ty = null; }, { passive: true });
+  v.addEventListener("keydown", (e) => { if (["ArrowUp", "PageUp", "Home"].includes(e.key)) letGo(); });
+  v.addEventListener("scroll", () => { if (!stick && nearBottom(48)) stick = true; skyHold(400); }, { passive: true });
+}
+
+// Streamed text: deltas are batched into one DOM write per frame. Finished bubbles are left alone
+// (only changed bubbles are rebuilt), a new bubble rises in, and the words that just arrived fade
+// in over ~260 ms; earlier still-fading words keep their place in the fade (negative delay) when
+// their bubble is rebuilt, so nothing pops.
+const FADE_MS = 260;
+function wrapFresh(el, a, b, age) {
+  const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+  const todo = [];
+  let pos = 0, n;
+  while ((n = w.nextNode())) {
+    const len = n.data.length, s0 = Math.max(a, pos), e0 = Math.min(b, pos + len);
+    if (s0 < e0 && /\S/.test(n.data.slice(s0 - pos, e0 - pos))) todo.push([n, s0 - pos, e0 - pos]);
+    pos += len;
+    if (pos >= b) break;
+  }
+  for (const [node, s0, e0] of todo) {
+    let tn = node;
+    if (s0 > 0) tn = tn.splitText(s0);
+    if (e0 - s0 < tn.data.length) tn.splitText(e0 - s0);
+    const sp = document.createElement("span");
+    sp.className = "fresh";
+    if (age > 0) sp.style.animationDelay = `-${Math.round(age)}ms`;
+    tn.parentNode.insertBefore(sp, tn); sp.append(tn);
+  }
+}
+function streamRenderer(answer, onPaint) {
+  let parts = [], text = "", rawLen = 0, ranges = [], raf = 0, pending = "";
+  const paint = () => {
+    raf = 0;
+    const raw = pending;
+    const next = answerParts(raw);
+    if (!next.length) return;
+    if (!parts.length) answer.innerHTML = "";
+    const bubbles = Array.from(answer.children);
+    const changed = [];
+    next.forEach((pt, i) => {
+      if (parts[i] === pt.html && bubbles[i]) return;
+      const b = document.createElement("div");
+      b.className = `bubble${pt.wide ? " wide" : ""}${bubbles[i] ? "" : " b-in"}`;
+      b.innerHTML = pt.html;
+      if (bubbles[i]) { if (bubbles[i].classList.contains("b-in") && performance.now() - (bubbles[i]._born || 0) < 320) { b.classList.add("b-in"); b.style.animationDelay = `-${Math.round(performance.now() - bubbles[i]._born)}ms`; b._born = bubbles[i]._born; } bubbles[i].replaceWith(b); }
+      else { b._born = performance.now(); answer.append(b); }
+      changed.push(i);
+    });
+    for (let i = bubbles.length - 1; i >= next.length; i--) bubbles[i].remove();
+    parts = next.map((x) => x.html);
+    // which characters are new: after the common prefix, at most as many as raw chars arrived
+    const nt = answer.textContent;
+    let p = 0; const lim = Math.min(text.length, nt.length);
+    while (p < lim && text.charCodeAt(p) === nt.charCodeAt(p)) p++;
+    const now = performance.now();
+    const start = Math.max(p, nt.length - Math.max(0, raw.length - rawLen));
+    ranges = ranges.filter((r) => now - r[2] < FADE_MS);
+    if (start < nt.length) ranges.push([start, nt.length, now]);
+    text = nt; rawLen = raw.length;
+    if (!reducedMotion() && ranges.length) {
+      let off = 0;
+      const kids = Array.from(answer.children);
+      kids.forEach((b, i) => {
+        const len = b.textContent.length;
+        if (changed.includes(i)) for (const [a, z, born] of ranges) if (z > off && a < off + len) wrapFresh(b, Math.max(0, a - off), Math.min(len, z - off), now - born);
+        off += len;
+      });
+    }
+    if (onPaint) onPaint();
+  };
+  return {
+    push(raw) { pending = raw; if (!raf) raf = requestAnimationFrame(paint); },
+    flush(raw) { pending = raw; if (raf) cancelAnimationFrame(raf); paint(); },
+    reset() { if (raf) cancelAnimationFrame(raf); raf = 0; parts = []; text = ""; rawLen = 0; ranges = []; },
+  };
 }
 
 // ------------------------------------------------------------------ composer
@@ -163,7 +269,7 @@ function dictate() {
 }
 
 export function initComposer() {
-  scroller().addEventListener("scroll", () => { stick = nearBottom(); }, { passive: true });
+  watchUserScroll();
   $("#btn-plus").innerHTML = ICON.plus;
   $("#btn-mic").innerHTML = ICON.mic;
   $("#btn-plus").onclick = (e) => plusMenu(e.currentTarget);
@@ -252,6 +358,8 @@ function makeTurn(data = {}, { live = false } = {}) {
   const answer = $(".answer", el);
   const under = $(".under", el);
   let card = null, finished = false;
+  st.live = live;
+  const rend = streamRenderer(answer, () => toBottom());
   if (live) {
     card = workCard(slot, {
       title: steps[0].label, steps,
@@ -304,19 +412,19 @@ function makeTurn(data = {}, { live = false } = {}) {
       renderSources($(".c-src", el), st);
       toBottom();
     },
-    reset() { st.raw = ""; answer.innerHTML = `<div class="bubble"><span class="typing"><i></i><i></i><i></i></span></div>`; },
+    reset() { st.raw = ""; rend.reset(); answer.innerHTML = `<div class="bubble"><span class="typing"><i></i><i></i><i></i></span></div>`; },
     delta(text) {
-      if (!st.raw && card) { card.status(t("writing")); card.title(t("writing")); card.tiles(st.sources, true); }
+      if (!st.raw && card) { card.status(t("writing")); card.title(t("writing")); card.tiles(st.sources, true); skyHold(60000); }
       st.raw += text;
       showAnswer();
-      answer.innerHTML = renderAnswer(st.raw);
-      toBottom();
+      rend.push(st.raw);
     },
     done(d) {
       st.raw = d.answer || st.raw;
       st.timing = d.timing || {};
       showAnswer();
-      answer.innerHTML = renderAnswer(st.raw);
+      if (live) rend.flush(st.raw); else answer.innerHTML = renderAnswer(st.raw);
+      skyHold(0);
       wireCites(el, st);
       const cited = !d.abstained && /\[\d+\]/.test(st.raw);
       ws.write = "done";
@@ -332,7 +440,7 @@ function makeTurn(data = {}, { live = false } = {}) {
       st.verification = v;
       if ((v.citations || []).length) lastVerified = st;
       if (v.answer && v.answer !== st.raw) {
-        st.raw = v.answer;
+        st.raw = v.answer; rend.reset();
         answer.innerHTML = renderAnswer(st.raw);
         wireCites(el, st);
         st.repairs = (v.repairs || []).length;
@@ -344,14 +452,14 @@ function makeTurn(data = {}, { live = false } = {}) {
       drawUnder();
     },
     error(msg) {
-      showAnswer();
+      showAnswer(); rend.reset(); skyHold(0);
       answer.innerHTML = `<div class="bubble err"></div>`;
       $(".bubble", answer).textContent = msg;
       finish(st.sources.length ? `Read ${st.sources.length} ${t("sources")}` : "Couldn't finish", false);
     },
     stop() {
       st.stopped = true;
-      showAnswer();
+      showAnswer(); rend.reset(); skyHold(0);
       if (!st.raw) answer.innerHTML = `<div class="bubble muted">Stopped.</div>`;
       else { answer.innerHTML = renderAnswer(st.raw); wireCites(el, st); }
       finish("Stopped", false);
@@ -416,13 +524,14 @@ export function splitLong(block) {
   if (cur) { if (out.length && cur.length < 60) out[out.length - 1] += " " + cur; else out.push(cur); }
   return out.length ? out : [block];
 }
-function renderAnswer(src) {
+function answerParts(src) {
   let occ = 0;
   const cites = (n) => `<button class="cite" data-n="${n}" data-occ="${occ++}" aria-label="Source ${n}">${n}</button>`;
-  return chunkAnswer(src).map((c) => {
-    const table = (/\|/.test(c) && /^\s*\|?\s*:?-{2,}/m.test(c)) || /^\s*```/.test(c);
-    return `<div class="bubble${table ? " wide" : ""}">${renderMd(c, { cites })}</div>`;
-  }).join("") || `<div class="bubble"><span class="typing"><i></i><i></i><i></i></span></div>`;
+  return chunkAnswer(src).map((c) => ({ wide: (/\|/.test(c) && /^\s*\|?\s*:?-{2,}/m.test(c)) || /^\s*```/.test(c), html: renderMd(c, { cites }) }));
+}
+function renderAnswer(src) {
+  return answerParts(src).map((p) => `<div class="bubble${p.wide ? " wide" : ""}">${p.html}</div>`).join("")
+    || `<div class="bubble"><span class="typing"><i></i><i></i><i></i></span></div>`;
 }
 function wireCites(el, st) {
   $$(".answer .cite", el).forEach((b) => {
@@ -483,7 +592,8 @@ function renderSources(box, st) {
   const list = st.sources;
   if (!list.length) { box.innerHTML = ""; return; }
   const favs = list.slice(0, 4).map((s) => favicon(s.domain, s.kind)).join("");
-  box.innerHTML = `<div class="fan">${list.slice(0, 3).map((s, i) => linkCard(s, i, st)).join("")}</div>
+  const fanIn = st.live && !box.firstChild; // cards deal in once, the first time they appear live
+  box.innerHTML = `<div class="fan${fanIn ? " fan-in" : ""}">${list.slice(0, 3).map((s, i) => linkCard(s, i, st)).join("")}</div>
     <button class="src-more"><span class="favs">${favs}</span><span>All ${list.length} ${esc(t("sources"))}</span></button>`;
   $$("button.lcard", box).forEach((b) => (b.onclick = () => openSheet(citationBody(list[+b.dataset.i], null, false), { title: `Source ${list[+b.dataset.i].n}` })));
   $(".src-more", box).onclick = () => sourcesSheet(st);
@@ -725,7 +835,7 @@ export async function showThread(v, id) {
   if (id === prefs.get("main", "")) { App.go("/", true); return; }
   reset("thread");
   composer(true);
-  view.innerHTML = `<div class="empty"><span class="spin"></span></div>`;
+  view.innerHTML = SKEL_THREAD;
   try {
     const { thread, messages } = await jfetch(`/api/threads/${id}?limit=200`);
     if (thread.project_id) { App.go(`/p/${thread.project_id}?t=${id}`, true); return; }
@@ -770,7 +880,7 @@ export async function showProjectThread(v, pid, threadId) {
   view = v;
   reset("project");
   composer(true);
-  view.innerHTML = `<div class="empty"><span class="spin"></span></div>`;
+  view.innerHTML = SKEL_THREAD;
   let d;
   try { d = await jfetch(`/api/projects/${pid}`); } catch (ex) { view.innerHTML = `<div class="empty">${esc(ex.message)}</div>`; return; }
   S.project = d.project;

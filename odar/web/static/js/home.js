@@ -225,17 +225,19 @@ function wireBtns(box) {
     if (!root || !document.body.classList.contains("on-home") || sc().scrollTop > 0 || e.target.closest(".sheet")) return;
     y0 = e.touches[0].clientY; dy = 0;
   }, { passive: true });
+  let raf = 0;
+  const paint = () => { raf = 0; const p = root && $("#ptr", root); if (p) { p.style.height = dy + "px"; p.classList.toggle("ready", dy > 64); } };
   document.addEventListener("touchmove", (e) => {
     if (y0 == null) return;
     dy = Math.max(0, Math.min(110, (e.touches[0].clientY - y0) * 0.5));
-    const p = $("#ptr", root);
-    if (p) { p.style.height = dy + "px"; p.classList.toggle("ready", dy > 64); }
+    if (!raf) raf = requestAnimationFrame(paint); // one layout write per frame
   }, { passive: true });
   document.addEventListener("touchend", () => {
     if (y0 == null) return;
+    if (raf) { cancelAnimationFrame(raf); raf = 0; }
     const p = $("#ptr", root);
     if (p) { p.style.height = ""; p.classList.remove("ready"); }
     if (dy > 64) load(true);
     y0 = null;
-  });
+  }, { passive: true });
 })();

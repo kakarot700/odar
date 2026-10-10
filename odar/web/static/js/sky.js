@@ -116,9 +116,16 @@ function refreshSky() {
   if (tone !== lastTone) { lastTone = tone; if (onTone) onTone(tone); }
 }
 
+// The page can ask the sky to hold still for a moment (while the user scrolls or an answer
+// streams) so the canvas never competes with them for a frame; the clouds drift so slowly that a
+// pause is invisible. skyHold(0) releases it.
+let holdUntil = 0;
+export function skyHold(ms) { holdUntil = ms > 0 ? Math.max(holdUntil, performance.now() + ms) : 0; }
+
 function frame(t) {
   raf = 0;
   if (document.hidden) return;
+  if (t < holdUntil) { last = t; raf = requestAnimationFrame(frame); return; }
   const dt = last ? Math.min(0.1, (t - last) / 1000) : 0;
   if (t - last >= 1000 / 20 || !last) { // ~20 fps is plenty for drifting clouds
     for (const c of clouds) c.x += c.v * dt;

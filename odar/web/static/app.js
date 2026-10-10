@@ -1,5 +1,5 @@
 // ODAR web app entry: shell, tabs and routing. Vanilla ES modules, no build step.
-import { $, $$, ICON, App, t, prefs, applyTheme, setSkyToneSource, closeMenu, closeSheet, sheetOpen, scroller } from "./js/core.js";
+import { $, $$, ICON, App, t, prefs, applyTheme, setSkyToneSource, closeMenu, closeSheet, sheetOpen, scroller, reducedMotion } from "./js/core.js";
 import { showChat, showThread, showShared, showProjectThread, initComposer, sendAsk, setMode, composer, syncComposer, prefill, S } from "./js/chat.js";
 import { initSky, skyTone } from "./js/sky.js";
 import { showHome } from "./js/home.js";
@@ -46,14 +46,38 @@ App.projectAction = (pid, k, project) => projectAction(pid, k, project);
 // ------------------------------------------------------------------ routing
 App.go = (path, replace = false) => {
   if (replace) history.replaceState({}, "", path); else history.pushState({}, "", path);
-  route();
+  navigate();
 };
 App.route = () => route();
 document.addEventListener("click", (e) => {
   const a = e.target.closest("a[data-nav]");
   if (a && !e.metaKey && !e.ctrlKey && !e.shiftKey && a.target !== "_blank") { e.preventDefault(); App.go(a.getAttribute("href")); }
 });
-addEventListener("popstate", route);
+addEventListener("popstate", () => navigate());
+
+// Moving between Home, Chat and Projects animates: a view transition where supported (the page
+// slides a little in the direction of travel and cross-fades; bar and composer stay), otherwise a
+// quick fade + rise. The new page gets up to 260 ms to render its data inside the transition so
+// it doesn't land half-empty; slower loads land on their skeleton instead.
+const TAB_ORDER = { home: 0, chat: 1, projects: 2 };
+const tabOf = (p) => (p === "/home" ? "home" : p === "/projects" || p.startsWith("/p/") ? "projects" : p === "/" || p === "/settings" || p.startsWith("/c/") ? "chat" : "");
+let curPath = location.pathname;
+function navigate() {
+  const from = tabOf(curPath), to = tabOf(location.pathname);
+  const changed = curPath !== location.pathname;
+  curPath = location.pathname;
+  if (!changed || reducedMotion() || (!from && !to)) return route();
+  document.documentElement.dataset.vdir = from && to && TAB_ORDER[to] < TAB_ORDER[from] ? "-1" : "1";
+  if (document.startViewTransition) {
+    try {
+      document.startViewTransition(() => Promise.race([Promise.resolve(route()).catch(() => {}), new Promise((ok) => setTimeout(ok, 260))]));
+      return undefined;
+    } catch { /* fall through */ }
+  }
+  view.classList.remove("v-fallback"); void view.offsetWidth; view.classList.add("v-fallback");
+  clearTimeout(navigate.t); navigate.t = setTimeout(() => view.classList.remove("v-fallback"), 700);
+  return route();
+}
 
 function setTab(tab) {
   $$(".seg-tabs [data-tab]").forEach((b) => {

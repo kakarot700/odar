@@ -4,7 +4,7 @@
 // buttons on the right (a "Steps" pill to expand, stop or minimise). Under the container a ghost
 // pill names the current step and the elapsed time. When the work finishes it folds into a small
 // ghost "done" pill that can show the steps again.
-import { $, $$, esc, ICON, favicon } from "./core.js";
+import { $, $$, esc, ICON, favicon, reducedMotion } from "./core.js";
 
 const host = (u) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return ""; } };
 export { host };
@@ -42,12 +42,20 @@ export function workCard(slot, { title = "Working on it", steps = [], buttons = 
   };
   timer = setInterval(tick, 1000); tick();
 
+  // Steps are updated in place (class + text), so a step turning "now" -> "done" cross-fades
+  // through CSS transitions instead of the whole list being rebuilt.
+  const stepHtml = (s) => `${esc(s.label)}${state[s.id + "_n"] ? ` <small>${esc(state[s.id + "_n"])}</small>` : ""}`;
   const drawSteps = () => {
-    $(".ho-steps", slot).innerHTML = steps.map((s) => {
+    const ol = $(".ho-steps", slot);
+    steps.forEach((s) => {
       const st = state[s.id] || "";
-      if (st === "skip") return "";
-      return `<li class="${st}"><i></i><span>${esc(s.label)}${state[s.id + "_n"] ? ` <small>${esc(state[s.id + "_n"])}</small>` : ""}</span></li>`;
-    }).join("");
+      let li = ol.querySelector(`[data-s="${s.id}"]`);
+      if (st === "skip") { if (li) li.remove(); return; }
+      if (!li) { li = document.createElement("li"); li.dataset.s = s.id; li.innerHTML = "<i></i><span></span>"; ol.append(li); }
+      if (li.className !== st) li.className = st;
+      const h = stepHtml(s);
+      if (li._h !== h) { li._h = h; li.lastChild.innerHTML = h; }
+    });
   };
   // Page cards: a white mini page per source (site, title, a few text lines), newest last.
   const page = (x, i, cls = "") => `<span class="tile page ${cls}" style="--d:${i}" title="${esc(x.title || x.domain || "")}">
@@ -57,18 +65,35 @@ export function workCard(slot, { title = "Working on it", steps = [], buttons = 
   const drawTiles = () => {
     const box = $(".ho-tiles", slot);
     if (!tiles.length) {
+      box._key = "";
       box.innerHTML = (found ? `<span class="tile page count"><b>${found}</b><small>sources found</small></span>` : "") + Array.from({ length: found ? 2 : 3 }, (_, i) => `<span class="tile page ph" style="--d:${i}"><i class="pg-l"></i><i class="pg-l s"></i><i class="pg-l"></i><i class="pg-l"></i></span>`).join("");
       return;
     }
     const shown = tiles.length > 6 ? tiles.slice(0, 5) : tiles;
     const firstOpen = shown.findIndex((x) => !x.done);
+    // Same pages as before (e.g. all marked read when writing starts): restyle them in place so
+    // they cross-fade instead of the row being rebuilt and dealt in again.
+    const key = shown.map((x) => x.url || x.title || x.domain).join("|") + "#" + tiles.length;
+    if (box._key === key) {
+      $$(".tile.page:not(.more)", box).forEach((el, i) => {
+        const x = shown[i]; if (!x) return;
+        el.classList.toggle("read", !!x.done); el.classList.toggle("now", !x.done && i === firstOpen);
+      });
+      return;
+    }
+    box._key = key;
     box.innerHTML = shown.map((x, i) => page(x, i, x.done ? "read" : i === firstOpen ? "now" : "")).join("")
       + (tiles.length > shown.length ? `<span class="tile page more"><b>+${tiles.length - shown.length}</b><small>more</small></span>` : "");
   };
 
   const api = {
     el: slot,
-    title(text) { $(".ho-t", slot).textContent = text; },
+    title(text) {
+      const el = $(".ho-t", slot);
+      if (el.textContent === text) return;
+      el.textContent = text;
+      if (!reducedMotion()) el.animate?.([{ opacity: 0, transform: "translateY(3px)" }, { opacity: 1, transform: "none" }], { duration: 200, easing: "cubic-bezier(.2,.8,.2,1)" });
+    },
     // Cross-fade the status pill to a new phrase.
     status(text) {
       if (!text || text === cur) return;
@@ -97,7 +122,8 @@ export function workCard(slot, { title = "Working on it", steps = [], buttons = 
 }
 
 export function donePill(slot, summary, steps, state = {}, ok = true) {
-  slot.innerHTML = `<div class="done-wrap"><button type="button" class="done-pill" aria-expanded="false">${ok ? `<span class="ok-dot">${ICON.check}</span>` : `<span class="ok-dot off">${ICON.x}</span>`}<span class="dp-t">${esc(summary)}</span>${ICON.chev}</button>
+  const fold = !!slot.querySelector(".ho"); // folding a live card: fade the pill in
+  slot.innerHTML = `<div class="done-wrap${fold ? " d-in" : ""}"><button type="button" class="done-pill" aria-expanded="false">${ok ? `<span class="ok-dot">${ICON.check}</span>` : `<span class="ok-dot off">${ICON.x}</span>`}<span class="dp-t">${esc(summary)}</span>${ICON.chev}</button>
     <ol class="steps glass-list hidden">${steps.filter((s) => state[s.id] !== "skip").map((s) => `<li class="${state[s.id] || "done"}"><i></i><span>${esc(s.label)}${state[s.id + "_n"] ? ` <small>${esc(state[s.id + "_n"])}</small>` : ""}</span></li>`).join("")}</ol></div>`;
   const b = $(".done-pill", slot);
   b.onclick = () => { const open = $(".steps", slot).classList.toggle("hidden") === false; b.setAttribute("aria-expanded", open); };
