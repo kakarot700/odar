@@ -51,12 +51,12 @@ export function openSearch() {
     if (!corpus) { res.innerHTML = `<div class="empty"><span class="spin"></span></div>`; return; }
     if (!needle) {
       const recent = corpus.filter((x) => x.kind !== "message").sort((a, b) => b.t - a.t).slice(0, 8);
-      res.innerHTML = recent.length ? `<div class="s-group">Recent</div><div class="list flat">${recent.map(row(needle)).join("")}</div>` : `<div class="empty">Your threads and reports show up here.</div>`;
+      res.innerHTML = recent.length ? `<div class="s-group">Recent</div><div class="list flat">${recent.map(row(needle)).join("")}</div>` : `<div class="empty-state sm"><span class="es-ic">${ICON.inbox}</span><h3>Nothing here yet</h3><p>Your chats, projects and reports will show up here to search.</p></div>`;
     } else {
       const hits = corpus.filter((x) => x.text.toLowerCase().includes(needle));
       const groups = [["project", "Projects"], ["thread", "Chats"], ["report", "Reports"], ["message", "Messages"]].map(([k, label]) => [label, hits.filter((x) => x.kind === k).sort((a, b) => b.t - a.t).slice(0, k === "message" ? 20 : 8)]).filter(([, l]) => l.length);
       res.innerHTML = groups.length ? groups.map(([label, list]) => `<div class="s-group">${label}</div><div class="list flat">${list.map(row(needle)).join("")}</div>`).join("")
-        : `<div class="empty">Nothing found. <a href="/?q=${encodeURIComponent(q.value.trim())}" data-nav>Ask ODAR instead</a></div>`;
+        : `<div class="empty-state sm"><span class="es-ic">${ICON.search}</span><h3>No matches for “${esc(q.value.trim())}”</h3><p>Nothing in your chats, projects or reports. ODAR can look it up on the web.</p><a class="btn primary" href="/?q=${encodeURIComponent(q.value.trim())}" data-nav>Ask ODAR</a></div>`;
     }
     $$("#search-res a").forEach((a) => a.addEventListener("click", closeSearch));
   };

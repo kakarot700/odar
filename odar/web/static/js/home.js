@@ -47,7 +47,12 @@ function reply(id) {
   App.reply(text);
 }
 
+let loadedAt = 0;
+// Coming back to a cached Home pane: refetch its data only when it is older than ``maxAge`` ms.
+export function refreshHome(maxAge = 60000) { if (root && root.isConnected && Date.now() - loadedAt > maxAge) load(); }
+
 async function load() {
+  loadedAt = Date.now();
   const btn = $("#home-refresh", root);
   if (btn) btn.classList.add("spinning");
   const data = {};

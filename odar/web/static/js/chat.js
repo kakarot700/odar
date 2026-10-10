@@ -177,12 +177,14 @@ function syncButtons() {
   const has = ta().value.trim().length > 0 || (!!S.file && S.mode !== "ask");
   const streaming = !!(S.busy && S.abort);
   const send = $("#btn-send");
-  send.classList.toggle("hidden", !(has || streaming));
+  // mic and send share one slot: the mic shrinks away as the arrow grows in (and back)
+  send.classList.toggle("gone", !(has || streaming));
   send.innerHTML = streaming ? ICON.stop : ICON.send;
   send.classList.toggle("stop", streaming);
   send.setAttribute("aria-label", streaming ? t("stop") : t("send"));
   send.disabled = S.busy && !streaming;
-  $("#btn-mic").classList.toggle("hidden", !SR || ((has || streaming) && !rec));
+  $("#btn-mic").classList.toggle("gone", !SR || ((has || streaming) && !rec));
+  $(".morph").classList.toggle("empty", !SR && !(has || streaming));
 }
 export function syncComposer() {
   const chips = [];
@@ -294,12 +296,12 @@ export function initComposer() {
     if (S.mode === "ask") {
       if (text.length < 3) { toast("Ask a slightly longer question"); return; }
       ta().value = ""; autoGrow();
-      if (!threadEl()) { App.pendingAsk = [text]; App.go("/"); return; } // typed on Home
+      if (!threadEl() || view.hidden) { App.pendingAsk = [text]; App.go("/"); return; } // typed on Home
       sendAsk(text);
       return;
     }
     if (!text && !S.file) { toast("Type or attach something first"); return; }
-    if (!threadEl()) { App.pendingRun = [S.mode, text, S.file]; App.go("/"); return; }
+    if (!threadEl() || view.hidden) { App.pendingRun = [S.mode, text, S.file]; App.go("/"); return; }
     startRun(S.mode, text, S.file);
   };
   syncButtons();
@@ -571,6 +573,9 @@ function verificationSheet(st) {
 // Link cards: up to three fanned, slightly rotated cards (image or favicon tile, title, site);
 // tap opens the page. "All N sources" lists every source in a sheet.
 function imageFor(st, s) {
+  // the page's own og:image / thumbnail when the backend sent one, else a matching image result
+  const own = s.image || s.thumbnail || s.og_image || "";
+  if (/^https:\/\//.test(own)) return own;
   const im = (st.images || []).find((x) => x.domain && s.domain && x.domain.replace(/^www\./, "") === s.domain.replace(/^www\./, "") && /^https:\/\//.test(x.thumbnail || ""));
   return im ? im.thumbnail : "";
 }
@@ -823,6 +828,15 @@ export async function showChat(v, { mode, q } = {}) {
   if (App.pendingAsk) { const [pq, pf] = App.pendingAsk; App.pendingAsk = null; sendAsk(pq, pf); return; }
   if (App.pendingRun) { const [pm, pt, pfile] = App.pendingRun; App.pendingRun = null; S.mode = pm; startRun(pm, pt, pfile); return; }
   if (matchMedia("(hover:hover)").matches) ta().focus({ preventScroll: true });
+}
+
+// The chat pane came back from cache (tab switch): restore the composer and run anything
+// queued from Home (a question typed there, Verify).
+export function resumeChat() {
+  composer(true); syncComposer();
+  if (App.pendingVerify) { App.pendingVerify = false; setTimeout(() => App.openVerify(), 250); }
+  if (App.pendingAsk) { const [pq, pf] = App.pendingAsk; App.pendingAsk = null; sendAsk(pq, pf); return; }
+  if (App.pendingRun) { const [pm, pt, pfile] = App.pendingRun; App.pendingRun = null; S.mode = pm; startRun(pm, pt, pfile); }
 }
 
 function threadHeader(title, sub = "", backHref = "/") {

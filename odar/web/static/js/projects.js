@@ -16,7 +16,7 @@ export async function showProjects(view, { add } = {}) {
           <span class="proj-t">${esc(p.name)}<small>${p.files} file${p.files === 1 ? "" : "s"} · ${esc(ago(p.updated || p.created))}</small>
           ${p.instructions ? `<span class="proj-ins">${esc(p.instructions.slice(0, 90))}</span>` : ""}</span></a>
         <button class="glass-btn round sm" data-more="${p.project_id}" data-menu aria-label="Project options">${ICON.more}</button></div>`).join("")
-      : `<div class="empty-card">${ICON.folder}<h3>No projects yet</h3><p>A project keeps your files (PDF, DOCX, TXT, MD) and custom instructions together. Questions inside it can search your files, the web, or both.</p><button class="btn primary" id="pj-first">${ICON.plus}Create a project</button></div>`;
+      : `<div class="empty-card"><span class="es-ic">${ICON.folder}</span><h3>No projects yet</h3><p>A project keeps your files (PDF, DOCX, TXT, MD) and custom instructions together. Questions inside it can search your files, the web, or both.</p><button class="btn primary" id="pj-first">${ICON.plus}Create a project</button></div>`;
     const first = $("#pj-first", view); if (first) first.onclick = () => createSheet();
     $$("[data-more]", box).forEach((b) => (b.onclick = (e) => {
       const p = projects.find((x) => x.project_id === b.dataset.more);

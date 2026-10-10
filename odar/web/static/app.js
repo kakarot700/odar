@@ -1,14 +1,49 @@
 // ODAR web app entry: shell, tabs and routing. Vanilla ES modules, no build step.
 import { $, $$, ICON, App, t, prefs, applyTheme, setSkyToneSource, closeMenu, closeSheet, sheetOpen, scroller, reducedMotion } from "./js/core.js";
-import { showChat, showThread, showShared, showProjectThread, initComposer, sendAsk, setMode, composer, syncComposer, prefill, S } from "./js/chat.js";
+import { showChat, resumeChat, showThread, showShared, showProjectThread, initComposer, sendAsk, setMode, composer, syncComposer, prefill, S } from "./js/chat.js";
 import { initSky, skyTone } from "./js/sky.js";
-import { showHome } from "./js/home.js";
+import { showHome, refreshHome } from "./js/home.js";
 import { showProjects, filesSheet, projectAction } from "./js/projects.js";
 import { initSearch, closeSearch } from "./js/search.js";
-import { openProfile, avatarLetter } from "./js/profile.js";
+import { openProfile, avatarHTML } from "./js/profile.js";
 import { showRunPage, showHistoryPage, stopPolling } from "./js/runs.js";
 
 const view = $("#view");
+// Home, Chat and Projects each keep their own pane mounted inside the scroller. Switching tabs
+// hides one and shows the other (no rebuild, no refetch), restoring each pane's scroll
+// position. Chat-type pages (threads, project threads, runs, shared) all use the chat pane, so
+// there is only ever one #thread. A pane rebuilds when its key (the path that built it)
+// changes, when it went stale, or when it was marked dirty.
+const PANES = {};
+for (const k of ["home", "chat", "projects"]) {
+  const el = document.createElement("div");
+  el.className = "pane"; el.dataset.pane = k; el.hidden = true;
+  view.appendChild(el);
+  PANES[k] = { el, key: "", at: 0, top: 0 };
+}
+let curPane = "";
+function showPane(k) {
+  if (curPane && curPane !== k) PANES[curPane].top = view.scrollTop;
+  for (const [n, p] of Object.entries(PANES)) p.el.hidden = n !== k;
+  curPane = k;
+  return PANES[k].el;
+}
+// Mount ``k`` for ``key``; ``build(el)`` runs only when the pane must be (re)built, otherwise
+// the cached pane comes back at its scroll position and ``refresh`` (if any) updates it quietly.
+function mount(k, key, build, { maxAge = Infinity, refresh = null } = {}) {
+  const p = PANES[k];
+  const el = showPane(k);
+  const fresh = p.key === key && Date.now() - p.at < maxAge && el.childElementCount;
+  if (fresh) {
+    view.scrollTop = p.top;
+    if (refresh) refresh(el);
+    return undefined;
+  }
+  p.key = key; p.at = Date.now(); p.top = 0;
+  view.scrollTop = 0;
+  return build(el);
+}
+App.dirty = (k) => { if (PANES[k]) PANES[k].key = ""; };
 
 // ------------------------------------------------------------------ shell
 // The sky sets the tone (light or dark text) unless the user forced one.
@@ -18,9 +53,12 @@ applyTheme();
 const syncTop = () => document.documentElement.style.setProperty("--top", $(".topbar").offsetHeight + "px");
 syncTop();
 addEventListener("resize", syncTop);
+// The scroller's bottom padding follows the composer's real height (chips, a multi-line
+// draft), so the last card on Home or in a thread always clears it.
+if (window.ResizeObserver) new ResizeObserver(([e]) => document.documentElement.style.setProperty("--comp-h", Math.ceil(e.target.getBoundingClientRect().height) + "px")).observe($(".comp-inner"));
 document.documentElement.lang = prefs.get("lang", "en");
 $("#btn-search .s-icon").innerHTML = ICON.search;
-App.refreshAvatar = () => { $("#btn-profile").innerHTML = `<span class="avatar">${avatarLetter() || ICON.user}</span>`; };
+App.refreshAvatar = () => { $("#btn-profile").innerHTML = avatarHTML(); };
 App.refreshAvatar();
 App.relabel = () => {
   $("#tab-home").textContent = t("home");
@@ -105,7 +143,7 @@ const rail = $("#rail");
 function setRail(on) {
   rail.classList.toggle("hidden", !on);
   document.body.classList.toggle("with-rail", on);
-  if (on) showHome(rail, { rail: true }); else rail.innerHTML = "";
+  if (on) { PANES.home.el.innerHTML = ""; App.dirty("home"); showHome(rail, { rail: true }); } else rail.innerHTML = "";
 }
 let wasWide = wide();
 addEventListener("resize", () => { if (wide() !== wasWide) { wasWide = wide(); if (location.pathname === "/home") route(); } });
@@ -115,31 +153,39 @@ function route() {
   closeMenu();
   closeSearch();
   if (sheetOpen()) closeSheet();
-  if (S.abort) S.abort.abort();
+  // a stream still running in the chat pane is stopped; that pane is rebuilt next time
+  if (S.abort) { S.abort.abort(); App.dirty("chat"); }
   const p = location.pathname;
   const qs = new URLSearchParams(location.search);
+  const key = p + location.search;
   let m;
-  scroller().scrollTop = 0;
   if (p !== "/home" && document.body.classList.contains("with-rail")) setRail(false);
-  if ((m = p.match(/^\/c\/([\w-]+)/))) { setTab("chat"); return showThread(view, m[1]); }
-  if ((m = p.match(/^\/s\/([\w-]+)/))) { setTab(""); return showShared(view, m[1]); }
-  if ((m = p.match(/^\/p\/([\w-]+)/))) { setTab("projects"); return showProjectThread(view, m[1], qs.get("t") || ""); }
-  if ((m = p.match(/^\/runs\/([\w-]+)/))) { setTab(""); composer(false); return showRunPage(view, { id: m[1] }); }
-  if ((m = p.match(/^\/r\/([\w-]+)/))) { setTab(""); composer(false); return showRunPage(view, { token: m[1] }); }
+  if ((m = p.match(/^\/c\/([\w-]+)/))) { setTab("chat"); return mount("chat", key, (el) => showThread(el, m[1]), { refresh: chatBack }); }
+  if ((m = p.match(/^\/s\/([\w-]+)/))) { setTab(""); return mount("chat", key, (el) => showShared(el, m[1])); }
+  if ((m = p.match(/^\/p\/([\w-]+)/))) { setTab("projects"); App.dirty("projects"); return mount("chat", key, (el) => showProjectThread(el, m[1], qs.get("t") || ""), { refresh: chatBack }); }
+  if ((m = p.match(/^\/runs\/([\w-]+)/))) { setTab(""); composer(false); return mount("chat", key + "#" + Date.now(), (el) => showRunPage(el, { id: m[1] })); }
+  if ((m = p.match(/^\/r\/([\w-]+)/))) { setTab(""); composer(false); return mount("chat", key + "#" + Date.now(), (el) => showRunPage(el, { token: m[1] })); }
   if (p === "/home") {
     setTab("home");
-    if (wide()) { setRail(true); return showChat(view, {}); }
+    if (wide()) { setRail(true); return mount("chat", "/|" + prefs.get("main", ""), (el) => showChat(el, {}), { refresh: chatBack }); }
     composer(true); syncComposer();
-    return showHome(view);
+    return mount("home", "/home", (el) => showHome(el), { refresh: () => refreshHome(60000) });
   }
-  if (p === "/projects") { setTab("projects"); composer(false); return showProjects(view, { add: qs.get("add") }); }
-  if (p === "/history") { setTab(""); composer(false); return showHistoryPage(view); }
+  if (p === "/projects") {
+    setTab("projects"); composer(false);
+    return mount("projects", key, (el) => showProjects(el, { add: qs.get("add") }), { maxAge: 120000 });
+  }
+  if (p === "/history") { setTab(""); composer(false); return mount("chat", key + "#" + Date.now(), (el) => showHistoryPage(el)); }
   setTab("chat");
   const opts = { mode: qs.get("mode"), q: qs.get("q") };
-  showChat(view, opts);
+  // "/" with a prefilled question or mode always rebuilds; plain "/" (and /settings) reuse
+  const ck = opts.mode || opts.q ? key + "#" + Date.now() : "/|" + prefs.get("main", "");
+  mount("chat", ck, (el) => showChat(el, opts), { refresh: chatBack });
   if (p === "/settings") openProfile();
   return undefined;
 }
+// Coming back to a cached chat pane: the composer returns as it was for that thread.
+function chatBack() { resumeChat(); }
 
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") { closeSearch(); closeSheet(); closeMenu(); }

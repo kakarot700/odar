@@ -31,7 +31,7 @@
   --seg-on:#1d1d1f;--seg-on-ink:#fff;--seg-ink:#34404c;--comp:rgba(255,255,255,.8);--comp-2:rgba(255,255,255,.9);--ph:#5c6166;
   --work:rgba(255,255,255,.46);--paper:#fff;--paper-ink:#1d1d1f;--sheet:#e3edf7;
   --ok:#13703f;--ok-soft:rgba(32,150,84,.15);--part:#835600;--part-soft:rgba(232,160,24,.20);--bad:#b3261e;--bad-soft:rgba(222,52,42,.14);--none:#4b5563;--none-soft:rgba(80,92,112,.12);
-  --scrim:rgba(14,22,44,.28);
+  --scrim:rgba(14,22,44,.28);--focus:#2f6fd6;
 }
 :root[data-tone="dark"]{
   --ink:#fff;--ink-2:rgba(255,255,255,.86);--mute:rgba(255,255,255,.62);--faint:rgba(255,255,255,.10);
@@ -42,7 +42,7 @@
   --seg-on:#fff;--seg-on-ink:#1d1d1f;--seg-ink:rgba(255,255,255,.8);--comp:rgba(24,32,62,.66);--comp-2:rgba(28,38,74,.78);--ph:rgba(255,255,255,.55);
   --work:rgba(20,28,58,.5);--paper:#fff;--paper-ink:#1d1d1f;--sheet:#151c35;
   --ok:#86e3ae;--ok-soft:rgba(80,220,140,.17);--part:#f4d27a;--part-soft:rgba(240,190,70,.17);--bad:#ffa094;--bad-soft:rgba(255,110,100,.17);--none:#c7cedb;--none-soft:rgba(200,210,230,.13);
-  --scrim:rgba(2,6,20,.42);
+  --scrim:rgba(2,6,20,.42);--focus:#9cc2ff;
 }
 /* a gently damped spring (one ~4% overshoot) where linear() easing is supported */
 @supports (transition-timing-function:linear(0,1)){:root{--ease-spring:linear(0,.009,.035 2.1%,.141 4.4%,.723 12.9%,.938 16.7%,1.017 20.3%,1.043 24.3%,1.035 28.4%,1.007 37.4%,.998 45.5%,1 100%)}}
@@ -60,7 +60,7 @@ button{font:inherit;color:inherit;letter-spacing:inherit}
 .hidden{display:none!important}
 svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
 code{font:13px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--faint);border-radius:6px;padding:1px 5px;overflow-wrap:anywhere}
-:focus-visible{outline:2px solid color-mix(in srgb,var(--ink) 55%,transparent);outline-offset:2px;border-radius:12px}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
 .skip{position:fixed;left:-999px;top:8px;z-index:100;background:#fff;color:#000;padding:8px 12px;border-radius:10px}
 .skip:focus{left:8px}
 mark{background:rgba(255,214,90,.45);color:inherit;border-radius:4px;padding:0 2px}
@@ -122,12 +122,16 @@ body::before{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;opa
   -webkit-mask-image:linear-gradient(to bottom,transparent calc(var(--top) - 14px),#000 calc(var(--top) + 42px));
   mask-image:linear-gradient(to bottom,transparent calc(var(--top) - 14px),#000 calc(var(--top) + 42px));scrollbar-width:none}
 .view::-webkit-scrollbar{display:none}
-body.with-composer .view{padding-bottom:calc(120px + env(safe-area-inset-bottom));
+/* bottom padding = the composer's measured height (--comp-h, set by a ResizeObserver) + its 14px
+   lift + a 32px gap + the home indicator, so the last card always clears it */
+body.with-composer .view{padding-bottom:calc(var(--comp-h,44px) + 46px + env(safe-area-inset-bottom));
   -webkit-mask-image:linear-gradient(to bottom,transparent calc(var(--top) - 14px),#000 calc(var(--top) + 42px),#000 calc(100% - 64px),rgba(0,0,0,.35) 100%);
   mask-image:linear-gradient(to bottom,transparent calc(var(--top) - 14px),#000 calc(var(--top) + 42px),#000 calc(100% - 64px),rgba(0,0,0,.35) 100%)}
-.view>*{max-width:var(--col);margin-left:auto;margin-right:auto}
-.view>.home{max-width:720px}
-.view>.proj-grid,.view>#hist{max-width:var(--col)}
+/* each tab keeps its own pane mounted; panes take no box, their children lay out as before */
+.pane{display:contents}.pane[hidden]{display:none!important}
+.view>.pane>*{max-width:var(--col);margin-left:auto;margin-right:auto}
+.view>.pane>.home{max-width:720px}
+.view>.pane>.proj-grid,.view>.pane>#hist{max-width:var(--col)}
 
 /* wide screens: Home as a left column next to the chat */
 .rail{position:fixed;z-index:2;top:0;bottom:0;left:max(20px,env(safe-area-inset-left));width:var(--rail);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;
@@ -451,7 +455,7 @@ textarea.field{resize:vertical}
 .comp-ic:hover{background:var(--faint)}
 .comp-ic svg{width:19px;height:19px;stroke-width:1.8}
 .comp-ic.rec{color:#fff;background:#e5484d;animation:pulse-r 1.4s infinite}
-.send{width:34px;height:34px;margin:2px 0 2px 4px;border-radius:50%;border:0;background:#1d1d1f;color:#fff;display:grid;place-items:center;cursor:pointer;flex:none;animation:pop var(--dur-2) var(--ease-out)}
+.send{width:34px;height:34px;margin:0;border-radius:50%;border:0;background:#1d1d1f;color:#fff;display:grid;place-items:center;cursor:pointer;flex:none;box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 1px 2px rgba(10,14,30,.2)}
 :root[data-tone="dark"] .send{background:#fff;color:#0e1320}
 .send svg{width:17px;height:17px;stroke-width:2.2}
 .send:disabled{opacity:.35;cursor:default}
@@ -469,7 +473,7 @@ textarea.field{resize:vertical}
 .menu small{display:block;color:var(--mute);font-size:12px;font-weight:450}
 .m-ic{display:grid;place-items:center;width:30px;height:30px;border-radius:10px;background:var(--faint);flex:none}.m-ic svg{width:16px;height:16px}
 .menu button>svg{width:16px;height:16px}
-.toast{position:fixed;left:50%;bottom:calc(96px + env(safe-area-inset-bottom));transform:translate(-50%,16px);z-index:90;background:var(--glass-strong);color:var(--ink);border:var(--hair) solid var(--glass-line);border-radius:999px;padding:10px 18px;font-size:13.5px;
+.toast{position:fixed;left:50%;bottom:calc(var(--comp-h,44px) + 30px + env(safe-area-inset-bottom));transform:translate(-50%,16px);z-index:90;background:var(--glass-strong);color:var(--ink);border:var(--hair) solid var(--glass-line);border-radius:999px;padding:10px 18px;font-size:13.5px;
   box-shadow:var(--sh-3);opacity:0;pointer-events:none;transition:opacity .25s,transform .3s var(--ease);max-width:calc(100vw - 32px);text-align:center}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 .sheet{position:fixed;inset:0;z-index:60}
@@ -700,18 +704,115 @@ label.upload{cursor:pointer}
 /* view transitions between Home, Chat and Projects: the page slides a touch in the direction of
    travel and cross-fades; the top bar, composer and sky stay put. */
 .view{view-transition-name:odar-view}
-.topbar{view-transition-name:odar-top}
-.composer-wrap{view-transition-name:odar-comp}
-::view-transition-group(root),::view-transition-old(root),::view-transition-new(root){animation:none}
+/* The bar and composer are NOT given their own view-transition-name: a named element is a
+   backdrop root, which silently switched off their frosted blur (content showed through the
+   composer on Home). They stay in the root, whose new state is shown live (the pill springs
+   across) and whose old snapshot is hidden, so nothing ghosts. */
+::view-transition-group(root){animation:none}
+::view-transition-old(root){display:none}::view-transition-new(root){animation:none}
 ::view-transition-group(odar-view){animation-duration:var(--dur-3)}
 ::view-transition-old(odar-view){animation:v-out var(--dur-2) var(--ease-in) both}
 ::view-transition-new(odar-view){animation:v-in var(--dur-3) var(--ease-out) both}
-::view-transition-group(odar-top),::view-transition-group(odar-comp){animation-duration:var(--dur-3);animation-timing-function:var(--ease-out)}
-/* the bar is live in the new state (its pill springs across); hiding the old copy avoids a ghost pill */
-::view-transition-old(odar-top){display:none}::view-transition-new(odar-top){animation:none}
 html[data-vdir="-1"]{--vdir:-1}
 /* browsers without startViewTransition: a quick fade + rise of the new page */
-.view.v-fallback>*{animation:v-rise var(--dur-3) var(--ease-out) both}
+.view.v-fallback>.pane:not([hidden])>*{animation:v-rise var(--dur-3) var(--ease-out) both}
+
+
+/* ================================================ round C: detailing */
+/* icons: one Lucide set, 1.5px at every size (non-scaling stroke), three optical sizes */
+svg.ic{stroke-width:1.5}
+svg.ic :is(path,circle,rect,line,polyline){vector-effect:non-scaling-stroke}
+:is(.glass-btn,.comp-ic,.send,.pn-ic,.fab-g,.sched,.ok-dot,.menu,.li-ic,.m-ic) svg.ic{stroke-width:1.5}
+.glass-btn svg.ic{width:18px;height:18px}.glass-btn.sm svg.ic{width:16px;height:16px}
+.comp-ic svg.ic{width:20px;height:20px}.send svg.ic{width:18px;height:18px}
+.li-ic svg.ic,.m-ic svg.ic,.menu button>svg.ic{width:16px;height:16px}
+.pn-ic svg.ic{width:14px;height:14px}
+
+/* site icons: real favicons on white, else a monogram tinted with the site's hue */
+.fav{background:hsl(var(--fh,220) 42% 91%);color:hsl(var(--fh,220) 38% 30%)}
+:root[data-tone="dark"] .fav:not(.has-img){background:hsl(var(--fh,220) 30% 30%);color:hsl(var(--fh,220) 60% 88%)}
+.fav.has-img{background:#fff}
+.fav img{object-fit:contain;background:transparent}
+.fav::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 var(--hair) rgba(16,24,40,.12);pointer-events:none}
+:is(.lc-ph,.th-img,.li-ic,.act-logo) .fav.has-img img{inset:12%;width:76%;height:76%}
+.fav.file{background:var(--faint);color:var(--ink-2)}
+
+/* avatar: monogram on a gradient from the name's hue */
+.avatar.mono{background:linear-gradient(145deg,hsl(var(--ah) 46% 66%),hsl(calc(var(--ah) + 32) 42% 42%));text-shadow:0 1px 1px rgba(0,0,0,.14);font-weight:600}
+
+/* empty states: icon well, title, one line, one action */
+.empty-state{text-align:center;padding:32px 24px 24px}
+.empty-state.sm{padding:24px 16px 16px}
+.es-ic{display:inline-grid;place-items:center;width:48px;height:48px;border-radius:16px;background:var(--faint);color:var(--ink)}
+.es-ic svg.ic{width:24px;height:24px}
+.empty-state h3,.empty-card h3{margin:12px 0 4px;font-size:16px;line-height:24px;font-weight:600}
+.empty-state p{margin:0 auto 16px;max-width:300px;color:var(--mute);font-size:14px;line-height:20px}
+.empty-state .btn{min-height:40px}
+.empty-card{padding:32px 24px;border-radius:var(--r-2xl);box-shadow:var(--sh-2)}
+.empty-card .btn svg.ic{width:16px;height:16px}
+
+/* toast: an inverted pill, springs up above the composer */
+.toast{background:rgba(29,29,31,.9);color:#fff;border:0;font-weight:500;font-size:14px;line-height:20px;padding:10px 20px;box-shadow:0 1px 2px rgba(0,0,0,.12),0 8px 24px rgba(10,16,40,.22);
+  transition:opacity var(--dur-2) var(--ease-out),transform var(--dur-spring) var(--ease-spring)}
+:root[data-tone="dark"] .toast{background:rgba(250,250,252,.94);color:#1d1d1f}
+
+/* composer: a 1px inner top highlight, a soft focus glow, and the mic/send morph */
+.composer{box-shadow:inset 0 1px 0 rgba(255,255,255,.75),inset 0 0 0 var(--hair) var(--edge),var(--sh-2);transition:background-color var(--dur-2),box-shadow var(--dur-2) var(--ease-out)}
+.composer:focus-within{box-shadow:inset 0 1px 0 rgba(255,255,255,.85),inset 0 0 0 var(--hair) var(--edge),0 0 0 4px color-mix(in srgb,var(--focus) 16%,transparent),var(--sh-2)}
+:root[data-tone="dark"] .composer{box-shadow:inset 0 1px 0 rgba(255,255,255,.1),inset 0 0 0 var(--hair) var(--edge),var(--sh-2)}
+:root[data-tone="dark"] .composer:focus-within{box-shadow:inset 0 1px 0 rgba(255,255,255,.12),inset 0 0 0 var(--hair) var(--edge),0 0 0 4px color-mix(in srgb,var(--focus) 22%,transparent),var(--sh-2)}
+.composer textarea:focus-visible{outline:0}
+.morph{display:grid;place-items:center;width:38px;height:38px;transition:width var(--dur-2) var(--ease-out)}
+.morph.empty{width:0}
+.morph>*{grid-area:1/1;transition:opacity var(--dur-2) var(--ease-out),scale var(--dur-3) var(--ease-spring),rotate var(--dur-3) var(--ease-spring),background-color var(--dur-2),visibility 0s}
+.morph>.gone{opacity:0;scale:.5;pointer-events:none;visibility:hidden;transition:opacity var(--dur-1) var(--ease-in),scale var(--dur-2) var(--ease-in),rotate var(--dur-2) var(--ease-in),visibility 0s var(--dur-2)}
+.morph>.send.gone{rotate:-45deg}
+.morph>.comp-ic.gone{rotate:30deg}
+
+/* focus rings: a 2px ring that follows each control's own radius */
+.composer:focus-within :focus-visible{outline:0}
+.seg-tabs a:focus-visible,.glass-btn:focus-visible,.avatar-btn:focus-visible,.send:focus-visible,.comp-ic:focus-visible{outline-offset:3px}
+.menu button:focus-visible{outline:2px solid var(--focus);outline-offset:-2px}
+
+/* desktop hover: a quiet lift on cards, a tint on rows */
+@media (hover:hover) and (pointer:fine){
+  .act,.th,.proj,.src-more,.chip,.pn-btn,.btn{transition:background-color var(--dur-1) var(--ease-out),box-shadow var(--dur-2) var(--ease-out),translate var(--dur-2) var(--ease-out)}
+  button.act:hover,.proj:hover{translate:0 -1px;box-shadow:inset 0 0 0 var(--hair) var(--edge),var(--sh-3)}
+  .src-more:hover{background:var(--glass)}
+  .btn.primary:hover{background:#000}:root[data-tone="dark"] .btn.primary:hover{background:#f2f4f8}
+  .send:hover{background:#000}:root[data-tone="dark"] .send:hover{background:#eef1f6}
+  .avatar-btn:hover .avatar{box-shadow:0 0 0 1px rgba(255,255,255,.8),var(--sh-2)}
+  /* thin, quiet scrollbars where a mouse scrolls */
+  .view,.rail,.sheet-panel,.menu,.search-ov,.pre,pre{scrollbar-width:thin;scrollbar-color:rgba(29,29,31,.22) transparent}
+  :root[data-tone="dark"] :is(.view,.rail,.sheet-panel,.menu,.search-ov){scrollbar-color:rgba(255,255,255,.24) transparent}
+  .view::-webkit-scrollbar,.rail::-webkit-scrollbar{display:block;width:10px}
+  ::-webkit-scrollbar-thumb{background:rgba(29,29,31,.22);border:3px solid transparent;background-clip:padding-box;border-radius:999px}
+}
+
+
+/* detail pass vs Hark crops (as_iPhone_U20131, measured at its 414pt scale), on a 4px grid:
+   bubbles 20px radius with 12/16 padding; composer 48px tall, inset 32px from the phone edge;
+   segment 44px tall (also a full tap target); top bar aligned with the 16px content margin. */
+:root{--r-bubble:20px}
+.bubble{padding:12px 16px}
+.bubble.wide{padding:8px}
+.composer{min-height:48px;border-radius:24px;padding:4px 6px 4px 16px}
+.composer textarea{padding:10px 0;min-height:40px;line-height:20px}
+.comp-btns{height:40px}.comp-ic{width:36px;height:40px}.morph{width:40px;height:40px}
+.send{width:36px;height:36px}
+@media (max-width:560px){
+  .composer-wrap{padding-left:max(32px,env(safe-area-inset-left));padding-right:max(32px,env(safe-area-inset-right))}
+  .topbar{padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
+}
+.seg-tabs a{padding:11px 16px}
+@media (max-width:560px){.seg-tabs a{padding:11px 15px}}
+@media (max-width:360px){.seg-tabs a{padding:10px 11px}}
+
+/* touch: every control gets at least a 44x44 hit area (an invisible box around small ones) */
+@media (pointer:coarse){
+  :is(.glass-btn,.comp-ic,.send,.chip,.pn-reply,.avatar-btn,.src-more,.tab,.m-chip,.chip-x){position:relative}
+  :is(.glass-btn,.comp-ic,.send,.chip,.pn-reply,.avatar-btn,.src-more,.tab,.m-chip)::after{content:"";position:absolute;inset:min(0px,calc((100% - 44px) / 2))}
+}
 
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}

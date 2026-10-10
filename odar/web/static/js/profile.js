@@ -1,5 +1,5 @@
 // Settings sheet (opened from the avatar): Billing, Profile, Connected apps, System preferences, Security, Feedback, About, Sign out.
-import { $, $$, esc, ICON, App, jfetch, jpost, prefs, applyTheme, openSheet, closeSheet, toast, copyLink } from "./core.js";
+import { $, $$, esc, hueOf, ICON, App, jfetch, jpost, prefs, applyTheme, openSheet, closeSheet, toast, copyLink } from "./core.js";
 
 function seg(name, options, cur) {
   return `<div class="seg" role="radiogroup" data-seg="${name}">${options.map(([v, label]) => `<button role="radio" aria-checked="${v === cur}" class="${v === cur ? "on" : ""}" data-v="${v}">${esc(label)}</button>`).join("")}</div>`;
@@ -9,6 +9,12 @@ export function avatarLetter() {
   const n = prefs.get("name", "").trim();
   return n ? esc(n[0].toUpperCase()) : "";
 }
+// The avatar: a monogram on a soft two-stop gradient whose hue comes from the name, so the
+// same name always gets the same colour. No name yet: a neutral graphite disc with a person.
+export function avatarHTML(cls = "") {
+  const n = prefs.get("name", "").trim();
+  return n ? `<span class="avatar mono ${cls}" style="--ah:${hueOf(n.toLowerCase())}">${avatarLetter()}</span>` : `<span class="avatar ${cls}">${ICON.user}</span>`;
+}
 
 // Settings, in Hark's order where ODAR has the thing: Billing (plan and usage), Profile,
 // Connected apps (API keys), System preferences (language, text colour), Security (privacy and
@@ -16,7 +22,7 @@ export function avatarLetter() {
 export function openProfile() {
   const name = prefs.get("name", "");
   const body = openSheet(`
-    <div class="prof-card"><span class="avatar lg">${avatarLetter() || ICON.user}</span><div><b>${esc(name || "You")}</b><small>Free plan · data tied to this browser</small></div></div>
+    <div class="prof-card">${avatarHTML("lg")}<div><b>${esc(name || "You")}</b><small>Free plan · data tied to this browser</small></div></div>
     <section class="ps"><div class="ps-h">Billing</div><div class="ps-g">
       <div class="plan"><div><b>Free</b><small>Free models only · every citation checked</small></div><span class="pill">Beta</span></div>
       <div id="ps-usage" class="usage"><div class="skel"></div></div></div></section>
@@ -55,7 +61,7 @@ export function openProfile() {
     if (!confirm("Delete every thread, project, run and API key tied to this browser? This can't be undone.")) return;
     await jfetch("/api/me", { method: "DELETE" });
     prefs.del("main");
-    closeSheet(); toast("All your data was deleted"); App.go("/");
+    closeSheet(); toast("All your data was deleted"); ["home", "chat", "projects"].forEach((k) => App.dirty(k)); App.go("/");
   };
   $$("a[data-nav]", body).forEach((a) => a.addEventListener("click", closeSheet));
   $("#ps-kform", body).onsubmit = async (e) => {

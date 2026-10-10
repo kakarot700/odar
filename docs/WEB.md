@@ -86,6 +86,20 @@ radii, components, motion) is in the project's `hark-research/HARK_UI_RESEARCH_v
   colour Auto / Light / Dark), **Security** (privacy, run history, delete everything), **Feedback** (opens
   the GitHub issues page), **About**, **Sign out** (a placeholder: there are no accounts yet; data is tied
   to this browser). Hark's Scheduled tasks and Wallets rows are left out because ODAR has neither.
+* **Tabs stay mounted.** Home, Chat and Projects each keep their own pane inside the scroller; switching
+  tabs hides one and shows the other with its scroll position, without rebuilding or refetching (Home
+  quietly refreshes its data when it is over a minute old, Projects rebuilds after two minutes or after
+  you open a project). Thread, project-thread, run and shared pages reuse the Chat pane, so there is only
+  one thread on the page. A stream still running when you leave Chat is stopped as before.
+* **Details:** one icon set (Lucide geometry, 24 viewBox, a 1.5 px stroke that stays 1.5 px at every
+  size); real site icons on link cards, source tiles, the "All N sources" stack and work-card tiles
+  (Google's favicon service at 64 px, then the site's `/favicon.ico`, then a monogram in the site's
+  hue); link cards use the page's own image when the backend sends one. The avatar is a monogram on a
+  gradient whose hue comes from your name. Empty states for chat, projects and search; a 2 px focus
+  ring; quiet hover lifts and thin scrollbars where there is a mouse; 44 px minimum touch targets; an
+  inverted toast pill; a composer with an inner highlight, a soft focus glow and a mic that morphs into
+  the send arrow. The scroller's bottom padding follows the composer's measured height, so the last card
+  on Home clears it on phones.
 * Respects `prefers-reduced-motion` and safe-area insets. Plain HTML/CSS and ES modules in
   `odar/web/static/` (`app.js` plus `js/*.js`: `core`, `sky`, `chat`, `work`, `runs`, `home`, `projects`,
   `search`, `profile`, `md`), no build step and no CDN.

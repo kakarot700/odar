@@ -20,42 +20,47 @@ export async function jfetch(url, opts = {}) {
 }
 export const jpost = (url, body, method = "POST") => jfetch(url, { method, headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
 
-const P = (d) => `<svg viewBox="0 0 24 24" aria-hidden="true">${d}</svg>`;
+// One icon set: Lucide geometry (24 viewBox, round caps and joins), drawn at a 1.5 px stroke
+// that stays 1.5 px at every size (non-scaling stroke), so icons match optically everywhere.
+const P = (d) => `<svg class="ic" viewBox="0 0 24 24" aria-hidden="true">${d}</svg>`;
+const FILE = '<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/>';
 export const ICON = {
-  home: P('<path d="M3.5 10.5 12 3.5l8.5 7"/><path d="M5.5 9.5V20h4.5v-5.5h4V20h4.5V9.5"/>'),
-  user: P('<circle cx="12" cy="8.5" r="3.8"/><path d="M4.5 20c1.4-3.6 4.2-5.5 7.5-5.5s6.1 1.9 7.5 5.5"/>'),
-  search: P('<circle cx="11" cy="11" r="6.5"/><path d="m20 20-4-4"/>'),
-  clip: P('<path d="m20.5 11.5-8 8a5 5 0 0 1-7-7l8.5-8.5a3.3 3.3 0 0 1 4.7 4.7L10.2 17a1.7 1.7 0 0 1-2.4-2.4l7.4-7.4"/>'),
-  send: P('<path d="M12 19V5"/><path d="m5.5 11.5 6.5-6.5 6.5 6.5"/>'),
-  stop: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="7" width="10" height="10" rx="2.5" fill="currentColor" stroke="none"/></svg>',
-  plus: P('<path d="M12 5v14M5 12h14"/>'),
-  x: P('<path d="M6 6l12 12M18 6 6 18"/>'),
-  back: P('<path d="M15 5l-7 7 7 7"/>'),
+  home: P('<path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>'),
+  user: P('<path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>'),
+  search: P('<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>'),
+  clip: P('<path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"/>'),
+  send: P('<path d="m5 12 7-7 7 7"/><path d="M12 19V5"/>'),
+  stop: '<svg class="ic fill" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="6.5" width="11" height="11" rx="2.5" fill="currentColor" stroke="none"/></svg>',
+  plus: P('<path d="M5 12h14"/><path d="M12 5v14"/>'),
+  x: P('<path d="M18 6 6 18"/><path d="m6 6 12 12"/>'),
+  back: P('<path d="m15 18-6-6 6-6"/>'),
   chev: P('<path d="m6 9 6 6 6-6"/>'),
-  more: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1.6" fill="currentColor"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/><circle cx="19" cy="12" r="1.6" fill="currentColor"/></svg>',
-  file: P('<path d="M14 3H6.5v18h11V6.5z"/><path d="M14 3v3.5h3.5"/>'),
-  folder: P('<path d="M3.5 6.5h6l2 2h9v10h-17z"/>'),
-  check: P('<path d="m5 12.5 4.5 4.5L19 7.5"/>'),
-  globe: P('<circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.5 5.4 3.5 8.5s-1 5.9-3.5 8.5c-2.5-2.6-3.5-5.4-3.5-8.5s1-5.9 3.5-8.5z"/>'),
-  download: P('<path d="M12 4v11"/><path d="m7 10.5 5 5 5-5"/><path d="M5 19.5h14"/>'),
-  share: P('<path d="M12 15V4"/><path d="m7.5 8 4.5-4.5L16.5 8"/><path d="M5.5 12v7.5h13V12"/>'),
-  spark: P('<path d="M12 3.5v4M12 16.5v4M3.5 12h4M16.5 12h4M6 6l2.6 2.6M15.4 15.4 18 18M18 6l-2.6 2.6M8.6 15.4 6 18"/>'),
-  refresh: P('<path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3"/><path d="M19.5 4.5v4h-4"/>'),
-  shield: P('<path d="M12 3.5 5 6v5.5c0 4.3 3 7.6 7 9 4-1.4 7-4.7 7-9V6z"/><path d="m9 12 2.2 2.2L15.5 10"/>'),
-  key: P('<circle cx="8" cy="15" r="4"/><path d="m11 12 8.5-8.5M16.5 6.5l2.5 2.5"/>'),
-  doc: P('<path d="M6.5 3.5h8l3 3v14h-11z"/><path d="M9 11h6M9 14.5h6M9 18h4"/>'),
-  table: P('<rect x="3.5" y="5" width="17" height="14" rx="2"/><path d="M3.5 10h17M10 10v9"/>'),
-  image: P('<rect x="3.5" y="5" width="17" height="14" rx="2.5"/><circle cx="9" cy="10" r="1.6"/><path d="m4.5 17.5 5-4.5 4 3.5 2.5-2 4 3"/>'),
-  mic: P('<rect x="9" y="3.5" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v2.5"/>'),
-  expand: P('<path d="M14 4.5h5.5V10M10 19.5H4.5V14M19.5 4.5 13.5 10.5M4.5 19.5l6-6"/>'),
-  shrink: P('<path d="M19.5 4.5 14 10M14 5.5V10h4.5M4.5 19.5 10 14M10 18.5V14H5.5"/>'),
-  arrow: P('<path d="M7 17 17 7M8.5 7H17v8.5"/>'),
-  reply: P('<path d="M9.5 6.5 4.5 11.5l5 5"/><path d="M4.5 11.5h9a6 6 0 0 1 6 6v1"/>'),
-  chart: P('<path d="M4 19.5h16"/><path d="M5.5 15.5 10 11l3 3 5.5-6"/>'),
-  bolt: P('<path d="M13 3.5 5.5 13.5H12l-1 7 7.5-10H12z"/>'),
-  list: P('<path d="M9 6.5h11M9 12h11M9 17.5h11"/><circle cx="4.5" cy="6.5" r=".9" fill="currentColor"/><circle cx="4.5" cy="12" r=".9" fill="currentColor"/><circle cx="4.5" cy="17.5" r=".9" fill="currentColor"/>'),
-  clock: P('<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>'),
-  news: P('<rect x="3.5" y="5" width="13" height="14.5" rx="2"/><path d="M16.5 9h4v8.5a2 2 0 0 1-4 0M7 9h6M7 12.5h6M7 16h4"/>'),
+  more: P('<circle cx="12" cy="12" r="1" fill="currentColor"/><circle cx="19" cy="12" r="1" fill="currentColor"/><circle cx="5" cy="12" r="1" fill="currentColor"/>'),
+  file: P(FILE),
+  folder: P('<path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/>'),
+  check: P('<path d="M20 6 9 17l-5-5"/>'),
+  globe: P('<circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>'),
+  download: P('<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/>'),
+  share: P('<path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="m16 6-4-4-4 4"/><path d="M12 2v13"/>'),
+  spark: P('<path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/>'),
+  refresh: P('<path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/>'),
+  shield: P('<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>'),
+  key: P('<path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"/><circle cx="16.5" cy="7.5" r=".5" fill="currentColor"/>'),
+  doc: P(FILE + '<path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/>'),
+  table: P('<path d="M12 3v18"/><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/>'),
+  image: P('<rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>'),
+  mic: P('<path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/>'),
+  expand: P('<path d="M15 3h6v6"/><path d="M9 21H3v-6"/><path d="M21 3l-7 7"/><path d="M3 21l7-7"/>'),
+  shrink: P('<path d="M4 14h6v6"/><path d="M20 10h-6V4"/><path d="m14 10 7-7"/><path d="m3 21 7-7"/>'),
+  arrow: P('<path d="M7 7h10v10"/><path d="M7 17 17 7"/>'),
+  reply: P('<path d="m9 17-5-5 5-5"/><path d="M20 18v-2a4 4 0 0 0-4-4H4"/>'),
+  chart: P('<path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="m19 9-5 5-4-4-3 3"/>'),
+  bolt: P('<path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/>'),
+  list: P('<path d="M3 12h.01"/><path d="M3 18h.01"/><path d="M3 6h.01"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M8 6h13"/>'),
+  clock: P('<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>'),
+  news: P('<path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/>'),
+  inbox: P('<path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/>'),
+  chat: P('<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>'),
 };
 
 // The ODAR mark (kept from the original app: a bold "O" in a rounded square).
@@ -256,12 +261,25 @@ export async function copyLink(url, label = "Link copied") {
   try { await navigator.clipboard.writeText(url); toast(label); } catch { prompt("Copy this link", url); }
 }
 
+// Site icon: Google's favicon service at 64 px, then the site's own /favicon.ico, then a
+// monogram in the site's hue. Google answers unknown sites with a 16 px globe; that counts as
+// a miss. Link-card, source-tile, source-stack and work-card icons all come through here.
+export const hueOf = (s) => { let h = 0; for (const ch of String(s || "")) h = (h * 31 + ch.charCodeAt(0)) % 360; return h; };
 export function favicon(domain, kind) {
   if (kind === "file") return `<span class="fav file">${ICON.file}</span>`;
-  if (!domain) return `<span class="fav">?</span>`;
-  const letter = esc(domain.replace(/^www\./, "")[0].toUpperCase());
-  return `<span class="fav" data-l="${letter}"><img src="https://${esc(domain)}/favicon.ico" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></span>`;
+  if (!domain) return `<span class="fav" data-l="?"></span>`;
+  const d = String(domain).replace(/^www\./, "").toLowerCase();
+  const letter = esc(d[0].toUpperCase());
+  return `<span class="fav" data-l="${letter}" style="--fh:${hueOf(d)}"><img src="https://www.google.com/s2/favicons?domain=${encodeURIComponent(d)}&amp;sz=64" data-d="${esc(d)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onload="__favOk(this)" onerror="__favErr(this)"></span>`;
 }
+window.__favErr = (img) => {
+  if (!img.dataset.f && img.dataset.d) { img.dataset.f = "1"; img.src = `https://${img.dataset.d}/favicon.ico`; return; }
+  img.remove();
+};
+window.__favOk = (img) => {
+  if (!img.dataset.f && img.naturalWidth && img.naturalWidth <= 16) { window.__favErr(img); return; }
+  img.parentNode && img.parentNode.classList.add("has-img");
+};
 
 // The element that scrolls the page (the view is a fixed scroller under the top bar).
 export const scroller = () => document.getElementById("view");
