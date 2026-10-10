@@ -1,0 +1,143 @@
+{
+ "thread_id": "8f19e63c16aa98ff",
+ "share_token": "csmsGQYBV6rbIICk",
+ "title": "What are the health effects of microplastics in humans according to recent studies?",
+ "project_id": "",
+ "sources": [
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325",
+   "title": "Impact of Microplastic Exposure on Human Health: A Systematic Review of Mechanisms, Biomarkers, and Clinical Outcomes - PMC",
+   "domain": "pmc.ncbi.nlm.nih.gov",
+   "snippet": "# Impact of Microplastic Exposure on Human Health: A Systematic Review of Mechanisms, Biomarkers, and Clinical Outcomes\n## Introduction and background\nRecent studies have confirmed the presence of microplastics in human stool, lung tissue, blood, and placental samples, providing direct evidence that these particles can enter and persist within the human body  [1 , 2 ].\n\n...\n\n## Review\n### Table 6. Characteristics of Included Studies.\nThe included studies primarily focused on the most common markers, including inflammatory stress markers and oxidative stress markers. Several human observational [...truncated by sanitizer]",
+   "kind": "web",
+   "n": 1
+  },
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12213550",
+   "title": "Microplastics and human health: unraveling the toxicological pathways and implications for public health - PMC",
+   "domain": "pmc.ncbi.nlm.nih.gov",
+   "snippet": "# Microplastics and human health: unraveling the toxicological pathways and implications for public health\n## 5. Mechanism of cytotoxicity induced by MPs\n### 5.2. Inflammatory reaction\nMPs can stimulate the release of cytokines such as IL-6, IL-8, and IL-10, leading to immune-mediated inflammatory responses that may ultimately result in necrosis of cellular or tissue structures ( 70 ).\n\n...\n\n## 6. Health risk of MPs to different organ\n### 6.4. Respiratory toxicity\nNumerous studies have indicated that inhalation of MPs present in the atmosphere can lead to significant pulmonary toxicity and res [...truncated by sanitizer]",
+   "kind": "web",
+   "date": "2018-06-25T00:00:00",
+   "n": 2
+  },
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7068600",
+   "title": "A Detailed Review Study on Potential Effects of Microplastics and Additives of Concern on Human Health - PMC",
+   "domain": "pmc.ncbi.nlm.nih.gov",
+   "snippet": "# A Detailed Review Study on Potential Effects of Microplastics and Additives of Concern on Human Health\n## 2. Plastics and Co-Contaminants\n### 2.1. Additives of Concern\nRecent science has associated EDCs with various diseases and conditions, such as hormonal cancers (breast, prostate, testes), reproductive problems (genital malformations, infertility), metabolic disorders (diabetes, obesity), asthma, and neurodevelopmental conditions (learning disorders, autism spectrum disorders).\n\n...\n\n## 3. Effects of Micro and Nanoplastics on Human Health\n### Figure 6.\nAdditionally, the use of polypropyle [...truncated by sanitizer]",
+   "kind": "web",
+   "date": "2013-02-20T00:00:00",
+   "n": 3
+  },
+  {
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42786943",
+   "title": "Microplastics and nanoplastics in humans: a critical ADME appraisal and the case for quantitative risk assessment.",
+   "domain": "pubmed.ncbi.nlm.nih.gov",
+   "snippet": "# Microplastics and nanoplastics in humans: a critical ADME appraisal and the case for quantitative risk assessment.\n## Abstract\nMicroplastics (MPs, 1 \u00b5m-5 mm) and nanoplastics (NPs, <1 \u00b5m) have now been detected in every environmental compartment and in human tissues, including blood, lung, placenta, liver, and brain. Detection alone isn't enough for health risk assessment.\n\n...\n\nTissue detection confirms systemic distribution, but no study has established concentration gradients, kinetic profiles, or true bioaccumulation as distinct from transient presence.\n\n...\n\nExcretion pathways are const [...truncated by sanitizer]",
+   "kind": "web",
+   "date": "2026-10-05T00:00:00",
+   "n": 4
+  },
+  {
+   "url": "https://med.stanford.edu/news/insights/2025/01/microplastics-in-body-polluted-tiny-plastic-fragments.html",
+   "title": "Microplastics and our health: What the science says",
+   "domain": "med.stanford.edu",
+   "snippet": "# Insights\n## Microplastics and our health: What the science says\n### How harmful are microplastics?\nResearch on the health impacts of microplastics in humans is just beginning. The particles have been found in multiple organs and tissues, including the brain, testicles, heart, stomach, lymph nodes and placenta. They've also been detected in urine, breastmilk, semen and meconium, which is a newborn's first stool. \"We're born pre-polluted,\" LaBeaud said.\nEvidence is growing that this exposure could be harmful. Studies show that microplastics make fish and birds more vulnerable to infections. An [...truncated by sanitizer]",
+   "kind": "web",
+   "date": "2025-01-29T00:00:00",
+   "n": 5
+  },
+  {
+   "url": "https://pubmed.ncbi.nlm.nih.gov/37666331",
+   "title": "Recent progress of microplastic toxicity on human exposure base on in vitro and in vivo studies - PubMed",
+   "domain": "pubmed.ncbi.nlm.nih.gov",
+   "snippet": "Display options\nFormat\nAbstract\nPubMed\nPMID\nAbstract\nMicroplastics are widely distributed in the environment, including the atmosphere, soil and water bodies. They have been found to have toxic effects on organisms. The impact on human health is also receiving considerable attention.\nMicroplastics can be found in drinking water, food, air and plastic products, and they can enter human body through the pathways such as ingestion, inhalation, and skin contact.\nAfter exposure to microplastics, they can induce cellular toxicity and produce toxic effects on multiple organs and systems, including th [...truncated by sanitizer]",
+   "kind": "web",
+   "n": 6
+  }
+ ],
+ "answer": "Tissue detection confirms systemic distribution, but no study has established concentration gradients, kinetic profiles, or true bioaccumulation as distinct from transient presence [4]. Systemic clearance kinetics are entirely unknown [4]. There is currently no standardized method to quantify the internal burden of microplastics in humans [1]. Human epidemiologic evidence remains limited [1].",
+ "abstained": false,
+ "timing": {
+  "search_s": 13.58,
+  "fetch_s": -0.0,
+  "ttft_s": 41.25,
+  "total_s": 41.25
+ },
+ "verification": {
+  "citations": [
+   {
+    "occ": 0,
+    "n": 4,
+    "marker": "[4]",
+    "claim": "Tissue detection confirms systemic distribution, but no study has established concentration gradients, kinetic profiles, or true bioaccumulation as distinct from transient presence .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "Detection alone isn't enough for health risk assessment. Tissue detection confirms systemic distribution, but no study has established concentration gradients, kinetic profiles, or true bioaccumulation as distinct from transient presence.",
+    "note": "",
+    "title": "Microplastics and nanoplastics in humans: a critical ADME appraisal and the case for quantitative risk assessment.",
+    "domain": "pubmed.ncbi.nlm.nih.gov",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42786943",
+    "kind": "web",
+    "entailment": 0.931,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 1,
+    "n": 4,
+    "marker": "[4]",
+    "claim": "Systemic clearance kinetics are entirely unknown .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "Excretion pathways are constrained by particle size and remain poorly characterised, and systemic clearance kinetics are entirely unknown.",
+    "note": "",
+    "title": "Microplastics and nanoplastics in humans: a critical ADME appraisal and the case for quantitative risk assessment.",
+    "domain": "pubmed.ncbi.nlm.nih.gov",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42786943",
+    "kind": "web",
+    "entailment": 0.974,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 2,
+    "n": 1,
+    "marker": "[1]",
+    "claim": "There is currently no standardized method to quantify the internal burden of microplastics in humans .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "In addition, there is currently no standardized method to quantify the internal burden of microplastics in humans, and no consensus exists regarding exposure levels that may be considered hazardous.",
+    "note": "",
+    "title": "Impact of Microplastic Exposure on Human Health: A Systematic Review of Mechanisms, Biomarkers, and Clinical Outcomes - PMC",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325",
+    "kind": "web",
+    "entailment": 0.995,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 3,
+    "n": 1,
+    "marker": "[1]",
+    "claim": "Human epidemiologic evidence remains limited .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "In contrast, human evidence remains limited and largely observational, with studies primarily reporting associations between microplastic exposure and selected biological markers rather than confirmed clinical outcomes. The translation of experimental findings into human health risk assessment is constrained by several factors, including the absence of standardized methods for quantifying individu",
+    "note": "",
+    "title": "Impact of Microplastic Exposure on Human Health: A Systematic Review of Mechanisms, Biomarkers, and Clinical Outcomes - PMC",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325",
+    "kind": "web",
+    "entailment": 0.946,
+    "judged_by": "nli"
+   }
+  ],
+  "counts": {
+   "supported": 4
+  },
+  "elapsed_s": 42.96,
+  "total_s": 84.34
+ },
+ "q": 6,
+ "seconds": 84.5
+}

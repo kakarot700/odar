@@ -1,0 +1,311 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_8c635bc407c7",
+ "trust_score": 100,
+ "grade": "citations hold up",
+ "counts": {
+  "SUPPORTED": 1,
+  "PARTIALLY SUPPORTED": 0,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 0,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 0
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "It was last changed on 7 October 2026, when the RBI raised it by 25 basis points from 5.25%.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://tradingeconomics.com/india/interest-rate",
+     "marker": "[1]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "archived_only",
+     "entailment": 0.001,
+     "contradiction": 0.863,
+     "quote": "",
+     "note": "the page is real but does not say this (verified against the Wayback Machine copy; live page is gone)",
+     "judged_by": "nli+llm",
+     "source_type": "web",
+     "source_year": null
+    },
+    {
+     "url": "https://timesofindia.indiatimes.com/business/india-business/rbi-mpc-meeting-october-2026-live-updates-governor-sanjay-malhotra-repo-rate-cut-fd-rate-monetary-policy-committee-emi-west-asia-crisis-rbi-\u2026",
+     "marker": "[2]",
+     "verdict": "DEAD LINK",
+     "link_state": "not_found",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "page not found (404); archive check unavailable",
+     "judged_by": "nli",
+     "source_type": "news",
+     "source_year": null
+    },
+    {
+     "url": "https://www.bajajhousingfinance.in/repo-rate",
+     "marker": "[3]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "As per the announcement made by the Reserve Bank of India (RBI) on 07 October 2026, the current Repo Rate is 5.50%.",
+     "note": "partly supported: Passages confirm date and 5.50% but not prior 5.25% or increase.",
+     "judged_by": "nli+llm",
+     "source_type": "web",
+     "source_year": 2026
+    },
+    {
+     "url": "https://www.livemint.com/market/stock-market-news/rbi-mpc-meeting-october-2026-repo-rate-hiked-by-25-bps-to-5-50-growth-inflation-forecast-other-key-takeaways-11791344804917.html",
+     "marker": "[4]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.953,
+     "contradiction": 0.903,
+     "quote": "RBI MPC meeting October 2026: The Reserve Bank of India (RBI), on Wednesday, 7 October, raised the repo rate by 25 basis points to 5.50%.",
+     "note": "the page supports the claim's gist but not the figure(s) 5.25%",
+     "judged_by": "nli",
+     "source_type": "news",
+     "source_year": null
+    },
+    {
+     "url": "https://www.moneycontrol.com/news/business/markets/rbi-policy-highlights-october-2026-repo-rate-decision-today-inflation-growth-forecasts-and-policy-stance-in-focus-14046325.html",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.996,
+     "contradiction": 0.0,
+     "quote": "Shaleen Agrawal October 07, 2026 / 10:47 IST Share --> --> --> --> Sanjay Malhotra, Governor, Reserve Bank of India RBI hiked repo rate by 25 bps to 5.5% in a unanimous move.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "Shaleen Agrawal October 07, 2026 / 10:47 IST Share --> --> --> --> Sanjay Malhotra, Governor, Reserve Bank of India RBI hiked repo rate by 25 bps to 5.5% in a unanimous move.",
+   "quote_url": "https://www.moneycontrol.com/news/business/markets/rbi-policy-highlights-october-2026-repo-rate-decision-today-inflation-growth-forecasts-and-policy-stance-in-focus-14046325.html",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://tradingeconomics.com/india/interest-rate",
+   "state": "archived_only",
+   "http_status": 403,
+   "error": "HTTP 403",
+   "resolved_url": "https://tradingeconomics.com/india/interest-rate",
+   "title": "",
+   "archive_url": "http://web.archive.org/web/20260924062148/https://tradingeconomics.com/india/interest-rate",
+   "archive_timestamp": "20260924062148",
+   "text_source": "wayback",
+   "archive_check": "archived",
+   "content_hash": "7ba43dcbc523913899b7e56e7141d499da962ddb8f51e7084fa571cdc258e1d0",
+   "quarantined": false
+  },
+  {
+   "url": "https://timesofindia.indiatimes.com/business/india-business/rbi-mpc-meeting-october-2026-live-updates-governor-sanjay-malhotra-repo-rate-cut-fd-rate-monetary-policy-committee-emi-west-asia-crisis-rbi-\u2026",
+   "state": "not_found",
+   "http_status": 404,
+   "error": "HTTP 404",
+   "resolved_url": "https://timesofindia.indiatimes.com/business/india-business/rbi-mpc-meeting-october-2026-live-updates-governor-sanjay-malhotra-repo-rate-cut-fd-rate-monetary-policy-committee-emi-west-asia-crisis-rbi-\u2026",
+   "title": "",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "",
+   "archive_check": "unavailable",
+   "content_hash": "",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.bajajhousingfinance.in/repo-rate",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.bajajhousingfinance.in/repo-rate",
+   "title": "What is Repo Rate? Meaning, Current Rates and Impact",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "210a62da05e31ffedb02bc40f5a652519926490ecc75a199290e174baa0efe03",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.livemint.com/market/stock-market-news/rbi-mpc-meeting-october-2026-repo-rate-hiked-by-25-bps-to-5-50-growth-inflation-forecast-other-key-takeaways-11791344804917.html",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.livemint.com/market/stock-market-news/rbi-mpc-meeting-october-2026-repo-rate-hiked-by-25-bps-to-5-50-growth-inflation-forecast-other-key-takeaways-11791344804917.html",
+   "title": "RBI MPC meeting October 2026: Repo rate hiked by 25 bps to 5.50%; growth, inflation forecast, other key takeaways | Stock Market News",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "3bf479c5f723a1f1c761c747f1dc641ee4fdc52d211f863e27f407117c194bac",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.moneycontrol.com/news/business/markets/rbi-policy-highlights-october-2026-repo-rate-decision-today-inflation-growth-forecasts-and-policy-stance-in-focus-14046325.html",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.moneycontrol.com/news/business/markets/rbi-policy-highlights-october-2026-repo-rate-decision-today-inflation-growth-forecasts-and-policy-stance-in-focus-14046325.html",
+   "title": "RBI Policy Highlights October 2026: Repo rate hiked to 5.5%, GDP forecast raised to 7.1%, inflation estimate up at 5.2%",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "0ab4b5db675d1566b8aa52e5f51d7d3ef4d68cc614e66e9898b9c586ff107b77",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 61.0,
+ "usage": {
+  "fetches": 6,
+  "wayback_lookups": 2,
+  "searches": 0,
+  "llm_calls": 2,
+  "nli_checks": 4,
+  "scorer_load_ms": 1370
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 1,
+   "citations": 5
+  },
+  {
+   "t": 0.14,
+   "event": "fetch",
+   "url": "https://www.livemint.com/market/stock-market-news/rbi-mpc-meeting-october-2026-repo-rate-hiked-by-25-bps-to-5-50-growth-inflation-forecast-other-key-takeaways-11791344804917.html",
+   "state": "live",
+   "http_status": 200,
+   "chars": 5350,
+   "error": ""
+  },
+  {
+   "t": 0.18,
+   "event": "fetch",
+   "url": "https://tradingeconomics.com/india/interest-rate",
+   "state": "blocked",
+   "http_status": 403,
+   "chars": 0,
+   "error": "HTTP 403"
+  },
+  {
+   "t": 0.32,
+   "event": "wayback",
+   "url": "https://tradingeconomics.com/india/interest-rate",
+   "archived": true,
+   "snapshot": "http://web.archive.org/web/20260924062148/https://tradingeconomics.com/india/interest-rate"
+  },
+  {
+   "t": 0.87,
+   "event": "fetch",
+   "url": "https://www.moneycontrol.com/news/business/markets/rbi-policy-highlights-october-2026-repo-rate-decision-today-inflation-growth-forecasts-and-policy-stance-in-focus-14046325.html",
+   "state": "live",
+   "http_status": 200,
+   "chars": 10268,
+   "error": ""
+  },
+  {
+   "t": 0.99,
+   "event": "fetch",
+   "url": "https://www.bajajhousingfinance.in/repo-rate",
+   "state": "live",
+   "http_status": 200,
+   "chars": 12395,
+   "error": ""
+  },
+  {
+   "t": 1.23,
+   "event": "archive_fetch",
+   "url": "https://web.archive.org/web/20260924062148id_/https://tradingeconomics.com/india/interest-rate",
+   "ok": true,
+   "chars": 4024,
+   "error": ""
+  },
+  {
+   "t": 5.54,
+   "event": "fetch",
+   "url": "https://timesofindia.indiatimes.com/business/india-business/rbi-mpc-meeting-october-2026-live-updates-governor-sanjay-malhotra-repo-rate-cut-fd-rate-monetary-policy-committee-emi-west-asia-crisis-rbi-\u2026",
+   "state": "not_found",
+   "http_status": 404,
+   "chars": 0,
+   "error": "HTTP 404"
+  },
+  {
+   "t": 23.79,
+   "event": "wayback",
+   "url": "https://timesofindia.indiatimes.com/business/india-business/rbi-mpc-meeting-october-2026-live-updates-governor-sanjay-malhotra-repo-rate-cut-fd-rate-monetary-policy-committee-emi-west-asia-crisis-rbi-\u2026",
+   "error": "ReadTimeout: HTTPSConnectionPool(host='web.archive.org', port=443): Read timed out. (read timeout=12.0)"
+  },
+  {
+   "t": 35.2,
+   "event": "paraphrase_judge",
+   "claim": "It was last changed on 7 October 2026, when the RBI raised it by 25 basis points from 5.25%.",
+   "verdict": "NOT_SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 35.2,
+   "event": "verify",
+   "url": "https://tradingeconomics.com/india/interest-rate",
+   "claim": "It was last changed on 7 October 2026, when the RBI raised it by 25 basis points from 5.25%.",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.001,
+   "con": 0.863
+  },
+  {
+   "t": 48.84,
+   "event": "paraphrase_judge",
+   "claim": "It was last changed on 7 October 2026, when the RBI raised it by 25 basis points from 5.25%.",
+   "verdict": "PARTIAL",
+   "grounded": true
+  },
+  {
+   "t": 48.84,
+   "event": "verify",
+   "url": "https://www.bajajhousingfinance.in/repo-rate",
+   "claim": "It was last changed on 7 October 2026, when the RBI raised it by 25 basis points from 5.25%.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 54.11,
+   "event": "verify",
+   "url": "https://www.livemint.com/market/stock-market-news/rbi-mpc-meeting-october-2026-repo-rate-hiked-by-25-bps-to-5-50-growth-inflation-forecast-other-key-takeaways-11791344804917.html",
+   "claim": "It was last changed on 7 October 2026, when the RBI raised it by 25 basis points from 5.25%.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.953,
+   "con": 0.903
+  },
+  {
+   "t": 61.0,
+   "event": "verify",
+   "url": "https://www.moneycontrol.com/news/business/markets/rbi-policy-highlights-october-2026-repo-rate-decision-today-inflation-growth-forecasts-and-policy-stance-in-focus-14046325.html",
+   "claim": "It was last changed on 7 October 2026, when the RBI raised it by 25 basis points from 5.25%.",
+   "verdict": "SUPPORTED",
+   "ent": 0.996,
+   "con": 0.0
+  },
+  {
+   "t": 61.01,
+   "event": "done",
+   "trust_score": 100
+  }
+ ],
+ "score_s": 62.4
+}

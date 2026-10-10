@@ -121,6 +121,8 @@ python3 -m pytest tests/test_benchmark_gate.py -q
 
 CI also runs Ruff, a gated mypy check, a production dependency audit, the test suites, a health smoke test, and a Docker build. The Anthropic provider itself is not exercised by the offline/mock tests.
 
+Results from every benchmark round (ODAR vs GPT Researcher and Duck.ai, plus the citation checker evaluation), with raw answers and scripts, are in [bench/](bench/README.md).
+
 ## Docker and deployment
 
 The Dockerfile installs the pinned production lock, installs the CPU-only PyTorch wheel, and runs as non-root UID 10001. It expects persistent storage for the SQLite job store and generated outputs.

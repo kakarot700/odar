@@ -1,0 +1,270 @@
+{
+  "status": "COMPLETE",
+  "backend_state": "anthropic-tool-use",
+  "degraded": false,
+  "objective": "How does PostgreSQL's MVCC implementation provide transaction isolation, and why does it cause table bloat that VACUUM must clean up?",
+  "run_id": "run_761796b8bc794bac",
+  "uncertainty": "EVIDENCE_FOR",
+  "termination_status": "COMPLETE",
+  "unmet_conditions": [],
+  "digest": {
+    "objective": "How does PostgreSQL's MVCC implementation provide transaction isolation, and why does it cause table bloat that VACUUM must clean up?",
+    "iteration": 3,
+    "termination_status": "COMPLETE",
+    "uncertainty": "EVIDENCE_FOR",
+    "subquestions": [],
+    "hypotheses": [],
+    "claims": [
+      {
+        "id": "clm_a5d43de2ce324967",
+        "text": "The SQL standard and PostgreSQL-implemented transaction isolation levels are described in Table 13.1.",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_8086079eecac40a7",
+        "text": "In PostgreSQL, you can request any of the four standard transaction isolation levels, but internally only three distinct isolation levels are implemented, i.e.,",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_c5a03dd1428d4540",
+        "text": "The table also shows that PostgreSQL's Repeatable Read implementation does not allow phantom reads.",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_1ac9d7bb34d245d6",
+        "text": "PostgreSQL's MVCC transaction semantics depend on being able to compare transaction ID (XID) numbers: a row version with an insertion XID greater than the curre",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_3fff5dcb7a42491c",
+        "text": "VACUUM uses the visibility map to determine which pages of a table must be scanned.",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_ee6745c7dbc24d22",
+        "text": "VACUUM creates a substantial amount of I/O traffic, which can cause poor performance for other active sessions.",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_aa775546bbde4555",
+        "text": "Also, while VACUUM ordinarily processes all partitions of specified partitioned tables, this option will cause VACUUM to skip all partitions if there is a confl",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_725c5dc3af7c4206",
+        "text": "To vacuum a table, one must ordinarily be the table's owner or a superuser.",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      }
+    ],
+    "evidence_summary": {
+      "total": 96,
+      "relevant": 14,
+      "supports": 14,
+      "refutes": 0,
+      "qualifies": 0,
+      "circular_rejected": 0
+    },
+    "sources": {
+      "total": 6,
+      "independent": 6,
+      "classes": {
+        "general_web": 6
+      }
+    },
+    "contradictions": [],
+    "unanswered": [],
+    "attempted_queries": [
+      "PostgreSQL MVCC concurrency control documentation transaction visibility xmin xmax",
+      "PostgreSQL MVCC table bloat vacuum dead tuples explanation",
+      "postgresql.org docs current VACUUM chapter dead tuples visibility",
+      "postgresql.org docs current transaction isolation serializable repeatable read read committed",
+      "postgresql.org docs current maintenance vacuum autovacuum transaction id wraparound freeze hazard",
+      "postgresql.org docs current mvcc-internals tuple visibility insertion XID",
+      "postgresql.org docs current maintenance-vacuum privileges owner superuser partitions conflict",
+      "PostgreSQL MVCC table bloat dead tuples VACUUM cannot reuse old row versions transaction isolation mechanism"
+    ],
+    "failed_approaches": [],
+    "evidence_coverage": {
+      "clm_a5d43de2ce324967": true,
+      "clm_8086079eecac40a7": true,
+      "clm_c5a03dd1428d4540": true,
+      "clm_1ac9d7bb34d245d6": true,
+      "clm_3fff5dcb7a42491c": true,
+      "clm_ee6745c7dbc24d22": true,
+      "clm_aa775546bbde4555": true,
+      "clm_725c5dc3af7c4206": true,
+      "clm_e34b1cfaf63a45e2": true,
+      "clm_87a6c7bf5a024f26": true,
+      "clm_fd4ce7026fc5449b": true,
+      "clm_004915b047d04a34": true
+    },
+    "citation_coverage": {
+      "clm_a5d43de2ce324967": true,
+      "clm_8086079eecac40a7": true,
+      "clm_c5a03dd1428d4540": true,
+      "clm_1ac9d7bb34d245d6": true,
+      "clm_3fff5dcb7a42491c": true,
+      "clm_ee6745c7dbc24d22": true,
+      "clm_aa775546bbde4555": true,
+      "clm_725c5dc3af7c4206": true,
+      "clm_e34b1cfaf63a45e2": true,
+      "clm_87a6c7bf5a024f26": true,
+      "clm_fd4ce7026fc5449b": true,
+      "clm_004915b047d04a34": true
+    },
+    "quarantined_urls": 0,
+    "injection_blocked": 0
+  },
+  "synthesis": "# Research Report: How does PostgreSQL's MVCC implementation provide transaction isolation, and why does it cause table bloat that VACUUM must clean up?\n\n## Answer (written only from the certified findings below)\nPostgreSQL implements transaction isolation using Multi-Version Concurrency Control (MVCC), in which the SQL standard's isolation levels are exposed as in Table 13.1 [[1]](https://www.postgresql.org/docs/current/transaction-iso.html). Although PostgreSQL lets you request any of the four standard levels, only three are implemented internally, so Read Uncommitted behaves as Read Committed [[1]](https://www.postgresql.org/docs/current/transaction-iso.html), and its Repeatable Read implementation even avoids phantom reads [[1]](https://www.postgresql.org/docs/current/transaction-iso.html). Visibility is decided by comparing transaction ID numbers: a row version whose insertion XID is greater than the current transaction's XID is treated as \"in the future\" and is hidden from that transaction [[2]](https://www.postgresql.org/docs/15/routine-vacuuming.html).\n\nMVCC does not free space immediately: tuples that are deleted or obsoleted by an update stay in the table, physically present, until a VACUUM is done [[3]](https://www.postgresql.org/docs/14/sql-vacuum.html). VACUUM is what ultimately removes these dead tuples, using the visibility map to decide which table pages must be scanned [[2]](https://www.postgresql.org/docs/15/routine-vacuuming.html). However, VACUUM cannot reclaim a dead tuple if any active transaction might still need to see it [[4]](https://www.pginsights.dev/guides/postgres-dead-tuples-and-bloat). The frequent reason dead tuples pile up even when autovacuum runs correctly is a long-running transaction that holds the xmin horizon far in the past, and this effect can be dramatic — on a 100M-row table it can mean 20M dead tuples before vacuum runs [[4]](https://www.pginsights.dev/guides/postgres-dead-tuples-and-bloat)[[4]](https://www.pginsights.dev/guides/postgres-dead-tuples-and-bloat).\n\nVACUUM generates a substantial amount of I/O traffic, which can degrade performance for other active sessions [[3]](https://www.postgresql.org/docs/14/sql-vacuum.html)[[2]](https://www.postgresql.org/docs/15/routine-vacuuming.html), it must ordinarily be run by the table owner or a superuser [[3]](https://www.postgresql.org/docs/14/sql-vacuum.html), and on partitioned tables a conflicting lock on the parent causes VACUUM to skip all partitions [[3]](https://www.postgresql.org/docs/14/sql-vacuum.html). The part of the question not fully answerable from the given facts is the precise per-tuple storage layout (heap tuple headers, per-column data, and tuple length overhead) that turns dead rows into wasted disk space; the facts confirm only that dead tuples remain physically present until VACUUM [[3]](https://www.postgresql.org/docs/14/sql-vacuum.html) and that they accumulate when the xmin horizon is held back [[4]](https://www.pginsights.dev/guides/postgres-dead-tuples-and-bloat).\n\n## Certified Findings (semantic NLI verification)\n- [clm_a5d43de2ce324967] The SQL standard and PostgreSQL-implemented transaction isolation levels are described in Table 13.1.\n  - cited: [src_c628e01719bb4e02] [PostgreSQL: Documentation: 18: 13.2. Transaction Isolation](https://www.postgresql.org/docs/current/transaction-iso.html) (entailment p=0.98, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_8086079eecac40a7] In PostgreSQL, you can request any of the four standard transaction isolation levels, but internally only three distinct isolation levels are implemented, i.e., PostgreSQL's Read Uncommitted mode behaves like Read Committed.\n  - cited: [src_c628e01719bb4e02] [PostgreSQL: Documentation: 18: 13.2. Transaction Isolation](https://www.postgresql.org/docs/current/transaction-iso.html) (entailment p=0.97, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_c5a03dd1428d4540] The table also shows that PostgreSQL's Repeatable Read implementation does not allow phantom reads.\n  - cited: [src_c628e01719bb4e02] [PostgreSQL: Documentation: 18: 13.2. Transaction Isolation](https://www.postgresql.org/docs/current/transaction-iso.html) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_1ac9d7bb34d245d6] PostgreSQL's MVCC transaction semantics depend on being able to compare transaction ID (XID) numbers: a row version with an insertion XID greater than the current transaction's XID is “in the future” and should not be visible to the current transaction.\n  - cited: [src_090c5fef40044bcd] [PostgreSQL: Documentation: 15: 25.1. Routine Vacuuming](https://www.postgresql.org/docs/15/routine-vacuuming.html) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_3fff5dcb7a42491c] VACUUM uses the visibility map to determine which pages of a table must be scanned.\n  - cited: [src_090c5fef40044bcd] [PostgreSQL: Documentation: 15: 25.1. Routine Vacuuming](https://www.postgresql.org/docs/15/routine-vacuuming.html) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n  - cited: [src_090c5fef40044bcd] [PostgreSQL: Documentation: 15: 25.1. Routine Vacuuming](https://www.postgresql.org/docs/15/routine-vacuuming.html) (entailment p=0.88, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_ee6745c7dbc24d22] VACUUM creates a substantial amount of I/O traffic, which can cause poor performance for other active sessions.\n  - cited: [src_090c5fef40044bcd] [PostgreSQL: Documentation: 15: 25.1. Routine Vacuuming](https://www.postgresql.org/docs/15/routine-vacuuming.html) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n  - cited: [src_34abfc78075941eb] [PostgreSQL: Documentation: 14: VACUUM](https://www.postgresql.org/docs/14/sql-vacuum.html) (entailment p=1.00, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_aa775546bbde4555] Also, while VACUUM ordinarily processes all partitions of specified partitioned tables, this option will cause VACUUM to skip all partitions if there is a conflicting lock on the partitioned table.\n  - cited: [src_34abfc78075941eb] [PostgreSQL: Documentation: 14: VACUUM](https://www.postgresql.org/docs/14/sql-vacuum.html) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_725c5dc3af7c4206] To vacuum a table, one must ordinarily be the table's owner or a superuser.\n  - cited: [src_34abfc78075941eb] [PostgreSQL: Documentation: 14: VACUUM](https://www.postgresql.org/docs/14/sql-vacuum.html) (entailment p=0.97, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_e34b1cfaf63a45e2] In normal PostgreSQL operation, tuples that are deleted or obsoleted by an update are not physically removed from their table; they remain present until a VACUUM is done.\n  - cited: [src_34abfc78075941eb] [PostgreSQL: Documentation: 14: VACUUM](https://www.postgresql.org/docs/14/sql-vacuum.html) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_87a6c7bf5a024f26] VACUUM can't reclaim a dead tuple if any active transaction might still need to see it.\n  - cited: [src_80ed53289afd4215] [PostgreSQL Dead Tuples & Table Bloat: VACUUM, pg_repack, and Autovacuum Tuning | pginsights](https://www.pginsights.dev/guides/postgres-dead-tuples-and-bloat) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_fd4ce7026fc5449b] The most common cause of dead tuples building up despite autovacuum running correctly is a long-running transaction holding the xmin horizon far back in the past.\n  - cited: [src_80ed53289afd4215] [PostgreSQL Dead Tuples & Table Bloat: VACUUM, pg_repack, and Autovacuum Tuning | pginsights](https://www.pginsights.dev/guides/postgres-dead-tuples-and-bloat) (entailment p=0.97, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_004915b047d04a34] On a 100M-row table, this means 20M dead tuples before vacuum runs.\n  - cited: [src_80ed53289afd4215] [PostgreSQL Dead Tuples & Table Bloat: VACUUM, pg_repack, and Autovacuum Tuning | pginsights](https://www.pginsights.dev/guides/postgres-dead-tuples-and-bloat) (entailment p=0.96, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n\n## Uncertainty and Limitations\n- No primary-research source was available; findings rest on secondary reporting and are limited accordingly.\n- Uncertainty classification: UNCERTAIN\n\n## Sources\n1. [src_c628e01719bb4e02] [PostgreSQL: Documentation: 18: 13.2. Transaction Isolation](https://www.postgresql.org/docs/current/transaction-iso.html)\n2. [src_090c5fef40044bcd] [PostgreSQL: Documentation: 15: 25.1. Routine Vacuuming](https://www.postgresql.org/docs/15/routine-vacuuming.html)\n3. [src_34abfc78075941eb] [PostgreSQL: Documentation: 14: VACUUM](https://www.postgresql.org/docs/14/sql-vacuum.html)\n4. [src_80ed53289afd4215] [PostgreSQL Dead Tuples & Table Bloat: VACUUM, pg_repack, and Autovacuum Tuning | pginsights](https://www.pginsights.dev/guides/postgres-dead-tuples-and-bloat)",
+  "audit": {
+    "status": "PASS_WITH_FLAGS",
+    "checks": {
+      "no_provisional_certifications": true,
+      "no_unsupported_critical_claims": true,
+      "citations_resolve": true,
+      "no_circular_citations": true,
+      "provenance_intact": true,
+      "numeric_consistency": false,
+      "causal_language_appropriate": false,
+      "contradictions_examined": true,
+      "uncertainty_explicit": true
+    },
+    "findings": [
+      "numbers in synthesis without grounding: ['14', '15', '18']",
+      "causal language without primary-source backing: ['cause', 'causes']"
+    ],
+    "unsupported_claims": [],
+    "hallucinated_citations": [],
+    "circular_citations": [],
+    "provisional_certifications": []
+  },
+  "errors": [],
+  "governance": {
+    "budget": {
+      "max_iterations": 4.0,
+      "max_tool_calls": 40.0,
+      "max_search_calls": 8.0,
+      "max_fetches": 8.0,
+      "max_sandbox_executions": 4.0,
+      "max_model_calls": 30.0,
+      "max_wall_clock_s": 540.0,
+      "max_response_chars": 18000.0,
+      "max_retries_per_call": 2.0,
+      "max_dependency_depth": 8.0,
+      "max_concurrent_fetches": 2.0,
+      "max_extensions": 2.0
+    },
+    "counters": {
+      "iterations": 3,
+      "tool_calls": 0,
+      "search_calls": 8,
+      "fetches": 6,
+      "sandbox_executions": 0,
+      "model_calls": 26,
+      "retries": 5
+    },
+    "denials": [
+      {
+        "resource": "search_calls",
+        "detail": "max 8 reached",
+        "ts": 1791337378.3288865
+      }
+    ],
+    "extensions": [],
+    "cancelled": false,
+    "cancel_reason": null
+  },
+  "telemetry": {
+    "request_id": "req_06505e54603d400b",
+    "counters": {
+      "iterations": 3,
+      "search_calls": 8,
+      "fetch_calls": 6,
+      "claims_extracted": 12,
+      "evidence_evaluations": 24,
+      "claims_certified": 12,
+      "answer_synthesized_llm": 1,
+      "final_audits": 1
+    },
+    "latencies": {
+      "search": {
+        "count": 8,
+        "p50_ms": 6466.58,
+        "p95_ms": 14166.26,
+        "max_ms": 14166.26
+      },
+      "fetch": {
+        "count": 6,
+        "p50_ms": 549.08,
+        "p95_ms": 1249.08,
+        "max_ms": 1249.08
+      },
+      "evidence_eval": {
+        "count": 12,
+        "p50_ms": 1513.96,
+        "p95_ms": 8948.79,
+        "max_ms": 8948.79
+      }
+    },
+    "event_count": 4
+  },
+  "events": [
+    {
+      "name": "run.start",
+      "ts": 1791337179.0397034,
+      "run_id": "run_761796b8bc794bac",
+      "data": {
+        "objective": "How does PostgreSQL's MVCC implementation provide transaction isolation, and why does it cause table bloat that VACUUM must clean up?",
+        "resumed": "False",
+        "backend": "anthropic-tool-use"
+      }
+    },
+    {
+      "name": "tool_session",
+      "ts": 1791337272.8887103,
+      "run_id": "run_761796b8bc794bac",
+      "data": {
+        "turns": "6",
+        "tool_calls": "[{'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': False}]",
+        "final_text": "I'll research PostgreSQL MVCC, transaction isolation, and table bloat. Starting with targeted searches.",
+        "finish_requested": "False",
+        "stop_cause": "tool_use",
+        "backend_state": "anthropic-tool-use"
+      }
+    },
+    {
+      "name": "tool_session",
+      "ts": 1791337330.8333025,
+      "run_id": "run_761796b8bc794bac",
+      "data": {
+        "turns": "2",
+        "tool_calls": "[{'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}]",
+        "final_text": "I'll search for the official PostgreSQL documentation pages needed to resolve the two pending claims and the MVCC mechanics.",
+        "finish_requested": "False",
+        "stop_cause": "max_tokens",
+        "backend_state": "anthropic-tool-use"
+      }
+    },
+    {
+      "name": "tool_session",
+      "ts": 1791337415.750157,
+      "run_id": "run_761796b8bc794bac",
+      "data": {
+        "turns": "3",
+        "tool_calls": "[{'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': True}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'finish_research', 'input_keys': [], 'is_error': False}]",
+        "final_text": "The MVCC-internals fetch was refused and the search budget is spent, so the eight certified claims from the digest plus the fetched PostgreSQL routine-vacuuming passage are the complete evidence base. The missing mechanism claims have no citable text, so they stay excluded.",
+        "finish_requested": "True",
+        "stop_cause": "tool_use",
+        "backend_state": "anthropic-tool-use"
+      }
+    }
+  ]
+}

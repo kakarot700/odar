@@ -1,0 +1,191 @@
+{
+ "thread_id": "da72ee85b39b4057",
+ "share_token": "zsXMyM5HSN94SJZw",
+ "title": "What is the Chandrayaan-3 mission's key scientific result?",
+ "project_id": "",
+ "sources": [
+  {
+   "url": "https://en.wikipedia.org/wiki/Chandrayaan-3",
+   "title": "Chandrayaan-3 - Wikipedia",
+   "domain": "en.wikipedia.org",
+   "snippet": "Chandrayaan-3 (CHUN-dr\u0259-YAHN / \u02cct\u0283\u028cndr\u0259\u02c8j\u0251\u02d0n /) is the third mission in the Chandrayaan programme, a series of lunar-exploration missions developed by ISRO. The mission consists of Vikram, a lunar lander, and Pragyan, a lunar rover, as replacements for the equivalents on Chandrayaan-2, which had crashed on landing in 2019.",
+   "kind": "web",
+   "n": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Chandrayaan_programme",
+   "title": "Chandrayaan programme - Wikipedia",
+   "domain": "en.wikipedia.org",
+   "snippet": "The Chandrayaan programme (/ \u02cct\u0283\u028cndr\u0259\u02c8j\u0251\u02d0n / CHUN-dr\u0259-YAHN) (Sanskrit: Candra 'Moon', Y\u0101na 'Craft, Vehicle', pronunciation \u24d8) [4][5] is an ongoing series of outer space missions by ISRO for the exploration of the Moon. The program incorporates a lunar orbiter, an impactor, a lunar lander and a rover spacecraft. There have been three missions so far with a total of two orbiters ...",
+   "kind": "web",
+   "n": 2
+  },
+  {
+   "url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+   "title": "Chandrayaan-3 - Indian Space Research Organisation (ISRO)",
+   "domain": "isro.gov.in",
+   "snippet": "Aug 30, 2023 \u00b7 Groundbreaking scientific discoveries and data publications from the Chandrayaan-3 lunar mission.",
+   "kind": "web",
+   "n": 3
+  },
+  {
+   "url": "https://www.isro.gov.in/Chandrayaan3_Details.html",
+   "title": "Chandrayaan-3 Details - Indian Space Research Organisation (ISRO)",
+   "domain": "isro.gov.in",
+   "snippet": "Chandrayaan-3 is a follow-on mission to Chandrayaan-2 to demonstrate end-to-end capability in safe landing and roving on the lunar surface. It consists of Lander and Rover configuration.",
+   "kind": "web",
+   "n": 4
+  },
+  {
+   "url": "https://www.researchgate.net/publication/398428328_Chandrayaan-3_A_Landmark_Mission_of_Resilience",
+   "title": "(PDF) Chandrayaan-3: A Landmark Mission of Resilience",
+   "domain": "researchgate.net",
+   "snippet": "Dec 8, 2025 \u00b7 The mission's success is a direct result of a strategic, iterative approach to space exploration, which meticulously addressed the challenges of its predecessor, Chandrayaan-2, by implementing a ...",
+   "kind": "web",
+   "n": 5
+  },
+  {
+   "url": "https://www.sciencedirect.com/science/article/pii/S003206332400028X",
+   "title": "An insight into India's Moon mission \u2013 Chandrayan-3: The ...",
+   "domain": "sciencedirect.com",
+   "snippet": "Mar 1, 2024 \u00b7 It is equipped with a Vikram lander and Pragyan rover. An in-depth review is carried out to discuss the findings of the Chandrayaan-3 mission. The goals of Chandrayaan-3's mission are: (a) to show a safe and soft landing on the surface of the Moon; (b) to showcase roving lunar rover technology; and (c) to carry out in-situ scientific research.",
+   "kind": "web",
+   "n": 6
+  }
+ ],
+ "answer": "The sources report several scientific results from Chandrayaan-3 but do not single out one as \"key.\" The most prominent quantitative result is that scientists from NRSC/ISRO estimated that about 2.06 tonnes of lunar epiregolith were ejected and displaced over an area of 108.4 m\u00b2 around the landing site.\n\nOther reported results include: LIBS confirmed the presence of Sulphur (S) on the lunar surface through unambiguous in-situ measurements [3]; APXS on the rover detected the presence of minor elements [3]; RAMBHA-LP measured near-surface plasma content [3]; ILSA listened to movements around the landing site [3]; and the first observations came from the ChaSTE payload onboard the Vikram Lander [3]. The mission's stated objectives were to demonstrate safe and soft landing, demonstrate rover roving, and conduct in-situ scientific experiments [4][6].",
+ "abstained": false,
+ "timing": {
+  "search_s": 0.7,
+  "fetch_s": 0.67,
+  "ttft_s": 10.32,
+  "total_s": 10.32
+ },
+ "draft_answer": "The sources report several scientific results from Chandrayaan-3 but do not single out one as \"key.\" The most prominent quantitative result is that scientists from NRSC/ISRO estimated that about 2.06 tonnes of lunar epiregolith were ejected and displaced over an area of 108.4 m\u00b2 around the landing site [3].\n\nOther reported results include: LIBS confirmed the presence of Sulphur (S) on the lunar surface through unambiguous in-situ measurements [3]; APXS on the rover detected the presence of minor elements [3]; RAMBHA-LP measured near-surface plasma content [3]; ILSA listened to movements around the landing site [3]; and the first observations came from the ChaSTE payload onboard the Vikram Lander [3]. The mission's stated objectives were to demonstrate safe and soft landing, demonstrate rover roving, and conduct in-situ scientific experiments [4][6].",
+ "verification": {
+  "citations": [
+   {
+    "occ": 0,
+    "n": 3,
+    "marker": "[3]",
+    "claim": "Other reported results include: LIBS confirmed the presence of Sulphur (S) on the lunar surface through unambiguous in-situ measurements ; APXS on the rover detected the presence of minor elements ; RAMBHA-LP measured near-surface plasma content ; ILSA listened to movements around the landing site ; and the first observations came from the ChaSTE payload onboard the Vikram Lander .",
+    "verdict": "partial",
+    "check_verdict": "PARTIALLY SUPPORTED",
+    "quote": "August 31, 2023 ILSA listens to the movements around the landing site RAMBHA-LP on-board Chandrayaan-3 measures near-surface plasma content August 30, 2023 APXS on-board Ch-3 rover detects the presence of minor elements August 28, 2023 LIBS confirms the presence of Sulphur (S) on the lunar surface",
+    "note": "the page supports part of this claim, not all of it",
+    "title": "Chandrayaan-3 - Indian Space Research Organisation (ISRO)",
+    "domain": "isro.gov.in",
+    "url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+    "kind": "web",
+    "entailment": 0.0,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 1,
+    "n": 3,
+    "marker": "[3]",
+    "claim": "Other reported results include: LIBS confirmed the presence of Sulphur (S) on the lunar surface through unambiguous in-situ measurements ; APXS on the rover detected the presence of minor elements ; RAMBHA-LP measured near-surface plasma content ; ILSA listened to movements around the landing site ; and the first observations came from the ChaSTE payload onboard the Vikram Lander .",
+    "verdict": "partial",
+    "check_verdict": "PARTIALLY SUPPORTED",
+    "quote": "August 31, 2023 ILSA listens to the movements around the landing site RAMBHA-LP on-board Chandrayaan-3 measures near-surface plasma content August 30, 2023 APXS on-board Ch-3 rover detects the presence of minor elements August 28, 2023 LIBS confirms the presence of Sulphur (S) on the lunar surface",
+    "note": "the page supports part of this claim, not all of it",
+    "title": "Chandrayaan-3 - Indian Space Research Organisation (ISRO)",
+    "domain": "isro.gov.in",
+    "url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+    "kind": "web",
+    "entailment": 0.0,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 2,
+    "n": 3,
+    "marker": "[3]",
+    "claim": "Other reported results include: LIBS confirmed the presence of Sulphur (S) on the lunar surface through unambiguous in-situ measurements ; APXS on the rover detected the presence of minor elements ; RAMBHA-LP measured near-surface plasma content ; ILSA listened to movements around the landing site ; and the first observations came from the ChaSTE payload onboard the Vikram Lander .",
+    "verdict": "partial",
+    "check_verdict": "PARTIALLY SUPPORTED",
+    "quote": "August 31, 2023 ILSA listens to the movements around the landing site RAMBHA-LP on-board Chandrayaan-3 measures near-surface plasma content August 30, 2023 APXS on-board Ch-3 rover detects the presence of minor elements August 28, 2023 LIBS confirms the presence of Sulphur (S) on the lunar surface",
+    "note": "the page supports part of this claim, not all of it",
+    "title": "Chandrayaan-3 - Indian Space Research Organisation (ISRO)",
+    "domain": "isro.gov.in",
+    "url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+    "kind": "web",
+    "entailment": 0.0,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 3,
+    "n": 3,
+    "marker": "[3]",
+    "claim": "Other reported results include: LIBS confirmed the presence of Sulphur (S) on the lunar surface through unambiguous in-situ measurements ; APXS on the rover detected the presence of minor elements ; RAMBHA-LP measured near-surface plasma content ; ILSA listened to movements around the landing site ; and the first observations came from the ChaSTE payload onboard the Vikram Lander .",
+    "verdict": "partial",
+    "check_verdict": "PARTIALLY SUPPORTED",
+    "quote": "August 31, 2023 ILSA listens to the movements around the landing site RAMBHA-LP on-board Chandrayaan-3 measures near-surface plasma content August 30, 2023 APXS on-board Ch-3 rover detects the presence of minor elements August 28, 2023 LIBS confirms the presence of Sulphur (S) on the lunar surface",
+    "note": "the page supports part of this claim, not all of it",
+    "title": "Chandrayaan-3 - Indian Space Research Organisation (ISRO)",
+    "domain": "isro.gov.in",
+    "url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+    "kind": "web",
+    "entailment": 0.0,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 4,
+    "n": 3,
+    "marker": "[3]",
+    "claim": "Other reported results include: LIBS confirmed the presence of Sulphur (S) on the lunar surface through unambiguous in-situ measurements ; APXS on the rover detected the presence of minor elements ; RAMBHA-LP measured near-surface plasma content ; ILSA listened to movements around the landing site ; and the first observations came from the ChaSTE payload onboard the Vikram Lander .",
+    "verdict": "partial",
+    "check_verdict": "PARTIALLY SUPPORTED",
+    "quote": "August 31, 2023 ILSA listens to the movements around the landing site RAMBHA-LP on-board Chandrayaan-3 measures near-surface plasma content August 30, 2023 APXS on-board Ch-3 rover detects the presence of minor elements August 28, 2023 LIBS confirms the presence of Sulphur (S) on the lunar surface",
+    "note": "the page supports part of this claim, not all of it",
+    "title": "Chandrayaan-3 - Indian Space Research Organisation (ISRO)",
+    "domain": "isro.gov.in",
+    "url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+    "kind": "web",
+    "entailment": 0.0,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 5,
+    "n": 4,
+    "marker": "[4]",
+    "claim": "The mission's stated objectives were to demonstrate safe and soft landing, demonstrate rover roving, and conduct in-situ scientific experiments .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "The mission objectives of Chandrayaan-3 are: To demonstrate Safe and Soft Landing on Lunar Surface To demonstrate Rover roving on the moon and To conduct in-situ scientific experiments.",
+    "note": "",
+    "title": "Chandrayaan-3 Details - Indian Space Research Organisation (ISRO)",
+    "domain": "isro.gov.in",
+    "url": "https://www.isro.gov.in/Chandrayaan3_Details.html",
+    "kind": "web",
+    "entailment": 0.998,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 6,
+    "n": 6,
+    "marker": "[6]",
+    "claim": "The mission's stated objectives were to demonstrate safe and soft landing, demonstrate rover roving, and conduct in-situ scientific experiments .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "The goals of Chandrayaan-3's mission are: (a) to show a safe and soft landing on the surface of the Moon; (b) to showcase roving lunar rover technology; and (c) to carry out in-situ scientific research.",
+    "note": "",
+    "title": "An insight into India's Moon mission \u2013 Chandrayan-3: The ...",
+    "domain": "sciencedirect.com",
+    "url": "https://www.sciencedirect.com/science/article/pii/S003206332400028X",
+    "kind": "web",
+    "entailment": 0.998,
+    "judged_by": "nli"
+   }
+  ],
+  "counts": {
+   "partial": 5,
+   "supported": 2
+  },
+  "elapsed_s": 39.15,
+  "answer": "The sources report several scientific results from Chandrayaan-3 but do not single out one as \"key.\" The most prominent quantitative result is that scientists from NRSC/ISRO estimated that about 2.06 tonnes of lunar epiregolith were ejected and displaced over an area of 108.4 m\u00b2 around the landing site.\n\nOther reported results include: LIBS confirmed the presence of Sulphur (S) on the lunar surface through unambiguous in-situ measurements [3]; APXS on the rover detected the presence of minor elements [3]; RAMBHA-LP measured near-surface plasma content [3]; ILSA listened to movements around the landing site [3]; and the first observations came from the ChaSTE payload onboard the Vikram Lander [3]. The mission's stated objectives were to demonstrate safe and soft landing, demonstrate rover roving, and conduct in-situ scientific experiments [4][6].",
+  "repairs": [],
+  "total_s": 49.49
+ },
+ "q": 8,
+ "seconds": 49.5
+}

@@ -1,0 +1,413 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_b2cf8536b3a8",
+ "trust_score": 83,
+ "grade": "mixed: check flagged claims",
+ "counts": {
+  "SUPPORTED": 5,
+  "PARTIALLY SUPPORTED": 0,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 1,
+  "UNVERIFIABLE": 1,
+  "DEAD LINK": 0,
+  "NO CITATION": 5
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "Based on the search results, Chandrayaan-3's key scientific achievement is the discovery of unexpected temperature variations at the Moon's south polar region.",
+   "verdict": "UNVERIFIABLE",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Chandrayaan-3",
+     "marker": "[1]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "blocked",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "page exists but could not be read (HTTP 403); archive check unavailable",
+     "judged_by": "nli",
+     "source_type": "encyclopedia",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://en.wikipedia.org/wiki/Chandrayaan-3",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "low",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "The ChaSTE (Chandra's Surface Thermophysical Experiment) instrument measured the thermal profile of the Moon's surface at the south pole, revealing significant temperature swings.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3.1",
+   "claim": "The data showed a temperature range of approximately 70\u00b0C (158\u00b0F) near the surface.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3.2",
+   "claim": "Scientists described the temperature range as \"not expected.\".",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3.3",
+   "claim": "These were the first in-situ measurements of thermophysical properties within the top 10 centimeters of the lunar surface at a high-latitude south polar location.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3.4",
+   "claim": "The first in-situ measurements made an important contribution to understanding the Moon's thermal characteristics in this previously unexplored region.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4.1",
+   "claim": "The first-ever near-surface lunar plasma measurements in the south polar region were found to be \"relatively sparse.\".",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.bbc.com/news/world-asia-india-66808808",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.996,
+     "contradiction": 0.763,
+     "quote": "When Isro posted on X (formerly Twitter) that a probe on the lander had done the \"first-ever measurements of the near-surface lunar plasma environment\" of the south polar region and found it to be \"relatively sparse\", many wondered what it meant.",
+     "note": "another passage on the page may disagree: \"The instrument's \"first-ever in-situ - in the original space\" measurement \"unambiguously confirms\" the presence of sulphur, Isro said. Sulphur's presence on the\"",
+     "judged_by": "nli",
+     "source_type": "news",
+     "source_year": null
+    }
+   ],
+   "quote": "When Isro posted on X (formerly Twitter) that a probe on the lander had done the \"first-ever measurements of the near-surface lunar plasma environment\" of the south polar region and found it to be \"relatively sparse\", many wondered what it meant.",
+   "quote_url": "https://www.bbc.com/news/world-asia-india-66808808",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4.2",
+   "claim": "The measurements indicated that radio communications in this area would face less interference than expected.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.bbc.com/news/world-asia-india-66808808",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.47,
+     "contradiction": 0.0,
+     "quote": "The fact that it's very sparse or thin is good news as it means it will disrupt the radio communication a lot less.",
+     "note": "reworded match: Sparse plasma measurements imply less radio disruption than expected.",
+     "judged_by": "nli+llm",
+     "source_type": "news",
+     "source_year": null
+    }
+   ],
+   "quote": "The fact that it's very sparse or thin is good news as it means it will disrupt the radio communication a lot less.",
+   "quote_url": "https://www.bbc.com/news/world-asia-india-66808808",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5.1",
+   "claim": "The Instrument for Lunar Seismic Activity (ILSA) recorded what appeared to be a natural seismic event.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.bbc.com/news/world-asia-india-66808808",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.985,
+     "contradiction": 0.0,
+     "quote": "Isro said while the Instrument for Lunar Seismic Activity (Ilsa) had its ear to the ground, it also recorded \"an event, appearing to be a natural one\" and was investigating its source.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "news",
+     "source_year": null
+    }
+   ],
+   "quote": "Isro said while the Instrument for Lunar Seismic Activity (Ilsa) had its ear to the ground, it also recorded \"an event, appearing to be a natural one\" and was investigating its source.",
+   "quote_url": "https://www.bbc.com/news/world-asia-india-66808808",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5.2",
+   "claim": "The event potentially marked the first moonquake recorded since the 1970s.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.bbc.com/news/world-asia-india-66808808",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.997,
+     "contradiction": 0.0,
+     "quote": "Or it could be seismic which would make it the first Moonquake recorded since the 1970s.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "news",
+     "source_year": null
+    }
+   ],
+   "quote": "Or it could be seismic which would make it the first Moonquake recorded since the 1970s.",
+   "quote_url": "https://www.bbc.com/news/world-asia-india-66808808",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6.1",
+   "claim": "In the hop experiment, the lander fired its engines.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.bbc.com/news/world-asia-india-66808808",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.988,
+     "contradiction": 0.0,
+     "quote": "The last thing the Vikram lander did before being put to bed in early September was what Isro called a \"hop experiment\". The agency said the lander was \"commanded to fire its engines, it rose up by about 40cm [16 inches] and landed at a distance of 30-40cm\".",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "news",
+     "source_year": null
+    }
+   ],
+   "quote": "The last thing the Vikram lander did before being put to bed in early September was what Isro called a \"hop experiment\". The agency said the lander was \"commanded to fire its engines, it rose up by about 40cm [16 inches] and landed at a distance of 30-40cm\".",
+   "quote_url": "https://www.bbc.com/news/world-asia-india-66808808",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6.2",
+   "claim": "The demonstration proved critical technology for future sample returns and crewed missions.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://www.bbc.com/news/world-asia-india-66808808",
+     "marker": "[2]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "news",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.bbc.com/news/world-asia-india-66808808",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://en.wikipedia.org/wiki/Chandrayaan-3",
+   "state": "blocked",
+   "http_status": 403,
+   "error": "HTTP 403",
+   "resolved_url": "https://en.wikipedia.org/wiki/Chandrayaan-3",
+   "title": "",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "",
+   "archive_check": "unavailable",
+   "content_hash": "",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.bbc.com/news/world-asia-india-66808808",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.bbc.com/news/world-asia-india-66808808",
+   "title": "Chandrayaan-3: How important are India's Moon mission findings?",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "b48013355a027eb9de9ea78b7f921eb4170e576d3072045d8fdd0e941234a3cf",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 73.5,
+ "usage": {
+  "fetches": 2,
+  "wayback_lookups": 1,
+  "searches": 0,
+  "llm_calls": 5,
+  "nli_checks": 6,
+  "scorer_load_ms": 11929
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 6,
+   "citations": 4
+  },
+  {
+   "t": 37.39,
+   "event": "fetch",
+   "url": "https://en.wikipedia.org/wiki/Chandrayaan-3",
+   "state": "blocked",
+   "http_status": 403,
+   "chars": 0,
+   "error": "HTTP 403"
+  },
+  {
+   "t": 37.72,
+   "event": "fetch",
+   "url": "https://www.bbc.com/news/world-asia-india-66808808",
+   "state": "live",
+   "http_status": 200,
+   "chars": 6915,
+   "error": ""
+  },
+  {
+   "t": 50.17,
+   "event": "wayback",
+   "url": "https://en.wikipedia.org/wiki/Chandrayaan-3",
+   "error": "ReadTimeout: HTTPSConnectionPool(host='web.archive.org', port=443): Read timed out. (read timeout=12.0)"
+  },
+  {
+   "t": 54.65,
+   "event": "verify",
+   "url": "https://www.bbc.com/news/world-asia-india-66808808",
+   "claim": "The first-ever near-surface lunar plasma measurements in the south polar region were found to be \"relatively sparse.\".",
+   "verdict": "SUPPORTED",
+   "ent": 0.996,
+   "con": 0.763
+  },
+  {
+   "t": 62.72,
+   "event": "paraphrase_judge",
+   "claim": "The measurements indicated that radio communications in this area would face less interference than expected.",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 62.72,
+   "event": "verify",
+   "url": "https://www.bbc.com/news/world-asia-india-66808808",
+   "claim": "The measurements indicated that radio communications in this area would face less interference than expected.",
+   "verdict": "SUPPORTED",
+   "ent": 0.47,
+   "con": 0.0
+  },
+  {
+   "t": 65.65,
+   "event": "verify",
+   "url": "https://www.bbc.com/news/world-asia-india-66808808",
+   "claim": "The Instrument for Lunar Seismic Activity (ILSA) recorded what appeared to be a natural seismic event.",
+   "verdict": "SUPPORTED",
+   "ent": 0.985,
+   "con": 0.0
+  },
+  {
+   "t": 68.48,
+   "event": "verify",
+   "url": "https://www.bbc.com/news/world-asia-india-66808808",
+   "claim": "The event potentially marked the first moonquake recorded since the 1970s.",
+   "verdict": "SUPPORTED",
+   "ent": 0.997,
+   "con": 0.0
+  },
+  {
+   "t": 70.95,
+   "event": "verify",
+   "url": "https://www.bbc.com/news/world-asia-india-66808808",
+   "claim": "In the hop experiment, the lander fired its engines.",
+   "verdict": "SUPPORTED",
+   "ent": 0.988,
+   "con": 0.0
+  },
+  {
+   "t": 73.47,
+   "event": "verify",
+   "url": "https://www.bbc.com/news/world-asia-india-66808808",
+   "claim": "The demonstration proved critical technology for future sample returns and crewed missions.",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 73.48,
+   "event": "done",
+   "trust_score": 83
+  }
+ ],
+ "score_s": 86.8
+}

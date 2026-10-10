@@ -1,0 +1,156 @@
+{
+ "thread_id": "c32fecbc53baee3f",
+ "share_token": "BKlSs9kbS3VADEDp",
+ "title": "What did the 2023 Nobel Prize in Physiology or Medicine recognize?",
+ "project_id": "",
+ "sources": [
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10758357/",
+   "title": "Nobel Prize for physiology or medicine in 2023: how to dupe ...",
+   "domain": "pmc.ncbi.nlm.nih.gov",
+   "snippet": "The 2023 Nobel prize in physiology or medicine was awarded to Katalin Karik\u00f3 and Drew Weissman for their breakthrough discoveries to use modified RNA for therapeutic treatments. This enabled the development of life-saving COVID-19 RNA vaccines by the companies Pfizer-BioNTech and Moderna.",
+   "kind": "web",
+   "n": 1
+  },
+  {
+   "url": "https://link.springer.com/article/10.1007/s11224-024-02281-w",
+   "title": "The breakthrough in vaccination: Nobel Prize in Physiology or ...",
+   "domain": "link.springer.com",
+   "snippet": "Feb 5, 2024 \u00b7 The Nobel Prize of Physiology or Medicine 2023 was awarded jointly to two researchers, Katalin Karik\u00f3 and Drew Weissman, for their discoveries taking part in the development of effective mRNA vaccines against COVID-19. The accelerated development of the novel mRNA-lipid nanoparticle vaccines provided highly effective protection against severe disease or death, and reduction in symptomatic ...",
+   "kind": "web",
+   "n": 2
+  },
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10663363/",
+   "title": "From rejection to the Nobel Prize: Karik\u00f3 and Weissman\u2019s ...",
+   "domain": "pmc.ncbi.nlm.nih.gov",
+   "snippet": "Katalin Karik\u00f3 and Drew Weissman were given the 2023 Nobel Prize in Physiology or Medicine for their findings of nucleoside base modifications that lead to the development of effective mRNA vaccines against COVID-19. This was a remarkable ...",
+   "kind": "web",
+   "n": 3
+  },
+  {
+   "url": "https://www.lindau-nobel.org/blog-nobel-prize-in-physiology-medicine-2023-a-new-way-of-looking-at-vaccines/",
+   "title": "Nobel Prize in Physiology/Medicine 2023: A New Way of Looking ...",
+   "domain": "lindau-nobel.org",
+   "snippet": "Dec 7, 2023 \u00b7 The Nobel Prize in Physiology or Medicine 2023 is awarded to Katalin Karik\u00f3 and Drew Weissman who laid the basis for inventing mRNA vaccines. Their research made it possible to develop COVID-19-vaccines quickly.",
+   "kind": "web",
+   "n": 4
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/2023_Nobel_Prizes",
+   "title": "2023 Nobel Prizes - Wikipedia",
+   "domain": "en.wikipedia.org",
+   "snippet": "The 2023 Nobel Prizes were awarded by the Nobel Foundation in Sweden. Six categories were awarded: Physics, Chemistry, Physiology or Medicine, Literature, Peace, and Economic Sciences.",
+   "kind": "web",
+   "n": 5
+  },
+  {
+   "url": "https://www.nobelprize.org/prizes/medicine/2023/summary/",
+   "title": "The Nobel Prize in Physiology or Medicine 2023 - NobelPrize.org",
+   "domain": "nobelprize.org",
+   "snippet": "The Nobel Prize in Physiology or Medicine 2023 was awarded jointly to Katalin Karik\u00f3 and Drew Weissman \"for their discoveries concerning nucleoside base modifications that enabled the development of effective mRNA vaccines against COVID-19\" To cite this section MLA style: The Nobel Prize in Physiology or Medicine 2023.",
+   "kind": "web",
+   "year": 2023,
+   "n": 6
+  }
+ ],
+ "answer": "The 2023 Nobel Prize in Physiology or Medicine was awarded jointly to Katalin Karik\u00f3 and Drew Weissman [1][2]. It recognized their discoveries concerning nucleoside base modifications that enabled the development of effective mRNA vaccines against COVID-19 [2][3]. These findings allowed the COVID-19 mRNA vaccines to be developed [1].",
+ "abstained": false,
+ "timing": {
+  "search_s": 2.29,
+  "fetch_s": 0.0,
+  "ttft_s": 11.92,
+  "total_s": 11.92
+ },
+ "verification": {
+  "citations": [
+   {
+    "occ": 0,
+    "n": 1,
+    "marker": "[1]",
+    "claim": "The 2023 Nobel Prize in Physiology or Medicine was awarded jointly to Katalin Karik\u00f3 and Drew Weissman .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "The 2023 Nobel prize in physiology or medicine was awarded to Katalin Karik\u00f3 and Drew Weissman for their breakthrough discoveries to use modified RNA for therapeutic treatments.",
+    "note": "reworded match: Passages explicitly name both laureates for the 2023 prize.",
+    "title": "Nobel Prize for physiology or medicine in 2023: how to dupe ...",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10758357/",
+    "kind": "web",
+    "entailment": 0.035,
+    "judged_by": "nli+llm"
+   },
+   {
+    "occ": 1,
+    "n": 2,
+    "marker": "[2]",
+    "claim": "The 2023 Nobel Prize in Physiology or Medicine was awarded jointly to Katalin Karik\u00f3 and Drew Weissman .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "The Nobel Prize of Physiology or Medicine 2023 was awarded jointly to two researchers, Katalin Karik\u00f3 and Drew Weissman, for their discoveries taking part in the development of effective mRNA vaccines against COVID-19.",
+    "note": "another passage on the page may disagree: \"Vaccines based on killed or weakened viruses have long been available, e.g., vaccines against polio, measles, and yellow fever. In 1951, a South-American virolo\"",
+    "title": "The breakthrough in vaccination: Nobel Prize in Physiology or ...",
+    "domain": "link.springer.com",
+    "url": "https://link.springer.com/article/10.1007/s11224-024-02281-w",
+    "kind": "web",
+    "entailment": 0.994,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 2,
+    "n": 2,
+    "marker": "[2]",
+    "claim": "It recognized their discoveries concerning nucleoside base modifications that enabled the development of effective mRNA vaccines against COVID-19 .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "Katalin Karik\u00f3 and Drew Weissman\u2019s discoveries regarding nucleoside-based modifications allowed the development of effective mRNA vaccines against COVID-19.",
+    "note": "",
+    "title": "The breakthrough in vaccination: Nobel Prize in Physiology or ...",
+    "domain": "link.springer.com",
+    "url": "https://link.springer.com/article/10.1007/s11224-024-02281-w",
+    "kind": "web",
+    "entailment": 0.993,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 3,
+    "n": 3,
+    "marker": "[3]",
+    "claim": "It recognized their discoveries concerning nucleoside base modifications that enabled the development of effective mRNA vaccines against COVID-19 .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "Katalin Karik\u00f3 and Drew Weissman were given the 2023 Nobel Prize in Physiology or Medicine for their findings of nucleoside base modifications that lead to the development of effective mRNA vaccines against COVID-19.",
+    "note": "",
+    "title": "From rejection to the Nobel Prize: Karik\u00f3 and Weissman\u2019s ...",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10663363/",
+    "kind": "web",
+    "entailment": 0.998,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 4,
+    "n": 1,
+    "marker": "[1]",
+    "claim": "These findings allowed the COVID-19 mRNA vaccines to be developed .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "This enabled the development of life-saving COVID-19 RNA vaccines by the companies Pfizer-BioNTech and Moderna.",
+    "note": "",
+    "title": "Nobel Prize for physiology or medicine in 2023: how to dupe ...",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10758357/",
+    "kind": "web",
+    "entailment": 0.976,
+    "judged_by": "nli"
+   }
+  ],
+  "counts": {
+   "supported": 5
+  },
+  "elapsed_s": 40.99,
+  "total_s": 52.93
+ },
+ "q": 3,
+ "seconds": 53.1
+}

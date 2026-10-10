@@ -1,0 +1,296 @@
+{
+  "status": "COMPLETE",
+  "backend_state": "anthropic-tool-use",
+  "degraded": false,
+  "objective": "Does raising the minimum wage reduce employment? Summarize what the empirical evidence says, including where economists disagree.",
+  "run_id": "run_0d0fc69e7eff4dee",
+  "uncertainty": "EVIDENCE_FOR",
+  "termination_status": "COMPLETE",
+  "unmet_conditions": [],
+  "digest": {
+    "objective": "Does raising the minimum wage reduce employment? Summarize what the empirical evidence says, including where economists disagree.",
+    "iteration": 2,
+    "termination_status": "COMPLETE",
+    "uncertainty": "EVIDENCE_FOR",
+    "subquestions": [],
+    "hypotheses": [],
+    "claims": [
+      {
+        "id": "clm_5e1e29460568408a",
+        "text": "But when it comes to the question of a $15 minimum wage and what it would do to US employment and productivity, economists, at least, are willing to admit to un",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_434b56ecf32d4b19",
+        "text": "Steve Kaplan of Chicago Booth strongly agreed that raising the wage would adversely affect the unemployment rate: “A $15 minimum wage rise makes entry level/low",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_cf44e27aa0574af2",
+        "text": "The Initiative on Global Markets at Chicago Booth is back from summer hiatus with an Economic Experts Panel poll that addresses the $15 federal minimum wage pro",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_946a363486284d60",
+        "text": "Raising the federal minimum wage to $15 an hour by 2025 would increase the pay of at least 17 million people, but also put 1.3 million Americans out of work, ac",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_7f1c92f2213b40a4",
+        "text": "At the same time, the study says the $15 minimum wage would boost pay for 17 million people would otherwise be earning less than $15 an hour, and possibly for a",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_83184679773449d0",
+        "text": "The current federal minimum wage is $7.25 and last increased a decade ago.",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_51f521dc38cd43e8",
+        "text": "Less well known, and more puzzling, is the absence of agreement on what the research literature says – that is, how economists summarize the body of evidence on",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_16aed476ae144657",
+        "text": "We explore the question of what conclusions can be drawn from the literature, focusing on the evidence using subnational minimum wage variation within the Unite",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      }
+    ],
+    "evidence_summary": {
+      "total": 96,
+      "relevant": 13,
+      "supports": 13,
+      "refutes": 0,
+      "qualifies": 0,
+      "circular_rejected": 0
+    },
+    "sources": {
+      "total": 5,
+      "independent": 5,
+      "classes": {
+        "university": 1,
+        "general_web": 4
+      }
+    },
+    "contradictions": [],
+    "unanswered": [],
+    "attempted_queries": [
+      "minimum wage employment effects empirical evidence Card Krueger Neumark Wascher debate",
+      "CBO minimum wage increase employment effects estimate report",
+      "Seattle minimum wage study employment effects Jardim Long Plotnick",
+      "survey economists minimum wage employment consensus IGM Chicago",
+      "Dube \"What do we know about minimum wage\" review employment effects monotone nominal minimum wage",
+      "Neumark Wascher minimum wage employment disemployment evidence meta-analysis 2017 2019",
+      "CBO \"The Effects on Employment and Family Income of Increasing the Federal Minimum Wage\" 2019 $15 1.3 million jobs lost",
+      "Dube Lindner 2021 \"What is the effect of minimum wage increases on employment\" county pair design findings"
+    ],
+    "failed_approaches": [
+      "fetch:https://www.cbo.gov/publication/55410",
+      "fetch_domain:cbo.gov",
+      "fetch:https://wol.iza.org/uploads/articles/464/pdfs/employment-effects-of-minimum-wages.pdf",
+      "fetch_domain:wol.iza.org",
+      "fetch:https://www.cbo.gov/publication/55681",
+      "fetch_domain:cbo.gov"
+    ],
+    "evidence_coverage": {
+      "clm_5e1e29460568408a": true,
+      "clm_434b56ecf32d4b19": true,
+      "clm_cf44e27aa0574af2": true,
+      "clm_946a363486284d60": true,
+      "clm_7f1c92f2213b40a4": true,
+      "clm_83184679773449d0": true,
+      "clm_51f521dc38cd43e8": true,
+      "clm_16aed476ae144657": true,
+      "clm_06416ba078db4a9c": true,
+      "clm_0bf740af408a4caa": true,
+      "clm_648d6289d5804f70": true,
+      "clm_0bb3a529792b4dcc": true
+    },
+    "citation_coverage": {
+      "clm_5e1e29460568408a": true,
+      "clm_434b56ecf32d4b19": true,
+      "clm_cf44e27aa0574af2": true,
+      "clm_946a363486284d60": true,
+      "clm_7f1c92f2213b40a4": true,
+      "clm_83184679773449d0": true,
+      "clm_51f521dc38cd43e8": true,
+      "clm_16aed476ae144657": true,
+      "clm_06416ba078db4a9c": true,
+      "clm_0bf740af408a4caa": true,
+      "clm_648d6289d5804f70": true,
+      "clm_0bb3a529792b4dcc": true
+    },
+    "quarantined_urls": 0,
+    "injection_blocked": 0
+  },
+  "synthesis": "# Research Report: Does raising the minimum wage reduce employment? Summarize what the empirical evidence says, including where economists disagree.\n\n## Answer (written only from the certified findings below)\nEconomists do not agree on whether raising the minimum wage reduces employment, and they acknowledge genuine uncertainty about a proposed $15 federal minimum [[1]](https://www.chicagobooth.edu/review/what-economists-think-about-a-15-minimum-wage). The disagreement is well documented across studies of minimum wage employment effects in the United States, with research since the early 1990s relying heavily on subnational minimum wage variation within the country [[3]](https://www.nber.org/papers/w28388). Even what the literature as a whole concludes is poorly established: there is an absence of agreement on how economists summarize the body of evidence on employment effects [[3]](https://www.nber.org/papers/w28388). The current federal minimum wage stands at $7.25 and has not been raised in a decade [[2]](https://www.npr.org/2019/07/08/739607964/-15-minimum-wage-would-boost-17-million-workers-cut-1-3-million-jobs-cbo-says).\n\nSteve Kaplan of Chicago Booth strongly agreed that raising the wage would adversely affect the unemployment rate, arguing that a $15 rise makes entry-level and low-wage jobs very expensive [[1]](https://www.chicagobooth.edu/review/what-economists-think-about-a-15-minimum-wage). Quantitatively, a Congressional Budget Office study projected that raising the federal minimum wage to $15 by 2025 would put 1.3 million Americans out of work [[2]](https://www.npr.org/2019/07/08/739607964/-15-minimum-wage-would-boost-17-million-workers-cut-1-3-million-jobs-cbo-says).\n\nSeattle raised its minimum wage to as much as $11 in 2015 and as much as $13 in 2016 [[4]](https://www.aeaweb.org/articles?id=10.1257/pol.20180578)[[5]](https://www.nber.org/papers/w23532); an evaluation of those phase-ins attributes more modest effects to the first wage increase [[5]](https://www.nber.org/papers/w23532). The facts available here do not fully answer the broader question, however, since they provide no detailed findings on how the Seattle phase-ins affected employment and hours, no summary of the wider research literature beyond noting its disagreement, and no basis for weighing job losses against wage gains in a single conclusion [[3]](https://www.nber.org/papers/w28388)[[5]](https://www.nber.org/papers/w23532).\n\n## Certified Findings (semantic NLI verification)\n- [clm_5e1e29460568408a] But when it comes to the question of a $15 minimum wage and what it would do to US employment and productivity, economists, at least, are willing to admit to uncertainty.\n  - cited: [src_d0b613c8fab64b4a] [What Economists Think about a $15 Minimum Wage | Chicago Booth Review](https://www.chicagobooth.edu/review/what-economists-think-about-a-15-minimum-wage) (entailment p=0.97, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_434b56ecf32d4b19] Steve Kaplan of Chicago Booth strongly agreed that raising the wage would adversely affect the unemployment rate: “A $15 minimum wage rise makes entry level/low wage jobs very expensive.\n  - cited: [src_d0b613c8fab64b4a] [What Economists Think about a $15 Minimum Wage | Chicago Booth Review](https://www.chicagobooth.edu/review/what-economists-think-about-a-15-minimum-wage) (entailment p=0.98, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_cf44e27aa0574af2] The Initiative on Global Markets at Chicago Booth is back from summer hiatus with an Economic Experts Panel poll that addresses the $15 federal minimum wage proposals being considered by Congress and opined upon by presidential candidates.\n  - cited: [src_d0b613c8fab64b4a] [What Economists Think about a $15 Minimum Wage | Chicago Booth Review](https://www.chicagobooth.edu/review/what-economists-think-about-a-15-minimum-wage) (entailment p=0.90, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_946a363486284d60] Raising the federal minimum wage to $15 an hour by 2025 would increase the pay of at least 17 million people, but also put 1.3 million Americans out of work, according to a study by the Congressional Budget Office released on Monday.\n  - cited: [src_260932178dee4010] [CBO: $15 Minimum Wage Would Boost 17 Million Workers, Cut 1.3 Million Jobs : NPR](https://www.npr.org/2019/07/08/739607964/-15-minimum-wage-would-boost-17-million-workers-cut-1-3-million-jobs-cbo-says) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_7f1c92f2213b40a4] At the same time, the study says the $15 minimum wage would boost pay for 17 million people would otherwise be earning less than $15 an hour, and possibly for another 10 million Americans who would otherwise be earning slightly more than $15 per hour.\n  - cited: [src_260932178dee4010] [CBO: $15 Minimum Wage Would Boost 17 Million Workers, Cut 1.3 Million Jobs : NPR](https://www.npr.org/2019/07/08/739607964/-15-minimum-wage-would-boost-17-million-workers-cut-1-3-million-jobs-cbo-says) (entailment p=0.98, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_83184679773449d0] The current federal minimum wage is $7.25 and last increased a decade ago.\n  - cited: [src_260932178dee4010] [CBO: $15 Minimum Wage Would Boost 17 Million Workers, Cut 1.3 Million Jobs : NPR](https://www.npr.org/2019/07/08/739607964/-15-minimum-wage-would-boost-17-million-workers-cut-1-3-million-jobs-cbo-says) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_51f521dc38cd43e8] Less well known, and more puzzling, is the absence of agreement on what the research literature says – that is, how economists summarize the body of evidence on the employment effects of minimum wages.\n  - cited: [src_bc21b4d7990a41d7] [Myth or Measurement: What Does the New Minimum Wage Research Say about Minimum Wages and Job Loss in the United States? | NBER](https://www.nber.org/papers/w28388) (entailment p=0.91, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_16aed476ae144657] We explore the question of what conclusions can be drawn from the literature, focusing on the evidence using subnational minimum wage variation within the United States that has dominated the research landscape since the early 1990s.\n  - cited: [src_bc21b4d7990a41d7] [Myth or Measurement: What Does the New Minimum Wage Research Say about Minimum Wages and Job Loss in the United States? | NBER](https://www.nber.org/papers/w28388) (entailment p=0.93, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_06416ba078db4a9c] The disagreement among studies of the employment effects of minimum wages in the United States is well known.\n  - cited: [src_bc21b4d7990a41d7] [Myth or Measurement: What Does the New Minimum Wage Research Say about Minimum Wages and Job Loss in the United States? | NBER](https://www.nber.org/papers/w28388) (entailment p=0.98, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_0bf740af408a4caa] Seattle raised its minimum wage to as much as $11 in 2015 and as much as $13 in 2016.\n  - cited: [src_7b9522f51a2b4a8b] [Minimum Wage Increases, Wages, and Low-Wage Employment: Evidence from Seattle | NBER](https://www.nber.org/papers/w23532) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n  - cited: [src_4caedddaec514987] [Minimum-Wage Increases and Low-Wage Employment: Evidence from Seattle - American Economic Association](https://www.aeaweb.org/articles?id=10.1257/pol.20180578) (entailment p=1.00, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_648d6289d5804f70] This paper evaluates the wage, employment, and hours effects of the first and second phase-in of the Seattle Minimum Wage Ordinance, which raised the minimum wage from $9.47 to as much as $11 in 2015 and to as much as $13 in 2016.\n  - cited: [src_7b9522f51a2b4a8b] [Minimum Wage Increases, Wages, and Low-Wage Employment: Evidence from Seattle | NBER](https://www.nber.org/papers/w23532) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_0bb3a529792b4dcc] Evidence attributes more modest effects to the first wage increase.\n  - cited: [src_7b9522f51a2b4a8b] [Minimum Wage Increases, Wages, and Low-Wage Employment: Evidence from Seattle | NBER](https://www.nber.org/papers/w23532) (entailment p=0.98, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n\n## Uncertainty and Limitations\n- No primary-research source was available; findings rest on secondary reporting and are limited accordingly.\n- Uncertainty classification: UNCERTAIN\n\n## Sources\n1. [src_d0b613c8fab64b4a] [What Economists Think about a $15 Minimum Wage | Chicago Booth Review](https://www.chicagobooth.edu/review/what-economists-think-about-a-15-minimum-wage)\n2. [src_260932178dee4010] [CBO: $15 Minimum Wage Would Boost 17 Million Workers, Cut 1.3 Million Jobs : NPR](https://www.npr.org/2019/07/08/739607964/-15-minimum-wage-would-boost-17-million-workers-cut-1-3-million-jobs-cbo-says)\n3. [src_bc21b4d7990a41d7] [Myth or Measurement: What Does the New Minimum Wage Research Say about Minimum Wages and Job Loss in the United States? | NBER](https://www.nber.org/papers/w28388)\n4. [src_4caedddaec514987] [Minimum-Wage Increases and Low-Wage Employment: Evidence from Seattle - American Economic Association](https://www.aeaweb.org/articles?id=10.1257/pol.20180578)\n5. [src_7b9522f51a2b4a8b] [Minimum Wage Increases, Wages, and Low-Wage Employment: Evidence from Seattle | NBER](https://www.nber.org/papers/w23532)",
+  "audit": {
+    "status": "PASS",
+    "checks": {
+      "no_provisional_certifications": true,
+      "no_unsupported_critical_claims": true,
+      "citations_resolve": true,
+      "no_circular_citations": true,
+      "provenance_intact": true,
+      "numeric_consistency": true,
+      "causal_language_appropriate": true,
+      "contradictions_examined": true,
+      "uncertainty_explicit": true
+    },
+    "findings": [],
+    "unsupported_claims": [],
+    "hallucinated_citations": [],
+    "circular_citations": [],
+    "provisional_certifications": []
+  },
+  "errors": [],
+  "governance": {
+    "budget": {
+      "max_iterations": 4.0,
+      "max_tool_calls": 40.0,
+      "max_search_calls": 8.0,
+      "max_fetches": 8.0,
+      "max_sandbox_executions": 4.0,
+      "max_model_calls": 30.0,
+      "max_wall_clock_s": 540.0,
+      "max_response_chars": 18000.0,
+      "max_retries_per_call": 2.0,
+      "max_dependency_depth": 8.0,
+      "max_concurrent_fetches": 2.0,
+      "max_extensions": 2.0
+    },
+    "counters": {
+      "iterations": 2,
+      "tool_calls": 0,
+      "search_calls": 8,
+      "fetches": 8,
+      "sandbox_executions": 1,
+      "model_calls": 22,
+      "retries": 2
+    },
+    "denials": [
+      {
+        "resource": "search_calls",
+        "detail": "max 8 reached",
+        "ts": 1791338906.8928072
+      },
+      {
+        "resource": "search_calls",
+        "detail": "max 8 reached",
+        "ts": 1791338906.892829
+      },
+      {
+        "resource": "search_calls",
+        "detail": "max 8 reached",
+        "ts": 1791338906.8928354
+      },
+      {
+        "resource": "search_calls",
+        "detail": "max 8 reached",
+        "ts": 1791338920.8025866
+      },
+      {
+        "resource": "search_calls",
+        "detail": "max 8 reached",
+        "ts": 1791338920.8026001
+      },
+      {
+        "resource": "fetches",
+        "detail": "max 8 reached",
+        "ts": 1791338939.0717692
+      }
+    ],
+    "extensions": [],
+    "cancelled": false,
+    "cancel_reason": null
+  },
+  "telemetry": {
+    "request_id": "req_19e0b1da6afa4338",
+    "counters": {
+      "iterations": 2,
+      "search_calls": 8,
+      "fetch_calls": 8,
+      "fetch_failed": 3,
+      "claims_extracted": 12,
+      "evidence_evaluations": 24,
+      "claims_certified": 12,
+      "sandbox_executions": 1,
+      "duplicate_fetch_suppressed": 1,
+      "answer_synthesized_llm": 1,
+      "final_audits": 1
+    },
+    "latencies": {
+      "search": {
+        "count": 8,
+        "p50_ms": 3848.83,
+        "p95_ms": 6627.3,
+        "max_ms": 6627.3
+      },
+      "fetch": {
+        "count": 8,
+        "p50_ms": 667.75,
+        "p95_ms": 2789.26,
+        "max_ms": 2789.26
+      },
+      "evidence_eval": {
+        "count": 12,
+        "p50_ms": 1363.02,
+        "p95_ms": 2166.96,
+        "max_ms": 2166.96
+      },
+      "sandbox": {
+        "count": 1,
+        "p50_ms": 71.52,
+        "p95_ms": 71.52,
+        "max_ms": 71.52
+      }
+    },
+    "event_count": 3
+  },
+  "events": [
+    {
+      "name": "run.start",
+      "ts": 1791338772.5478528,
+      "run_id": "run_0d0fc69e7eff4dee",
+      "data": {
+        "objective": "Does raising the minimum wage reduce employment? Summarize what the empirical evidence says, including where economists disagree.",
+        "resumed": "False",
+        "backend": "anthropic-tool-use"
+      }
+    },
+    {
+      "name": "tool_session",
+      "ts": 1791338939.0726388,
+      "run_id": "run_0d0fc69e7eff4dee",
+      "data": {
+        "turns": "6",
+        "tool_calls": "[{'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': True}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': True}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': True}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': True}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': True}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}]",
+        "final_text": "Search budget is exhausted; continuing with fetches to fill remaining evidence gaps.",
+        "finish_requested": "False",
+        "stop_cause": "tool_use",
+        "backend_state": "anthropic-tool-use"
+      }
+    },
+    {
+      "name": "tool_session",
+      "ts": 1791339009.4832082,
+      "run_id": "run_0d0fc69e7eff4dee",
+      "data": {
+        "turns": "3",
+        "tool_calls": "[{'tool': 'fetch_page', 'input_keys': [], 'is_error': True}, {'tool': 'run_python', 'input_keys': ['code'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'finish_research', 'input_keys': [], 'is_error': False}]",
+        "final_text": "<tool_call><parameter=run_python><parameter=code>\n# Arithmetic sanity-check on certified claims (uses only figures inside STATE DIGEST).\ncbo_emp_loss_millions = 1.3\ncbo_pay_raise_workers_millions = 17.0\nratio = cbo_pay_raise_workers_millions / cbo_emp_loss_millions\nprint(\"CBO claimed ratio workers-raises : workers-losing-jobs =\", round(ratio, 2))\n\nmin_wage_now = 7.25\nmin_wage_proposed = 15.0\npct_increase = (min_wage_proposed - min_wage_now) / min_wage_now * 100\nprint(\"Nominal % increase 7.25 -> ",
+        "finish_requested": "True",
+        "stop_cause": "tool_use",
+        "backend_state": "anthropic-tool-use"
+      }
+    }
+  ]
+}

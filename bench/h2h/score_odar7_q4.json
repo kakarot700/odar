@@ -1,0 +1,200 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_6f8f3711a560",
+ "trust_score": 100,
+ "grade": "citations hold up",
+ "counts": {
+  "SUPPORTED": 3,
+  "PARTIALLY SUPPORTED": 0,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 0,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 0
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "As of June 5, 2026, the RBI's policy repo rate was 5.25 per cent.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=62863",
+     "marker": "[6]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.92,
+     "contradiction": 0.0,
+     "quote": "| Monetary Policy Decisions The Monetary Policy Committee (MPC) held its 61st meeting from June 3 to 5, 2026, under the chairmanship of Shri Sanjay Malhotra, Governor, Reserve Bank of India. The MPC members Dr. Nagesh Kumar, Shri Saugata Bhattacharya, Prof. Ram Singh, Dr. Poonam Gupta and Shri Indranil Bhattacharyya attended the meeting. 2. After a detailed assessment of the evolving macroeconomic",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": 2026
+    }
+   ],
+   "quote": "| Monetary Policy Decisions The Monetary Policy Committee (MPC) held its 61st meeting from June 3 to 5, 2026, under the chairmanship of Shri Sanjay Malhotra, Governor, Reserve Bank of India. The MPC members Dr. Nagesh Kumar, Shri Saugata Bhattacharya, Prof. Ram Singh, Dr. Poonam Gupta and Shri Indranil Bhattacharyya attended the meeting. 2. After a detailed assessment of the evolving macroeconomic",
+   "quote_url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=62863",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "The Monetary Policy Committee voted unanimously to keep it unchanged at that level.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=62863",
+     "marker": "[6]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.976,
+     "contradiction": 0.0,
+     "quote": "The MPC members Dr. Nagesh Kumar, Shri Saugata Bhattacharya, Prof. Ram Singh, Dr. Poonam Gupta and Shri Indranil Bhattacharyya attended the meeting. 2. After a detailed assessment of the evolving macroeconomic and financial developments and the outlook, the MPC voted unanimously to keep the policy repo rate under the liquidity adjustment facility (LAF) unchanged at 5.25 per cent.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": 2026
+    }
+   ],
+   "quote": "The MPC members Dr. Nagesh Kumar, Shri Saugata Bhattacharya, Prof. Ram Singh, Dr. Poonam Gupta and Shri Indranil Bhattacharyya attended the meeting. 2. After a detailed assessment of the evolving macroeconomic and financial developments and the outlook, the MPC voted unanimously to keep the policy repo rate under the liquidity adjustment facility (LAF) unchanged at 5.25 per cent.",
+   "quote_url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=62863",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "At its February 4-6, 2026 meeting, the MPC also kept the repo rate unchanged at 5.25 per cent.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=62169",
+     "marker": "[4]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.976,
+     "contradiction": 0.0,
+     "quote": "| Monetary Policy Decisions The Monetary Policy Committee (MPC) held its 59th meeting from February 4 to 6, 2026, under the chairmanship of Shri Sanjay Malhotra, Governor, Reserve Bank of India. The MPC members Dr. Nagesh Kumar, Shri Saugata Bhattacharya, Prof. Ram Singh, Dr. Poonam Gupta and Shri Indranil Bhattacharyya attended the meeting. 2. After a detailed assessment of the evolving macroecon",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": 2026
+    }
+   ],
+   "quote": "| Monetary Policy Decisions The Monetary Policy Committee (MPC) held its 59th meeting from February 4 to 6, 2026, under the chairmanship of Shri Sanjay Malhotra, Governor, Reserve Bank of India. The MPC members Dr. Nagesh Kumar, Shri Saugata Bhattacharya, Prof. Ram Singh, Dr. Poonam Gupta and Shri Indranil Bhattacharyya attended the meeting. 2. After a detailed assessment of the evolving macroecon",
+   "quote_url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=62169",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=62863",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=62863",
+   "title": "Press Releases | Official Website of Reserve Bank of India",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "7697cb4c0b28dc8ef357b6573b307b7ff856468b1d33beb7665a87662709999f",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=62169",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=62169",
+   "title": "Press Releases | Official Website of Reserve Bank of India",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "fa1a0dd61b61539b6494415567406b1f1086a28bdfa38021e84910c0f5035290",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 53.4,
+ "usage": {
+  "fetches": 2,
+  "wayback_lookups": 0,
+  "searches": 0,
+  "llm_calls": 0,
+  "nli_checks": 3,
+  "scorer_load_ms": 69333
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 3,
+   "citations": 3
+  },
+  {
+   "t": 1.93,
+   "event": "fetch",
+   "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=62863",
+   "state": "live",
+   "http_status": 200,
+   "chars": 8428,
+   "error": ""
+  },
+  {
+   "t": 2.0,
+   "event": "fetch",
+   "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=62169",
+   "state": "live",
+   "http_status": 200,
+   "chars": 6800,
+   "error": ""
+  },
+  {
+   "t": 13.04,
+   "event": "verify",
+   "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=62863",
+   "claim": "As of June 5, 2026, the RBI's policy repo rate was 5.25 per cent.",
+   "verdict": "SUPPORTED",
+   "ent": 0.92,
+   "con": 0.0
+  },
+  {
+   "t": 31.82,
+   "event": "verify",
+   "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=62863",
+   "claim": "The Monetary Policy Committee voted unanimously to keep it unchanged at that level.",
+   "verdict": "SUPPORTED",
+   "ent": 0.976,
+   "con": 0.0
+  },
+  {
+   "t": 53.36,
+   "event": "verify",
+   "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=62169",
+   "claim": "At its February 4-6, 2026 meeting, the MPC also kept the repo rate unchanged at 5.25 per cent.",
+   "verdict": "SUPPORTED",
+   "ent": 0.976,
+   "con": 0.0
+  },
+  {
+   "t": 53.38,
+   "event": "done",
+   "trust_score": 100
+  }
+ ],
+ "score_s": 140.6
+}

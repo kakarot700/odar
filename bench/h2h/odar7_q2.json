@@ -1,0 +1,178 @@
+{
+ "thread_id": "256b7f9cfe2ac81b",
+ "share_token": "08VWaOln22U7Qqld",
+ "title": "How effective is the R21/Matrix-M malaria vaccine in clinical trials?",
+ "project_id": "",
+ "sources": [
+  {
+   "url": "https://clinicaltrials.gov/study/NCT07009847",
+   "title": "Study Details | NCT07009847 | An Observational Study to Assess Effectiveness and Safety of The R21/Matrix-M Malaria Vaccine | ClinicalTrials.gov",
+   "domain": "clinicaltrials.gov",
+   "snippet": "# Search for terms\n## Study Overview\nThis is an observational case-control study to assess the effectiveness of the R21/Matrix-M vaccine against severe malaria, clinical malaria (in high transmission perennial areas), and to assess if the R21 vaccine recipients are at an increased risk of deaths (all-cause).\nClinical malaria, severe malaria and death (all-cause) cases will be enrolled in study.\n\n...\n\n## Study Plan\nThis is a case-control study to assess the effectiveness of the R21/Matrix-M Vaccine against clinical malaria in children aged \u2265 5 months of age.\n| Outcome Measure | Measure Descript [...truncated by sanitizer]",
+   "kind": "web",
+   "date": "2025-05-05T00:00:00",
+   "n": 1
+  },
+  {
+   "url": "http://pubmed.ncbi.nlm.nih.gov/38310910",
+   "title": "Safety and efficacy of malaria vaccine candidate R21/Matrix-M in African children: a multicentre, double-blind, randomised, phase 3 trial",
+   "domain": "pubmed.ncbi.nlm.nih.gov",
+   "snippet": "# Safety and efficacy of malaria vaccine candidate R21/Matrix-M in African children: a multicentre, double-blind, randomised, phase 3 trial\n## Abstract\n**Background:** Recently, we found that a new malaria vaccine, R21/Matrix-M, had over 75% efficacy against clinical malaria with seasonal administration in a phase 2b trial in Burkina Faso.\nHere, we report on safety and efficacy of the vaccine in a phase 3 trial enrolling over 4800 children across four countries followed for up to 18 months at seasonal sites and 12 months at standard sites.\n\n...\n\n# Safety and efficacy of malaria vaccine candida [...truncated by sanitizer]",
+   "kind": "web",
+   "date": "2024-10-02T00:00:00",
+   "n": 2
+  },
+  {
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42797644/",
+   "title": "Efficacy and Response of R21/Matrix-M in Malaria Vaccine: A Systematic Review and Meta-Analysis of Clinical Trials.",
+   "domain": "pubmed.ncbi.nlm.nih.gov",
+   "snippet": "# Efficacy and Response of R21/Matrix-M in Malaria Vaccine: A Systematic Review and Meta-Analysis of Clinical Trials.\n## Abstract\nThe primary quantitative synthesis pooled 12-month Cox proportional-hazards estimates for the first episode of clinical malaria from two independent randomized field trials using generic inverse variance methods. Robustness was examined using a fixed-effect model, a sensitivity analysis that disaggregated the phase III seasonal and standard/perennial transmission strata, and a phase III-only analysis.\n\n...\n\n**RESULTS:** The primary trial-level meta-analysis yielded  [...truncated by sanitizer]",
+   "kind": "web",
+   "date": "2026-09-19T00:00:00",
+   "n": 3
+  },
+  {
+   "url": "https://clinicaltrials.gov/study/NCT03896724",
+   "title": "Safety, Immunogenicity and Efficacy of R21 Matrix-M in 5- ...",
+   "domain": "clinicaltrials.gov",
+   "snippet": "# Search for terms\n## Study Overview\nBrief Summary\nThis is a double blind randomised controlled clinical trial to evaluate the efficacy of R21 adjuvanted with Matrix-M in healthy 5-17 month old children in a malaria endemic area.\nDetailed Description\nIn this double-blind, randomised, controlled, phase 2b trial, the low-dose circumsporozoite protein-based vaccine R21, with two different doses of adjuvant Matrix-M (MM), was given to children aged 5-17 months in Nanoro, Burkina Faso-a highly seasonal malaria transmission setting.\nThree vaccinations were administered at 4-week intervals before the [...truncated by sanitizer]",
+   "kind": "web",
+   "date": "2025-07-08T00:00:00",
+   "n": 4
+  },
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10755190",
+   "title": "R21/Matrix-M\u2122 malaria vaccine: a new tool to achieve WHO\u2019s goal to eliminate malaria in 30 countries by 2030? - PMC",
+   "domain": "pmc.ncbi.nlm.nih.gov",
+   "snippet": "# R21/Matrix-M\u2122 malaria vaccine: a new tool to achieve WHO\u2019s goal to eliminate malaria in 30 countries by 2030?\n## R21/Matrix-M\u2122 malaria vaccine, a potential game changer?\nR21/MATRIX-M\u2122\u2014administered in 3 doses before the malaria season demonstrated an efficacy of 77% against clinical malaria over 1 year in the 5\u201317 months age group, thus reaching the WHO-specified efficacy goal of at least 75% in the target population of African children.\n\n...\n\nA phase 3 trial was initiated in 2021 at 5 sites in four sub-Saharan African countries (Burkina Faso, Mali, Tanzania and Kenya), two in high seasonal t [...truncated by sanitizer]",
+   "kind": "web",
+   "date": "2011-11-23T00:00:00",
+   "n": 5
+  },
+  {
+   "url": "https://link.springer.com/article/10.1186/s13063-025-09048-6",
+   "title": "Seasonal mass vaccination with R21/Matrix-M for malaria elimination (SERVAL): protocol of the cluster randomised trial | Trials | Springer Nature Link",
+   "domain": "link.springer.com",
+   "snippet": "# Seasonal mass vaccination with R21/Matrix-M for malaria elimination (SERVAL): protocol of the cluster randomised trial\n## Background\nA double-blind, randomised, phase 3 trial across five sites in four African countries with differing malaria transmission intensities and seasonality reported in children aged 5\u201336 months a vaccine efficacy against multiple episodes of clinical malaria between 67 and 75%  [8 ]. Both vaccines are safe and well tolerated  [7 , 8 , 9 ].\n\n...\n\n## Discussion\nThe SERVAL trial aims to determine the impact of seasonal mass vaccination with R21 on malaria burden, i.e. p [...truncated by sanitizer]",
+   "kind": "web",
+   "date": "2025-09-29T00:00:00",
+   "n": 6
+  }
+ ],
+ "answer": "In a phase 3 trial, 12-month vaccine efficacy was 75% (95% CI 71-79) at seasonal sites and 68% (61-74) at standard sites for time to first clinical malaria [2]. Efficacy against multiple clinical malaria episodes was 75% (71-78) at seasonal sites and 67% (59-73) at standard sites [2]. A meta-analysis pooled 12-month estimates from two randomised field trials, giving a hazard ratio of 0.265 (95% CI 0.235-0.299), equivalent to 73.5% efficacy (95% CI 70.1-76.5%) [3]. A phase III-only sensitivity analysis remained strongly protective, with a hazard ratio of 0.281 (95% CI 0.220-0.357; VE 71.9%) [3]. The vaccine demonstrated 77% efficacy against clinical malaria over 1 year in the 5-17 months age group [5]. A phase 3 trial reported efficacy against multiple episodes of clinical malaria between 67 and 75% in children aged 5-36 months [6].",
+ "abstained": false,
+ "timing": {
+  "search_s": 8.94,
+  "fetch_s": -0.0,
+  "ttft_s": 25.01,
+  "total_s": 25.01
+ },
+ "verification": {
+  "citations": [
+   {
+    "occ": 0,
+    "n": 2,
+    "marker": "[2]",
+    "claim": "In a phase 3 trial, 12-month vaccine efficacy was 75% (95% CI 71-79) at seasonal sites and 68% (61-74) at standard sites for time to first clinical malaria .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "Here, we report on safety and efficacy of the vaccine in a phase 3 trial enrolling over 4800 children across four countries followed for up to 18 months at seasonal sites and 12 months at standard sites. The primary objective was protective efficacy of R21/Matrix-M from 14 days after third vaccination to 12 months after completion of the primary series at seasonal and standard sites separately as ",
+    "note": "",
+    "title": "Safety and efficacy of malaria vaccine candidate R21/Matrix-M in African children: a multicentre, double-blind, randomised, phase 3 trial",
+    "domain": "pubmed.ncbi.nlm.nih.gov",
+    "url": "http://pubmed.ncbi.nlm.nih.gov/38310910",
+    "kind": "web",
+    "entailment": 0.994,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 1,
+    "n": 2,
+    "marker": "[2]",
+    "claim": "Efficacy against multiple clinical malaria episodes was 75% (71-78) at seasonal sites and 67% (59-73) at standard sites .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "Similarly, vaccine efficacy against multiple clinical malaria episodes was 75% (71-78; p<0\u00b70001) at the seasonal sites and 67% (59-73; p<0\u00b70001) at standard sites.",
+    "note": "",
+    "title": "Safety and efficacy of malaria vaccine candidate R21/Matrix-M in African children: a multicentre, double-blind, randomised, phase 3 trial",
+    "domain": "pubmed.ncbi.nlm.nih.gov",
+    "url": "http://pubmed.ncbi.nlm.nih.gov/38310910",
+    "kind": "web",
+    "entailment": 0.982,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 2,
+    "n": 3,
+    "marker": "[3]",
+    "claim": "A meta-analysis pooled 12-month estimates from two randomised field trials, giving a hazard ratio of 0.265 (95% CI 0.235-0.299), equivalent to 73.5% efficacy (95% CI 70.1-76.5%) .",
+    "verdict": "partial",
+    "check_verdict": "PARTIALLY SUPPORTED",
+    "quote": "The primary quantitative synthesis pooled 12-month Cox proportional-hazards estimates for the first episode of clinical malaria from two independent randomized field trials using generic inverse variance methods.",
+    "note": "partly supported: Passages confirm two trials, 12-month pooling, HR 0.265, CI, and 73.5% VE.",
+    "title": "Efficacy and Response of R21/Matrix-M in Malaria Vaccine: A Systematic Review and Meta-Analysis of Clinical Trials.",
+    "domain": "pubmed.ncbi.nlm.nih.gov",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42797644/",
+    "kind": "web",
+    "entailment": 0.027,
+    "judged_by": "nli+llm"
+   },
+   {
+    "occ": 3,
+    "n": 3,
+    "marker": "[3]",
+    "claim": "A phase III-only sensitivity analysis remained strongly protective, with a hazard ratio of 0.281 (95% CI 0.220-0.357; VE 71.9%) .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "The fixed-effect estimate was HR 0.270 (95% CI 0.240-0.304), and the phase III-only sensitivity analysis remained strongly protective (HR 0.281, 95% CI 0.220-0.357; VE 71.9%).",
+    "note": "",
+    "title": "Efficacy and Response of R21/Matrix-M in Malaria Vaccine: A Systematic Review and Meta-Analysis of Clinical Trials.",
+    "domain": "pubmed.ncbi.nlm.nih.gov",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42797644/",
+    "kind": "web",
+    "entailment": 0.996,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 4,
+    "n": 5,
+    "marker": "[5]",
+    "claim": "The vaccine demonstrated 77% efficacy against clinical malaria over 1 year in the 5-17 months age group .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "R21/MATRIX-M\u2122\u2014administered in 3 doses before the malaria season demonstrated an efficacy of 77% against clinical malaria over 1 year in the 5\u201317 months age group, thus reaching the WHO-specified efficacy goal of at least 75% in the target population of African children.",
+    "note": "",
+    "title": "R21/Matrix-M\u2122 malaria vaccine: a new tool to achieve WHO\u2019s goal to eliminate malaria in 30 countries by 2030? - PMC",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10755190",
+    "kind": "web",
+    "entailment": 0.982,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 5,
+    "n": 6,
+    "marker": "[6]",
+    "claim": "A phase 3 trial reported efficacy against multiple episodes of clinical malaria between 67 and 75% in children aged 5-36 months .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "A double-blind, randomised, phase 3 trial across five sites in four African countries with differing malaria transmission intensities and seasonality reported in children aged 5\u201336 months a vaccine efficacy against multiple episodes of clinical malaria between 67 and 75% [8 ]. Both vaccines are",
+    "note": "",
+    "title": "Seasonal mass vaccination with R21/Matrix-M for malaria elimination (SERVAL): protocol of the cluster randomised trial | Trials | Springer Nature Link",
+    "domain": "link.springer.com",
+    "url": "https://link.springer.com/article/10.1186/s13063-025-09048-6",
+    "kind": "web",
+    "entailment": 0.989,
+    "judged_by": "nli"
+   }
+  ],
+  "counts": {
+   "supported": 5,
+   "partial": 1
+  },
+  "elapsed_s": 87.47,
+  "total_s": 112.63
+ },
+ "q": 2,
+ "seconds": 113.3
+}

@@ -1,0 +1,574 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_b98d347dfd2f",
+ "trust_score": 62,
+ "grade": "mixed: check flagged claims",
+ "counts": {
+  "SUPPORTED": 2,
+  "PARTIALLY SUPPORTED": 6,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 0,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 11
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "The EU AI Act is a risk-based framework: the more potential harm an AI system poses, the stricter the rules.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "It applies to providers and deployers of AI systems in the EU, including some based outside the EU whose systems are used there.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+     "marker": "[2]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.001,
+     "contradiction": 0.0,
+     "quote": "AI Act obligations for providers of general-purpose AI models enter into application.",
+     "note": "the page supports part of this claim, not all of it",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "AI Act obligations for providers of general-purpose AI models enter into application.",
+   "quote_url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "Prohibited practices: It bans specified uses considered unacceptable, including certain manipulative or exploitative practices and social scoring.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4",
+   "claim": "Prohibitions and AI-literacy requirements began applying on 2 February 2025.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+     "marker": "[2]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.998,
+     "contradiction": 0.998,
+     "quote": "01 Aug 2024Entry into force 02 Feb 2025General provisions (definitions & AI literacy) and prohibitions apply",
+     "note": "only a short or loosely matching passage supports this",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "01 Aug 2024Entry into force 02 Feb 2025General provisions (definitions & AI literacy) and prohibitions apply",
+   "quote_url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5.1",
+   "claim": "High-risk AI systems used in areas such as employment, education, critical infrastructure, and certain public services face requirements for risk management.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5.2",
+   "claim": "High-risk AI systems used in areas such as employment, education, critical infrastructure, and certain public services face requirements for data governance.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5.3",
+   "claim": "High-risk AI systems used in areas such as employment, education, critical infrastructure, and certain public services face requirements for documentation.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5.4",
+   "claim": "High-risk AI systems used in areas such as employment, education, critical infrastructure, and certain public services face requirements for logging.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6.1",
+   "claim": "Under the updated timeline, rules for high-risk use cases in certain sensitive areas apply from 2 December 2027.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+     "marker": "[2]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.988,
+     "contradiction": 0.0,
+     "quote": "02 Dec 2026New prohibitions + Article 50(2) transition apply ** Prohibitions, for AI systems generating non-consensual sexual deepfakes and child sexual abuse material, start to apply.",
+     "note": "only a short or loosely matching passage supports this",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "02 Dec 2026New prohibitions + Article 50(2) transition apply ** Prohibitions, for AI systems generating non-consensual sexual deepfakes and child sexual abuse material, start to apply.",
+   "quote_url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6.2",
+   "claim": "Under the updated timeline, rules for AI embedded in regulated products apply from 2 August 2028.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+     "marker": "[2]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.969,
+     "contradiction": 0.891,
+     "quote": "The EU\u2019s AI Act legislation applies progressively, with a full roll-out of the main application milestones foreseen by 2 August 2028.",
+     "note": "only a short or loosely matching passage supports this",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "The EU\u2019s AI Act legislation applies progressively, with a full roll-out of the main application milestones foreseen by 2 August 2028.",
+   "quote_url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c7.1",
+   "claim": "General-purpose AI (GPAI) providers have obligations that include technical documentation and information for downstream users.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c7.2",
+   "claim": "Additional duties apply to models with systemic risk.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c8",
+   "claim": "These rules began applying on 2 August 2025.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+     "marker": "[2]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.814,
+     "contradiction": 0.0,
+     "quote": "02 Aug 2026The majority of rules of the AI Act come into force and enforcement starts for applicable rules",
+     "note": "only a short or loosely matching passage supports this",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "02 Aug 2026The majority of rules of the AI Act come into force and enforcement starts for applicable rules",
+   "quote_url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c9",
+   "claim": "Transparency: People must be informed in certain AI interactions, and AI-generated or manipulated content must be identified in specified cases.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c10",
+   "claim": "The main transparency rules apply from 2 August 2026.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+     "marker": "[1]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.001,
+     "contradiction": 0.995,
+     "quote": "The transparency rules of the AI Act will come into effect in August 2026.",
+     "note": "partly supported: Passages say August 2026 but not the specific 2nd.",
+     "judged_by": "nli+llm",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "The transparency rules of the AI Act will come into effect in August 2026.",
+   "quote_url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c11",
+   "claim": "Governance and enforcement: The Act establishes EU-level and national oversight, monitoring, and penalties for non-compliance.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+     "marker": "[1]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.946,
+     "contradiction": 0.0,
+     "quote": "From 2 August 2026, the AI Office and authorities of the Member States are responsible for implementing, supervising and enforcing the AI Act. The AI Office holds enforcement powers over GPAI models. It can request technical documentation, evaluate models, require corrective measures and issue fines for non-compliance.",
+     "note": "only a short or loosely matching passage supports this",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    },
+    {
+     "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.897,
+     "contradiction": 0.0,
+     "quote": "Enforcement of the AI Act starts at national and EU-level concerning general-purpose AI models, prohibitions, transparency rules and AI literacy.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "Enforcement of the AI Act starts at national and EU-level concerning general-purpose AI models, prohibitions, transparency rules and AI literacy.",
+   "quote_url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c12",
+   "claim": "Timing: The Act entered into force on 1 August 2024 and is being phased in.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c13",
+   "claim": "Most remaining rules apply from 2 August 2026, while the high-risk-system dates above are later.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c14",
+   "claim": "The timeline reflects amendments introduced by the Digital Omnibus on AI.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.98,
+     "contradiction": 0.0,
+     "quote": "The Digital Package on Simplification proposed amendments to simplify the AI Act implementation and ensure the rules remain clear, simple, and innovation-friendly.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    },
+    {
+     "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.995,
+     "contradiction": 0.0,
+     "quote": "The timeline takes into account the AI Act amendments introduced by Digital Omnibus on AI.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "The Digital Package on Simplification proposed amendments to simplify the AI Act implementation and ensure the rules remain clear, simple, and innovation-friendly.",
+   "quote_url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+   "title": "Timeline for the Implementation of the EU AI Act | AI Act Service Desk",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "c1b80b2a1296cea8115204d46a08f1cebe0bace7691307f8730d26b49578bbd2",
+   "quarantined": false
+  },
+  {
+   "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+   "title": "AI Act | Shaping Europe\u2019s digital future",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "beaad56d6808108286cd86baa800132189bc1e756ae88a52a8fcf43be6e5636d",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 75.4,
+ "usage": {
+  "fetches": 2,
+  "wayback_lookups": 0,
+  "searches": 0,
+  "llm_calls": 4,
+  "nli_checks": 12,
+  "scorer_load_ms": 18377
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 14,
+   "citations": 9
+  },
+  {
+   "t": 22.81,
+   "event": "fetch",
+   "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+   "state": "live",
+   "http_status": 200,
+   "chars": 13605,
+   "error": ""
+  },
+  {
+   "t": 23.33,
+   "event": "fetch",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+   "state": "live",
+   "http_status": 200,
+   "chars": 1707,
+   "error": ""
+  },
+  {
+   "t": 32.71,
+   "event": "verify",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+   "claim": "It applies to providers and deployers of AI systems in the EU, including some based outside the EU whose systems are use",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.001,
+   "con": 0.0
+  },
+  {
+   "t": 39.21,
+   "event": "verify",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+   "claim": "Prohibitions and AI-literacy requirements began applying on 2 February 2025.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.998,
+   "con": 0.998
+  },
+  {
+   "t": 46.93,
+   "event": "verify",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+   "claim": "Under the updated timeline, rules for high-risk use cases in certain sensitive areas apply from 2 December 2027.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.988,
+   "con": 0.0
+  },
+  {
+   "t": 52.72,
+   "event": "verify",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+   "claim": "Under the updated timeline, rules for AI embedded in regulated products apply from 2 August 2028.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.969,
+   "con": 0.891
+  },
+  {
+   "t": 55.28,
+   "event": "verify",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+   "claim": "These rules began applying on 2 August 2025.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.814,
+   "con": 0.0
+  },
+  {
+   "t": 63.85,
+   "event": "paraphrase_judge",
+   "claim": "The main transparency rules apply from 2 August 2026.",
+   "verdict": "PARTIAL",
+   "grounded": true
+  },
+  {
+   "t": 63.85,
+   "event": "verify",
+   "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+   "claim": "The main transparency rules apply from 2 August 2026.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.001,
+   "con": 0.995
+  },
+  {
+   "t": 66.98,
+   "event": "verify",
+   "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+   "claim": "Governance and enforcement: The Act establishes EU-level and national oversight, monitoring, and penalties for non-compl",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.946,
+   "con": 0.0
+  },
+  {
+   "t": 69.79,
+   "event": "verify",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+   "claim": "Governance and enforcement: The Act establishes EU-level and national oversight, monitoring, and penalties for non-compl",
+   "verdict": "SUPPORTED",
+   "ent": 0.897,
+   "con": 0.0
+  },
+  {
+   "t": 72.48,
+   "event": "verify",
+   "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+   "claim": "The timeline reflects amendments introduced by the Digital Omnibus on AI.",
+   "verdict": "SUPPORTED",
+   "ent": 0.98,
+   "con": 0.0
+  },
+  {
+   "t": 75.42,
+   "event": "verify",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+   "claim": "The timeline reflects amendments introduced by the Digital Omnibus on AI.",
+   "verdict": "SUPPORTED",
+   "ent": 0.995,
+   "con": 0.0
+  },
+  {
+   "t": 75.43,
+   "event": "done",
+   "trust_score": 62
+  }
+ ],
+ "score_s": 95.7
+}

@@ -1,0 +1,407 @@
+{
+ "references": [],
+ "confidence": "low",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_93763768dd87",
+ "trust_score": 62,
+ "grade": "mixed: check flagged claims (low confidence: most cited pages were unreadable)",
+ "counts": {
+  "SUPPORTED": 2,
+  "PARTIALLY SUPPORTED": 1,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 1,
+  "UNVERIFIABLE": 5,
+  "DEAD LINK": 0,
+  "NO CITATION": 0
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "In 2023, there were an estimated 263 million cases and 597,000 malaria deaths worldwide.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+     "marker": "[1]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.996,
+     "contradiction": 0.0,
+     "quote": "According to WHO\u2019s latest World malaria report, there were an estimated 263 million cases and 597 000 malaria deaths worldwide in 2023.",
+     "note": "the page supports the claim's gist but not the figure(s) 597,000",
+     "judged_by": "nli",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "According to WHO\u2019s latest World malaria report, there were an estimated 263 million cases and 597 000 malaria deaths worldwide in 2023.",
+   "quote_url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "Since 2000, 2.2 billion cases and 12.7 million deaths have been averted.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.993,
+     "contradiction": 0.0,
+     "quote": "New data from the WHO reveal that an estimated 2.2 billion cases of malaria and 12.7 million deaths have been averted since 2000, but the disease remains a serious global health threat, particularly in the WHO African Region.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "New data from the WHO reveal that an estimated 2.2 billion cases of malaria and 12.7 million deaths have been averted since 2000, but the disease remains a serious global health threat, particularly in the WHO African Region.",
+   "quote_url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "The number of cases in 2023 exceeded that of 2022 by around 11 million.",
+   "verdict": "UNVERIFIABLE",
+   "citations": [
+    {
+     "url": "https://www.thelancet.com/journals/lanmic/article/PIIS2666-5247(25",
+     "marker": "[6]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "blocked",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "page exists but could not be read (HTTP 403); archive check unavailable",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.thelancet.com/journals/lanmic/article/PIIS2666-5247(25",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "low",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4",
+   "claim": "Azerbaijan, Belize, Cabo Verde, and Tajikistan were declared malaria free in 2023 and Egypt in 2024.",
+   "verdict": "UNVERIFIABLE",
+   "citations": [
+    {
+     "url": "https://www.thelancet.com/journals/lanmic/article/PIIS2666-5247(25",
+     "marker": "[6]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "blocked",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "page exists but could not be read (HTTP 403); archive check unavailable",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.thelancet.com/journals/lanmic/article/PIIS2666-5247(25",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "low",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5",
+   "claim": "As of November 2024, WHO had certified 45 countries and territories malaria free.",
+   "verdict": "UNVERIFIABLE",
+   "citations": [
+    {
+     "url": "https://www.thelancet.com/journals/lanmic/article/PIIS2666-5247(25",
+     "marker": "[6]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "blocked",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "page exists but could not be read (HTTP 403); archive check unavailable",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.thelancet.com/journals/lanmic/article/PIIS2666-5247(25",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "low",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6",
+   "claim": "A second malaria vaccine, R21, was prequalified by WHO in December 2023.",
+   "verdict": "UNVERIFIABLE",
+   "citations": [
+    {
+     "url": "https://www.thelancet.com/journals/lanmic/article/PIIS2666-5247(25",
+     "marker": "[6]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "blocked",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "page exists but could not be read (HTTP 403); archive check unavailable",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.thelancet.com/journals/lanmic/article/PIIS2666-5247(25",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "low",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c7",
+   "claim": "Both R21 and RTS,S/AS01 were introduced into routine child immunisation schedules in Africa in 2024.",
+   "verdict": "UNVERIFIABLE",
+   "citations": [
+    {
+     "url": "https://www.thelancet.com/journals/lanmic/article/PIIS2666-5247(25",
+     "marker": "[6]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "blocked",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "page exists but could not be read (HTTP 403); archive check unavailable",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.thelancet.com/journals/lanmic/article/PIIS2666-5247(25",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "low",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c8",
+   "claim": "Children under 5, women and girls, Indigenous Peoples, migrants, people with disabilities, and people in remote areas are at high risk of infection.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.997,
+     "contradiction": 0.0,
+     "quote": "Groups at high risk of a malaria infection include children under 5, women and girls, Indigenous Peoples, migrants, people with disabilities, and people in remote areas with limited healthcare access.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "Groups at high risk of a malaria infection include children under 5, women and girls, Indigenous Peoples, migrants, people with disabilities, and people in remote areas with limited healthcare access.",
+   "quote_url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c9",
+   "claim": "In Cambodia, findings prompted replacement of DHA-PPQ with artesunate\u2013mefloquine as first-line treatment in 2016.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://www.who.int/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024.pdf",
+     "marker": "[5]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.001,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli+llm",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.who.int/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024.pdf",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "title": "World malaria report 2024",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "2f9486af14504195e80d0ac8f93d5788202b6b610d73ea81a56c7aaef0f3240f",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.thelancet.com/journals/lanmic/article/PIIS2666-5247(25",
+   "state": "blocked",
+   "http_status": 403,
+   "error": "HTTP 403",
+   "resolved_url": "https://www.thelancet.com/journals/lanmic/article/PIIS2666-5247(25",
+   "title": "",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "",
+   "archive_check": "unavailable",
+   "content_hash": "",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.who.int/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024.pdf",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.who.int/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024.pdf",
+   "title": "",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "3f14f990a3d5f216663c8a0f7b5f8d31f6a7ca5f5ee74e3e9d965b1a15362353",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 44.8,
+ "usage": {
+  "fetches": 3,
+  "wayback_lookups": 1,
+  "searches": 0,
+  "llm_calls": 1,
+  "nli_checks": 4,
+  "scorer_load_ms": 87056
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 9,
+   "citations": 9
+  },
+  {
+   "t": 0.31,
+   "event": "fetch",
+   "url": "https://www.thelancet.com/journals/lanmic/article/PIIS2666-5247(25",
+   "state": "blocked",
+   "http_status": 403,
+   "chars": 0,
+   "error": "HTTP 403"
+  },
+  {
+   "t": 0.96,
+   "event": "fetch",
+   "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "state": "live",
+   "http_status": 200,
+   "chars": 1506,
+   "error": ""
+  },
+  {
+   "t": 7.7,
+   "event": "wayback",
+   "url": "https://www.thelancet.com/journals/lanmic/article/PIIS2666-5247(25",
+   "error": "RuntimeError: wayback CDX HTTP 503"
+  },
+  {
+   "t": 7.98,
+   "event": "fetch",
+   "url": "https://www.who.int/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024.pdf",
+   "state": "live",
+   "http_status": 200,
+   "chars": 150028,
+   "error": ""
+  },
+  {
+   "t": 17.29,
+   "event": "verify",
+   "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "claim": "In 2023, there were an estimated 263 million cases and 597,000 malaria deaths worldwide.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.996,
+   "con": 0.0
+  },
+  {
+   "t": 26.59,
+   "event": "verify",
+   "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "claim": "Since 2000, 2.2 billion cases and 12.7 million deaths have been averted.",
+   "verdict": "SUPPORTED",
+   "ent": 0.993,
+   "con": 0.0
+  },
+  {
+   "t": 34.35,
+   "event": "verify",
+   "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "claim": "Children under 5, women and girls, Indigenous Peoples, migrants, people with disabilities, and people in remote areas ar",
+   "verdict": "SUPPORTED",
+   "ent": 0.997,
+   "con": 0.0
+  },
+  {
+   "t": 44.84,
+   "event": "paraphrase_judge",
+   "claim": "In Cambodia, findings prompted replacement of DHA-PPQ with artesunate\u2013mefloquine as first-line treatment in 2016.",
+   "verdict": "NOT_SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 44.84,
+   "event": "verify",
+   "url": "https://www.who.int/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024.pdf",
+   "claim": "In Cambodia, findings prompted replacement of DHA-PPQ with artesunate\u2013mefloquine as first-line treatment in 2016.",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.001,
+   "con": 0.0
+  },
+  {
+   "t": 44.85,
+   "event": "done",
+   "trust_score": 62
+  }
+ ],
+ "score_s": 133.3
+}

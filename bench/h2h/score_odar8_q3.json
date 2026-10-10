@@ -1,0 +1,335 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_627968abe117",
+ "trust_score": 100,
+ "grade": "citations hold up",
+ "counts": {
+  "SUPPORTED": 5,
+  "PARTIALLY SUPPORTED": 0,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 0,
+  "UNVERIFIABLE": 1,
+  "DEAD LINK": 0,
+  "NO CITATION": 0
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "The 2023 Nobel Prize in Physiology or Medicine was awarded jointly to Katalin Karik\u00f3 and Drew Weissman.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.lindau-nobel.org/news-nobel-prize-in-physiology-or-medicine-2023/",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.137,
+     "contradiction": 0.0,
+     "quote": "On Monday, 2 October 2023, the Nobel Assembly at Karolinska Institutet awarded the 2023 Nobel Prize in Physiology or Medicine to Katalin Karik\u00f3 and Drew Weissman \u201cfor their discoveries concerning nucleoside base modifications that enabled the development of effective mRNA vaccines against COVID-19\u201d.",
+     "note": "reworded match: Passage explicitly names both joint winners.",
+     "judged_by": "nli+llm",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "On Monday, 2 October 2023, the Nobel Assembly at Karolinska Institutet awarded the 2023 Nobel Prize in Physiology or Medicine to Katalin Karik\u00f3 and Drew Weissman \u201cfor their discoveries concerning nucleoside base modifications that enabled the development of effective mRNA vaccines against COVID-19\u201d.",
+   "quote_url": "https://www.lindau-nobel.org/news-nobel-prize-in-physiology-or-medicine-2023/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "The prize recognized their discoveries concerning nucleoside base modifications that enabled the development of effective mRNA vaccines against COVID-19.",
+   "verdict": "UNVERIFIABLE",
+   "citations": [
+    {
+     "url": "https://www.nobelprize.org/prizes/medicine/2023/summary",
+     "marker": "[3]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "blocked",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "page exists but could not be read (HTTP 403); archive check unavailable",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": 2023
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.nobelprize.org/prizes/medicine/2023/summary",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "low",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "The Nobel Assembly at Karolinska Institutet announced the prize on 2 October 2023.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.lindau-nobel.org/news-nobel-prize-in-physiology-or-medicine-2023/",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.995,
+     "contradiction": 0.0,
+     "quote": "On Monday, 2 October 2023, the Nobel Assembly at Karolinska Institutet awarded the 2023 Nobel Prize in Physiology or Medicine to Katalin Karik\u00f3 and Drew Weissman \u201cfor their discoveries concerning nucleoside base modifications that enabled the development of effective mRNA vaccines against COVID-19\u201d.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "On Monday, 2 October 2023, the Nobel Assembly at Karolinska Institutet awarded the 2023 Nobel Prize in Physiology or Medicine to Katalin Karik\u00f3 and Drew Weissman \u201cfor their discoveries concerning nucleoside base modifications that enabled the development of effective mRNA vaccines against COVID-19\u201d.",
+   "quote_url": "https://www.lindau-nobel.org/news-nobel-prize-in-physiology-or-medicine-2023/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4",
+   "claim": "Their findings were critical for developing effective mRNA vaccines against COVID-19 during the pandemic that began in early 2020.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.lindau-nobel.org/news-nobel-prize-in-physiology-or-medicine-2023/",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.994,
+     "contradiction": 0.0,
+     "quote": "\u201cThe discoveries by the two Nobel Laureates were critical for developing effective mRNA vaccines against COVID-19 during the pandemic that began in early 2020.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "\u201cThe discoveries by the two Nobel Laureates were critical for developing effective mRNA vaccines against COVID-19 during the pandemic that began in early 2020.",
+   "quote_url": "https://www.lindau-nobel.org/news-nobel-prize-in-physiology-or-medicine-2023/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5",
+   "claim": "The first COVID-19 vaccine brought to market used messenger RNA to induce an immune response to a pathogen.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.lindau-nobel.org/blog-nobel-prize-in-physiology-medicine-2023-a-new-way-of-looking-at-vaccines/",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.996,
+     "contradiction": 0.999,
+     "quote": "The first COVID-19 vaccine brought to market was based on the use of messenger RNA (mRNA) to induce an immune response to a pathogen, a different approach to developing vaccines, as opposed to using weakened or inactivated viruses, or viral vectors.",
+     "note": "another passage on the page may disagree: \"It also spurred the fastest vaccine rollout in history. The first COVID-19 vaccine brought to market was based on the use of messenger RNA (mRNA) to induce an i\"",
+     "judged_by": "nli",
+     "source_type": "blog",
+     "source_year": null
+    }
+   ],
+   "quote": "The first COVID-19 vaccine brought to market was based on the use of messenger RNA (mRNA) to induce an immune response to a pathogen, a different approach to developing vaccines, as opposed to using weakened or inactivated viruses, or viral vectors.",
+   "quote_url": "https://www.lindau-nobel.org/blog-nobel-prize-in-physiology-medicine-2023-a-new-way-of-looking-at-vaccines/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6",
+   "claim": "This approach differed from vaccines using weakened or inactivated viruses, or viral vectors.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.lindau-nobel.org/blog-nobel-prize-in-physiology-medicine-2023-a-new-way-of-looking-at-vaccines/",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.983,
+     "contradiction": 0.0,
+     "quote": "The first COVID-19 vaccine brought to market was based on the use of messenger RNA (mRNA) to induce an immune response to a pathogen, a different approach to developing vaccines, as opposed to using weakened or inactivated viruses, or viral vectors.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "blog",
+     "source_year": null
+    }
+   ],
+   "quote": "The first COVID-19 vaccine brought to market was based on the use of messenger RNA (mRNA) to induce an immune response to a pathogen, a different approach to developing vaccines, as opposed to using weakened or inactivated viruses, or viral vectors.",
+   "quote_url": "https://www.lindau-nobel.org/blog-nobel-prize-in-physiology-medicine-2023-a-new-way-of-looking-at-vaccines/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://www.lindau-nobel.org/news-nobel-prize-in-physiology-or-medicine-2023/",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.lindau-nobel.org/news-nobel-prize-in-physiology-or-medicine-2023/",
+   "title": "Nobel Prize in Physiology or Medicine 2023 - Lindau Nobel Laureate Meetings",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "dfab6fc88d549dd23de0e88111a65eaaf3cff8124105ee7a47b9915adb6292c7",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.nobelprize.org/prizes/medicine/2023/summary",
+   "state": "blocked",
+   "http_status": 403,
+   "error": "HTTP 403",
+   "resolved_url": "https://www.nobelprize.org/prizes/medicine/2023/summary",
+   "title": "",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "",
+   "archive_check": "unavailable",
+   "content_hash": "",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.lindau-nobel.org/blog-nobel-prize-in-physiology-medicine-2023-a-new-way-of-looking-at-vaccines/",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.lindau-nobel.org/blog-nobel-prize-in-physiology-medicine-2023-a-new-way-of-looking-at-vaccines/",
+   "title": "Nobel Prize in Physiology/Medicine 2023: A New Way of Looking at Vaccines - Lindau Nobel Laureate Meetings",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "f94143cd8ce60e445531e720ca66f0a88eec7fd3913aeef3c7a21240ec151dd4",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 52.5,
+ "usage": {
+  "fetches": 3,
+  "wayback_lookups": 1,
+  "searches": 0,
+  "llm_calls": 1,
+  "nli_checks": 5,
+  "scorer_load_ms": 32601
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 6,
+   "citations": 6
+  },
+  {
+   "t": 0.22,
+   "event": "fetch",
+   "url": "https://www.nobelprize.org/prizes/medicine/2023/summary",
+   "state": "blocked",
+   "http_status": 403,
+   "chars": 0,
+   "error": "HTTP 403"
+  },
+  {
+   "t": 0.83,
+   "event": "fetch",
+   "url": "https://www.lindau-nobel.org/news-nobel-prize-in-physiology-or-medicine-2023/",
+   "state": "live",
+   "http_status": 200,
+   "chars": 740,
+   "error": ""
+  },
+  {
+   "t": 1.39,
+   "event": "fetch",
+   "url": "https://www.lindau-nobel.org/blog-nobel-prize-in-physiology-medicine-2023-a-new-way-of-looking-at-vaccines/",
+   "state": "live",
+   "http_status": 200,
+   "chars": 2839,
+   "error": ""
+  },
+  {
+   "t": 10.57,
+   "event": "wayback",
+   "url": "https://www.nobelprize.org/prizes/medicine/2023/summary",
+   "error": "RuntimeError: wayback CDX HTTP 503"
+  },
+  {
+   "t": 18.57,
+   "event": "paraphrase_judge",
+   "claim": "The 2023 Nobel Prize in Physiology or Medicine was awarded jointly to Katalin Karik\u00f3 and Drew Weissman.",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 18.57,
+   "event": "verify",
+   "url": "https://www.lindau-nobel.org/news-nobel-prize-in-physiology-or-medicine-2023/",
+   "claim": "The 2023 Nobel Prize in Physiology or Medicine was awarded jointly to Katalin Karik\u00f3 and Drew Weissman.",
+   "verdict": "SUPPORTED",
+   "ent": 0.137,
+   "con": 0.0
+  },
+  {
+   "t": 19.67,
+   "event": "verify",
+   "url": "https://www.lindau-nobel.org/news-nobel-prize-in-physiology-or-medicine-2023/",
+   "claim": "The Nobel Assembly at Karolinska Institutet announced the prize on 2 October 2023.",
+   "verdict": "SUPPORTED",
+   "ent": 0.995,
+   "con": 0.0
+  },
+  {
+   "t": 21.7,
+   "event": "verify",
+   "url": "https://www.lindau-nobel.org/news-nobel-prize-in-physiology-or-medicine-2023/",
+   "claim": "Their findings were critical for developing effective mRNA vaccines against COVID-19 during the pandemic that began in e",
+   "verdict": "SUPPORTED",
+   "ent": 0.994,
+   "con": 0.0
+  },
+  {
+   "t": 38.06,
+   "event": "verify",
+   "url": "https://www.lindau-nobel.org/blog-nobel-prize-in-physiology-medicine-2023-a-new-way-of-looking-at-vaccines/",
+   "claim": "The first COVID-19 vaccine brought to market used messenger RNA to induce an immune response to a pathogen.",
+   "verdict": "SUPPORTED",
+   "ent": 0.996,
+   "con": 0.999
+  },
+  {
+   "t": 52.47,
+   "event": "verify",
+   "url": "https://www.lindau-nobel.org/blog-nobel-prize-in-physiology-medicine-2023-a-new-way-of-looking-at-vaccines/",
+   "claim": "This approach differed from vaccines using weakened or inactivated viruses, or viral vectors.",
+   "verdict": "SUPPORTED",
+   "ent": 0.983,
+   "con": 0.0
+  },
+  {
+   "t": 52.49,
+   "event": "done",
+   "trust_score": 100
+  }
+ ],
+ "score_s": 88.7
+}

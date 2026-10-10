@@ -1,0 +1,5 @@
+{
+ "error": "ConnectionError(ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))",
+ "q": 6,
+ "seconds": 12.4
+}

@@ -1,0 +1,42 @@
+{
+ "qid": "q3",
+ "status": "ok",
+ "secs": 273.8,
+ "llm_calls": 5,
+ "other_tokenharbor_calls": 0,
+ "visited_urls": [
+  "https://epionline.org/studies/data-snapshot-three-quarters-of-economists-oppose-15-minimum-wage-proposals/",
+  "https://ryanoconnellfinance.com/minimum-wage-economics/",
+  "https://sites.lsa.umich.edu/mje/2026/04/13/the-minimum-wage-in-2026-economic-theory-and-evidence-in-a-changing-policy-landscape/",
+  "https://www.americanactionforum.org/insight/the-2026-state-minimum-wage-increases-and-their-potential-costs-and-consequences/",
+  "https://www.businessforafairminimumwage.org/resource/research-shows-minimum-wage-increases-do-not-cause-job-loss",
+  "https://www.epi.org/blog/most-minimum-wage-studies-have-found-little-or-no-job-loss/",
+  "https://www.epi.org/press/new-epi-resource-debunks-myths-around-raising-the-minimum-wage/",
+  "https://www.epi.org/research/minimum-wage/",
+  "https://www.mdpi.com/2673-8392/2/4/130",
+  "https://www.nber.org/papers/w28388",
+  "https://www.nber.org/system/files/working_papers/w12663/w12663.pdf",
+  "https://www.nber.org/system/files/working_papers/w28388/revisions/w28388.rev2.pdf",
+  "https://www.sciencedirect.com/science/article/pii/S0927537125001484",
+  "https://www.sciencedirect.com/science/article/pii/S1544612325010220",
+  "https://www.upjohn.org/research-effects-raising-minimum-wage"
+ ],
+ "source_urls": [
+  "https://www.nber.org/papers/w28388",
+  "https://www.sciencedirect.com/science/article/pii/S0927537125001484",
+  "https://www.epi.org/blog/most-minimum-wage-studies-have-found-little-or-no-job-loss/",
+  "https://www.nber.org/system/files/working_papers/w28388/revisions/w28388.rev2.pdf",
+  "https://www.epi.org/press/new-epi-resource-debunks-myths-around-raising-the-minimum-wage/",
+  "https://www.sciencedirect.com/science/article/pii/S1544612325010220",
+  "https://www.epi.org/research/minimum-wage/",
+  "https://sites.lsa.umich.edu/mje/2026/04/13/the-minimum-wage-in-2026-economic-theory-and-evidence-in-a-changing-policy-landscape/",
+  "https://ryanoconnellfinance.com/minimum-wage-economics/",
+  "https://www.nber.org/system/files/working_papers/w12663/w12663.pdf",
+  "https://www.upjohn.org/research-effects-raising-minimum-wage",
+  "https://www.businessforafairminimumwage.org/resource/research-shows-minimum-wage-increases-do-not-cause-job-loss",
+  "https://epionline.org/studies/data-snapshot-three-quarters-of-economists-oppose-15-minimum-wage-proposals/",
+  "https://www.americanactionforum.org/insight/the-2026-state-minimum-wage-increases-and-their-potential-costs-and-consequences/",
+  "https://www.mdpi.com/2673-8392/2/4/130"
+ ],
+ "costs_reported": 0.23107999999999998
+}

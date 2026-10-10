@@ -1,0 +1,344 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_2de23eea8452",
+ "trust_score": 100,
+ "grade": "citations hold up",
+ "counts": {
+  "SUPPORTED": 7,
+  "PARTIALLY SUPPORTED": 0,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 0,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 0
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "Human evidence on microplastic health effects remains limited and largely observational, with studies mainly reporting associations with biological markers rather than confirmed clinical outcomes.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.994,
+     "contradiction": 0.0,
+     "quote": "In contrast, human evidence remains limited and largely observational, with studies primarily reporting associations between microplastic exposure and selected biological markers rather than confirmed clinical outcomes.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "In contrast, human evidence remains limited and largely observational, with studies primarily reporting associations between microplastic exposure and selected biological markers rather than confirmed clinical outcomes.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "Microplastics may induce inflammatory responses, oxidative stress, and cellular damage, potentially contributing to various diseases.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.985,
+     "contradiction": 0.0,
+     "quote": "Laboratory and animal studies demonstrate that oxidative stress is a key determinant of damage caused by microplastics to various tissues. Several studies have demonstrated that polystyrene nanoparticles lead to the formation of reactive oxygen species (ROS), mitochondrial dysfunction, and DNA damage in human cell lines. These cellular abnormalities are usually followed by an increase in the conce",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Laboratory and animal studies demonstrate that oxidative stress is a key determinant of damage caused by microplastics to various tissues. Several studies have demonstrated that polystyrene nanoparticles lead to the formation of reactive oxygen species (ROS), mitochondrial dysfunction, and DNA damage in human cell lines. These cellular abnormalities are usually followed by an increase in the conce",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "Some studies have reported possible associations between microplastics in the body and gastrointestinal complications, inflammatory conditions, hormonal imbalances, and reproductive dysfunction.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.994,
+     "contradiction": 0.0,
+     "quote": "Human epidemiologic evidence remains limited, but some studies have reported possible associations between microplastics in the body and gastrointestinal complications, inflammatory conditions, hormonal imbalances, and reproductive dysfunction.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Human epidemiologic evidence remains limited, but some studies have reported possible associations between microplastics in the body and gastrointestinal complications, inflammatory conditions, hormonal imbalances, and reproductive dysfunction.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4",
+   "claim": "Direct evidence linking these mechanisms to adverse health outcomes in humans remains limited.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.996,
+     "contradiction": 0.0,
+     "quote": "Despite this growing body of detection-based evidence, the full extent of health risks associated with chronic microplastic exposure in humans remains incompletely understood.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Despite this growing body of detection-based evidence, the full extent of health risks associated with chronic microplastic exposure in humans remains incompletely understood.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5.1",
+   "claim": "Recent investigations have documented microplastics in multiple human biological matrices.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://link.springer.com/article/10.1007/s11356-026-38078-z",
+     "marker": "[3]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.995,
+     "contradiction": 0.0,
+     "quote": "Microplastics (MPs) and nanoplastics (NPs) have emerged as ubiquitous environmental contaminants, with increasing evidence of human exposure and growing concern regarding their potential health impacts. Recent investigations have documented their presence in multiple human biological matrices.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Microplastics (MPs) and nanoplastics (NPs) have emerged as ubiquitous environmental contaminants, with increasing evidence of human exposure and growing concern regarding their potential health impacts. Recent investigations have documented their presence in multiple human biological matrices.",
+   "quote_url": "https://link.springer.com/article/10.1007/s11356-026-38078-z",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5.2",
+   "claim": "The human biological matrices include excretory products, respiratory secretions, systemic circulation, vascular tissues, major organs, and placental tissue.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://link.springer.com/article/10.1007/s11356-026-38078-z",
+     "marker": "[3]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.995,
+     "contradiction": 0.0,
+     "quote": "The reviewed evidence confirmed widespread detection of MPs and NPs across diverse human matrices, including excretory products, respiratory secretions, systemic circulation, vascular tissues, major organs, and placental tissue, underscoring their ability to translocate within the human body.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "The reviewed evidence confirmed widespread detection of MPs and NPs across diverse human matrices, including excretory products, respiratory secretions, systemic circulation, vascular tissues, major organs, and placental tissue, underscoring their ability to translocate within the human body.",
+   "quote_url": "https://link.springer.com/article/10.1007/s11356-026-38078-z",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5.3",
+   "claim": "Microplastics have the ability to translocate within the human body.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://link.springer.com/article/10.1007/s11356-026-38078-z",
+     "marker": "[3]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.983,
+     "contradiction": 0.0,
+     "quote": "Guan Q, Jiang J, Huang Y, Wang Q, Liu Z, Ma X, Yang X, Li Y, Wang S, Cui W, Tang J (2023) The landscape of micron-scale particles including microplastics in human enclosed body fluids. J Hazard Mater 442. https://doi.org/10.1016/j.jhazmat.2022.130138 Guo JJ, Huang XP, Xiang L, Wang YZ, Li YW, Li H, Cai QY, Mo CH, Wong MH (2020) Source, migration and toxicology of microplastics in soil.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Guan Q, Jiang J, Huang Y, Wang Q, Liu Z, Ma X, Yang X, Li Y, Wang S, Cui W, Tang J (2023) The landscape of micron-scale particles including microplastics in human enclosed body fluids. J Hazard Mater 442. https://doi.org/10.1016/j.jhazmat.2022.130138 Guo JJ, Huang XP, Xiang L, Wang YZ, Li YW, Li H, Cai QY, Mo CH, Wong MH (2020) Source, migration and toxicology of microplastics in soil.",
+   "quote_url": "https://link.springer.com/article/10.1007/s11356-026-38078-z",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "title": "Impact of Microplastic Exposure on Human Health: A Systematic Review of Mechanisms, Biomarkers, and Clinical Outcomes - PMC",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "5524d4ba200bb8e70983b6f1dadbd8c78c67f6f35be489c8c636b34a0d585d8d",
+   "quarantined": false
+  },
+  {
+   "url": "https://link.springer.com/article/10.1007/s11356-026-38078-z",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://link.springer.com/article/10.1007/s11356-026-38078-z",
+   "title": "A systematic review of the presence and potential health impacts of microplastics in the human body | Environmental Science and Pollution Research | Springer Nature Link",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "be5b8c0b70abb79adc11943234f84f7b39897553d126d9128c7ebfc252a34a42",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 43.9,
+ "usage": {
+  "fetches": 2,
+  "wayback_lookups": 0,
+  "searches": 0,
+  "llm_calls": 1,
+  "nli_checks": 7,
+  "scorer_load_ms": 23271
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 5,
+   "citations": 5
+  },
+  {
+   "t": 11.37,
+   "event": "fetch",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "state": "live",
+   "http_status": 200,
+   "chars": 52968,
+   "error": ""
+  },
+  {
+   "t": 12.34,
+   "event": "fetch",
+   "url": "https://link.springer.com/article/10.1007/s11356-026-38078-z",
+   "state": "live",
+   "http_status": 200,
+   "chars": 25413,
+   "error": ""
+  },
+  {
+   "t": 16.03,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "claim": "Human evidence on microplastic health effects remains limited and largely observational, with studies mainly reporting a",
+   "verdict": "SUPPORTED",
+   "ent": 0.994,
+   "con": 0.0
+  },
+  {
+   "t": 19.13,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "claim": "Microplastics may induce inflammatory responses, oxidative stress, and cellular damage, potentially contributing to vari",
+   "verdict": "SUPPORTED",
+   "ent": 0.985,
+   "con": 0.0
+  },
+  {
+   "t": 23.28,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "claim": "Some studies have reported possible associations between microplastics in the body and gastrointestinal complications, i",
+   "verdict": "SUPPORTED",
+   "ent": 0.994,
+   "con": 0.0
+  },
+  {
+   "t": 28.72,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "claim": "Direct evidence linking these mechanisms to adverse health outcomes in humans remains limited.",
+   "verdict": "SUPPORTED",
+   "ent": 0.996,
+   "con": 0.0
+  },
+  {
+   "t": 33.73,
+   "event": "verify",
+   "url": "https://link.springer.com/article/10.1007/s11356-026-38078-z",
+   "claim": "Recent investigations have documented microplastics in multiple human biological matrices.",
+   "verdict": "SUPPORTED",
+   "ent": 0.995,
+   "con": 0.0
+  },
+  {
+   "t": 37.98,
+   "event": "verify",
+   "url": "https://link.springer.com/article/10.1007/s11356-026-38078-z",
+   "claim": "The human biological matrices include excretory products, respiratory secretions, systemic circulation, vascular tissues",
+   "verdict": "SUPPORTED",
+   "ent": 0.995,
+   "con": 0.0
+  },
+  {
+   "t": 43.87,
+   "event": "verify",
+   "url": "https://link.springer.com/article/10.1007/s11356-026-38078-z",
+   "claim": "Microplastics have the ability to translocate within the human body.",
+   "verdict": "SUPPORTED",
+   "ent": 0.983,
+   "con": 0.0
+  },
+  {
+   "t": 43.88,
+   "event": "done",
+   "trust_score": 100
+  }
+ ],
+ "score_s": 78.4
+}

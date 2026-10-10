@@ -1,0 +1,250 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_52f2afe84732",
+ "trust_score": 88,
+ "grade": "citations hold up",
+ "counts": {
+  "SUPPORTED": 3,
+  "PARTIALLY SUPPORTED": 1,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 0,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 0
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "A systematic review and meta-analysis found that semaglutide reduced major adverse cardiovascular events in patients with type 2 diabetes.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371",
+     "marker": "[1]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.068,
+     "contradiction": 0.905,
+     "quote": "This systematic review and meta-analysis demonstrates that semaglutide reduces the risk of major adverse cardiovascular events, cardiovascular mortality, and non-fatal myocardial infarction.",
+     "note": "partly supported: Passage explicitly states systematic review found semaglutide reduces MACE.",
+     "judged_by": "nli+llm",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "This systematic review and meta-analysis demonstrates that semaglutide reduces the risk of major adverse cardiovascular events, cardiovascular mortality, and non-fatal myocardial infarction.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "Semaglutide modestly improved cardiovascular mortality, but did not significantly affect nonfatal stroke incidence.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.997,
+     "contradiction": 0.96,
+     "quote": "Although semaglutide lowered the overall risk of MACE, it did not significantly reduce the incidence of nonfatal stroke or heart failure hospitalizations.",
+     "note": "another passage on the page may disagree: \"A history of successful revascularization was documented in 473 participants in the semaglutide group and in 608 participants in the placebo group. Husain et al\"",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Although semaglutide lowered the overall risk of MACE, it did not significantly reduce the incidence of nonfatal stroke or heart failure hospitalizations.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "The SELECT trial found that once-weekly semaglutide was associated with a 20% reduction in major adverse cardiac events over a mean 33 months.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/11/09/15/04/select",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.002,
+     "contradiction": 0.0,
+     "quote": "In patients with overweight or obesity and established CVD without DM, once-weekly subcutaneous semaglutide was associated with a 20% reduction in major adverse cardiac events during a mean exposure period of 33 months.",
+     "note": "reworded match: Passages directly confirm the claim's statistics and timeframe.",
+     "judged_by": "nli+llm",
+     "source_type": "web",
+     "source_year": 2023
+    }
+   ],
+   "quote": "In patients with overweight or obesity and established CVD without DM, once-weekly subcutaneous semaglutide was associated with a 20% reduction in major adverse cardiac events during a mean exposure period of 33 months.",
+   "quote_url": "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/11/09/15/04/select",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4",
+   "claim": "This benefit occurred in patients with overweight or obesity and established cardiovascular disease without diabetes.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/11/09/15/04/select",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.951,
+     "contradiction": 0.948,
+     "quote": "In patients with overweight or obesity and established CVD without DM, once-weekly subcutaneous semaglutide was associated with a 20% reduction in major adverse cardiac events during a mean exposure period of 33 months.",
+     "note": "another passage on the page may disagree: \"Patients with overweight or obesity (body mass index [BMI] \u226527 kg/m2) and established CVD were randomized to receive once-weekly subcutaneous semaglutide (n = 8\"",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": 2023
+    }
+   ],
+   "quote": "In patients with overweight or obesity and established CVD without DM, once-weekly subcutaneous semaglutide was associated with a 20% reduction in major adverse cardiac events during a mean exposure period of 33 months.",
+   "quote_url": "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/11/09/15/04/select",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371/",
+   "title": "Cardiovascular benefits of semaglutide: a systematic review and meta-analysis of randomized controlled trials - PMC",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "5a218d1110aeef3d3fcffcc1f3fbd8b2c0d8c8641dc9a462c4d128513a084c3e",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/11/09/15/04/select",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/11/09/15/04/select",
+   "title": "Semaglutide Effects on Cardiovascular Outcomes in People With Overweight or Obesity - American College of Cardiology",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "a9ee0777db2c329e365eea6cb4be89b32d1faa644d81654d9991a4afc1e30b41",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 28.1,
+ "usage": {
+  "fetches": 2,
+  "wayback_lookups": 0,
+  "searches": 0,
+  "llm_calls": 2,
+  "nli_checks": 4,
+  "scorer_load_ms": 64848
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 4,
+   "citations": 4
+  },
+  {
+   "t": 0.58,
+   "event": "fetch",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371",
+   "state": "live",
+   "http_status": 200,
+   "chars": 49175,
+   "error": ""
+  },
+  {
+   "t": 1.15,
+   "event": "fetch",
+   "url": "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/11/09/15/04/select",
+   "state": "live",
+   "http_status": 200,
+   "chars": 7260,
+   "error": ""
+  },
+  {
+   "t": 11.99,
+   "event": "paraphrase_judge",
+   "claim": "A systematic review and meta-analysis found that semaglutide reduced major adverse cardiovascular events in patients wit",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 11.99,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371",
+   "claim": "A systematic review and meta-analysis found that semaglutide reduced major adverse cardiovascular events in patients wit",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.068,
+   "con": 0.905
+  },
+  {
+   "t": 16.65,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371",
+   "claim": "Semaglutide modestly improved cardiovascular mortality, but did not significantly affect nonfatal stroke incidence.",
+   "verdict": "SUPPORTED",
+   "ent": 0.997,
+   "con": 0.96
+  },
+  {
+   "t": 24.52,
+   "event": "paraphrase_judge",
+   "claim": "The SELECT trial found that once-weekly semaglutide was associated with a 20% reduction in major adverse cardiac events ",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 24.52,
+   "event": "verify",
+   "url": "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/11/09/15/04/select",
+   "claim": "The SELECT trial found that once-weekly semaglutide was associated with a 20% reduction in major adverse cardiac events ",
+   "verdict": "SUPPORTED",
+   "ent": 0.002,
+   "con": 0.0
+  },
+  {
+   "t": 28.08,
+   "event": "verify",
+   "url": "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/11/09/15/04/select",
+   "claim": "This benefit occurred in patients with overweight or obesity and established cardiovascular disease without diabetes.",
+   "verdict": "SUPPORTED",
+   "ent": 0.951,
+   "con": 0.948
+  },
+  {
+   "t": 28.09,
+   "event": "done",
+   "trust_score": 88
+  }
+ ],
+ "score_s": 98.7
+}

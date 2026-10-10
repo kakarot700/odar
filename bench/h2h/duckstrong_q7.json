@@ -1,0 +1,10 @@
+{
+ "answer": "Copernicus estimated that 2024\u2019s global average temperature was 1.60\u00b0C above pre-industrial levels (1850\u20131900). The WMO\u2019s consolidated estimate from six datasets was 1.55\u00b0C, with an uncertainty margin of \u00b10.13\u00b0C. These are estimates from different datasets and methods. A single year above 1.5\u00b0C does not mean the Paris Agreement\u2019s long-term temperature threshold has been crossed, which is assessed over decades. [1][2]",
+ "sources": [
+  "https://climate.copernicus.eu/global-climate-highlights-2024",
+  "https://wmo.int/news/media-centre/wmo-confirms-2024-warmest-year-record-about-155degc-above-pre-industrial-level"
+ ],
+ "raw_answer": "Copernicus estimated that 2024\u2019s global average temperature was **1.60\u00b0C above pre-industrial levels** (1850\u20131900). The WMO\u2019s consolidated estimate from six datasets was **1.55\u00b0C**, with an uncertainty margin of \u00b10.13\u00b0C. These are estimates from different datasets and methods. A single year above 1.5\u00b0C does not mean the Paris Agreement\u2019s long-term temperature threshold has been crossed, which is assessed over decades. [Copernicus / WMO]",
+ "approx_seconds": 8,
+ "model": "GPT-6 Luna"
+}

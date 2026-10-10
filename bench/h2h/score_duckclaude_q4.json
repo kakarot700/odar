@@ -1,0 +1,486 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_40663fed9eb0",
+ "trust_score": 12,
+ "grade": "unreliable citations",
+ "counts": {
+  "SUPPORTED": 1,
+  "PARTIALLY SUPPORTED": 0,
+  "CONTRADICTED": 2,
+  "WRONG SOURCE": 5,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 5
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "Based on the latest information, India's current repo rate is 5.50%, and it was last changed on October 7, 2026 \u2014 which is today.",
+   "verdict": "CONTRADICTED",
+   "citations": [
+    {
+     "url": "https://tradingeconomics.com/india/interest-rate",
+     "marker": "[1]",
+     "verdict": "CONTRADICTED",
+     "link_state": "archived_only",
+     "entailment": 0.0,
+     "contradiction": 0.995,
+     "quote": "The benchmark interest rate in India was last recorded at 5.25 percent. Interest Rate in India averaged 6.33 percent from 2000 until 2026, reaching an all time high of 14.50 percent in August of 2000 and a record low of 4.00 percent in May of 2020. This page provides - India Interest Rate - actual values, historical data, forecast, chart, statistics, economic calendar and news.",
+     "note": "(verified against the Wayback Machine copy; live page is gone)",
+     "judged_by": "nli+llm",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "The benchmark interest rate in India was last recorded at 5.25 percent. Interest Rate in India averaged 6.33 percent from 2000 until 2026, reaching an all time high of 14.50 percent in August of 2000 and a record low of 4.00 percent in May of 2020. This page provides - India Interest Rate - actual values, historical data, forecast, chart, statistics, economic calendar and news.",
+   "quote_url": "https://tradingeconomics.com/india/interest-rate",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2.1",
+   "claim": "The RBI raised its key repo rate by 25 basis points (0.25%) at its October 2026 monetary policy meeting.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://tradingeconomics.com/india/interest-rate",
+     "marker": "[1]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "archived_only",
+     "entailment": 0.0,
+     "contradiction": 1.0,
+     "quote": "",
+     "note": "the page is real but does not say this (verified against the Wayback Machine copy; live page is gone)",
+     "judged_by": "nli+llm",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://tradingeconomics.com/india/interest-rate",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2.2",
+   "claim": "The October 2026 monetary policy meeting marked the first rate hike since February 2023.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://tradingeconomics.com/india/interest-rate",
+     "marker": "[1]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "archived_only",
+     "entailment": 0.0,
+     "contradiction": 0.999,
+     "quote": "",
+     "note": "the page is real but does not say this (verified against the Wayback Machine copy; live page is gone)",
+     "judged_by": "nli+llm",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://tradingeconomics.com/india/interest-rate",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "This brought the rate from 5.25% to 5.50%.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4",
+   "claim": "The RBI made this decision amid rising inflationary pressures.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5.1",
+   "claim": "Annual inflation had accelerated to 4.82% in August 2026.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://tradingeconomics.com/india/interest-rate",
+     "marker": "[1]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "archived_only",
+     "entailment": 0.0,
+     "contradiction": 0.981,
+     "quote": "",
+     "note": "the page is real but does not say this (verified against the Wayback Machine copy; live page is gone)",
+     "judged_by": "nli+llm",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://tradingeconomics.com/india/interest-rate",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5.2",
+   "claim": "This was the highest level since December 2024.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://tradingeconomics.com/india/interest-rate",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "archived_only",
+     "entailment": 0.991,
+     "contradiction": 0.0,
+     "quote": "The annual inflation rate surged to 4.38% in June 2026, marking the highest level since December 2024 and rising above the RBI's 4% target for the first time in 17 months, though it remained within the central bank's 2%\u20136% tolerance band.",
+     "note": "(verified against the Wayback Machine copy; live page is gone)",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "The annual inflation rate surged to 4.38% in June 2026, marking the highest level since December 2024 and rising above the RBI's 4% target for the first time in 17 months, though it remained within the central bank's 2%\u20136% tolerance band.",
+   "quote_url": "https://tradingeconomics.com/india/interest-rate",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5.3",
+   "claim": "Annual inflation rose above the RBI's 4% inflation target for the third consecutive month.",
+   "verdict": "CONTRADICTED",
+   "citations": [
+    {
+     "url": "https://tradingeconomics.com/india/interest-rate",
+     "marker": "[1]",
+     "verdict": "CONTRADICTED",
+     "link_state": "archived_only",
+     "entailment": 0.001,
+     "contradiction": 0.0,
+     "quote": "The annual inflation rate surged to 4.38% in June 2026, marking the highest level since December 2024 and rising above the RBI's 4% target for the first time in 17 months, though it remained within the central bank's 2%\u20136% tolerance band.",
+     "note": "the page says otherwise: Passages say first time in 17 months, not third consecutive month. (verified against the Wayback Machine copy; live page is gone)",
+     "judged_by": "nli+llm",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "The annual inflation rate surged to 4.38% in June 2026, marking the highest level since December 2024 and rising above the RBI's 4% target for the first time in 17 months, though it remained within the central bank's 2%\u20136% tolerance band.",
+   "quote_url": "https://tradingeconomics.com/india/interest-rate",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6",
+   "claim": "Higher crude oil prices (above $100 per barrel)",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c7",
+   "claim": "Global uncertainty from geopolitical tensions in the Middle East",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c8",
+   "claim": "Rate hikes by other major central banks, including the U.S. Federal Reserve",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c9.1",
+   "claim": "The RBI raised the Marginal Standing Facility (MSF) rate to 5.75% in conjunction with this hike.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://tradingeconomics.com/india/interest-rate",
+     "marker": "[1]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "archived_only",
+     "entailment": 0.137,
+     "contradiction": 0.976,
+     "quote": "",
+     "note": "the page is real but does not say this (verified against the Wayback Machine copy; live page is gone)",
+     "judged_by": "nli+llm",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://tradingeconomics.com/india/interest-rate",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c9.2",
+   "claim": "The RBI raised the Standing Deposit Facility (SDF) rate to 5.25% in conjunction with this hike.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://tradingeconomics.com/india/interest-rate",
+     "marker": "[1]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "archived_only",
+     "entailment": 0.001,
+     "contradiction": 0.999,
+     "quote": "",
+     "note": "the page is real but does not say this (verified against the Wayback Machine copy; live page is gone)",
+     "judged_by": "nli+llm",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://tradingeconomics.com/india/interest-rate",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://tradingeconomics.com/india/interest-rate",
+   "state": "archived_only",
+   "http_status": 403,
+   "error": "HTTP 403",
+   "resolved_url": "https://tradingeconomics.com/india/interest-rate",
+   "title": "",
+   "archive_url": "http://web.archive.org/web/20260924062148/https://tradingeconomics.com/india/interest-rate",
+   "archive_timestamp": "20260924062148",
+   "text_source": "wayback",
+   "archive_check": "archived",
+   "content_hash": "7ba43dcbc523913899b7e56e7141d499da962ddb8f51e7084fa571cdc258e1d0",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 130.6,
+ "usage": {
+  "fetches": 2,
+  "wayback_lookups": 1,
+  "searches": 0,
+  "llm_calls": 10,
+  "nli_checks": 8,
+  "scorer_load_ms": 1803
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 9,
+   "citations": 4
+  },
+  {
+   "t": 28.19,
+   "event": "fetch",
+   "url": "https://tradingeconomics.com/india/interest-rate",
+   "state": "blocked",
+   "http_status": 403,
+   "chars": 0,
+   "error": "HTTP 403"
+  },
+  {
+   "t": 29.2,
+   "event": "wayback",
+   "url": "https://tradingeconomics.com/india/interest-rate",
+   "archived": true,
+   "snapshot": "http://web.archive.org/web/20260924062148/https://tradingeconomics.com/india/interest-rate"
+  },
+  {
+   "t": 29.68,
+   "event": "archive_fetch",
+   "url": "https://web.archive.org/web/20260924062148id_/https://tradingeconomics.com/india/interest-rate",
+   "ok": true,
+   "chars": 4024,
+   "error": ""
+  },
+  {
+   "t": 42.99,
+   "event": "paraphrase_judge",
+   "claim": "Based on the latest information, India's current repo rate is 5.50%, and it was last changed on October 7, 2026 \u2014 which ",
+   "verdict": "CONTRADICTED",
+   "grounded": true
+  },
+  {
+   "t": 42.99,
+   "event": "verify",
+   "url": "https://tradingeconomics.com/india/interest-rate",
+   "claim": "Based on the latest information, India's current repo rate is 5.50%, and it was last changed on October 7, 2026 \u2014 which ",
+   "verdict": "CONTRADICTED",
+   "ent": 0.0,
+   "con": 0.995
+  },
+  {
+   "t": 52.45,
+   "event": "paraphrase_judge",
+   "claim": "The RBI raised its key repo rate by 25 basis points (0.25%) at its October 2026 monetary policy meeting.",
+   "verdict": "NOT_SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 52.45,
+   "event": "verify",
+   "url": "https://tradingeconomics.com/india/interest-rate",
+   "claim": "The RBI raised its key repo rate by 25 basis points (0.25%) at its October 2026 monetary policy meeting.",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.0,
+   "con": 1.0
+  },
+  {
+   "t": 64.27,
+   "event": "paraphrase_judge",
+   "claim": "The October 2026 monetary policy meeting marked the first rate hike since February 2023.",
+   "verdict": "NOT_SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 64.27,
+   "event": "verify",
+   "url": "https://tradingeconomics.com/india/interest-rate",
+   "claim": "The October 2026 monetary policy meeting marked the first rate hike since February 2023.",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.0,
+   "con": 0.999
+  },
+  {
+   "t": 74.11,
+   "event": "paraphrase_judge",
+   "claim": "Annual inflation had accelerated to 4.82% in August 2026.",
+   "verdict": "NOT_SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 74.11,
+   "event": "verify",
+   "url": "https://tradingeconomics.com/india/interest-rate",
+   "claim": "Annual inflation had accelerated to 4.82% in August 2026.",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.0,
+   "con": 0.981
+  },
+  {
+   "t": 77.42,
+   "event": "verify",
+   "url": "https://tradingeconomics.com/india/interest-rate",
+   "claim": "This was the highest level since December 2024.",
+   "verdict": "SUPPORTED",
+   "ent": 0.991,
+   "con": 0.0
+  },
+  {
+   "t": 94.36,
+   "event": "paraphrase_judge",
+   "claim": "Annual inflation rose above the RBI's 4% inflation target for the third consecutive month.",
+   "verdict": "CONTRADICTED",
+   "grounded": true
+  },
+  {
+   "t": 94.36,
+   "event": "verify",
+   "url": "https://tradingeconomics.com/india/interest-rate",
+   "claim": "Annual inflation rose above the RBI's 4% inflation target for the third consecutive month.",
+   "verdict": "CONTRADICTED",
+   "ent": 0.001,
+   "con": 0.0
+  },
+  {
+   "t": 112.69,
+   "event": "paraphrase_judge",
+   "claim": "The RBI raised the Marginal Standing Facility (MSF) rate to 5.75% in conjunction with this hike.",
+   "verdict": "NOT_SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 112.69,
+   "event": "verify",
+   "url": "https://tradingeconomics.com/india/interest-rate",
+   "claim": "The RBI raised the Marginal Standing Facility (MSF) rate to 5.75% in conjunction with this hike.",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.137,
+   "con": 0.976
+  },
+  {
+   "t": 130.57,
+   "event": "paraphrase_judge",
+   "claim": "The RBI raised the Standing Deposit Facility (SDF) rate to 5.25% in conjunction with this hike.",
+   "verdict": "NOT_SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 130.57,
+   "event": "verify",
+   "url": "https://tradingeconomics.com/india/interest-rate",
+   "claim": "The RBI raised the Standing Deposit Facility (SDF) rate to 5.25% in conjunction with this hike.",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.001,
+   "con": 0.999
+  },
+  {
+   "t": 130.57,
+   "event": "done",
+   "trust_score": 12
+  }
+ ],
+ "score_s": 132.4
+}

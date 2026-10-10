@@ -1,0 +1,380 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_d818e714aca7",
+ "trust_score": 100,
+ "grade": "citations hold up",
+ "counts": {
+  "SUPPORTED": 7,
+  "PARTIALLY SUPPORTED": 0,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 0,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 1
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "Chandrayaan-3 produced multiple scientific findings rather than one single key result.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "Scientists from NRSC/ISRO estimate that about 2.06 tonnes of lunar epiregolith were ejected and displaced over an area of 108.4 m2 around the landing site.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.955,
+     "contradiction": 0.0,
+     "quote": "Chandrayaan-3 Chandrayaan-3 Science Results Home / Flash News /Chandrayaan-3 / Science Results October 27, 2023 Scientists from NRSC/ISRO estimate that about 2.06 tonnes of lunar epiregolith were ejected and displaced over an area of 108.4 m\u00b2 around the landing site.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "Chandrayaan-3 Chandrayaan-3 Science Results Home / Flash News /Chandrayaan-3 / Science Results October 27, 2023 Scientists from NRSC/ISRO estimate that about 2.06 tonnes of lunar epiregolith were ejected and displaced over an area of 108.4 m\u00b2 around the landing site.",
+   "quote_url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "LIBS confirmed the presence of Sulphur on the lunar surface through unambiguous in-situ measurements.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.993,
+     "contradiction": 0.878,
+     "quote": "August 31, 2023 ILSA listens to the movements around the landing site RAMBHA-LP on-board Chandrayaan-3 measures near-surface plasma content August 30, 2023 APXS on-board Ch-3 rover detects the presence of minor elements August 28, 2023 LIBS confirms the presence of Sulphur (S) on the lunar surface through unambiguous in-situ measurements.",
+     "note": "another passage on the page may disagree: \"through unambiguous in-situ measurements. August 27, 2023 The first observations from the ChaSTE payload onboard Vikram Lander More Details Chandrayaan-3 Chandr\"",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "August 31, 2023 ILSA listens to the movements around the landing site RAMBHA-LP on-board Chandrayaan-3 measures near-surface plasma content August 30, 2023 APXS on-board Ch-3 rover detects the presence of minor elements August 28, 2023 LIBS confirms the presence of Sulphur (S) on the lunar surface through unambiguous in-situ measurements.",
+   "quote_url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4",
+   "claim": "The \"Hop\" experiment revealed regolith heterogeneity at the Moon's south pole.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.isro.gov.in/Chandrayaan_3Hop_Experiment_Reveals.html",
+     "marker": "[3]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.991,
+     "contradiction": 0.0,
+     "quote": "Chandrayaan-3 \"Hop\" Experiment Reveals Hidden Lunar Secrets: Scientists Uncover Regolith Heterogeneity at Moon\u2019s South Pole Chandrayaan-3 \"Hop\" Experiment Reveals Hidden Lunar Secrets: Scientists Uncover Regolith Heterogeneity at Moon\u2019s South Pole Home /Chandrayaan-3 \"Hop\" Experiment Reveals Hidden",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "Chandrayaan-3 \"Hop\" Experiment Reveals Hidden Lunar Secrets: Scientists Uncover Regolith Heterogeneity at Moon\u2019s South Pole Chandrayaan-3 \"Hop\" Experiment Reveals Hidden Lunar Secrets: Scientists Uncover Regolith Heterogeneity at Moon\u2019s South Pole Home /Chandrayaan-3 \"Hop\" Experiment Reveals Hidden",
+   "quote_url": "https://www.isro.gov.in/Chandrayaan_3Hop_Experiment_Reveals.html",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5",
+   "claim": "This study marks the first of such class of unique measurements.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.isro.gov.in/Chandrayaan_3Hop_Experiment_Reveals.html",
+     "marker": "[3]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.99,
+     "contradiction": 0.0,
+     "quote": "This study marks the first of such class of unique measurements.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "This study marks the first of such class of unique measurements.",
+   "quote_url": "https://www.isro.gov.in/Chandrayaan_3Hop_Experiment_Reveals.html",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6",
+   "claim": "Scientists from PRL and ISRO showed that the mission landed within a buried impact crater around 160 km in size.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.isro.gov.in/ch3_Discovery_of_a_buried_crater_on_the_moon.html",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.998,
+     "contradiction": 0.999,
+     "quote": "CHANDRAYAAN-3 VIKRAM LANDER AND PRAGYAN ROVER LANDED WITHIN IT September 30, 2024 In a study published in peer-reviewed journal Icarus, scientists from PRL and ISRO have shown that Indian Lunar mission Chandrayaan-3 landed within a buried impact crater, which is around 160 km in size, ~4.4 km deep,",
+     "note": "another passage on the page may disagree: \"This is revealed based on analysis of images obtained by Navigation Cameras on Chandrayaan-3 Pragyan rover and Chandrayaan-2 Orbiter\u2019s Optical High Resolution C\"",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "CHANDRAYAAN-3 VIKRAM LANDER AND PRAGYAN ROVER LANDED WITHIN IT September 30, 2024 In a study published in peer-reviewed journal Icarus, scientists from PRL and ISRO have shown that Indian Lunar mission Chandrayaan-3 landed within a buried impact crater, which is around 160 km in size, ~4.4 km deep,",
+   "quote_url": "https://www.isro.gov.in/ch3_Discovery_of_a_buried_crater_on_the_moon.html",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c7",
+   "claim": "The same study described the crater as roughly 4.4 km deep.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.isro.gov.in/ch3_Discovery_of_a_buried_crater_on_the_moon.html",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.998,
+     "contradiction": 0.0,
+     "quote": "CHANDRAYAAN-3 VIKRAM LANDER AND PRAGYAN ROVER LANDED WITHIN IT September 30, 2024 In a study published in peer-reviewed journal Icarus, scientists from PRL and ISRO have shown that Indian Lunar mission Chandrayaan-3 landed within a buried impact crater, which is around 160 km in size, ~4.4 km deep,",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "CHANDRAYAAN-3 VIKRAM LANDER AND PRAGYAN ROVER LANDED WITHIN IT September 30, 2024 In a study published in peer-reviewed journal Icarus, scientists from PRL and ISRO have shown that Indian Lunar mission Chandrayaan-3 landed within a buried impact crater, which is around 160 km in size, ~4.4 km deep,",
+   "quote_url": "https://www.isro.gov.in/ch3_Discovery_of_a_buried_crater_on_the_moon.html",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c8",
+   "claim": "It is likely to be older than the South Pole Aitken basin.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.isro.gov.in/ch3_Discovery_of_a_buried_crater_on_the_moon.html",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.969,
+     "contradiction": 0.0,
+     "quote": "and likely to be older than the South Pole Atkin (SPA) basin.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "and likely to be older than the South Pole Atkin (SPA) basin.",
+   "quote_url": "https://www.isro.gov.in/ch3_Discovery_of_a_buried_crater_on_the_moon.html",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+   "title": "Chandrayaan-3",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "547e777a1f5c37d7d42342992007a29d0bf643a8c0def2e978aa693edde349fe",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.isro.gov.in/Chandrayaan_3Hop_Experiment_Reveals.html",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.isro.gov.in/Chandrayaan_3Hop_Experiment_Reveals.html",
+   "title": "Chandrayaan-3 \"Hop\" Experiment Reveals Hidden Lunar Secrets: Scientists Uncover Regolith Heterogeneity at Moon\u2019s South Pole",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "c8b356678653894c97a17e9d25d21511c08015e4a5e815f9388d69b7612a2286",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.isro.gov.in/ch3_Discovery_of_a_buried_crater_on_the_moon.html",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.isro.gov.in/ch3_Discovery_of_a_buried_crater_on_the_moon.html",
+   "title": "DISCOVERY OF A BURIED CRATER ON THE MOON! CHANDRAYAAN-3 VIKRAM LANDER AND PRAGYAN ROVER LANDED WITHIN IT",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "c25bb10cf1a5acf61550dbdf11cd7dd027e1308a76b9aedb2627ae802180c8be",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 79.7,
+ "usage": {
+  "fetches": 3,
+  "wayback_lookups": 0,
+  "searches": 0,
+  "llm_calls": 0,
+  "nli_checks": 7,
+  "scorer_load_ms": 30314
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 8,
+   "citations": 7
+  },
+  {
+   "t": 0.93,
+   "event": "fetch",
+   "url": "https://www.isro.gov.in/ch3_Discovery_of_a_buried_crater_on_the_moon.html",
+   "state": "live",
+   "http_status": 200,
+   "chars": 4399,
+   "error": ""
+  },
+  {
+   "t": 1.05,
+   "event": "fetch",
+   "url": "https://www.isro.gov.in/Chandrayaan_3Hop_Experiment_Reveals.html",
+   "state": "live",
+   "http_status": 200,
+   "chars": 6733,
+   "error": ""
+  },
+  {
+   "t": 1.06,
+   "event": "fetch",
+   "url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+   "state": "live",
+   "http_status": 200,
+   "chars": 1124,
+   "error": ""
+  },
+  {
+   "t": 10.28,
+   "event": "verify",
+   "url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+   "claim": "Scientists from NRSC/ISRO estimate that about 2.06 tonnes of lunar epiregolith were ejected and displaced over an area o",
+   "verdict": "SUPPORTED",
+   "ent": 0.955,
+   "con": 0.0
+  },
+  {
+   "t": 22.35,
+   "event": "verify",
+   "url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+   "claim": "LIBS confirmed the presence of Sulphur on the lunar surface through unambiguous in-situ measurements.",
+   "verdict": "SUPPORTED",
+   "ent": 0.993,
+   "con": 0.878
+  },
+  {
+   "t": 45.12,
+   "event": "verify",
+   "url": "https://www.isro.gov.in/Chandrayaan_3Hop_Experiment_Reveals.html",
+   "claim": "The \"Hop\" experiment revealed regolith heterogeneity at the Moon's south pole.",
+   "verdict": "SUPPORTED",
+   "ent": 0.991,
+   "con": 0.0
+  },
+  {
+   "t": 56.68,
+   "event": "verify",
+   "url": "https://www.isro.gov.in/Chandrayaan_3Hop_Experiment_Reveals.html",
+   "claim": "This study marks the first of such class of unique measurements.",
+   "verdict": "SUPPORTED",
+   "ent": 0.99,
+   "con": 0.0
+  },
+  {
+   "t": 65.43,
+   "event": "verify",
+   "url": "https://www.isro.gov.in/ch3_Discovery_of_a_buried_crater_on_the_moon.html",
+   "claim": "Scientists from PRL and ISRO showed that the mission landed within a buried impact crater around 160 km in size.",
+   "verdict": "SUPPORTED",
+   "ent": 0.998,
+   "con": 0.999
+  },
+  {
+   "t": 72.15,
+   "event": "verify",
+   "url": "https://www.isro.gov.in/ch3_Discovery_of_a_buried_crater_on_the_moon.html",
+   "claim": "The same study described the crater as roughly 4.4 km deep.",
+   "verdict": "SUPPORTED",
+   "ent": 0.998,
+   "con": 0.0
+  },
+  {
+   "t": 79.74,
+   "event": "verify",
+   "url": "https://www.isro.gov.in/ch3_Discovery_of_a_buried_crater_on_the_moon.html",
+   "claim": "It is likely to be older than the South Pole Aitken basin.",
+   "verdict": "SUPPORTED",
+   "ent": 0.969,
+   "con": 0.0
+  },
+  {
+   "t": 79.75,
+   "event": "done",
+   "trust_score": 100
+  }
+ ],
+ "score_s": 113.7
+}

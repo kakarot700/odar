@@ -1,0 +1,183 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_3e342431f0fe",
+ "trust_score": 100,
+ "grade": "citations hold up",
+ "counts": {
+  "SUPPORTED": 1,
+  "PARTIALLY SUPPORTED": 0,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 0,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 2
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "Copernicus estimated that 2024\u2019s global average temperature was 1.60\u00b0C above pre-industrial levels (1850\u20131900).",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "The WMO\u2019s consolidated estimate from six datasets was 1.55\u00b0C, with an uncertainty margin of \u00b10.13\u00b0C.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "A single year above 1.5\u00b0C does not mean the Paris Agreement\u2019s long-term temperature threshold has been crossed, which is assessed over decades.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://climate.copernicus.eu/global-climate-highlights-2024",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.978,
+     "contradiction": 0.999,
+     "quote": "One or two years that exceed 1.5\u00b0C above the pre-industrial level does not imply that the Paris Agreement has been breached.",
+     "note": "reworded match: Passage confirms decades-long averaging needed before threshold breached.",
+     "judged_by": "nli+llm",
+     "source_type": "web",
+     "source_year": null
+    },
+    {
+     "url": "https://wmo.int/news/media-centre/wmo-confirms-2024-warmest-year-record-about-155degc-above-pre-industrial-level",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.995,
+     "contradiction": 0.97,
+     "quote": "\u201cIt is important to emphasize that a single year of more than 1.5\u00b0C for a year does NOT mean that we have failed to meet Paris Agreement long-term temperature goals, which are measured over decades rather than an individual year.",
+     "note": "another passage on the page may disagree: \"This means that we have likely just experienced the first calendar year with a global mean temperature of more than 1.5\u00b0C above the 1850-1900 average. \u201cToday\u2019s \"",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "One or two years that exceed 1.5\u00b0C above the pre-industrial level does not imply that the Paris Agreement has been breached.",
+   "quote_url": "https://climate.copernicus.eu/global-climate-highlights-2024",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://climate.copernicus.eu/global-climate-highlights-2024",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://climate.copernicus.eu/global-climate-highlights-2024",
+   "title": "Global Climate Highlights 2024 | Copernicus",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "b7eb8c7496452630618d54fca8c9d791b2f66ea7f218c66bb227a1a055cdd2bf",
+   "quarantined": false
+  },
+  {
+   "url": "https://wmo.int/news/media-centre/wmo-confirms-2024-warmest-year-record-about-155degc-above-pre-industrial-level",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://wmo.int/news/media-centre/wmo-confirms-2024-warmest-year-record-about-155degc-above-pre-industrial-level",
+   "title": "WMO confirms 2024 as warmest year on record at about 1.55\u00b0C above pre-industrial level",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "2eff9633f32a1368466eb41f4c3c30ec47af939fd88534c88c54baa6f85ee63f",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 14.2,
+ "usage": {
+  "fetches": 2,
+  "wayback_lookups": 0,
+  "searches": 0,
+  "llm_calls": 1,
+  "nli_checks": 2,
+  "scorer_load_ms": 14563
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 3,
+   "citations": 2
+  },
+  {
+   "t": 0.85,
+   "event": "fetch",
+   "url": "https://wmo.int/news/media-centre/wmo-confirms-2024-warmest-year-record-about-155degc-above-pre-industrial-level",
+   "state": "live",
+   "http_status": 200,
+   "chars": 8026,
+   "error": ""
+  },
+  {
+   "t": 1.06,
+   "event": "fetch",
+   "url": "https://climate.copernicus.eu/global-climate-highlights-2024",
+   "state": "live",
+   "http_status": 200,
+   "chars": 28630,
+   "error": ""
+  },
+  {
+   "t": 9.8,
+   "event": "paraphrase_judge",
+   "claim": "A single year above 1.5\u00b0C does not mean the Paris Agreement\u2019s long-term temperature threshold has been crossed, which is",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 9.8,
+   "event": "verify",
+   "url": "https://climate.copernicus.eu/global-climate-highlights-2024",
+   "claim": "A single year above 1.5\u00b0C does not mean the Paris Agreement\u2019s long-term temperature threshold has been crossed, which is",
+   "verdict": "SUPPORTED",
+   "ent": 0.978,
+   "con": 0.999
+  },
+  {
+   "t": 14.2,
+   "event": "verify",
+   "url": "https://wmo.int/news/media-centre/wmo-confirms-2024-warmest-year-record-about-155degc-above-pre-industrial-level",
+   "claim": "A single year above 1.5\u00b0C does not mean the Paris Agreement\u2019s long-term temperature threshold has been crossed, which is",
+   "verdict": "SUPPORTED",
+   "ent": 0.995,
+   "con": 0.97
+  },
+  {
+   "t": 14.2,
+   "event": "done",
+   "trust_score": 100
+  }
+ ],
+ "score_s": 30.6
+}

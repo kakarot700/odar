@@ -1,0 +1,188 @@
+{
+ "thread_id": "50f2aae80da56d56",
+ "share_token": "ZaEIgTXblUitDehk",
+ "title": "Is there evidence that GLP-1 drugs like semaglutide reduce cardiovascular events?",
+ "project_id": "",
+ "sources": [
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371",
+   "title": "Cardiovascular benefits of semaglutide: a systematic review and meta-analysis of randomized controlled trials - PMC",
+   "domain": "pmc.ncbi.nlm.nih.gov",
+   "snippet": "# Cardiovascular benefits of semaglutide: a systematic review and meta-analysis of randomized controlled trials\n## Abstract\n### Background\nSemaglutide, a GLP-1 receptor agonist (GLP-1RA), has shown potential in controlling type 2 diabetes due to their ability to lower blood glucose and improve cardiovascular outcomes. Although semaglutide is the newest GLP-1RA available, its cardiovascular effects have not yet been systematically reviewed.\n\n### Conclusion\nSemaglutide effectively reduces the risk of MACE and modestly improves cardiovascular mortality rates and nonfatal myocardial infarction, wi [...truncated by sanitizer]",
+   "kind": "web",
+   "date": "2021-11-25T00:00:00",
+   "n": 1
+  },
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12431743/",
+   "title": "Improved cardiovascular outcomes with glucagon-like peptide-1 receptor agonists \u2013 what is the role of weight reduction? - PMC",
+   "domain": "pmc.ncbi.nlm.nih.gov",
+   "snippet": "# Improved cardiovascular outcomes with glucagon-like peptide-1 receptor agonists \u2013 what is the role of weight reduction?\nA meta-analysis showed that GLP-1 receptor agonists in people with type 2 diabetes that induce minimal weight loss can reduce MACE  [2 ].\n\n## Table 2.\nFurthermore, a post-hoc analysis of the LEADER and SUSTAIN 6 trials found that the cardiovascular benefits of liraglutide or semaglutide were not related to weight loss  [3 ]. Similarly, the SELECT study in patients without diabetes found that semaglutide reduced the risk of MACE also in those who did not achieve clinically r [...truncated by sanitizer]",
+   "kind": "web",
+   "date": "2011-09-25T00:00:00",
+   "n": 2
+  },
+  {
+   "url": "https://link.springer.com/article/10.1186/s12872-025-05278-3",
+   "title": "Cardiovascular benefits of semaglutide: a systematic review ...",
+   "domain": "link.springer.com",
+   "snippet": "# Cardiovascular benefits of semaglutide: a systematic review and meta-analysis of randomized controlled trials\n## Abstract\n### Background\nSemaglutide, a GLP-1 receptor agonist (GLP-1RA), has shown potential in controlling type 2 diabetes due to their ability to lower blood glucose and improve cardiovascular outcomes. Although semaglutide is the newest GLP-1RA available, its cardiovascular effects have not yet been systematically reviewed.\n\n### Conclusion\nSemaglutide effectively reduces the risk of MACE and modestly improves cardiovascular mortality rates and nonfatal myocardial infarction, wi [...truncated by sanitizer]",
+   "kind": "web",
+   "date": "2025-11-21T00:00:00",
+   "n": 3
+  },
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11568621",
+   "title": "Updated evidence on cardiovascular and renal effects of GLP-1 ...",
+   "domain": "pmc.ncbi.nlm.nih.gov",
+   "snippet": "The first study to demonstrate the effect of GLP-1RAs in reducing cardiovascular events was LEADER, in which 9340 patients with type 2 diabetes at high cardiovascular risk were randomized to liraglutide 1.8 mg per day or placebo  [16 ].\n\n...\n\nIn SUSTAIN-6, wherein semaglutide (subcutaneous injection) was administered at 0.5 or 1 mg per week, MACE was also reduced by 26% in the semaglutide group compared with the placebo group (HR 0.74, 95% CI 0.58\u20130.95) as was stroke (HR 0.61, 95% CI 0.38\u20130.99)  [17 ]. The risk of MACE was also significantly reduced in consecutive studies (Harmony Outcomes  [1 [...truncated by sanitizer]",
+   "kind": "web",
+   "date": "2015-11-24T00:00:00",
+   "n": 4
+  },
+  {
+   "url": "https://pubmed.ncbi.nlm.nih.gov/37952131",
+   "title": "Semaglutide and Cardiovascular Outcomes in Obesity without Diabetes - PubMed",
+   "domain": "pubmed.ncbi.nlm.nih.gov",
+   "snippet": "# Semaglutide and Cardiovascular Outcomes in Obesity without Diabetes\n## Abstract\n**Background:** Semaglutide, a glucagon-like peptide-1 receptor agonist, has been shown to reduce the risk of adverse cardiovascular events in patients with diabetes. Whether semaglutide can reduce cardiovascular risk associated with overweight and obesity in the absence of diabetes is unknown.\n\n...\n\nA primary cardiovascular end-point event occurred in 569 of the 8803 patients (6.5%) in the semaglutide group and in 701 of the 8801 patients (8.0%) in the placebo group (hazard ratio, 0.80; 95% confidence interval,  [...truncated by sanitizer]",
+   "kind": "web",
+   "date": "2023-12-14T00:00:00",
+   "n": 5
+  },
+  {
+   "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2307563",
+   "title": "Semaglutide and Cardiovascular Outcomes in Obesity without Diabetes | New England Journal of Medicine",
+   "domain": "nejm.org",
+   "snippet": "# Semaglutide and Cardiovascular Outcomes in Obesity without Diabetes\n## Abstract\n### Background\nSemaglutide, a glucagon-like peptide-1 receptor agonist, has been shown to reduce the risk of adverse cardiovascular events in patients with diabetes. Whether semaglutide can reduce cardiovascular risk associated with overweight and obesity in the absence of diabetes is unknown.\n\n### Results\nA primary cardiovascular end-point event occurred in 569 of the 8803 patients (6.5%) in the semaglutide group and in 701 of the 8801 patients (8.0%) in the placebo group (hazard ratio, 0.80; 95% confidence inte [...truncated by sanitizer]",
+   "kind": "web",
+   "date": "2023-12-14T00:00:00",
+   "n": 6
+  }
+ ],
+ "answer": "Evidence indicates that semaglutide reduces cardiovascular events. In a trial of 17,604 patients with preexisting cardiovascular disease and overweight or obesity but without diabetes, a primary cardiovascular end-point event occurred in 569 of 8803 patients (6.5%) in the semaglutide group and in 701 of 8801 patients (8.0%) in the placebo group [5]. The hazard ratio was 0.80 with a 95% confidence interval of 0.72 to 0.90 [5]. Weekly subcutaneous semaglutide at a dose of 2.4 mg was superior to placebo in reducing the incidence of death from cardiovascular causes, nonfatal myocardial infarction, or nonfatal stroke at a mean follow-up of 39.8 months [5]. In people with type 2 diabetes, a meta-analysis showed that GLP-1 receptor agonists that induce minimal weight loss can reduce major adverse cardiovascular events [2]. GLP-1RA therapy has shown potential benefits in reducing the risk of major adverse cardiovascular events and improving kidney outcomes in patients with diabetes at high risk for cardiovascular disease [4]. Semaglutide also improved heart failure-related symptoms and reduced the incidence of worsening heart failure events, especially in HFpEF patients with higher BMI [4].",
+ "abstained": false,
+ "timing": {
+  "search_s": 13.75,
+  "fetch_s": 0.0,
+  "ttft_s": 26.45,
+  "total_s": 26.45
+ },
+ "draft_answer": "Evidence indicates that semaglutide reduces cardiovascular events. In a trial of 17,604 patients with preexisting cardiovascular disease and overweight or obesity but without diabetes, a primary cardiovascular end-point event occurred in 569 of 8803 patients (6.5%) in the semaglutide group and in 701 of 8801 patients (8.0%) in the placebo group [5]. The hazard ratio was 0.80 with a 95% confidence interval of 0.72 to 0.90 [5]. Weekly subcutaneous semaglutide at a dose of 2.4 mg was superior to placebo in reducing the incidence of death from cardiovascular causes, nonfatal myocardial infarction, or nonfatal stroke at a mean follow-up of 39.8 months [5]. In people with type 2 diabetes, a meta-analysis showed that GLP-1 receptor agonists that induce minimal weight loss can reduce major adverse cardiovascular events [2]. GLP-1RA therapy has shown potential benefits in reducing the risk of major adverse cardiovascular events and improving kidney outcomes in patients with diabetes at high risk for cardiovascular disease [4]. A network meta-analysis comparing GLP-1RAs found that semaglutide and albiglutide reduce major adverse cardiovascular events more than others [1]. Semaglutide also improved heart failure-related symptoms and reduced the incidence of worsening heart failure events, especially in HFpEF patients with higher BMI [4].",
+ "verification": {
+  "citations": [
+   {
+    "occ": 0,
+    "n": 5,
+    "marker": "[5]",
+    "claim": "In a trial of 17,604 patients with preexisting cardiovascular disease and overweight or obesity but without diabetes, a primary cardiovascular end-point event occurred in 569 of 8803 patients (6.5%) in the semaglutide group and in 701 of 8801 patients (8.0%) in the placebo group .",
+    "verdict": "partial",
+    "check_verdict": "PARTIALLY SUPPORTED",
+    "quote": "A primary cardiovascular end-point event occurred in 569 of the 8803 patients (6.5%) in the semaglutide group and in 701 of the 8801 patients (8.0%) in the placebo group",
+    "note": "partly supported: Numbers match exactly; population criteria stated in passage 2",
+    "title": "Semaglutide and Cardiovascular Outcomes in Obesity without Diabetes - PubMed",
+    "domain": "pubmed.ncbi.nlm.nih.gov",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37952131",
+    "kind": "web",
+    "entailment": 0.925,
+    "judged_by": "nli+llm"
+   },
+   {
+    "occ": 1,
+    "n": 5,
+    "marker": "[5]",
+    "claim": "The hazard ratio was 0.80 with a 95% confidence interval of 0.72 to 0.90 .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "A primary cardiovascular end-point event occurred in 569 of the 8803 patients (6.5%) in the semaglutide group and in 701 of the 8801 patients (8.0%) in the placebo group (hazard ratio, 0.80; 95% confidence interval, 0.72 to 0.90; P<0.001).",
+    "note": "",
+    "title": "Semaglutide and Cardiovascular Outcomes in Obesity without Diabetes - PubMed",
+    "domain": "pubmed.ncbi.nlm.nih.gov",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37952131",
+    "kind": "web",
+    "entailment": 0.994,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 2,
+    "n": 5,
+    "marker": "[5]",
+    "claim": "Weekly subcutaneous semaglutide at a dose of 2.4 mg was superior to placebo in reducing the incidence of death from cardiovascular causes, nonfatal myocardial infarction, or nonfatal stroke at a mean follow-up of 39.8 months .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "CONCLUSIONS: In patients with preexisting cardiovascular disease and overweight or obesity but without diabetes, weekly subcutaneous semaglutide at a dose of 2.4 mg was superior to placebo in reducing the incidence of death from cardiovascular causes, nonfatal myocardial infarction, or nonfatal stroke at a mean follow-up of 39.8 months.",
+    "note": "",
+    "title": "Semaglutide and Cardiovascular Outcomes in Obesity without Diabetes - PubMed",
+    "domain": "pubmed.ncbi.nlm.nih.gov",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37952131",
+    "kind": "web",
+    "entailment": 0.986,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 3,
+    "n": 2,
+    "marker": "[2]",
+    "claim": "In people with type 2 diabetes, a meta-analysis showed that GLP-1 receptor agonists that induce minimal weight loss can reduce major adverse cardiovascular events .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "A meta-analysis showed that GLP-1 receptor agonists in people with type 2 diabetes that induce minimal weight loss can reduce MACE [2].",
+    "note": "reworded match: Passages state the claim nearly verbatim, with MACE being major adverse cardiovascular events.",
+    "title": "Improved cardiovascular outcomes with glucagon-like peptide-1 receptor agonists \u2013 what is the role of weight reduction? - PMC",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12431743/",
+    "kind": "web",
+    "entailment": 0.001,
+    "judged_by": "nli+llm"
+   },
+   {
+    "occ": 4,
+    "n": 4,
+    "marker": "[4]",
+    "claim": "GLP-1RA therapy has shown potential benefits in reducing the risk of major adverse cardiovascular events and improving kidney outcomes in patients with diabetes at high risk for cardiovascular disease .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "Representative large-scale cardiovascular and kidney outcome trials of GLP-1RAs and their results are shown in Table 1. The first study to demonstrate the effect of GLP-1RAs in reducing cardiovascular events was LEADER, in which 9340 patients with type 2 diabetes at high cardiovascular risk were randomized to liraglutide 1.8 mg per day or placebo [16].",
+    "note": "",
+    "title": "Updated evidence on cardiovascular and renal effects of GLP-1 ...",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11568621",
+    "kind": "web",
+    "entailment": 0.966,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 5,
+    "n": 4,
+    "marker": "[4]",
+    "claim": "Semaglutide also improved heart failure-related symptoms and reduced the incidence of worsening heart failure events, especially in HFpEF patients with higher BMI .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "Collectively, semaglutide improved the heart failure-related symptoms and reduce the incidence of worsening heart failure events especially in HFpEF patients with higher BMI, suggesting that it could be a promising therapeutic approach for this patient population.",
+    "note": "",
+    "title": "Updated evidence on cardiovascular and renal effects of GLP-1 ...",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11568621",
+    "kind": "web",
+    "entailment": 0.993,
+    "judged_by": "nli"
+   }
+  ],
+  "counts": {
+   "partial": 1,
+   "supported": 5
+  },
+  "elapsed_s": 61.49,
+  "answer": "Evidence indicates that semaglutide reduces cardiovascular events. In a trial of 17,604 patients with preexisting cardiovascular disease and overweight or obesity but without diabetes, a primary cardiovascular end-point event occurred in 569 of 8803 patients (6.5%) in the semaglutide group and in 701 of 8801 patients (8.0%) in the placebo group [5]. The hazard ratio was 0.80 with a 95% confidence interval of 0.72 to 0.90 [5]. Weekly subcutaneous semaglutide at a dose of 2.4 mg was superior to placebo in reducing the incidence of death from cardiovascular causes, nonfatal myocardial infarction, or nonfatal stroke at a mean follow-up of 39.8 months [5]. In people with type 2 diabetes, a meta-analysis showed that GLP-1 receptor agonists that induce minimal weight loss can reduce major adverse cardiovascular events [2]. GLP-1RA therapy has shown potential benefits in reducing the risk of major adverse cardiovascular events and improving kidney outcomes in patients with diabetes at high risk for cardiovascular disease [4]. Semaglutide also improved heart failure-related symptoms and reduced the incidence of worsening heart failure events, especially in HFpEF patients with higher BMI [4].",
+  "repairs": [
+   {
+    "claim": "A network meta-analysis comparing GLP-1RAs found that semaglutide and albiglutide reduce major adverse cardiovascular events more than others .",
+    "from": 1,
+    "to": null,
+    "action": "removed"
+   }
+  ],
+  "total_s": 87.96
+ },
+ "q": 10,
+ "seconds": 88.1
+}

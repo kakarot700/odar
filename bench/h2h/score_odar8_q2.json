@@ -1,0 +1,394 @@
+{
+ "references": [],
+ "confidence": "medium",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_aa5514717d50",
+ "trust_score": 0,
+ "grade": "unreliable citations",
+ "counts": {
+  "SUPPORTED": 0,
+  "PARTIALLY SUPPORTED": 0,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 8,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 0
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "In a phase 3 trial, 12-month vaccine efficacy against first clinical malaria episode was 75% (95% CI 71-79) at the seasonal sites.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://pubmed.ncbi.nlm.nih.gov/38310910/",
+     "marker": "[2]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://pubmed.ncbi.nlm.nih.gov/38310910/",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "At the standard sites, the same trial reported 68% (95% CI 61-74) for time to first clinical malaria episode.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://pubmed.ncbi.nlm.nih.gov/38310910/",
+     "marker": "[2]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://pubmed.ncbi.nlm.nih.gov/38310910/",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "Vaccine efficacy against multiple clinical malaria episodes was 75% (95% CI 71-78) at the seasonal sites.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://pubmed.ncbi.nlm.nih.gov/38310910/",
+     "marker": "[2]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://pubmed.ncbi.nlm.nih.gov/38310910/",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4",
+   "claim": "At standard sites, efficacy against multiple episodes was 67% (95% CI 59-73).",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://pubmed.ncbi.nlm.nih.gov/38310910/",
+     "marker": "[2]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://pubmed.ncbi.nlm.nih.gov/38310910/",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5",
+   "claim": "In a phase 1/2b trial in Burkina Faso, vaccine efficacy was 71% (95% CI 60-78) in the low-dose adjuvant group.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://pubmed.ncbi.nlm.nih.gov/36087586",
+     "marker": "[6]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://pubmed.ncbi.nlm.nih.gov/36087586",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6",
+   "claim": "In the high-dose adjuvant group, efficacy was 80% (95% CI 72-85).",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://pubmed.ncbi.nlm.nih.gov/36087586",
+     "marker": "[6]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://pubmed.ncbi.nlm.nih.gov/36087586",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c7",
+   "claim": "In the high-dose group, efficacy against multiple malaria episodes was 78% (95% CI 71-83).",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://pubmed.ncbi.nlm.nih.gov/36087586",
+     "marker": "[6]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://pubmed.ncbi.nlm.nih.gov/36087586",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c8",
+   "claim": "The high-dose group averted 2285 (95% CI 1911-2568) malaria cases per 1000 child-years at risk in the second year of follow-up.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://pubmed.ncbi.nlm.nih.gov/36087586",
+     "marker": "[6]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.016,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://pubmed.ncbi.nlm.nih.gov/36087586",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://pubmed.ncbi.nlm.nih.gov/38310910/",
+   "state": "live",
+   "http_status": 203,
+   "error": "",
+   "resolved_url": "https://pubmed.ncbi.nlm.nih.gov/38310910/",
+   "title": "pubmed.ncbi.nlm.nih.gov",
+   "archive_url": "http://web.archive.org/web/20260909052545/https://pubmed.ncbi.nlm.nih.gov/38310910/",
+   "archive_timestamp": "20260909052545",
+   "text_source": "live",
+   "archive_check": "archived",
+   "content_hash": "fce8938e50d10c7b21524a05be781b15538400a86efd6f941b088a0dfe168a18",
+   "quarantined": false
+  },
+  {
+   "url": "https://pubmed.ncbi.nlm.nih.gov/36087586",
+   "state": "live",
+   "http_status": 203,
+   "error": "",
+   "resolved_url": "https://pubmed.ncbi.nlm.nih.gov/36087586/",
+   "title": "pubmed.ncbi.nlm.nih.gov",
+   "archive_url": "http://web.archive.org/web/20260521174248/https://pubmed.ncbi.nlm.nih.gov/36087586/",
+   "archive_timestamp": "20260521174248",
+   "text_source": "live",
+   "archive_check": "archived",
+   "content_hash": "fce8938e50d10c7b21524a05be781b15538400a86efd6f941b088a0dfe168a18",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 7.7,
+ "usage": {
+  "fetches": 2,
+  "wayback_lookups": 2,
+  "searches": 0,
+  "llm_calls": 0,
+  "nli_checks": 8,
+  "scorer_load_ms": 54551
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 8,
+   "citations": 8
+  },
+  {
+   "t": 1.01,
+   "event": "fetch",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/36087586",
+   "state": "live",
+   "http_status": 203,
+   "chars": 76,
+   "error": ""
+  },
+  {
+   "t": 1.1,
+   "event": "fetch",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/38310910/",
+   "state": "live",
+   "http_status": 203,
+   "chars": 76,
+   "error": ""
+  },
+  {
+   "t": 2.35,
+   "event": "wayback",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/38310910/",
+   "archived": true,
+   "snapshot": "http://web.archive.org/web/20260909052545/https://pubmed.ncbi.nlm.nih.gov/38310910/"
+  },
+  {
+   "t": 2.86,
+   "event": "wayback",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/36087586",
+   "archived": true,
+   "snapshot": "http://web.archive.org/web/20260521174248/https://pubmed.ncbi.nlm.nih.gov/36087586/"
+  },
+  {
+   "t": 3.61,
+   "event": "verify",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/38310910/",
+   "claim": "In a phase 3 trial, 12-month vaccine efficacy against first clinical malaria episode was 75% (95% CI 71-79) at the seaso",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 4.25,
+   "event": "verify",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/38310910/",
+   "claim": "At the standard sites, the same trial reported 68% (95% CI 61-74) for time to first clinical malaria episode.",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 4.79,
+   "event": "verify",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/38310910/",
+   "claim": "Vaccine efficacy against multiple clinical malaria episodes was 75% (95% CI 71-78) at the seasonal sites.",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 5.31,
+   "event": "verify",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/38310910/",
+   "claim": "At standard sites, efficacy against multiple episodes was 67% (95% CI 59-73).",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 5.97,
+   "event": "verify",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/36087586",
+   "claim": "In a phase 1/2b trial in Burkina Faso, vaccine efficacy was 71% (95% CI 60-78) in the low-dose adjuvant group.",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 6.51,
+   "event": "verify",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/36087586",
+   "claim": "In the high-dose adjuvant group, efficacy was 80% (95% CI 72-85).",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 7.01,
+   "event": "verify",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/36087586",
+   "claim": "In the high-dose group, efficacy against multiple malaria episodes was 78% (95% CI 71-83).",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 7.65,
+   "event": "verify",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/36087586",
+   "claim": "The high-dose group averted 2285 (95% CI 1911-2568) malaria cases per 1000 child-years at risk in the second year of fol",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.016,
+   "con": 0.0
+  },
+  {
+   "t": 7.66,
+   "event": "done",
+   "trust_score": 0
+  }
+ ],
+ "score_s": 67.0
+}

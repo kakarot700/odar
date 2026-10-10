@@ -1,0 +1,566 @@
+{
+ "references": [],
+ "confidence": "medium",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_2a41c348d4ac",
+ "trust_score": 61,
+ "grade": "mixed: check flagged claims",
+ "counts": {
+  "SUPPORTED": 3,
+  "PARTIALLY SUPPORTED": 5,
+  "CONTRADICTED": 1,
+  "WRONG SOURCE": 0,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 1
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "Multiple sources report that GLP-1 receptor agonists, especially semaglutide, reduce cardiovascular events.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2.1",
+   "claim": "In a meta-analysis of 17 studies with over 40,000 patients, semaglutide significantly reduced cardiovascular death by 23%.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+     "marker": "[6]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.942,
+     "contradiction": 0.0,
+     "quote": "Across 17 studies (n = 40, 632 patients), semaglutide significantly reduced the risk of cardiovascular (CV) death by 23% [HR 0.77, 95% CI (0.68, 0.88)], major adverse cardiovascular events (MACE) by 18% [HR 0.82, 95% CI (0.75, 0.90)], expanded MACE by 22% [HR 0.78, 95% CI (0.70, 0.85)], nonfatal",
+     "note": "the page supports the claim's gist but not the figure(s) 40,000",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Across 17 studies (n = 40, 632 patients), semaglutide significantly reduced the risk of cardiovascular (CV) death by 23% [HR 0.77, 95% CI (0.68, 0.88)], major adverse cardiovascular events (MACE) by 18% [HR 0.82, 95% CI (0.75, 0.90)], expanded MACE by 22% [HR 0.78, 95% CI (0.70, 0.85)], nonfatal",
+   "quote_url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2.2",
+   "claim": "In a meta-analysis of 17 studies with over 40,000 patients, semaglutide significantly reduced major adverse cardiovascular events (MACE) by 18%.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+     "marker": "[6]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.961,
+     "contradiction": 0.0,
+     "quote": "Across 17 studies (n = 40, 632 patients), semaglutide significantly reduced the risk of cardiovascular (CV) death by 23% [HR 0.77, 95% CI (0.68, 0.88)], major adverse cardiovascular events (MACE) by 18% [HR 0.82, 95% CI (0.75, 0.90)], expanded MACE by 22% [HR 0.78, 95% CI (0.70, 0.85)], nonfatal",
+     "note": "the page supports the claim's gist but not the figure(s) 40,000",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Across 17 studies (n = 40, 632 patients), semaglutide significantly reduced the risk of cardiovascular (CV) death by 23% [HR 0.77, 95% CI (0.68, 0.88)], major adverse cardiovascular events (MACE) by 18% [HR 0.82, 95% CI (0.75, 0.90)], expanded MACE by 22% [HR 0.78, 95% CI (0.70, 0.85)], nonfatal",
+   "quote_url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2.3",
+   "claim": "In a meta-analysis of 17 studies with over 40,000 patients, semaglutide significantly reduced expanded MACE by 22%.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+     "marker": "[6]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.938,
+     "contradiction": 0.0,
+     "quote": "Across 17 studies (n = 40, 632 patients), semaglutide significantly reduced the risk of cardiovascular (CV) death by 23% [HR 0.77, 95% CI (0.68, 0.88)], major adverse cardiovascular events (MACE) by 18% [HR 0.82, 95% CI (0.75, 0.90)], expanded MACE by 22% [HR 0.78, 95% CI (0.70, 0.85)], nonfatal",
+     "note": "the page supports the claim's gist but not the figure(s) 40,000",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Across 17 studies (n = 40, 632 patients), semaglutide significantly reduced the risk of cardiovascular (CV) death by 23% [HR 0.77, 95% CI (0.68, 0.88)], major adverse cardiovascular events (MACE) by 18% [HR 0.82, 95% CI (0.75, 0.90)], expanded MACE by 22% [HR 0.78, 95% CI (0.70, 0.85)], nonfatal",
+   "quote_url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2.4",
+   "claim": "In a meta-analysis of 17 studies with over 40,000 patients, semaglutide significantly reduced nonfatal myocardial infarction by 18%.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+     "marker": "[6]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.657,
+     "contradiction": 0.0,
+     "quote": "Across 17 studies (n = 40, 632 patients), semaglutide significantly reduced the risk of cardiovascular (CV) death by 23% [HR 0.77, 95% CI (0.68, 0.88)], major adverse cardiovascular events (MACE) by 18% [HR 0.82, 95% CI (0.75, 0.90)], expanded MACE by 22% [HR 0.78, 95% CI (0.70, 0.85)], nonfatal myocardial infarction (MI) by 18% [HR 0.82, 95% CI (0.68, 0.92)], and nonfatal stroke by 32% [HR 0.68, ",
+     "note": "partly supported: Passage states 17 studies, 40,632 patients, nonfatal MI reduced 18%.",
+     "judged_by": "nli+llm",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Across 17 studies (n = 40, 632 patients), semaglutide significantly reduced the risk of cardiovascular (CV) death by 23% [HR 0.77, 95% CI (0.68, 0.88)], major adverse cardiovascular events (MACE) by 18% [HR 0.82, 95% CI (0.75, 0.90)], expanded MACE by 22% [HR 0.78, 95% CI (0.70, 0.85)], nonfatal myocardial infarction (MI) by 18% [HR 0.82, 95% CI (0.68, 0.92)], and nonfatal stroke by 32% [HR 0.68, ",
+   "quote_url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "Network meta-analyses also suggest semaglutide has the highest probability of cardiovascular benefit among GLP-1RAs and reduces MACE more than several other agents.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371/",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.991,
+     "contradiction": 0.0,
+     "quote": "Indirect comparisons of semaglutide with other GLP-1RAs via network meta-analysis suggest that semaglutide has the highest probability of having cardiovascular benefits [17]. Furthermore, a network meta-analysis comparing GLP-1RAs and SGLT2 inhibitors has found that semaglutide and albiglutide reduce MACE more than others, suggesting that they are the most cardioprotective agents [18].",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    },
+    {
+     "url": "https://link.springer.com/article/10.1186/s12872-025-05278-3",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.991,
+     "contradiction": 0.0,
+     "quote": "Indirect comparisons of semaglutide with other GLP-1RAs via network meta-analysis suggest that semaglutide has the highest probability of having cardiovascular benefits [17]. Furthermore, a network meta-analysis comparing GLP-1RAs and SGLT2 inhibitors has found that semaglutide and albiglutide reduce MACE more than others, suggesting that they are the most cardioprotective agents [18].",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Indirect comparisons of semaglutide with other GLP-1RAs via network meta-analysis suggest that semaglutide has the highest probability of having cardiovascular benefits [17]. Furthermore, a network meta-analysis comparing GLP-1RAs and SGLT2 inhibitors has found that semaglutide and albiglutide reduce MACE more than others, suggesting that they are the most cardioprotective agents [18].",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4",
+   "claim": "The benefits appear independent of weight loss, as earlier drug versions that produced little weight loss still cut MACE by about 20%.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.medscape.com/viewarticle/glp-1-drugs-gain-ground-cardiovascular-prevention-2026a1000759",
+     "marker": "[4]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.996,
+     "contradiction": 0.0,
+     "quote": "Drucker points out that even early versions of the drugs, which didn\u2019t lead to much weight loss, still reduced MACE by around 20%.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "Drucker points out that even early versions of the drugs, which didn\u2019t lead to much weight loss, still reduced MACE by around 20%.",
+   "quote_url": "https://www.medscape.com/viewarticle/glp-1-drugs-gain-ground-cardiovascular-prevention-2026a1000759",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5",
+   "claim": "Semaglutide also improved blood pressure, lipoproteins, and other risk factors, and in patients with chronic kidney disease, the FLOW trial showed an 18% MACE reduction.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+     "marker": "[6]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.454,
+     "contradiction": 0.0,
+     "quote": "Semaglutide also improved critical modifiable CV risk factors, including SBP, DBP, LDL, and HDL, suggesting pleiotropic mechanisms beyond glycemic control.",
+     "note": "the page supports part of this claim, not all of it",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Semaglutide also improved critical modifiable CV risk factors, including SBP, DBP, LDL, and HDL, suggesting pleiotropic mechanisms beyond glycemic control.",
+   "quote_url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6.1",
+   "claim": "Clinical guidelines now recommend considering GLP-1s as first-line treatment for weight management in obesity to reduce cardiovascular risk.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.medscape.com/viewarticle/glp-1-drugs-gain-ground-cardiovascular-prevention-2026a1000759",
+     "marker": "[4]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.989,
+     "contradiction": 0.0,
+     "quote": "Over the past several years, the use of GLP-1 drugs has expanded beyond their original role in diabetes management to treating obesity, and that trajectory looks set to continue as the cardiovascular benefits become clear. Gilbert was lead author on a set of clinical guidelines from the American College of Cardiology in 2025 that recommend providers consider GLP-1s as a first-line treatment option",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    },
+    {
+     "url": "https://www.sciencedirect.com/science/article/pii/S0168822725004875",
+     "marker": "[3]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "blocked",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "page exists but could not be read (HTTP 403); archive check unavailable",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Over the past several years, the use of GLP-1 drugs has expanded beyond their original role in diabetes management to treating obesity, and that trajectory looks set to continue as the cardiovascular benefits become clear. Gilbert was lead author on a set of clinical guidelines from the American College of Cardiology in 2025 that recommend providers consider GLP-1s as a first-line treatment option",
+   "quote_url": "https://www.medscape.com/viewarticle/glp-1-drugs-gain-ground-cardiovascular-prevention-2026a1000759",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6.2",
+   "claim": "Real-world evidence supports lower healthcare resource use with semaglutide in patients with type 2 diabetes and established cardiovascular disease.",
+   "verdict": "CONTRADICTED",
+   "citations": [
+    {
+     "url": "https://www.medscape.com/viewarticle/glp-1-drugs-gain-ground-cardiovascular-prevention-2026a1000759",
+     "marker": "[4]",
+     "verdict": "CONTRADICTED",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.99,
+     "quote": "\u201cThere were no animal studies or even basic physiology suggesting they would be helpful for the cardiovascular system.\u201d In 2008, the FDA ordered a series of cardiovascular outcomes trials after two studies suggested lowering blood sugar could be dangerous for the heart in patients with type 2 diabetes, Nauck said.",
+     "note": "",
+     "judged_by": "nli+llm",
+     "source_type": "web",
+     "source_year": null
+    },
+    {
+     "url": "https://www.sciencedirect.com/science/article/pii/S0168822725004875",
+     "marker": "[3]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "blocked",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "page exists but could not be read (HTTP 403); archive check unavailable",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "\u201cThere were no animal studies or even basic physiology suggesting they would be helpful for the cardiovascular system.\u201d In 2008, the FDA ordered a series of cardiovascular outcomes trials after two studies suggested lowering blood sugar could be dangerous for the heart in patients with type 2 diabetes, Nauck said.",
+   "quote_url": "https://www.medscape.com/viewarticle/glp-1-drugs-gain-ground-cardiovascular-prevention-2026a1000759",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "title": "Semaglutide reduces cardiovascular events in type 2 diabetes: a systematic review and meta-analysis highlighting enhanced benefits in chronic kidney disease | European Journal of Medical Research | Sp",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "b7df3efe0fa62198c5624fc2426b809f62a308bb2a04e36d544d250f51839eff",
+   "quarantined": false
+  },
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371/",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371/",
+   "title": "Cardiovascular benefits of semaglutide: a systematic review and meta-analysis of randomized controlled trials - PMC",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "5a218d1110aeef3d3fcffcc1f3fbd8b2c0d8c8641dc9a462c4d128513a084c3e",
+   "quarantined": false
+  },
+  {
+   "url": "https://link.springer.com/article/10.1186/s12872-025-05278-3",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://link.springer.com/article/10.1186/s12872-025-05278-3",
+   "title": "Cardiovascular benefits of semaglutide: a systematic review and meta-analysis of randomized controlled trials | BMC Cardiovascular Disorders | Springer Nature Link",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "14ddd358f74d9d72c8eb2ec6099415440799e342a9587b335560a65798d76ccd",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.medscape.com/viewarticle/glp-1-drugs-gain-ground-cardiovascular-prevention-2026a1000759",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.medscape.com/viewarticle/glp-1-drugs-gain-ground-cardiovascular-prevention-2026a1000759",
+   "title": "The Many Cardiovascular Benefits of GLP-1 Drugs",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "bba5987eb3daf0b8f4b29379304538bbe50a7c1f630d8f19ab951d97ec77681b",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.sciencedirect.com/science/article/pii/S0168822725004875",
+   "state": "blocked",
+   "http_status": 403,
+   "error": "HTTP 403",
+   "resolved_url": "https://www.sciencedirect.com/science/article/pii/S0168822725004875",
+   "title": "",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "",
+   "archive_check": "unavailable",
+   "content_hash": "",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 128.3,
+ "usage": {
+  "fetches": 5,
+  "wayback_lookups": 1,
+  "searches": 0,
+  "llm_calls": 4,
+  "nli_checks": 12,
+  "scorer_load_ms": 1430
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 6,
+   "citations": 7
+  },
+  {
+   "t": 25.57,
+   "event": "fetch",
+   "url": "https://www.medscape.com/viewarticle/glp-1-drugs-gain-ground-cardiovascular-prevention-2026a1000759",
+   "state": "live",
+   "http_status": 200,
+   "chars": 6550,
+   "error": ""
+  },
+  {
+   "t": 25.75,
+   "event": "fetch",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371/",
+   "state": "live",
+   "http_status": 200,
+   "chars": 49175,
+   "error": ""
+  },
+  {
+   "t": 25.82,
+   "event": "fetch",
+   "url": "https://www.sciencedirect.com/science/article/pii/S0168822725004875",
+   "state": "blocked",
+   "http_status": 403,
+   "chars": 0,
+   "error": "HTTP 403"
+  },
+  {
+   "t": 26.78,
+   "event": "fetch",
+   "url": "https://link.springer.com/article/10.1186/s12872-025-05278-3",
+   "state": "live",
+   "http_status": 200,
+   "chars": 43972,
+   "error": ""
+  },
+  {
+   "t": 27.08,
+   "event": "fetch",
+   "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "state": "live",
+   "http_status": 200,
+   "chars": 45877,
+   "error": ""
+  },
+  {
+   "t": 43.21,
+   "event": "wayback",
+   "url": "https://www.sciencedirect.com/science/article/pii/S0168822725004875",
+   "error": "ReadTimeout: HTTPSConnectionPool(host='web.archive.org', port=443): Read timed out. (read timeout=12.0)"
+  },
+  {
+   "t": 53.4,
+   "event": "verify",
+   "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "claim": "In a meta-analysis of 17 studies with over 40,000 patients, semaglutide significantly reduced cardiovascular death by 23",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.942,
+   "con": 0.0
+  },
+  {
+   "t": 59.24,
+   "event": "verify",
+   "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "claim": "In a meta-analysis of 17 studies with over 40,000 patients, semaglutide significantly reduced major adverse cardiovascul",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.961,
+   "con": 0.0
+  },
+  {
+   "t": 64.94,
+   "event": "verify",
+   "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "claim": "In a meta-analysis of 17 studies with over 40,000 patients, semaglutide significantly reduced expanded MACE by 22%.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.938,
+   "con": 0.0
+  },
+  {
+   "t": 76.32,
+   "event": "paraphrase_judge",
+   "claim": "In a meta-analysis of 17 studies with over 40,000 patients, semaglutide significantly reduced nonfatal myocardial infarc",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 76.32,
+   "event": "verify",
+   "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "claim": "In a meta-analysis of 17 studies with over 40,000 patients, semaglutide significantly reduced nonfatal myocardial infarc",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.657,
+   "con": 0.0
+  },
+  {
+   "t": 81.82,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371/",
+   "claim": "Network meta-analyses also suggest semaglutide has the highest probability of cardiovascular benefit among GLP-1RAs and ",
+   "verdict": "SUPPORTED",
+   "ent": 0.991,
+   "con": 0.0
+  },
+  {
+   "t": 86.08,
+   "event": "verify",
+   "url": "https://link.springer.com/article/10.1186/s12872-025-05278-3",
+   "claim": "Network meta-analyses also suggest semaglutide has the highest probability of cardiovascular benefit among GLP-1RAs and ",
+   "verdict": "SUPPORTED",
+   "ent": 0.991,
+   "con": 0.0
+  },
+  {
+   "t": 93.55,
+   "event": "verify",
+   "url": "https://www.medscape.com/viewarticle/glp-1-drugs-gain-ground-cardiovascular-prevention-2026a1000759",
+   "claim": "The benefits appear independent of weight loss, as earlier drug versions that produced little weight loss still cut MACE",
+   "verdict": "SUPPORTED",
+   "ent": 0.996,
+   "con": 0.0
+  },
+  {
+   "t": 115.13,
+   "event": "verify",
+   "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "claim": "Semaglutide also improved blood pressure, lipoproteins, and other risk factors, and in patients with chronic kidney dise",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.454,
+   "con": 0.0
+  },
+  {
+   "t": 118.58,
+   "event": "verify",
+   "url": "https://www.medscape.com/viewarticle/glp-1-drugs-gain-ground-cardiovascular-prevention-2026a1000759",
+   "claim": "Clinical guidelines now recommend considering GLP-1s as first-line treatment for weight management in obesity to reduce ",
+   "verdict": "SUPPORTED",
+   "ent": 0.989,
+   "con": 0.0
+  },
+  {
+   "t": 128.27,
+   "event": "paraphrase_judge",
+   "claim": "Real-world evidence supports lower healthcare resource use with semaglutide in patients with type 2 diabetes and establi",
+   "verdict": "NOT_SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 128.27,
+   "event": "verify",
+   "url": "https://www.medscape.com/viewarticle/glp-1-drugs-gain-ground-cardiovascular-prevention-2026a1000759",
+   "claim": "Real-world evidence supports lower healthcare resource use with semaglutide in patients with type 2 diabetes and establi",
+   "verdict": "CONTRADICTED",
+   "ent": 0.0,
+   "con": 0.99
+  },
+  {
+   "t": 128.27,
+   "event": "done",
+   "trust_score": 61
+  }
+ ],
+ "score_s": 129.7
+}

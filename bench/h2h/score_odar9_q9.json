@@ -1,0 +1,482 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_3bef05098901",
+ "trust_score": 100,
+ "grade": "citations hold up",
+ "counts": {
+  "SUPPORTED": 10,
+  "PARTIALLY SUPPORTED": 0,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 0,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 0
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "The AI Act applies progressively, with a full roll-out by 2 August 2028.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.971,
+     "contradiction": 0.0,
+     "quote": "The AI Act applies progressively, with a full roll-out by 2 August 2028.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "The AI Act applies progressively, with a full roll-out by 2 August 2028.",
+   "quote_url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "The EU AI Act entered into force on 1 August 2024.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://artificialintelligenceact.eu/high-level-summary/",
+     "marker": "[3]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.998,
+     "quote": "After the AI Act entered into force on 1 August 2024, the application of the Act\u2019s provisions has been and is continued to be rolled out gradually.",
+     "note": "reworded match: Passages explicitly state the AI Act entered into force on 1 August 2024.",
+     "judged_by": "nli+llm",
+     "source_type": "web",
+     "source_year": 2026
+    }
+   ],
+   "quote": "After the AI Act entered into force on 1 August 2024, the application of the Act\u2019s provisions has been and is continued to be rolled out gradually.",
+   "quote_url": "https://artificialintelligenceact.eu/high-level-summary/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "The prohibitions, definitions and provisions related to AI literacy became applicable on 2 February 2025.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.986,
+     "contradiction": 0.998,
+     "quote": "The prohibitions, definitions and provisions related to AI literacy became applicable on 2 February 2025;",
+     "note": "another passage on the page may disagree: \"The rules on governance and the obligations for general-purpose AI models became applicable on 2 August 2025; The transparency requirements (Article 50) as well\"",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "The prohibitions, definitions and provisions related to AI literacy became applicable on 2 February 2025;",
+   "quote_url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4",
+   "claim": "Rules on governance and obligations for general-purpose AI models became applicable on 2 August 2025.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.994,
+     "contradiction": 0.989,
+     "quote": "The rules on governance and the obligations for general-purpose AI models became applicable on 2 August 2025;",
+     "note": "another passage on the page may disagree: \"The obligations regarding high-risk systems listed in Annex III will enter into force on 2 December 2027 and the obligations for high-risk AI systems that class\"",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "The rules on governance and the obligations for general-purpose AI models became applicable on 2 August 2025;",
+   "quote_url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5",
+   "claim": "Transparency requirements under Article 50 and measures in support of innovation apply as of 2 August 2026.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.998,
+     "contradiction": 0.0,
+     "quote": "The transparency requirements (Article 50) as well as the measures in support of innovation will apply as of 2 August 2026.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "The transparency requirements (Article 50) as well as the measures in support of innovation will apply as of 2 August 2026.",
+   "quote_url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6",
+   "claim": "Enforcement of the AI Act starts on 2 August 2026.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.996,
+     "contradiction": 0.999,
+     "quote": "The transparency requirements (Article 50) as well as the measures in support of innovation will apply as of 2 August 2026. This is also the date when the enforcement of AI Act will start;",
+     "note": "another passage on the page may disagree: \"The obligations regarding high-risk systems listed in Annex III will enter into force on 2 December 2027 and the obligations for high-risk AI systems that class\"",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "The transparency requirements (Article 50) as well as the measures in support of innovation will apply as of 2 August 2026. This is also the date when the enforcement of AI Act will start;",
+   "quote_url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c7",
+   "claim": "Prohibitions on AI systems generating non-consensual sexual deepfakes and child sexual abuse material start to apply on 2 December 2026.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.997,
+     "contradiction": 0.0,
+     "quote": "02 Dec 2026New prohibitions + Article 50(2) transition apply ** Prohibitions, for AI systems generating non-consensual sexual deepfakes and child sexual abuse material, start to apply.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "02 Dec 2026New prohibitions + Article 50(2) transition apply ** Prohibitions, for AI systems generating non-consensual sexual deepfakes and child sexual abuse material, start to apply.",
+   "quote_url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c8",
+   "claim": "Obligations regarding high-risk systems listed in Annex III enter into force on 2 December 2027.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.995,
+     "contradiction": 0.0,
+     "quote": "The obligations regarding high-risk systems listed in Annex III will enter into force on 2 December 2027 and the obligations for high-risk AI systems that classify as high-risk because they are embedded in regulated products, listed in Annex I (list of Union harmonisation legislation), will enter",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "The obligations regarding high-risk systems listed in Annex III will enter into force on 2 December 2027 and the obligations for high-risk AI systems that classify as high-risk because they are embedded in regulated products, listed in Annex I (list of Union harmonisation legislation), will enter",
+   "quote_url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c9",
+   "claim": "Obligations for high-risk AI systems embedded in regulated products listed in Annex I enter into force on 2 August 2028.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.982,
+     "contradiction": 0.999,
+     "quote": "This is also the date when the enforcement of AI Act will start; The obligations regarding high-risk systems listed in Annex III will enter into force on 2 December 2027 and the obligations for high-risk AI systems that classify as high-risk because they are embedded in regulated products, listed in Annex I (list of Union harmonisation legislation), will enter into force on 2 August 2028.",
+     "note": "another passage on the page may disagree: \"The obligations regarding high-risk systems listed in Annex III will enter into force on 2 December 2027 and the obligations for high-risk AI systems that class\"",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "This is also the date when the enforcement of AI Act will start; The obligations regarding high-risk systems listed in Annex III will enter into force on 2 December 2027 and the obligations for high-risk AI systems that classify as high-risk because they are embedded in regulated products, listed in Annex I (list of Union harmonisation legislation), will enter into force on 2 August 2028.",
+   "quote_url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c10",
+   "claim": "Member States should have at least one AI regulatory sandbox per country operational by 2 August 2027.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.995,
+     "contradiction": 0.816,
+     "quote": "02 Aug 2027Member States should have at least one AI regulatory sandbox per country operational",
+     "note": "another passage on the page may disagree: \"02 Aug 2027Member States should have at least one AI regulatory sandbox per country operational 02 Dec 2027Rules for high-risk AI systems in Annex III apply **\"",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "02 Aug 2027Member States should have at least one AI regulatory sandbox per country operational",
+   "quote_url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+   "title": "When does the AI Act go into effect? What is its timeline for implementation? | AI Act Service Desk",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "da0bebd5ed7dc72c3125bb40dbf7387a81f1e3c00ead462c1fec94a2b71f9c22",
+   "quarantined": false
+  },
+  {
+   "url": "https://artificialintelligenceact.eu/high-level-summary/",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://artificialintelligenceact.eu/high-level-summary/",
+   "title": "High-level summary of the AI Act | EU Artificial Intelligence Act",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "2ee7fbbf4e81676e70d9c81d5ce595f037e2543c7d07bae8813b00262efaf6b0",
+   "quarantined": false
+  },
+  {
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+   "title": "Timeline for the Implementation of the EU AI Act | AI Act Service Desk",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "c1b80b2a1296cea8115204d46a08f1cebe0bace7691307f8730d26b49578bbd2",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 97.2,
+ "usage": {
+  "fetches": 3,
+  "wayback_lookups": 0,
+  "searches": 0,
+  "llm_calls": 1,
+  "nli_checks": 10,
+  "scorer_load_ms": 32742
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 10,
+   "citations": 10
+  },
+  {
+   "t": 0.27,
+   "event": "fetch",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+   "state": "live",
+   "http_status": 200,
+   "chars": 1707,
+   "error": ""
+  },
+  {
+   "t": 0.4,
+   "event": "fetch",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+   "state": "live",
+   "http_status": 200,
+   "chars": 812,
+   "error": ""
+  },
+  {
+   "t": 0.53,
+   "event": "fetch",
+   "url": "https://artificialintelligenceact.eu/high-level-summary/",
+   "state": "live",
+   "http_status": 200,
+   "chars": 19727,
+   "error": ""
+  },
+  {
+   "t": 6.88,
+   "event": "verify",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+   "claim": "The AI Act applies progressively, with a full roll-out by 2 August 2028.",
+   "verdict": "SUPPORTED",
+   "ent": 0.971,
+   "con": 0.0
+  },
+  {
+   "t": 22.12,
+   "event": "paraphrase_judge",
+   "claim": "The EU AI Act entered into force on 1 August 2024.",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 22.12,
+   "event": "verify",
+   "url": "https://artificialintelligenceact.eu/high-level-summary/",
+   "claim": "The EU AI Act entered into force on 1 August 2024.",
+   "verdict": "SUPPORTED",
+   "ent": 0.0,
+   "con": 0.998
+  },
+  {
+   "t": 28.9,
+   "event": "verify",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+   "claim": "The prohibitions, definitions and provisions related to AI literacy became applicable on 2 February 2025.",
+   "verdict": "SUPPORTED",
+   "ent": 0.986,
+   "con": 0.998
+  },
+  {
+   "t": 41.0,
+   "event": "verify",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+   "claim": "Rules on governance and obligations for general-purpose AI models became applicable on 2 August 2025.",
+   "verdict": "SUPPORTED",
+   "ent": 0.994,
+   "con": 0.989
+  },
+  {
+   "t": 47.65,
+   "event": "verify",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+   "claim": "Transparency requirements under Article 50 and measures in support of innovation apply as of 2 August 2026.",
+   "verdict": "SUPPORTED",
+   "ent": 0.998,
+   "con": 0.0
+  },
+  {
+   "t": 56.56,
+   "event": "verify",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+   "claim": "Enforcement of the AI Act starts on 2 August 2026.",
+   "verdict": "SUPPORTED",
+   "ent": 0.996,
+   "con": 0.999
+  },
+  {
+   "t": 68.87,
+   "event": "verify",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+   "claim": "Prohibitions on AI systems generating non-consensual sexual deepfakes and child sexual abuse material start to apply on ",
+   "verdict": "SUPPORTED",
+   "ent": 0.997,
+   "con": 0.0
+  },
+  {
+   "t": 75.85,
+   "event": "verify",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+   "claim": "Obligations regarding high-risk systems listed in Annex III enter into force on 2 December 2027.",
+   "verdict": "SUPPORTED",
+   "ent": 0.995,
+   "con": 0.0
+  },
+  {
+   "t": 86.94,
+   "event": "verify",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+   "claim": "Obligations for high-risk AI systems embedded in regulated products listed in Annex I enter into force on 2 August 2028.",
+   "verdict": "SUPPORTED",
+   "ent": 0.982,
+   "con": 0.999
+  },
+  {
+   "t": 97.22,
+   "event": "verify",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+   "claim": "Member States should have at least one AI regulatory sandbox per country operational by 2 August 2027.",
+   "verdict": "SUPPORTED",
+   "ent": 0.995,
+   "con": 0.816
+  },
+  {
+   "t": 97.24,
+   "event": "done",
+   "trust_score": 100
+  }
+ ],
+ "score_s": 133.3
+}

@@ -1,0 +1,612 @@
+{
+ "references": [],
+ "confidence": "medium",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_ad5619dfe4e4",
+ "trust_score": 54,
+ "grade": "unreliable citations",
+ "counts": {
+  "SUPPORTED": 7,
+  "PARTIALLY SUPPORTED": 0,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 6,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 0
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "Semaglutide effectively reduces the risk of major adverse cardiovascular events (MACE) in patients with type 2 diabetes.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371/",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.985,
+     "contradiction": 0.0,
+     "quote": "According to international guidelines, GLP-1RAs are recommended for patients with type 2 diabetes who have established atherosclerotic cardiovascular disease or are considered at high cardiovascular risk. Semaglutide, a GLP-1RA, has been linked to reduced rates of MACE, including heart attacks and strokes, in patients with diabetes [31, 32].",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "According to international guidelines, GLP-1RAs are recommended for patients with type 2 diabetes who have established atherosclerotic cardiovascular disease or are considered at high cardiovascular risk. Semaglutide, a GLP-1RA, has been linked to reduced rates of MACE, including heart attacks and strokes, in patients with diabetes [31, 32].",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "In SUSTAIN-6, semaglutide reduced MACE by 26% compared with placebo (HR 0.74, 95% CI 0.58\u20130.95).",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11568621",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.998,
+     "contradiction": 0.0,
+     "quote": "In SUSTAIN-6, wherein semaglutide (subcutaneous injection) was administered at 0.5 or 1 mg per week, MACE was also reduced by 26% in the semaglutide group compared with the placebo group (HR 0.74, 95% CI 0.58\u20130.95) as was stroke (HR 0.61, 95% CI 0.38\u20130.99) [17].",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "In SUSTAIN-6, wherein semaglutide (subcutaneous injection) was administered at 0.5 or 1 mg per week, MACE was also reduced by 26% in the semaglutide group compared with the placebo group (HR 0.74, 95% CI 0.58\u20130.95) as was stroke (HR 0.61, 95% CI 0.38\u20130.99) [17].",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11568621",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3.1",
+   "claim": "Patients with preexisting cardiovascular disease and overweight or obesity but without diabetes were given weekly subcutaneous semaglutide at a dose of 2.4 mg or placebo.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://pubmed.ncbi.nlm.nih.gov/37952131",
+     "marker": "[4]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.001,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://pubmed.ncbi.nlm.nih.gov/37952131",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3.2",
+   "claim": "Weekly subcutaneous semaglutide at a dose of 2.4 mg was superior to placebo in reducing death from cardiovascular causes, nonfatal myocardial infarction, or nonfatal stroke.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://pubmed.ncbi.nlm.nih.gov/37952131",
+     "marker": "[4]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://pubmed.ncbi.nlm.nih.gov/37952131",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4.1",
+   "claim": "A primary cardiovascular end-point event occurred in 569 of 8803 patients (6.5%) in the semaglutide group.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://pubmed.ncbi.nlm.nih.gov/37952131",
+     "marker": "[4]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://pubmed.ncbi.nlm.nih.gov/37952131",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4.2",
+   "claim": "A primary cardiovascular end-point event occurred in 701 of 8801 patients (8.0%) in the placebo group.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://pubmed.ncbi.nlm.nih.gov/37952131",
+     "marker": "[4]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://pubmed.ncbi.nlm.nih.gov/37952131",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4.3",
+   "claim": "The hazard ratio was 0.80.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://pubmed.ncbi.nlm.nih.gov/37952131",
+     "marker": "[4]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://pubmed.ncbi.nlm.nih.gov/37952131",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4.4",
+   "claim": "The 95% CI was 0.72 to 0.90.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://pubmed.ncbi.nlm.nih.gov/37952131",
+     "marker": "[4]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.001,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://pubmed.ncbi.nlm.nih.gov/37952131",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5",
+   "claim": "A meta-analysis showed that GLP-1 receptor agonists in people with type 2 diabetes that induce minimal weight loss can reduce MACE.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12431743/",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.994,
+     "contradiction": 0.0,
+     "quote": "A meta-analysis showed that GLP-1 receptor agonists in people with type 2 diabetes that induce minimal weight loss can reduce MACE [2].",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "A meta-analysis showed that GLP-1 receptor agonists in people with type 2 diabetes that induce minimal weight loss can reduce MACE [2].",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12431743/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6",
+   "claim": "The cardiovascular benefits of liraglutide or semaglutide were not related to weight loss, according to a post-hoc analysis of the LEADER and SUSTAIN 6 trials.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12431743/",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.998,
+     "contradiction": 1.0,
+     "quote": "Furthermore, a post-hoc analysis of the LEADER and SUSTAIN 6 trials found that the cardiovascular benefits of liraglutide or semaglutide were not related to weight loss [3].",
+     "note": "another passage on the page may disagree: \"4.Deanfield J, Lingvay I, Kahn SK, Emerson SS, Plutzky J, Colhoun H. Relevance of body weight and weight change on cardiovascular benefit with semaglutide: a pr\"",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Furthermore, a post-hoc analysis of the LEADER and SUSTAIN 6 trials found that the cardiovascular benefits of liraglutide or semaglutide were not related to weight loss [3].",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12431743/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c7",
+   "claim": "The SELECT study in patients without diabetes found that semaglutide reduced the risk of MACE also in those who did not achieve clinically relevant weight loss.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12431743/",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.996,
+     "contradiction": 0.0,
+     "quote": "Similarly, the SELECT study in patients without diabetes found that semaglutide reduced the risk of MACE also in those who did not achieve clinically relevant weight loss [4].",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Similarly, the SELECT study in patients without diabetes found that semaglutide reduced the risk of MACE also in those who did not achieve clinically relevant weight loss [4].",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12431743/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c8",
+   "claim": "A pooled analysis including SELECT and FLOW reported that semaglutide reduced hospitalization or urgent visits due to heart failure by 41% in HFpEF patients compared with placebo.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11568621",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.996,
+     "contradiction": 0.0,
+     "quote": "Pooled analysis including these two studies in addition to SELECT and FLOW [31] reported that semaglutide reduced the risk of hospitalization or urgent visits due to heart failure by 41% (HR 0.59, 95% CI 0.41\u20130.82) in HFpEF patients compared with placebo [32].",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Pooled analysis including these two studies in addition to SELECT and FLOW [31] reported that semaglutide reduced the risk of hospitalization or urgent visits due to heart failure by 41% (HR 0.59, 95% CI 0.41\u20130.82) in HFpEF patients compared with placebo [32].",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11568621",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c9",
+   "claim": "The first study to demonstrate GLP-1RAs reducing cardiovascular events was LEADER, with 9340 patients with type 2 diabetes at high cardiovascular risk.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11568621",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.995,
+     "contradiction": 0.0,
+     "quote": "Representative large-scale cardiovascular and kidney outcome trials of GLP-1RAs and their results are shown in Table 1. The first study to demonstrate the effect of GLP-1RAs in reducing cardiovascular events was LEADER, in which 9340 patients with type 2 diabetes at high cardiovascular risk were",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Representative large-scale cardiovascular and kidney outcome trials of GLP-1RAs and their results are shown in Table 1. The first study to demonstrate the effect of GLP-1RAs in reducing cardiovascular events was LEADER, in which 9340 patients with type 2 diabetes at high cardiovascular risk were",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11568621",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371/",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371/",
+   "title": "Cardiovascular benefits of semaglutide: a systematic review and meta-analysis of randomized controlled trials - PMC",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "5a218d1110aeef3d3fcffcc1f3fbd8b2c0d8c8641dc9a462c4d128513a084c3e",
+   "quarantined": false
+  },
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11568621",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11568621/",
+   "title": "Updated evidence on cardiovascular and renal effects of GLP-1 receptor agonists and combination therapy with SGLT2 inhibitors and finerenone: a narrative review and perspectives - PMC",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "6b11aed8760b7c6139695c96009383bb23782d5915fee65a394295790ca58cba",
+   "quarantined": false
+  },
+  {
+   "url": "https://pubmed.ncbi.nlm.nih.gov/37952131",
+   "state": "live",
+   "http_status": 203,
+   "error": "",
+   "resolved_url": "https://pubmed.ncbi.nlm.nih.gov/37952131/",
+   "title": "pubmed.ncbi.nlm.nih.gov",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "unavailable",
+   "content_hash": "fce8938e50d10c7b21524a05be781b15538400a86efd6f941b088a0dfe168a18",
+   "quarantined": false
+  },
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12431743/",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12431743/",
+   "title": "Improved cardiovascular outcomes with glucagon-like peptide-1 receptor agonists \u2013 what is the role of weight reduction? - PMC",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "b5992268003136b2117fe5470da310f916e804a44896633ffa39a5ed2dc15ca0",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 102.0,
+ "usage": {
+  "fetches": 4,
+  "wayback_lookups": 1,
+  "searches": 0,
+  "llm_calls": 4,
+  "nli_checks": 15,
+  "scorer_load_ms": 36016
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 9,
+   "citations": 9
+  },
+  {
+   "t": 47.59,
+   "event": "fetch",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12431743/",
+   "state": "live",
+   "http_status": 200,
+   "chars": 8351,
+   "error": ""
+  },
+  {
+   "t": 47.71,
+   "event": "fetch",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371/",
+   "state": "live",
+   "http_status": 200,
+   "chars": 49175,
+   "error": ""
+  },
+  {
+   "t": 47.8,
+   "event": "fetch",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/37952131",
+   "state": "live",
+   "http_status": 203,
+   "chars": 76,
+   "error": ""
+  },
+  {
+   "t": 47.85,
+   "event": "fetch",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11568621",
+   "state": "live",
+   "http_status": 200,
+   "chars": 57265,
+   "error": ""
+  },
+  {
+   "t": 65.1,
+   "event": "wayback",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/37952131",
+   "error": "ReadTimeout: HTTPSConnectionPool(host='web.archive.org', port=443): Read timed out. (read timeout=12.0)"
+  },
+  {
+   "t": 69.7,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371/",
+   "claim": "Semaglutide effectively reduces the risk of major adverse cardiovascular events (MACE) in patients with type 2 diabetes.",
+   "verdict": "SUPPORTED",
+   "ent": 0.985,
+   "con": 0.0
+  },
+  {
+   "t": 79.58,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11568621",
+   "claim": "In SUSTAIN-6, semaglutide reduced MACE by 26% compared with placebo (HR 0.74, 95% CI 0.58\u20130.95).",
+   "verdict": "SUPPORTED",
+   "ent": 0.998,
+   "con": 0.0
+  },
+  {
+   "t": 79.89,
+   "event": "verify",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/37952131",
+   "claim": "Patients with preexisting cardiovascular disease and overweight or obesity but without diabetes were given weekly subcut",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.001,
+   "con": 0.0
+  },
+  {
+   "t": 80.01,
+   "event": "verify",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/37952131",
+   "claim": "Weekly subcutaneous semaglutide at a dose of 2.4 mg was superior to placebo in reducing death from cardiovascular causes",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 80.12,
+   "event": "verify",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/37952131",
+   "claim": "A primary cardiovascular end-point event occurred in 569 of 8803 patients (6.5%) in the semaglutide group.",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 80.23,
+   "event": "verify",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/37952131",
+   "claim": "A primary cardiovascular end-point event occurred in 701 of 8801 patients (8.0%) in the placebo group.",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 80.33,
+   "event": "verify",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/37952131",
+   "claim": "The hazard ratio was 0.80.",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 80.43,
+   "event": "verify",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/37952131",
+   "claim": "The 95% CI was 0.72 to 0.90.",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.001,
+   "con": 0.0
+  },
+  {
+   "t": 84.59,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12431743/",
+   "claim": "A meta-analysis showed that GLP-1 receptor agonists in people with type 2 diabetes that induce minimal weight loss can r",
+   "verdict": "SUPPORTED",
+   "ent": 0.994,
+   "con": 0.0
+  },
+  {
+   "t": 89.5,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12431743/",
+   "claim": "The cardiovascular benefits of liraglutide or semaglutide were not related to weight loss, according to a post-hoc analy",
+   "verdict": "SUPPORTED",
+   "ent": 0.998,
+   "con": 1.0
+  },
+  {
+   "t": 92.9,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12431743/",
+   "claim": "The SELECT study in patients without diabetes found that semaglutide reduced the risk of MACE also in those who did not ",
+   "verdict": "SUPPORTED",
+   "ent": 0.996,
+   "con": 0.0
+  },
+  {
+   "t": 98.35,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11568621",
+   "claim": "A pooled analysis including SELECT and FLOW reported that semaglutide reduced hospitalization or urgent visits due to he",
+   "verdict": "SUPPORTED",
+   "ent": 0.996,
+   "con": 0.0
+  },
+  {
+   "t": 102.04,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11568621",
+   "claim": "The first study to demonstrate GLP-1RAs reducing cardiovascular events was LEADER, with 9340 patients with type 2 diabet",
+   "verdict": "SUPPORTED",
+   "ent": 0.995,
+   "con": 0.0
+  },
+  {
+   "t": 102.05,
+   "event": "done",
+   "trust_score": 54
+  }
+ ],
+ "score_s": 141.9
+}

@@ -1,0 +1,224 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_0786eef5287a",
+ "trust_score": 50,
+ "grade": "unreliable citations",
+ "counts": {
+  "SUPPORTED": 1,
+  "PARTIALLY SUPPORTED": 0,
+  "CONTRADICTED": 1,
+  "WRONG SOURCE": 0,
+  "UNVERIFIABLE": 1,
+  "DEAD LINK": 0,
+  "NO CITATION": 1
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "The best evidence comes from randomized trials showing fewer major cardiovascular events with semaglutide.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "In SELECT, adults with overweight/obesity and established cardiovascular disease but no diabetes had about a 20% lower risk of cardiovascular death, nonfatal heart attack, or nonfatal stroke versus placebo.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://newsroom.heart.org/news/major-cvd-event-risk-cut-by-20-in-adults-without-diabetes-with-overweight-or-obesity",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.359,
+     "contradiction": 0.93,
+     "quote": "In a large, international clinical trial, people with obesity or overweight but not diabetes taking semaglutide for more than 3 years had a 20% lower risk of heart attack, stroke or death due to cardiovascular disease and lost an average of 9.4% of their body weight.",
+     "note": "reworded match: Passage confirms 20% lower cardiovascular risk in nondiabetic overweight adults.",
+     "judged_by": "nli+llm",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "In a large, international clinical trial, people with obesity or overweight but not diabetes taking semaglutide for more than 3 years had a 20% lower risk of heart attack, stroke or death due to cardiovascular disease and lost an average of 9.4% of their body weight.",
+   "quote_url": "https://newsroom.heart.org/news/major-cvd-event-risk-cut-by-20-in-adults-without-diabetes-with-overweight-or-obesity",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "In people with type 2 diabetes and high cardiovascular risk, oral semaglutide also reduced major adverse cardiovascular events (HR 0.86).",
+   "verdict": "UNVERIFIABLE",
+   "citations": [
+    {
+     "url": "https://www.2minutemedicine.com/oral-semaglutide-reduces-cardiovascular-event-rates-in-high-risk-patients/",
+     "marker": "[3]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "blocked",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "page exists but could not be read (HTTP 403); archive check unavailable",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.2minutemedicine.com/oral-semaglutide-reduces-cardiovascular-event-rates-in-high-risk-patients/",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "low",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4",
+   "claim": "So the answer is yes: GLP-1 drugs like semaglutide have evidence for reducing cardiovascular events, especially in higher-risk patients.",
+   "verdict": "CONTRADICTED",
+   "citations": [
+    {
+     "url": "https://newsroom.heart.org/news/major-cvd-event-risk-cut-by-20-in-adults-without-diabetes-with-overweight-or-obesity",
+     "marker": "[1]",
+     "verdict": "CONTRADICTED",
+     "link_state": "live",
+     "entailment": 0.861,
+     "contradiction": 0.978,
+     "quote": "Our findings expand the opportunity to treat patients who have overweight or obesity and existing heart disease without Type 1 or Type 2 diabetes, and we have a chance to significantly reduce their risk of a secondary cardiovascular event including death.\u201d The study had some limitations. The trial only included adults with prior cardiovascular disease, therefore, it did not investigate primary pre",
+     "note": "",
+     "judged_by": "nli+llm",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "Our findings expand the opportunity to treat patients who have overweight or obesity and existing heart disease without Type 1 or Type 2 diabetes, and we have a chance to significantly reduce their risk of a secondary cardiovascular event including death.\u201d The study had some limitations. The trial only included adults with prior cardiovascular disease, therefore, it did not investigate primary pre",
+   "quote_url": "https://newsroom.heart.org/news/major-cvd-event-risk-cut-by-20-in-adults-without-diabetes-with-overweight-or-obesity",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://newsroom.heart.org/news/major-cvd-event-risk-cut-by-20-in-adults-without-diabetes-with-overweight-or-obesity",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://newsroom.heart.org/news/major-cvd-event-risk-cut-by-20-in-adults-without-diabetes-with-overweight-or-obesity",
+   "title": "Major CVD event risk cut by 20% in adults without diabetes, with overweight or obesity | American Heart Association",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "97d7242c498920fb04c4e3b4b525fa6a10f375b2c3f56d194dfafc173fc2f133",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.2minutemedicine.com/oral-semaglutide-reduces-cardiovascular-event-rates-in-high-risk-patients/",
+   "state": "blocked",
+   "http_status": 403,
+   "error": "HTTP 403",
+   "resolved_url": "https://www.2minutemedicine.com/oral-semaglutide-reduces-cardiovascular-event-rates-in-high-risk-patients/",
+   "title": "",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "",
+   "archive_check": "unavailable",
+   "content_hash": "",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 41.7,
+ "usage": {
+  "fetches": 2,
+  "wayback_lookups": 1,
+  "searches": 0,
+  "llm_calls": 3,
+  "nli_checks": 2,
+  "scorer_load_ms": 1645
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 4,
+   "citations": 3
+  },
+  {
+   "t": 6.86,
+   "event": "fetch",
+   "url": "https://www.2minutemedicine.com/oral-semaglutide-reduces-cardiovascular-event-rates-in-high-risk-patients/",
+   "state": "blocked",
+   "http_status": 403,
+   "chars": 0,
+   "error": "HTTP 403"
+  },
+  {
+   "t": 7.1,
+   "event": "fetch",
+   "url": "https://newsroom.heart.org/news/major-cvd-event-risk-cut-by-20-in-adults-without-diabetes-with-overweight-or-obesity",
+   "state": "live",
+   "http_status": 200,
+   "chars": 12190,
+   "error": ""
+  },
+  {
+   "t": 17.16,
+   "event": "wayback",
+   "url": "https://www.2minutemedicine.com/oral-semaglutide-reduces-cardiovascular-event-rates-in-high-risk-patients/",
+   "error": "RuntimeError: wayback CDX HTTP 503"
+  },
+  {
+   "t": 30.46,
+   "event": "paraphrase_judge",
+   "claim": "In SELECT, adults with overweight/obesity and established cardiovascular disease but no diabetes had about a 20% lower r",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 30.46,
+   "event": "verify",
+   "url": "https://newsroom.heart.org/news/major-cvd-event-risk-cut-by-20-in-adults-without-diabetes-with-overweight-or-obesity",
+   "claim": "In SELECT, adults with overweight/obesity and established cardiovascular disease but no diabetes had about a 20% lower r",
+   "verdict": "SUPPORTED",
+   "ent": 0.359,
+   "con": 0.93
+  },
+  {
+   "t": 41.75,
+   "event": "paraphrase_judge",
+   "claim": "So the answer is yes: GLP-1 drugs like semaglutide have evidence for reducing cardiovascular events, especially in highe",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 41.75,
+   "event": "verify",
+   "url": "https://newsroom.heart.org/news/major-cvd-event-risk-cut-by-20-in-adults-without-diabetes-with-overweight-or-obesity",
+   "claim": "So the answer is yes: GLP-1 drugs like semaglutide have evidence for reducing cardiovascular events, especially in highe",
+   "verdict": "CONTRADICTED",
+   "ent": 0.861,
+   "con": 0.978
+  },
+  {
+   "t": 41.75,
+   "event": "done",
+   "trust_score": 50
+  }
+ ],
+ "score_s": 43.4
+}

@@ -1,0 +1,34 @@
+{
+ "qid": "q2",
+ "status": "ok",
+ "secs": 243.9,
+ "llm_calls": 4,
+ "other_tokenharbor_calls": 0,
+ "visited_urls": [
+  "https://blog.rajpoot.dev/posts/postgresql/postgresql-mvcc-isolation-locking/",
+  "https://dev.to/vahidusefzadeh/postgresql-table-bloat-and-defragmentation-autovacuum-vs-vacuum-vs-vacuum-full-3jfm",
+  "https://devgains.com/articles/postgres-vacuum-mvcc-dead-tuples-autovacuum-bloat",
+  "https://martinuke0.github.io/posts/2026-05-27-deep-dive-into-postgresql-mvcc-internals-transaction-isolation-and-performance-at-scale/",
+  "https://martinuke0.github.io/posts/2026-05-30-deep-dive-into-postgres-mvcc-architecture-transaction-isolation-and-performance-at-scale/",
+  "https://martinuke0.github.io/posts/2026-06-02-deep-dive-into-postgresql-mvcc-transaction-isolation-snapshot-management-and-concurrency-control-for-production/",
+  "https://pgviz.com/guides/vacuum-bloat/",
+  "https://techbuzzonline.com/postgresql-mvcc-vacuum-bloat-explained/",
+  "https://www.postgresql.org/docs/current/mvcc-intro.html",
+  "https://www.postgresql.org/docs/current/mvcc.html",
+  "https://www.postgresql.org/docs/current/sql-vacuum.html"
+ ],
+ "source_urls": [
+  "https://martinuke0.github.io/posts/2026-05-27-deep-dive-into-postgresql-mvcc-internals-transaction-isolation-and-performance-at-scale/",
+  "https://blog.rajpoot.dev/posts/postgresql/postgresql-mvcc-isolation-locking/",
+  "https://www.postgresql.org/docs/current/sql-vacuum.html",
+  "https://martinuke0.github.io/posts/2026-06-02-deep-dive-into-postgresql-mvcc-transaction-isolation-snapshot-management-and-concurrency-control-for-production/",
+  "https://devgains.com/articles/postgres-vacuum-mvcc-dead-tuples-autovacuum-bloat",
+  "https://martinuke0.github.io/posts/2026-05-30-deep-dive-into-postgres-mvcc-architecture-transaction-isolation-and-performance-at-scale/",
+  "https://www.postgresql.org/docs/current/mvcc-intro.html",
+  "https://www.postgresql.org/docs/current/mvcc.html",
+  "https://pgviz.com/guides/vacuum-bloat/",
+  "https://dev.to/vahidusefzadeh/postgresql-table-bloat-and-defragmentation-autovacuum-vs-vacuum-vs-vacuum-full-3jfm",
+  "https://techbuzzonline.com/postgresql-mvcc-vacuum-bloat-explained/"
+ ],
+ "costs_reported": 0.157405
+}

@@ -1,0 +1,243 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_3aaab70b7b35",
+ "trust_score": 100,
+ "grade": "citations hold up",
+ "counts": {
+  "SUPPORTED": 4,
+  "PARTIALLY SUPPORTED": 0,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 0,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 0
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "The 2023 Nobel Prize in Physiology or Medicine was awarded to Katalin Karik\u00f3 and Drew Weissman.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.lindau-nobel.org/news-nobel-prize-in-physiology-or-medicine-2023",
+     "marker": "[4]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.998,
+     "contradiction": 0.0,
+     "quote": "On Monday, 2 October 2023, the Nobel Assembly at Karolinska Institutet awarded the 2023 Nobel Prize in Physiology or Medicine to Katalin Karik\u00f3 and Drew Weissman \u201cfor their discoveries concerning nucleoside base modifications that enabled the development of effective mRNA vaccines against COVID-19\u201d.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "On Monday, 2 October 2023, the Nobel Assembly at Karolinska Institutet awarded the 2023 Nobel Prize in Physiology or Medicine to Katalin Karik\u00f3 and Drew Weissman \u201cfor their discoveries concerning nucleoside base modifications that enabled the development of effective mRNA vaccines against COVID-19\u201d.",
+   "quote_url": "https://www.lindau-nobel.org/news-nobel-prize-in-physiology-or-medicine-2023",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "The prize recognized their discoveries concerning nucleoside base modifications that enabled the development of effective mRNA vaccines against COVID-19.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.lindau-nobel.org/news-nobel-prize-in-physiology-or-medicine-2023",
+     "marker": "[4]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.995,
+     "contradiction": 0.0,
+     "quote": "On Monday, 2 October 2023, the Nobel Assembly at Karolinska Institutet awarded the 2023 Nobel Prize in Physiology or Medicine to Katalin Karik\u00f3 and Drew Weissman \u201cfor their discoveries concerning nucleoside base modifications that enabled the development of effective mRNA vaccines against COVID-19\u201d.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "On Monday, 2 October 2023, the Nobel Assembly at Karolinska Institutet awarded the 2023 Nobel Prize in Physiology or Medicine to Katalin Karik\u00f3 and Drew Weissman \u201cfor their discoveries concerning nucleoside base modifications that enabled the development of effective mRNA vaccines against COVID-19\u201d.",
+   "quote_url": "https://www.lindau-nobel.org/news-nobel-prize-in-physiology-or-medicine-2023",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "These discoveries were critical for developing effective mRNA vaccines during the pandemic that began in early 2020.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.lindau-nobel.org/news-nobel-prize-in-physiology-or-medicine-2023",
+     "marker": "[4]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.99,
+     "contradiction": 0.0,
+     "quote": "\u201cThe discoveries by the two Nobel Laureates were critical for developing effective mRNA vaccines against COVID-19 during the pandemic that began in early 2020.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "\u201cThe discoveries by the two Nobel Laureates were critical for developing effective mRNA vaccines against COVID-19 during the pandemic that began in early 2020.",
+   "quote_url": "https://www.lindau-nobel.org/news-nobel-prize-in-physiology-or-medicine-2023",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4",
+   "claim": "The prize also recognized their breakthrough discoveries to use modified RNA for therapeutic treatments.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10758357/",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.096,
+     "contradiction": 0.0,
+     "quote": "The 2023 Nobel prize in physiology or medicine was awarded to Katalin Karik\u00f3 and Drew Weissman for their breakthrough discoveries to use modified RNA for therapeutic treatments.",
+     "note": "reworded match: Passage explicitly states the prize recognized the same discoveries.",
+     "judged_by": "nli+llm",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "The 2023 Nobel prize in physiology or medicine was awarded to Katalin Karik\u00f3 and Drew Weissman for their breakthrough discoveries to use modified RNA for therapeutic treatments.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10758357/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://www.lindau-nobel.org/news-nobel-prize-in-physiology-or-medicine-2023",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.lindau-nobel.org/news-nobel-prize-in-physiology-or-medicine-2023/",
+   "title": "Nobel Prize in Physiology or Medicine 2023 - Lindau Nobel Laureate Meetings",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "dfab6fc88d549dd23de0e88111a65eaaf3cff8124105ee7a47b9915adb6292c7",
+   "quarantined": false
+  },
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10758357/",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10758357/",
+   "title": "Nobel Prize for physiology or medicine in 2023: how to dupe the cellular innate immune system using modified RNA for therapeutic treatment - PMC",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "c84ee388f5af078792e89d15ded31bc2f78942c751a5f3f7fbe1048b1c07c5e1",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 21.7,
+ "usage": {
+  "fetches": 2,
+  "wayback_lookups": 0,
+  "searches": 0,
+  "llm_calls": 1,
+  "nli_checks": 4,
+  "scorer_load_ms": 33018
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 4,
+   "citations": 4
+  },
+  {
+   "t": 0.35,
+   "event": "fetch",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10758357/",
+   "state": "live",
+   "http_status": 200,
+   "chars": 7212,
+   "error": ""
+  },
+  {
+   "t": 0.99,
+   "event": "fetch",
+   "url": "https://www.lindau-nobel.org/news-nobel-prize-in-physiology-or-medicine-2023",
+   "state": "live",
+   "http_status": 200,
+   "chars": 740,
+   "error": ""
+  },
+  {
+   "t": 3.18,
+   "event": "verify",
+   "url": "https://www.lindau-nobel.org/news-nobel-prize-in-physiology-or-medicine-2023",
+   "claim": "The 2023 Nobel Prize in Physiology or Medicine was awarded to Katalin Karik\u00f3 and Drew Weissman.",
+   "verdict": "SUPPORTED",
+   "ent": 0.998,
+   "con": 0.0
+  },
+  {
+   "t": 4.76,
+   "event": "verify",
+   "url": "https://www.lindau-nobel.org/news-nobel-prize-in-physiology-or-medicine-2023",
+   "claim": "The prize recognized their discoveries concerning nucleoside base modifications that enabled the development of effectiv",
+   "verdict": "SUPPORTED",
+   "ent": 0.995,
+   "con": 0.0
+  },
+  {
+   "t": 6.35,
+   "event": "verify",
+   "url": "https://www.lindau-nobel.org/news-nobel-prize-in-physiology-or-medicine-2023",
+   "claim": "These discoveries were critical for developing effective mRNA vaccines during the pandemic that began in early 2020.",
+   "verdict": "SUPPORTED",
+   "ent": 0.99,
+   "con": 0.0
+  },
+  {
+   "t": 21.66,
+   "event": "paraphrase_judge",
+   "claim": "The prize also recognized their breakthrough discoveries to use modified RNA for therapeutic treatments.",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 21.66,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10758357/",
+   "claim": "The prize also recognized their breakthrough discoveries to use modified RNA for therapeutic treatments.",
+   "verdict": "SUPPORTED",
+   "ent": 0.096,
+   "con": 0.0
+  },
+  {
+   "t": 21.68,
+   "event": "done",
+   "trust_score": 100
+  }
+ ],
+ "score_s": 58.8
+}

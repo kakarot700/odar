@@ -1,0 +1,318 @@
+{
+  "status": "COMPLETE",
+  "backend_state": "anthropic-tool-use",
+  "degraded": false,
+  "objective": "What were the main outcomes and agreements of the COP30 UN climate summit held in Belem, Brazil in November 2025?",
+  "run_id": "run_550270f925d54f94",
+  "uncertainty": "CONFLICTING_EVIDENCE",
+  "termination_status": "COMPLETE",
+  "unmet_conditions": [
+    "contradictions_unexamined"
+  ],
+  "digest": {
+    "objective": "What were the main outcomes and agreements of the COP30 UN climate summit held in Belem, Brazil in November 2025?",
+    "iteration": 3,
+    "termination_status": "COMPLETE",
+    "uncertainty": "CONFLICTING_EVIDENCE",
+    "subquestions": [],
+    "hypotheses": [],
+    "claims": [
+      {
+        "id": "clm_1ce2e249be4b4803",
+        "text": "A voluntary plan to curb fossil fuels, a goal to triple adaptation finance and new efforts to “strengthen” climate targets have been launched at the COP30 clima",
+        "status": "CONFLICTING",
+        "uncertainty": "CONFLICTING_EVIDENCE"
+      },
+      {
+        "id": "clm_a81bc95108534a2b",
+        "text": "In August, just three months before COP30, the Brazilian government launched the summit’s accommodation booking platform, following pressure to do so from a UN ",
+        "status": "CONFLICTING",
+        "uncertainty": "CONFLICTING_EVIDENCE"
+      },
+      {
+        "id": "clm_3aada64708e9428d",
+        "text": "Reflecting a difficult geopolitical situation heading into COP30, the leaders of China, the US and India – the “planet’s three biggest polluters” – were “notabl",
+        "status": "CONFLICTING",
+        "uncertainty": "CONFLICTING_EVIDENCE"
+      },
+      {
+        "id": "clm_3c67fcbe35414ebf",
+        "text": "(See: Fossil-fuel roadmap and deforestation.)\nAndré Corrêa do Lago – a Brazilian economist, diplomat and former climate negotiator – was appointed the president",
+        "status": "CONFLICTING",
+        "uncertainty": "CONFLICTING_EVIDENCE"
+      },
+      {
+        "id": "clm_199260d2fa77464f",
+        "text": "At a press conference on Wednesday afternoon in the first week, COP30 strategy director Túlio Andrade gave an update on the presidency consultations for the add",
+        "status": "CONFLICTING",
+        "uncertainty": "CONFLICTING_EVIDENCE"
+      },
+      {
+        "id": "clm_d4aac25551a94290",
+        "text": "One of the possible outcomes listed was a “mutirão decision”, widely interpreted as a possible overarching text containing the key agreements from COP30.",
+        "status": "CONFLICTING",
+        "uncertainty": "CONFLICTING_EVIDENCE"
+      }
+    ],
+    "evidence_summary": {
+      "total": 48,
+      "relevant": 15,
+      "supports": 7,
+      "refutes": 8,
+      "qualifies": 0,
+      "circular_rejected": 0
+    },
+    "sources": {
+      "total": 4,
+      "independent": 4,
+      "classes": {
+        "general_web": 4
+      }
+    },
+    "contradictions": [
+      {
+        "claim_id": "clm_1ce2e249be4b4803",
+        "examined": true,
+        "note": "support p=0.98 vs refutation p=0.86",
+        "stance": "UNDECIDED"
+      },
+      {
+        "claim_id": "clm_a81bc95108534a2b",
+        "examined": true,
+        "note": "support p=0.98 vs refutation p=0.99",
+        "stance": "UNDECIDED"
+      },
+      {
+        "claim_id": "clm_3aada64708e9428d",
+        "examined": true,
+        "note": "support p=0.95 vs refutation p=0.53",
+        "stance": "UNDECIDED"
+      },
+      {
+        "claim_id": "clm_3c67fcbe35414ebf",
+        "examined": false,
+        "note": "support p=0.99 vs refutation p=1.00"
+      },
+      {
+        "claim_id": "clm_199260d2fa77464f",
+        "examined": false,
+        "note": "support p=0.97 vs refutation p=1.00"
+      },
+      {
+        "claim_id": "clm_d4aac25551a94290",
+        "examined": false,
+        "note": "support p=1.00 vs refutation p=0.97"
+      }
+    ],
+    "unanswered": [],
+    "attempted_queries": [
+      "COP30 Belém outcome agreement text what was agreed",
+      "COP30 final agreement Belém Brazil November 2025",
+      "UNFCCC COP30 Belem decisions presidency conclusions",
+      "COP30 finance outcome 1.3 trillion climate finance",
+      "COP30 Belem Declaration global mutirão text contents",
+      "COP30 new collective quantified goal climate finance outcome details billion",
+      "\"COP30 closes\" agreement step up support developing nations un.org",
+      "COP30 Belém outcomes summary Reuters AP November 21 2025 finance adaptation fossil fuels"
+    ],
+    "failed_approaches": [
+      "fetch:https://www.un.org/en/climatechange/cop30",
+      "fetch:https://enb.iisd.org/belem-un-climate-change-conference-cop30",
+      "fetch:https://www.iisd.org/articles/insight/cop-30-outcome-what-it-means-and-whats-next",
+      "fetch:https://unfccc.int/sites/default/files/resource/cmp21_advanced.pdf"
+    ],
+    "evidence_coverage": {
+      "clm_1ce2e249be4b4803": true,
+      "clm_a81bc95108534a2b": true,
+      "clm_3aada64708e9428d": true,
+      "clm_3c67fcbe35414ebf": true,
+      "clm_199260d2fa77464f": true,
+      "clm_d4aac25551a94290": true
+    },
+    "citation_coverage": {
+      "clm_1ce2e249be4b4803": true,
+      "clm_a81bc95108534a2b": true,
+      "clm_3aada64708e9428d": true,
+      "clm_3c67fcbe35414ebf": true,
+      "clm_199260d2fa77464f": true,
+      "clm_d4aac25551a94290": true
+    },
+    "quarantined_urls": 0,
+    "injection_blocked": 0
+  },
+  "synthesis": "# Research Report: What were the main outcomes and agreements of the COP30 UN climate summit held in Belem, Brazil in November 2025?\n\nNo certified findings could be established.\n\nUncertainty classification: CONFLICTING EVIDENCE.\nThis report abstains rather than asserting unsupported conclusions.",
+  "audit": {
+    "status": "PASS_WITH_FLAGS",
+    "checks": {
+      "no_provisional_certifications": true,
+      "no_unsupported_critical_claims": true,
+      "citations_resolve": true,
+      "no_circular_citations": true,
+      "provenance_intact": true,
+      "numeric_consistency": true,
+      "causal_language_appropriate": true,
+      "contradictions_examined": false,
+      "uncertainty_explicit": true
+    },
+    "findings": [
+      "unexamined contradictions: 3"
+    ],
+    "unsupported_claims": [],
+    "hallucinated_citations": [],
+    "circular_citations": [],
+    "provisional_certifications": []
+  },
+  "errors": [],
+  "governance": {
+    "budget": {
+      "max_iterations": 4.0,
+      "max_tool_calls": 40.0,
+      "max_search_calls": 8.0,
+      "max_fetches": 8.0,
+      "max_sandbox_executions": 4.0,
+      "max_model_calls": 30.0,
+      "max_wall_clock_s": 540.0,
+      "max_response_chars": 18000.0,
+      "max_retries_per_call": 2.0,
+      "max_dependency_depth": 8.0,
+      "max_concurrent_fetches": 2.0,
+      "max_extensions": 2.0
+    },
+    "counters": {
+      "iterations": 3,
+      "tool_calls": 0,
+      "search_calls": 8,
+      "fetches": 8,
+      "sandbox_executions": 2,
+      "model_calls": 18,
+      "retries": 0
+    },
+    "denials": [
+      {
+        "resource": "search_calls",
+        "detail": "max 8 reached",
+        "ts": 1791334523.0555308
+      },
+      {
+        "resource": "search_calls",
+        "detail": "max 8 reached",
+        "ts": 1791334557.7951605
+      },
+      {
+        "resource": "search_calls",
+        "detail": "max 8 reached",
+        "ts": 1791334593.884443
+      },
+      {
+        "resource": "fetches",
+        "detail": "max 8 reached",
+        "ts": 1791334605.7206452
+      },
+      {
+        "resource": "fetches",
+        "detail": "max 8 reached",
+        "ts": 1791334605.720667
+      },
+      {
+        "resource": "search_calls",
+        "detail": "max 8 reached",
+        "ts": 1791334649.3537798
+      }
+    ],
+    "extensions": [],
+    "cancelled": false,
+    "cancel_reason": null
+  },
+  "telemetry": {
+    "request_id": "req_ef4affb36aa1458e",
+    "counters": {
+      "iterations": 3,
+      "search_calls": 8,
+      "fetch_calls": 8,
+      "fetch_failed": 4,
+      "claims_extracted": 6,
+      "evidence_evaluations": 12,
+      "contradictions_recorded": 6,
+      "dialectic_attacks": 3,
+      "sandbox_executions": 2
+    },
+    "latencies": {
+      "search": {
+        "count": 8,
+        "p50_ms": 770.65,
+        "p95_ms": 1013.59,
+        "max_ms": 1013.59
+      },
+      "fetch": {
+        "count": 8,
+        "p50_ms": 354.76,
+        "p95_ms": 13399.9,
+        "max_ms": 13399.9
+      },
+      "evidence_eval": {
+        "count": 6,
+        "p50_ms": 1564.92,
+        "p95_ms": 3006.14,
+        "max_ms": 3006.14
+      },
+      "sandbox": {
+        "count": 2,
+        "p50_ms": 0.02,
+        "p95_ms": 0.02,
+        "max_ms": 0.02
+      }
+    },
+    "event_count": 4
+  },
+  "events": [
+    {
+      "name": "run.start",
+      "ts": 1791334431.778372,
+      "run_id": "run_550270f925d54f94",
+      "data": {
+        "objective": "What were the main outcomes and agreements of the COP30 UN climate summit held in Belem, Brazil in November 2025?",
+        "resumed": "False",
+        "backend": "anthropic-tool-use"
+      }
+    },
+    {
+      "name": "tool_session",
+      "ts": 1791334515.6213017,
+      "run_id": "run_550270f925d54f94",
+      "data": {
+        "turns": "6",
+        "tool_calls": "[{'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': False}]",
+        "final_text": "I've used most of the budget. Let me make the remaining searches count to pin down official outcome details.",
+        "finish_requested": "False",
+        "stop_cause": "max_tokens",
+        "backend_state": "anthropic-tool-use"
+      }
+    },
+    {
+      "name": "tool_session",
+      "ts": 1791334590.8139029,
+      "run_id": "run_550270f925d54f94",
+      "data": {
+        "turns": "3",
+        "tool_calls": "[{'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': True}, {'tool': 'run_python', 'input_keys': [], 'is_error': True}]",
+        "final_text": "The request was rejected because it was considered high risk",
+        "finish_requested": "False",
+        "stop_cause": "end_turn",
+        "backend_state": "anthropic-tool-use"
+      }
+    },
+    {
+      "name": "tool_session",
+      "ts": 1791334649.353605,
+      "run_id": "run_550270f925d54f94",
+      "data": {
+        "turns": "3",
+        "tool_calls": "[{'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'run_python', 'input_keys': [], 'is_error': True}, {'tool': 'finish_research', 'input_keys': ['reasoning'], 'is_error': False}]",
+        "final_text": "All evidence-gathering is exhausted: search calls are at 8/8 and fetches are at 8/8, both denied by the governor, and the prior failed-approaches list already shows that the primary sources (un.org, enb.iisd.org, unfccc.int) never returned extractable text. The remaining sandbox executions cannot establish COP30 outcomes on their own — the only digest-level data available is aggregate stance probabilities, which describe the NLI pipeline's own consistency rather than what the summit agreed.\n\nTha",
+        "finish_requested": "True",
+        "stop_cause": "tool_use",
+        "backend_state": "anthropic-tool-use"
+      }
+    }
+  ]
+}

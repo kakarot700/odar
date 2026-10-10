@@ -1,0 +1,142 @@
+{
+ "references": [],
+ "confidence": "low",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_73577bb67a4d",
+ "trust_score": null,
+ "grade": "no checkable citations",
+ "counts": {
+  "SUPPORTED": 0,
+  "PARTIALLY SUPPORTED": 0,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 0,
+  "UNVERIFIABLE": 2,
+  "DEAD LINK": 0,
+  "NO CITATION": 1
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "Its key scientific result was the first successful soft landing near the Moon's south pole, which opened direct access to that region for science.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2.1",
+   "claim": "The mission then began measuring the lunar surface and subsurface.",
+   "verdict": "UNVERIFIABLE",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Chandrayaan-3",
+     "marker": "[1]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "blocked",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "page exists but could not be read (HTTP 403); archive check unavailable",
+     "judged_by": "nli",
+     "source_type": "encyclopedia",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://en.wikipedia.org/wiki/Chandrayaan-3",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "low",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2.2",
+   "claim": "one notable result was evidence that the upper regolith is unusually cohesive and that temperatures drop sharply at the surface near lunar twilight.",
+   "verdict": "UNVERIFIABLE",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Chandrayaan-3",
+     "marker": "[1]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "blocked",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "page exists but could not be read (HTTP 403); archive check unavailable",
+     "judged_by": "nli",
+     "source_type": "encyclopedia",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://en.wikipedia.org/wiki/Chandrayaan-3",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "low",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://en.wikipedia.org/wiki/Chandrayaan-3",
+   "state": "blocked",
+   "http_status": 403,
+   "error": "HTTP 403",
+   "resolved_url": "https://en.wikipedia.org/wiki/Chandrayaan-3",
+   "title": "",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "",
+   "archive_check": "unavailable",
+   "content_hash": "",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 17.5,
+ "usage": {
+  "fetches": 1,
+  "wayback_lookups": 1,
+  "searches": 0,
+  "llm_calls": 1,
+  "nli_checks": 0,
+  "scorer_load_ms": 321293
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 2,
+   "citations": 1
+  },
+  {
+   "t": 0.12,
+   "event": "fetch",
+   "url": "https://en.wikipedia.org/wiki/Chandrayaan-3",
+   "state": "blocked",
+   "http_status": 403,
+   "chars": 0,
+   "error": "HTTP 403"
+  },
+  {
+   "t": 17.43,
+   "event": "wayback",
+   "url": "https://en.wikipedia.org/wiki/Chandrayaan-3",
+   "error": "ReadTimeout: HTTPSConnectionPool(host='web.archive.org', port=443): Read timed out. (read timeout=12.0)"
+  },
+  {
+   "t": 17.52,
+   "event": "done",
+   "trust_score": null
+  }
+ ],
+ "score_s": 437.2
+}

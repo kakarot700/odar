@@ -1,0 +1,490 @@
+{
+  "check_id": "chk_764efefbcba4",
+  "trust_score": 29,
+  "grade": "unreliable citations",
+  "counts": {
+    "SUPPORTED": 2,
+    "PARTIALLY SUPPORTED": 0,
+    "CONTRADICTED": 2,
+    "WRONG SOURCE": 1,
+    "UNVERIFIABLE": 0,
+    "DEAD LINK": 2,
+    "NO CITATION": 1
+  },
+  "claims": [
+    {
+      "claim_id": "c1",
+      "claim": "In 2024 there were an estimated 282 million malaria cases and 610 000 malaria deaths worldwide.",
+      "verdict": "SUPPORTED",
+      "citations": [
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/malaria",
+          "marker": "[1]",
+          "verdict": "SUPPORTED",
+          "link_state": "live",
+          "entailment": 0.992,
+          "contradiction": 0.0,
+          "quote": "Globally in 2024, there were an estimated 282 million malaria cases and 610 000 malaria deaths in 80 countries.",
+          "note": "",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "Globally in 2024, there were an estimated 282 million malaria cases and 610 000 malaria deaths in 80 countries.",
+      "quote_url": "https://www.who.int/news-room/fact-sheets/detail/malaria",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": ""
+    },
+    {
+      "claim_id": "c2",
+      "claim": "The WHO African Region was home to 95% of malaria cases in 2024.",
+      "verdict": "SUPPORTED",
+      "citations": [
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/malaria",
+          "marker": "[1]",
+          "verdict": "SUPPORTED",
+          "link_state": "live",
+          "entailment": 0.997,
+          "contradiction": 0.0,
+          "quote": "In 2024, the WHO African Region was home to 95% of malaria cases (265 million) and 95% (579 000) of malaria deaths.",
+          "note": "",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "In 2024, the WHO African Region was home to 95% of malaria cases (265 million) and 95% (579 000) of malaria deaths.",
+      "quote_url": "https://www.who.int/news-room/fact-sheets/detail/malaria",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": ""
+    },
+    {
+      "claim_id": "c3",
+      "claim": "Malaria spreads directly from person to person through coughing and sneezing.",
+      "verdict": "CONTRADICTED",
+      "citations": [
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/malaria",
+          "marker": "[1]",
+          "verdict": "CONTRADICTED",
+          "link_state": "live",
+          "entailment": 0.0,
+          "contradiction": 0.991,
+          "quote": "The infection is caused by a parasite and does not spread from person to person.",
+          "note": "",
+          "judged_by": "nli+llm"
+        }
+      ],
+      "quote": "The infection is caused by a parasite and does not spread from person to person.",
+      "quote_url": "https://www.who.int/news-room/fact-sheets/detail/malaria",
+      "replacement": null,
+      "replacement_searched": true,
+      "note": ""
+    },
+    {
+      "claim_id": "c4",
+      "claim": "Children under 5 accounted for about 40% of all malaria deaths in the African Region.",
+      "verdict": "CONTRADICTED",
+      "citations": [
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/malaria",
+          "marker": "[1]",
+          "verdict": "CONTRADICTED",
+          "link_state": "live",
+          "entailment": 0.0,
+          "contradiction": 0.993,
+          "quote": "The WHO African Region carries a disproportionately high share of the global malaria burden. In 2024, the WHO African Region was home to 95% of malaria cases (265 million) and 95% (579 000) of malaria deaths. Children under 5 accounted for about 75% of all malaria deaths in the Region.",
+          "note": "",
+          "judged_by": "nli+llm"
+        }
+      ],
+      "quote": "The WHO African Region carries a disproportionately high share of the global malaria burden. In 2024, the WHO African Region was home to 95% of malaria cases (265 million) and 95% (579 000) of malaria deaths. Children under 5 accounted for about 75% of all malaria deaths in the Region.",
+      "quote_url": "https://www.who.int/news-room/fact-sheets/detail/malaria",
+      "replacement": null,
+      "replacement_searched": true,
+      "note": ""
+    },
+    {
+      "claim_id": "c5",
+      "claim": "A new malaria vaccine eliminated the disease from Kenya in 2023.",
+      "verdict": "DEAD LINK",
+      "citations": [
+        {
+          "url": "https://www.who.int/news/item/2023-kenya-malaria-eliminated-vaccine",
+          "marker": "[2]",
+          "verdict": "DEAD LINK",
+          "link_state": "not_found",
+          "entailment": 0.0,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "page not found (404); archive check unavailable",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://www.who.int/news/item/2023-kenya-malaria-eliminated-vaccine",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": ""
+    },
+    {
+      "claim_id": "c6",
+      "claim": "Malaria is caused by Plasmodium parasites transmitted by infected female Anopheles mosquitoes.",
+      "verdict": "DEAD LINK",
+      "citations": [
+        {
+          "url": "https://www.malaria-global-facts-institute.org/parasites/anopheles",
+          "marker": "[3]",
+          "verdict": "DEAD LINK",
+          "link_state": "no_domain",
+          "entailment": 0.0,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "domain does not resolve (archive check unavailable)",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://www.malaria-global-facts-institute.org/parasites/anopheles",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": ""
+    },
+    {
+      "claim_id": "c7",
+      "claim": "Bed nets treated with insecticide cut child mortality by roughly a fifth in large trials.",
+      "verdict": "WRONG SOURCE",
+      "citations": [
+        {
+          "url": "https://go.dev/doc/effective_go",
+          "marker": "[4]",
+          "verdict": "WRONG SOURCE",
+          "link_state": "live",
+          "entailment": 0.001,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "the page is real but does not say this",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://go.dev/doc/effective_go",
+      "replacement": {
+        "url": "https://www.reuters.com/business/healthcare-pharmaceuticals/new-bed-nets-that-ground-mosquitoes-could-boost-malaria-fight-2022-03-24/",
+        "title": "New bed nets that 'ground' mosquitoes could boost malaria ...",
+        "quote": "March 24(Reuters) - Bed nets treated with a new kind of insecticide cut malaria cases in children by almost half in a large trial in Tanzania, according to a study in The Lancet, raising hopes of a new weapon in the fight against the age-old killer.",
+        "entailment": 0.782
+      },
+      "replacement_searched": true,
+      "note": ""
+    },
+    {
+      "claim_id": "c8",
+      "claim": "Untreated P. falciparum malaria can progress to severe illness and death within 24 hours.",
+      "verdict": "NO CITATION",
+      "citations": [],
+      "quote": "",
+      "quote_url": "",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": ""
+    }
+  ],
+  "links": [
+    {
+      "url": "https://www.who.int/news-room/fact-sheets/detail/malaria",
+      "state": "live",
+      "http_status": 200,
+      "error": "",
+      "resolved_url": "https://www.who.int/news-room/fact-sheets/detail/malaria",
+      "title": "Malaria",
+      "archive_url": "",
+      "archive_timestamp": "",
+      "text_source": "live",
+      "archive_check": "",
+      "content_hash": "88ddf64413f63ed444961cb9d4a08ecbaf8d71c05ff059b8a6aa85e2e9b1cebb",
+      "quarantined": false
+    },
+    {
+      "url": "https://www.who.int/news/item/2023-kenya-malaria-eliminated-vaccine",
+      "state": "not_found",
+      "http_status": 404,
+      "error": "HTTP 404",
+      "resolved_url": "https://www.who.int/news/item/2023-kenya-malaria-eliminated-vaccine",
+      "title": "",
+      "archive_url": "",
+      "archive_timestamp": "",
+      "text_source": "",
+      "archive_check": "unavailable",
+      "content_hash": "",
+      "quarantined": false
+    },
+    {
+      "url": "https://www.malaria-global-facts-institute.org/parasites/anopheles",
+      "state": "no_domain",
+      "http_status": null,
+      "error": "unsafe fetch refused: DNS resolution failed for 'www.malaria-global-facts-institute.org': [Errno -2] Name or service not known",
+      "resolved_url": "",
+      "title": "",
+      "archive_url": "",
+      "archive_timestamp": "",
+      "text_source": "",
+      "archive_check": "unavailable",
+      "content_hash": "",
+      "quarantined": false
+    },
+    {
+      "url": "https://go.dev/doc/effective_go",
+      "state": "live",
+      "http_status": 200,
+      "error": "",
+      "resolved_url": "https://go.dev/doc/effective_go",
+      "title": "Effective Go - The Go Programming Language",
+      "archive_url": "",
+      "archive_timestamp": "",
+      "text_source": "live",
+      "archive_check": "",
+      "content_hash": "d492f613a8e49c6ee671a5efb1603a6a37adabd096ceb3dcb617a7990c3e355c",
+      "quarantined": false
+    }
+  ],
+  "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+  "elapsed_s": 63.7,
+  "usage": {
+    "fetches": 12,
+    "wayback_lookups": 4,
+    "searches": 3,
+    "llm_calls": 2,
+    "nli_checks": 11,
+    "scorer_load_ms": 12610
+  },
+  "audit_trail": [
+    {
+      "t": 0.0,
+      "event": "parse",
+      "claims": 8,
+      "citations": 7
+    },
+    {
+      "t": 0.04,
+      "event": "fetch",
+      "url": "https://www.malaria-global-facts-institute.org/parasites/anopheles",
+      "state": "no_domain",
+      "http_status": null,
+      "chars": 0,
+      "error": "unsafe fetch refused: DNS resolution failed for 'www.malaria-global-facts-institute.org': [Errno -2] Name or service not known"
+    },
+    {
+      "t": 0.11,
+      "event": "fetch",
+      "url": "https://www.who.int/news/item/2023-kenya-malaria-eliminated-vaccine",
+      "state": "not_found",
+      "http_status": 404,
+      "chars": 0,
+      "error": "HTTP 404"
+    },
+    {
+      "t": 0.16,
+      "event": "fetch",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/malaria",
+      "state": "live",
+      "http_status": 200,
+      "chars": 12928,
+      "error": ""
+    },
+    {
+      "t": 0.36,
+      "event": "fetch",
+      "url": "https://go.dev/doc/effective_go",
+      "state": "live",
+      "http_status": 200,
+      "chars": 95813,
+      "error": ""
+    },
+    {
+      "t": 5.36,
+      "event": "wayback",
+      "url": "https://www.malaria-global-facts-institute.org/parasites/anopheles",
+      "error": "RuntimeError: wayback CDX HTTP 503"
+    },
+    {
+      "t": 5.43,
+      "event": "wayback",
+      "url": "https://www.who.int/news/item/2023-kenya-malaria-eliminated-vaccine",
+      "error": "RuntimeError: wayback CDX HTTP 503"
+    },
+    {
+      "t": 8.59,
+      "event": "verify",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/malaria",
+      "claim": "In 2024 there were an estimated 282 million malaria cases and 610 000 malaria deaths worldwide.",
+      "verdict": "SUPPORTED",
+      "ent": 0.992,
+      "con": 0.0
+    },
+    {
+      "t": 12.43,
+      "event": "verify",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/malaria",
+      "claim": "The WHO African Region was home to 95% of malaria cases in 2024.",
+      "verdict": "SUPPORTED",
+      "ent": 0.997,
+      "con": 0.0
+    },
+    {
+      "t": 16.16,
+      "event": "paraphrase_judge",
+      "claim": "Malaria spreads directly from person to person through coughing and sneezing.",
+      "verdict": "CONTRADICTED",
+      "grounded": true
+    },
+    {
+      "t": 16.16,
+      "event": "verify",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/malaria",
+      "claim": "Malaria spreads directly from person to person through coughing and sneezing.",
+      "verdict": "CONTRADICTED",
+      "ent": 0.0,
+      "con": 0.991
+    },
+    {
+      "t": 20.63,
+      "event": "paraphrase_judge",
+      "claim": "Children under 5 accounted for about 40% of all malaria deaths in the African Region.",
+      "verdict": "CONTRADICTED",
+      "grounded": true
+    },
+    {
+      "t": 20.63,
+      "event": "verify",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/malaria",
+      "claim": "Children under 5 accounted for about 40% of all malaria deaths in the African Region.",
+      "verdict": "CONTRADICTED",
+      "ent": 0.0,
+      "con": 0.993
+    },
+    {
+      "t": 22.85,
+      "event": "verify",
+      "url": "https://go.dev/doc/effective_go",
+      "claim": "Bed nets treated with insecticide cut child mortality by roughly a fifth in large trials.",
+      "verdict": "WRONG SOURCE",
+      "ent": 0.001,
+      "con": 0.0
+    },
+    {
+      "t": 23.54,
+      "event": "search",
+      "query": "Malaria spreads directly from person to person through coughing and sneezing.",
+      "hits": 6
+    },
+    {
+      "t": 23.71,
+      "event": "fetch",
+      "url": "https://scienceinsights.org/is-malaria-contagious-how-the-disease-spreads/",
+      "state": "live",
+      "http_status": 200,
+      "chars": 3406,
+      "error": ""
+    },
+    {
+      "t": 26.73,
+      "event": "fetch",
+      "url": "https://biologyinsights.com/is-malaria-contagious-how-the-disease-spreads/",
+      "state": "live",
+      "http_status": 200,
+      "chars": 2680,
+      "error": ""
+    },
+    {
+      "t": 30.14,
+      "event": "fetch",
+      "url": "https://advancestudy.org/how-can-malaria-spread-from-person-to-person/",
+      "state": "blocked",
+      "http_status": 403,
+      "chars": 0,
+      "error": "HTTP 403"
+    },
+    {
+      "t": 39.64,
+      "event": "wayback",
+      "url": "https://advancestudy.org/how-can-malaria-spread-from-person-to-person/",
+      "error": "RuntimeError: wayback CDX HTTP 503"
+    },
+    {
+      "t": 40.28,
+      "event": "search",
+      "query": "Children under 5 accounted for about 40% of all malaria deaths in the African Region.",
+      "hits": 5
+    },
+    {
+      "t": 42.61,
+      "event": "fetch",
+      "url": "https://cdn.who.int/media/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024-regional-briefing-kit-eng.pdf?sfvrsn=bceac4",
+      "state": "live",
+      "http_status": 200,
+      "chars": 32030,
+      "error": ""
+    },
+    {
+      "t": 46.11,
+      "event": "fetch",
+      "url": "https://www.who.int/data/gho/data/themes/malaria/GHO/malaria",
+      "state": "live",
+      "http_status": 200,
+      "chars": 1540,
+      "error": ""
+    },
+    {
+      "t": 56.68,
+      "event": "fetch",
+      "url": "https://cdn.who.int/media/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2022-regional-briefing-kit-eng.pdf?sfvrsn=7cb400ed_6&download=true",
+      "state": "live",
+      "http_status": 200,
+      "chars": 26835,
+      "error": ""
+    },
+    {
+      "t": 59.56,
+      "event": "search",
+      "query": "Bed nets treated with insecticide cut child mortality by roughly a fifth in large trials.",
+      "hits": 6
+    },
+    {
+      "t": 59.7,
+      "event": "fetch",
+      "url": "https://www.reuters.com/business/healthcare-pharmaceuticals/new-bed-nets-that-ground-mosquitoes-could-boost-malaria-fight-2022-03-24/",
+      "state": "blocked",
+      "http_status": 401,
+      "chars": 0,
+      "error": "HTTP 401"
+    },
+    {
+      "t": 59.76,
+      "event": "wayback",
+      "url": "https://www.reuters.com/business/healthcare-pharmaceuticals/new-bed-nets-that-ground-mosquitoes-could-boost-malaria-fight-2022-03-24/",
+      "archived": true,
+      "snapshot": "http://web.archive.org/web/20230417031908/https://www.reuters.com/business/healthcare-pharmaceuticals/new-bed-nets-that-ground-mosquitoes-could-boost-malaria-fight-2022-03-24/"
+    },
+    {
+      "t": 60.22,
+      "event": "archive_fetch",
+      "url": "https://web.archive.org/web/20230417031908id_/https://www.reuters.com/business/healthcare-pharmaceuticals/new-bed-nets-that-ground-mosquitoes-could-boost-malaria-fight-2022-03-24/",
+      "ok": true,
+      "chars": 2640,
+      "error": ""
+    },
+    {
+      "t": 63.75,
+      "event": "replacement",
+      "claim_id": "c7",
+      "url": "https://www.reuters.com/business/healthcare-pharmaceuticals/new-bed-nets-that-ground-mosquitoes-could-boost-malaria-fight-2022-03-24/",
+      "ent": 0.782
+    },
+    {
+      "t": 63.75,
+      "event": "done",
+      "trust_score": 29
+    }
+  ]
+}

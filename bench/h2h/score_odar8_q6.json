@@ -1,0 +1,242 @@
+{
+ "references": [],
+ "confidence": "medium",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_cae8e06913e0",
+ "trust_score": 50,
+ "grade": "unreliable citations",
+ "counts": {
+  "SUPPORTED": 2,
+  "PARTIALLY SUPPORTED": 0,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 2,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 0
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "Tissue detection confirms systemic distribution, but no study has established concentration gradients, kinetic profiles, or true bioaccumulation as distinct from transient presence.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://pubmed.ncbi.nlm.nih.gov/42786943",
+     "marker": "[4]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://pubmed.ncbi.nlm.nih.gov/42786943",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "Systemic clearance kinetics are entirely unknown.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://pubmed.ncbi.nlm.nih.gov/42786943",
+     "marker": "[4]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://pubmed.ncbi.nlm.nih.gov/42786943",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "There is currently no standardized method to quantify the internal burden of microplastics in humans.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.997,
+     "contradiction": 0.0,
+     "quote": "In addition, there is currently no standardized method to quantify the internal burden of microplastics in humans, and no consensus exists regarding exposure levels that may be considered hazardous.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "In addition, there is currently no standardized method to quantify the internal burden of microplastics in humans, and no consensus exists regarding exposure levels that may be considered hazardous.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4",
+   "claim": "Human epidemiologic evidence remains limited.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.991,
+     "contradiction": 0.0,
+     "quote": "Human epidemiologic evidence remains limited, but some studies have reported possible associations between microplastics in the body and gastrointestinal complications, inflammatory conditions, hormonal imbalances, and reproductive dysfunction.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Human epidemiologic evidence remains limited, but some studies have reported possible associations between microplastics in the body and gastrointestinal complications, inflammatory conditions, hormonal imbalances, and reproductive dysfunction.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42786943",
+   "state": "live",
+   "http_status": 203,
+   "error": "",
+   "resolved_url": "https://pubmed.ncbi.nlm.nih.gov/42786943/",
+   "title": "pubmed.ncbi.nlm.nih.gov",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "unavailable",
+   "content_hash": "fce8938e50d10c7b21524a05be781b15538400a86efd6f941b088a0dfe168a18",
+   "quarantined": false
+  },
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "title": "Impact of Microplastic Exposure on Human Health: A Systematic Review of Mechanisms, Biomarkers, and Clinical Outcomes - PMC",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "5524d4ba200bb8e70983b6f1dadbd8c78c67f6f35be489c8c636b34a0d585d8d",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 25.9,
+ "usage": {
+  "fetches": 2,
+  "wayback_lookups": 1,
+  "searches": 0,
+  "llm_calls": 0,
+  "nli_checks": 6,
+  "scorer_load_ms": 36369
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 4,
+   "citations": 4
+  },
+  {
+   "t": 0.49,
+   "event": "fetch",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325",
+   "state": "live",
+   "http_status": 200,
+   "chars": 52968,
+   "error": ""
+  },
+  {
+   "t": 0.76,
+   "event": "fetch",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42786943",
+   "state": "live",
+   "http_status": 203,
+   "chars": 76,
+   "error": ""
+  },
+  {
+   "t": 13.79,
+   "event": "wayback",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42786943",
+   "error": "ReadTimeout: HTTPSConnectionPool(host='web.archive.org', port=443): Read timed out. (read timeout=12.0)"
+  },
+  {
+   "t": 14.6,
+   "event": "verify",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42786943",
+   "claim": "Tissue detection confirms systemic distribution, but no study has established concentration gradients, kinetic profiles,",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 14.82,
+   "event": "verify",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42786943",
+   "claim": "Systemic clearance kinetics are entirely unknown.",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 21.02,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325",
+   "claim": "There is currently no standardized method to quantify the internal burden of microplastics in humans.",
+   "verdict": "SUPPORTED",
+   "ent": 0.997,
+   "con": 0.0
+  },
+  {
+   "t": 25.93,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325",
+   "claim": "Human epidemiologic evidence remains limited.",
+   "verdict": "SUPPORTED",
+   "ent": 0.991,
+   "con": 0.0
+  },
+  {
+   "t": 25.93,
+   "event": "done",
+   "trust_score": 50
+  }
+ ],
+ "score_s": 67.3
+}

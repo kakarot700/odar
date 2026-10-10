@@ -1,0 +1,1013 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_b1091878b4e2",
+ "trust_score": 77,
+ "grade": "mixed: check flagged claims",
+ "counts": {
+  "SUPPORTED": 9,
+  "PARTIALLY SUPPORTED": 2,
+  "CONTRADICTED": 1,
+  "WRONG SOURCE": 1,
+  "UNVERIFIABLE": 8,
+  "DEAD LINK": 0,
+  "NO CITATION": 7
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "So separate: \"Nonfatal myocardial infarction fell by 18%.\" \"Nonfatal stroke fell by 32%.\" \"Expanded MACE fell by 22%.\" That's many.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+     "marker": "[4]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.873,
+     "contradiction": 0.0,
+     "quote": "Across 17 studies (n = 40, 632 patients), semaglutide significantly reduced the risk of cardiovascular (CV) death by 23% [HR 0.77, 95% CI (0.68, 0.88)], major adverse cardiovascular events (MACE) by 18% [HR 0.82, 95% CI (0.75, 0.90)], expanded MACE by 22% [HR 0.78, 95% CI (0.70, 0.85)], nonfatal myocardial infarction (MI) by 18% [HR 0.82, 95% CI (0.68, 0.92)], and nonfatal stroke by 32% [HR 0.68, ",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Across 17 studies (n = 40, 632 patients), semaglutide significantly reduced the risk of cardiovascular (CV) death by 23% [HR 0.77, 95% CI (0.68, 0.88)], major adverse cardiovascular events (MACE) by 18% [HR 0.82, 95% CI (0.75, 0.90)], expanded MACE by 22% [HR 0.78, 95% CI (0.70, 0.85)], nonfatal myocardial infarction (MI) by 18% [HR 0.82, 95% CI (0.68, 0.92)], and nonfatal stroke by 32% [HR 0.68, ",
+   "quote_url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "Also: \"Cardiovascular outcome trials show GLP-1 receptor agonists reduce MACE, cardiovascular mortality, non-fatal MI, and non-fatal stroke.\" But that's joined with \"and\" but it's a list of outcomes, not two figures.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11444620/",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "In T2D patients, cardiovascular outcome trials (CVOTs) have shown that glucagon-like peptide 1 receptor agonists (GLP-1 RAs) reduce major adverse cardiovascular events (MACE), cardiovascular mortality, non-fatal myocardial infarction (MI), and non-fatal stroke rates.",
+     "note": "reworded match: Passages exactly state quoted outcomes and list them with and.",
+     "judged_by": "nli+llm",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "In T2D patients, cardiovascular outcome trials (CVOTs) have shown that glucagon-like peptide 1 receptor agonists (GLP-1 RAs) reduce major adverse cardiovascular events (MACE), cardiovascular mortality, non-fatal myocardial infarction (MI), and non-fatal stroke rates.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11444620/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "The rule: never join two figures, two organisations or two findings with 'and'.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4",
+   "claim": "Better separate or rephrase: \"Cardiovascular outcome trials show GLP-1 receptor agonists reduce major adverse cardiovascular events.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11444620/",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.974,
+     "contradiction": 0.0,
+     "quote": "In T2D patients, cardiovascular outcome trials (CVOTs) have shown that glucagon-like peptide 1 receptor agonists (GLP-1 RAs) reduce major adverse cardiovascular events (MACE), cardiovascular mortality, non-fatal myocardial infarction (MI), and non-fatal stroke rates.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "In T2D patients, cardiovascular outcome trials (CVOTs) have shown that glucagon-like peptide 1 receptor agonists (GLP-1 RAs) reduce major adverse cardiovascular events (MACE), cardiovascular mortality, non-fatal myocardial infarction (MI), and non-fatal stroke rates.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11444620/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5",
+   "claim": "The same trials also show reduced cardiovascular mortality, non-fatal MI, and non-fatal stroke.\" But \"and\" joining three? Hmm.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11444620/",
+     "marker": "[5]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "While in the REWIND trial, dulaglutide was also found to be superior to a placebo in terms of lowering the incidence of non-fatal strokes. Notably, there was no appreciable variation in the risks of non-fatal MI or cardiovascular death between individuals in the SUSTAIN-6 and REWIND trials who received GLP-1 RAs and those who received placebos.",
+     "note": "the page supports part of this claim, not all of it",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "While in the REWIND trial, dulaglutide was also found to be superior to a placebo in terms of lowering the incidence of non-fatal strokes. Notably, there was no appreciable variation in the risks of non-fatal MI or cardiovascular death between individuals in the SUSTAIN-6 and REWIND trials who received GLP-1 RAs and those who received placebos.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11444620/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6.1",
+   "claim": "The instruction says never join two figures, two organisations or two findings with 'and', 'while' or a semicolon.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6.2",
+   "claim": "So we cannot list multiple findings with 'and'.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c7.1",
+   "claim": "Cardiovascular outcome trials show GLP-1 receptor agonists reduce major adverse cardiovascular events.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11444620/",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.997,
+     "contradiction": 0.0,
+     "quote": "In T2D patients, cardiovascular outcome trials (CVOTs) have shown that glucagon-like peptide 1 receptor agonists (GLP-1 RAs) reduce major adverse cardiovascular events (MACE), cardiovascular mortality, non-fatal myocardial infarction (MI), and non-fatal stroke rates.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "In T2D patients, cardiovascular outcome trials (CVOTs) have shown that glucagon-like peptide 1 receptor agonists (GLP-1 RAs) reduce major adverse cardiovascular events (MACE), cardiovascular mortality, non-fatal myocardial infarction (MI), and non-fatal stroke rates.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11444620/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c7.2",
+   "claim": "Cardiovascular outcome trials show GLP-1 receptor agonists reduce cardiovascular mortality.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11444620/",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.997,
+     "contradiction": 0.0,
+     "quote": "In T2D patients, cardiovascular outcome trials (CVOTs) have shown that glucagon-like peptide 1 receptor agonists (GLP-1 RAs) reduce major adverse cardiovascular events (MACE), cardiovascular mortality, non-fatal myocardial infarction (MI), and non-fatal stroke rates.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "In T2D patients, cardiovascular outcome trials (CVOTs) have shown that glucagon-like peptide 1 receptor agonists (GLP-1 RAs) reduce major adverse cardiovascular events (MACE), cardiovascular mortality, non-fatal myocardial infarction (MI), and non-fatal stroke rates.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11444620/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c7.3",
+   "claim": "Cardiovascular outcome trials show GLP-1 receptor agonists reduce non-fatal myocardial infarction.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11444620/",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.994,
+     "contradiction": 0.0,
+     "quote": "In T2D patients, cardiovascular outcome trials (CVOTs) have shown that glucagon-like peptide 1 receptor agonists (GLP-1 RAs) reduce major adverse cardiovascular events (MACE), cardiovascular mortality, non-fatal myocardial infarction (MI), and non-fatal stroke rates.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "In T2D patients, cardiovascular outcome trials (CVOTs) have shown that glucagon-like peptide 1 receptor agonists (GLP-1 RAs) reduce major adverse cardiovascular events (MACE), cardiovascular mortality, non-fatal myocardial infarction (MI), and non-fatal stroke rates.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11444620/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c7.4",
+   "claim": "Cardiovascular outcome trials show GLP-1 receptor agonists reduce non-fatal stroke.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11444620/",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.994,
+     "contradiction": 0.0,
+     "quote": "In T2D patients, cardiovascular outcome trials (CVOTs) have shown that glucagon-like peptide 1 receptor agonists (GLP-1 RAs) reduce major adverse cardiovascular events (MACE), cardiovascular mortality, non-fatal myocardial infarction (MI), and non-fatal stroke rates.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "In T2D patients, cardiovascular outcome trials (CVOTs) have shown that glucagon-like peptide 1 receptor agonists (GLP-1 RAs) reduce major adverse cardiovascular events (MACE), cardiovascular mortality, non-fatal myocardial infarction (MI), and non-fatal stroke rates.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11444620/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c8",
+   "claim": "But maybe we can cite for specific.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+     "marker": "[4]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.001,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli+llm",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c9",
+   "claim": "Also / state \"network meta-analysis suggest that semaglutide has the highest probability of having cardiovascular benefits.\" That's a single finding.",
+   "verdict": "CONTRADICTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371/",
+     "marker": "[1]",
+     "verdict": "CONTRADICTED",
+     "link_state": "live",
+     "entailment": 0.039,
+     "contradiction": 0.971,
+     "quote": "Although semaglutide is the newest GLP-1RA available, its cardiovascular effects have not yet been systematically reviewed. This meta-analysis adhered to a pre-registered protocol (PROSPERO ID: CRD42024538847).",
+     "note": "",
+     "judged_by": "nli+llm",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    },
+    {
+     "url": "https://link.springer.com/article/10.1186/s12872-025-05278-3",
+     "marker": "[2]",
+     "verdict": "CONTRADICTED",
+     "link_state": "live",
+     "entailment": 0.039,
+     "contradiction": 0.971,
+     "quote": "Although semaglutide is the newest GLP-1RA available, its cardiovascular effects have not yet been systematically reviewed. This meta-analysis adhered to a pre-registered protocol (PROSPERO ID: CRD42024538847).",
+     "note": "",
+     "judged_by": "nli+llm",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Although semaglutide is the newest GLP-1RA available, its cardiovascular effects have not yet been systematically reviewed. This meta-analysis adhered to a pre-registered protocol (PROSPERO ID: CRD42024538847).",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c10",
+   "claim": "Need perhaps mention ?",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.medscape.com/viewarticle/glp-1-drugs-gain-ground-cardiovascular-prevention-2026a1000759",
+     "marker": "[3]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.914,
+     "contradiction": 0.0,
+     "quote": "More Than Just Risk Factor Modulation?",
+     "note": "only a short or loosely matching passage supports this",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "More Than Just Risk Factor Modulation?",
+   "quote_url": "https://www.medscape.com/viewarticle/glp-1-drugs-gain-ground-cardiovascular-prevention-2026a1000759",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c11.1",
+   "claim": "All forms of semaglutide, whether oral or injectable, now have an FDA label that says they may be useful for preventing heart disease.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c11.2",
+   "claim": "That's a finding but from an expert quote.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c12",
+   "claim": "Source also says American College of Cardiology 2025 guidelines recommend GLP-1s first-line for weight management to reduce cardiovascular risk.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.medscape.com/viewarticle/glp-1-drugs-gain-ground-cardiovascular-prevention-2026a1000759",
+     "marker": "[3]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.254,
+     "contradiction": 0.0,
+     "quote": "Gilbert was lead author on a set of clinical guidelines from the American College of Cardiology in 2025 that recommend providers consider GLP-1s as a first-line treatment option for weight management in patients with obesity to reduce cardiovascular risk.",
+     "note": "reworded match: Passages exactly match the claim's substantive content.",
+     "judged_by": "nli+llm",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "Gilbert was lead author on a set of clinical guidelines from the American College of Cardiology in 2025 that recommend providers consider GLP-1s as a first-line treatment option for weight management in patients with obesity to reduce cardiovascular risk.",
+   "quote_url": "https://www.medscape.com/viewarticle/glp-1-drugs-gain-ground-cardiovascular-prevention-2026a1000759",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c13",
+   "claim": "We can mention the FDA label or guidelines.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c14",
+   "claim": "\"A pooled analysis of 17 studies found semaglutide reduced cardiovascular death by 23%.\" That's direct.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+     "marker": "[4]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.118,
+     "contradiction": 0.0,
+     "quote": "Across 17 studies (n = 40, 632 patients), semaglutide significantly reduced the risk of cardiovascular (CV) death by 23% [HR 0.77, 95% CI (0.68, 0.88)], major adverse cardiovascular events (MACE) by 18% [HR 0.82, 95% CI (0.75, 0.90)], expanded MACE by 22% [HR 0.78, 95% CI (0.70, 0.85)], nonfatal myocardial infarction (MI) by 18% [HR 0.82, 95% CI (0.68, 0.92)], and nonfatal stroke by 32% [HR 0.68, ",
+     "note": "reworded match: Passages explicitly state the 23% reduction in cardiovascular death.",
+     "judged_by": "nli+llm",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Across 17 studies (n = 40, 632 patients), semaglutide significantly reduced the risk of cardiovascular (CV) death by 23% [HR 0.77, 95% CI (0.68, 0.88)], major adverse cardiovascular events (MACE) by 18% [HR 0.82, 95% CI (0.75, 0.90)], expanded MACE by 22% [HR 0.78, 95% CI (0.70, 0.85)], nonfatal myocardial infarction (MI) by 18% [HR 0.82, 95% CI (0.68, 0.92)], and nonfatal stroke by 32% [HR 0.68, ",
+   "quote_url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c15",
+   "claim": "Maybe mention \"across 17 studies (n=40,632 patients)\" as part of sentence.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c16",
+   "claim": "Keep under 25: \"Across 17 studies with 40,632 patients, semaglutide reduced cardiovascular death by 23%.\" That's 14 words. Good.",
+   "verdict": "UNVERIFIABLE",
+   "citations": [
+    {
+     "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+     "marker": "[4]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "time limit reached",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "low",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c17.1",
+   "claim": "The same analysis reported major adverse cardiovascular events reduced by 18%.",
+   "verdict": "UNVERIFIABLE",
+   "citations": [
+    {
+     "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+     "marker": "[4]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "time limit reached",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "low",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c17.2",
+   "claim": "It also reported nonfatal myocardial infarction reduced by 18%.",
+   "verdict": "UNVERIFIABLE",
+   "citations": [
+    {
+     "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+     "marker": "[4]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "time limit reached",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "low",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c17.3",
+   "claim": "Nonfatal stroke was reduced by 32%.",
+   "verdict": "UNVERIFIABLE",
+   "citations": [
+    {
+     "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+     "marker": "[4]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "time limit reached",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "low",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c17.4",
+   "claim": "Expanded MACE was reduced by 22%.",
+   "verdict": "UNVERIFIABLE",
+   "citations": [
+    {
+     "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+     "marker": "[4]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "time limit reached",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "low",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c18",
+   "claim": "Need maybe note \"evidence from cardiovascular outcome trials\" from.",
+   "verdict": "UNVERIFIABLE",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11444620/",
+     "marker": "[5]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "time limit reached",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11444620/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "low",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c19",
+   "claim": "Could write: \"Cardiovascular outcome trials show GLP-1 receptor agonists reduce major adverse cardiovascular events.\" But that repeats with. Fine.",
+   "verdict": "UNVERIFIABLE",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11444620/",
+     "marker": "[5]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "time limit reached",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    },
+    {
+     "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+     "marker": "[4]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "time limit reached",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11444620/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "low",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c20",
+   "claim": "Also: \"Network meta-analysis suggests semagl",
+   "verdict": "UNVERIFIABLE",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371/",
+     "marker": "[1]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "time limit reached",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "low",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "title": "Semaglutide reduces cardiovascular events in type 2 diabetes: a systematic review and meta-analysis highlighting enhanced benefits in chronic kidney disease | European Journal of Medical Research | Sp",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "b7df3efe0fa62198c5624fc2426b809f62a308bb2a04e36d544d250f51839eff",
+   "quarantined": false
+  },
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11444620/",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11444620/",
+   "title": "Exploring the clinical effectiveness of glucagon-like peptide-1 receptor agonists in managing cardiovascular complications: an updated comprehensive review and future directives - PMC",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "ccd5cb2a01ad6b286e92c53af17900023a3baf05f89617fdd8f747fb9dec36f0",
+   "quarantined": false
+  },
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371/",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371/",
+   "title": "Cardiovascular benefits of semaglutide: a systematic review and meta-analysis of randomized controlled trials - PMC",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "5a218d1110aeef3d3fcffcc1f3fbd8b2c0d8c8641dc9a462c4d128513a084c3e",
+   "quarantined": false
+  },
+  {
+   "url": "https://link.springer.com/article/10.1186/s12872-025-05278-3",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://link.springer.com/article/10.1186/s12872-025-05278-3",
+   "title": "Cardiovascular benefits of semaglutide: a systematic review and meta-analysis of randomized controlled trials | BMC Cardiovascular Disorders | Springer Nature Link",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "14ddd358f74d9d72c8eb2ec6099415440799e342a9587b335560a65798d76ccd",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.medscape.com/viewarticle/glp-1-drugs-gain-ground-cardiovascular-prevention-2026a1000759",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.medscape.com/viewarticle/glp-1-drugs-gain-ground-cardiovascular-prevention-2026a1000759",
+   "title": "The Many Cardiovascular Benefits of GLP-1 Drugs",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "bba5987eb3daf0b8f4b29379304538bbe50a7c1f630d8f19ab951d97ec77681b",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 158.1,
+ "usage": {
+  "fetches": 5,
+  "wayback_lookups": 0,
+  "searches": 0,
+  "llm_calls": 11,
+  "nli_checks": 18,
+  "scorer_load_ms": 15440
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 20,
+   "citations": 17
+  },
+  {
+   "t": 48.27,
+   "event": "fetch",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371/",
+   "state": "live",
+   "http_status": 200,
+   "chars": 49175,
+   "error": ""
+  },
+  {
+   "t": 48.35,
+   "event": "fetch",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11444620/",
+   "state": "live",
+   "http_status": 200,
+   "chars": 57816,
+   "error": ""
+  },
+  {
+   "t": 48.44,
+   "event": "fetch",
+   "url": "https://www.medscape.com/viewarticle/glp-1-drugs-gain-ground-cardiovascular-prevention-2026a1000759",
+   "state": "live",
+   "http_status": 200,
+   "chars": 6550,
+   "error": ""
+  },
+  {
+   "t": 49.31,
+   "event": "fetch",
+   "url": "https://link.springer.com/article/10.1186/s12872-025-05278-3",
+   "state": "live",
+   "http_status": 200,
+   "chars": 43972,
+   "error": ""
+  },
+  {
+   "t": 49.42,
+   "event": "fetch",
+   "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "state": "live",
+   "http_status": 200,
+   "chars": 45877,
+   "error": ""
+  },
+  {
+   "t": 56.28,
+   "event": "verify",
+   "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "claim": "So separate: \"Nonfatal myocardial infarction fell by 18%.\" \"Nonfatal stroke fell by 32%.\" \"Expanded MACE fell by 22%.\" T",
+   "verdict": "SUPPORTED",
+   "ent": 0.873,
+   "con": 0.0
+  },
+  {
+   "t": 78.46,
+   "event": "paraphrase_judge",
+   "claim": "Also: \"Cardiovascular outcome trials show GLP-1 receptor agonists reduce MACE, cardiovascular mortality, non-fatal MI, a",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 78.46,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11444620/",
+   "claim": "Also: \"Cardiovascular outcome trials show GLP-1 receptor agonists reduce MACE, cardiovascular mortality, non-fatal MI, a",
+   "verdict": "SUPPORTED",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 82.33,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11444620/",
+   "claim": "Better separate or rephrase: \"Cardiovascular outcome trials show GLP-1 receptor agonists reduce major adverse cardiovasc",
+   "verdict": "SUPPORTED",
+   "ent": 0.974,
+   "con": 0.0
+  },
+  {
+   "t": 96.86,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11444620/",
+   "claim": "The same trials also show reduced cardiovascular mortality, non-fatal MI, and non-fatal stroke.\" But \"and\" joining three",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 100.45,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11444620/",
+   "claim": "Cardiovascular outcome trials show GLP-1 receptor agonists reduce major adverse cardiovascular events.",
+   "verdict": "SUPPORTED",
+   "ent": 0.997,
+   "con": 0.0
+  },
+  {
+   "t": 103.95,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11444620/",
+   "claim": "Cardiovascular outcome trials show GLP-1 receptor agonists reduce cardiovascular mortality.",
+   "verdict": "SUPPORTED",
+   "ent": 0.997,
+   "con": 0.0
+  },
+  {
+   "t": 107.51,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11444620/",
+   "claim": "Cardiovascular outcome trials show GLP-1 receptor agonists reduce non-fatal myocardial infarction.",
+   "verdict": "SUPPORTED",
+   "ent": 0.994,
+   "con": 0.0
+  },
+  {
+   "t": 111.06,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11444620/",
+   "claim": "Cardiovascular outcome trials show GLP-1 receptor agonists reduce non-fatal stroke.",
+   "verdict": "SUPPORTED",
+   "ent": 0.994,
+   "con": 0.0
+  },
+  {
+   "t": 117.77,
+   "event": "paraphrase_judge",
+   "claim": "But maybe we can cite for specific.",
+   "verdict": "NOT_SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 117.77,
+   "event": "verify",
+   "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "claim": "But maybe we can cite for specific.",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.001,
+   "con": 0.0
+  },
+  {
+   "t": 126.17,
+   "event": "paraphrase_judge",
+   "claim": "Also / state \"network meta-analysis suggest that semaglutide has the highest probability of having cardiovascular benefi",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 126.17,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371/",
+   "claim": "Also / state \"network meta-analysis suggest that semaglutide has the highest probability of having cardiovascular benefi",
+   "verdict": "CONTRADICTED",
+   "ent": 0.039,
+   "con": 0.971
+  },
+  {
+   "t": 135.12,
+   "event": "paraphrase_judge",
+   "claim": "Also / state \"network meta-analysis suggest that semaglutide has the highest probability of having cardiovascular benefi",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 135.12,
+   "event": "verify",
+   "url": "https://link.springer.com/article/10.1186/s12872-025-05278-3",
+   "claim": "Also / state \"network meta-analysis suggest that semaglutide has the highest probability of having cardiovascular benefi",
+   "verdict": "CONTRADICTED",
+   "ent": 0.039,
+   "con": 0.971
+  },
+  {
+   "t": 136.56,
+   "event": "verify",
+   "url": "https://www.medscape.com/viewarticle/glp-1-drugs-gain-ground-cardiovascular-prevention-2026a1000759",
+   "claim": "Need perhaps mention ?",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.914,
+   "con": 0.0
+  },
+  {
+   "t": 145.49,
+   "event": "paraphrase_judge",
+   "claim": "Source also says American College of Cardiology 2025 guidelines recommend GLP-1s first-line for weight management to red",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 145.49,
+   "event": "verify",
+   "url": "https://www.medscape.com/viewarticle/glp-1-drugs-gain-ground-cardiovascular-prevention-2026a1000759",
+   "claim": "Source also says American College of Cardiology 2025 guidelines recommend GLP-1s first-line for weight management to red",
+   "verdict": "SUPPORTED",
+   "ent": 0.254,
+   "con": 0.0
+  },
+  {
+   "t": 158.1,
+   "event": "paraphrase_judge",
+   "claim": "\"A pooled analysis of 17 studies found semaglutide reduced cardiovascular death by 23%.\" That's direct.",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 158.1,
+   "event": "verify",
+   "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "claim": "\"A pooled analysis of 17 studies found semaglutide reduced cardiovascular death by 23%.\" That's direct.",
+   "verdict": "SUPPORTED",
+   "ent": 0.118,
+   "con": 0.0
+  },
+  {
+   "t": 158.11,
+   "event": "done",
+   "trust_score": 77
+  }
+ ],
+ "score_s": 176.1
+}

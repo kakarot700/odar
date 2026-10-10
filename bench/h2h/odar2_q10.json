@@ -1,0 +1,204 @@
+{
+ "thread_id": "df496b849a1b707a",
+ "share_token": "Ab9r7bM3hOUT342Z",
+ "title": "Is there evidence that GLP-1 drugs like semaglutide reduce cardiovascular events?",
+ "project_id": "",
+ "sources": [
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371/",
+   "title": "Cardiovascular benefits of semaglutide: a systematic review ...",
+   "domain": "pmc.ncbi.nlm.nih.gov",
+   "snippet": "These findings reinforce the role of GLP-1RAs, and semaglutide in particular, as an important therapeutic option for patients with type 2 diabetes and established cardiovascular disease, supporting their inclusion in evidence-based guideline recommendations.",
+   "kind": "web",
+   "n": 1
+  },
+  {
+   "url": "https://www.sciencedirect.com/science/article/pii/S0168822725004875",
+   "title": "Comparative effectiveness of OW GLP-1 RAs and other glucose ...",
+   "domain": "sciencedirect.com",
+   "snippet": "Nov 1, 2025 \u00b7 Conclusion The study findings corroborate current guideline recommendations for GLP-1 RAs in people with T2D and ASCVD, and extend findings to lower HCRU and costs in a real-world setting, most notably for semaglutide.",
+   "kind": "web",
+   "n": 2
+  },
+  {
+   "url": "https://link.springer.com/article/10.1186/s12872-025-05278-3",
+   "title": "Cardiovascular benefits of semaglutide: a systematic review ...",
+   "domain": "link.springer.com",
+   "snippet": "Nov 21, 2025 \u00b7 Background Semaglutide, a GLP-1 receptor agonist (GLP-1RA), has shown potential in controlling type 2 diabetes due to their ability to lower blood glucose and improve cardiovascular outcomes. Although semaglutide is the newest GLP-1RA available, its cardiovascular effects have not yet been systematically reviewed. Methods This meta-analysis adhered to a pre-registered protocol (PROSPERO ID ...",
+   "kind": "web",
+   "n": 3
+  },
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12413075/",
+   "title": "The multifaceted effects of semaglutide: exploring its broad ...",
+   "domain": "pmc.ncbi.nlm.nih.gov",
+   "snippet": "Semaglutide, a GLP-1 receptor agonist, is FDA-approved for managing type 2 diabetes (T2D) and reducing cardiovascular risk. Its off-label use in weight management and other conditions has grown, prompting a review of its benefits and risks. This ...",
+   "kind": "web",
+   "n": 4
+  },
+  {
+   "url": "https://www.medscape.com/viewarticle/glp-1-drugs-gain-ground-cardiovascular-prevention-2026a1000759",
+   "title": "The Many Cardiovascular Benefits of GLP-1 Drugs - Medscape",
+   "domain": "medscape.com",
+   "snippet": "Mar 9, 2026 \u00b7 GLP-1 receptor agonists such as semaglutide are changing the way type 2 diabetes and obesity are treated. But these drugs have also shown a surprising ability to improve cardiovascular health ...",
+   "kind": "web",
+   "n": 5
+  },
+  {
+   "url": "https://www.sciencedirect.com/science/article/pii/S2666602225000217",
+   "title": "Emerging role of GLP-1 agonists in cardio-metabolic therapy ...",
+   "domain": "sciencedirect.com",
+   "snippet": "Apr 1, 2025 \u00b7 Semaglutide, a GLP-1 receptor agonist, has emerged as a promising agent in cardiovascular disease management, particularly for patients with obesity and diabetes. Recent studies have demonstrated significant benefits of Semaglutide beyond glycemic control, including reduced major adverse cardiovascular events (MACE), improvements in heart failure symptoms, and weight reduction. Notably, the ...",
+   "kind": "web",
+   "n": 6
+  }
+ ],
+ "answer": "Yes. Source [1] states that semaglutide, a GLP-1 receptor agonist, has shown potential to improve cardiovascular outcomes [1]. Network meta-analyses suggest semaglutide has the highest probability of cardiovascular benefits among GLP-1 receptor agonists, and that semaglutide and albiglutide reduce major adverse cardiovascular events (MACE) more than other agents [1].\n\nSource [4] says the FDA has approved semaglutide for reducing major adverse cardiovascular events and heart failure symptoms [4]. Source [5] adds that all forms of semaglutide, oral or injectable, now carry an FDA label stating they may be useful for preventing heart disease [5]. It also reports that even early versions of GLP-1 drugs that did not lead to much weight loss still reduced MACE by around 20% [5].\n\nOverall, the sources provide evidence that GLP-1 drugs such as semaglutide reduce cardiovascular events.",
+ "abstained": false,
+ "timing": {
+  "search_s": 0.81,
+  "fetch_s": 1.44,
+  "ttft_s": 16.71,
+  "total_s": 16.71
+ },
+ "verification": {
+  "citations": [
+   {
+    "occ": 0,
+    "n": 1,
+    "marker": "[1]",
+    "claim": "Source states that semaglutide, a GLP-1 receptor agonist, has shown potential to improve cardiovascular outcomes .",
+    "verdict": "partial",
+    "check_verdict": "PARTIALLY SUPPORTED",
+    "quote": "With that said, many agents of the sodium-glucose cotransporter 2 (SGLT2) inhibitors and GLP-1 receptor agonists (GLP-1RA) classes have indicated clear cardiovascular improvements [10]. Semaglutide, commercially known as Ozempic\u00ae, is a GLP-1RA with a long half-life of about one week [11] and is available both as an oral agent and weekly subcutaneous injections [12]. This potent glucose-lowering dr",
+    "note": "only a short or loosely matching passage supports this",
+    "title": "Cardiovascular benefits of semaglutide: a systematic review ...",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371/",
+    "kind": "web",
+    "entailment": 0.993,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 1,
+    "n": 1,
+    "marker": "[1]",
+    "claim": "Source states that semaglutide, a GLP-1 receptor agonist, has shown potential to improve cardiovascular outcomes .",
+    "verdict": "partial",
+    "check_verdict": "PARTIALLY SUPPORTED",
+    "quote": "With that said, many agents of the sodium-glucose cotransporter 2 (SGLT2) inhibitors and GLP-1 receptor agonists (GLP-1RA) classes have indicated clear cardiovascular improvements [10]. Semaglutide, commercially known as Ozempic\u00ae, is a GLP-1RA with a long half-life of about one week [11] and is available both as an oral agent and weekly subcutaneous injections [12]. This potent glucose-lowering dr",
+    "note": "only a short or loosely matching passage supports this",
+    "title": "Cardiovascular benefits of semaglutide: a systematic review ...",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371/",
+    "kind": "web",
+    "entailment": 0.993,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 2,
+    "n": 1,
+    "marker": "[1]",
+    "claim": "Network meta-analyses suggest semaglutide has the highest probability of cardiovascular benefits among GLP-1 receptor agonists, and that semaglutide and albiglutide reduce major adverse cardiovascular events (MACE) more than other agents .",
+    "verdict": "partial",
+    "check_verdict": "PARTIALLY SUPPORTED",
+    "quote": "Indirect comparisons of semaglutide with other GLP-1RAs via network meta-analysis suggest that semaglutide has the highest probability of having cardiovascular benefits [17].",
+    "note": "the page supports part of this claim, not all of it",
+    "title": "Cardiovascular benefits of semaglutide: a systematic review ...",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371/",
+    "kind": "web",
+    "entailment": 0.172,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 3,
+    "n": 4,
+    "marker": "[4]",
+    "claim": "Source says the FDA has approved semaglutide for reducing major adverse cardiovascular events and heart failure symptoms .",
+    "verdict": "partial",
+    "check_verdict": "PARTIALLY SUPPORTED",
+    "quote": "Semaglutide showed promise in managing PCOS-related obesity, insulin resistance, and demonstrated renoprotective effects in diabetics and chronic kidney disease (CKD). Additionally, it improves liver enzyme levels, steatosis, and stiffness, aiding in managing Nonalcoholic Fatty Liver Disease and Nonalcoholic Steatohepatitis in non-fibrotic patients. The FDA has approved it for reducing major adver",
+    "note": "the page supports part of this claim, not all of it",
+    "title": "The multifaceted effects of semaglutide: exploring its broad ...",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12413075/",
+    "kind": "web",
+    "entailment": 0.739,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 4,
+    "n": 4,
+    "marker": "[4]",
+    "claim": "Source says the FDA has approved semaglutide for reducing major adverse cardiovascular events and heart failure symptoms .",
+    "verdict": "partial",
+    "check_verdict": "PARTIALLY SUPPORTED",
+    "quote": "Semaglutide showed promise in managing PCOS-related obesity, insulin resistance, and demonstrated renoprotective effects in diabetics and chronic kidney disease (CKD). Additionally, it improves liver enzyme levels, steatosis, and stiffness, aiding in managing Nonalcoholic Fatty Liver Disease and Nonalcoholic Steatohepatitis in non-fibrotic patients. The FDA has approved it for reducing major adver",
+    "note": "the page supports part of this claim, not all of it",
+    "title": "The multifaceted effects of semaglutide: exploring its broad ...",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12413075/",
+    "kind": "web",
+    "entailment": 0.739,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 5,
+    "n": 5,
+    "marker": "[5]",
+    "claim": "Source adds that all forms of semaglutide, oral or injectable, now carry an FDA label stating they may be useful for preventing heart disease .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "Daniel Drucker, MD, an endocrinologist at the University of Toronto in Canada, said the \u201cimpressive\u201d data from these phase 3 clinical trials has led to widespread acceptance of the cardiovascular benefits of GLP-1s, particularly semaglutide. \u201cAll the forms of semaglutide, whether it\u2019s the oral form or the injectable, now have an FDA label that says they may be useful for preventing heart disease,\u201d",
+    "note": "",
+    "title": "The Many Cardiovascular Benefits of GLP-1 Drugs - Medscape",
+    "domain": "medscape.com",
+    "url": "https://www.medscape.com/viewarticle/glp-1-drugs-gain-ground-cardiovascular-prevention-2026a1000759",
+    "kind": "web",
+    "entailment": 0.962,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 6,
+    "n": 5,
+    "marker": "[5]",
+    "claim": "Source adds that all forms of semaglutide, oral or injectable, now carry an FDA label stating they may be useful for preventing heart disease .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "Daniel Drucker, MD, an endocrinologist at the University of Toronto in Canada, said the \u201cimpressive\u201d data from these phase 3 clinical trials has led to widespread acceptance of the cardiovascular benefits of GLP-1s, particularly semaglutide. \u201cAll the forms of semaglutide, whether it\u2019s the oral form or the injectable, now have an FDA label that says they may be useful for preventing heart disease,\u201d",
+    "note": "",
+    "title": "The Many Cardiovascular Benefits of GLP-1 Drugs - Medscape",
+    "domain": "medscape.com",
+    "url": "https://www.medscape.com/viewarticle/glp-1-drugs-gain-ground-cardiovascular-prevention-2026a1000759",
+    "kind": "web",
+    "entailment": 0.962,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 7,
+    "n": 5,
+    "marker": "[5]",
+    "claim": "It also reports that even early versions of GLP-1 drugs that did not lead to much weight loss still reduced MACE by around 20% .",
+    "verdict": "partial",
+    "check_verdict": "PARTIALLY SUPPORTED",
+    "quote": "Drucker points out that even early versions of the drugs, which didn\u2019t lead to much weight loss, still reduced MACE by around 20%.",
+    "note": "partly supported: Passages state the claim nearly verbatim.",
+    "title": "The Many Cardiovascular Benefits of GLP-1 Drugs - Medscape",
+    "domain": "medscape.com",
+    "url": "https://www.medscape.com/viewarticle/glp-1-drugs-gain-ground-cardiovascular-prevention-2026a1000759",
+    "kind": "web",
+    "entailment": 0.0,
+    "judged_by": "nli+llm"
+   }
+  ],
+  "counts": {
+   "partial": 6,
+   "supported": 2
+  },
+  "elapsed_s": 58.66,
+  "total_s": 75.4
+ },
+ "q": 10,
+ "seconds": 75.7
+}

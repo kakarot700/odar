@@ -1,0 +1,236 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_050839056772",
+ "trust_score": 67,
+ "grade": "mixed: check flagged claims",
+ "counts": {
+  "SUPPORTED": 2,
+  "PARTIALLY SUPPORTED": 0,
+  "CONTRADICTED": 1,
+  "WRONG SOURCE": 0,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 4
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "Based on the latest data, global average temperature in 2024 exceeded pre-industrial levels by approximately 1.54\u00b0C (2.77\u00b0F) when measured against the early industrial baseline of 1881-1910.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.climatecentral.org/climate-matters/2024-global-and-us-review",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.993,
+     "contradiction": 0.994,
+     "quote": "According to the latest combined data from NOAA and NASA, the global surface temperature in 2024 ranked highest in the 145-year record at 1.54\u00b0C (2.77\u00b0F) above the early industrial (1881-1910) baseline average.",
+     "note": "another passage on the page may disagree: \"The top eleven hottest years on record for the planet have occurred in the last eleven years, now including last year. For the first time ever, the annual globa\"",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "According to the latest combined data from NOAA and NASA, the global surface temperature in 2024 ranked highest in the 145-year record at 1.54\u00b0C (2.77\u00b0F) above the early industrial (1881-1910) baseline average.",
+   "quote_url": "https://www.climatecentral.org/climate-matters/2024-global-and-us-review",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "This made 2024 the hottest year on record since systematic temperature measurements began in 1880.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "NASA Notably, this was the first time that an annual global average temperature anomaly exceeded 1.5\u00b0C above pre-industrial levels, marking a significant milestone in climate records.",
+   "verdict": "CONTRADICTED",
+   "citations": [
+    {
+     "url": "https://www.climatecentral.org/climate-matters/2024-global-and-us-review",
+     "marker": "[1]",
+     "verdict": "CONTRADICTED",
+     "link_state": "live",
+     "entailment": 0.067,
+     "contradiction": 0.988,
+     "quote": "The limit set by the Paris Climate Accord, however, refers to a 30-year average of global temperatures, meaning that the occurrence of 1.5\u00b0C of warming for a single year does not equate to exceeding the Paris threshold.",
+     "note": "",
+     "judged_by": "nli+llm",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "The limit set by the Paris Climate Accord, however, refers to a 30-year average of global temperatures, meaning that the occurrence of 1.5\u00b0C of warming for a single year does not equate to exceeding the Paris threshold.",
+   "quote_url": "https://www.climatecentral.org/climate-matters/2024-global-and-us-review",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4.1",
+   "claim": "2024's single-year reading surpassed 1.5\u00b0C.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4.2",
+   "claim": "The Paris Climate Agreement's 1.5\u00b0C target refers to a long-term average over decades, not a single year.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5",
+   "claim": "So reaching 1.5\u00b0C in one year doesn't mean the Paris threshold has been permanently crossed, but it underscores how quickly global temperatures are warming.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6",
+   "claim": "The top eleven hottest years on record have all occurred within the last eleven years.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.climatecentral.org/climate-matters/2024-global-and-us-review",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.972,
+     "contradiction": 0.984,
+     "quote": "The top eleven hottest years on record for the planet have occurred in the last eleven years, now including last year.",
+     "note": "another passage on the page may disagree: \"The eight warmest years for the U.S. have all occurred since 2012.\"",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "The top eleven hottest years on record for the planet have occurred in the last eleven years, now including last year.",
+   "quote_url": "https://www.climatecentral.org/climate-matters/2024-global-and-us-review",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://www.climatecentral.org/climate-matters/2024-global-and-us-review",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.climatecentral.org/climate-matters/2024-global-and-us-review",
+   "title": "Off-the-Charts Heat: 2024 Global and U.S. Temperature Review | Climate Central",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "42f73572ce3c97e3393a3dc2d475d451a966ba907f12d493a84550fd0cc2dcab",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 62.7,
+ "usage": {
+  "fetches": 1,
+  "wayback_lookups": 0,
+  "searches": 0,
+  "llm_calls": 4,
+  "nli_checks": 3,
+  "scorer_load_ms": 1507
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 6,
+   "citations": 3
+  },
+  {
+   "t": 41.31,
+   "event": "fetch",
+   "url": "https://www.climatecentral.org/climate-matters/2024-global-and-us-review",
+   "state": "live",
+   "http_status": 200,
+   "chars": 10952,
+   "error": ""
+  },
+  {
+   "t": 46.88,
+   "event": "verify",
+   "url": "https://www.climatecentral.org/climate-matters/2024-global-and-us-review",
+   "claim": "Based on the latest data, global average temperature in 2024 exceeded pre-industrial levels by approximately 1.54\u00b0C (2.7",
+   "verdict": "SUPPORTED",
+   "ent": 0.993,
+   "con": 0.994
+  },
+  {
+   "t": 57.5,
+   "event": "paraphrase_judge",
+   "claim": "NASA Notably, this was the first time that an annual global average temperature anomaly exceeded 1.5\u00b0C above pre-industr",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 57.5,
+   "event": "verify",
+   "url": "https://www.climatecentral.org/climate-matters/2024-global-and-us-review",
+   "claim": "NASA Notably, this was the first time that an annual global average temperature anomaly exceeded 1.5\u00b0C above pre-industr",
+   "verdict": "CONTRADICTED",
+   "ent": 0.067,
+   "con": 0.988
+  },
+  {
+   "t": 62.74,
+   "event": "verify",
+   "url": "https://www.climatecentral.org/climate-matters/2024-global-and-us-review",
+   "claim": "The top eleven hottest years on record have all occurred within the last eleven years.",
+   "verdict": "SUPPORTED",
+   "ent": 0.972,
+   "con": 0.984
+  },
+  {
+   "t": 62.75,
+   "event": "done",
+   "trust_score": 67
+  }
+ ],
+ "score_s": 64.3
+}

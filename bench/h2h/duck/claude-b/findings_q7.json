@@ -1,0 +1,19 @@
+{
+  "q": 7,
+  "question": "How much did global average temperature exceed pre-industrial levels in 2024?",
+  "model": "Claude Haiku 4.5",
+  "web_search_enabled": true,
+  "answer": "Based on the latest data, global average temperature in 2024 exceeded pre-industrial levels by approximately 1.54°C (2.77°F) when measured against the early industrial baseline of 1881-1910. climatecentral.org\n\nThis made 2024 the hottest year on record since systematic temperature measurements began in 1880. NASA Notably, this was the first time that an annual global average temperature anomaly exceeded 1.5°C above pre-industrial levels, marking a significant milestone in climate records. climatecentral.org\n\nIt's important to note that while 2024's single-year reading surpassed 1.5°C, the Paris Climate Agreement's 1.5°C target refers to a long-term average over decades, not a single year. So reaching 1.5°C in one year doesn't mean the Paris threshold has been permanently crossed, but it underscores how quickly global temperatures are warming. The top eleven hottest years on record have all occurred within the last eleven years. climatecentral.org",
+  "note_on_citation_markers": "Inline citations are superscript source-name links only (no numeric [1] markers on this answer): 'climatecentral.org' and 'NASA'. Read More carousel has 2 cards.",
+  "sources_in_citation_order": [
+    "https://www.climatecentral.org/climate-matters/2024-global-and-us-review",
+    "https://science.nasa.gov/earth/explore/earth-indicators/global-temperature/"
+  ],
+  "read_more_section_urls": [
+    "https://www.climatecentral.org/climate-matters/2024-global-and-us-review",
+    "https://science.nasa.gov/earth/explore/earth-indicators/global-temperature/"
+  ],
+  "seconds_estimate": 8,
+  "searched": true,
+  "chat_title_generated_by_site": "Global warming in 2024"
+}

@@ -1,0 +1,450 @@
+{
+ "references": [],
+ "confidence": "medium",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_02f9ff970efa",
+ "trust_score": 50,
+ "grade": "unreliable citations",
+ "counts": {
+  "SUPPORTED": 3,
+  "PARTIALLY SUPPORTED": 2,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 3,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 0
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "The sources do not single out one \"key\" scientific result, but they list several notable findings from the mission.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+     "marker": "[4]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "The clearest headline result is that the LIBS instrument on the rover confirmed the presence of sulphur on the lunar surface through unambiguous in-situ measurements.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+     "marker": "[4]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.001,
+     "contradiction": 0.0,
+     "quote": "LIBS confirms the presence of Sulphur (S) on the lunar surface through unambiguous in-situ measurements.",
+     "note": "reworded match: Passage states LIBS confirmed sulphur via unambiguous in-situ measurements.",
+     "judged_by": "nli+llm",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "LIBS confirms the presence of Sulphur (S) on the lunar surface through unambiguous in-situ measurements.",
+   "quote_url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3.1",
+   "claim": "Other results include the APXS instrument detecting minor elements.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+     "marker": "[4]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.002,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3.2",
+   "claim": "Other results include the ChaSTE payload making temperature observations.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+     "marker": "[4]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli+llm",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3.3",
+   "claim": "Other results include the ILSA instrument recording movements around the landing site.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+     "marker": "[4]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "August 31, 2023 ILSA listens to the movements around the landing site",
+     "note": "reworded match: Passage explicitly states ILSA recorded movements around landing site.",
+     "judged_by": "nli+llm",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "August 31, 2023 ILSA listens to the movements around the landing site",
+   "quote_url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3.4",
+   "claim": "Other results include RAMBHA-LP measuring near-surface plasma content.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+     "marker": "[4]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.001,
+     "contradiction": 0.0,
+     "quote": "RAMBHA-LP on-board Chandrayaan-3 measures near-surface plasma content",
+     "note": "reworded match: Passages directly state RAMBHA-LP measured near-surface plasma content.",
+     "judged_by": "nli+llm",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "RAMBHA-LP on-board Chandrayaan-3 measures near-surface plasma content",
+   "quote_url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4",
+   "claim": "Scientists also estimated that about 2.06 tonnes of lunar epiregolith were ejected and displaced over an area of 108.4 m\u00b2 around the landing site.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+     "marker": "[4]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.699,
+     "contradiction": 0.0,
+     "quote": "Chandrayaan-3 Chandrayaan-3 Science Results Home / Flash News /Chandrayaan-3 / Science Results October 27, 2023 Scientists from NRSC/ISRO estimate that about 2.06 tonnes of lunar epiregolith were ejected and displaced over an area of 108.4 m\u00b2 around the landing site.",
+     "note": "the page supports part of this claim, not all of it",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "Chandrayaan-3 Chandrayaan-3 Science Results Home / Flash News /Chandrayaan-3 / Science Results October 27, 2023 Scientists from NRSC/ISRO estimate that about 2.06 tonnes of lunar epiregolith were ejected and displaced over an area of 108.4 m\u00b2 around the landing site.",
+   "quote_url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5",
+   "claim": "The mission itself was designed to demonstrate safe landing, rover roving, and in-situ scientific experiments, rather than aiming for a single specific scientific discovery.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.isro.gov.in/Chandrayaan3_Details.html",
+     "marker": "[3]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.156,
+     "contradiction": 0.0,
+     "quote": "The mission objectives of Chandrayaan-3 are: To demonstrate Safe and Soft Landing on Lunar Surface To demonstrate Rover roving on the moon and To conduct in-situ scientific experiments.",
+     "note": "the page supports part of this claim, not all of it",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    },
+    {
+     "url": "https://www.sciencedirect.com/science/article/pii/S003206332400028X",
+     "marker": "[6]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "blocked",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "page exists but could not be read (HTTP 403); archive check unavailable",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "The mission objectives of Chandrayaan-3 are: To demonstrate Safe and Soft Landing on Lunar Surface To demonstrate Rover roving on the moon and To conduct in-situ scientific experiments.",
+   "quote_url": "https://www.isro.gov.in/Chandrayaan3_Details.html",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+   "title": "Chandrayaan-3",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "547e777a1f5c37d7d42342992007a29d0bf643a8c0def2e978aa693edde349fe",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.isro.gov.in/Chandrayaan3_Details.html",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.isro.gov.in/Chandrayaan3_Details.html",
+   "title": "Chandrayaan-3 Details",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "6f0b39adf27f09a5597560ca07eef64d6eea368892248d4752b2ba69acc13526",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.sciencedirect.com/science/article/pii/S003206332400028X",
+   "state": "blocked",
+   "http_status": 403,
+   "error": "HTTP 403",
+   "resolved_url": "https://www.sciencedirect.com/science/article/pii/S003206332400028X",
+   "title": "",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "",
+   "archive_check": "unavailable",
+   "content_hash": "",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 74.4,
+ "usage": {
+  "fetches": 3,
+  "wayback_lookups": 1,
+  "searches": 0,
+  "llm_calls": 5,
+  "nli_checks": 14,
+  "scorer_load_ms": 1492
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 5,
+   "citations": 6
+  },
+  {
+   "t": 9.75,
+   "event": "fetch",
+   "url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+   "state": "live",
+   "http_status": 200,
+   "chars": 1124,
+   "error": ""
+  },
+  {
+   "t": 9.76,
+   "event": "fetch",
+   "url": "https://www.sciencedirect.com/science/article/pii/S003206332400028X",
+   "state": "blocked",
+   "http_status": 403,
+   "chars": 0,
+   "error": "HTTP 403"
+  },
+  {
+   "t": 9.76,
+   "event": "fetch",
+   "url": "https://www.isro.gov.in/Chandrayaan3_Details.html",
+   "state": "live",
+   "http_status": 200,
+   "chars": 7823,
+   "error": ""
+  },
+  {
+   "t": 27.17,
+   "event": "wayback",
+   "url": "https://www.sciencedirect.com/science/article/pii/S003206332400028X",
+   "error": "ReadTimeout: HTTPSConnectionPool(host='web.archive.org', port=443): Read timed out. (read timeout=12.0)"
+  },
+  {
+   "t": 31.19,
+   "event": "verify",
+   "url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+   "claim": "The sources do not single out one \"key\" scientific result, but they list several notable findings from the mission.",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 37.56,
+   "event": "paraphrase_judge",
+   "claim": "The clearest headline result is that the LIBS instrument on the rover confirmed the presence of sulphur on the lunar sur",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 37.56,
+   "event": "verify",
+   "url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+   "claim": "The clearest headline result is that the LIBS instrument on the rover confirmed the presence of sulphur on the lunar sur",
+   "verdict": "SUPPORTED",
+   "ent": 0.001,
+   "con": 0.0
+  },
+  {
+   "t": 38.87,
+   "event": "verify",
+   "url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+   "claim": "Other results include the APXS instrument detecting minor elements.",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.002,
+   "con": 0.0
+  },
+  {
+   "t": 43.83,
+   "event": "paraphrase_judge",
+   "claim": "Other results include the ChaSTE payload making temperature observations.",
+   "verdict": "NOT_SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 43.83,
+   "event": "verify",
+   "url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+   "claim": "Other results include the ChaSTE payload making temperature observations.",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 49.33,
+   "event": "paraphrase_judge",
+   "claim": "Other results include the ILSA instrument recording movements around the landing site.",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 49.33,
+   "event": "verify",
+   "url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+   "claim": "Other results include the ILSA instrument recording movements around the landing site.",
+   "verdict": "SUPPORTED",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 56.56,
+   "event": "paraphrase_judge",
+   "claim": "Other results include RAMBHA-LP measuring near-surface plasma content.",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 56.56,
+   "event": "verify",
+   "url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+   "claim": "Other results include RAMBHA-LP measuring near-surface plasma content.",
+   "verdict": "SUPPORTED",
+   "ent": 0.001,
+   "con": 0.0
+  },
+  {
+   "t": 60.68,
+   "event": "verify",
+   "url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+   "claim": "Scientists also estimated that about 2.06 tonnes of lunar epiregolith were ejected and displaced over an area of 108.4 m",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.699,
+   "con": 0.0
+  },
+  {
+   "t": 74.44,
+   "event": "verify",
+   "url": "https://www.isro.gov.in/Chandrayaan3_Details.html",
+   "claim": "The mission itself was designed to demonstrate safe landing, rover roving, and in-situ scientific experiments, rather th",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.156,
+   "con": 0.0
+  },
+  {
+   "t": 74.44,
+   "event": "done",
+   "trust_score": 50
+  }
+ ],
+ "score_s": 76.0
+}

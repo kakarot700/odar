@@ -1,0 +1,367 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_3ac696cd0e61",
+ "trust_score": 88,
+ "grade": "citations hold up",
+ "counts": {
+  "SUPPORTED": 3,
+  "PARTIALLY SUPPORTED": 1,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 0,
+  "UNVERIFIABLE": 1,
+  "DEAD LINK": 0,
+  "NO CITATION": 3
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "Usually, no. Most studies find intermittent fasting and daily calorie restriction produce similar weight loss when they create a similar calorie deficit.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2.1",
+   "claim": "A 2025 trial found one exception.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.sciencedirect.com/science/article/pii/S0939475324004393",
+     "marker": "[1]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "blocked",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "page exists but could not be read (HTTP 403); archive check unavailable",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    },
+    {
+     "url": "https://news.cuanschutz.edu/news-stories/intermittent-fasting-outperforms-calorie-counting-in-weight-loss-study",
+     "marker": "[2]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.017,
+     "contradiction": 0.0,
+     "quote": "Comparing intermittent fasting with traditional daily calorie restriction, researchers at CU Anschutz found greater weight loss among the intermittent fasting group, a significant finding given that most previous studies reported no notable difference between the two diet strategies.",
+     "note": "partly supported: Supports exception finding but lacks 2025 trial date.",
+     "judged_by": "nli+llm",
+     "source_type": "academic",
+     "source_year": null
+    }
+   ],
+   "quote": "Comparing intermittent fasting with traditional daily calorie restriction, researchers at CU Anschutz found greater weight loss among the intermittent fasting group, a significant finding given that most previous studies reported no notable difference between the two diet strategies.",
+   "quote_url": "https://news.cuanschutz.edu/news-stories/intermittent-fasting-outperforms-calorie-counting-in-weight-loss-study",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2.2",
+   "claim": "A 4:3 plan is three days of substantial restriction each week.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.sciencedirect.com/science/article/pii/S0939475324004393",
+     "marker": "[1]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "blocked",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "page exists but could not be read (HTTP 403); archive check unavailable",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    },
+    {
+     "url": "https://news.cuanschutz.edu/news-stories/intermittent-fasting-outperforms-calorie-counting-in-weight-loss-study",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.985,
+     "contradiction": 0.973,
+     "quote": "Singling out the 4:3 plan of the popular intermittent fasting (IMF) model \u2013 where dieters eat freely four days a week with three days a week of intense calorie restriction \u2013 the researchers found an average body weight loss of 7.6% among IMF participants at the one-year mark compared with 5% in the",
+     "note": "another passage on the page may disagree: \"An endocrinologist who specializes in obesity medicine, Catenacci\u2019s work targets a decades-long health crisis in this country, with 40% of Americans 20 and olde\"",
+     "judged_by": "nli",
+     "source_type": "academic",
+     "source_year": null
+    }
+   ],
+   "quote": "Singling out the 4:3 plan of the popular intermittent fasting (IMF) model \u2013 where dieters eat freely four days a week with three days a week of intense calorie restriction \u2013 the researchers found an average body weight loss of 7.6% among IMF participants at the one-year mark compared with 5% in the",
+   "quote_url": "https://news.cuanschutz.edu/news-stories/intermittent-fasting-outperforms-calorie-counting-in-weight-loss-study",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2.3",
+   "claim": "A 4:3 plan led to greater average weight loss after a year.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.sciencedirect.com/science/article/pii/S0939475324004393",
+     "marker": "[1]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "blocked",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "page exists but could not be read (HTTP 403); archive check unavailable",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    },
+    {
+     "url": "https://news.cuanschutz.edu/news-stories/intermittent-fasting-outperforms-calorie-counting-in-weight-loss-study",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.983,
+     "contradiction": 0.0,
+     "quote": "Singling out the 4:3 plan of the popular intermittent fasting (IMF) model \u2013 where dieters eat freely four days a week with three days a week of intense calorie restriction \u2013 the researchers found an average body weight loss of 7.6% among IMF participants at the one-year mark compared with 5% in the daily caloric restriction (DCR) group.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "academic",
+     "source_year": null
+    }
+   ],
+   "quote": "Singling out the 4:3 plan of the popular intermittent fasting (IMF) model \u2013 where dieters eat freely four days a week with three days a week of intense calorie restriction \u2013 the researchers found an average body weight loss of 7.6% among IMF participants at the one-year mark compared with 5% in the daily caloric restriction (DCR) group.",
+   "quote_url": "https://news.cuanschutz.edu/news-stories/intermittent-fasting-outperforms-calorie-counting-in-weight-loss-study",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2.4",
+   "claim": "The average weight loss was 7.6% versus 5%.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.sciencedirect.com/science/article/pii/S0939475324004393",
+     "marker": "[1]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "blocked",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "page exists but could not be read (HTTP 403); archive check unavailable",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    },
+    {
+     "url": "https://news.cuanschutz.edu/news-stories/intermittent-fasting-outperforms-calorie-counting-in-weight-loss-study",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.996,
+     "contradiction": 0.0,
+     "quote": "Singling out the 4:3 plan of the popular intermittent fasting (IMF) model \u2013 where dieters eat freely four days a week with three days a week of intense calorie restriction \u2013 the researchers found an average body weight loss of 7.6% among IMF participants at the one-year mark compared with 5% in the",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "academic",
+     "source_year": null
+    }
+   ],
+   "quote": "Singling out the 4:3 plan of the popular intermittent fasting (IMF) model \u2013 where dieters eat freely four days a week with three days a week of intense calorie restriction \u2013 the researchers found an average body weight loss of 7.6% among IMF participants at the one-year mark compared with 5% in the",
+   "quote_url": "https://news.cuanschutz.edu/news-stories/intermittent-fasting-outperforms-calorie-counting-in-weight-loss-study",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3.1",
+   "claim": "Intermittent fasting may help some people eat less by limiting when they eat.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3.2",
+   "claim": "Daily calorie restriction may suit others better.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4",
+   "claim": "Either way, the calorie deficit over time is the main driver of weight loss.",
+   "verdict": "UNVERIFIABLE",
+   "citations": [
+    {
+     "url": "https://www.sciencedirect.com/science/article/pii/S0939475324004393",
+     "marker": "[1]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "blocked",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "page exists but could not be read (HTTP 403); archive check unavailable",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.sciencedirect.com/science/article/pii/S0939475324004393",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "low",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://www.sciencedirect.com/science/article/pii/S0939475324004393",
+   "state": "blocked",
+   "http_status": 403,
+   "error": "HTTP 403",
+   "resolved_url": "https://www.sciencedirect.com/science/article/pii/S0939475324004393",
+   "title": "",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "",
+   "archive_check": "unavailable",
+   "content_hash": "",
+   "quarantined": false
+  },
+  {
+   "url": "https://news.cuanschutz.edu/news-stories/intermittent-fasting-outperforms-calorie-counting-in-weight-loss-study",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://news.cuanschutz.edu/news-stories/intermittent-fasting-outperforms-calorie-counting-in-weight-loss-study",
+   "title": "4:3 Intermittent Fasting Outperforms Daily Calorie Restriction in Weight-Loss Study",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "1c7288a60b323575aa408ebcac9720d1dbbfc13946820c1eff2b085d04c0658b",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 50.1,
+ "usage": {
+  "fetches": 2,
+  "wayback_lookups": 1,
+  "searches": 0,
+  "llm_calls": 3,
+  "nli_checks": 4,
+  "scorer_load_ms": 18385
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 4,
+   "citations": 3
+  },
+  {
+   "t": 16.42,
+   "event": "fetch",
+   "url": "https://www.sciencedirect.com/science/article/pii/S0939475324004393",
+   "state": "blocked",
+   "http_status": 403,
+   "chars": 0,
+   "error": "HTTP 403"
+  },
+  {
+   "t": 16.45,
+   "event": "fetch",
+   "url": "https://news.cuanschutz.edu/news-stories/intermittent-fasting-outperforms-calorie-counting-in-weight-loss-study",
+   "state": "live",
+   "http_status": 200,
+   "chars": 1682,
+   "error": ""
+  },
+  {
+   "t": 21.89,
+   "event": "wayback",
+   "url": "https://www.sciencedirect.com/science/article/pii/S0939475324004393",
+   "error": "RuntimeError: wayback CDX HTTP 503"
+  },
+  {
+   "t": 32.67,
+   "event": "paraphrase_judge",
+   "claim": "A 2025 trial found one exception.",
+   "verdict": "PARTIAL",
+   "grounded": true
+  },
+  {
+   "t": 32.67,
+   "event": "verify",
+   "url": "https://news.cuanschutz.edu/news-stories/intermittent-fasting-outperforms-calorie-counting-in-weight-loss-study",
+   "claim": "A 2025 trial found one exception.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.017,
+   "con": 0.0
+  },
+  {
+   "t": 39.18,
+   "event": "verify",
+   "url": "https://news.cuanschutz.edu/news-stories/intermittent-fasting-outperforms-calorie-counting-in-weight-loss-study",
+   "claim": "A 4:3 plan is three days of substantial restriction each week.",
+   "verdict": "SUPPORTED",
+   "ent": 0.985,
+   "con": 0.973
+  },
+  {
+   "t": 45.51,
+   "event": "verify",
+   "url": "https://news.cuanschutz.edu/news-stories/intermittent-fasting-outperforms-calorie-counting-in-weight-loss-study",
+   "claim": "A 4:3 plan led to greater average weight loss after a year.",
+   "verdict": "SUPPORTED",
+   "ent": 0.983,
+   "con": 0.0
+  },
+  {
+   "t": 50.13,
+   "event": "verify",
+   "url": "https://news.cuanschutz.edu/news-stories/intermittent-fasting-outperforms-calorie-counting-in-weight-loss-study",
+   "claim": "The average weight loss was 7.6% versus 5%.",
+   "verdict": "SUPPORTED",
+   "ent": 0.996,
+   "con": 0.0
+  },
+  {
+   "t": 50.14,
+   "event": "done",
+   "trust_score": 88
+  }
+ ],
+ "score_s": 70.5
+}

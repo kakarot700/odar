@@ -1,0 +1,219 @@
+{
+ "thread_id": "e0b0098cb2efc135",
+ "share_token": "34kR7SPrk4NBbtTF",
+ "title": "What are the health effects of microplastics in humans according to recent studies?",
+ "project_id": "",
+ "sources": [
+  {
+   "url": "https://www.nature.com/articles/s41598-024-81931-9",
+   "title": "Microplastic particles in human blood and their association with coagulation markers | Scientific Reports",
+   "domain": "nature.com",
+   "snippet": "# Microplastic particles in human blood and their association with coagulation markers\n## Abstract\nRecent studies have indicated potential health risks associated with microplastics (MPs) exposure, including alterations in blood coagulation homeostasis. This cross-sectional study aimed to quantitatively examine MPs in human blood and assess their association with coagulation markers.\n\n...\n\n## Discussion\nHowever, MP particles larger than 20 \u03bcm are not surprising, as this finding is consistent with previous animal and human studies. Deng et al. orally administered 5 \u03bcm and 20 \u03bcm of PS MP particl [...truncated by sanitizer]",
+   "kind": "web",
+   "date": "2024-12-06T00:00:00",
+   "n": 1
+  },
+  {
+   "url": "https://plasticsresearchcouncil.com/new-microplastics-evidence-review-report-landing-page",
+   "title": "Microplastics Evidence Review Report Landing Page | Plastics Research Council",
+   "domain": "plasticsresearchcouncil.com",
+   "snippet": "# Microplastics Evidence Review\n**Central conclusion** Normal real-world exposure to microplastics has not been shown to cause human health effects \u2013 based on 6 decades of scientific studies.\n[Download the full report](https://bit.ly/4imRiL0)\nRead the key findings\n\n## What the review concludes\n### Normal exposure has not been shown to cause health effects\nDecades of evidence does not show health effects caused by ordinary real-world exposure to common plastic particles.\n\n...\n\n#### Meaningful accumulation has not been demonstrated\nMost ingested particles are expected to pass through the body. D [...truncated by sanitizer]",
+   "kind": "web",
+   "date": "2026-07-26T00:00:00",
+   "n": 2
+  },
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7068600/",
+   "title": "A Detailed Review Study on Potential Effects of Microplastics and Additives of Concern on Human Health - PMC",
+   "domain": "pmc.ncbi.nlm.nih.gov",
+   "snippet": "# A Detailed Review Study on Potential Effects of Microplastics and Additives of Concern on Human Health\n## 2. Plastics and Co-Contaminants\n### 2.1. Additives of Concern\nRecent science has associated EDCs with various diseases and conditions, such as hormonal cancers (breast, prostate, testes), reproductive problems (genital malformations, infertility), metabolic disorders (diabetes, obesity), asthma, and neurodevelopmental conditions (learning disorders, autism spectrum disorders).\n\n...\n\n## 3. Effects of Micro and Nanoplastics on Human Health\n### Figure 6.\nAdditionally, the use of polypropyle [...truncated by sanitizer]",
+   "kind": "web",
+   "n": 3
+  },
+  {
+   "url": "https://www.nature.com/articles/s41591-024-02968-x",
+   "title": "Microplastics are everywhere \u2014 we need to understand how they affect human health | Nature Medicine",
+   "domain": "nature.com",
+   "snippet": "# Microplastics are everywhere \u2014 we need to understand how they affect human health\nThe biological effects of MNPs have been researched for decades, mainly in studies of laboratory rodents and human cells. In rodent studies, microplastics have been shown to have detrimental effects on a wide variety of organs, including the intestine, lungs and liver, as well as the reproductive and nervous systems \u2074 .\nMore recently, MNPs have been found in a variety of tissues and organs in humans, including blood, lungs, placenta and breast milk \u2075 .\nThe effects of MNPs on human health are just beginning to b [...truncated by sanitizer]",
+   "kind": "web",
+   "date": "2024-04-01T00:00:00",
+   "n": 4
+  },
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12620896",
+   "title": "Microplastics: State of the Evidence on Health Effects ... - PMC",
+   "domain": "pmc.ncbi.nlm.nih.gov",
+   "snippet": "# Microplastics: State of the Evidence on Health Effects and Public Perception\n## Abstract\n### Conclusion\nIt is difficult to assess the health risks posed by microplastics ingested by humans, since it remains unclear to what extent the microplastics absorbed in the body become bioavailable and are able to enter distant organs via blood circulation. It has also not yet been conclusively established whether this has an impact on human health and, if so, what this impact is ( 5 ).\n\n...\n\n1. Pieces of microplastics in the human body can make tiny cuts in organs.\n2. The smaller a microplastic partic [...truncated by sanitizer]",
+   "kind": "web",
+   "n": 5
+  },
+  {
+   "url": "https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2022.827289/full",
+   "title": "Effects of Microplastics on Fish and in Human Health",
+   "domain": "frontiersin.org",
+   "snippet": "# Effects of Microplastics on Fish and in Human Health\n## Abstract\nMicroplastics (MPs) are regarded as a global issue due to their toxicity effects on fish and humans. Fish is a vital origin of human protein, which is necessary for body growth. Contamination of fish by MPs is a major hazard that requires special focus. After exposure to MPs alone or in combination with other pollutants, fish may experience a variety of health issues.\n\n...\n\n## Materials and Methods for the Data Collection and Analyses\n### Oxidative Stress and Cytotoxicity\nNanoplastics caused epithelial cells to oxidize, accordi [...truncated by sanitizer]",
+   "kind": "web",
+   "date": "2022-03-16T00:00:00",
+   "n": 6
+  }
+ ],
+ "answer": "No causal relationships have been proven to date between the uptake of microplastics and health effects [5]. Normal exposure has not been shown to cause health effects [2]. The effects of microplastics on human health are just beginning to be documented [4].\n\nA report described a potential link between microplastics present in blood vessels and cardiovascular disease [4]. In atherosclerotic plaques excised from the carotid arteries of 304 people, plastic was detected in approximately half of the cohort [4]. Polyethylene was present in 150 of the samples, and polyvinyl chloride in 31 [4]. A cross-sectional study recruited 36 healthy adults to examine microplastics in blood and their association with coagulation markers [1].\n\nUnder certain conditions, microplastics may affect cellular signaling pathways, enzyme activity, and cell function [5]. Evidence suggests no causal relationship has been established, and knowledge of health effects remains incomplete [5].",
+ "abstained": false,
+ "timing": {
+  "search_s": 12.15,
+  "fetch_s": 0.0,
+  "ttft_s": 24.86,
+  "total_s": 24.86
+ },
+ "verification": {
+  "citations": [
+   {
+    "occ": 0,
+    "n": 5,
+    "marker": "[5]",
+    "claim": "No causal relationships have been proven to date between the uptake of microplastics and health effects .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "Microplastics have been found in organs and tissues (e.g., placenta, atherosclerotic plaques), but no causal relation between their uptake and any health effects has yet been proven.",
+    "note": "",
+    "title": "Microplastics: State of the Evidence on Health Effects ... - PMC",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12620896",
+    "kind": "web",
+    "entailment": 0.997,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 1,
+    "n": 2,
+    "marker": "[2]",
+    "claim": "Normal exposure has not been shown to cause health effects .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "Decades of evidence does not show health effects caused by ordinary real-world exposure to common plastic particles.",
+    "note": "",
+    "title": "Microplastics Evidence Review Report Landing Page | Plastics Research Council",
+    "domain": "plasticsresearchcouncil.com",
+    "url": "https://plasticsresearchcouncil.com/new-microplastics-evidence-review-report-landing-page",
+    "kind": "web",
+    "entailment": 0.997,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 2,
+    "n": 4,
+    "marker": "[4]",
+    "claim": "The effects of microplastics on human health are just beginning to be documented .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "The health risks of exposure to microplastics are just beginning to be understood. More detailed and conclusive evidence of how MNPs accumulate in the body and have detrimental effects on human health can only spur the development and adoption of policies with the teeth necessary for reducing the global impact of plastics and improving public and planetary health.",
+    "note": "",
+    "title": "Microplastics are everywhere \u2014 we need to understand how they affect human health | Nature Medicine",
+    "domain": "nature.com",
+    "url": "https://www.nature.com/articles/s41591-024-02968-x",
+    "kind": "web",
+    "entailment": 0.99,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 3,
+    "n": 4,
+    "marker": "[4]",
+    "claim": "A report described a potential link between microplastics present in blood vessels and cardiovascular disease .",
+    "verdict": "partial",
+    "check_verdict": "PARTIALLY SUPPORTED",
+    "quote": "Deposition of plastic in the plaques was strongly associated with the development of subsequent cardiovascular disease: over the course of 34 months, people with evidence of MNPs in their plaques had a 4.5-fold higher risk of a composite endpoint of nonfatal myocardial infarction, nonfatal stroke",
+    "note": "only a short or loosely matching passage supports this",
+    "title": "Microplastics are everywhere \u2014 we need to understand how they affect human health | Nature Medicine",
+    "domain": "nature.com",
+    "url": "https://www.nature.com/articles/s41591-024-02968-x",
+    "kind": "web",
+    "entailment": 0.971,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 4,
+    "n": 4,
+    "marker": "[4]",
+    "claim": "In atherosclerotic plaques excised from the carotid arteries of 304 people, plastic was detected in approximately half of the cohort .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "For example, a recent report described a potential link between MNPs present in blood vessels and cardiovascular disease6. In samples of atherosclerotic plaques that had been surgically excised from the carotid arteries of 304 people, plastic was detected in plaques from approximately half of this cohort, with polyethylene in 150 of the samples and polyvinyl chloride in 31 of them.",
+    "note": "",
+    "title": "Microplastics are everywhere \u2014 we need to understand how they affect human health | Nature Medicine",
+    "domain": "nature.com",
+    "url": "https://www.nature.com/articles/s41591-024-02968-x",
+    "kind": "web",
+    "entailment": 0.974,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 5,
+    "n": 4,
+    "marker": "[4]",
+    "claim": "Polyethylene was present in 150 of the samples, and polyvinyl chloride in 31 .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "In samples of atherosclerotic plaques that had been surgically excised from the carotid arteries of 304 people, plastic was detected in plaques from approximately half of this cohort, with polyethylene in 150 of the samples and polyvinyl chloride in 31 of them.",
+    "note": "",
+    "title": "Microplastics are everywhere \u2014 we need to understand how they affect human health | Nature Medicine",
+    "domain": "nature.com",
+    "url": "https://www.nature.com/articles/s41591-024-02968-x",
+    "kind": "web",
+    "entailment": 0.998,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 6,
+    "n": 1,
+    "marker": "[1]",
+    "claim": "A cross-sectional study recruited 36 healthy adults to examine microplastics in blood and their association with coagulation markers .",
+    "verdict": "unchecked",
+    "check_verdict": "",
+    "quote": "",
+    "note": "verification timed out",
+    "title": "Microplastic particles in human blood and their association with coagulation markers | Scientific Reports",
+    "domain": "nature.com",
+    "url": "https://www.nature.com/articles/s41598-024-81931-9",
+    "kind": "web"
+   },
+   {
+    "occ": 7,
+    "n": 5,
+    "marker": "[5]",
+    "claim": "Under certain conditions, microplastics may affect cellular signaling pathways, enzyme activity, and cell function .",
+    "verdict": "unchecked",
+    "check_verdict": "",
+    "quote": "",
+    "note": "verification timed out",
+    "title": "Microplastics: State of the Evidence on Health Effects ... - PMC",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12620896",
+    "kind": "web"
+   },
+   {
+    "occ": 8,
+    "n": 5,
+    "marker": "[5]",
+    "claim": "Evidence suggests no causal relationship has been established, and knowledge of health effects remains incomplete .",
+    "verdict": "unchecked",
+    "check_verdict": "",
+    "quote": "",
+    "note": "verification timed out",
+    "title": "Microplastics: State of the Evidence on Health Effects ... - PMC",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12620896",
+    "kind": "web"
+   }
+  ],
+  "counts": {
+   "supported": 5,
+   "partial": 1,
+   "unchecked": 3
+  },
+  "elapsed_s": 61.7,
+  "total_s": 86.65
+ },
+ "q": 6,
+ "seconds": 87.1
+}

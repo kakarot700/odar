@@ -1,0 +1,30 @@
+{
+ "qid": "q1",
+ "status": "ok",
+ "secs": 204.3,
+ "llm_calls": 3,
+ "other_tokenharbor_calls": 0,
+ "visited_urls": [
+  "https://anba.com.br/en/cop30-key-outcomes-of-the-summit/",
+  "https://cop30.br/en/cop30-outcomes",
+  "https://unfccc.int/cop30",
+  "https://unfccc.int/cop30/auvs",
+  "https://www.c2es.org/wp-content/uploads/2026/02/COP30-Summary-FINAL5.pdf",
+  "https://www.carbonbrief.org/cop30-key-outcomes-agreed-at-the-un-climate-talks-in-belem",
+  "https://www.globalcompactnetwork.org/en/news/ungcn-italy-news/2639-cop30-in-belem-main-outcomes-and-climate-agreements.html",
+  "https://www.un.org/en/climatechange/news/cop30-key-results",
+  "https://www.wri.org/insights/cop30-outcomes-next-steps"
+ ],
+ "source_urls": [
+  "https://www.carbonbrief.org/cop30-key-outcomes-agreed-at-the-un-climate-talks-in-belem",
+  "https://www.c2es.org/wp-content/uploads/2026/02/COP30-Summary-FINAL5.pdf",
+  "https://unfccc.int/cop30/auvs",
+  "https://www.globalcompactnetwork.org/en/news/ungcn-italy-news/2639-cop30-in-belem-main-outcomes-and-climate-agreements.html",
+  "https://anba.com.br/en/cop30-key-outcomes-of-the-summit/",
+  "https://www.un.org/en/climatechange/news/cop30-key-results",
+  "https://unfccc.int/cop30",
+  "https://cop30.br/en/cop30-outcomes",
+  "https://www.wri.org/insights/cop30-outcomes-next-steps"
+ ],
+ "costs_reported": 0.145745
+}

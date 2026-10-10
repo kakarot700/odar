@@ -1,0 +1,614 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_cc3c7c846557",
+ "trust_score": 77,
+ "grade": "mixed: check flagged claims",
+ "counts": {
+  "SUPPORTED": 7,
+  "PARTIALLY SUPPORTED": 3,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 1,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 4
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "Yes, there is strong evidence that GLP-1 drugs like semaglutide reduce cardiovascular events.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2.1",
+   "claim": "The SELECT Trial is the landmark study showing cardiovascular protection with semaglutide.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/11/09/15/04/select",
+     "marker": "[1]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.999,
+     "quote": "The SELECT trial showed that in patients with overweight or obesity and established CVD but without diabetes, once-weekly subcutaneous semaglutide was associated with a decreased risk of MACE comprised of CV death, nonfatal MI, and stroke compared with placebo.",
+     "note": "partly supported: Shows cardiovascular protection but does not call it landmark.",
+     "judged_by": "nli+llm",
+     "source_type": "web",
+     "source_year": 2023
+    }
+   ],
+   "quote": "The SELECT trial showed that in patients with overweight or obesity and established CVD but without diabetes, once-weekly subcutaneous semaglutide was associated with a decreased risk of MACE comprised of CV death, nonfatal MI, and stroke compared with placebo.",
+   "quote_url": "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/11/09/15/04/select",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2.2",
+   "claim": "The SELECT Trial participants had existing cardiovascular disease.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/11/09/15/04/select",
+     "marker": "[1]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.988,
+     "contradiction": 0.0,
+     "quote": "The SELECT trial showed that in patients with overweight or obesity and established CVD but without diabetes, once-weekly subcutaneous semaglutide was associated with a decreased risk of MACE comprised of CV death, nonfatal MI, and stroke compared with placebo.",
+     "note": "only a short or loosely matching passage supports this",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": 2023
+    }
+   ],
+   "quote": "The SELECT trial showed that in patients with overweight or obesity and established CVD but without diabetes, once-weekly subcutaneous semaglutide was associated with a decreased risk of MACE comprised of CV death, nonfatal MI, and stroke compared with placebo.",
+   "quote_url": "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/11/09/15/04/select",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2.3",
+   "claim": "Semaglutide reduced major adverse cardiac events (MACE) by 20% compared to placebo.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/11/09/15/04/select",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.465,
+     "contradiction": 0.0,
+     "quote": "In patients with overweight or obesity and established CVD without DM, once-weekly subcutaneous semaglutide was associated with a 20% reduction in major adverse cardiac events during a mean exposure period of 33 months.",
+     "note": "reworded match: Passage states exactly 20% MACE reduction versus placebo.",
+     "judged_by": "nli+llm",
+     "source_type": "web",
+     "source_year": 2023
+    }
+   ],
+   "quote": "In patients with overweight or obesity and established CVD without DM, once-weekly subcutaneous semaglutide was associated with a 20% reduction in major adverse cardiac events during a mean exposure period of 33 months.",
+   "quote_url": "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/11/09/15/04/select",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2.4",
+   "claim": "MACE includes cardiovascular death, heart attack, and stroke.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/11/09/15/04/select",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.984,
+     "contradiction": 0.888,
+     "quote": "The primary outcome, major adverse CV events (MACE: composite of CV death, nonfatal MI, and nonfatal stroke), for semaglutide vs. placebo, was: 6.5% vs. 8.0% (hazard ratio [HR] 0.80, 95% confidence interval [CI] 0.72-0.90, p < 0.001).",
+     "note": "another passage on the page may disagree: \"Based on these data, subcutaneous semaglutide may have an expanded role in secondary CVD prevention in patients without DM and with overweight or obesity. In pa\"",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": 2023
+    }
+   ],
+   "quote": "The primary outcome, major adverse CV events (MACE: composite of CV death, nonfatal MI, and nonfatal stroke), for semaglutide vs. placebo, was: 6.5% vs. 8.0% (hazard ratio [HR] 0.80, 95% confidence interval [CI] 0.72-0.90, p < 0.001).",
+   "quote_url": "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/11/09/15/04/select",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "Average body weight loss of 9.4% (compared to 0.9% with placebo)",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4",
+   "claim": "Reductions in systolic blood pressure, LDL cholesterol, and blood sugar levels",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5",
+   "claim": "Benefits even in patients with heart failure",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://www.escardio.org/communities/councils/cardiology-practice/education/cardiopractice/part-II-highlights-from-the-clinical-consensus-statement-by-the-european-society/",
+     "marker": "[2]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.052,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.escardio.org/communities/councils/cardiology-practice/education/cardiopractice/part-II-highlights-from-the-clinical-consensus-statement-by-the-european-society/",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6.1",
+   "claim": "A 2024 meta-analysis found that GLP-1 inhibitors significantly reduced major adverse cardiac events compared with placebo.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.ajmc.com/view/experts-encourage-use-of-glp-1s-in-cardiovascular-care",
+     "marker": "[3]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.895,
+     "contradiction": 0.0,
+     "quote": "Recent studies into the effects of GLP-1s on cardiovascular events have also been promising, with a meta-analysis from 2024 showing that the odds of major adverse cardiac events and all-cause mortality were reduced after patients took GLP-1s compared with placebo.3 In the past, these differences",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "Recent studies into the effects of GLP-1s on cardiovascular events have also been promising, with a meta-analysis from 2024 showing that the odds of major adverse cardiac events and all-cause mortality were reduced after patients took GLP-1s compared with placebo.3 In the past, these differences",
+   "quote_url": "https://www.ajmc.com/view/experts-encourage-use-of-glp-1s-in-cardiovascular-care",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6.2",
+   "claim": "A 2024 meta-analysis found that GLP-1 inhibitors significantly reduced all-cause mortality compared with placebo.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.ajmc.com/view/experts-encourage-use-of-glp-1s-in-cardiovascular-care",
+     "marker": "[3]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.782,
+     "contradiction": 0.0,
+     "quote": "Recent studies into the effects of GLP-1s on cardiovascular events have also been promising, with a meta-analysis from 2024 showing that the odds of major adverse cardiac events and all-cause mortality were reduced after patients took GLP-1s compared with placebo.3 In the past, these differences",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "Recent studies into the effects of GLP-1s on cardiovascular events have also been promising, with a meta-analysis from 2024 showing that the odds of major adverse cardiac events and all-cause mortality were reduced after patients took GLP-1s compared with placebo.3 In the past, these differences",
+   "quote_url": "https://www.ajmc.com/view/experts-encourage-use-of-glp-1s-in-cardiovascular-care",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6.3",
+   "claim": "Some benefits appeared as early as 6 months after starting treatment.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.ajmc.com/view/experts-encourage-use-of-glp-1s-in-cardiovascular-care",
+     "marker": "[3]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.994,
+     "contradiction": 0.0,
+     "quote": "\u201cWe\u2019re starting to see an earlier separation that occurs that can ask the question of whether there\u2019s something special about these agents,\u201d Aroda said as she demonstrated the separation occurring as early as 6 months after starting new agents. She also presented data on how trizepatide and semaglutide led to reductions in weight as well as reductions in heart failure\u2013related symptoms in patients ",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "\u201cWe\u2019re starting to see an earlier separation that occurs that can ask the question of whether there\u2019s something special about these agents,\u201d Aroda said as she demonstrated the separation occurring as early as 6 months after starting new agents. She also presented data on how trizepatide and semaglutide led to reductions in weight as well as reductions in heart failure\u2013related symptoms in patients ",
+   "quote_url": "https://www.ajmc.com/view/experts-encourage-use-of-glp-1s-in-cardiovascular-care",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c7",
+   "claim": "These findings have led medical societies to recommend GLP-1 receptor agonists with proven cardiovascular benefit.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c8",
+   "claim": "The European Society of Cardiology guidelines now recommend GLP-1 drugs for patients with type 2 diabetes and atherosclerotic cardiovascular disease to reduce cardiovascular events.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.escardio.org/communities/councils/cardiology-practice/education/cardiopractice/part-II-highlights-from-the-clinical-consensus-statement-by-the-european-society/",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.001,
+     "contradiction": 0.72,
+     "quote": "GLP-1 RAs with proven CV benefit (liraglutide, semaglutide s.c., dulaglutide, efpeglenatide) are recommended in patients with T2DM and atherosclerotic CVD to reduce CV events, independent of baseline or target HbA1c and independent of concomitant glucose-lowering medication (Class I, LoE A) [17].",
+     "note": "reworded match: Passage explicitly recommends GLP-1 RAs for T2DM with atherosclerotic CVD.",
+     "judged_by": "nli+llm",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "GLP-1 RAs with proven CV benefit (liraglutide, semaglutide s.c., dulaglutide, efpeglenatide) are recommended in patients with T2DM and atherosclerotic CVD to reduce CV events, independent of baseline or target HbA1c and independent of concomitant glucose-lowering medication (Class I, LoE A) [17].",
+   "quote_url": "https://www.escardio.org/communities/councils/cardiology-practice/education/cardiopractice/part-II-highlights-from-the-clinical-consensus-statement-by-the-european-society/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c9.1",
+   "claim": "A recent 2025 analysis of the SELECT trial found that approximately 33% of semaglutide's cardiovascular benefits were explained by reductions in waist circumference alone.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.docwirenews.com/post/select-trial-semaglutide-reduces-cardiovascular-events-independent-of-weight-loss",
+     "marker": "[4]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "Mediation analyses suggested that approximately 33% of semaglutide\u2019s cardioprotective benefit was explained by reductions in waist circumference (HR, 0.86; 95% CI, 0.77\u20130.97), indicating that mechanisms beyond adiposity reduction may contribute to its cardiovascular effects.",
+     "note": "partly supported: Passages confirm 33% benefit explained by waist circumference reduction.",
+     "judged_by": "nli+llm",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "Mediation analyses suggested that approximately 33% of semaglutide\u2019s cardioprotective benefit was explained by reductions in waist circumference (HR, 0.86; 95% CI, 0.77\u20130.97), indicating that mechanisms beyond adiposity reduction may contribute to its cardiovascular effects.",
+   "quote_url": "https://www.docwirenews.com/post/select-trial-semaglutide-reduces-cardiovascular-events-independent-of-weight-loss",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c9.2",
+   "claim": "This suggests that mechanisms beyond simple weight loss contribute to the drug's cardioprotective effects.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.docwirenews.com/post/select-trial-semaglutide-reduces-cardiovascular-events-independent-of-weight-loss",
+     "marker": "[4]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.953,
+     "contradiction": 0.0,
+     "quote": "Mediation analyses suggested that approximately 33% of semaglutide\u2019s cardioprotective benefit was explained by reductions in waist circumference (HR, 0.86; 95% CI, 0.77\u20130.97), indicating that mechanisms beyond adiposity reduction may contribute to its cardiovascular effects.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "Mediation analyses suggested that approximately 33% of semaglutide\u2019s cardioprotective benefit was explained by reductions in waist circumference (HR, 0.86; 95% CI, 0.77\u20130.97), indicating that mechanisms beyond adiposity reduction may contribute to its cardiovascular effects.",
+   "quote_url": "https://www.docwirenews.com/post/select-trial-semaglutide-reduces-cardiovascular-events-independent-of-weight-loss",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/11/09/15/04/select",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/11/09/15/04/select",
+   "title": "Semaglutide Effects on Cardiovascular Outcomes in People With Overweight or Obesity - American College of Cardiology",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "a9ee0777db2c329e365eea6cb4be89b32d1faa644d81654d9991a4afc1e30b41",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.escardio.org/communities/councils/cardiology-practice/education/cardiopractice/part-II-highlights-from-the-clinical-consensus-statement-by-the-european-society/",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.escardio.org/communities/councils/cardiology-practice/education/cardiopractice/part-II-highlights-from-the-clinical-consensus-statement-by-the-european-society/",
+   "title": "Part II. Highlights from the clinical consensus statement by the European Society of Cardiology on obesity and cardiovascular disease: pharmacological and bariatric treatment strategies",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "790c2fc51cf6df5f5b79850f8364a9a9c4b34811451893727e78acf44d0ec89a",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.ajmc.com/view/experts-encourage-use-of-glp-1s-in-cardiovascular-care",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.ajmc.com/view/experts-encourage-use-of-glp-1s-in-cardiovascular-care",
+   "title": "Experts Encourage Use of GLP-1s in Cardiovascular Care | AJMC",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "74d6cefb2bb5cbc6dc00343ea4542e0911c5e1babfd31533a73a5d53647c51a2",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.docwirenews.com/post/select-trial-semaglutide-reduces-cardiovascular-events-independent-of-weight-loss",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.docwirenews.com/post/select-trial-semaglutide-reduces-cardiovascular-events-independent-of-weight-loss",
+   "title": "SELECT Trial Analysis Shows Semaglutide\u2019s Heart Benefits Extend Beyond Weight Loss | Metabolic Care Today",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "47b4884d825e52c89ab6998fc6e2f27ca6ebcc51bdd5f945dbbb736ba2ef3668",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 105.5,
+ "usage": {
+  "fetches": 4,
+  "wayback_lookups": 0,
+  "searches": 0,
+  "llm_calls": 7,
+  "nli_checks": 11,
+  "scorer_load_ms": 1749
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 9,
+   "citations": 5
+  },
+  {
+   "t": 30.37,
+   "event": "fetch",
+   "url": "https://www.docwirenews.com/post/select-trial-semaglutide-reduces-cardiovascular-events-independent-of-weight-loss",
+   "state": "live",
+   "http_status": 200,
+   "chars": 3740,
+   "error": ""
+  },
+  {
+   "t": 30.8,
+   "event": "fetch",
+   "url": "https://www.escardio.org/communities/councils/cardiology-practice/education/cardiopractice/part-II-highlights-from-the-clinical-consensus-statement-by-the-european-society/",
+   "state": "live",
+   "http_status": 200,
+   "chars": 11289,
+   "error": ""
+  },
+  {
+   "t": 31.58,
+   "event": "fetch",
+   "url": "https://www.ajmc.com/view/experts-encourage-use-of-glp-1s-in-cardiovascular-care",
+   "state": "live",
+   "http_status": 200,
+   "chars": 7460,
+   "error": ""
+  },
+  {
+   "t": 31.83,
+   "event": "fetch",
+   "url": "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/11/09/15/04/select",
+   "state": "live",
+   "http_status": 200,
+   "chars": 7260,
+   "error": ""
+  },
+  {
+   "t": 45.92,
+   "event": "paraphrase_judge",
+   "claim": "The SELECT Trial is the landmark study showing cardiovascular protection with semaglutide.",
+   "verdict": "PARTIAL",
+   "grounded": true
+  },
+  {
+   "t": 45.92,
+   "event": "verify",
+   "url": "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/11/09/15/04/select",
+   "claim": "The SELECT Trial is the landmark study showing cardiovascular protection with semaglutide.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.0,
+   "con": 0.999
+  },
+  {
+   "t": 48.96,
+   "event": "verify",
+   "url": "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/11/09/15/04/select",
+   "claim": "The SELECT Trial participants had existing cardiovascular disease.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.988,
+   "con": 0.0
+  },
+  {
+   "t": 57.09,
+   "event": "paraphrase_judge",
+   "claim": "Semaglutide reduced major adverse cardiac events (MACE) by 20% compared to placebo.",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 57.09,
+   "event": "verify",
+   "url": "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/11/09/15/04/select",
+   "claim": "Semaglutide reduced major adverse cardiac events (MACE) by 20% compared to placebo.",
+   "verdict": "SUPPORTED",
+   "ent": 0.465,
+   "con": 0.0
+  },
+  {
+   "t": 60.92,
+   "event": "verify",
+   "url": "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/11/09/15/04/select",
+   "claim": "MACE includes cardiovascular death, heart attack, and stroke.",
+   "verdict": "SUPPORTED",
+   "ent": 0.984,
+   "con": 0.888
+  },
+  {
+   "t": 64.36,
+   "event": "verify",
+   "url": "https://www.escardio.org/communities/councils/cardiology-practice/education/cardiopractice/part-II-highlights-from-the-clinical-consensus-statement-by-the-european-society/",
+   "claim": "Benefits even in patients with heart failure",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.052,
+   "con": 0.0
+  },
+  {
+   "t": 69.04,
+   "event": "verify",
+   "url": "https://www.ajmc.com/view/experts-encourage-use-of-glp-1s-in-cardiovascular-care",
+   "claim": "A 2024 meta-analysis found that GLP-1 inhibitors significantly reduced major adverse cardiac events compared with placeb",
+   "verdict": "SUPPORTED",
+   "ent": 0.895,
+   "con": 0.0
+  },
+  {
+   "t": 73.56,
+   "event": "verify",
+   "url": "https://www.ajmc.com/view/experts-encourage-use-of-glp-1s-in-cardiovascular-care",
+   "claim": "A 2024 meta-analysis found that GLP-1 inhibitors significantly reduced all-cause mortality compared with placebo.",
+   "verdict": "SUPPORTED",
+   "ent": 0.782,
+   "con": 0.0
+  },
+  {
+   "t": 77.11,
+   "event": "verify",
+   "url": "https://www.ajmc.com/view/experts-encourage-use-of-glp-1s-in-cardiovascular-care",
+   "claim": "Some benefits appeared as early as 6 months after starting treatment.",
+   "verdict": "SUPPORTED",
+   "ent": 0.994,
+   "con": 0.0
+  },
+  {
+   "t": 90.23,
+   "event": "paraphrase_judge",
+   "claim": "The European Society of Cardiology guidelines now recommend GLP-1 drugs for patients with type 2 diabetes and atheroscle",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 90.23,
+   "event": "verify",
+   "url": "https://www.escardio.org/communities/councils/cardiology-practice/education/cardiopractice/part-II-highlights-from-the-clinical-consensus-statement-by-the-european-society/",
+   "claim": "The European Society of Cardiology guidelines now recommend GLP-1 drugs for patients with type 2 diabetes and atheroscle",
+   "verdict": "SUPPORTED",
+   "ent": 0.001,
+   "con": 0.72
+  },
+  {
+   "t": 101.11,
+   "event": "paraphrase_judge",
+   "claim": "A recent 2025 analysis of the SELECT trial found that approximately 33% of semaglutide's cardiovascular benefits were ex",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 101.11,
+   "event": "verify",
+   "url": "https://www.docwirenews.com/post/select-trial-semaglutide-reduces-cardiovascular-events-independent-of-weight-loss",
+   "claim": "A recent 2025 analysis of the SELECT trial found that approximately 33% of semaglutide's cardiovascular benefits were ex",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 105.45,
+   "event": "verify",
+   "url": "https://www.docwirenews.com/post/select-trial-semaglutide-reduces-cardiovascular-events-independent-of-weight-loss",
+   "claim": "This suggests that mechanisms beyond simple weight loss contribute to the drug's cardioprotective effects.",
+   "verdict": "SUPPORTED",
+   "ent": 0.953,
+   "con": 0.0
+  },
+  {
+   "t": 105.45,
+   "event": "done",
+   "trust_score": 77
+  }
+ ],
+ "score_s": 107.2
+}

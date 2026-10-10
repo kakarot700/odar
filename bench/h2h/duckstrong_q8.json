@@ -1,0 +1,9 @@
+{
+ "answer": "Chandrayaan-3\u2019s standout scientific result was the first in-situ detection and measurement of sulfur on the Moon\u2019s south-polar surface, made by the Pragyan rover. It also measured other elements, helping scientists characterize the local lunar soil and showing that sulfur could be mapped directly at the landing site. [1]\n\nThe mission additionally made the first measurements of the near-surface lunar plasma environment in the south-polar region, finding it relatively sparse. ",
+ "sources": [
+  "https://www.nature.com/articles/d41586-023-02852-7"
+ ],
+ "raw_answer": "Chandrayaan-3\u2019s standout scientific result was **the first in-situ detection and measurement of sulfur on the Moon\u2019s south-polar surface**, made by the Pragyan rover. It also measured other elements, helping scientists characterize the local lunar soil and showing that sulfur could be mapped directly at the landing site. [Nature]\n\nThe mission additionally made the first measurements of the near-surface lunar plasma environment in the south-polar region, finding it relatively sparse. [unshown source 3 \u2014 see note]",
+ "approx_seconds": 8,
+ "model": "GPT-6 Luna"
+}

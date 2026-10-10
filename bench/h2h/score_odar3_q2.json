@@ -1,0 +1,395 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_8bf41131c0c5",
+ "trust_score": 100,
+ "grade": "citations hold up",
+ "counts": {
+  "SUPPORTED": 6,
+  "PARTIALLY SUPPORTED": 0,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 0,
+  "UNVERIFIABLE": 3,
+  "DEAD LINK": 0,
+  "NO CITATION": 0
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "In Phase 2 clinical trials, R21/Matrix-M demonstrated 77% effectiveness.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.996,
+     "contradiction": 0.0,
+     "quote": "In the ongoing battle against malaria, a promising development has emerged with the endorsement by the World Health Organization (WHO) of the R21/Matrix-M\u2122 Malaria Vaccine. Developed through a collaboration between the University of Oxford and Novavax, this vaccine has demonstrated remarkable efficacy, reaching 77% effectiveness in Phase 2 clinical trials.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "In the ongoing battle against malaria, a promising development has emerged with the endorsement by the World Health Organization (WHO) of the R21/Matrix-M\u2122 Malaria Vaccine. Developed through a collaboration between the University of Oxford and Novavax, this vaccine has demonstrated remarkable efficacy, reaching 77% effectiveness in Phase 2 clinical trials.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "Phase 3 trials reported 12-month vaccine efficacy of 75% at seasonal sites.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.998,
+     "contradiction": 0.0,
+     "quote": "Notably, phase 3 clinical trials have shown the R21/Matrix-M 12-month Vaccine Efficacy (VE) to be 75% in locations characterized by seasonal variations, while it registered at 68% in standard locations [1].",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Notably, phase 3 clinical trials have shown the R21/Matrix-M 12-month Vaccine Efficacy (VE) to be 75% in locations characterized by seasonal variations, while it registered at 68% in standard locations [1].",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "The same trials reported 68% efficacy at standard sites.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.974,
+     "contradiction": 0.0,
+     "quote": "Specifically, over 12 months, VE for the time leading up to the initial clinical malaria episode was 75% in the seasonal sites and 68% in the standard sites [1]. Similarly, VE against multiple clinical malaria episodes exhibited comparable figures: 75% in the seasonal sites and 67% in the standard sites. A parallel decline in efficacy over the initial year of follow-up was observed at both seasona",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Specifically, over 12 months, VE for the time leading up to the initial clinical malaria episode was 75% in the seasonal sites and 68% in the standard sites [1]. Similarly, VE against multiple clinical malaria episodes exhibited comparable figures: 75% in the seasonal sites and 67% in the standard sites. A parallel decline in efficacy over the initial year of follow-up was observed at both seasona",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4",
+   "claim": "Vaccine efficacy against multiple clinical malaria episodes was 75% at seasonal sites.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.971,
+     "contradiction": 0.996,
+     "quote": "It represents a significant advancement in providing enhanced protection against malaria [4]. Notably, phase 3 clinical trials have shown the R21/Matrix-M 12-month Vaccine Efficacy (VE) to be 75% in locations characterized by seasonal variations, while it registered at 68% in standard locations [1].",
+     "note": "another passage on the page may disagree: \"Notably, phase 3 clinical trials have shown the R21/Matrix-M 12-month Vaccine Efficacy (VE) to be 75% in locations characterized by seasonal variations, while i\"",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "It represents a significant advancement in providing enhanced protection against malaria [4]. Notably, phase 3 clinical trials have shown the R21/Matrix-M 12-month Vaccine Efficacy (VE) to be 75% in locations characterized by seasonal variations, while it registered at 68% in standard locations [1].",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5",
+   "claim": "It was 67% at standard sites.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.984,
+     "contradiction": 0.0,
+     "quote": "Similarly, VE against multiple clinical malaria episodes exhibited comparable figures: 75% in the seasonal sites and 67% in the standard sites.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Similarly, VE against multiple clinical malaria episodes exhibited comparable figures: 75% in the seasonal sites and 67% in the standard sites.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6",
+   "claim": "The vaccine has shown up to 77% protection against the malaria parasite in clinical trials.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.998,
+     "contradiction": 0.0,
+     "quote": "Notably, the R21/Matrix-M vaccine boasts higher efficacy than previous malaria vaccines, offering up to 77% protection against the malaria parasite in clinical trials.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Notably, the R21/Matrix-M vaccine boasts higher efficacy than previous malaria vaccines, offering up to 77% protection against the malaria parasite in clinical trials.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c7",
+   "claim": "R21/Matrix-M was well tolerated and offered high efficacy against clinical malaria in African children.",
+   "verdict": "UNVERIFIABLE",
+   "citations": [
+    {
+     "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(23",
+     "marker": "[3]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "blocked",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "page exists but could not be read (HTTP 403); archive check unavailable",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(23",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "low",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c8",
+   "claim": "This low-cost, high-efficacy vaccine is already licensed by several African countries.",
+   "verdict": "UNVERIFIABLE",
+   "citations": [
+    {
+     "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(23",
+     "marker": "[3]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "blocked",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "page exists but could not be read (HTTP 403); archive check unavailable",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(23",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "low",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c9",
+   "claim": "It recently received a WHO policy recommendation and prequalification.",
+   "verdict": "UNVERIFIABLE",
+   "citations": [
+    {
+     "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(23",
+     "marker": "[3]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "blocked",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "page exists but could not be read (HTTP 403); archive check unavailable",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(23",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "low",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+   "title": "A perspective on Oxford\u2019s R21/Matrix-M\u2122 malaria vaccine and the future of global eradication efforts - PMC",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "443ea52a77b0c250f341ce43cb7c5ec3d13363656ef9759730eb63155e222af9",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(23",
+   "state": "blocked",
+   "http_status": 403,
+   "error": "HTTP 403",
+   "resolved_url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(23",
+   "title": "",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "",
+   "archive_check": "unavailable",
+   "content_hash": "",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 67.0,
+ "usage": {
+  "fetches": 2,
+  "wayback_lookups": 1,
+  "searches": 0,
+  "llm_calls": 0,
+  "nli_checks": 6,
+  "scorer_load_ms": 25406
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 9,
+   "citations": 9
+  },
+  {
+   "t": 0.12,
+   "event": "fetch",
+   "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(23",
+   "state": "blocked",
+   "http_status": 403,
+   "chars": 0,
+   "error": "HTTP 403"
+  },
+  {
+   "t": 0.41,
+   "event": "fetch",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+   "state": "live",
+   "http_status": 200,
+   "chars": 15508,
+   "error": ""
+  },
+  {
+   "t": 10.53,
+   "event": "wayback",
+   "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(23",
+   "error": "RuntimeError: wayback CDX HTTP 503"
+  },
+  {
+   "t": 22.37,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+   "claim": "In Phase 2 clinical trials, R21/Matrix-M demonstrated 77% effectiveness.",
+   "verdict": "SUPPORTED",
+   "ent": 0.996,
+   "con": 0.0
+  },
+  {
+   "t": 34.69,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+   "claim": "Phase 3 trials reported 12-month vaccine efficacy of 75% at seasonal sites.",
+   "verdict": "SUPPORTED",
+   "ent": 0.998,
+   "con": 0.0
+  },
+  {
+   "t": 49.81,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+   "claim": "The same trials reported 68% efficacy at standard sites.",
+   "verdict": "SUPPORTED",
+   "ent": 0.974,
+   "con": 0.0
+  },
+  {
+   "t": 59.27,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+   "claim": "Vaccine efficacy against multiple clinical malaria episodes was 75% at seasonal sites.",
+   "verdict": "SUPPORTED",
+   "ent": 0.971,
+   "con": 0.996
+  },
+  {
+   "t": 63.27,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+   "claim": "It was 67% at standard sites.",
+   "verdict": "SUPPORTED",
+   "ent": 0.984,
+   "con": 0.0
+  },
+  {
+   "t": 66.95,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+   "claim": "The vaccine has shown up to 77% protection against the malaria parasite in clinical trials.",
+   "verdict": "SUPPORTED",
+   "ent": 0.998,
+   "con": 0.0
+  },
+  {
+   "t": 66.96,
+   "event": "done",
+   "trust_score": 100
+  }
+ ],
+ "score_s": 94.6
+}

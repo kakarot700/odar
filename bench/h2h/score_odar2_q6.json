@@ -1,0 +1,497 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_487980a0fcff",
+ "trust_score": 90,
+ "grade": "citations hold up",
+ "counts": {
+  "SUPPORTED": 9,
+  "PARTIALLY SUPPORTED": 0,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 1,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 0
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "Recent studies show microplastics have been confirmed in human stool, lung tissue, and blood.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.998,
+     "contradiction": 0.0,
+     "quote": "Recent studies have confirmed the presence of microplastics in human stool, lung tissue, blood, and placental samples, providing direct evidence that these particles can enter and persist within the human body [1,2].",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Recent studies have confirmed the presence of microplastics in human stool, lung tissue, blood, and placental samples, providing direct evidence that these particles can enter and persist within the human body [1,2].",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "Human exposure occurs mainly through ingestion of contaminated food and water, inhalation of airborne particles, and, to a lesser extent, dermal contact.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.996,
+     "contradiction": 0.0,
+     "quote": "As a consequence of this widespread contamination, human exposure occurs primarily through ingestion of contaminated food and water, inhalation of airborne particles, and, to a lesser extent, dermal contact.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "As a consequence of this widespread contamination, human exposure occurs primarily through ingestion of contaminated food and water, inhalation of airborne particles, and, to a lesser extent, dermal contact.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "According to the evidence, microplastics may cause inflammation in the respiratory and gastrointestinal systems and compromise immune function.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://www.mdpi.com/2673-8929/4/2/23",
+     "marker": "[3]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "archived_only",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this (verified against the Wayback Machine copy; live page is gone)",
+     "judged_by": "nli+llm",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.mdpi.com/2673-8929/4/2/23",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4",
+   "claim": "They may also induce inflammatory responses, oxidative stress, and cellular damage, contributing to various diseases.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12213550/",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.988,
+     "contradiction": 0.0,
+     "quote": "We discuss the mechanisms by which MPs may induce inflammatory responses, oxidative stress, and cellular damage, thereby contributing to various diseases.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "We discuss the mechanisms by which MPs may induce inflammatory responses, oxidative stress, and cellular damage, thereby contributing to various diseases.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12213550/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5",
+   "claim": "Possible associations have been reported between microplastics in the body and gastrointestinal complications, inflammatory conditions, hormonal imbalances, and reproductive dysfunction.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.996,
+     "contradiction": 0.0,
+     "quote": "Human epidemiologic evidence remains limited, but some studies have reported possible associations between microplastics in the body and gastrointestinal complications, inflammatory conditions, hormonal imbalances, and reproductive dysfunction.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Human epidemiologic evidence remains limited, but some studies have reported possible associations between microplastics in the body and gastrointestinal complications, inflammatory conditions, hormonal imbalances, and reproductive dysfunction.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6",
+   "claim": "The combination of microplastics with other environmental pollutants may amplify adverse health outcomes.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12213550/",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.986,
+     "contradiction": 0.0,
+     "quote": "In summary, as a carrier of environmental pollutants, microplastics can amplify their health risks by adsorbing organic pollutants, heavy metals and pathogens.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "In summary, as a carrier of environmental pollutants, microplastics can amplify their health risks by adsorbing organic pollutants, heavy metals and pathogens.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12213550/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c7",
+   "claim": "Overall, human evidence is limited and largely observational, with studies mainly reporting associations between microplastic exposure and selected biological markers rather than confirmed clinical outcomes.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.996,
+     "contradiction": 0.0,
+     "quote": "In contrast, human evidence remains limited and largely observational, with studies primarily reporting associations between microplastic exposure and selected biological markers rather than confirmed clinical outcomes.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "In contrast, human evidence remains limited and largely observational, with studies primarily reporting associations between microplastic exposure and selected biological markers rather than confirmed clinical outcomes.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c8.1",
+   "claim": "Long-term health effects are hard to assess.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.954,
+     "contradiction": 0.0,
+     "quote": "Despite the growing number of publications, substantial evidence gaps remain. Most existing studies are limited to short-term or cross-sectional designs, and longitudinal studies with extended follow-up periods are scarce, restricting the ability to evaluate long-term health effects of microplastic exposure.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Despite the growing number of publications, substantial evidence gaps remain. Most existing studies are limited to short-term or cross-sectional designs, and longitudinal studies with extended follow-up periods are scarce, restricting the ability to evaluate long-term health effects of microplastic exposure.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c8.2",
+   "claim": "Most studies are short-term or cross-sectional.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.981,
+     "contradiction": 0.0,
+     "quote": "| Inflammatory markers (CRP, IL-6, TNF-\u03b1) | 7 | Cohort, cross-sectional | Moderate | Moderate | Most studies reported elevated inflammatory markers in exposed populations | [1,2,6,11,14,15,25] |",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "| Inflammatory markers (CRP, IL-6, TNF-\u03b1) | 7 | Cohort, cross-sectional | Moderate | Moderate | Most studies reported elevated inflammatory markers in exposed populations | [1,2,6,11,14,15,25] |",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c8.3",
+   "claim": "There is currently no standardized method to quantify the internal burden of microplastics in humans.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.997,
+     "contradiction": 0.0,
+     "quote": "In addition, there is currently no standardized method to quantify the internal burden of microplastics in humans, and no consensus exists regarding exposure levels that may be considered hazardous.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "In addition, there is currently no standardized method to quantify the internal burden of microplastics in humans, and no consensus exists regarding exposure levels that may be considered hazardous.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "title": "Impact of Microplastic Exposure on Human Health: A Systematic Review of Mechanisms, Biomarkers, and Clinical Outcomes - PMC",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "5524d4ba200bb8e70983b6f1dadbd8c78c67f6f35be489c8c636b34a0d585d8d",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.mdpi.com/2673-8929/4/2/23",
+   "state": "archived_only",
+   "http_status": 403,
+   "error": "HTTP 403",
+   "resolved_url": "https://www.mdpi.com/2673-8929/4/2/23",
+   "title": "",
+   "archive_url": "http://web.archive.org/web/20261004162646/https://www.mdpi.com/2673-8929/4/2/23",
+   "archive_timestamp": "20261004162646",
+   "text_source": "wayback",
+   "archive_check": "archived",
+   "content_hash": "9555f179865306e18da1aface49788d3a13495885bbecc2c919beaa4c9e79979",
+   "quarantined": false
+  },
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12213550/",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12213550/",
+   "title": "Microplastics and human health: unraveling the toxicological pathways and implications for public health - PMC",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "6bc301b4d8022ee2934403fc163756f86dbf722bc1810629c7e5522f2bcbb374",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 89.6,
+ "usage": {
+  "fetches": 4,
+  "wayback_lookups": 1,
+  "searches": 0,
+  "llm_calls": 2,
+  "nli_checks": 10,
+  "scorer_load_ms": 2791
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 8,
+   "citations": 8
+  },
+  {
+   "t": 8.89,
+   "event": "fetch",
+   "url": "https://www.mdpi.com/2673-8929/4/2/23",
+   "state": "blocked",
+   "http_status": 403,
+   "chars": 0,
+   "error": "HTTP 403"
+  },
+  {
+   "t": 9.36,
+   "event": "fetch",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "state": "live",
+   "http_status": 200,
+   "chars": 52968,
+   "error": ""
+  },
+  {
+   "t": 9.48,
+   "event": "fetch",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12213550/",
+   "state": "live",
+   "http_status": 200,
+   "chars": 82462,
+   "error": ""
+  },
+  {
+   "t": 11.02,
+   "event": "wayback",
+   "url": "https://www.mdpi.com/2673-8929/4/2/23",
+   "archived": true,
+   "snapshot": "http://web.archive.org/web/20261004162646/https://www.mdpi.com/2673-8929/4/2/23"
+  },
+  {
+   "t": 12.0,
+   "event": "archive_fetch",
+   "url": "https://web.archive.org/web/20261004162646id_/https://www.mdpi.com/2673-8929/4/2/23",
+   "ok": true,
+   "chars": 42899,
+   "error": ""
+  },
+  {
+   "t": 21.0,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "claim": "Recent studies show microplastics have been confirmed in human stool, lung tissue, and blood.",
+   "verdict": "SUPPORTED",
+   "ent": 0.998,
+   "con": 0.0
+  },
+  {
+   "t": 27.66,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "claim": "Human exposure occurs mainly through ingestion of contaminated food and water, inhalation of airborne particles, and, to",
+   "verdict": "SUPPORTED",
+   "ent": 0.996,
+   "con": 0.0
+  },
+  {
+   "t": 42.76,
+   "event": "paraphrase_judge",
+   "claim": "According to the evidence, microplastics may cause inflammation in the respiratory and gastrointestinal systems and comp",
+   "verdict": "NOT_SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 42.76,
+   "event": "verify",
+   "url": "https://www.mdpi.com/2673-8929/4/2/23",
+   "claim": "According to the evidence, microplastics may cause inflammation in the respiratory and gastrointestinal systems and comp",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 49.46,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12213550/",
+   "claim": "They may also induce inflammatory responses, oxidative stress, and cellular damage, contributing to various diseases.",
+   "verdict": "SUPPORTED",
+   "ent": 0.988,
+   "con": 0.0
+  },
+  {
+   "t": 57.73,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "claim": "Possible associations have been reported between microplastics in the body and gastrointestinal complications, inflammat",
+   "verdict": "SUPPORTED",
+   "ent": 0.996,
+   "con": 0.0
+  },
+  {
+   "t": 63.26,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12213550/",
+   "claim": "The combination of microplastics with other environmental pollutants may amplify adverse health outcomes.",
+   "verdict": "SUPPORTED",
+   "ent": 0.986,
+   "con": 0.0
+  },
+  {
+   "t": 69.84,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "claim": "Overall, human evidence is limited and largely observational, with studies mainly reporting associations between micropl",
+   "verdict": "SUPPORTED",
+   "ent": 0.996,
+   "con": 0.0
+  },
+  {
+   "t": 75.38,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "claim": "Long-term health effects are hard to assess.",
+   "verdict": "SUPPORTED",
+   "ent": 0.954,
+   "con": 0.0
+  },
+  {
+   "t": 83.13,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "claim": "Most studies are short-term or cross-sectional.",
+   "verdict": "SUPPORTED",
+   "ent": 0.981,
+   "con": 0.0
+  },
+  {
+   "t": 89.64,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "claim": "There is currently no standardized method to quantify the internal burden of microplastics in humans.",
+   "verdict": "SUPPORTED",
+   "ent": 0.997,
+   "con": 0.0
+  },
+  {
+   "t": 89.65,
+   "event": "done",
+   "trust_score": 90
+  }
+ ],
+ "score_s": 92.5
+}

@@ -1,0 +1,407 @@
+{
+ "references": [],
+ "confidence": "medium",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_a008d8365a51",
+ "trust_score": 62,
+ "grade": "mixed: check flagged claims",
+ "counts": {
+  "SUPPORTED": 1,
+  "PARTIALLY SUPPORTED": 3,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 0,
+  "UNVERIFIABLE": 2,
+  "DEAD LINK": 0,
+  "NO CITATION": 1
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "Intermittent fasting can produce more weight loss than daily calorie restriction, but results vary across studies.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "In a 2025 randomized trial of 165 people, those on a 4:3 fasting plan lost an average of about 6 more pounds after one year than the calorie-restriction group.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.health.harvard.edu/healthy-aging-and-longevity/fasting-vs-calorie-restriction-for-weight-loss-which-one-wins",
+     "marker": "[2]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.083,
+     "contradiction": 0.0,
+     "quote": "After one year, people in the 4:3 group had lost more weight - an average of about 6 more pounds - than people in the calorie restriction group.",
+     "note": "partly supported: Misses 2025 randomized trial and 165 participants.",
+     "judged_by": "nli+llm",
+     "source_type": "academic",
+     "source_year": null
+    }
+   ],
+   "quote": "After one year, people in the 4:3 group had lost more weight - an average of about 6 more pounds - than people in the calorie restriction group.",
+   "quote_url": "https://www.health.harvard.edu/healthy-aging-and-longevity/fasting-vs-calorie-restriction-for-weight-loss-which-one-wins",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3.1",
+   "claim": "A meta-analysis of 17 publications (1,258 participants) found IF led to a more significant decrease in BMI than energy restriction.",
+   "verdict": "UNVERIFIABLE",
+   "citations": [
+    {
+     "url": "https://www.sciencedirect.com/science/article/pii/S1658361225000186",
+     "marker": "[1]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "blocked",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "page exists but could not be read (HTTP 403); archive check unavailable",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.sciencedirect.com/science/article/pii/S1658361225000186",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "low",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3.2",
+   "claim": "The decrease in weight was slightly greater and statistically nonsignificant.",
+   "verdict": "UNVERIFIABLE",
+   "citations": [
+    {
+     "url": "https://www.sciencedirect.com/science/article/pii/S1658361225000186",
+     "marker": "[1]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "blocked",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "page exists but could not be read (HTTP 403); archive check unavailable",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.sciencedirect.com/science/article/pii/S1658361225000186",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "low",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4",
+   "claim": "A 2024 meta-analysis found IF was more effective than continuous calorie restriction for weight loss, with no difference in BMI improvement.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9099935",
+     "marker": "[4]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.997,
+     "quote": "In summary, we found that IF was more effective than CCR for weight loss; however, there was no difference in BMI improvement.",
+     "note": "partly supported: Findings match but passage lacks specified 2024 date.",
+     "judged_by": "nli+llm",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "In summary, we found that IF was more effective than CCR for weight loss; however, there was no difference in BMI improvement.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9099935",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5",
+   "claim": "A 2023 study found that after six years, participants who restricted calories lost more weight than those on intermittent fasting.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.health.com/intermittent-fasting-vs-calorie-counting-weight-loss-7557026",
+     "marker": "[6]",
+     "verdict": "SUPPORTED",
+     "link_state": "archived_only",
+     "entailment": 0.997,
+     "contradiction": 0.0,
+     "quote": "A study published in January 2023 in the Journal of the American Heart Association found that after six years, participants who restricted calories lost more weight than those who continued an intermittent fasting diet.",
+     "note": "(verified against the Wayback Machine copy; live page is gone)",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": 2023
+    }
+   ],
+   "quote": "A study published in January 2023 in the Journal of the American Heart Association found that after six years, participants who restricted calories lost more weight than those who continued an intermittent fasting diet.",
+   "quote_url": "https://www.health.com/intermittent-fasting-vs-calorie-counting-weight-loss-7557026",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6",
+   "claim": "Another review concluded that IF (hypocaloric or eucaloric) and calorie restriction can be integrated into exercise training without negatively impacting most physical performance measures.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12195750",
+     "marker": "[5]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "Conclusions: IF (hypocaloric or eucaloric) and CR can be effectively integrated into exercise training without negatively impacting most measures of physical performance, while significantly enhancing weight loss and adiposity-related outcomes.",
+     "note": "the page supports part of this claim, not all of it",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Conclusions: IF (hypocaloric or eucaloric) and CR can be effectively integrated into exercise training without negatively impacting most measures of physical performance, while significantly enhancing weight loss and adiposity-related outcomes.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12195750",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://www.health.harvard.edu/healthy-aging-and-longevity/fasting-vs-calorie-restriction-for-weight-loss-which-one-wins",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.health.harvard.edu/healthy-aging-and-longevity/fasting-vs-calorie-restriction-for-weight-loss-which-one-wins",
+   "title": "Fasting vs. calorie restriction for weight loss: Which one wins? - Harvard Health",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "2e9394feb7b7fea8cb8b2d0735a7334d49ec49a61f709e54447b88d90bba1878",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.sciencedirect.com/science/article/pii/S1658361225000186",
+   "state": "blocked",
+   "http_status": 403,
+   "error": "HTTP 403",
+   "resolved_url": "https://www.sciencedirect.com/science/article/pii/S1658361225000186",
+   "title": "",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "",
+   "archive_check": "unavailable",
+   "content_hash": "",
+   "quarantined": false
+  },
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9099935",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9099935/",
+   "title": "Intermittent Fasting versus Continuous Calorie Restriction: Which Is Better for Weight Loss? - PMC",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "b6530224f63fc75973f1f116f983e2828434e808bdf71dbaf858e73e914ee3a1",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.health.com/intermittent-fasting-vs-calorie-counting-weight-loss-7557026",
+   "state": "archived_only",
+   "http_status": 403,
+   "error": "HTTP 403",
+   "resolved_url": "https://www.health.com/intermittent-fasting-vs-calorie-counting-weight-loss-7557026",
+   "title": "",
+   "archive_url": "http://web.archive.org/web/20240604211056/https://www.health.com/intermittent-fasting-vs-calorie-counting-weight-loss-7557026",
+   "archive_timestamp": "20240604211056",
+   "text_source": "wayback",
+   "archive_check": "archived",
+   "content_hash": "204e1860fee9b6010e7ce50782cc6ae09ed7972fe14b68d8076227ea7de3c836",
+   "quarantined": false
+  },
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12195750",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12195750/",
+   "title": "Effects of Intermittent Fasting and Calorie Restriction on Exercise Performance: A Systematic Review and Meta-Analysis - PMC",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "a621ac580db6adcc895b33caba3b0564bfc5be9062663a5b874db9a21d2d2e8c",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 152.3,
+ "usage": {
+  "fetches": 6,
+  "wayback_lookups": 2,
+  "searches": 0,
+  "llm_calls": 4,
+  "nli_checks": 6,
+  "scorer_load_ms": 33473
+ },
+ "audit_trail": [
+  {
+   "t": 0.01,
+   "event": "parse",
+   "claims": 6,
+   "citations": 5
+  },
+  {
+   "t": 21.01,
+   "event": "fetch",
+   "url": "https://www.health.com/intermittent-fasting-vs-calorie-counting-weight-loss-7557026",
+   "state": "blocked",
+   "http_status": 403,
+   "chars": 0,
+   "error": "HTTP 403"
+  },
+  {
+   "t": 21.01,
+   "event": "fetch",
+   "url": "https://www.sciencedirect.com/science/article/pii/S1658361225000186",
+   "state": "blocked",
+   "http_status": 403,
+   "chars": 0,
+   "error": "HTTP 403"
+  },
+  {
+   "t": 21.37,
+   "event": "wayback",
+   "url": "https://www.health.com/intermittent-fasting-vs-calorie-counting-weight-loss-7557026",
+   "archived": true,
+   "snapshot": "http://web.archive.org/web/20240604211056/https://www.health.com/intermittent-fasting-vs-calorie-counting-weight-loss-7557026"
+  },
+  {
+   "t": 21.67,
+   "event": "fetch",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9099935",
+   "state": "live",
+   "http_status": 200,
+   "chars": 50210,
+   "error": ""
+  },
+  {
+   "t": 22.39,
+   "event": "fetch",
+   "url": "https://www.health.harvard.edu/healthy-aging-and-longevity/fasting-vs-calorie-restriction-for-weight-loss-which-one-wins",
+   "state": "live",
+   "http_status": 200,
+   "chars": 1669,
+   "error": ""
+  },
+  {
+   "t": 22.67,
+   "event": "fetch",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12195750",
+   "state": "live",
+   "http_status": 200,
+   "chars": 128302,
+   "error": ""
+  },
+  {
+   "t": 27.64,
+   "event": "wayback",
+   "url": "https://www.sciencedirect.com/science/article/pii/S1658361225000186",
+   "error": "RuntimeError: wayback CDX HTTP 503"
+  },
+  {
+   "t": 29.13,
+   "event": "archive_fetch",
+   "url": "https://web.archive.org/web/20240604211056id_/https://www.health.com/intermittent-fasting-vs-calorie-counting-weight-loss-7557026",
+   "ok": true,
+   "chars": 9822,
+   "error": ""
+  },
+  {
+   "t": 47.99,
+   "event": "paraphrase_judge",
+   "claim": "In a 2025 randomized trial of 165 people, those on a 4:3 fasting plan lost an average of about 6 more pounds after one y",
+   "verdict": "PARTIAL",
+   "grounded": true
+  },
+  {
+   "t": 47.99,
+   "event": "verify",
+   "url": "https://www.health.harvard.edu/healthy-aging-and-longevity/fasting-vs-calorie-restriction-for-weight-loss-which-one-wins",
+   "claim": "In a 2025 randomized trial of 165 people, those on a 4:3 fasting plan lost an average of about 6 more pounds after one y",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.083,
+   "con": 0.0
+  },
+  {
+   "t": 77.4,
+   "event": "paraphrase_judge",
+   "claim": "A 2024 meta-analysis found IF was more effective than continuous calorie restriction for weight loss, with no difference",
+   "verdict": "PARTIAL",
+   "grounded": true
+  },
+  {
+   "t": 77.4,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9099935",
+   "claim": "A 2024 meta-analysis found IF was more effective than continuous calorie restriction for weight loss, with no difference",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.0,
+   "con": 0.997
+  },
+  {
+   "t": 97.86,
+   "event": "verify",
+   "url": "https://www.health.com/intermittent-fasting-vs-calorie-counting-weight-loss-7557026",
+   "claim": "A 2023 study found that after six years, participants who restricted calories lost more weight than those on intermitten",
+   "verdict": "SUPPORTED",
+   "ent": 0.997,
+   "con": 0.0
+  },
+  {
+   "t": 152.31,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12195750",
+   "claim": "Another review concluded that IF (hypocaloric or eucaloric) and calorie restriction can be integrated into exercise trai",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 152.33,
+   "event": "done",
+   "trust_score": 62
+  }
+ ],
+ "score_s": 188.8
+}

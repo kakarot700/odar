@@ -1,0 +1,10 @@
+{
+ "answer": "India's repo rate is 5.50%. The RBI last changed it on October 7, 2026, raising it by 0.25 percentage points from 5.25%. [1][2]",
+ "sources": [
+  "https://www.rbi.org.in/scripts/annualpolicy.aspx",
+  "https://www.livemint.com/market/stock-market-news/rbi-mpc-meeting-october-2026-repo-rate-hiked-by-25-bps-to-5-50-growth-inflation-forecast-other-key-takeaways-11791344804917.html"
+ ],
+ "raw_answer": "India's repo rate is 5.50%. The RBI last changed it on October 7, 2026, raising it by 0.25 percentage points from 5.25%. [rbi.org.in +1]",
+ "approx_seconds": "~8-10s estimate; site shows no timer. Response complete observed immediately on first poll.",
+ "model": "GPT-6 Luna"
+}

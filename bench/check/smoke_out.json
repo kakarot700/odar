@@ -1,0 +1,363 @@
+{
+  "check_id": "chk_b5dff84b8bee",
+  "trust_score": 33,
+  "grade": "unreliable citations",
+  "counts": {
+    "SUPPORTED": 1,
+    "PARTIALLY SUPPORTED": 0,
+    "CONTRADICTED": 0,
+    "WRONG SOURCE": 0,
+    "UNVERIFIABLE": 2,
+    "DEAD LINK": 2,
+    "NO CITATION": 0
+  },
+  "claims": [
+    {
+      "claim_id": "c1",
+      "claim": "PostgreSQL implements three distinct isolation levels internally, and Read Uncommitted behaves like Read Committed.",
+      "verdict": "SUPPORTED",
+      "citations": [
+        {
+          "url": "https://www.postgresql.org/docs/current/transaction-iso.html",
+          "marker": "[1]",
+          "verdict": "SUPPORTED",
+          "link_state": "live",
+          "entailment": 0.998,
+          "contradiction": 0.0,
+          "quote": "In PostgreSQL, you can request any of the four standard transaction isolation levels, but internally only three distinct isolation levels are implemented, i.e., PostgreSQL's Read Uncommitted mode behaves like Read Committed.",
+          "note": "",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "In PostgreSQL, you can request any of the four standard transaction isolation levels, but internally only three distinct isolation levels are implemented, i.e., PostgreSQL's Read Uncommitted mode behaves like Read Committed.",
+      "quote_url": "https://www.postgresql.org/docs/current/transaction-iso.html",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": ""
+    },
+    {
+      "claim_id": "c2",
+      "claim": "The Eiffel Tower was completed in 1889.",
+      "verdict": "UNVERIFIABLE",
+      "citations": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Eiffel_Tower",
+          "marker": "[2]",
+          "verdict": "UNVERIFIABLE",
+          "link_state": "blocked",
+          "entailment": 0.0,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "page exists but could not be read (HTTP 403); no archive copy",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://en.wikipedia.org/wiki/Eiffel_Tower",
+      "replacement": {
+        "url": "https://geographypin.com/the-original-purpose-of-the-eiffel-tower/",
+        "title": "Original Purpose of the Eiffel Tower (1889 Exposition)",
+        "quote": "How the Eiffel Tower Fulfilled Its Purpose During the 1889 Fair",
+        "entailment": 0.988
+      },
+      "replacement_searched": true,
+      "note": ""
+    },
+    {
+      "claim_id": "c3",
+      "claim": "The Eiffel Tower is made entirely of aluminium.",
+      "verdict": "UNVERIFIABLE",
+      "citations": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Eiffel_Tower",
+          "marker": "[2]",
+          "verdict": "UNVERIFIABLE",
+          "link_state": "blocked",
+          "entailment": 0.0,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "page exists but could not be read (HTTP 403); no archive copy",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://en.wikipedia.org/wiki/Eiffel_Tower",
+      "replacement": null,
+      "replacement_searched": true,
+      "note": ""
+    },
+    {
+      "claim_id": "c4",
+      "claim": "Python 3.12 removed the distutils package.",
+      "verdict": "DEAD LINK",
+      "citations": [
+        {
+          "url": "https://docs.python.org/3/whatsnew/3.12-removed-distutils-guide.html",
+          "marker": "[3]",
+          "verdict": "DEAD LINK",
+          "link_state": "not_found",
+          "entailment": 0.0,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "page not found (404) and never archived: likely fabricated URL",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://docs.python.org/3/whatsnew/3.12-removed-distutils-guide.html",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": ""
+    },
+    {
+      "claim_id": "c5",
+      "claim": "The Great Wall of China is visible from the Moon with the naked eye.",
+      "verdict": "DEAD LINK",
+      "citations": [
+        {
+          "url": "https://www.nasa-moonfacts-archive.org/great-wall-visible",
+          "marker": "[4]",
+          "verdict": "DEAD LINK",
+          "link_state": "no_domain",
+          "entailment": 0.0,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "domain does not resolve and was never archived: likely fabricated URL",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://www.nasa-moonfacts-archive.org/great-wall-visible",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": ""
+    }
+  ],
+  "links": [
+    {
+      "url": "https://www.postgresql.org/docs/current/transaction-iso.html",
+      "state": "live",
+      "http_status": 200,
+      "error": "",
+      "resolved_url": "https://www.postgresql.org/docs/current/transaction-iso.html",
+      "title": "PostgreSQL: Documentation: 18: 13.2. Transaction Isolation",
+      "archive_url": "",
+      "archive_timestamp": "",
+      "text_source": "live",
+      "content_hash": "287b8cb2a02605dedd5a852c4eb73de480901bf071d6efb3fb1cefff60515c82",
+      "quarantined": false
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Eiffel_Tower",
+      "state": "blocked",
+      "http_status": 403,
+      "error": "HTTP 403",
+      "resolved_url": "https://en.wikipedia.org/wiki/Eiffel_Tower",
+      "title": "",
+      "archive_url": "",
+      "archive_timestamp": "",
+      "text_source": "",
+      "content_hash": "",
+      "quarantined": false
+    },
+    {
+      "url": "https://docs.python.org/3/whatsnew/3.12-removed-distutils-guide.html",
+      "state": "not_found",
+      "http_status": 404,
+      "error": "HTTP 404",
+      "resolved_url": "https://docs.python.org/3/whatsnew/3.12-removed-distutils-guide.html",
+      "title": "",
+      "archive_url": "",
+      "archive_timestamp": "",
+      "text_source": "",
+      "content_hash": "",
+      "quarantined": false
+    },
+    {
+      "url": "https://www.nasa-moonfacts-archive.org/great-wall-visible",
+      "state": "no_domain",
+      "http_status": null,
+      "error": "unsafe fetch refused: DNS resolution failed for 'www.nasa-moonfacts-archive.org': [Errno -2] Name or service not known",
+      "resolved_url": "",
+      "title": "",
+      "archive_url": "",
+      "archive_timestamp": "",
+      "text_source": "",
+      "content_hash": "",
+      "quarantined": false
+    }
+  ],
+  "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+  "elapsed_s": 209.3,
+  "usage": {
+    "fetches": 11,
+    "wayback_lookups": 6,
+    "searches": 2,
+    "llm_calls": 0,
+    "nli_checks": 5
+  },
+  "audit_trail": [
+    {
+      "t": 168.79,
+      "event": "parse",
+      "claims": 5,
+      "citations": 5
+    },
+    {
+      "t": 168.91,
+      "event": "fetch",
+      "url": "https://en.wikipedia.org/wiki/Eiffel_Tower",
+      "state": "blocked",
+      "http_status": 403,
+      "chars": 0,
+      "error": "HTTP 403"
+    },
+    {
+      "t": 168.98,
+      "event": "fetch",
+      "url": "https://docs.python.org/3/whatsnew/3.12-removed-distutils-guide.html",
+      "state": "not_found",
+      "http_status": 404,
+      "chars": 0,
+      "error": "HTTP 404"
+    },
+    {
+      "t": 169.03,
+      "event": "fetch",
+      "url": "https://www.nasa-moonfacts-archive.org/great-wall-visible",
+      "state": "no_domain",
+      "http_status": null,
+      "chars": 0,
+      "error": "unsafe fetch refused: DNS resolution failed for 'www.nasa-moonfacts-archive.org': [Errno -2] Name or service not known"
+    },
+    {
+      "t": 169.32,
+      "event": "fetch",
+      "url": "https://www.postgresql.org/docs/current/transaction-iso.html",
+      "state": "live",
+      "http_status": 200,
+      "chars": 18028,
+      "error": ""
+    },
+    {
+      "t": 172.79,
+      "event": "wayback",
+      "url": "https://docs.python.org/3/whatsnew/3.12-removed-distutils-guide.html",
+      "archived": false,
+      "snapshot": ""
+    },
+    {
+      "t": 177.02,
+      "event": "wayback",
+      "url": "https://en.wikipedia.org/wiki/Eiffel_Tower",
+      "archived": false,
+      "snapshot": ""
+    },
+    {
+      "t": 177.14,
+      "event": "wayback",
+      "url": "https://www.nasa-moonfacts-archive.org/great-wall-visible",
+      "archived": false,
+      "snapshot": ""
+    },
+    {
+      "t": 179.65,
+      "event": "verify",
+      "url": "https://www.postgresql.org/docs/current/transaction-iso.html",
+      "claim": "PostgreSQL implements three distinct isolation levels internally, and Read Uncommitted behaves like Read Committed.",
+      "verdict": "SUPPORTED",
+      "ent": 0.998,
+      "con": 0.0
+    },
+    {
+      "t": 186.16,
+      "event": "search",
+      "query": "The Eiffel Tower was completed in 1889.",
+      "hits": 6
+    },
+    {
+      "t": 186.59,
+      "event": "fetch",
+      "url": "https://www.toureiffel.paris/en/the-monument/history",
+      "state": "blocked",
+      "http_status": 403,
+      "chars": 0,
+      "error": "HTTP 403"
+    },
+    {
+      "t": 190.25,
+      "event": "wayback",
+      "url": "https://www.toureiffel.paris/en/the-monument/history",
+      "archived": true,
+      "snapshot": "http://web.archive.org/web/20260904175539/https://www.toureiffel.paris/en/the-monument/history"
+    },
+    {
+      "t": 193.13,
+      "event": "fetch",
+      "url": "https://geographypin.com/the-original-purpose-of-the-eiffel-tower/",
+      "state": "live",
+      "http_status": 200,
+      "chars": 8293,
+      "error": ""
+    },
+    {
+      "t": 194.62,
+      "event": "replacement",
+      "claim_id": "c2",
+      "url": "https://geographypin.com/the-original-purpose-of-the-eiffel-tower/",
+      "ent": 0.988
+    },
+    {
+      "t": 196.08,
+      "event": "search",
+      "query": "The Eiffel Tower is made entirely of aluminium.",
+      "hits": 6
+    },
+    {
+      "t": 196.26,
+      "event": "fetch",
+      "url": "https://sciencesignal.blog/what-is-eiffel-tower-made-of",
+      "state": "blocked",
+      "http_status": 403,
+      "chars": 0,
+      "error": "HTTP 403"
+    },
+    {
+      "t": 202.63,
+      "event": "wayback",
+      "url": "https://sciencesignal.blog/what-is-eiffel-tower-made-of",
+      "archived": false,
+      "snapshot": ""
+    },
+    {
+      "t": 203.05,
+      "event": "fetch",
+      "url": "https://www.worldatlas.com/articles/what-materials-were-used-to-build-the-eiffel-tower.html",
+      "state": "live",
+      "http_status": 200,
+      "chars": 3849,
+      "error": ""
+    },
+    {
+      "t": 204.61,
+      "event": "fetch",
+      "url": "https://www.toureiffel.paris/en/news/130-years/what-eiffel-tower-made",
+      "state": "blocked",
+      "http_status": 403,
+      "chars": 0,
+      "error": "HTTP 403"
+    },
+    {
+      "t": 208.46,
+      "event": "wayback",
+      "url": "https://www.toureiffel.paris/en/news/130-years/what-eiffel-tower-made",
+      "archived": true,
+      "snapshot": "http://web.archive.org/web/20260923085247/https://www.toureiffel.paris/en/news/130-years/what-eiffel-tower-made"
+    },
+    {
+      "t": 209.28,
+      "event": "done",
+      "trust_score": 33
+    }
+  ]
+}

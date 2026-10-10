@@ -1,0 +1,131 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_094a2904eeec",
+ "trust_score": 0,
+ "grade": "unreliable citations",
+ "counts": {
+  "SUPPORTED": 0,
+  "PARTIALLY SUPPORTED": 0,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 1,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 2
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "Chandrayaan-3\u2019s standout scientific result was the first in-situ detection and measurement of sulfur on the Moon\u2019s south-polar surface, made by the Pragyan rover.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "It also measured other elements, helping scientists characterize the local lunar soil and showing that sulfur could be mapped directly at the landing site.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://www.nature.com/articles/d41586-023-02852-7",
+     "marker": "[1]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.nature.com/articles/d41586-023-02852-7",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "The mission additionally made the first measurements of the near-surface lunar plasma environment in the south-polar region, finding it relatively sparse.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://www.nature.com/articles/d41586-023-02852-7",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.nature.com/articles/d41586-023-02852-7",
+   "title": "India\u2019s Moon mission: four things Chandrayaan-3 has taught scientists | Nature",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "57d5e69f88f1cf840239ec99625a578f3ffb155cad9dc19f6ac9501e75cad98d",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 6.3,
+ "usage": {
+  "fetches": 1,
+  "wayback_lookups": 0,
+  "searches": 0,
+  "llm_calls": 0,
+  "nli_checks": 3,
+  "scorer_load_ms": 1453
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 3,
+   "citations": 1
+  },
+  {
+   "t": 1.61,
+   "event": "fetch",
+   "url": "https://www.nature.com/articles/d41586-023-02852-7",
+   "state": "live",
+   "http_status": 200,
+   "chars": 743,
+   "error": ""
+  },
+  {
+   "t": 6.32,
+   "event": "verify",
+   "url": "https://www.nature.com/articles/d41586-023-02852-7",
+   "claim": "It also measured other elements, helping scientists characterize the local lunar soil and showing that sulfur could be m",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 6.32,
+   "event": "done",
+   "trust_score": 0
+  }
+ ],
+ "score_s": 7.8
+}

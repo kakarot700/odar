@@ -1,0 +1,564 @@
+{
+ "references": [],
+ "confidence": "medium",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_fb249328de69",
+ "trust_score": 17,
+ "grade": "unreliable citations",
+ "counts": {
+  "SUPPORTED": 2,
+  "PARTIALLY SUPPORTED": 0,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 7,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 3,
+  "NO CITATION": 0
+ },
+ "claims": [
+  {
+   "claim_id": "c1.1",
+   "claim": "In a phase 3 trial, 12-month vaccine efficacy was 75% (95% CI 71-79) at seasonal sites for time to first clinical malaria.",
+   "verdict": "DEAD LINK",
+   "citations": [
+    {
+     "url": "http://pubmed.ncbi.nlm.nih.gov/38310910",
+     "marker": "[2]",
+     "verdict": "DEAD LINK",
+     "link_state": "not_found_archived",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "page is gone; an archived copy exists (http://web.archive.org/web/20260909052545/https://pubmed.ncbi.nlm.nih.gov/38310910/) but could not be read",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "http://pubmed.ncbi.nlm.nih.gov/38310910",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c1.2",
+   "claim": "In a phase 3 trial, 12-month vaccine efficacy was 68% (61-74) at standard sites for time to first clinical malaria.",
+   "verdict": "DEAD LINK",
+   "citations": [
+    {
+     "url": "http://pubmed.ncbi.nlm.nih.gov/38310910",
+     "marker": "[2]",
+     "verdict": "DEAD LINK",
+     "link_state": "not_found_archived",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "page is gone; an archived copy exists (http://web.archive.org/web/20260909052545/https://pubmed.ncbi.nlm.nih.gov/38310910/) but could not be read",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "http://pubmed.ncbi.nlm.nih.gov/38310910",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "Efficacy against multiple clinical malaria episodes was 75% (71-78) at seasonal sites and 67% (59-73) at standard sites.",
+   "verdict": "DEAD LINK",
+   "citations": [
+    {
+     "url": "http://pubmed.ncbi.nlm.nih.gov/38310910",
+     "marker": "[2]",
+     "verdict": "DEAD LINK",
+     "link_state": "not_found_archived",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "page is gone; an archived copy exists (http://web.archive.org/web/20260909052545/https://pubmed.ncbi.nlm.nih.gov/38310910/) but could not be read",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "http://pubmed.ncbi.nlm.nih.gov/38310910",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3.1",
+   "claim": "A meta-analysis pooled 12-month estimates from two randomised field trials.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://pubmed.ncbi.nlm.nih.gov/42797644/",
+     "marker": "[3]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://pubmed.ncbi.nlm.nih.gov/42797644/",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3.2",
+   "claim": "A meta-analysis gave a hazard ratio of 0.265 (95% CI 0.235-0.299).",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://pubmed.ncbi.nlm.nih.gov/42797644/",
+     "marker": "[3]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.001,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://pubmed.ncbi.nlm.nih.gov/42797644/",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3.3",
+   "claim": "The hazard ratio is equivalent to 73.5% efficacy (95% CI 70.1-76.5%).",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://pubmed.ncbi.nlm.nih.gov/42797644/",
+     "marker": "[3]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.006,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://pubmed.ncbi.nlm.nih.gov/42797644/",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4.1",
+   "claim": "A phase III-only sensitivity analysis remained strongly protective.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://pubmed.ncbi.nlm.nih.gov/42797644/",
+     "marker": "[3]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://pubmed.ncbi.nlm.nih.gov/42797644/",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4.2",
+   "claim": "The hazard ratio was 0.281.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://pubmed.ncbi.nlm.nih.gov/42797644/",
+     "marker": "[3]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://pubmed.ncbi.nlm.nih.gov/42797644/",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4.3",
+   "claim": "The 95% CI was 0.220-0.357.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://pubmed.ncbi.nlm.nih.gov/42797644/",
+     "marker": "[3]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.015,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://pubmed.ncbi.nlm.nih.gov/42797644/",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4.4",
+   "claim": "The VE was 71.9%.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://pubmed.ncbi.nlm.nih.gov/42797644/",
+     "marker": "[3]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.001,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://pubmed.ncbi.nlm.nih.gov/42797644/",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5",
+   "claim": "The vaccine demonstrated 77% efficacy against clinical malaria over 1 year in the 5-17 months age group.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10755190",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.994,
+     "contradiction": 0.0,
+     "quote": "R21/MATRIX-M\u2122\u2014administered in 3 doses before the malaria season demonstrated an efficacy of 77% against clinical malaria over 1 year in the 5\u201317 months age group, thus reaching the WHO-specified efficacy goal of at least 75% in the target population of African children.9 The administration of a booster dose 12 months following the primary series of R21/MATRIX-M\u2122 vaccinations showed that efficacy w",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "R21/MATRIX-M\u2122\u2014administered in 3 doses before the malaria season demonstrated an efficacy of 77% against clinical malaria over 1 year in the 5\u201317 months age group, thus reaching the WHO-specified efficacy goal of at least 75% in the target population of African children.9 The administration of a booster dose 12 months following the primary series of R21/MATRIX-M\u2122 vaccinations showed that efficacy w",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10755190",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6",
+   "claim": "A phase 3 trial reported efficacy against multiple episodes of clinical malaria between 67 and 75% in children aged 5-36 months.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://link.springer.com/article/10.1186/s13063-025-09048-6",
+     "marker": "[6]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.997,
+     "contradiction": 0.0,
+     "quote": "A double-blind, randomised, phase 3 trial across five sites in four African countries with differing malaria transmission intensities and seasonality reported in children aged 5\u201336 months a vaccine efficacy against multiple episodes of clinical malaria between 67 and 75% [8].",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "A double-blind, randomised, phase 3 trial across five sites in four African countries with differing malaria transmission intensities and seasonality reported in children aged 5\u201336 months a vaccine efficacy against multiple episodes of clinical malaria between 67 and 75% [8].",
+   "quote_url": "https://link.springer.com/article/10.1186/s13063-025-09048-6",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "http://pubmed.ncbi.nlm.nih.gov/38310910",
+   "state": "not_found_archived",
+   "http_status": 404,
+   "error": "HTTP 404",
+   "resolved_url": "http://pubmed.ncbi.nlm.nih.gov/38310910",
+   "title": "",
+   "archive_url": "http://web.archive.org/web/20260909052545/https://pubmed.ncbi.nlm.nih.gov/38310910/",
+   "archive_timestamp": "20260909052545",
+   "text_source": "",
+   "archive_check": "archived",
+   "content_hash": "",
+   "quarantined": false
+  },
+  {
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42797644/",
+   "state": "live",
+   "http_status": 203,
+   "error": "",
+   "resolved_url": "https://pubmed.ncbi.nlm.nih.gov/42797644/",
+   "title": "pubmed.ncbi.nlm.nih.gov",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "unavailable",
+   "content_hash": "fce8938e50d10c7b21524a05be781b15538400a86efd6f941b088a0dfe168a18",
+   "quarantined": false
+  },
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10755190",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10755190/",
+   "title": "R21/Matrix-M\u2122 malaria vaccine: a new tool to achieve WHO\u2019s goal to eliminate malaria in 30 countries by 2030? - PMC",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "6a5387ec1bcd6d324e4b6a83407bff0e16609170e85f5c9d53aaaf706c9bf870",
+   "quarantined": false
+  },
+  {
+   "url": "https://link.springer.com/article/10.1186/s13063-025-09048-6",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://link.springer.com/article/10.1186/s13063-025-09048-6",
+   "title": "Seasonal mass vaccination with R21/Matrix-M for malaria elimination (SERVAL): protocol of the cluster randomised trial | Trials | Springer Nature Link",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "6ef8a3d20a893053367b398f07c9eee27a3344430b4824af9ff62a8d3ec2d4c5",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 44.2,
+ "usage": {
+  "fetches": 5,
+  "wayback_lookups": 2,
+  "searches": 0,
+  "llm_calls": 3,
+  "nli_checks": 9,
+  "scorer_load_ms": 17276
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 6,
+   "citations": 6
+  },
+  {
+   "t": 21.91,
+   "event": "fetch",
+   "url": "http://pubmed.ncbi.nlm.nih.gov/38310910",
+   "state": "not_found",
+   "http_status": 404,
+   "chars": 0,
+   "error": "HTTP 404"
+  },
+  {
+   "t": 22.39,
+   "event": "fetch",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10755190",
+   "state": "live",
+   "http_status": 200,
+   "chars": 14848,
+   "error": ""
+  },
+  {
+   "t": 22.5,
+   "event": "fetch",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42797644/",
+   "state": "live",
+   "http_status": 203,
+   "chars": 76,
+   "error": ""
+  },
+  {
+   "t": 22.51,
+   "event": "wayback",
+   "url": "http://pubmed.ncbi.nlm.nih.gov/38310910",
+   "archived": true,
+   "snapshot": "http://web.archive.org/web/20260909052545/https://pubmed.ncbi.nlm.nih.gov/38310910/"
+  },
+  {
+   "t": 23.32,
+   "event": "fetch",
+   "url": "https://link.springer.com/article/10.1186/s13063-025-09048-6",
+   "state": "live",
+   "http_status": 200,
+   "chars": 48842,
+   "error": ""
+  },
+  {
+   "t": 24.67,
+   "event": "archive_fetch",
+   "url": "https://web.archive.org/web/20260909052545id_/http://pubmed.ncbi.nlm.nih.gov/38310910",
+   "ok": true,
+   "chars": 76,
+   "error": ""
+  },
+  {
+   "t": 35.45,
+   "event": "wayback",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42797644/",
+   "error": "ReadTimeout: HTTPSConnectionPool(host='web.archive.org', port=443): Read timed out. (read timeout=12.0)"
+  },
+  {
+   "t": 35.6,
+   "event": "verify",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42797644/",
+   "claim": "A meta-analysis pooled 12-month estimates from two randomised field trials.",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 35.71,
+   "event": "verify",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42797644/",
+   "claim": "A meta-analysis gave a hazard ratio of 0.265 (95% CI 0.235-0.299).",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.001,
+   "con": 0.0
+  },
+  {
+   "t": 35.82,
+   "event": "verify",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42797644/",
+   "claim": "The hazard ratio is equivalent to 73.5% efficacy (95% CI 70.1-76.5%).",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.006,
+   "con": 0.0
+  },
+  {
+   "t": 35.92,
+   "event": "verify",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42797644/",
+   "claim": "A phase III-only sensitivity analysis remained strongly protective.",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 36.01,
+   "event": "verify",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42797644/",
+   "claim": "The hazard ratio was 0.281.",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 36.11,
+   "event": "verify",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42797644/",
+   "claim": "The 95% CI was 0.220-0.357.",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.015,
+   "con": 0.0
+  },
+  {
+   "t": 36.21,
+   "event": "verify",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42797644/",
+   "claim": "The VE was 71.9%.",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.001,
+   "con": 0.0
+  },
+  {
+   "t": 40.38,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10755190",
+   "claim": "The vaccine demonstrated 77% efficacy against clinical malaria over 1 year in the 5-17 months age group.",
+   "verdict": "SUPPORTED",
+   "ent": 0.994,
+   "con": 0.0
+  },
+  {
+   "t": 44.24,
+   "event": "verify",
+   "url": "https://link.springer.com/article/10.1186/s13063-025-09048-6",
+   "claim": "A phase 3 trial reported efficacy against multiple episodes of clinical malaria between 67 and 75% in children aged 5-36",
+   "verdict": "SUPPORTED",
+   "ent": 0.997,
+   "con": 0.0
+  },
+  {
+   "t": 44.24,
+   "event": "done",
+   "trust_score": 17
+  }
+ ],
+ "score_s": 63.6
+}

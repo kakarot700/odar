@@ -1,0 +1,164 @@
+{
+ "references": [],
+ "confidence": "medium",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_bf912c17d9d5",
+ "trust_score": 50,
+ "grade": "unreliable citations",
+ "counts": {
+  "SUPPORTED": 0,
+  "PARTIALLY SUPPORTED": 1,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 0,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 0
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "The RBI last changed it on October 7, 2026, raising it by 0.25 percentage points from 5.25%.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.rbi.org.in/scripts/annualpolicy.aspx",
+     "marker": "[1]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli+llm",
+     "source_type": "web",
+     "source_year": null
+    },
+    {
+     "url": "https://www.livemint.com/market/stock-market-news/rbi-mpc-meeting-october-2026-repo-rate-hiked-by-25-bps-to-5-50-growth-inflation-forecast-other-key-takeaways-11791344804917.html",
+     "marker": "[2]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.728,
+     "contradiction": 0.886,
+     "quote": "The Reserve Bank of India (RBI), on Wednesday, 7 October, raised the repo rate by 25 basis points to 5.50%.",
+     "note": "partly supported: Passage confirms October 7 hike to 5.50% from 5.25%.",
+     "judged_by": "nli+llm",
+     "source_type": "news",
+     "source_year": null
+    }
+   ],
+   "quote": "The Reserve Bank of India (RBI), on Wednesday, 7 October, raised the repo rate by 25 basis points to 5.50%.",
+   "quote_url": "https://www.livemint.com/market/stock-market-news/rbi-mpc-meeting-october-2026-repo-rate-hiked-by-25-bps-to-5-50-growth-inflation-forecast-other-key-takeaways-11791344804917.html",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://www.rbi.org.in/scripts/annualpolicy.aspx",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.rbi.org.in/scripts/annualpolicy.aspx",
+   "title": "Monetary Policy | Official Website of Reserve Bank of India",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "0eeabd44a54cae61b8100e531a90b277ce203ae64c9840a4712b3eb4d2e0e417",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.livemint.com/market/stock-market-news/rbi-mpc-meeting-october-2026-repo-rate-hiked-by-25-bps-to-5-50-growth-inflation-forecast-other-key-takeaways-11791344804917.html",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.livemint.com/market/stock-market-news/rbi-mpc-meeting-october-2026-repo-rate-hiked-by-25-bps-to-5-50-growth-inflation-forecast-other-key-takeaways-11791344804917.html",
+   "title": "RBI MPC meeting October 2026: Repo rate hiked by 25 bps to 5.50%; growth, inflation forecast, other key takeaways | Stock Market News",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "3bf479c5f723a1f1c761c747f1dc641ee4fdc52d211f863e27f407117c194bac",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 23.9,
+ "usage": {
+  "fetches": 2,
+  "wayback_lookups": 0,
+  "searches": 0,
+  "llm_calls": 2,
+  "nli_checks": 2,
+  "scorer_load_ms": 1743
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 1,
+   "citations": 2
+  },
+  {
+   "t": 0.21,
+   "event": "fetch",
+   "url": "https://www.livemint.com/market/stock-market-news/rbi-mpc-meeting-october-2026-repo-rate-hiked-by-25-bps-to-5-50-growth-inflation-forecast-other-key-takeaways-11791344804917.html",
+   "state": "live",
+   "http_status": 200,
+   "chars": 5350,
+   "error": ""
+  },
+  {
+   "t": 1.35,
+   "event": "fetch",
+   "url": "https://www.rbi.org.in/scripts/annualpolicy.aspx",
+   "state": "live",
+   "http_status": 200,
+   "chars": 2471,
+   "error": ""
+  },
+  {
+   "t": 10.79,
+   "event": "paraphrase_judge",
+   "claim": "The RBI last changed it on October 7, 2026, raising it by 0.25 percentage points from 5.25%.",
+   "verdict": "NOT_SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 10.79,
+   "event": "verify",
+   "url": "https://www.rbi.org.in/scripts/annualpolicy.aspx",
+   "claim": "The RBI last changed it on October 7, 2026, raising it by 0.25 percentage points from 5.25%.",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 23.94,
+   "event": "paraphrase_judge",
+   "claim": "The RBI last changed it on October 7, 2026, raising it by 0.25 percentage points from 5.25%.",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 23.94,
+   "event": "verify",
+   "url": "https://www.livemint.com/market/stock-market-news/rbi-mpc-meeting-october-2026-repo-rate-hiked-by-25-bps-to-5-50-growth-inflation-forecast-other-key-takeaways-11791344804917.html",
+   "claim": "The RBI last changed it on October 7, 2026, raising it by 0.25 percentage points from 5.25%.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.728,
+   "con": 0.886
+  },
+  {
+   "t": 23.94,
+   "event": "done",
+   "trust_score": 50
+  }
+ ],
+ "score_s": 25.7
+}

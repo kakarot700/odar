@@ -1,0 +1,682 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_0733e94acd2d",
+ "trust_score": 38,
+ "grade": "unreliable citations",
+ "counts": {
+  "SUPPORTED": 3,
+  "PARTIALLY SUPPORTED": 0,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 5,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 12
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "Recent studies reveal several significant health concerns related to microplastic exposure in humans, though researchers emphasize that the full extent of effects is still being investigated.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "Recent research has identified microplastics as potential risk factors for cardiovascular disease.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "Studies have found that microplastics and nanoplastics may increase the risk of heart attack, stroke, and cardiovascular death.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4",
+   "claim": "In 2025 research on mice, real-time imaging showed microplastics moving through brains and blocking blood vessels, raising concerns about their neurological impact.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.weforum.org/stories/nature-and-biodiversity/how-microplastics-get-into-the-food-chain/",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.995,
+     "contradiction": 0.0,
+     "quote": "In a 2025 study on mice, real-time imaging showed microplastics moving through their brains and blocking blood vessels. While the researchers said it would be \"premature\" to suggest that the process could replicate in human brains, the authors concluded that \"the potential long-term effects of microplastics on neurological disorders such as depression and cardiovascular health are concerning\".",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "forum",
+     "source_year": null
+    }
+   ],
+   "quote": "In a 2025 study on mice, real-time imaging showed microplastics moving through their brains and blocking blood vessels. While the researchers said it would be \"premature\" to suggest that the process could replicate in human brains, the authors concluded that \"the potential long-term effects of microplastics on neurological disorders such as depression and cardiovascular health are concerning\".",
+   "quote_url": "https://www.weforum.org/stories/nature-and-biodiversity/how-microplastics-get-into-the-food-chain/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5",
+   "claim": "A December 2024 systematic review concluded that microplastics are suspected to harm human reproduction, including effects on infant birth weight, gestational age, and fetal development.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6",
+   "claim": "NRDC Studies have found higher concentrations of microplastics in placentas from premature births than in those carried to full term, suggesting a possible link to preterm birth.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c7",
+   "claim": "Additionally, microplastics in the placenta may be affecting hormone levels in developing fetuses.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.weforum.org/stories/nature-and-biodiversity/how-microplastics-get-into-the-food-chain/",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.996,
+     "contradiction": 0.0,
+     "quote": "Meanwhile, microplastics in the placenta may be affecting hormone levels in the developing foetus, according to a study just published in ScienceDirect.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "forum",
+     "source_year": null
+    }
+   ],
+   "quote": "Meanwhile, microplastics in the placenta may be affecting hormone levels in the developing foetus, according to a study just published in ScienceDirect.",
+   "quote_url": "https://www.weforum.org/stories/nature-and-biodiversity/how-microplastics-get-into-the-food-chain/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c8",
+   "claim": "Microplastics are suspected to be a digestive hazard, with a suspected link to colon cancer based on animal research.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c9",
+   "claim": "Since humans ingest approximately 11,000 microplastics annually through seafood consumption alone, the digestive tract is a major exposure route.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c10",
+   "claim": "Microplastics can cause gastrointestinal dysfunction and potential obstruction.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://www.nrdc.org/bio/katie-pelch/new-review-highlights-human-health-risks-microplastic-exposure",
+     "marker": "[2]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "archived_only",
+     "entailment": 0.061,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this (verified against the Wayback Machine copy; live page is gone)",
+     "judged_by": "nli+llm",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.nrdc.org/bio/katie-pelch/new-review-highlights-human-health-risks-microplastic-exposure",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c11",
+   "claim": "Inhalation poses a significant exposure pathway, with estimates that people inhale approximately 68,000 microplastic particles daily.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c12",
+   "claim": "Studies suggest microplastics can cause lung inflammation, injury, and altered lung function.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://www.weforum.org/stories/nature-and-biodiversity/how-microplastics-get-into-the-food-chain/",
+     "marker": "[1]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.004,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli+llm",
+     "source_type": "forum",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.weforum.org/stories/nature-and-biodiversity/how-microplastics-get-into-the-food-chain/",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c13",
+   "claim": "Emerging evidence indicates microplastics in the brain might be contributing to cognitive decline and potentially Alzheimer's disease.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c14",
+   "claim": "Smaller particles (nanoplastics below 10 micrometers) are of particular concern because they can penetrate cell membranes and enter cell nuclei.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://www.weforum.org/stories/nature-and-biodiversity/how-microplastics-get-into-the-food-chain/",
+     "marker": "[1]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "forum",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.weforum.org/stories/nature-and-biodiversity/how-microplastics-get-into-the-food-chain/",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c15",
+   "claim": "Microplastics have been detected throughout the human body, including in blood, lungs, liver, kidneys, placental tissue, and even brain tissue.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c16",
+   "claim": "Humans encounter microplastics through contaminated food, beverages, and air inhalation.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://magazine.hms.harvard.edu/articles/microplastics-everywhere",
+     "marker": "[4]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "archived_only",
+     "entailment": 0.108,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this (verified against the Wayback Machine copy; live page is gone)",
+     "judged_by": "nli+llm",
+     "source_type": "academic",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://magazine.hms.harvard.edu/articles/microplastics-everywhere",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c17",
+   "claim": "Beyond the physical presence of plastic particles, chemical additives in microplastics\u2014such as BPA, phthalates, and heavy metals\u2014function as endocrine disruptors and can trigger oxidative stress, inflammation, and immune disruption.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2025.1606332/full",
+     "marker": "[3]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.755,
+     "contradiction": 0.0,
+     "quote": "When ingested or inhaled, they can accumulate in the gastrointestinal tract or lungs, potentially causing inflammation, oxidative stress, and disruption of the gut microbiota or respiratory function (Enyoh et al., 2020; Prata et al., 2020). Microplastics often contain chemical additives, such as phthalates and bisphenol A, and can also absorb environmental pollutants like heavy metals and persiste",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "When ingested or inhaled, they can accumulate in the gastrointestinal tract or lungs, potentially causing inflammation, oxidative stress, and disruption of the gut microbiota or respiratory function (Enyoh et al., 2020; Prata et al., 2020). Microplastics often contain chemical additives, such as phthalates and bisphenol A, and can also absorb environmental pollutants like heavy metals and persiste",
+   "quote_url": "https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2025.1606332/full",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c18",
+   "claim": "While the evidence is accumulating, researchers stress there remains insufficient evidence and significant data gaps regarding safe exposure levels for humans.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c19",
+   "claim": "The World Health Organization noted in 2022 that technologies don't yet enable accurate quantification of population-level microplastic exposures or how much accumulates in human bodies.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c20",
+   "claim": "Harvard University Most human studies remain limited\u2014only a handful of human studies exist, with animal research providing much of the current evidence base.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://www.weforum.org/stories/nature-and-biodiversity/how-microplastics-get-into-the-food-chain/",
+     "marker": "[1]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "forum",
+     "source_year": null
+    },
+    {
+     "url": "https://www.nrdc.org/bio/katie-pelch/new-review-highlights-human-health-risks-microplastic-exposure",
+     "marker": "[2]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "archived_only",
+     "entailment": 0.056,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this (verified against the Wayback Machine copy; live page is gone)",
+     "judged_by": "nli+llm",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.weforum.org/stories/nature-and-biodiversity/how-microplastics-get-into-the-food-chain/",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://www.weforum.org/stories/nature-and-biodiversity/how-microplastics-get-into-the-food-chain/",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.weforum.org/stories/nature-and-biodiversity/how-microplastics-get-into-the-food-chain/",
+   "title": "Microplastics everywhere: Are we facing a new health crisis? | World Economic Forum",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "1eef15b91efcbf4f9e059692d63014aaa4f40491d6b674859fa26c915c27500e",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.nrdc.org/bio/katie-pelch/new-review-highlights-human-health-risks-microplastic-exposure",
+   "state": "archived_only",
+   "http_status": 403,
+   "error": "HTTP 403",
+   "resolved_url": "https://www.nrdc.org/bio/katie-pelch/new-review-highlights-human-health-risks-microplastic-exposure",
+   "title": "",
+   "archive_url": "http://web.archive.org/web/20260309105507/https://www.nrdc.org/bio/katie-pelch/new-review-highlights-human-health-risks-microplastic-exposure",
+   "archive_timestamp": "20260309105507",
+   "text_source": "wayback",
+   "archive_check": "archived",
+   "content_hash": "007fb75d27738fb40501aebb2d23b694becd3da6b76b80fdcc75db4de34be673",
+   "quarantined": false
+  },
+  {
+   "url": "https://magazine.hms.harvard.edu/articles/microplastics-everywhere",
+   "state": "archived_only",
+   "http_status": 403,
+   "error": "HTTP 403",
+   "resolved_url": "https://magazine.hms.harvard.edu/articles/microplastics-everywhere",
+   "title": "",
+   "archive_url": "https://web.archive.org/web/20261003185533/https://magazine.hms.harvard.edu/articles/microplastics-everywhere",
+   "archive_timestamp": "20261003185533",
+   "text_source": "wayback",
+   "archive_check": "archived",
+   "content_hash": "ecaa3cbfa09c6e6025a6b2033dbb725e2d298fac0b6ad01684e9f4dd14227ef0",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2025.1606332/full",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2025.1606332/full",
+   "title": "Frontiers | A review of microplastic pollution and human health risk assessment: current knowledge and future outlook",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "3ced50311ade7c644a993d1eb03d3e6b84a9a5f05c5f7660a16b3cb339601339",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 42.8,
+ "usage": {
+  "fetches": 6,
+  "wayback_lookups": 2,
+  "searches": 0,
+  "llm_calls": 7,
+  "nli_checks": 9,
+  "scorer_load_ms": 321281
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 20,
+   "citations": 9
+  },
+  {
+   "t": 0.15,
+   "event": "fetch",
+   "url": "https://www.nrdc.org/bio/katie-pelch/new-review-highlights-human-health-risks-microplastic-exposure",
+   "state": "blocked",
+   "http_status": 403,
+   "chars": 0,
+   "error": "HTTP 403"
+  },
+  {
+   "t": 0.5,
+   "event": "fetch",
+   "url": "https://magazine.hms.harvard.edu/articles/microplastics-everywhere",
+   "state": "blocked",
+   "http_status": 403,
+   "chars": 0,
+   "error": "HTTP 403"
+  },
+  {
+   "t": 0.5,
+   "event": "fetch",
+   "url": "https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2025.1606332/full",
+   "state": "live",
+   "http_status": 200,
+   "chars": 86619,
+   "error": ""
+  },
+  {
+   "t": 0.94,
+   "event": "fetch",
+   "url": "https://www.weforum.org/stories/nature-and-biodiversity/how-microplastics-get-into-the-food-chain/",
+   "state": "live",
+   "http_status": 200,
+   "chars": 8688,
+   "error": ""
+  },
+  {
+   "t": 3.08,
+   "event": "wayback",
+   "url": "https://www.nrdc.org/bio/katie-pelch/new-review-highlights-human-health-risks-microplastic-exposure",
+   "archived": true,
+   "snapshot": "http://web.archive.org/web/20260309105507/https://www.nrdc.org/bio/katie-pelch/new-review-highlights-human-health-risks-microplastic-exposure"
+  },
+  {
+   "t": 3.66,
+   "event": "archive_fetch",
+   "url": "https://web.archive.org/web/20260309105507id_/https://www.nrdc.org/bio/katie-pelch/new-review-highlights-human-health-risks-microplastic-exposure",
+   "ok": true,
+   "chars": 5529,
+   "error": ""
+  },
+  {
+   "t": 11.11,
+   "event": "wayback",
+   "url": "https://magazine.hms.harvard.edu/articles/microplastics-everywhere",
+   "archived": true,
+   "snapshot": "https://web.archive.org/web/20261003185533/https://magazine.hms.harvard.edu/articles/microplastics-everywhere"
+  },
+  {
+   "t": 11.49,
+   "event": "archive_fetch",
+   "url": "https://web.archive.org/web/20261003185533id_/https://magazine.hms.harvard.edu/articles/microplastics-everywhere",
+   "ok": true,
+   "chars": 5436,
+   "error": ""
+  },
+  {
+   "t": 14.91,
+   "event": "verify",
+   "url": "https://www.weforum.org/stories/nature-and-biodiversity/how-microplastics-get-into-the-food-chain/",
+   "claim": "In 2025 research on mice, real-time imaging showed microplastics moving through brains and blocking blood vessels, raisi",
+   "verdict": "SUPPORTED",
+   "ent": 0.995,
+   "con": 0.0
+  },
+  {
+   "t": 17.78,
+   "event": "verify",
+   "url": "https://www.weforum.org/stories/nature-and-biodiversity/how-microplastics-get-into-the-food-chain/",
+   "claim": "Additionally, microplastics in the placenta may be affecting hormone levels in developing fetuses.",
+   "verdict": "SUPPORTED",
+   "ent": 0.996,
+   "con": 0.0
+  },
+  {
+   "t": 20.16,
+   "event": "llm_error",
+   "error": "wall_clock_deadline"
+  },
+  {
+   "t": 20.16,
+   "event": "paraphrase_judge",
+   "claim": "Microplastics can cause gastrointestinal dysfunction and potential obstruction.",
+   "verdict": "",
+   "grounded": false
+  },
+  {
+   "t": 20.16,
+   "event": "verify",
+   "url": "https://www.nrdc.org/bio/katie-pelch/new-review-highlights-human-health-risks-microplastic-exposure",
+   "claim": "Microplastics can cause gastrointestinal dysfunction and potential obstruction.",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.061,
+   "con": 0.0
+  },
+  {
+   "t": 22.75,
+   "event": "llm_error",
+   "error": "wall_clock_deadline"
+  },
+  {
+   "t": 22.75,
+   "event": "paraphrase_judge",
+   "claim": "Studies suggest microplastics can cause lung inflammation, injury, and altered lung function.",
+   "verdict": "",
+   "grounded": false
+  },
+  {
+   "t": 22.75,
+   "event": "verify",
+   "url": "https://www.weforum.org/stories/nature-and-biodiversity/how-microplastics-get-into-the-food-chain/",
+   "claim": "Studies suggest microplastics can cause lung inflammation, injury, and altered lung function.",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.004,
+   "con": 0.0
+  },
+  {
+   "t": 25.58,
+   "event": "verify",
+   "url": "https://www.weforum.org/stories/nature-and-biodiversity/how-microplastics-get-into-the-food-chain/",
+   "claim": "Smaller particles (nanoplastics below 10 micrometers) are of particular concern because they can penetrate cell membrane",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 28.17,
+   "event": "llm_error",
+   "error": "wall_clock_deadline"
+  },
+  {
+   "t": 28.17,
+   "event": "paraphrase_judge",
+   "claim": "Humans encounter microplastics through contaminated food, beverages, and air inhalation.",
+   "verdict": "",
+   "grounded": false
+  },
+  {
+   "t": 28.17,
+   "event": "verify",
+   "url": "https://magazine.hms.harvard.edu/articles/microplastics-everywhere",
+   "claim": "Humans encounter microplastics through contaminated food, beverages, and air inhalation.",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.108,
+   "con": 0.0
+  },
+  {
+   "t": 32.09,
+   "event": "verify",
+   "url": "https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2025.1606332/full",
+   "claim": "Beyond the physical presence of plastic particles, chemical additives in microplastics\u2014such as BPA, phthalates, and heav",
+   "verdict": "SUPPORTED",
+   "ent": 0.755,
+   "con": 0.0
+  },
+  {
+   "t": 35.9,
+   "event": "verify",
+   "url": "https://www.weforum.org/stories/nature-and-biodiversity/how-microplastics-get-into-the-food-chain/",
+   "claim": "Harvard University Most human studies remain limited\u2014only a handful of human studies exist, with animal research providi",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 42.83,
+   "event": "llm_error",
+   "error": "wall_clock_deadline"
+  },
+  {
+   "t": 42.83,
+   "event": "paraphrase_judge",
+   "claim": "Harvard University Most human studies remain limited\u2014only a handful of human studies exist, with animal research providi",
+   "verdict": "",
+   "grounded": false
+  },
+  {
+   "t": 42.83,
+   "event": "verify",
+   "url": "https://www.nrdc.org/bio/katie-pelch/new-review-highlights-human-health-risks-microplastic-exposure",
+   "claim": "Harvard University Most human studies remain limited\u2014only a handful of human studies exist, with animal research providi",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.056,
+   "con": 0.0
+  },
+  {
+   "t": 42.83,
+   "event": "done",
+   "trust_score": 38
+  }
+ ],
+ "score_s": 462.5
+}

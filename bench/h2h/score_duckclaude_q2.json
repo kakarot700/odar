@@ -1,0 +1,588 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_4ed4d913dc69",
+ "trust_score": 77,
+ "grade": "mixed: check flagged claims",
+ "counts": {
+  "SUPPORTED": 7,
+  "PARTIALLY SUPPORTED": 3,
+  "CONTRADICTED": 1,
+  "WRONG SOURCE": 0,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 5
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "Seasonal transmission areas 75% efficacy 12 months after 3-dose series High transmission limited to 4\u20135 months per year",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "Year-round (age-based schedule) 66-68% efficacy 12 months after 3-dose series Regions with perennial malaria presence",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "Booster dose Maintained efficacy 12 months after 4th dose Administered 1 year after 3rd dose",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4",
+   "claim": "The R21/Matrix-M vaccine demonstrated high effectiveness in clinical trials across sub-Saharan Africa.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5",
+   "claim": "The primary Phase 3 efficacy trial enrolled 4,800 children aged 5\u201336 months across multiple sites in four African countries.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://ir.novavax.com/press-releases/R21-Matrix-M-TM-Malaria-Vaccine-Phase-3-Trial-Results-Published-in-The-Lancet",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.972,
+     "contradiction": 0.0,
+     "quote": "Today, peer-reviewed results from a Phase 3 efficacy trial of the R21/Matrix-M\u2122 malaria vaccine were published in The Lancet. The trial was conducted across multiple sites in four African countries with 4,800 children aged 5-36 months.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "Today, peer-reviewed results from a Phase 3 efficacy trial of the R21/Matrix-M\u2122 malaria vaccine were published in The Lancet. The trial was conducted across multiple sites in four African countries with 4,800 children aged 5-36 months.",
+   "quote_url": "https://ir.novavax.com/press-releases/R21-Matrix-M-TM-Malaria-Vaccine-Phase-3-Trial-Results-Published-in-The-Lancet",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6",
+   "claim": "The vaccine reduced symptomatic malaria cases by 75% in areas with highly seasonal transmission when administered just before the high transmission season.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.who.int/news/item/02-10-2023-who-recommends-r21-matrix-m-vaccine-for-malaria-prevention-in-updated-advice-on-immunization",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.998,
+     "contradiction": 0.0,
+     "quote": "High efficacy when given just before the high transmission season: In areas with highly seasonal malaria transmission (where malaria transmission is largely limited to 4 or 5 months per year), the R21 vaccine was shown to reduce symptomatic cases of malaria by 75% during the 12 months following a",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "High efficacy when given just before the high transmission season: In areas with highly seasonal malaria transmission (where malaria transmission is largely limited to 4 or 5 months per year), the R21 vaccine was shown to reduce symptomatic cases of malaria by 75% during the 12 months following a",
+   "quote_url": "https://www.who.int/news/item/02-10-2023-who-recommends-r21-matrix-m-vaccine-for-malaria-prevention-in-updated-advice-on-immunization",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c7.1",
+   "claim": "The vaccine showed 66-68% efficacy during the 12 months following the first three doses.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.who.int/news/item/02-10-2023-who-recommends-r21-matrix-m-vaccine-for-malaria-prevention-in-updated-advice-on-immunization",
+     "marker": "[2]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.002,
+     "contradiction": 0.0,
+     "quote": "The vaccine showed good efficacy (66%) during the 12 months following the first 3 doses.",
+     "note": "partly supported: Passage states 66% only, not 66-68% range.",
+     "judged_by": "nli+llm",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "The vaccine showed good efficacy (66%) during the 12 months following the first 3 doses.",
+   "quote_url": "https://www.who.int/news/item/02-10-2023-who-recommends-r21-matrix-m-vaccine-for-malaria-prevention-in-updated-advice-on-immunization",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c7.2",
+   "claim": "The vaccine was given in regions where malaria is present throughout the year.",
+   "verdict": "CONTRADICTED",
+   "citations": [
+    {
+     "url": "https://www.who.int/news/item/02-10-2023-who-recommends-r21-matrix-m-vaccine-for-malaria-prevention-in-updated-advice-on-immunization",
+     "marker": "[2]",
+     "verdict": "CONTRADICTED",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "In areas with highly seasonal malaria transmission (where malaria transmission is largely limited to 4 or 5 months per year)",
+     "note": "the page says otherwise: Passages describe seasonal malaria, not year-round transmission.",
+     "judged_by": "nli+llm",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "In areas with highly seasonal malaria transmission (where malaria transmission is largely limited to 4 or 5 months per year)",
+   "quote_url": "https://www.who.int/news/item/02-10-2023-who-recommends-r21-matrix-m-vaccine-for-malaria-prevention-in-updated-advice-on-immunization",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c7.3",
+   "claim": "The vaccine was given on an age-based vaccination schedule.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.who.int/news/item/02-10-2023-who-recommends-r21-matrix-m-vaccine-for-malaria-prevention-in-updated-advice-on-immunization",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.994,
+     "contradiction": 0.0,
+     "quote": "Good efficacy when given in an age-based schedule: The vaccine showed good efficacy (66%) during the 12 months following the first 3 doses.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "Good efficacy when given in an age-based schedule: The vaccine showed good efficacy (66%) during the 12 months following the first 3 doses.",
+   "quote_url": "https://www.who.int/news/item/02-10-2023-who-recommends-r21-matrix-m-vaccine-for-malaria-prevention-in-updated-advice-on-immunization",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c8",
+   "claim": "A fourth booster dose given one year after the third dose maintained efficacy in both seasonal and perennial transmission settings.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.who.int/news/item/02-10-2023-who-recommends-r21-matrix-m-vaccine-for-malaria-prevention-in-updated-advice-on-immunization",
+     "marker": "[2]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "A fourth dose given a year after the third maintained efficacy.",
+     "note": "partly supported: Supports seasonal, not perennial; only partial.",
+     "judged_by": "nli+llm",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "A fourth dose given a year after the third maintained efficacy.",
+   "quote_url": "https://www.who.int/news/item/02-10-2023-who-recommends-r21-matrix-m-vaccine-for-malaria-prevention-in-updated-advice-on-immunization",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c9",
+   "claim": "The R21/Matrix-M vaccine was well tolerated in clinical trials.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c10",
+   "claim": "The most common adverse events were fever (47%) and injection site pain (19%).",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://ir.novavax.com/press-releases/R21-Matrix-M-TM-Malaria-Vaccine-Phase-3-Trial-Results-Published-in-The-Lancet",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.992,
+     "contradiction": 0.0,
+     "quote": "The most common adverse events with the vaccine were fever (47%) and injection site pain (19%).",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "The most common adverse events with the vaccine were fever (47%) and injection site pain (19%).",
+   "quote_url": "https://ir.novavax.com/press-releases/R21-Matrix-M-TM-Malaria-Vaccine-Phase-3-Trial-Results-Published-in-The-Lancet",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c11",
+   "claim": "The vaccine was shown to be safe in clinical trials, with WHO noting that as with other new vaccines, ongoing safety monitoring will continue.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.who.int/news/item/02-10-2023-who-recommends-r21-matrix-m-vaccine-for-malaria-prevention-in-updated-advice-on-immunization",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.061,
+     "contradiction": 0.0,
+     "quote": "The R21 vaccine was shown to be safe in clinical trials. As with other new vaccines, safety monitoring will continue.",
+     "note": "reworded match: Passages directly state both safety in trials and continued monitoring.",
+     "judged_by": "nli+llm",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "The R21 vaccine was shown to be safe in clinical trials. As with other new vaccines, safety monitoring will continue.",
+   "quote_url": "https://www.who.int/news/item/02-10-2023-who-recommends-r21-matrix-m-vaccine-for-malaria-prevention-in-updated-advice-on-immunization",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c12",
+   "claim": "The WHO recommended R21/Matrix-M in October 2023, making it the second malaria vaccine approved by the organization (following RTS,S/AS01).",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.who.int/news/item/02-10-2023-who-recommends-r21-matrix-m-vaccine-for-malaria-prevention-in-updated-advice-on-immunization",
+     "marker": "[2]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "The R21 vaccine is the second malaria vaccine recommended by WHO, following the RTS,S/AS01 vaccine, which received a WHO recommendation in 2021.",
+     "note": "partly supported: Passages confirm second vaccine but omit October 2023 date.",
+     "judged_by": "nli+llm",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "The R21 vaccine is the second malaria vaccine recommended by WHO, following the RTS,S/AS01 vaccine, which received a WHO recommendation in 2021.",
+   "quote_url": "https://www.who.int/news/item/02-10-2023-who-recommends-r21-matrix-m-vaccine-for-malaria-prevention-in-updated-advice-on-immunization",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c13",
+   "claim": "Mathematical modelling indicates the vaccine is expected to have high public health impact across a wide range of malaria transmission settings, including low transmission areas.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.who.int/news/item/02-10-2023-who-recommends-r21-matrix-m-vaccine-for-malaria-prevention-in-updated-advice-on-immunization",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.997,
+     "contradiction": 0.945,
+     "quote": "High impact: Mathematical modelling estimates indicate the public health impact of the R21 vaccine is expected to be high in a wide range of malaria transmission settings, including low transmission settings.",
+     "note": "another passage on the page may disagree: \"The live-attenuated quadrivalent dengue vaccine developed by Takeda (TAK-003) has demonstrated efficacy against all four serotypes of the virus in baseline sero\"",
+     "judged_by": "nli",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "High impact: Mathematical modelling estimates indicate the public health impact of the R21 vaccine is expected to be high in a wide range of malaria transmission settings, including low transmission settings.",
+   "quote_url": "https://www.who.int/news/item/02-10-2023-who-recommends-r21-matrix-m-vaccine-for-malaria-prevention-in-updated-advice-on-immunization",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c14",
+   "claim": "At a cost of $2\u2013$4 per dose, the vaccine demonstrates cost-effectiveness comparable to other recommended malaria interventions and childhood vaccines.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.who.int/news/item/02-10-2023-who-recommends-r21-matrix-m-vaccine-for-malaria-prevention-in-updated-advice-on-immunization",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.998,
+     "contradiction": 0.0,
+     "quote": "Cost effectiveness: At prices of US$ 2 \u2013 US$ 4 per dose, the cost-effectiveness of the R21 vaccine would be comparable with other recommended malaria interventions and other childhood vaccines.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "Cost effectiveness: At prices of US$ 2 \u2013 US$ 4 per dose, the cost-effectiveness of the R21 vaccine would be comparable with other recommended malaria interventions and other childhood vaccines.",
+   "quote_url": "https://www.who.int/news/item/02-10-2023-who-recommends-r21-matrix-m-vaccine-for-malaria-prevention-in-updated-advice-on-immunization",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://ir.novavax.com/press-releases/R21-Matrix-M-TM-Malaria-Vaccine-Phase-3-Trial-Results-Published-in-The-Lancet",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://ir.novavax.com/press-releases/R21-Matrix-M-TM-Malaria-Vaccine-Phase-3-Trial-Results-Published-in-The-Lancet",
+   "title": "R21/Matrix-M\u2122 Malaria Vaccine Phase 3 Trial Results Published in The Lancet - Feb 2, 2024",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "386401cd34c4015abcedfeb6279a591b7d78c981c8bc07a2aed3f69518b1dcb5",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.who.int/news/item/02-10-2023-who-recommends-r21-matrix-m-vaccine-for-malaria-prevention-in-updated-advice-on-immunization",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.who.int/news/item/02-10-2023-who-recommends-r21-matrix-m-vaccine-for-malaria-prevention-in-updated-advice-on-immunization",
+   "title": "WHO recommends R21/Matrix-M vaccine for malaria prevention in updated advice on immunization",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "13e5fe720c8ee92332c4e93f5949057f250e227bbb2cb826fbb82e475194e8c9",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 114.4,
+ "usage": {
+  "fetches": 2,
+  "wayback_lookups": 0,
+  "searches": 0,
+  "llm_calls": 6,
+  "nli_checks": 11,
+  "scorer_load_ms": 1824
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 14,
+   "citations": 9
+  },
+  {
+   "t": 11.03,
+   "event": "fetch",
+   "url": "https://ir.novavax.com/press-releases/R21-Matrix-M-TM-Malaria-Vaccine-Phase-3-Trial-Results-Published-in-The-Lancet",
+   "state": "live",
+   "http_status": 200,
+   "chars": 4765,
+   "error": ""
+  },
+  {
+   "t": 11.36,
+   "event": "fetch",
+   "url": "https://www.who.int/news/item/02-10-2023-who-recommends-r21-matrix-m-vaccine-for-malaria-prevention-in-updated-advice-on-immunization",
+   "state": "live",
+   "http_status": 200,
+   "chars": 8473,
+   "error": ""
+  },
+  {
+   "t": 17.4,
+   "event": "verify",
+   "url": "https://ir.novavax.com/press-releases/R21-Matrix-M-TM-Malaria-Vaccine-Phase-3-Trial-Results-Published-in-The-Lancet",
+   "claim": "The primary Phase 3 efficacy trial enrolled 4,800 children aged 5\u201336 months across multiple sites in four African countr",
+   "verdict": "SUPPORTED",
+   "ent": 0.972,
+   "con": 0.0
+  },
+  {
+   "t": 23.84,
+   "event": "verify",
+   "url": "https://www.who.int/news/item/02-10-2023-who-recommends-r21-matrix-m-vaccine-for-malaria-prevention-in-updated-advice-on-immunization",
+   "claim": "The vaccine reduced symptomatic malaria cases by 75% in areas with highly seasonal transmission when administered just b",
+   "verdict": "SUPPORTED",
+   "ent": 0.998,
+   "con": 0.0
+  },
+  {
+   "t": 35.29,
+   "event": "paraphrase_judge",
+   "claim": "The vaccine showed 66-68% efficacy during the 12 months following the first three doses.",
+   "verdict": "PARTIAL",
+   "grounded": true
+  },
+  {
+   "t": 35.29,
+   "event": "verify",
+   "url": "https://www.who.int/news/item/02-10-2023-who-recommends-r21-matrix-m-vaccine-for-malaria-prevention-in-updated-advice-on-immunization",
+   "claim": "The vaccine showed 66-68% efficacy during the 12 months following the first three doses.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.002,
+   "con": 0.0
+  },
+  {
+   "t": 46.55,
+   "event": "paraphrase_judge",
+   "claim": "The vaccine was given in regions where malaria is present throughout the year.",
+   "verdict": "CONTRADICTED",
+   "grounded": true
+  },
+  {
+   "t": 46.55,
+   "event": "verify",
+   "url": "https://www.who.int/news/item/02-10-2023-who-recommends-r21-matrix-m-vaccine-for-malaria-prevention-in-updated-advice-on-immunization",
+   "claim": "The vaccine was given in regions where malaria is present throughout the year.",
+   "verdict": "CONTRADICTED",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 52.56,
+   "event": "verify",
+   "url": "https://www.who.int/news/item/02-10-2023-who-recommends-r21-matrix-m-vaccine-for-malaria-prevention-in-updated-advice-on-immunization",
+   "claim": "The vaccine was given on an age-based vaccination schedule.",
+   "verdict": "SUPPORTED",
+   "ent": 0.994,
+   "con": 0.0
+  },
+  {
+   "t": 69.97,
+   "event": "paraphrase_judge",
+   "claim": "A fourth booster dose given one year after the third dose maintained efficacy in both seasonal and perennial transmissio",
+   "verdict": "PARTIAL",
+   "grounded": true
+  },
+  {
+   "t": 69.97,
+   "event": "verify",
+   "url": "https://www.who.int/news/item/02-10-2023-who-recommends-r21-matrix-m-vaccine-for-malaria-prevention-in-updated-advice-on-immunization",
+   "claim": "A fourth booster dose given one year after the third dose maintained efficacy in both seasonal and perennial transmissio",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 72.89,
+   "event": "verify",
+   "url": "https://ir.novavax.com/press-releases/R21-Matrix-M-TM-Malaria-Vaccine-Phase-3-Trial-Results-Published-in-The-Lancet",
+   "claim": "The most common adverse events were fever (47%) and injection site pain (19%).",
+   "verdict": "SUPPORTED",
+   "ent": 0.992,
+   "con": 0.0
+  },
+  {
+   "t": 88.12,
+   "event": "paraphrase_judge",
+   "claim": "The vaccine was shown to be safe in clinical trials, with WHO noting that as with other new vaccines, ongoing safety mon",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 88.12,
+   "event": "verify",
+   "url": "https://www.who.int/news/item/02-10-2023-who-recommends-r21-matrix-m-vaccine-for-malaria-prevention-in-updated-advice-on-immunization",
+   "claim": "The vaccine was shown to be safe in clinical trials, with WHO noting that as with other new vaccines, ongoing safety mon",
+   "verdict": "SUPPORTED",
+   "ent": 0.061,
+   "con": 0.0
+  },
+  {
+   "t": 103.49,
+   "event": "paraphrase_judge",
+   "claim": "The WHO recommended R21/Matrix-M in October 2023, making it the second malaria vaccine approved by the organization (fol",
+   "verdict": "PARTIAL",
+   "grounded": true
+  },
+  {
+   "t": 103.49,
+   "event": "verify",
+   "url": "https://www.who.int/news/item/02-10-2023-who-recommends-r21-matrix-m-vaccine-for-malaria-prevention-in-updated-advice-on-immunization",
+   "claim": "The WHO recommended R21/Matrix-M in October 2023, making it the second malaria vaccine approved by the organization (fol",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 107.52,
+   "event": "verify",
+   "url": "https://www.who.int/news/item/02-10-2023-who-recommends-r21-matrix-m-vaccine-for-malaria-prevention-in-updated-advice-on-immunization",
+   "claim": "Mathematical modelling indicates the vaccine is expected to have high public health impact across a wide range of malari",
+   "verdict": "SUPPORTED",
+   "ent": 0.997,
+   "con": 0.945
+  },
+  {
+   "t": 114.38,
+   "event": "verify",
+   "url": "https://www.who.int/news/item/02-10-2023-who-recommends-r21-matrix-m-vaccine-for-malaria-prevention-in-updated-advice-on-immunization",
+   "claim": "At a cost of $2\u2013$4 per dose, the vaccine demonstrates cost-effectiveness comparable to other recommended malaria interve",
+   "verdict": "SUPPORTED",
+   "ent": 0.998,
+   "con": 0.0
+  },
+  {
+   "t": 114.38,
+   "event": "done",
+   "trust_score": 77
+  }
+ ],
+ "score_s": 116.2
+}

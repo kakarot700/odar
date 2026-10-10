@@ -1,0 +1,200 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_6fdb1e0396fe",
+ "trust_score": 100,
+ "grade": "citations hold up",
+ "counts": {
+  "SUPPORTED": 3,
+  "PARTIALLY SUPPORTED": 0,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 0,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 0
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "The RBI's current repo rate is 5.50 percent, set by a 25 basis point hike in October 2026.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.thedailyjagran.com/business/news/rbi-mpc-what-is-repo-rate-and-why-rbi-hiked-it-after-35-years-how-it-will-impact-you-10331864",
+     "marker": "[3]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.995,
+     "contradiction": 0.0,
+     "quote": "RBI MPC October 2026: The Monetary Policy Committee (MPC) of the Reserve Bank of India (RBI) on Wednesday increased the repo rate by 25 bps, taking it to 5.50 per cent.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "RBI MPC October 2026: The Monetary Policy Committee (MPC) of the Reserve Bank of India (RBI) on Wednesday increased the repo rate by 25 bps, taking it to 5.50 per cent.",
+   "quote_url": "https://www.thedailyjagran.com/business/news/rbi-mpc-what-is-repo-rate-and-why-rbi-hiked-it-after-35-years-how-it-will-impact-you-10331864",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "This was the first repo rate hike since February 2023.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://indianexpress.com/article/business/rbi-hikes-repo-rate-25-bps-to-5-50-pc-emi-10910143/",
+     "marker": "[4]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.997,
+     "contradiction": 0.0,
+     "quote": "The Reserve Bank of India (RBI) has increased its policy repo rate by 25 basis points (bps) to 5.50 per cent, marking the first rate hike since February 2023 and signalling a shift towards tighter monetary policy amid rising inflationary pressures, elevated crude oil prices and a challenging global",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "news",
+     "source_year": null
+    }
+   ],
+   "quote": "The Reserve Bank of India (RBI) has increased its policy repo rate by 25 basis points (bps) to 5.50 per cent, marking the first rate hike since February 2023 and signalling a shift towards tighter monetary policy amid rising inflationary pressures, elevated crude oil prices and a challenging global",
+   "quote_url": "https://indianexpress.com/article/business/rbi-hikes-repo-rate-25-bps-to-5-50-pc-emi-10910143/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "The Monetary Policy Committee changed its policy stance to 'calibrated tightening' from 'neutral'.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://indianexpress.com/article/business/rbi-hikes-repo-rate-25-bps-to-5-50-pc-emi-10910143/",
+     "marker": "[4]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.997,
+     "contradiction": 0.0,
+     "quote": "The Monetary Policy Committee (MPC) has changed the policy stance to \u2018calibrated tightening\u2019 from \u2018neutral\u2019 indicating further hike in the interest rates is a likelihood.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "news",
+     "source_year": null
+    }
+   ],
+   "quote": "The Monetary Policy Committee (MPC) has changed the policy stance to \u2018calibrated tightening\u2019 from \u2018neutral\u2019 indicating further hike in the interest rates is a likelihood.",
+   "quote_url": "https://indianexpress.com/article/business/rbi-hikes-repo-rate-25-bps-to-5-50-pc-emi-10910143/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://www.thedailyjagran.com/business/news/rbi-mpc-what-is-repo-rate-and-why-rbi-hiked-it-after-35-years-how-it-will-impact-you-10331864",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.thedailyjagran.com/business/news/rbi-mpc-what-is-repo-rate-and-why-rbi-hiked-it-after-35-years-how-it-will-impact-you-10331864",
+   "title": "RBI MPC: What Is Repo Rate And Why RBI Hiked It After 3.5 Years How It Will Impact You | Explained",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "d1e896c70f0e306ca9920a8ee2091ac5fc5e1274da253ddae4b1e89ab026add2",
+   "quarantined": false
+  },
+  {
+   "url": "https://indianexpress.com/article/business/rbi-hikes-repo-rate-25-bps-to-5-50-pc-emi-10910143/",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://indianexpress.com/article/business/rbi-hikes-repo-rate-25-bps-to-5-50-pc-emi-10910143/",
+   "title": "RBI Hikes Repo Rate to 5.50% After 3.5 Years: How Your Home, Personal, and Auto Loan EMIs Will Be Impacted",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "25cdecd1deb9ad29e53fc134a3629873a8d704035c674f8018d866e0f9dcc5de",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 9.6,
+ "usage": {
+  "fetches": 2,
+  "wayback_lookups": 0,
+  "searches": 0,
+  "llm_calls": 0,
+  "nli_checks": 3,
+  "scorer_load_ms": 11212
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 3,
+   "citations": 3
+  },
+  {
+   "t": 0.15,
+   "event": "fetch",
+   "url": "https://indianexpress.com/article/business/rbi-hikes-repo-rate-25-bps-to-5-50-pc-emi-10910143/",
+   "state": "live",
+   "http_status": 200,
+   "chars": 6500,
+   "error": ""
+  },
+  {
+   "t": 0.26,
+   "event": "fetch",
+   "url": "https://www.thedailyjagran.com/business/news/rbi-mpc-what-is-repo-rate-and-why-rbi-hiked-it-after-35-years-how-it-will-impact-you-10331864",
+   "state": "live",
+   "http_status": 200,
+   "chars": 2962,
+   "error": ""
+  },
+  {
+   "t": 3.55,
+   "event": "verify",
+   "url": "https://www.thedailyjagran.com/business/news/rbi-mpc-what-is-repo-rate-and-why-rbi-hiked-it-after-35-years-how-it-will-impact-you-10331864",
+   "claim": "The RBI's current repo rate is 5.50 percent, set by a 25 basis point hike in October 2026.",
+   "verdict": "SUPPORTED",
+   "ent": 0.995,
+   "con": 0.0
+  },
+  {
+   "t": 6.83,
+   "event": "verify",
+   "url": "https://indianexpress.com/article/business/rbi-hikes-repo-rate-25-bps-to-5-50-pc-emi-10910143/",
+   "claim": "This was the first repo rate hike since February 2023.",
+   "verdict": "SUPPORTED",
+   "ent": 0.997,
+   "con": 0.0
+  },
+  {
+   "t": 9.59,
+   "event": "verify",
+   "url": "https://indianexpress.com/article/business/rbi-hikes-repo-rate-25-bps-to-5-50-pc-emi-10910143/",
+   "claim": "The Monetary Policy Committee changed its policy stance to 'calibrated tightening' from 'neutral'.",
+   "verdict": "SUPPORTED",
+   "ent": 0.997,
+   "con": 0.0
+  },
+  {
+   "t": 9.6,
+   "event": "done",
+   "trust_score": 100
+  }
+ ],
+ "score_s": 22.5
+}

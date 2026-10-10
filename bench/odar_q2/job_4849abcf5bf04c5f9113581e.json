@@ -1,0 +1,255 @@
+{
+  "status": "COMPLETE",
+  "backend_state": "anthropic-tool-use",
+  "degraded": false,
+  "objective": "How does PostgreSQL's MVCC implementation provide transaction isolation, and why does it cause table bloat that VACUUM must clean up?",
+  "run_id": "run_3246cb3766154247",
+  "uncertainty": "CONFLICTING_EVIDENCE",
+  "termination_status": "COMPLETE",
+  "unmet_conditions": [],
+  "digest": {
+    "objective": "How does PostgreSQL's MVCC implementation provide transaction isolation, and why does it cause table bloat that VACUUM must clean up?",
+    "iteration": 2,
+    "termination_status": "COMPLETE",
+    "uncertainty": "CONFLICTING_EVIDENCE",
+    "subquestions": [],
+    "hypotheses": [],
+    "claims": [
+      {
+        "id": "clm_bdcaaf85d0734063",
+        "text": "The SQL standard defines four levels of transaction isolation.",
+        "status": "CONFLICTING",
+        "uncertainty": "CONFLICTING_EVIDENCE"
+      },
+      {
+        "id": "clm_58a3434bcff14a95",
+        "text": "The SQL standard and PostgreSQL-implemented transaction isolation levels are described in Table 13.1.",
+        "status": "CONFLICTING",
+        "uncertainty": "CONFLICTING_EVIDENCE"
+      },
+      {
+        "id": "clm_ff48f3227a554beb",
+        "text": "This is because it is the only sensible way to map the standard isolation levels to PostgreSQL's multiversion concurrency control architecture.",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_2b1973548e0a4b49",
+        "text": "The table also shows that PostgreSQL's Repeatable Read implementation does not allow phantom reads.",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_3719ae42cd4c4ab5",
+        "text": "To set the transaction isolation level of a transaction, use the command SET TRANSACTION.",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_52b7a21ca37e44cb",
+        "text": "The partial transaction isolation provided by Read Committed mode is adequate for many applications, and this mode is fast and simple to use; however, it is not",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      }
+    ],
+    "evidence_summary": {
+      "total": 48,
+      "relevant": 10,
+      "supports": 7,
+      "refutes": 2,
+      "qualifies": 1,
+      "circular_rejected": 0
+    },
+    "sources": {
+      "total": 6,
+      "independent": 6,
+      "classes": {
+        "general_web": 6
+      }
+    },
+    "contradictions": [
+      {
+        "claim_id": "clm_bdcaaf85d0734063",
+        "examined": true,
+        "note": "support p=0.99 vs refutation p=0.98",
+        "stance": "UNDECIDED"
+      },
+      {
+        "claim_id": "clm_58a3434bcff14a95",
+        "examined": true,
+        "note": "support p=0.98 vs refutation p=1.00",
+        "stance": "UNDECIDED"
+      }
+    ],
+    "unanswered": [],
+    "attempted_queries": [
+      "PostgreSQL MVCC multi-version concurrency control implementation transaction isolation",
+      "PostgreSQL table bloat MVCC dead tuples VACUUM cleanup",
+      "PostgreSQL MVCC bloat dead tuples VACUUM dead row versions storage",
+      "PostgreSQL MVCC \"row versions\" \"never updated in place\" bloat dead tuples",
+      "PostgreSQL \"SET TRANSACTION\" isolation level command documentation",
+      "PostgreSQL MVCC dead tuples bloat VACUUM old row versions never updated in place",
+      "\"The partial transaction isolation provided by Read Committed mode is adequate for many applications\" PostgreSQL"
+    ],
+    "failed_approaches": [
+      "fetch:https://www.postgresql.org/docs/current/vacuum.html",
+      "fetch:https://postgrespro.com/docs/postgresql/current/transaction-iso"
+    ],
+    "evidence_coverage": {
+      "clm_bdcaaf85d0734063": true,
+      "clm_58a3434bcff14a95": true,
+      "clm_ff48f3227a554beb": true,
+      "clm_2b1973548e0a4b49": true,
+      "clm_3719ae42cd4c4ab5": true,
+      "clm_52b7a21ca37e44cb": true
+    },
+    "citation_coverage": {
+      "clm_bdcaaf85d0734063": true,
+      "clm_58a3434bcff14a95": true,
+      "clm_ff48f3227a554beb": true,
+      "clm_2b1973548e0a4b49": true,
+      "clm_3719ae42cd4c4ab5": true,
+      "clm_52b7a21ca37e44cb": true
+    },
+    "quarantined_urls": 0,
+    "injection_blocked": 0
+  },
+  "synthesis": "# Research Report: How does PostgreSQL's MVCC implementation provide transaction isolation, and why does it cause table bloat that VACUUM must clean up?\n\n## Certified Findings (semantic NLI verification)\n- [clm_ff48f3227a554beb] This is because it is the only sensible way to map the standard isolation levels to PostgreSQL's multiversion concurrency control architecture.\n  - cited: [src_6f36410ceac04d81] PostgreSQL: Documentation: 18: 13.2. Transaction Isolation (entailment p=0.98, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_2b1973548e0a4b49] The table also shows that PostgreSQL's Repeatable Read implementation does not allow phantom reads.\n  - cited: [src_6f36410ceac04d81] PostgreSQL: Documentation: 18: 13.2. Transaction Isolation (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_3719ae42cd4c4ab5] To set the transaction isolation level of a transaction, use the command SET TRANSACTION.\n  - cited: [src_6f36410ceac04d81] PostgreSQL: Documentation: 18: 13.2. Transaction Isolation (entailment p=0.98, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n  - cited: [src_41300f6d19944bf1] Every UPDATE Leaves a Ghost: MVCC, Bloat, and VACUUM in PostgreSQL — PlanetScale (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_52b7a21ca37e44cb] The partial transaction isolation provided by Read Committed mode is adequate for many applications, and this mode is fast and simple to use; however, it is not sufficient for all cases.\n  - cited: [src_6f36410ceac04d81] PostgreSQL: Documentation: 18: 13.2. Transaction Isolation (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n\n## Contradicted / Refuted / Conflicting\n- [clm_bdcaaf85d0734063] The SQL standard defines four levels of transaction isolation. *(status: CONFLICTING)*\n- [clm_58a3434bcff14a95] The SQL standard and PostgreSQL-implemented transaction isolation levels are described in Table 13.1. *(status: CONFLICTING)*\n\n## Contradictions Examined\n- clm_bdcaaf85d0734063: examined=True stance=UNDECIDED\n- clm_58a3434bcff14a95: examined=True stance=UNDECIDED\n\n## Uncertainty and Limitations\n- No primary-research source was available; findings rest on secondary reporting and are limited accordingly.\n- Uncertainty classification: UNCERTAIN",
+  "audit": {
+    "status": "PASS_WITH_FLAGS",
+    "checks": {
+      "no_provisional_certifications": true,
+      "no_unsupported_critical_claims": true,
+      "citations_resolve": true,
+      "no_circular_citations": true,
+      "provenance_intact": true,
+      "numeric_consistency": true,
+      "causal_language_appropriate": false,
+      "contradictions_examined": true,
+      "uncertainty_explicit": true
+    },
+    "findings": [
+      "causal language without primary-source backing: ['cause']"
+    ],
+    "unsupported_claims": [],
+    "hallucinated_citations": [],
+    "circular_citations": [],
+    "provisional_certifications": []
+  },
+  "errors": [],
+  "governance": {
+    "budget": {
+      "max_iterations": 4.0,
+      "max_tool_calls": 40.0,
+      "max_search_calls": 8.0,
+      "max_fetches": 8.0,
+      "max_sandbox_executions": 4.0,
+      "max_model_calls": 30.0,
+      "max_wall_clock_s": 540.0,
+      "max_response_chars": 18000.0,
+      "max_retries_per_call": 2.0,
+      "max_dependency_depth": 8.0,
+      "max_concurrent_fetches": 2.0,
+      "max_extensions": 2.0
+    },
+    "counters": {
+      "iterations": 2,
+      "tool_calls": 0,
+      "search_calls": 8,
+      "fetches": 8,
+      "sandbox_executions": 0,
+      "model_calls": 18,
+      "retries": 0
+    },
+    "denials": [
+      {
+        "resource": "search_calls",
+        "detail": "max 8 reached",
+        "ts": 1791335210.2130504
+      },
+      {
+        "resource": "search_calls",
+        "detail": "max 8 reached",
+        "ts": 1791335246.0952566
+      }
+    ],
+    "extensions": [],
+    "cancelled": false,
+    "cancel_reason": null
+  },
+  "telemetry": {
+    "request_id": "req_f2a1bbbcf3764995",
+    "counters": {
+      "iterations": 2,
+      "search_calls": 8,
+      "fetch_calls": 8,
+      "fetch_failed": 2,
+      "claims_extracted": 6,
+      "evidence_evaluations": 12,
+      "contradictions_recorded": 2,
+      "claims_certified": 4,
+      "dialectic_attacks": 2,
+      "duplicate_fetch_suppressed": 4,
+      "final_audits": 1
+    },
+    "latencies": {
+      "search": {
+        "count": 8,
+        "p50_ms": 558.99,
+        "p95_ms": 724.05,
+        "max_ms": 724.05
+      },
+      "fetch": {
+        "count": 8,
+        "p50_ms": 926.26,
+        "p95_ms": 992.5,
+        "max_ms": 992.5
+      },
+      "evidence_eval": {
+        "count": 6,
+        "p50_ms": 1275.56,
+        "p95_ms": 1530.73,
+        "max_ms": 1530.73
+      }
+    },
+    "event_count": 3
+  },
+  "events": [
+    {
+      "name": "run.start",
+      "ts": 1791335051.2488039,
+      "run_id": "run_3246cb3766154247",
+      "data": {
+        "objective": "How does PostgreSQL's MVCC implementation provide transaction isolation, and why does it cause table bloat that VACUUM must clean up?",
+        "resumed": "False",
+        "backend": "anthropic-tool-use"
+      }
+    },
+    {
+      "name": "tool_session",
+      "ts": 1791335165.38253,
+      "run_id": "run_3246cb3766154247",
+      "data": {
+        "turns": "6",
+        "tool_calls": "[{'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': False}]",
+        "final_text": "",
+        "finish_requested": "False",
+        "stop_cause": "max_tokens",
+        "backend_state": "anthropic-tool-use"
+      }
+    },
+    {
+      "name": "tool_session",
+      "ts": 1791335243.1747663,
+      "run_id": "run_3246cb3766154247",
+      "data": {
+        "turns": "6",
+        "tool_calls": "[{'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': True}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'finish_research', 'input_keys': [], 'is_error': False}]",
+        "final_text": "",
+        "finish_requested": "True",
+        "stop_cause": "tool_use",
+        "backend_state": "anthropic-tool-use"
+      }
+    }
+  ]
+}

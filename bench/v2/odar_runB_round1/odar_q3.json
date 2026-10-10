@@ -1,0 +1,285 @@
+{
+  "status": "COMPLETE",
+  "backend_state": "anthropic-tool-use",
+  "degraded": false,
+  "objective": "Does raising the minimum wage reduce employment? Summarize what the empirical evidence says, including where economists disagree.",
+  "run_id": "run_f892838bc414412a",
+  "uncertainty": "EVIDENCE_FOR",
+  "termination_status": "COMPLETE",
+  "unmet_conditions": [],
+  "digest": {
+    "objective": "Does raising the minimum wage reduce employment? Summarize what the empirical evidence says, including where economists disagree.",
+    "iteration": 3,
+    "termination_status": "COMPLETE",
+    "uncertainty": "EVIDENCE_FOR",
+    "subquestions": [],
+    "hypotheses": [],
+    "claims": [
+      {
+        "id": "clm_02bc31bd08e74326",
+        "text": "But when it comes to the question of a $15 minimum wage and what it would do to US employment and productivity, economists, at least, are willing to admit to un",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_5a4646cbb2794506",
+        "text": "Steve Kaplan of Chicago Booth strongly agreed that raising the wage would adversely affect the unemployment rate: “A $15 minimum wage rise makes entry level/low",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_5e19a265f4144146",
+        "text": "The Initiative on Global Markets at Chicago Booth is back from summer hiatus with an Economic Experts Panel poll that addresses the $15 federal minimum wage pro",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_4806c6b911784c8c",
+        "text": "8 estimates a $15 minimum wage would reduce employment in 2025 by 1.4 million workers, which is its average estimate.",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_1031f242083d4d01",
+        "text": "Raising the federal minimum wage to $15 an hour would cause 1.3 million workers to become jobless in an average week in 2025, according to the Congressional Bud",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_53c7a60cded74541",
+        "text": "During an appearance on “Fox News Primetime,” Paul said: “But also raising the minimum wage to $15, I think, will also — the government estimates are close to 4",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_316d3c71175144c6",
+        "text": "Roughly three-fourths (74%) of economists say raising the minimum wage is ineffective at lifting workers out of poverty, and a majority believe there are better",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_6a303306a28440af",
+        "text": "Nearly three-quarters of economists oppose a $15 federal minimum wage.",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      }
+    ],
+    "evidence_summary": {
+      "total": 96,
+      "relevant": 14,
+      "supports": 14,
+      "refutes": 0,
+      "qualifies": 0,
+      "circular_rejected": 0
+    },
+    "sources": {
+      "total": 4,
+      "independent": 4,
+      "classes": {
+        "university": 1,
+        "general_web": 3
+      }
+    },
+    "contradictions": [],
+    "unanswered": [],
+    "attempted_queries": [
+      "minimum wage employment effects empirical evidence review economists disagreement",
+      "Congressional Budget Office minimum wage $15 employment projections 2021",
+      "economists survey minimum wage increase employment effect poll Reuters",
+      "Autor Manning Smith \"What do we know about the minimum wage\" consensus employment",
+      "Autor Dube McGrew \"economic effects of the minimum wage\" review research employment disemployment",
+      "Card Krueger 1994 New Jersey Pennsylvania fast food minimum wage employment findings",
+      "Neumark Wascher meta-analysis minimum wage employment elasticity evidence",
+      "IGM Forum Chicago Booth poll minimum wage unemployment economists"
+    ],
+    "failed_approaches": [
+      "fetch:https://www.nber.org/system/files/working_papers/w32878/w32878.pdf",
+      "fetch_domain:nber.org",
+      "fetch:https://www.cbo.gov/system/files/2021-02/56975-Minimum-Wage.pdf",
+      "fetch_domain:cbo.gov",
+      "fetch:https://www.mdpi.com/2673-8392/2/4/130",
+      "fetch_domain:mdpi.com"
+    ],
+    "evidence_coverage": {
+      "clm_02bc31bd08e74326": true,
+      "clm_5a4646cbb2794506": true,
+      "clm_5e19a265f4144146": true,
+      "clm_4806c6b911784c8c": true,
+      "clm_1031f242083d4d01": true,
+      "clm_53c7a60cded74541": true,
+      "clm_316d3c71175144c6": true,
+      "clm_6a303306a28440af": true,
+      "clm_2167fa5a276b426d": true,
+      "clm_cec4343ca6c447e5": true,
+      "clm_968a98aad0444fe5": true,
+      "clm_70aaef8233a24f19": true
+    },
+    "citation_coverage": {
+      "clm_02bc31bd08e74326": true,
+      "clm_5a4646cbb2794506": true,
+      "clm_5e19a265f4144146": true,
+      "clm_4806c6b911784c8c": true,
+      "clm_1031f242083d4d01": true,
+      "clm_53c7a60cded74541": true,
+      "clm_316d3c71175144c6": true,
+      "clm_6a303306a28440af": true,
+      "clm_2167fa5a276b426d": true,
+      "clm_cec4343ca6c447e5": true,
+      "clm_968a98aad0444fe5": true,
+      "clm_70aaef8233a24f19": true
+    },
+    "quarantined_urls": 0,
+    "injection_blocked": 0
+  },
+  "synthesis": "# Research Report: Does raising the minimum wage reduce employment? Summarize what the empirical evidence says, including where economists disagree.\n\n## Answer (written only from the certified findings below)\nSome economists are willing to admit uncertainty about what a $15 minimum wage would do to US employment and productivity [[1]](https://www.chicagobooth.edu/review/what-economists-think-about-a-15-minimum-wage), even as surveys have found that nearly three-quarters of economists oppose a $15 federal minimum wage and roughly 74% say the policy is ineffective at lifting workers out of poverty, with a majority preferring other anti-poverty tools [[3]](https://epionline.org/studies/data-snapshot-three-quarters-of-economists-oppose-15-minimum-wage-proposals/)[[3]](https://epionline.org/studies/data-snapshot-three-quarters-of-economists-oppose-15-minimum-wage-proposals/).\n\nThe Congressional Budget Office's median estimate is that 1.3 million workers would become jobless in an average week in 2025 [[2]](https://www.factcheck.org/2021/01/paul-distorts-cbos-estimate-on-impact-of-15-minimum-wage/), and Moody's Analytics averages an estimated 1.4 million job losses in 2025 [[2]](https://www.factcheck.org/2021/01/paul-distorts-cbos-estimate-on-impact-of-15-minimum-wage/), while some politicians have cited figures close to 4 million based on government estimates [[2]](https://www.factcheck.org/2021/01/paul-distorts-cbos-estimate-on-impact-of-15-minimum-wage/). Steve Kaplan of Chicago Booth strongly agreed that the higher wage would raise the cost of entry-level and low-wage jobs and thus adversely affect the unemployment rate [[1]](https://www.chicagobooth.edu/review/what-economists-think-about-a-15-minimum-wage), and most economists surveyed expect the elimination of the federal tip credit to reduce tipped jobs in full-service restaurants [[3]](https://epionline.org/studies/data-snapshot-three-quarters-of-economists-oppose-15-minimum-wage-proposals/).\n\nA classic comparison of New Jersey and Pennsylvania fast-food stores after New Jersey raised its minimum wage found that stores unaffected by the hike grew employment at the same rate as Pennsylvania stores, while stores that had to raise wages actually increased employment, challenging the prediction that higher minimum wages reduce employment [[4]](https://www.nber.org/papers/w4509)[[2]](https://www.factcheck.org/2021/01/paul-distorts-cbos-estimate-on-impact-of-15-minimum-wage/)[[4]](https://www.nber.org/papers/w4509)[[4]](https://www.nber.org/papers/w4509). The disagreement is therefore about the sign of the employment effect and its magnitude, not merely about the policy's desirability [[1]](https://www.chicagobooth.edu/review/what-economists-think-about-a-15-minimum-wage)[[1]](https://www.chicagobooth.edu/review/what-economists-think-about-a-15-minimum-wage).\n\n## Certified Findings (semantic NLI verification)\n- [clm_02bc31bd08e74326] But when it comes to the question of a $15 minimum wage and what it would do to US employment and productivity, economists, at least, are willing to admit to uncertainty.\n  - cited: [src_2c51c0ce916a4a02] [What Economists Think about a $15 Minimum Wage | Chicago Booth Review](https://www.chicagobooth.edu/review/what-economists-think-about-a-15-minimum-wage) (entailment p=0.97, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_5a4646cbb2794506] Steve Kaplan of Chicago Booth strongly agreed that raising the wage would adversely affect the unemployment rate: “A $15 minimum wage rise makes entry level/low wage jobs very expensive.\n  - cited: [src_2c51c0ce916a4a02] [What Economists Think about a $15 Minimum Wage | Chicago Booth Review](https://www.chicagobooth.edu/review/what-economists-think-about-a-15-minimum-wage) (entailment p=0.98, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_5e19a265f4144146] The Initiative on Global Markets at Chicago Booth is back from summer hiatus with an Economic Experts Panel poll that addresses the $15 federal minimum wage proposals being considered by Congress and opined upon by presidential candidates.\n  - cited: [src_2c51c0ce916a4a02] [What Economists Think about a $15 Minimum Wage | Chicago Booth Review](https://www.chicagobooth.edu/review/what-economists-think-about-a-15-minimum-wage) (entailment p=0.90, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_4806c6b911784c8c] 8 estimates a $15 minimum wage would reduce employment in 2025 by 1.4 million workers, which is its average estimate.\n  - cited: [src_46f36aa636d346a3] [Paul Distorts CBO's Estimate on Impact of $15 Minimum Wage - FactCheck.org](https://www.factcheck.org/2021/01/paul-distorts-cbos-estimate-on-impact-of-15-minimum-wage/) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_1031f242083d4d01] Raising the federal minimum wage to $15 an hour would cause 1.3 million workers to become jobless in an average week in 2025, according to the Congressional Budget Office’s median estimate.\n  - cited: [src_46f36aa636d346a3] [Paul Distorts CBO's Estimate on Impact of $15 Minimum Wage - FactCheck.org](https://www.factcheck.org/2021/01/paul-distorts-cbos-estimate-on-impact-of-15-minimum-wage/) (entailment p=0.98, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_53c7a60cded74541] During an appearance on “Fox News Primetime,” Paul said: “But also raising the minimum wage to $15, I think, will also — the government estimates are close to 4 million people will lose their jobs.\n  - cited: [src_46f36aa636d346a3] [Paul Distorts CBO's Estimate on Impact of $15 Minimum Wage - FactCheck.org](https://www.factcheck.org/2021/01/paul-distorts-cbos-estimate-on-impact-of-15-minimum-wage/) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n  - cited: [src_46f36aa636d346a3] [Paul Distorts CBO's Estimate on Impact of $15 Minimum Wage - FactCheck.org](https://www.factcheck.org/2021/01/paul-distorts-cbos-estimate-on-impact-of-15-minimum-wage/) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_316d3c71175144c6] Roughly three-fourths (74%) of economists say raising the minimum wage is ineffective at lifting workers out of poverty, and a majority believe there are better policies to address poverty concerns.\n  - cited: [src_0c9bc91939df426f] [SURVEY: Three-Quarters of Economists Oppose $15+ Minimum Wage Proposals | Employment Policies Institute](https://epionline.org/studies/data-snapshot-three-quarters-of-economists-oppose-15-minimum-wage-proposals/) (entailment p=0.97, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_6a303306a28440af] Nearly three-quarters of economists oppose a $15 federal minimum wage.\n  - cited: [src_0c9bc91939df426f] [SURVEY: Three-Quarters of Economists Oppose $15+ Minimum Wage Proposals | Employment Policies Institute](https://epionline.org/studies/data-snapshot-three-quarters-of-economists-oppose-15-minimum-wage-proposals/) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_2167fa5a276b426d] A large majority of economists also agree eliminating the federal tip credit – an allowance to count tip earnings toward the hourly minimum wage requirement – would result in fewer tipped jobs like servers and bartenders in full-service restaurants.\n  - cited: [src_0c9bc91939df426f] [SURVEY: Three-Quarters of Economists Oppose $15+ Minimum Wage Proposals | Employment Policies Institute](https://epionline.org/studies/data-snapshot-three-quarters-of-economists-oppose-15-minimum-wage-proposals/) (entailment p=0.98, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_cec4343ca6c447e5] Comparisons of the changes in wages, employment, and prices at stores in New Jersey relative to stores in Pennsylvania (where the minimum wage remained fixed at $4.25 per hour) yield simple estimates of the effect of the higher minimum wage.\n  - cited: [src_a43f9e36092346c9] [Minimum Wages and Employment: A Case Study of the Fast Food Industry in New Jersey and Pennsylvania | NBER](https://www.nber.org/papers/w4509) (entailment p=0.97, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_968a98aad0444fe5] Our empirical findings challenge the prediction that a rise in the minimum reduces employment.\n  - cited: [src_a43f9e36092346c9] [Minimum Wages and Employment: A Case Study of the Fast Food Industry in New Jersey and Pennsylvania | NBER](https://www.nber.org/papers/w4509) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n  - cited: [src_46f36aa636d346a3] [Paul Distorts CBO's Estimate on Impact of $15 Minimum Wage - FactCheck.org](https://www.factcheck.org/2021/01/paul-distorts-cbos-estimate-on-impact-of-15-minimum-wage/) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_70aaef8233a24f19] Stores that were unaffected by the minimum wage had the same employment growth as stores in Pennsylvania, while stores that had to increase their wages increased their employment.\n  - cited: [src_a43f9e36092346c9] [Minimum Wages and Employment: A Case Study of the Fast Food Industry in New Jersey and Pennsylvania | NBER](https://www.nber.org/papers/w4509) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n\n## Uncertainty and Limitations\n- No primary-research source was available; findings rest on secondary reporting and are limited accordingly.\n- Uncertainty classification: UNCERTAIN\n\n## Sources\n1. [src_2c51c0ce916a4a02] [What Economists Think about a $15 Minimum Wage | Chicago Booth Review](https://www.chicagobooth.edu/review/what-economists-think-about-a-15-minimum-wage)\n2. [src_46f36aa636d346a3] [Paul Distorts CBO's Estimate on Impact of $15 Minimum Wage - FactCheck.org](https://www.factcheck.org/2021/01/paul-distorts-cbos-estimate-on-impact-of-15-minimum-wage/)\n3. [src_0c9bc91939df426f] [SURVEY: Three-Quarters of Economists Oppose $15+ Minimum Wage Proposals | Employment Policies Institute](https://epionline.org/studies/data-snapshot-three-quarters-of-economists-oppose-15-minimum-wage-proposals/)\n4. [src_a43f9e36092346c9] [Minimum Wages and Employment: A Case Study of the Fast Food Industry in New Jersey and Pennsylvania | NBER](https://www.nber.org/papers/w4509)",
+  "audit": {
+    "status": "PASS_WITH_FLAGS",
+    "checks": {
+      "no_provisional_certifications": true,
+      "no_unsupported_critical_claims": true,
+      "citations_resolve": true,
+      "no_circular_citations": true,
+      "provenance_intact": true,
+      "numeric_consistency": true,
+      "causal_language_appropriate": false,
+      "contradictions_examined": true,
+      "uncertainty_explicit": true
+    },
+    "findings": [
+      "causal language without primary-source backing: ['cause']"
+    ],
+    "unsupported_claims": [],
+    "hallucinated_citations": [],
+    "circular_citations": [],
+    "provisional_certifications": []
+  },
+  "errors": [],
+  "governance": {
+    "budget": {
+      "max_iterations": 4.0,
+      "max_tool_calls": 40.0,
+      "max_search_calls": 8.0,
+      "max_fetches": 8.0,
+      "max_sandbox_executions": 4.0,
+      "max_model_calls": 30.0,
+      "max_wall_clock_s": 540.0,
+      "max_response_chars": 18000.0,
+      "max_retries_per_call": 2.0,
+      "max_dependency_depth": 8.0,
+      "max_concurrent_fetches": 2.0,
+      "max_extensions": 2.0
+    },
+    "counters": {
+      "iterations": 3,
+      "tool_calls": 0,
+      "search_calls": 8,
+      "fetches": 7,
+      "sandbox_executions": 1,
+      "model_calls": 25,
+      "retries": 5
+    },
+    "denials": [
+      {
+        "resource": "search_calls",
+        "detail": "max 8 reached",
+        "ts": 1791337392.6185303
+      }
+    ],
+    "extensions": [],
+    "cancelled": false,
+    "cancel_reason": null
+  },
+  "telemetry": {
+    "request_id": "req_cca75565cc53415d",
+    "counters": {
+      "iterations": 3,
+      "search_calls": 8,
+      "fetch_calls": 7,
+      "fetch_failed": 3,
+      "claims_extracted": 12,
+      "evidence_evaluations": 24,
+      "claims_certified": 12,
+      "sandbox_executions": 1,
+      "answer_synthesized_llm": 1,
+      "final_audits": 1
+    },
+    "latencies": {
+      "search": {
+        "count": 8,
+        "p50_ms": 8439.83,
+        "p95_ms": 13962.36,
+        "max_ms": 13962.36
+      },
+      "fetch": {
+        "count": 7,
+        "p50_ms": 646.73,
+        "p95_ms": 1747.54,
+        "max_ms": 1747.54
+      },
+      "evidence_eval": {
+        "count": 12,
+        "p50_ms": 1375.77,
+        "p95_ms": 8480.88,
+        "max_ms": 8480.88
+      },
+      "sandbox": {
+        "count": 1,
+        "p50_ms": 110.47,
+        "p95_ms": 110.47,
+        "max_ms": 110.47
+      }
+    },
+    "event_count": 4
+  },
+  "events": [
+    {
+      "name": "run.start",
+      "ts": 1791337200.2390802,
+      "run_id": "run_f892838bc414412a",
+      "data": {
+        "objective": "Does raising the minimum wage reduce employment? Summarize what the empirical evidence says, including where economists disagree.",
+        "resumed": "False",
+        "backend": "anthropic-tool-use"
+      }
+    },
+    {
+      "name": "tool_session",
+      "ts": 1791337349.7166412,
+      "run_id": "run_f892838bc414412a",
+      "data": {
+        "turns": "6",
+        "tool_calls": "[{'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': False}]",
+        "final_text": "PDFs are blocked; I'll fetch HTML pages instead — starting with the most recent research synthesis and expert-poll evidence.",
+        "finish_requested": "False",
+        "stop_cause": "tool_use",
+        "backend_state": "anthropic-tool-use"
+      }
+    },
+    {
+      "name": "tool_session",
+      "ts": 1791337433.868069,
+      "run_id": "run_f892838bc414412a",
+      "data": {
+        "turns": "3",
+        "tool_calls": "[{'tool': 'web_search', 'input_keys': ['query'], 'is_error': True}, {'tool': 'run_python', 'input_keys': ['code'], 'is_error': False}]",
+        "final_text": "Search budget is exhausted and fetching requires a search-returned URL, so no further evidence is obtainable. I'll run a numeric normalization of the certified CBO figures in the sandbox, then close.",
+        "finish_requested": "False",
+        "stop_cause": "max_tokens",
+        "backend_state": "anthropic-tool-use"
+      }
+    },
+    {
+      "name": "tool_session",
+      "ts": 1791337467.4323463,
+      "run_id": "run_f892838bc414412a",
+      "data": {
+        "turns": "1",
+        "tool_calls": "[]",
+        "final_text": "",
+        "finish_requested": "False",
+        "stop_cause": "max_tokens",
+        "backend_state": "anthropic-tool-use"
+      }
+    }
+  ]
+}

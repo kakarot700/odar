@@ -1,0 +1,639 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_46c4a49da3a6",
+ "trust_score": 93,
+ "grade": "citations hold up",
+ "counts": {
+  "SUPPORTED": 14,
+  "PARTIALLY SUPPORTED": 0,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 1,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 0
+ },
+ "claims": [
+  {
+   "claim_id": "c1.1",
+   "claim": "One randomized trial in Annals of Internal Medicine found that a 4:3 fasting schedule outperformed daily calorie restriction.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://welltica.com/intermittent-fasting-vs-calorie-restriction-which-actually-works-better/",
+     "marker": "[6]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.998,
+     "contradiction": 0.0,
+     "quote": "A randomized clinical trial published in Annals of Internal Medicine in April 2025 followed 165 adults with overweight or obesity for 12 months and found that a 4:3 fasting schedule outperformed daily caloric restriction by 2.89 kg, a statistically significant but clinically modest edge.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "A randomized clinical trial published in Annals of Internal Medicine in April 2025 followed 165 adults with overweight or obesity for 12 months and found that a 4:3 fasting schedule outperformed daily caloric restriction by 2.89 kg, a statistically significant but clinically modest edge.",
+   "quote_url": "https://welltica.com/intermittent-fasting-vs-calorie-restriction-which-actually-works-better/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c1.2",
+   "claim": "After one year, the fasting group lost an average of about 6 more pounds.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://welltica.com/intermittent-fasting-vs-calorie-restriction-which-actually-works-better/",
+     "marker": "[6]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.935,
+     "contradiction": 0.0,
+     "quote": "After 12 months, the fasting group lost 7.6 percent of body weight, compared with 5.0 percent in the daily-restriction group, according to a University of Colorado press release.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "After 12 months, the fasting group lost 7.6 percent of body weight, compared with 5.0 percent in the daily-restriction group, according to a University of Colorado press release.",
+   "quote_url": "https://welltica.com/intermittent-fasting-vs-calorie-restriction-which-actually-works-better/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2.1",
+   "claim": "Another report of the same study says the fasting group lost 2.89 kg more.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://welltica.com/intermittent-fasting-vs-calorie-restriction-which-actually-works-better/",
+     "marker": "[6]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://welltica.com/intermittent-fasting-vs-calorie-restriction-which-actually-works-better/",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2.2",
+   "claim": "The 2.89 kg more was a statistically significant but clinically modest edge.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://welltica.com/intermittent-fasting-vs-calorie-restriction-which-actually-works-better/",
+     "marker": "[6]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.965,
+     "contradiction": 0.0,
+     "quote": "A randomized clinical trial published in Annals of Internal Medicine in April 2025 followed 165 adults with overweight or obesity for 12 months and found that a 4:3 fasting schedule outperformed daily caloric restriction by 2.89 kg, a statistically significant but clinically modest edge.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "A randomized clinical trial published in Annals of Internal Medicine in April 2025 followed 165 adults with overweight or obesity for 12 months and found that a 4:3 fasting schedule outperformed daily caloric restriction by 2.89 kg, a statistically significant but clinically modest edge.",
+   "quote_url": "https://welltica.com/intermittent-fasting-vs-calorie-restriction-which-actually-works-better/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2.3",
+   "claim": "Another report of the same study says the fasting group lost 7.6 percent of body weight.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://welltica.com/intermittent-fasting-vs-calorie-restriction-which-actually-works-better/",
+     "marker": "[6]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "After 12 months, the fasting group lost 7.6 percent of body weight, compared with 5.0 percent in the daily-restriction group, according to a University of Colorado press release.",
+     "note": "reworded match: Passage directly states the fasting group lost 7.6 percent.",
+     "judged_by": "nli+llm",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "After 12 months, the fasting group lost 7.6 percent of body weight, compared with 5.0 percent in the daily-restriction group, according to a University of Colorado press release.",
+   "quote_url": "https://welltica.com/intermittent-fasting-vs-calorie-restriction-which-actually-works-better/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2.4",
+   "claim": "The group with daily restriction lost 5.0 percent of body weight.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://welltica.com/intermittent-fasting-vs-calorie-restriction-which-actually-works-better/",
+     "marker": "[6]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.987,
+     "contradiction": 0.791,
+     "quote": "After 12 months, the fasting group lost 7.6 percent of body weight, compared with 5.0 percent in the daily-restriction group, according to a University of Colorado press release.",
+     "note": "another passage on the page may disagree: \"Fifty-eight percent of fasting participants achieved at least 5 percent weight loss, versus 47 percent on daily restriction.\"",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "After 12 months, the fasting group lost 7.6 percent of body weight, compared with 5.0 percent in the daily-restriction group, according to a University of Colorado press release.",
+   "quote_url": "https://welltica.com/intermittent-fasting-vs-calorie-restriction-which-actually-works-better/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3.1",
+   "claim": "A 2026 Clinical Nutrition trial found intermittent fasting and continuous calorie restriction produced comparable weight loss when calories were matched.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://healthymag.org/2026/07/10/intermittent-fasting-vs-calorie-counting/",
+     "marker": "[3]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.997,
+     "contradiction": 0.976,
+     "quote": "The 2026 Clinical Nutrition trial doesn\u2019t stand alone. It fits a consistent pattern in the recent literature: intermittent fasting and continuous calorie restriction produce comparable weight loss when calories are matched.",
+     "note": "another passage on the page may disagree: \"It fits a consistent pattern in the recent literature: intermittent fasting and continuous calorie restriction produce comparable weight loss when calories are \"",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": 2026
+    }
+   ],
+   "quote": "The 2026 Clinical Nutrition trial doesn\u2019t stand alone. It fits a consistent pattern in the recent literature: intermittent fasting and continuous calorie restriction produce comparable weight loss when calories are matched.",
+   "quote_url": "https://healthymag.org/2026/07/10/intermittent-fasting-vs-calorie-counting/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3.2",
+   "claim": "The calorie-restriction-only group lost 6.3 kg.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://healthymag.org/2026/07/10/intermittent-fasting-vs-calorie-counting/",
+     "marker": "[3]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.994,
+     "contradiction": 0.0,
+     "quote": "The result: the time-restricted group lost 8.0 kg and the calorie-restriction-only group lost 6.3 kg \u2014 a difference of 1.8 kg that was not statistically significant.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": 2026
+    }
+   ],
+   "quote": "The result: the time-restricted group lost 8.0 kg and the calorie-restriction-only group lost 6.3 kg \u2014 a difference of 1.8 kg that was not statistically significant.",
+   "quote_url": "https://healthymag.org/2026/07/10/intermittent-fasting-vs-calorie-counting/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3.3",
+   "claim": "The difference of 1.8 kg was not statistically significant.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://healthymag.org/2026/07/10/intermittent-fasting-vs-calorie-counting/",
+     "marker": "[3]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.991,
+     "contradiction": 0.0,
+     "quote": "The result: the time-restricted group lost 8.0 kg and the calorie-restriction-only group lost 6.3 kg \u2014 a difference of 1.8 kg that was not statistically significant.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": 2026
+    }
+   ],
+   "quote": "The result: the time-restricted group lost 8.0 kg and the calorie-restriction-only group lost 6.3 kg \u2014 a difference of 1.8 kg that was not statistically significant.",
+   "quote_url": "https://healthymag.org/2026/07/10/intermittent-fasting-vs-calorie-counting/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4",
+   "claim": "A 2025 meta-analysis also reported a \"slightly greater, though statistically nonsignificant, weight decrease\" for intermittent fasting.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://welltica.com/intermittent-fasting-vs-calorie-restriction-which-actually-works-better/",
+     "marker": "[6]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.997,
+     "contradiction": 0.0,
+     "quote": "A 2025 systematic review and meta-analysis published in the Journal of Taibah University Medical Sciences pooled 17 publications from 16 randomized trials with 1,258 participants and reached a similar verdict. Compared to standard energy restriction, intermittent fasting produced a \"slightly greater, though statistically nonsignificant, weight decrease,\" with a small but significant advantage in B",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "A 2025 systematic review and meta-analysis published in the Journal of Taibah University Medical Sciences pooled 17 publications from 16 randomized trials with 1,258 participants and reached a similar verdict. Compared to standard energy restriction, intermittent fasting produced a \"slightly greater, though statistically nonsignificant, weight decrease,\" with a small but significant advantage in B",
+   "quote_url": "https://welltica.com/intermittent-fasting-vs-calorie-restriction-which-actually-works-better/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5.1",
+   "claim": "Some meta-analyses found small advantages for fasting.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://welltica.com/intermittent-fasting-vs-calorie-restriction-which-actually-works-better/",
+     "marker": "[6]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.996,
+     "contradiction": 0.0,
+     "quote": "An earlier 2022 meta-analysis of 11 trials with 705 participants reported a small but statistically significant weight-loss advantage for fasting approaches over continuous calorie restriction, while BMI outcomes were essentially identical between the two.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "An earlier 2022 meta-analysis of 11 trials with 705 participants reported a small but statistically significant weight-loss advantage for fasting approaches over continuous calorie restriction, while BMI outcomes were essentially identical between the two.",
+   "quote_url": "https://welltica.com/intermittent-fasting-vs-calorie-restriction-which-actually-works-better/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5.2",
+   "claim": "A 2023 analysis of time-restricted eating plus calorie deficit found 2.11 kg more weight loss than calorie restriction alone.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://welltica.com/intermittent-fasting-vs-calorie-restriction-which-actually-works-better/",
+     "marker": "[6]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.998,
+     "contradiction": 0.975,
+     "quote": "A 2023 meta-analysis in Nutrients of seven randomized trials with 458 participants found that time-restricted eating combined with a calorie deficit produced 2.11 kg more weight loss than calorie restriction alone.",
+     "note": "another passage on the page may disagree: \"The comparison group followed a standard daily calorie deficit. After 12 months, the fasting group lost 7.6 percent of body weight, compared with 5.0 percent in\"",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "A 2023 meta-analysis in Nutrients of seven randomized trials with 458 participants found that time-restricted eating combined with a calorie deficit produced 2.11 kg more weight loss than calorie restriction alone.",
+   "quote_url": "https://welltica.com/intermittent-fasting-vs-calorie-restriction-which-actually-works-better/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5.3",
+   "claim": "A 2022 analysis reported a small but significant advantage for fasting.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://welltica.com/intermittent-fasting-vs-calorie-restriction-which-actually-works-better/",
+     "marker": "[6]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.997,
+     "contradiction": 0.0,
+     "quote": "An earlier 2022 meta-analysis of 11 trials with 705 participants reported a small but statistically significant weight-loss advantage for fasting approaches over continuous calorie restriction, while BMI outcomes were essentially identical between the two.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "An earlier 2022 meta-analysis of 11 trials with 705 participants reported a small but statistically significant weight-loss advantage for fasting approaches over continuous calorie restriction, while BMI outcomes were essentially identical between the two.",
+   "quote_url": "https://welltica.com/intermittent-fasting-vs-calorie-restriction-which-actually-works-better/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5.4",
+   "claim": "A 2022 analysis reported essentially identical BMI outcomes.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://welltica.com/intermittent-fasting-vs-calorie-restriction-which-actually-works-better/",
+     "marker": "[6]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.994,
+     "contradiction": 0.0,
+     "quote": "An earlier 2022 meta-analysis of 11 trials with 705 participants reported a small but statistically significant weight-loss advantage for fasting approaches over continuous calorie restriction, while BMI outcomes were essentially identical between the two.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "An earlier 2022 meta-analysis of 11 trials with 705 participants reported a small but statistically significant weight-loss advantage for fasting approaches over continuous calorie restriction, while BMI outcomes were essentially identical between the two.",
+   "quote_url": "https://welltica.com/intermittent-fasting-vs-calorie-restriction-which-actually-works-better/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6",
+   "claim": "The possible edge may come from adherence rather than physiology: some people find fasting easier to stick to.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://healthymag.org/2026/07/10/intermittent-fasting-vs-calorie-counting/",
+     "marker": "[3]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.98,
+     "contradiction": 0.0,
+     "quote": "Not for weight loss itself. In the 2026 Clinical Nutrition trial and in earlier randomized studies, intermittent fasting and calorie counting produced very similar weight loss. Where fasting may have an edge is adherence \u2014 some people find it less mentally demanding because they don\u2019t have to track every calorie, and easier adherence can mean better long-term results.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": 2026
+    }
+   ],
+   "quote": "Not for weight loss itself. In the 2026 Clinical Nutrition trial and in earlier randomized studies, intermittent fasting and calorie counting produced very similar weight loss. Where fasting may have an edge is adherence \u2014 some people find it less mentally demanding because they don\u2019t have to track every calorie, and easier adherence can mean better long-term results.",
+   "quote_url": "https://healthymag.org/2026/07/10/intermittent-fasting-vs-calorie-counting/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://welltica.com/intermittent-fasting-vs-calorie-restriction-which-actually-works-better/",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://welltica.com/intermittent-fasting-vs-calorie-restriction-which-actually-works-better/",
+   "title": "Intermittent fasting vs. calorie restriction: which actually works better?",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "68387cc322686e87c8581369145eb0f9b8bafefd7f4ea4acff5e176341b51a1f",
+   "quarantined": false
+  },
+  {
+   "url": "https://healthymag.org/2026/07/10/intermittent-fasting-vs-calorie-counting/",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://healthymag.org/2026/07/10/intermittent-fasting-vs-calorie-counting/",
+   "title": "Intermittent Fasting vs. Counting Calories: A 2026 Study Says One May Be Easier to Stick To - HealthyMag",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "e967331b584387954008d43378f6cb1a5b9dfb826b60061c08d1729e3fadc949",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 131.5,
+ "usage": {
+  "fetches": 2,
+  "wayback_lookups": 0,
+  "searches": 0,
+  "llm_calls": 5,
+  "nli_checks": 15,
+  "scorer_load_ms": 2349
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 6,
+   "citations": 6
+  },
+  {
+   "t": 30.51,
+   "event": "fetch",
+   "url": "https://healthymag.org/2026/07/10/intermittent-fasting-vs-calorie-counting/",
+   "state": "live",
+   "http_status": 200,
+   "chars": 13955,
+   "error": ""
+  },
+  {
+   "t": 31.45,
+   "event": "fetch",
+   "url": "https://welltica.com/intermittent-fasting-vs-calorie-restriction-which-actually-works-better/",
+   "state": "live",
+   "http_status": 200,
+   "chars": 4461,
+   "error": ""
+  },
+  {
+   "t": 36.05,
+   "event": "verify",
+   "url": "https://welltica.com/intermittent-fasting-vs-calorie-restriction-which-actually-works-better/",
+   "claim": "One randomized trial in Annals of Internal Medicine found that a 4:3 fasting schedule outperformed daily calorie restric",
+   "verdict": "SUPPORTED",
+   "ent": 0.998,
+   "con": 0.0
+  },
+  {
+   "t": 39.05,
+   "event": "verify",
+   "url": "https://welltica.com/intermittent-fasting-vs-calorie-restriction-which-actually-works-better/",
+   "claim": "After one year, the fasting group lost an average of about 6 more pounds.",
+   "verdict": "SUPPORTED",
+   "ent": 0.935,
+   "con": 0.0
+  },
+  {
+   "t": 44.12,
+   "event": "verify",
+   "url": "https://welltica.com/intermittent-fasting-vs-calorie-restriction-which-actually-works-better/",
+   "claim": "Another report of the same study says the fasting group lost 2.89 kg more.",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 47.43,
+   "event": "verify",
+   "url": "https://welltica.com/intermittent-fasting-vs-calorie-restriction-which-actually-works-better/",
+   "claim": "The 2.89 kg more was a statistically significant but clinically modest edge.",
+   "verdict": "SUPPORTED",
+   "ent": 0.965,
+   "con": 0.0
+  },
+  {
+   "t": 54.04,
+   "event": "paraphrase_judge",
+   "claim": "Another report of the same study says the fasting group lost 7.6 percent of body weight.",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 54.04,
+   "event": "verify",
+   "url": "https://welltica.com/intermittent-fasting-vs-calorie-restriction-which-actually-works-better/",
+   "claim": "Another report of the same study says the fasting group lost 7.6 percent of body weight.",
+   "verdict": "SUPPORTED",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 60.28,
+   "event": "verify",
+   "url": "https://welltica.com/intermittent-fasting-vs-calorie-restriction-which-actually-works-better/",
+   "claim": "The group with daily restriction lost 5.0 percent of body weight.",
+   "verdict": "SUPPORTED",
+   "ent": 0.987,
+   "con": 0.791
+  },
+  {
+   "t": 70.47,
+   "event": "verify",
+   "url": "https://healthymag.org/2026/07/10/intermittent-fasting-vs-calorie-counting/",
+   "claim": "A 2026 Clinical Nutrition trial found intermittent fasting and continuous calorie restriction produced comparable weight",
+   "verdict": "SUPPORTED",
+   "ent": 0.997,
+   "con": 0.976
+  },
+  {
+   "t": 78.46,
+   "event": "verify",
+   "url": "https://healthymag.org/2026/07/10/intermittent-fasting-vs-calorie-counting/",
+   "claim": "The calorie-restriction-only group lost 6.3 kg.",
+   "verdict": "SUPPORTED",
+   "ent": 0.994,
+   "con": 0.0
+  },
+  {
+   "t": 84.33,
+   "event": "verify",
+   "url": "https://healthymag.org/2026/07/10/intermittent-fasting-vs-calorie-counting/",
+   "claim": "The difference of 1.8 kg was not statistically significant.",
+   "verdict": "SUPPORTED",
+   "ent": 0.991,
+   "con": 0.0
+  },
+  {
+   "t": 92.0,
+   "event": "verify",
+   "url": "https://welltica.com/intermittent-fasting-vs-calorie-restriction-which-actually-works-better/",
+   "claim": "A 2025 meta-analysis also reported a \"slightly greater, though statistically nonsignificant, weight decrease\" for interm",
+   "verdict": "SUPPORTED",
+   "ent": 0.997,
+   "con": 0.0
+  },
+  {
+   "t": 100.08,
+   "event": "verify",
+   "url": "https://welltica.com/intermittent-fasting-vs-calorie-restriction-which-actually-works-better/",
+   "claim": "Some meta-analyses found small advantages for fasting.",
+   "verdict": "SUPPORTED",
+   "ent": 0.996,
+   "con": 0.0
+  },
+  {
+   "t": 107.43,
+   "event": "verify",
+   "url": "https://welltica.com/intermittent-fasting-vs-calorie-restriction-which-actually-works-better/",
+   "claim": "A 2023 analysis of time-restricted eating plus calorie deficit found 2.11 kg more weight loss than calorie restriction a",
+   "verdict": "SUPPORTED",
+   "ent": 0.998,
+   "con": 0.975
+  },
+  {
+   "t": 114.96,
+   "event": "verify",
+   "url": "https://welltica.com/intermittent-fasting-vs-calorie-restriction-which-actually-works-better/",
+   "claim": "A 2022 analysis reported a small but significant advantage for fasting.",
+   "verdict": "SUPPORTED",
+   "ent": 0.997,
+   "con": 0.0
+  },
+  {
+   "t": 121.72,
+   "event": "verify",
+   "url": "https://welltica.com/intermittent-fasting-vs-calorie-restriction-which-actually-works-better/",
+   "claim": "A 2022 analysis reported essentially identical BMI outcomes.",
+   "verdict": "SUPPORTED",
+   "ent": 0.994,
+   "con": 0.0
+  },
+  {
+   "t": 131.5,
+   "event": "verify",
+   "url": "https://healthymag.org/2026/07/10/intermittent-fasting-vs-calorie-counting/",
+   "claim": "The possible edge may come from adherence rather than physiology: some people find fasting easier to stick to.",
+   "verdict": "SUPPORTED",
+   "ent": 0.98,
+   "con": 0.0
+  },
+  {
+   "t": 131.51,
+   "event": "done",
+   "trust_score": 93
+  }
+ ],
+ "score_s": 133.9
+}

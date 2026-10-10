@@ -1,0 +1,190 @@
+{
+ "thread_id": "48bf449aa2da64d2",
+ "share_token": "vZWbvdOuKxa7ZCDi",
+ "title": "Is there evidence that GLP-1 drugs like semaglutide reduce cardiovascular events?",
+ "project_id": "",
+ "sources": [
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371/",
+   "title": "Cardiovascular benefits of semaglutide: a systematic review ...",
+   "domain": "pmc.ncbi.nlm.nih.gov",
+   "snippet": "Semaglutide, a GLP-1 receptor agonist (GLP-1RA), has shown potential in controlling type 2 diabetes due to their ability to lower blood glucose and improve cardiovascular outcomes. Although semaglutide is the newest GLP-1RA available, its ...",
+   "kind": "web",
+   "n": 1
+  },
+  {
+   "url": "https://www.sciencedaily.com/releases/2026/05/260520093731.htm",
+   "title": "Popular GLP-1 weight-loss drugs like Ozempic slash heart ...",
+   "domain": "sciencedaily.com",
+   "snippet": "May 21, 2026 \u00b7 A massive review of over 90,000 patients found that popular GLP-1 weight-loss drugs like semaglutide significantly lowered the risk of heart attacks, strokes, heart failure, and even premature ...",
+   "kind": "web",
+   "year": 2026,
+   "n": 2
+  },
+  {
+   "url": "https://www.sciencedaily.com/releases/2025/11/251121090742.htm",
+   "title": "New evidence shows tirzepatide and semaglutide strongly ...",
+   "domain": "sciencedaily.com",
+   "snippet": "A massive real-world study comparing tirzepatide and semaglutide reveals both drugs deliver strong, early cardiovascular protection\u2014reducing heart attack, stroke, and death in adults with type 2 ...",
+   "kind": "web",
+   "year": 2025,
+   "n": 3
+  },
+  {
+   "url": "https://link.springer.com/article/10.1186/s12872-025-05278-3",
+   "title": "Cardiovascular benefits of semaglutide: a systematic review ...",
+   "domain": "link.springer.com",
+   "snippet": "Nov 21, 2025 \u00b7 These findings reinforce the role of GLP-1RAs, and semaglutide in particular, as an important therapeutic option for patients with type 2 diabetes and established cardiovascular disease, supporting their inclusion in evidence-based guideline recommendations.",
+   "kind": "web",
+   "n": 4
+  },
+  {
+   "url": "https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.126.079319",
+   "title": "Cardiovascular Risk Reduction With GLP-1 RA Drugs",
+   "domain": "ahajournals.org",
+   "snippet": "Jul 6, 2026 \u00b7 GLP-1 (glucagon-like peptide-1) receptor agonists (RAs) have emerged as a major therapeutic advance in cardiometabolic medicine. Initially developed as glucose-lowering therapies for type 2 diabetes, these agents have demonstrated broad benefits that extend well beyond glycemic control. GLP-1 RAs enhance glucose-dependent insulin secretion and reduce appetite, leading to improved glycemia and ...",
+   "kind": "web",
+   "n": 5
+  },
+  {
+   "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2307563",
+   "title": "Semaglutide and Cardiovascular Outcomes in Obesity without ...",
+   "domain": "nejm.org",
+   "snippet": "Nov 11, 2023 \u00b7 Semaglutide, a glucagon-like peptide-1 receptor agonist, has been shown to reduce the risk of adverse cardiovascular events in patients with diabetes. Whether semaglutide can reduce cardiovascular ...",
+   "kind": "web",
+   "n": 6
+  }
+ ],
+ "answer": "Yes. A large international review of 11 major cardiovascular outcome trials found that GLP-1 receptor agonists reduced the risk of major adverse cardiovascular events by about 13%, including heart attack, stroke, and cardiovascular death [2]. That review, reported May 21, 2026, followed patients on average for nearly three years, and the drugs studied included semaglutide, liraglutide, and dulaglutide [2].\n\nA real-world study reported November 21, 2025, found that both tirzepatide and semaglutide strongly protect the heart, reducing heart attack, stroke, and death in adults with type 2 diabetes [3]. The same study noted that earlier studies had already shown semaglutide lowers the likelihood of major cardiovascular events such as heart attacks and strokes [3]. It found only small differences between the two drugs in cardiovascular protection among at-risk populations [3].\n\nNetwork meta-analyses cited in a systematic review suggest semaglutide has the highest probability of cardiovascular benefits among GLP-1 receptor agonists [1]. Another network meta-analysis found semaglutide and albiglutide reduce major adverse cardiac events more than other agents in their classes [1].",
+ "abstained": false,
+ "timing": {
+  "search_s": 53.9,
+  "fetch_s": 0.0,
+  "ttft_s": 62.61,
+  "total_s": 62.61
+ },
+ "verification": {
+  "citations": [
+   {
+    "occ": 0,
+    "n": 2,
+    "marker": "[2]",
+    "claim": "A large international review of 11 major cardiovascular outcome trials found that GLP-1 receptor agonists reduced the risk of major adverse cardiovascular events by about 13%, including heart attack, stroke, and cardiovascular death .",
+    "verdict": "partial",
+    "check_verdict": "PARTIALLY SUPPORTED",
+    "quote": "Across the studies, GLP-1 receptor agonists reduced the risk of major adverse cardiovascular events by about 13%.",
+    "note": "partly supported: Passages confirm 13% MACE reduction and components, but never mention 11 trials or international sco",
+    "title": "Popular GLP-1 weight-loss drugs like Ozempic slash heart ...",
+    "domain": "sciencedaily.com",
+    "url": "https://www.sciencedaily.com/releases/2026/05/260520093731.htm",
+    "kind": "web",
+    "entailment": 0.0,
+    "judged_by": "nli+llm"
+   },
+   {
+    "occ": 1,
+    "n": 2,
+    "marker": "[2]",
+    "claim": "That review, reported May 21, 2026, followed patients on average for nearly three years, and the drugs studied included semaglutide, liraglutide, and dulaglutide .",
+    "verdict": "partial",
+    "check_verdict": "PARTIALLY SUPPORTED",
+    "quote": "GLP-1 receptor agonists include widely used medications such as semaglutide, liraglutide, and dulaglutide.",
+    "note": "the page supports part of this claim, not all of it",
+    "title": "Popular GLP-1 weight-loss drugs like Ozempic slash heart ...",
+    "domain": "sciencedaily.com",
+    "url": "https://www.sciencedaily.com/releases/2026/05/260520093731.htm",
+    "kind": "web",
+    "entailment": 0.041,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 2,
+    "n": 3,
+    "marker": "[3]",
+    "claim": "A real-world study reported November 21, 2025, found that both tirzepatide and semaglutide strongly protect the heart, reducing heart attack, stroke, and death in adults with type 2 diabetes .",
+    "verdict": "partial",
+    "check_verdict": "PARTIALLY SUPPORTED",
+    "quote": "A massive real-world study comparing tirzepatide and semaglutide reveals both drugs deliver strong, early cardiovascular protection\u2014reducing heart attack, stroke, and death in adults with type 2 diabetes.",
+    "note": "the page supports part of this claim, not all of it",
+    "title": "New evidence shows tirzepatide and semaglutide strongly ...",
+    "domain": "sciencedaily.com",
+    "url": "https://www.sciencedaily.com/releases/2025/11/251121090742.htm",
+    "kind": "web",
+    "entailment": 0.0,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 3,
+    "n": 3,
+    "marker": "[3]",
+    "claim": "The same study noted that earlier studies had already shown semaglutide lowers the likelihood of major cardiovascular events such as heart attacks and strokes .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "The study appears in Nature Medicine, and the findings were also presented at the American Heart Association Scientific Sessions 2025. Earlier studies had already shown that semaglutide lowers the likelihood of major cardiovascular events such as heart attacks and strokes.",
+    "note": "",
+    "title": "New evidence shows tirzepatide and semaglutide strongly ...",
+    "domain": "sciencedaily.com",
+    "url": "https://www.sciencedaily.com/releases/2025/11/251121090742.htm",
+    "kind": "web",
+    "entailment": 0.966,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 4,
+    "n": 3,
+    "marker": "[3]",
+    "claim": "It found only small differences between the two drugs in cardiovascular protection among at-risk populations .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "Kr\u00fcger noted that \"According to recently presented database analyses by the respective manufacturers, each company's own drug appears to reduce cardiovascular risk much more effectively than the competitor's.\" He added, \"However, our study found only small differences between tirzepatide and semaglutide in cardiovascular protection among populations at risk of adverse events, underscoring that bot",
+    "note": "",
+    "title": "New evidence shows tirzepatide and semaglutide strongly ...",
+    "domain": "sciencedaily.com",
+    "url": "https://www.sciencedaily.com/releases/2025/11/251121090742.htm",
+    "kind": "web",
+    "entailment": 0.871,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 5,
+    "n": 1,
+    "marker": "[1]",
+    "claim": "Network meta-analyses cited in a systematic review suggest semaglutide has the highest probability of cardiovascular benefits among GLP-1 receptor agonists .",
+    "verdict": "unsupported",
+    "check_verdict": "CONTRADICTED",
+    "quote": "Semaglutide, a GLP-1 receptor agonist (GLP-1RA), has shown potential in controlling type 2 diabetes due to their ability to lower blood glucose and improve cardiovascular outcomes. Although semaglutide is the newest GLP-1RA available, its cardiovascular effects have not yet been systematically reviewed. This meta-analysis adhered to a pre-registered protocol (PROSPERO ID: CRD42024538847).",
+    "note": "the source says otherwise",
+    "title": "Cardiovascular benefits of semaglutide: a systematic review ...",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371/",
+    "kind": "web",
+    "entailment": 0.015,
+    "judged_by": "nli+llm"
+   },
+   {
+    "occ": 6,
+    "n": 1,
+    "marker": "[1]",
+    "claim": "Another network meta-analysis found semaglutide and albiglutide reduce major adverse cardiac events more than other agents in their classes .",
+    "verdict": "unchecked",
+    "check_verdict": "",
+    "quote": "",
+    "note": "verification timed out",
+    "title": "Cardiovascular benefits of semaglutide: a systematic review ...",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371/",
+    "kind": "web"
+   }
+  ],
+  "counts": {
+   "partial": 3,
+   "supported": 2,
+   "unsupported": 1,
+   "unchecked": 1
+  },
+  "elapsed_s": 50.06,
+  "total_s": 112.7
+ },
+ "q": 10,
+ "seconds": 112.8
+}

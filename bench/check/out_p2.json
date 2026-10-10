@@ -1,0 +1,500 @@
+{
+  "check_id": "chk_94b2249800ab",
+  "trust_score": 38,
+  "grade": "unreliable citations",
+  "counts": {
+    "SUPPORTED": 3,
+    "PARTIALLY SUPPORTED": 0,
+    "CONTRADICTED": 0,
+    "WRONG SOURCE": 3,
+    "UNVERIFIABLE": 0,
+    "DEAD LINK": 2,
+    "NO CITATION": 0
+  },
+  "claims": [
+    {
+      "claim_id": "c1",
+      "claim": "In Python, functools.cache is a simple lightweight unbounded function cache, sometimes called memoize.",
+      "verdict": "SUPPORTED",
+      "citations": [
+        {
+          "url": "https://docs.python.org/3/library/functools.html",
+          "marker": "inline",
+          "verdict": "SUPPORTED",
+          "link_state": "live",
+          "entailment": 0.033,
+          "contradiction": 0.0,
+          "quote": "Simple lightweight unbounded function cache. Sometimes called “memoize”.",
+          "note": "reworded match: P2 exactly describes functools.cache as claimed.",
+          "judged_by": "nli+llm"
+        }
+      ],
+      "quote": "Simple lightweight unbounded function cache. Sometimes called “memoize”.",
+      "quote_url": "https://docs.python.org/3/library/functools.html",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": ""
+    },
+    {
+      "claim_id": "c2",
+      "claim": "The functools.cache decorator evicts the least recently used values once it reaches 128 entries.",
+      "verdict": "WRONG SOURCE",
+      "citations": [
+        {
+          "url": "https://docs.python.org/3/library/functools.html",
+          "marker": "inline",
+          "verdict": "WRONG SOURCE",
+          "link_state": "live",
+          "entailment": 0.048,
+          "contradiction": 0.622,
+          "quote": "",
+          "note": "the page is real but does not say this",
+          "judged_by": "nli+llm"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://docs.python.org/3/library/functools.html",
+      "replacement": null,
+      "replacement_searched": true,
+      "note": ""
+    },
+    {
+      "claim_id": "c3",
+      "claim": "The cache is threadsafe so that the wrapped function can be used in multiple threads.",
+      "verdict": "SUPPORTED",
+      "citations": [
+        {
+          "url": "https://docs.python.org/3/library/functools.html",
+          "marker": "inline",
+          "verdict": "SUPPORTED",
+          "link_state": "live",
+          "entailment": 0.99,
+          "contradiction": 0.0,
+          "quote": "The cache is threadsafe so that the wrapped function can be used in multiple threads.",
+          "note": "",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "The cache is threadsafe so that the wrapped function can be used in multiple threads.",
+      "quote_url": "https://docs.python.org/3/library/functools.html",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": ""
+    },
+    {
+      "claim_id": "c4",
+      "claim": "Go is an open-source programming language that focuses on simplicity, reliability, and efficiency.",
+      "verdict": "SUPPORTED",
+      "citations": [
+        {
+          "url": "https://go.dev/doc/effective_go",
+          "marker": "inline",
+          "verdict": "SUPPORTED",
+          "link_state": "live",
+          "entailment": 0.991,
+          "contradiction": 0.0,
+          "quote": "Go is an open-source programming language that focuses on simplicity, reliability, and efficiency, specifically designed to make it easy to build software at scale.",
+          "note": "",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "Go is an open-source programming language that focuses on simplicity, reliability, and efficiency, specifically designed to make it easy to build software at scale.",
+      "quote_url": "https://go.dev/doc/effective_go",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": ""
+    },
+    {
+      "claim_id": "c5",
+      "claim": "Go was designed by Microsoft as a replacement for C#.",
+      "verdict": "WRONG SOURCE",
+      "citations": [
+        {
+          "url": "https://go.dev/doc/effective_go",
+          "marker": "inline",
+          "verdict": "WRONG SOURCE",
+          "link_state": "live",
+          "entailment": 0.001,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "the page is real but does not say this",
+          "judged_by": "nli+llm"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://go.dev/doc/effective_go",
+      "replacement": null,
+      "replacement_searched": true,
+      "note": ""
+    },
+    {
+      "claim_id": "c6",
+      "claim": "Rust guarantees memory safety without a garbage collector.",
+      "verdict": "DEAD LINK",
+      "citations": [
+        {
+          "url": "https://doc.rust-lang.org/book/ch99-07-memory-safety-guarantees.html",
+          "marker": "inline",
+          "verdict": "DEAD LINK",
+          "link_state": "not_found",
+          "entailment": 0.0,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "page not found (404); archive check unavailable",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://doc.rust-lang.org/book/ch99-07-memory-safety-guarantees.html",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": ""
+    },
+    {
+      "claim_id": "c7",
+      "claim": "JSON support in Python is provided by the json module in the standard library.",
+      "verdict": "DEAD LINK",
+      "citations": [
+        {
+          "url": "https://www.python-json-handbook.dev/stdlib/json-module",
+          "marker": "inline",
+          "verdict": "DEAD LINK",
+          "link_state": "no_domain",
+          "entailment": 0.0,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "domain does not resolve (archive check unavailable)",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://www.python-json-handbook.dev/stdlib/json-module",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": ""
+    },
+    {
+      "claim_id": "c8",
+      "claim": "Python dictionaries preserve insertion order since Python 3.7.",
+      "verdict": "WRONG SOURCE",
+      "citations": [
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/malaria",
+          "marker": "inline",
+          "verdict": "WRONG SOURCE",
+          "link_state": "live",
+          "entailment": 0.001,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "the page is real but does not say this",
+          "judged_by": "nli+llm"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://www.who.int/news-room/fact-sheets/detail/malaria",
+      "replacement": null,
+      "replacement_searched": true,
+      "note": ""
+    }
+  ],
+  "links": [
+    {
+      "url": "https://docs.python.org/3/library/functools.html",
+      "state": "live",
+      "http_status": 200,
+      "error": "",
+      "resolved_url": "https://docs.python.org/3/library/functools.html",
+      "title": "functools — Higher-order functions and operations on callable objects — Python 3.14.8 documentation",
+      "archive_url": "",
+      "archive_timestamp": "",
+      "text_source": "live",
+      "archive_check": "",
+      "content_hash": "1b944e379f882eb3b983f97c3bcc428f6d61e8b8a717f07259bc975c1b914b58",
+      "quarantined": false
+    },
+    {
+      "url": "https://go.dev/doc/effective_go",
+      "state": "live",
+      "http_status": 200,
+      "error": "",
+      "resolved_url": "https://go.dev/doc/effective_go",
+      "title": "Effective Go - The Go Programming Language",
+      "archive_url": "",
+      "archive_timestamp": "",
+      "text_source": "live",
+      "archive_check": "",
+      "content_hash": "d492f613a8e49c6ee671a5efb1603a6a37adabd096ceb3dcb617a7990c3e355c",
+      "quarantined": false
+    },
+    {
+      "url": "https://doc.rust-lang.org/book/ch99-07-memory-safety-guarantees.html",
+      "state": "not_found",
+      "http_status": 404,
+      "error": "HTTP 404",
+      "resolved_url": "https://doc.rust-lang.org/book/ch99-07-memory-safety-guarantees.html",
+      "title": "",
+      "archive_url": "",
+      "archive_timestamp": "",
+      "text_source": "",
+      "archive_check": "unavailable",
+      "content_hash": "",
+      "quarantined": false
+    },
+    {
+      "url": "https://www.python-json-handbook.dev/stdlib/json-module",
+      "state": "no_domain",
+      "http_status": null,
+      "error": "unsafe fetch refused: DNS resolution failed for 'www.python-json-handbook.dev': [Errno -2] Name or service not known",
+      "resolved_url": "",
+      "title": "",
+      "archive_url": "",
+      "archive_timestamp": "",
+      "text_source": "",
+      "archive_check": "unavailable",
+      "content_hash": "",
+      "quarantined": false
+    },
+    {
+      "url": "https://www.who.int/news-room/fact-sheets/detail/malaria",
+      "state": "live",
+      "http_status": 200,
+      "error": "",
+      "resolved_url": "https://www.who.int/news-room/fact-sheets/detail/malaria",
+      "title": "Malaria",
+      "archive_url": "",
+      "archive_timestamp": "",
+      "text_source": "live",
+      "archive_check": "",
+      "content_hash": "88ddf64413f63ed444961cb9d4a08ecbaf8d71c05ff059b8a6aa85e2e9b1cebb",
+      "quarantined": false
+    }
+  ],
+  "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+  "elapsed_s": 89.9,
+  "usage": {
+    "fetches": 9,
+    "wayback_lookups": 4,
+    "searches": 3,
+    "llm_calls": 4,
+    "nli_checks": 9,
+    "scorer_load_ms": 12470
+  },
+  "audit_trail": [
+    {
+      "t": 0.0,
+      "event": "parse",
+      "claims": 8,
+      "citations": 8
+    },
+    {
+      "t": 0.06,
+      "event": "fetch",
+      "url": "https://www.python-json-handbook.dev/stdlib/json-module",
+      "state": "no_domain",
+      "http_status": null,
+      "chars": 0,
+      "error": "unsafe fetch refused: DNS resolution failed for 'www.python-json-handbook.dev': [Errno -2] Name or service not known"
+    },
+    {
+      "t": 0.2,
+      "event": "fetch",
+      "url": "https://doc.rust-lang.org/book/ch99-07-memory-safety-guarantees.html",
+      "state": "not_found",
+      "http_status": 404,
+      "chars": 0,
+      "error": "HTTP 404"
+    },
+    {
+      "t": 0.24,
+      "event": "fetch",
+      "url": "https://docs.python.org/3/library/functools.html",
+      "state": "live",
+      "http_status": 200,
+      "chars": 25352,
+      "error": ""
+    },
+    {
+      "t": 0.38,
+      "event": "fetch",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/malaria",
+      "state": "live",
+      "http_status": 200,
+      "chars": 12928,
+      "error": ""
+    },
+    {
+      "t": 0.45,
+      "event": "fetch",
+      "url": "https://go.dev/doc/effective_go",
+      "state": "live",
+      "http_status": 200,
+      "chars": 95813,
+      "error": ""
+    },
+    {
+      "t": 6.41,
+      "event": "wayback",
+      "url": "https://doc.rust-lang.org/book/ch99-07-memory-safety-guarantees.html",
+      "error": "RuntimeError: wayback CDX HTTP 503"
+    },
+    {
+      "t": 13.95,
+      "event": "wayback",
+      "url": "https://www.python-json-handbook.dev/stdlib/json-module",
+      "error": "ReadTimeout: HTTPSConnectionPool(host='web.archive.org', port=443): Read timed out. (read timeout=12.0)"
+    },
+    {
+      "t": 21.2,
+      "event": "paraphrase_judge",
+      "claim": "In Python, functools.cache is a simple lightweight unbounded function cache, sometimes called memoize.",
+      "verdict": "SUPPORTED",
+      "grounded": true
+    },
+    {
+      "t": 21.2,
+      "event": "verify",
+      "url": "https://docs.python.org/3/library/functools.html",
+      "claim": "In Python, functools.cache is a simple lightweight unbounded function cache, sometimes called memoize.",
+      "verdict": "SUPPORTED",
+      "ent": 0.033,
+      "con": 0.0
+    },
+    {
+      "t": 30.58,
+      "event": "paraphrase_judge",
+      "claim": "The functools.cache decorator evicts the least recently used values once it reaches 128 entries.",
+      "verdict": "NOT_SUPPORTED",
+      "grounded": false
+    },
+    {
+      "t": 30.58,
+      "event": "verify",
+      "url": "https://docs.python.org/3/library/functools.html",
+      "claim": "The functools.cache decorator evicts the least recently used values once it reaches 128 entries.",
+      "verdict": "WRONG SOURCE",
+      "ent": 0.048,
+      "con": 0.622
+    },
+    {
+      "t": 34.28,
+      "event": "verify",
+      "url": "https://docs.python.org/3/library/functools.html",
+      "claim": "The cache is threadsafe so that the wrapped function can be used in multiple threads.",
+      "verdict": "SUPPORTED",
+      "ent": 0.99,
+      "con": 0.0
+    },
+    {
+      "t": 37.39,
+      "event": "verify",
+      "url": "https://go.dev/doc/effective_go",
+      "claim": "Go is an open-source programming language that focuses on simplicity, reliability, and efficiency.",
+      "verdict": "SUPPORTED",
+      "ent": 0.991,
+      "con": 0.0
+    },
+    {
+      "t": 45.0,
+      "event": "paraphrase_judge",
+      "claim": "Go was designed by Microsoft as a replacement for C#.",
+      "verdict": "NOT_SUPPORTED",
+      "grounded": true
+    },
+    {
+      "t": 45.0,
+      "event": "verify",
+      "url": "https://go.dev/doc/effective_go",
+      "claim": "Go was designed by Microsoft as a replacement for C#.",
+      "verdict": "WRONG SOURCE",
+      "ent": 0.001,
+      "con": 0.0
+    },
+    {
+      "t": 52.31,
+      "event": "paraphrase_judge",
+      "claim": "Python dictionaries preserve insertion order since Python 3.7.",
+      "verdict": "NOT_SUPPORTED",
+      "grounded": true
+    },
+    {
+      "t": 52.31,
+      "event": "verify",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/malaria",
+      "claim": "Python dictionaries preserve insertion order since Python 3.7.",
+      "verdict": "WRONG SOURCE",
+      "ent": 0.001,
+      "con": 0.0
+    },
+    {
+      "t": 53.54,
+      "event": "search",
+      "query": "The functools.cache decorator evicts the least recently used values once it reaches 128 entries.",
+      "hits": 6
+    },
+    {
+      "t": 53.83,
+      "event": "fetch",
+      "url": "https://runebook.dev/en/docs/python/library/functools/functools.lru_cache",
+      "state": "live",
+      "http_status": 200,
+      "chars": 6162,
+      "error": ""
+    },
+    {
+      "t": 56.72,
+      "event": "fetch",
+      "url": "https://openpython.org/articles/python-functools-module-guide",
+      "state": "live",
+      "http_status": 200,
+      "chars": 66,
+      "error": ""
+    },
+    {
+      "t": 62.35,
+      "event": "wayback",
+      "url": "https://openpython.org/articles/python-functools-module-guide",
+      "error": "RuntimeError: wayback CDX HTTP 503"
+    },
+    {
+      "t": 62.6,
+      "event": "fetch",
+      "url": "https://realpython.com/lru-cache-python/",
+      "state": "blocked",
+      "http_status": 403,
+      "chars": 0,
+      "error": "HTTP 403"
+    },
+    {
+      "t": 63.51,
+      "event": "wayback",
+      "url": "https://realpython.com/lru-cache-python/",
+      "archived": true,
+      "snapshot": "http://web.archive.org/web/20260810144959/https://realpython.com/lru-cache-python/"
+    },
+    {
+      "t": 64.18,
+      "event": "archive_fetch",
+      "url": "https://web.archive.org/web/20260810144959id_/https://realpython.com/lru-cache-python/",
+      "ok": true,
+      "chars": 28885,
+      "error": ""
+    },
+    {
+      "t": 74.39,
+      "event": "search",
+      "query": "Go was designed by Microsoft as a replacement for C#.",
+      "hits": 0
+    },
+    {
+      "t": 89.92,
+      "event": "search",
+      "query": "Python dictionaries preserve insertion order since Python 3.7.",
+      "hits": 0
+    },
+    {
+      "t": 89.92,
+      "event": "done",
+      "trust_score": 38
+    }
+  ]
+}

@@ -1,0 +1,439 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_61b3cdfca89b",
+ "trust_score": 50,
+ "grade": "unreliable citations",
+ "counts": {
+  "SUPPORTED": 0,
+  "PARTIALLY SUPPORTED": 4,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 0,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 10
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "Microplastics have been detected in human blood and in tissues including the lungs, placenta, brain, and blood vessels.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "Finding them in the body shows exposure, but doesn\u2019t by itself prove they cause disease.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "The health evidence is still limited, and many proposed effects come from animal or laboratory studies rather than studies that can establish harm in people.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://med.stanford.edu/news/insights/2025/01/microplastics-in-body-polluted-tiny-plastic-fragments.html",
+     "marker": "[1]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.935,
+     "contradiction": 0.0,
+     "quote": "Studies in animals and human cells suggest microplastics exposure could be linked to cancer, heart attacks, reproductive problems and a host of other harms. Yet few studies have directly examined the impact of microplastics on human health, leaving us in the dark about how dangerous they really are. While avoiding microplastics is impossible, experts at Stanford Medicine point out that individuals",
+     "note": "only a short or loosely matching passage supports this",
+     "judged_by": "nli",
+     "source_type": "academic",
+     "source_year": 2025
+    },
+    {
+     "url": "https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2025.1606332/full",
+     "marker": "[3]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "Given the scarcity of data on direct human health impacts, literature on risk assessment methodologies remains limited.",
+     "note": "the page supports part of this claim, not all of it",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Studies in animals and human cells suggest microplastics exposure could be linked to cancer, heart attacks, reproductive problems and a host of other harms. Yet few studies have directly examined the impact of microplastics on human health, leaving us in the dark about how dangerous they really are. While avoiding microplastics is impossible, experts at Stanford Medicine point out that individuals",
+   "quote_url": "https://med.stanford.edu/news/insights/2025/01/microplastics-in-body-polluted-tiny-plastic-fragments.html",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4.1",
+   "claim": "The clearest human warning signal so far is cardiovascular.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4.2",
+   "claim": "A 2024 study of people having surgery to remove artery plaque found that those with plastic particles detected in the plaque had higher rates of heart attack, stroke, or death during follow-up.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5",
+   "claim": "This was an association, however, and does not establish that the particles caused those outcomes.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://med.stanford.edu/news/insights/2025/01/microplastics-in-body-polluted-tiny-plastic-fragments.html",
+     "marker": "[1]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.936,
+     "contradiction": 0.0,
+     "quote": "However, Meister cautions that it's unclear how the amount of microplastics in urine relates to that in the body, and that the Blueprint tests lack transparency about its methods.",
+     "note": "only a short or loosely matching passage supports this",
+     "judged_by": "nli",
+     "source_type": "academic",
+     "source_year": 2025
+    }
+   ],
+   "quote": "However, Meister cautions that it's unclear how the amount of microplastics in urine relates to that in the body, and that the Blueprint tests lack transparency about its methods.",
+   "quote_url": "https://med.stanford.edu/news/insights/2025/01/microplastics-in-body-polluted-tiny-plastic-fragments.html",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6",
+   "claim": "Other possible effects under investigation include inflammation and damage to cells, and impacts on reproductive, digestive, and respiratory health.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c7",
+   "claim": "Researchers are also studying possible links with cancer and effects on pregnancy and development.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c8",
+   "claim": "These remain potential risks\u2014not confirmed effects in humans.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://med.stanford.edu/news/insights/2025/01/microplastics-in-body-polluted-tiny-plastic-fragments.html",
+     "marker": "[1]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.971,
+     "contradiction": 0.0,
+     "quote": "Nor do studies exist on the direct dangers of microplastics in humans.",
+     "note": "only a short or loosely matching passage supports this",
+     "judged_by": "nli",
+     "source_type": "academic",
+     "source_year": 2025
+    },
+    {
+     "url": "https://www.eea.europa.eu/en/european-zero-pollution-dashboards/indicators/impacts-of-microplastics-on-health-signal",
+     "marker": "[2]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "blocked",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "page exists but could not be read (RuntimeError: response body exceeded byte cap); archive check unavailable",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "Nor do studies exist on the direct dangers of microplastics in humans.",
+   "quote_url": "https://med.stanford.edu/news/insights/2025/01/microplastics-in-body-polluted-tiny-plastic-fragments.html",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c9.1",
+   "claim": "Microplastics are widespread in people.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c9.2",
+   "claim": "There are plausible reasons for concern.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c9.3",
+   "claim": "Current research cannot yet say what levels of exposure cause harm.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c9.4",
+   "claim": "Current research cannot yet quantify an individual\u2019s risk.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c10",
+   "claim": "Studies vary in how they measure particles, and major evidence gaps remain.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2025.1606332/full",
+     "marker": "[3]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.994,
+     "contradiction": 0.0,
+     "quote": "In vivo studies with animal models confirm minimal absorption in healthy skin but suggest that damaged or inflamed skin may allow deeper penetration, particularly of smaller particles (Liu and You, 2023). Key knowledge gaps include a lack of standardized testing methods, limited data on chronic exposure, and insufficient understanding of how MP size, shape, and surface chemistry affect absorption.",
+     "note": "only a short or loosely matching passage supports this",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "In vivo studies with animal models confirm minimal absorption in healthy skin but suggest that damaged or inflamed skin may allow deeper penetration, particularly of smaller particles (Liu and You, 2023). Key knowledge gaps include a lack of standardized testing methods, limited data on chronic exposure, and insufficient understanding of how MP size, shape, and surface chemistry affect absorption.",
+   "quote_url": "https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2025.1606332/full",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://med.stanford.edu/news/insights/2025/01/microplastics-in-body-polluted-tiny-plastic-fragments.html",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://med.stanford.edu/news/insights/2025/01/microplastics-in-body-polluted-tiny-plastic-fragments.html",
+   "title": "Microplastics and our health: What the science says",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "d216b6a5781a1c86b4e691f4eeea4c36fa5b7ac250e0529404daeb90f14af7a2",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2025.1606332/full",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2025.1606332/full",
+   "title": "Frontiers | A review of microplastic pollution and human health risk assessment: current knowledge and future outlook",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "36c8375a0227347c712a573a583a5b94cbd9c8e030339b185c44c78f404127eb",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.eea.europa.eu/en/european-zero-pollution-dashboards/indicators/impacts-of-microplastics-on-health-signal",
+   "state": "blocked",
+   "http_status": null,
+   "error": "RuntimeError: response body exceeded byte cap",
+   "resolved_url": "",
+   "title": "",
+   "archive_url": "http://web.archive.org/web/20261006141723/https://www.eea.europa.eu/en/european-zero-pollution-dashboards/indicators/impacts-of-microplastics-on-health-signal",
+   "archive_timestamp": "20261006141723",
+   "text_source": "",
+   "archive_check": "archived",
+   "content_hash": "",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 59.4,
+ "usage": {
+  "fetches": 4,
+  "wayback_lookups": 1,
+  "searches": 0,
+  "llm_calls": 2,
+  "nli_checks": 7,
+  "scorer_load_ms": 1945
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 10,
+   "citations": 6
+  },
+  {
+   "t": 16.12,
+   "event": "fetch",
+   "url": "https://med.stanford.edu/news/insights/2025/01/microplastics-in-body-polluted-tiny-plastic-fragments.html",
+   "state": "live",
+   "http_status": 200,
+   "chars": 12828,
+   "error": ""
+  },
+  {
+   "t": 16.38,
+   "event": "fetch",
+   "url": "https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2025.1606332/full",
+   "state": "live",
+   "http_status": 200,
+   "chars": 86460,
+   "error": ""
+  },
+  {
+   "t": 21.98,
+   "event": "fetch",
+   "url": "https://www.eea.europa.eu/en/european-zero-pollution-dashboards/indicators/impacts-of-microplastics-on-health-signal",
+   "state": "blocked",
+   "http_status": null,
+   "chars": 0,
+   "error": "RuntimeError: response body exceeded byte cap"
+  },
+  {
+   "t": 23.69,
+   "event": "wayback",
+   "url": "https://www.eea.europa.eu/en/european-zero-pollution-dashboards/indicators/impacts-of-microplastics-on-health-signal",
+   "archived": true,
+   "snapshot": "http://web.archive.org/web/20261006141723/https://www.eea.europa.eu/en/european-zero-pollution-dashboards/indicators/impacts-of-microplastics-on-health-signal"
+  },
+  {
+   "t": 24.51,
+   "event": "archive_fetch",
+   "url": "https://web.archive.org/web/20261006141723id_/https://www.eea.europa.eu/en/european-zero-pollution-dashboards/indicators/impacts-of-microplastics-on-health-signal",
+   "ok": false,
+   "chars": 0,
+   "error": "RuntimeError: response body exceeded byte cap"
+  },
+  {
+   "t": 29.14,
+   "event": "verify",
+   "url": "https://med.stanford.edu/news/insights/2025/01/microplastics-in-body-polluted-tiny-plastic-fragments.html",
+   "claim": "The health evidence is still limited, and many proposed effects come from animal or laboratory studies rather than studi",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.935,
+   "con": 0.0
+  },
+  {
+   "t": 42.93,
+   "event": "verify",
+   "url": "https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2025.1606332/full",
+   "claim": "The health evidence is still limited, and many proposed effects come from animal or laboratory studies rather than studi",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 50.72,
+   "event": "verify",
+   "url": "https://med.stanford.edu/news/insights/2025/01/microplastics-in-body-polluted-tiny-plastic-fragments.html",
+   "claim": "This was an association, however, and does not establish that the particles caused those outcomes.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.936,
+   "con": 0.0
+  },
+  {
+   "t": 54.75,
+   "event": "verify",
+   "url": "https://med.stanford.edu/news/insights/2025/01/microplastics-in-body-polluted-tiny-plastic-fragments.html",
+   "claim": "These remain potential risks\u2014not confirmed effects in humans.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.971,
+   "con": 0.0
+  },
+  {
+   "t": 59.37,
+   "event": "verify",
+   "url": "https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2025.1606332/full",
+   "claim": "Studies vary in how they measure particles, and major evidence gaps remain.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.994,
+   "con": 0.0
+  },
+  {
+   "t": 59.38,
+   "event": "done",
+   "trust_score": 50
+  }
+ ],
+ "score_s": 61.4
+}

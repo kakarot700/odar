@@ -1,0 +1,301 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_d980e804f0e8",
+ "trust_score": 0,
+ "grade": "unreliable citations",
+ "counts": {
+  "SUPPORTED": 0,
+  "PARTIALLY SUPPORTED": 0,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 1,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 7
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "75% efficacy when doses were timed before the high-transmission season.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "68% efficacy with an age-based schedule in areas with year-round transmission.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "Among children aged 5\u201317 months, average efficacy across sites was 78% over the first year.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4",
+   "claim": "A booster dose given about a year later helped maintain protection for at least another 6\u201312 months.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5.1",
+   "claim": "The vaccine was generally well tolerated.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5.2",
+   "claim": "Fever and injection-site pain were among the most common reactions.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5.3",
+   "claim": "The trial reported no treatment-related deaths.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6",
+   "claim": "These figures describe protection against clinical malaria in the trial\u2014not complete prevention of infection or a guarantee of the same effect in every setting.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://www.who.int/groups/global-advisory-committee-on-vaccine-safety/topics/malaria-vaccines/r21-matrix-m-vaccine",
+     "marker": "[1]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.006,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "organization",
+     "source_year": null
+    },
+    {
+     "url": "https://www.ox.ac.uk/news/2024-02-01-new-phase-3-trial-data-confirm-uniquely-high-efficacy-and-good-safety-profile",
+     "marker": "[2]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "archived_only",
+     "entailment": 0.006,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this (verified against the Wayback Machine copy; live page is gone)",
+     "judged_by": "nli",
+     "source_type": "academic",
+     "source_year": 2024
+    },
+    {
+     "url": "https://ir.novavax.com/press-releases/R21-Matrix-M-TM-Malaria-Vaccine-Phase-3-Trial-Results-Published-in-The-Lancet",
+     "marker": "[3]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.001,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.who.int/groups/global-advisory-committee-on-vaccine-safety/topics/malaria-vaccines/r21-matrix-m-vaccine",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://www.who.int/groups/global-advisory-committee-on-vaccine-safety/topics/malaria-vaccines/r21-matrix-m-vaccine",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.who.int/groups/global-advisory-committee-on-vaccine-safety/topics/malaria-vaccines/r21-matrix-m-vaccine",
+   "title": "R21/Matrix-M vaccine",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "8ecbc98cfded4e9dfe7ea6bcfc171ba743d6b72d97e6428131989d7d2567268c",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.ox.ac.uk/news/2024-02-01-new-phase-3-trial-data-confirm-uniquely-high-efficacy-and-good-safety-profile",
+   "state": "archived_only",
+   "http_status": 403,
+   "error": "HTTP 403",
+   "resolved_url": "https://www.ox.ac.uk/news/2024-02-01-new-phase-3-trial-data-confirm-uniquely-high-efficacy-and-good-safety-profile",
+   "title": "",
+   "archive_url": "http://web.archive.org/web/20260902090811/https://www.ox.ac.uk/news/2024-02-01-new-phase-3-trial-data-confirm-uniquely-high-efficacy-and-good-safety-profile",
+   "archive_timestamp": "20260902090811",
+   "text_source": "wayback",
+   "archive_check": "archived",
+   "content_hash": "4b1269f703309c845ce9efd1088cab91d76151400055a00097b14f16982ee17f",
+   "quarantined": false
+  },
+  {
+   "url": "https://ir.novavax.com/press-releases/R21-Matrix-M-TM-Malaria-Vaccine-Phase-3-Trial-Results-Published-in-The-Lancet",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://ir.novavax.com/press-releases/R21-Matrix-M-TM-Malaria-Vaccine-Phase-3-Trial-Results-Published-in-The-Lancet",
+   "title": "R21/Matrix-M\u2122 Malaria Vaccine Phase 3 Trial Results Published in The Lancet - Feb 2, 2024",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "386401cd34c4015abcedfeb6279a591b7d78c981c8bc07a2aed3f69518b1dcb5",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 21.0,
+ "usage": {
+  "fetches": 4,
+  "wayback_lookups": 1,
+  "searches": 0,
+  "llm_calls": 1,
+  "nli_checks": 3,
+  "scorer_load_ms": 1465
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 6,
+   "citations": 3
+  },
+  {
+   "t": 5.22,
+   "event": "fetch",
+   "url": "https://www.who.int/groups/global-advisory-committee-on-vaccine-safety/topics/malaria-vaccines/r21-matrix-m-vaccine",
+   "state": "live",
+   "http_status": 200,
+   "chars": 8162,
+   "error": ""
+  },
+  {
+   "t": 5.28,
+   "event": "fetch",
+   "url": "https://ir.novavax.com/press-releases/R21-Matrix-M-TM-Malaria-Vaccine-Phase-3-Trial-Results-Published-in-The-Lancet",
+   "state": "live",
+   "http_status": 200,
+   "chars": 4765,
+   "error": ""
+  },
+  {
+   "t": 5.32,
+   "event": "fetch",
+   "url": "https://www.ox.ac.uk/news/2024-02-01-new-phase-3-trial-data-confirm-uniquely-high-efficacy-and-good-safety-profile",
+   "state": "blocked",
+   "http_status": 403,
+   "chars": 0,
+   "error": "HTTP 403"
+  },
+  {
+   "t": 9.35,
+   "event": "wayback",
+   "url": "https://www.ox.ac.uk/news/2024-02-01-new-phase-3-trial-data-confirm-uniquely-high-efficacy-and-good-safety-profile",
+   "archived": true,
+   "snapshot": "http://web.archive.org/web/20260902090811/https://www.ox.ac.uk/news/2024-02-01-new-phase-3-trial-data-confirm-uniquely-high-efficacy-and-good-safety-profile"
+  },
+  {
+   "t": 10.29,
+   "event": "archive_fetch",
+   "url": "https://web.archive.org/web/20260902090811id_/https://www.ox.ac.uk/news/2024-02-01-new-phase-3-trial-data-confirm-uniquely-high-efficacy-and-good-safety-profile",
+   "ok": true,
+   "chars": 5221,
+   "error": ""
+  },
+  {
+   "t": 14.15,
+   "event": "verify",
+   "url": "https://www.who.int/groups/global-advisory-committee-on-vaccine-safety/topics/malaria-vaccines/r21-matrix-m-vaccine",
+   "claim": "These figures describe protection against clinical malaria in the trial\u2014not complete prevention of infection or a guaran",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.006,
+   "con": 0.0
+  },
+  {
+   "t": 17.77,
+   "event": "verify",
+   "url": "https://www.ox.ac.uk/news/2024-02-01-new-phase-3-trial-data-confirm-uniquely-high-efficacy-and-good-safety-profile",
+   "claim": "These figures describe protection against clinical malaria in the trial\u2014not complete prevention of infection or a guaran",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.006,
+   "con": 0.0
+  },
+  {
+   "t": 21.03,
+   "event": "verify",
+   "url": "https://ir.novavax.com/press-releases/R21-Matrix-M-TM-Malaria-Vaccine-Phase-3-Trial-Results-Published-in-The-Lancet",
+   "claim": "These figures describe protection against clinical malaria in the trial\u2014not complete prevention of infection or a guaran",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.001,
+   "con": 0.0
+  },
+  {
+   "t": 21.03,
+   "event": "done",
+   "trust_score": 0
+  }
+ ],
+ "score_s": 22.5
+}

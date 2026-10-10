@@ -1,0 +1,204 @@
+{
+ "thread_id": "5e2aec2898fd781f",
+ "share_token": "s42_3MXY_qKwr3pY",
+ "title": "How effective is the R21/Matrix-M malaria vaccine in clinical trials?",
+ "project_id": "",
+ "sources": [
+  {
+   "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(23)02511-4/fulltext",
+   "title": "Safety and efficacy of malaria vaccine candidate R21/Matrix-M ...",
+   "domain": "thelancet.com",
+   "snippet": "Feb 10, 2024 \u00b7 R21/Matrix-M was well tolerated and offered high efficacy against clinical malaria in African children. This low-cost, high-efficacy vaccine is already licensed by several African countries, and recently received a WHO policy recommendation and prequalification, offering large-scale supply to help reduce the great burden of malaria in sub-Saharan Africa.",
+   "kind": "web",
+   "n": 1
+  },
+  {
+   "url": "https://www.mdpi.com/2076-393X/14/9/824",
+   "title": "Efficacy and Response of R21/Matrix-M in Malaria Vaccine: A ...",
+   "domain": "mdpi.com",
+   "snippet": "Sep 19, 2026 \u00b7 Background: R21/Matrix-M is a pre-erythrocytic malaria vaccine supported by a growing body of field-efficacy, immunogenicity, safety, controlled-challenge, and implementation evidence. We synthesized the contemporary human evidence and quantified protection against naturally acquired clinical malaria.",
+   "kind": "web",
+   "n": 2
+  },
+  {
+   "url": "https://www.sciencedirect.com/science/article/pii/S1876034126000948",
+   "title": "Efficacy and immunogenicity of RTS,S/AS01 and R21/Matrix-M ...",
+   "domain": "sciencedirect.com",
+   "snippet": "Jun 1, 2026 \u00b7 While RTS,S/AS01 and R21/Matrix-M represent significant milestones in malaria vaccine development, their reported efficacy and immunogenicity have varied across clinical trials conducted in different populations and settings.",
+   "kind": "web",
+   "n": 3
+  },
+  {
+   "url": "https://link.springer.com/article/10.1186/s13063-025-09048-6",
+   "title": "Seasonal mass vaccination with R21/Matrix-M for malaria ...",
+   "domain": "link.springer.com",
+   "snippet": "Sep 29, 2025 \u00b7 Introduction Progress in malaria control has stalled since 2015, highlighting the need for new control tools. The R21/Matrix-M (R21) malaria vaccine, a pre-erythrocytic vaccine recently approved by WHO for small children, may be one of these tools. This trial aims to assess whether seasonal mass vaccination with R21 reduces malaria transmission in The Gambia and Burkina Faso, two countries at ...",
+   "kind": "web",
+   "n": 4
+  },
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+   "title": "A perspective on Oxford\u2019s R21/Matrix-M\u2122 malaria vaccine and ...",
+   "domain": "pmc.ncbi.nlm.nih.gov",
+   "snippet": "Notably, the R21/Matrix-M vaccine boasts higher efficacy than previous malaria vaccines, offering up to 77% protection against the malaria parasite in clinical trials.",
+   "kind": "web",
+   "n": 5
+  },
+  {
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42797644/",
+   "title": "Efficacy and Response of R21/Matrix-M in Malaria Vaccine: A ...",
+   "domain": "pubmed.ncbi.nlm.nih.gov",
+   "snippet": "Sep 19, 2026 \u00b7 Abstract Background: R21/Matrix-M is a pre-erythrocytic malaria vaccine supported by a growing body of field-efficacy, immunogenicity, safety, controlled-challenge, and implementation evidence. We synthesized the contemporary human evidence and quantified protection against naturally acquired clinical malaria.",
+   "kind": "web",
+   "n": 6
+  }
+ ],
+ "answer": "The R21/Matrix-M vaccine has shown high efficacy in clinical trials, though reported figures vary by trial and setting. One summary states that R21/Matrix-M was well tolerated and offered high efficacy against clinical malaria in African children [1]. Another source notes that its reported efficacy and immunogenicity have varied across clinical trials conducted in different populations and settings [3].\n\nAccording to a perspective paper, the vaccine demonstrated remarkable efficacy, reaching 77% effectiveness in Phase 2 clinical trials [5]. In Phase 3 trials, the 12-month vaccine efficacy was 75% in locations characterized by seasonal variations and 68% in standard locations [5]. Against multiple clinical malaria episodes, the efficacy was 75% at the seasonal sites and 67% at the standard sites [5]. The same source also says the vaccine offers up to 77% protection against the malaria parasite in clinical trials [5]. Two other sources describe R21/Matrix-M as supported by field-efficacy and immunogenicity evidence, but their snippets do not give specific efficacy numbers [2][6].",
+ "abstained": false,
+ "timing": {
+  "search_s": 0.61,
+  "fetch_s": 1.32,
+  "ttft_s": 11.3,
+  "total_s": 11.3
+ },
+ "verification": {
+  "citations": [
+   {
+    "occ": 0,
+    "n": 1,
+    "marker": "[1]",
+    "claim": "One summary states that R21/Matrix-M was well tolerated and offered high efficacy against clinical malaria in African children .",
+    "verdict": "partial",
+    "check_verdict": "PARTIALLY SUPPORTED",
+    "quote": "Feb 10, 2024 \u00b7 R21/Matrix-M was well tolerated and offered high efficacy against clinical malaria in African children.",
+    "note": "the page supports part of this claim, not all of it",
+    "title": "Safety and efficacy of malaria vaccine candidate R21/Matrix-M ...",
+    "domain": "thelancet.com",
+    "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(23)02511-4/fulltext",
+    "kind": "web",
+    "entailment": 0.193,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 1,
+    "n": 3,
+    "marker": "[3]",
+    "claim": "Another source notes that its reported efficacy and immunogenicity have varied across clinical trials conducted in different populations and settings .",
+    "verdict": "partial",
+    "check_verdict": "PARTIALLY SUPPORTED",
+    "quote": "Jun 1, 2026 \u00b7 While RTS,S/AS01 and R21/Matrix-M represent significant milestones in malaria vaccine development, their reported efficacy and immunogenicity have varied across clinical trials conducted in different populations and settings.",
+    "note": "the page supports part of this claim, not all of it",
+    "title": "Efficacy and immunogenicity of RTS,S/AS01 and R21/Matrix-M ...",
+    "domain": "sciencedirect.com",
+    "url": "https://www.sciencedirect.com/science/article/pii/S1876034126000948",
+    "kind": "web",
+    "entailment": 0.002,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 2,
+    "n": 5,
+    "marker": "[5]",
+    "claim": "According to a perspective paper, the vaccine demonstrated remarkable efficacy, reaching 77% effectiveness in Phase 2 clinical trials .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "Developed through a collaboration between the University of Oxford and Novavax, this vaccine has demonstrated remarkable efficacy, reaching 77% effectiveness in Phase 2 clinical trials. It is designed to be low-dose, cost-effective, and accessible, with approval for use in children under three years old. This perspective paper critically examines the R21/Matrix-M malaria vaccine, its development, ",
+    "note": "",
+    "title": "A perspective on Oxford\u2019s R21/Matrix-M\u2122 malaria vaccine and ...",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+    "kind": "web",
+    "entailment": 0.994,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 3,
+    "n": 5,
+    "marker": "[5]",
+    "claim": "In Phase 3 trials, the 12-month vaccine efficacy was 75% in locations characterized by seasonal variations and 68% in standard locations .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "Notably, phase 3 clinical trials have shown the R21/Matrix-M 12-month Vaccine Efficacy (VE) to be 75% in locations characterized by seasonal variations, while it registered at 68% in standard locations [1].",
+    "note": "",
+    "title": "A perspective on Oxford\u2019s R21/Matrix-M\u2122 malaria vaccine and ...",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+    "kind": "web",
+    "entailment": 0.997,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 4,
+    "n": 5,
+    "marker": "[5]",
+    "claim": "Against multiple clinical malaria episodes, the efficacy was 75% at the seasonal sites and 67% at the standard sites .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "Specifically, over 12 months, VE for the time leading up to the initial clinical malaria episode was 75% in the seasonal sites and 68% in the standard sites [1]. Similarly, VE against multiple clinical malaria episodes exhibited comparable figures: 75% in the seasonal sites and 67% in the standard sites. A parallel decline in efficacy over the initial year of follow-up was observed at both seasona",
+    "note": "another passage on the page may disagree: \"Notably, phase 3 clinical trials have shown the R21/Matrix-M 12-month Vaccine Efficacy (VE) to be 75% in locations characterized by seasonal variations, while i\"",
+    "title": "A perspective on Oxford\u2019s R21/Matrix-M\u2122 malaria vaccine and ...",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+    "kind": "web",
+    "entailment": 0.975,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 5,
+    "n": 5,
+    "marker": "[5]",
+    "claim": "The same source also says the vaccine offers up to 77% protection against the malaria parasite in clinical trials .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "Notably, the R21/Matrix-M vaccine boasts higher efficacy than previous malaria vaccines, offering up to 77% protection against the malaria parasite in clinical trials.",
+    "note": "reworded match: Passages state the vaccine offers up to 77% protection in clinical trials, verbatim.",
+    "title": "A perspective on Oxford\u2019s R21/Matrix-M\u2122 malaria vaccine and ...",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+    "kind": "web",
+    "entailment": 0.0,
+    "judged_by": "nli+llm"
+   },
+   {
+    "occ": 6,
+    "n": 2,
+    "marker": "[2]",
+    "claim": "Two other sources describe R21/Matrix-M as supported by field-efficacy and immunogenicity evidence, but their snippets do not give specific efficacy numbers .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "R21/Matrix-M is a pre-erythrocytic malaria vaccine supported by a growing body of field-efficacy, immunogenicity, safety, controlled-challenge, and implementation evidence.",
+    "note": "reworded match: Both passages state field-efficacy and immunogenicity support; no specific numbers given.",
+    "title": "Efficacy and Response of R21/Matrix-M in Malaria Vaccine: A ...",
+    "domain": "mdpi.com",
+    "url": "https://www.mdpi.com/2076-393X/14/9/824",
+    "kind": "web",
+    "entailment": 0.0,
+    "judged_by": "nli+llm"
+   },
+   {
+    "occ": 7,
+    "n": 6,
+    "marker": "[6]",
+    "claim": "Two other sources describe R21/Matrix-M as supported by field-efficacy and immunogenicity evidence, but their snippets do not give specific efficacy numbers .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "R21/Matrix-M is a pre-erythrocytic malaria vaccine supported by a growing body of field-efficacy, immunogenicity, safety, controlled-challenge, and implementation evidence.",
+    "note": "reworded match: Two snippets state this support and include no efficacy figures.",
+    "title": "Efficacy and Response of R21/Matrix-M in Malaria Vaccine: A ...",
+    "domain": "pubmed.ncbi.nlm.nih.gov",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42797644/",
+    "kind": "web",
+    "entailment": 0.0,
+    "judged_by": "nli+llm"
+   }
+  ],
+  "counts": {
+   "partial": 2,
+   "supported": 6
+  },
+  "elapsed_s": 66.56,
+  "total_s": 77.87
+ },
+ "q": 2,
+ "seconds": 78.0
+}
