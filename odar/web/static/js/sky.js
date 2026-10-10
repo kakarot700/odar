@@ -1,6 +1,7 @@
 // The live sky behind everything: a gradient that follows the local time of day
 // (night, dawn, day, golden hour, dusk) with a few soft clouds drifting slowly.
-// Drawn on a small canvas and scaled up (cheap and naturally soft); it pauses while the
+// Drawn at half the device resolution (DPR capped at 2) with high-quality smoothing, so
+// gradients stay clean without banding or mud; it pauses while the
 // tab is hidden and is a still picture under prefers-reduced-motion.
 // ?sky=dawn|day|golden|dusk|night pins the sky (kept for the session, handy for screenshots).
 
@@ -50,7 +51,14 @@ export function skyAt(hour, pin = forced()) {
 const now = () => { const d = new Date(); return d.getHours() + d.getMinutes() / 60 + d.getSeconds() / 3600; };
 
 let canvas, ctx, W = 0, H = 0, sky = null, clouds = [], raf = 0, last = 0, onTone = null, lastTone = null;
-const SCALE = 0.25; // draw at quarter resolution; the browser's upscale softens the clouds
+// Backing-store scale: half the (capped) device pixel ratio, i.e. 1:1 CSS px on a retina
+// phone. Soft clouds need no more than that, and the pixel budget keeps big screens cheap.
+const MAX_PX = 1.3e6;
+const scale = () => {
+  const s = Math.min(2, window.devicePixelRatio || 1) * 0.5;
+  const px = innerWidth * innerHeight * s * s;
+  return px > MAX_PX ? s * Math.sqrt(MAX_PX / px) : s;
+};
 const reduced = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 function seedClouds() {
@@ -60,9 +68,11 @@ function seedClouds() {
 }
 
 function resize() {
-  W = Math.max(40, Math.round(innerWidth * SCALE));
-  H = Math.max(40, Math.round(innerHeight * SCALE));
+  const k = scale();
+  W = Math.max(40, Math.round(innerWidth * k));
+  H = Math.max(40, Math.round(innerHeight * k));
   canvas.width = W; canvas.height = H;
+  ctx.imageSmoothingEnabled = true; ctx.imageSmoothingQuality = "high";
 }
 
 function draw() {
