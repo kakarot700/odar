@@ -199,3 +199,23 @@ burst, so "time to first token" is close to the full answer time; the UI shows a
 ## Chrome extension
 
 See `extension/README.md`: right-click selected text → Check citations with ODAR.
+
+## Screenshots
+
+Captured with Playwright against a local `odar serve` (390x844 phone at 2x, 1440x900 desktop).
+
+| Home | Chat | Citation receipt | Projects |
+|---|---|---|---|
+| ![Home](screenshots/mobile-home.jpg) | ![Chat](screenshots/mobile-chat.jpg) | ![Receipt](screenshots/mobile-receipt.jpg) | ![Projects](screenshots/mobile-projects.jpg) |
+
+![Desktop Home](screenshots/desktop-home.jpg)
+
+![Desktop Chat](screenshots/desktop-chat.jpg)
+
+### Before and after the redesign
+
+First texting-style frontend (d788d8e) next to the current one after the clarity, smoothness and detailing passes (722fdf0).
+
+![Chat, before and after](screenshots/before-after-chat.jpg)
+
+![Home, before and after](screenshots/before-after-home.jpg)

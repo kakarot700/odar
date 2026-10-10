@@ -6,6 +6,21 @@ ODAR can use a native Anthropic Messages tool-use controller when configured wit
 
 > The implementation and its verification boundaries are documented in [Architecture](docs/ARCHITECTURE.md), [Security](docs/SECURITY.md), [Operations](docs/OPERATIONS.md), and the [Production Readiness audit](docs/PRODUCTION_READINESS.md). That audit distinguishes verified, partially verified, implemented, and out-of-scope items; it is not a blanket production certification.
 
+## Screenshots
+
+The web app (`odar serve`) is one continuous chat: answers stream in with inline citations, a trust score, and source cards you can open to check the quoted passage.
+
+<p>
+  <img src="docs/screenshots/mobile-home.jpg" width="200" alt="ODAR Home on mobile">
+  <img src="docs/screenshots/mobile-chat.jpg" width="200" alt="ODAR answer with citations and source cards">
+  <img src="docs/screenshots/mobile-receipt.jpg" width="200" alt="ODAR citation receipt">
+  <img src="docs/screenshots/mobile-projects.jpg" width="200" alt="ODAR Projects">
+</p>
+
+<img src="docs/screenshots/desktop-chat.jpg" width="820" alt="ODAR chat on desktop">
+
+More views, and before/after comparisons of the redesign, are in [docs/WEB.md](docs/WEB.md#screenshots).
+
 ## How a research run works
 
 The research loop is stateful rather than a fixed sequence. The controller proposes an action from a bounded vocabulary; the engine routes side effects through `GovernedExecutor`, which checks permissions, budgets, cancellation, retry policy, and security rules before execution. The state is checkpointed as the run progresses. New evidence can trigger claim re-evaluation; contradictions are examined before synthesis; the independent final auditor checks the result and its citations.
