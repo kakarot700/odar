@@ -1,0 +1,435 @@
+{
+  "check_id": "chk_9d9ede62a9cc",
+  "trust_score": 44,
+  "grade": "unreliable citations",
+  "counts": {
+    "SUPPORTED": 3,
+    "PARTIALLY SUPPORTED": 1,
+    "CONTRADICTED": 0,
+    "WRONG SOURCE": 1,
+    "UNVERIFIABLE": 0,
+    "DEAD LINK": 3,
+    "NO CITATION": 1
+  },
+  "claims": [
+    {
+      "claim_id": "c1",
+      "claim": "Global average temperature has risen by about 1.09°C for the 2011–2020 decade compared with the pre-industrial baseline (1850–1900), according to the IPCC’s Sixth Assessment Report.",
+      "verdict": "WRONG SOURCE",
+      "citations": [
+        {
+          "url": "https://www.ipcc.ch/report/ar6/syr/downloads/report/IPCC_AR6_SYR_SPM.pdf",
+          "marker": "[1]",
+          "verdict": "WRONG SOURCE",
+          "link_state": "live",
+          "entailment": 0.0,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "the page is real but does not say this",
+          "judged_by": "nli+llm"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://www.ipcc.ch/report/ar6/syr/downloads/report/IPCC_AR6_SYR_SPM.pdf",
+      "replacement": null,
+      "replacement_searched": true,
+      "note": ""
+    },
+    {
+      "claim_id": "c2.1",
+      "claim": "More recent single years have been warmer still.",
+      "verdict": "DEAD LINK",
+      "citations": [
+        {
+          "url": "https://wmo.int/publication/state-of-global-climate-2023",
+          "marker": "[2]",
+          "verdict": "DEAD LINK",
+          "link_state": "not_found",
+          "entailment": 0.0,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "page not found (404); archive check unavailable",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://wmo.int/publication/state-of-global-climate-2023",
+      "replacement": null,
+      "replacement_searched": true,
+      "note": "atomic part of a compound sentence"
+    },
+    {
+      "claim_id": "c2.2",
+      "claim": "2023 was about 1.45°C above pre-industrial levels.",
+      "verdict": "DEAD LINK",
+      "citations": [
+        {
+          "url": "https://wmo.int/publication/state-of-global-climate-2023",
+          "marker": "[2]",
+          "verdict": "DEAD LINK",
+          "link_state": "not_found",
+          "entailment": 0.0,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "page not found (404); archive check unavailable",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://wmo.int/publication/state-of-global-climate-2023",
+      "replacement": {
+        "url": "https://wmo.int/news/media-centre/wmo-confirms-2023-smashes-global-temperature-record",
+        "title": "WMO confirms that 2023 smashes global temperature record",
+        "quote": "2023 annual average global temperature 1.45 ± 0.12 °C above pre-industrial levels",
+        "entailment": 0.898
+      },
+      "replacement_searched": true,
+      "note": "atomic part of a compound sentence"
+    },
+    {
+      "claim_id": "c2.3",
+      "claim": "This reflects short-term variability on top of the long-term trend.",
+      "verdict": "DEAD LINK",
+      "citations": [
+        {
+          "url": "https://wmo.int/publication/state-of-global-climate-2023",
+          "marker": "[2]",
+          "verdict": "DEAD LINK",
+          "link_state": "not_found",
+          "entailment": 0.0,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "page not found (404); archive check unavailable",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://wmo.int/publication/state-of-global-climate-2023",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": "atomic part of a compound sentence"
+    },
+    {
+      "claim_id": "c3",
+      "claim": "IPCC assessment finds that human-caused warming contributed roughly 1.07°C of the observed total.",
+      "verdict": "SUPPORTED",
+      "citations": [
+        {
+          "url": "https://www.ipcc.ch/report/ar6/syr/downloads/report/IPCC_AR6_SYR_SPM.pdf",
+          "marker": "[1]",
+          "verdict": "SUPPORTED",
+          "link_state": "live",
+          "entailment": 0.989,
+          "contradiction": 0.0,
+          "quote": "A.1.2 The likely range of total human-caused global surface temperature increase from 1850–1900 to 2010–20197 is 0.8°C to 1.3°C, with a best estimate of 1.07°C.",
+          "note": "",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "A.1.2 The likely range of total human-caused global surface temperature increase from 1850–1900 to 2010–20197 is 0.8°C to 1.3°C, with a best estimate of 1.07°C.",
+      "quote_url": "https://www.ipcc.ch/report/ar6/syr/downloads/report/IPCC_AR6_SYR_SPM.pdf",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": ""
+    },
+    {
+      "claim_id": "c4",
+      "claim": "This warming is dominated by increases in well-mixed greenhouse gases—especially carbon dioxide (CO₂), methane (CH₄), and nitrous oxide (N₂O)—emitted from fossil fuel combustion, deforestation, agriculture, and industrial processes.",
+      "verdict": "NO CITATION",
+      "citations": [],
+      "quote": "",
+      "quote_url": "",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": ""
+    },
+    {
+      "claim_id": "c5.1",
+      "claim": "Other anthropogenic factors, such as aerosols, exert a net cooling effect.",
+      "verdict": "PARTIALLY SUPPORTED",
+      "citations": [
+        {
+          "url": "https://www.ipcc.ch/report/ar6/syr/downloads/report/IPCC_AR6_SYR_SPM.pdf",
+          "marker": "[1]",
+          "verdict": "PARTIALLY SUPPORTED",
+          "link_state": "live",
+          "entailment": 0.997,
+          "contradiction": 0.0,
+          "quote": "a warming of 1.0°C to 2.0°C 8, and other human drivers (principally aerosols) contributed a cooling of 0.0°C to 0.8°C,",
+          "note": "only a short or loosely matching passage supports this",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "a warming of 1.0°C to 2.0°C 8, and other human drivers (principally aerosols) contributed a cooling of 0.0°C to 0.8°C,",
+      "quote_url": "https://www.ipcc.ch/report/ar6/syr/downloads/report/IPCC_AR6_SYR_SPM.pdf",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": "atomic part of a compound sentence"
+    },
+    {
+      "claim_id": "c5.2",
+      "claim": "That net cooling effect partially masks some greenhouse warming.",
+      "verdict": "SUPPORTED",
+      "citations": [
+        {
+          "url": "https://www.ipcc.ch/report/ar6/syr/downloads/report/IPCC_AR6_SYR_SPM.pdf",
+          "marker": "[1]",
+          "verdict": "SUPPORTED",
+          "link_state": "live",
+          "entailment": 0.193,
+          "contradiction": 0.94,
+          "quote": "Over this period, it is likely that well-mixed greenhouse gases (GHGs) contributed a warming of 1.0°C to 2.0°C 8, and other human drivers (principally aerosols) contributed a cooling of 0.0°C to 0.8°C,",
+          "note": "reworded match: Aerosol cooling offsets some greenhouse warming, matching claim.",
+          "judged_by": "nli+llm"
+        }
+      ],
+      "quote": "Over this period, it is likely that well-mixed greenhouse gases (GHGs) contributed a warming of 1.0°C to 2.0°C 8, and other human drivers (principally aerosols) contributed a cooling of 0.0°C to 0.8°C,",
+      "quote_url": "https://www.ipcc.ch/report/ar6/syr/downloads/report/IPCC_AR6_SYR_SPM.pdf",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": "atomic part of a compound sentence"
+    },
+    {
+      "claim_id": "c5.3",
+      "claim": "Natural drivers (solar and volcanic) contribute only a small, near-zero amount.",
+      "verdict": "SUPPORTED",
+      "citations": [
+        {
+          "url": "https://www.ipcc.ch/report/ar6/syr/downloads/report/IPCC_AR6_SYR_SPM.pdf",
+          "marker": "[1]",
+          "verdict": "SUPPORTED",
+          "link_state": "live",
+          "entailment": 0.002,
+          "contradiction": 0.995,
+          "quote": "natural (solar and volcanic) drivers changed global surface temperature by –0.1°C to +0.1°C, and internal variability changed it by –0.2°C to +0.2°C.",
+          "note": "reworded match: Passages quantify natural drivers as negligible -0.1 to +0.1.",
+          "judged_by": "nli+llm"
+        }
+      ],
+      "quote": "natural (solar and volcanic) drivers changed global surface temperature by –0.1°C to +0.1°C, and internal variability changed it by –0.2°C to +0.2°C.",
+      "quote_url": "https://www.ipcc.ch/report/ar6/syr/downloads/report/IPCC_AR6_SYR_SPM.pdf",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": "atomic part of a compound sentence"
+    }
+  ],
+  "links": [
+    {
+      "url": "https://www.ipcc.ch/report/ar6/syr/downloads/report/IPCC_AR6_SYR_SPM.pdf",
+      "state": "live",
+      "http_status": 200,
+      "error": "",
+      "resolved_url": "https://www.ipcc.ch/report/ar6/syr/downloads/report/IPCC_AR6_SYR_SPM.pdf",
+      "title": "",
+      "archive_url": "",
+      "archive_timestamp": "",
+      "text_source": "live",
+      "archive_check": "",
+      "content_hash": "18ab3518f09af467b7c03a8c06d3c8cab3bab9437b9818a954bee06d29b572a1",
+      "quarantined": false
+    },
+    {
+      "url": "https://wmo.int/publication/state-of-global-climate-2023",
+      "state": "not_found",
+      "http_status": 404,
+      "error": "HTTP 404",
+      "resolved_url": "https://wmo.int/publication/state-of-global-climate-2023",
+      "title": "",
+      "archive_url": "",
+      "archive_timestamp": "",
+      "text_source": "",
+      "archive_check": "unavailable",
+      "content_hash": "",
+      "quarantined": false
+    }
+  ],
+  "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+  "elapsed_s": 122.9,
+  "usage": {
+    "fetches": 7,
+    "wayback_lookups": 2,
+    "searches": 3,
+    "llm_calls": 6,
+    "nli_checks": 9,
+    "scorer_load_ms": 15615
+  },
+  "audit_trail": [
+    {
+      "t": 0.0,
+      "event": "parse",
+      "claims": 5,
+      "citations": 4
+    },
+    {
+      "t": 29.66,
+      "event": "fetch",
+      "url": "https://wmo.int/publication/state-of-global-climate-2023",
+      "state": "not_found",
+      "http_status": 404,
+      "chars": 0,
+      "error": "HTTP 404"
+    },
+    {
+      "t": 33.27,
+      "event": "fetch",
+      "url": "https://www.ipcc.ch/report/ar6/syr/downloads/report/IPCC_AR6_SYR_SPM.pdf",
+      "state": "live",
+      "http_status": 200,
+      "chars": 147965,
+      "error": ""
+    },
+    {
+      "t": 43.53,
+      "event": "wayback",
+      "url": "https://wmo.int/publication/state-of-global-climate-2023",
+      "error": "ReadTimeout: HTTPSConnectionPool(host='web.archive.org', port=443): Read timed out. (read timeout=12.0)"
+    },
+    {
+      "t": 54.48,
+      "event": "paraphrase_judge",
+      "claim": "Global average temperature has risen by about 1.09°C for the 2011–2020 decade compared with the pre-industrial baseline ",
+      "verdict": "SUPPORTED",
+      "grounded": false
+    },
+    {
+      "t": 54.48,
+      "event": "verify",
+      "url": "https://www.ipcc.ch/report/ar6/syr/downloads/report/IPCC_AR6_SYR_SPM.pdf",
+      "claim": "Global average temperature has risen by about 1.09°C for the 2011–2020 decade compared with the pre-industrial baseline ",
+      "verdict": "WRONG SOURCE",
+      "ent": 0.0,
+      "con": 0.0
+    },
+    {
+      "t": 57.14,
+      "event": "verify",
+      "url": "https://www.ipcc.ch/report/ar6/syr/downloads/report/IPCC_AR6_SYR_SPM.pdf",
+      "claim": "IPCC assessment finds that human-caused warming contributed roughly 1.07°C of the observed total.",
+      "verdict": "SUPPORTED",
+      "ent": 0.989,
+      "con": 0.0
+    },
+    {
+      "t": 60.82,
+      "event": "verify",
+      "url": "https://www.ipcc.ch/report/ar6/syr/downloads/report/IPCC_AR6_SYR_SPM.pdf",
+      "claim": "Other anthropogenic factors, such as aerosols, exert a net cooling effect.",
+      "verdict": "PARTIALLY SUPPORTED",
+      "ent": 0.997,
+      "con": 0.0
+    },
+    {
+      "t": 70.95,
+      "event": "paraphrase_judge",
+      "claim": "That net cooling effect partially masks some greenhouse warming.",
+      "verdict": "SUPPORTED",
+      "grounded": true
+    },
+    {
+      "t": 70.95,
+      "event": "verify",
+      "url": "https://www.ipcc.ch/report/ar6/syr/downloads/report/IPCC_AR6_SYR_SPM.pdf",
+      "claim": "That net cooling effect partially masks some greenhouse warming.",
+      "verdict": "SUPPORTED",
+      "ent": 0.193,
+      "con": 0.94
+    },
+    {
+      "t": 81.26,
+      "event": "paraphrase_judge",
+      "claim": "Natural drivers (solar and volcanic) contribute only a small, near-zero amount.",
+      "verdict": "SUPPORTED",
+      "grounded": true
+    },
+    {
+      "t": 81.26,
+      "event": "verify",
+      "url": "https://www.ipcc.ch/report/ar6/syr/downloads/report/IPCC_AR6_SYR_SPM.pdf",
+      "claim": "Natural drivers (solar and volcanic) contribute only a small, near-zero amount.",
+      "verdict": "SUPPORTED",
+      "ent": 0.002,
+      "con": 0.995
+    },
+    {
+      "t": 90.72,
+      "event": "search",
+      "query": "Global average temperature has risen by about 1.09°C for the 2011–2020 decade compared with the pre-industrial baseline (1850–1900), according to the IPCC’s",
+      "hits": 5
+    },
+    {
+      "t": 93.94,
+      "event": "fetch",
+      "url": "https://www.weather.gov.hk/en/climate_change/obs_global_temp.htm",
+      "state": "live",
+      "http_status": 200,
+      "chars": 532,
+      "error": ""
+    },
+    {
+      "t": 96.66,
+      "event": "fetch",
+      "url": "https://www.climate.gov/news-features/understanding-climate/climate-change-global-temperature",
+      "state": "live",
+      "http_status": 200,
+      "chars": 8988,
+      "error": ""
+    },
+    {
+      "t": 101.71,
+      "event": "fetch",
+      "url": "https://en.wikipedia.org/wiki/Global_surface_temperature",
+      "state": "blocked",
+      "http_status": 403,
+      "chars": 0,
+      "error": "HTTP 403"
+    },
+    {
+      "t": 111.91,
+      "event": "wayback",
+      "url": "https://en.wikipedia.org/wiki/Global_surface_temperature",
+      "error": "RuntimeError: wayback CDX HTTP 503"
+    },
+    {
+      "t": 112.75,
+      "event": "search",
+      "query": "More recent single years have been warmer still.",
+      "hits": 1
+    },
+    {
+      "t": 112.99,
+      "event": "fetch",
+      "url": "https://news.un.org/en/story/2026/01/1166758",
+      "state": "live",
+      "http_status": 200,
+      "chars": 2082,
+      "error": ""
+    },
+    {
+      "t": 117.45,
+      "event": "search",
+      "query": "2023 was about 1.45°C above pre-industrial levels.",
+      "hits": 6
+    },
+    {
+      "t": 117.96,
+      "event": "fetch",
+      "url": "https://wmo.int/news/media-centre/wmo-confirms-2023-smashes-global-temperature-record",
+      "state": "live",
+      "http_status": 200,
+      "chars": 6832,
+      "error": ""
+    },
+    {
+      "t": 122.88,
+      "event": "replacement",
+      "claim_id": "c2.2",
+      "url": "https://wmo.int/news/media-centre/wmo-confirms-2023-smashes-global-temperature-record",
+      "ent": 0.898
+    },
+    {
+      "t": 122.88,
+      "event": "done",
+      "trust_score": 44
+    }
+  ]
+}

@@ -1,0 +1,249 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_4f8bdf457311",
+ "trust_score": 90,
+ "grade": "citations hold up",
+ "counts": {
+  "SUPPORTED": 4,
+  "PARTIALLY SUPPORTED": 1,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 0,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 0
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "\"Across 17 studies (n = 40,632 patients), semaglutide reduced cardiovascular death by 23%.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+     "marker": "[4]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.995,
+     "contradiction": 0.0,
+     "quote": "Across 17 studies (n = 40, 632 patients), semaglutide significantly reduced the risk of cardiovascular (CV) death by 23% [HR 0.77, 95% CI (0.68, 0.88)], major adverse cardiovascular events (MACE) by 18% [HR 0.82, 95% CI (0.75, 0.90)], expanded MACE by 22% [HR 0.78, 95% CI (0.70, 0.85)], nonfatal",
+     "note": "the page supports the claim's gist but not the figure(s) 40,632",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Across 17 studies (n = 40, 632 patients), semaglutide significantly reduced the risk of cardiovascular (CV) death by 23% [HR 0.77, 95% CI (0.68, 0.88)], major adverse cardiovascular events (MACE) by 18% [HR 0.82, 95% CI (0.75, 0.90)], expanded MACE by 22% [HR 0.78, 95% CI (0.70, 0.85)], nonfatal",
+   "quote_url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "It reduced major adverse cardiovascular events (MACE) by 18%.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+     "marker": "[4]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.984,
+     "contradiction": 0.0,
+     "quote": "Our meta-analysis demonstrated that semaglutide significantly reduced 23% in CV death, 18% in MACE, 22% in expanded MACE, 18% in nonfatal MI, and 32% in nonfatal stroke in patients with type 2 diabetes (T2D).",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Our meta-analysis demonstrated that semaglutide significantly reduced 23% in CV death, 18% in MACE, 22% in expanded MACE, 18% in nonfatal MI, and 32% in nonfatal stroke in patients with type 2 diabetes (T2D).",
+   "quote_url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "It reduced nonfatal myocardial infarction by 18%.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+     "marker": "[4]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.985,
+     "contradiction": 0.0,
+     "quote": "Across 17 studies (n = 40, 632 patients), semaglutide significantly reduced the risk of cardiovascular (CV) death by 23% [HR 0.77, 95% CI (0.68, 0.88)], major adverse cardiovascular events (MACE) by 18% [HR 0.82, 95% CI (0.75, 0.90)], expanded MACE by 22% [HR 0.78, 95% CI (0.70, 0.85)], nonfatal myocardial infarction (MI) by 18% [HR 0.82, 95% CI (0.68, 0.92)], and nonfatal stroke by 32% [HR 0.68, ",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Across 17 studies (n = 40, 632 patients), semaglutide significantly reduced the risk of cardiovascular (CV) death by 23% [HR 0.77, 95% CI (0.68, 0.88)], major adverse cardiovascular events (MACE) by 18% [HR 0.82, 95% CI (0.75, 0.90)], expanded MACE by 22% [HR 0.78, 95% CI (0.70, 0.85)], nonfatal myocardial infarction (MI) by 18% [HR 0.82, 95% CI (0.68, 0.92)], and nonfatal stroke by 32% [HR 0.68, ",
+   "quote_url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4",
+   "claim": "It reduced nonfatal stroke by 32%.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+     "marker": "[4]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.98,
+     "contradiction": 0.0,
+     "quote": "Our meta-analysis demonstrated that semaglutide significantly reduced 23% in CV death, 18% in MACE, 22% in expanded MACE, 18% in nonfatal MI, and 32% in nonfatal stroke in patients with type 2 diabetes (T2D).",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Our meta-analysis demonstrated that semaglutide significantly reduced 23% in CV death, 18% in MACE, 22% in expanded MACE, 18% in nonfatal MI, and 32% in nonfatal stroke in patients with type 2 diabetes (T2D).",
+   "quote_url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5",
+   "claim": "In the FLOW study (2024), semaglutide reduced MACE by 18% in type 2 diabetes patients with chronic kidney disease.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+     "marker": "[4]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.995,
+     "contradiction": 0.0,
+     "quote": "However, recent landmark trials such as the FLOW study (2024) have demonstrated that semaglutide reduces the risk of major kidney events by 24% and major adverse CV events (MACE) by 18% in T2D patients with CKD, suggesting a paradigm shift in managing CV risk [20].",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "However, recent landmark trials such as the FLOW study (2024) have demonstrated that semaglutide reduces the risk of major kidney events by 24% and major adverse CV events (MACE) by 18% in T2D patients with CKD, suggesting a paradigm shift in managing CV risk [20].",
+   "quote_url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "title": "Semaglutide reduces cardiovascular events in type 2 diabetes: a systematic review and meta-analysis highlighting enhanced benefits in chronic kidney disease | European Journal of Medical Research | Sp",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "b7df3efe0fa62198c5624fc2426b809f62a308bb2a04e36d544d250f51839eff",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 28.0,
+ "usage": {
+  "fetches": 1,
+  "wayback_lookups": 0,
+  "searches": 0,
+  "llm_calls": 0,
+  "nli_checks": 5,
+  "scorer_load_ms": 13080
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 5,
+   "citations": 5
+  },
+  {
+   "t": 2.0,
+   "event": "fetch",
+   "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "state": "live",
+   "http_status": 200,
+   "chars": 45877,
+   "error": ""
+  },
+  {
+   "t": 7.79,
+   "event": "verify",
+   "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "claim": "\"Across 17 studies (n = 40,632 patients), semaglutide reduced cardiovascular death by 23%.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.995,
+   "con": 0.0
+  },
+  {
+   "t": 13.05,
+   "event": "verify",
+   "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "claim": "It reduced major adverse cardiovascular events (MACE) by 18%.",
+   "verdict": "SUPPORTED",
+   "ent": 0.984,
+   "con": 0.0
+  },
+  {
+   "t": 18.18,
+   "event": "verify",
+   "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "claim": "It reduced nonfatal myocardial infarction by 18%.",
+   "verdict": "SUPPORTED",
+   "ent": 0.985,
+   "con": 0.0
+  },
+  {
+   "t": 23.32,
+   "event": "verify",
+   "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "claim": "It reduced nonfatal stroke by 32%.",
+   "verdict": "SUPPORTED",
+   "ent": 0.98,
+   "con": 0.0
+  },
+  {
+   "t": 28.0,
+   "event": "verify",
+   "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "claim": "In the FLOW study (2024), semaglutide reduced MACE by 18% in type 2 diabetes patients with chronic kidney disease.",
+   "verdict": "SUPPORTED",
+   "ent": 0.995,
+   "con": 0.0
+  },
+  {
+   "t": 28.0,
+   "event": "done",
+   "trust_score": 90
+  }
+ ],
+ "score_s": 42.6
+}

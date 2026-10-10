@@ -1,0 +1,120 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_93da631c9a42",
+ "trust_score": 100,
+ "grade": "citations hold up",
+ "counts": {
+  "SUPPORTED": 1,
+  "PARTIALLY SUPPORTED": 0,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 0,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 0
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "It recognized Katalin Karik\u00f3 and Drew Weissman for discoveries concerning nucleoside base modifications that enabled effective mRNA vaccines against COVID-19.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.nobelprize.org/prizes/medicine/2023/summary/",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "archived_only",
+     "entailment": 0.996,
+     "contradiction": 0.0,
+     "quote": "The Nobel Prize in Physiology or Medicine 2023 was awarded jointly to Katalin Karik\u00f3 and Drew Weissman \"for their discoveries concerning nucleoside base modifications that enabled the development of effective mRNA vaccines against COVID-19\"",
+     "note": "(verified against the Wayback Machine copy; live page is gone)",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": 2023
+    }
+   ],
+   "quote": "The Nobel Prize in Physiology or Medicine 2023 was awarded jointly to Katalin Karik\u00f3 and Drew Weissman \"for their discoveries concerning nucleoside base modifications that enabled the development of effective mRNA vaccines against COVID-19\"",
+   "quote_url": "https://www.nobelprize.org/prizes/medicine/2023/summary/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://www.nobelprize.org/prizes/medicine/2023/summary/",
+   "state": "archived_only",
+   "http_status": 403,
+   "error": "HTTP 403",
+   "resolved_url": "https://www.nobelprize.org/prizes/medicine/2023/summary/",
+   "title": "",
+   "archive_url": "http://web.archive.org/web/20261003002618/https://www.nobelprize.org/prizes/medicine/2023/summary/",
+   "archive_timestamp": "20261003002618",
+   "text_source": "wayback",
+   "archive_check": "archived",
+   "content_hash": "c22e0d9395a0b6d078135a98c590ba5a9a8ca5cff61f1b4ee0e4a4aee7c281c3",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 3.0,
+ "usage": {
+  "fetches": 2,
+  "wayback_lookups": 1,
+  "searches": 0,
+  "llm_calls": 0,
+  "nli_checks": 1,
+  "scorer_load_ms": 1835
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 1,
+   "citations": 1
+  },
+  {
+   "t": 0.11,
+   "event": "fetch",
+   "url": "https://www.nobelprize.org/prizes/medicine/2023/summary/",
+   "state": "blocked",
+   "http_status": 403,
+   "chars": 0,
+   "error": "HTTP 403"
+  },
+  {
+   "t": 1.91,
+   "event": "wayback",
+   "url": "https://www.nobelprize.org/prizes/medicine/2023/summary/",
+   "archived": true,
+   "snapshot": "http://web.archive.org/web/20261003002618/https://www.nobelprize.org/prizes/medicine/2023/summary/"
+  },
+  {
+   "t": 2.44,
+   "event": "archive_fetch",
+   "url": "https://web.archive.org/web/20261003002618id_/https://www.nobelprize.org/prizes/medicine/2023/summary/",
+   "ok": true,
+   "chars": 358,
+   "error": ""
+  },
+  {
+   "t": 2.97,
+   "event": "verify",
+   "url": "https://www.nobelprize.org/prizes/medicine/2023/summary/",
+   "claim": "It recognized Katalin Karik\u00f3 and Drew Weissman for discoveries concerning nucleoside base modifications that enabled eff",
+   "verdict": "SUPPORTED",
+   "ent": 0.996,
+   "con": 0.0
+  },
+  {
+   "t": 2.97,
+   "event": "done",
+   "trust_score": 100
+  }
+ ],
+ "score_s": 4.8
+}

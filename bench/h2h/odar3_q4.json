@@ -1,0 +1,123 @@
+{
+ "thread_id": "35db6d4c07b99744",
+ "share_token": "dNNwIH9GcTh8ggKb",
+ "title": "What is India's current repo rate set by the RBI and when was it last changed?",
+ "project_id": "",
+ "sources": [
+  {
+   "url": "https://www.rbi.org.in/home.aspx//Scripts/Home.aspx/Webservice/Scripts/Statistics.aspx",
+   "title": "Home | Official website of Reserve Bank of India",
+   "domain": "rbi.org.in",
+   "snippet": "1 day ago \u00b7 Official website of Reserve Bank of India RBI issues Amendment Directions on 'Standardised Approach for Counterparty Credit Risk (SA-CCR)\u2019 RBI issues Directions on 'Credit Valuation Adjustment (CVA) Framework\u2019 Penal Interest on shortfall in CRR and SLR requirements - Change in Bank Rate Standing Liquidity Facility for Primary Dealers Governor\u2019s Statement, October 7, 2026 Monetary Policy ...",
+   "kind": "web",
+   "n": 1
+  },
+  {
+   "url": "https://www.bankbazaar.com/home-loan/repo-rate.html",
+   "title": "Check the Current Repo Rate 2026 - BankBazaarRBI Hikes Repo Rate to 5.50% After 3.5 Years: How Your Home ...RBI cuts repo rate to 5.25%; upgrades GDP outlook as ...Repo Rate 2026: Current, Reverse, SDF, Meaning and Monetary ...RBI Repo Rate - RBI repo rate news, RBI rate cut announcement ...",
+   "domain": "bankbazaar.com",
+   "snippet": "As mentioned earlier, the repo rate is used by the central bank of India to control the flow of money in the market. When the market is hit by inflation, RBI increases the repo rate. An increased repo rate denotes that the banks who borrow money during this period from the central bank will have to pay higher interest. This discourages the banks fr... See full list on bankbazaar.com On the basis of the economic condition, as discussed in the last paragraph, the RBI regulates the repo rate. The rates are decided by the central bank on the basis of inflation or recession in the market of the cou [...truncated by sanitizer]",
+   "kind": "web",
+   "n": 2
+  },
+  {
+   "url": "https://indianexpress.com/article/business/rbi-hikes-repo-rate-25-bps-to-5-50-pc-emi-10910143/",
+   "title": "RBI Hikes Repo Rate to 5.50% After 3.5 Years: How Your Home ...",
+   "domain": "indianexpress.com",
+   "snippet": "1 day ago \u00b7 The Reserve Bank of India (RBI) has increased its policy repo rate by 25 basis points (bps) to 5.50 per cent, marking the first rate hike since February 2023 and signalling a shift towards tighter monetary policy amid rising inflationary pressures, elevated crude oil prices and a challenging global interest-rate environment. The Monetary Policy Committee (MPC) has changed the policy stance to ...",
+   "kind": "web",
+   "n": 3
+  },
+  {
+   "url": "https://economictimes.indiatimes.com/markets/bonds/rbi-cuts-repo-rate-to-5-25-upgrades-gdp-outlook-as-liquidity-boosts-take-centre-stage/articleshow/125826257.cms",
+   "title": "RBI cuts repo rate to 5.25%; upgrades GDP outlook as ...",
+   "domain": "economictimes.indiatimes.com",
+   "snippet": "Dec 8, 2025 \u00b7 The Reserve Bank of India cut the repo rate by 25 basis points to 5.25% and raised its GDP growth forecast to 7.3% for FY26. The central bank also announced significant liquidity measures, including open market purchases of government bonds worth \u20b91 lakh crore, signaling a supportive stance for economic growth.",
+   "kind": "web",
+   "n": 4
+  },
+  {
+   "url": "https://cleartax.in/s/repo-rate",
+   "title": "Repo Rate 2026: Current, Reverse, SDF, Meaning and Monetary ...",
+   "domain": "cleartax.in",
+   "snippet": "Jun 8, 2026 \u00b7 Get the latest Repo & Reverse Repo Rate 2026, their meaning, history, impact on the economy, and RBI\u2019s monetary policy updates.",
+   "kind": "web",
+   "n": 5
+  },
+  {
+   "url": "https://economictimes.indiatimes.com/markets/rbi-repo-rate",
+   "title": "RBI Repo Rate - RBI repo rate news, RBI rate cut announcement ...",
+   "domain": "economictimes.indiatimes.com",
+   "snippet": "RBI Repo Rate - Find RBI repo rate news on The Economic Times. Check the latest RBI rate cut announcements, repo rate slashed news, RBI policy changes and more.",
+   "kind": "web",
+   "n": 6
+  }
+ ],
+ "answer": "The RBI's current repo rate is 5.25% [2][5]. This rate has been applicable since 5 December 2025 [2].",
+ "abstained": false,
+ "timing": {
+  "search_s": 7.03,
+  "fetch_s": 0.0,
+  "ttft_s": 12.92,
+  "total_s": 12.92
+ },
+ "verification": {
+  "citations": [
+   {
+    "occ": 0,
+    "n": 2,
+    "marker": "[2]",
+    "claim": "The RBI's current repo rate is 5.25% .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "Currently at 5.25% (following a 25 basis points cut on 5 December 2025), the repo rate is a key tool RBI uses to regulate the money supply and inflation in the economy.",
+    "note": "another passage on the page may disagree: \"The reverse repo rate stands unchanged at 3.35%.The Bank Rate and the Marginal Standing Facility (MSF) rate has changed to 5.55%. The current Standing Deposit F\"",
+    "title": "Check the Current Repo Rate 2026 - BankBazaarRBI Hikes Repo Rate to 5.50% After 3.5 Years: How Your Home ...RBI cuts repo rate to 5.25%; upgrades GDP outlook as ...Repo Rate 2026: Current, Reverse, SDF, Meaning and Monetary ...RBI Repo Rate - RBI repo rate news, RBI rate cut announcement ...",
+    "domain": "bankbazaar.com",
+    "url": "https://www.bankbazaar.com/home-loan/repo-rate.html",
+    "kind": "web",
+    "entailment": 0.993,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 1,
+    "n": 5,
+    "marker": "[5]",
+    "claim": "The RBI's current repo rate is 5.25% .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "What is the current repo rate set by RBI in India for 2026? As of June 2026, the RBI repo rate is 5.25%.",
+    "note": "",
+    "title": "Repo Rate 2026: Current, Reverse, SDF, Meaning and Monetary ...",
+    "domain": "cleartax.in",
+    "url": "https://cleartax.in/s/repo-rate",
+    "kind": "web",
+    "entailment": 0.972,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 2,
+    "n": 2,
+    "marker": "[2]",
+    "claim": "This rate has been applicable since 5 December 2025 .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "Note that the rates are applicable from 5 December 2025. Cash Reserve Ratio (CRR): 3.00% Banks must maintain this percentage of deposits as reserve with the RBI, which helps regulate the money supply and ensure system stability.",
+    "note": "another passage on the page may disagree: \"Note that the rates are applicable from 5 December 2025. Cash Reserve Ratio (CRR): 3.00% Banks must maintain this percentage of deposits as reserve with the RBI\"",
+    "title": "Check the Current Repo Rate 2026 - BankBazaarRBI Hikes Repo Rate to 5.50% After 3.5 Years: How Your Home ...RBI cuts repo rate to 5.25%; upgrades GDP outlook as ...Repo Rate 2026: Current, Reverse, SDF, Meaning and Monetary ...RBI Repo Rate - RBI repo rate news, RBI rate cut announcement ...",
+    "domain": "bankbazaar.com",
+    "url": "https://www.bankbazaar.com/home-loan/repo-rate.html",
+    "kind": "web",
+    "entailment": 0.981,
+    "judged_by": "nli"
+   }
+  ],
+  "counts": {
+   "supported": 3
+  },
+  "elapsed_s": 6.52,
+  "total_s": 19.46
+ },
+ "q": 4,
+ "seconds": 19.5
+}

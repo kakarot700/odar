@@ -1,0 +1,123 @@
+{
+ "thread_id": "632239c358c1b73d",
+ "share_token": "aN8WaZEuKbh9blJ0",
+ "title": "What is the Chandrayaan-3 mission's key scientific result?",
+ "project_id": "",
+ "sources": [
+  {
+   "url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+   "title": "Chandrayaan-3 - Indian Space Research Organisation (ISRO)",
+   "domain": "isro.gov.in",
+   "snippet": "Aug 30, 2023 \u00b7 Groundbreaking scientific discoveries and data publications from the Chandrayaan-3 lunar mission.",
+   "kind": "web",
+   "n": 1
+  },
+  {
+   "url": "https://www.isro.gov.in/Chandrayaan3_Details.html",
+   "title": "Chandrayaan-3 Details - Indian Space Research Organisation (ISRO)",
+   "domain": "isro.gov.in",
+   "snippet": "Chandrayaan-3 is a follow-on mission to Chandrayaan-2 to demonstrate end-to-end capability in safe landing and roving on the lunar surface. It consists of Lander and Rover configuration.",
+   "kind": "web",
+   "n": 2
+  },
+  {
+   "url": "https://pradan.issdc.gov.in/ch3/",
+   "title": "Chandrayaan-3 - ISSDC",
+   "domain": "pradan.issdc.gov.in",
+   "snippet": "Chandrayaan-3 is a follow-on mission to Chandrayaan-2 to demonstrate end-to-end capability in safe landing and roving on the lunar surface. It consisted of a Lander, Rover and Propulsion module to carry the landing module till 100km lunar orbit.",
+   "kind": "web",
+   "n": 3
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Chandrayaan-3",
+   "title": "Chandrayaan-3 - Wikipedia",
+   "domain": "en.wikipedia.org",
+   "snippet": "Chandrayaan-3 (CHUN-dr\u0259-YAHN / \u02cct\u0283\u028cndr\u0259\u02c8j\u0251\u02d0n /) is the third mission in the Chandrayaan programme, a series of lunar-exploration missions developed by ISRO. The mission consists of Vikram, a lunar lander, and Pragyan, a lunar rover, as replacements for the equivalents on Chandrayaan-2, which had crashed on landing in 2019.",
+   "kind": "web",
+   "n": 4
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Chandrayaan_programme",
+   "title": "Chandrayaan programme - Wikipedia",
+   "domain": "en.wikipedia.org",
+   "snippet": "The Chandrayaan programme (/ \u02cct\u0283\u028cndr\u0259\u02c8j\u0251\u02d0n / CHUN-dr\u0259-YAHN) (Sanskrit: Candra 'Moon', Y\u0101na 'Craft, Vehicle', pronunciation \u24d8) [4][5] is an ongoing series of outer space missions by ISRO for the exploration of the Moon. The program incorporates a lunar orbiter, an impactor, a lunar lander and a rover spacecraft. There have been three missions so far with a total of two orbiters ...",
+   "kind": "web",
+   "n": 5
+  },
+  {
+   "url": "https://www.researchgate.net/publication/398428328_Chandrayaan-3_A_Landmark_Mission_of_Resilience",
+   "title": "(PDF) Chandrayaan-3: A Landmark Mission of Resilience",
+   "domain": "researchgate.net",
+   "snippet": "Dec 8, 2025 \u00b7 The mission's success is a direct result of a strategic, iterative approach to space exploration, which meticulously addressed the challenges of its predecessor, Chandrayaan-2, by implementing a ...",
+   "kind": "web",
+   "n": 6
+  }
+ ],
+ "answer": "A key scientific result was LIBS confirming the presence of sulphur (S) on the lunar surface through unambiguous in-situ measurements [1]. ISRO scientists also estimated that about 2.06 tonnes of lunar epiregolith were ejected and displaced over an area of 108.4 m2 around the landing site [1]. The APXS on-board the Ch-3 rover detected the presence of minor elements [1].",
+ "abstained": false,
+ "timing": {
+  "search_s": 10.31,
+  "fetch_s": -0.0,
+  "ttft_s": 69.42,
+  "total_s": 69.43
+ },
+ "verification": {
+  "citations": [
+   {
+    "occ": 0,
+    "n": 1,
+    "marker": "[1]",
+    "claim": "A key scientific result was LIBS confirming the presence of sulphur (S) on the lunar surface through unambiguous in-situ measurements .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "August 28, 2023 LIBS confirms the presence of Sulphur (S) on the lunar surface through unambiguous in-situ measurements.",
+    "note": "reworded match: P1 states the claim verbatim.",
+    "title": "Chandrayaan-3 - Indian Space Research Organisation (ISRO)",
+    "domain": "isro.gov.in",
+    "url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+    "kind": "web",
+    "entailment": 0.502,
+    "judged_by": "nli+llm"
+   },
+   {
+    "occ": 1,
+    "n": 1,
+    "marker": "[1]",
+    "claim": "ISRO scientists also estimated that about 2.06 tonnes of lunar epiregolith were ejected and displaced over an area of 108.4 m2 around the landing site .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "Chandrayaan-3 Chandrayaan-3 Science Results Home / Flash News /Chandrayaan-3 / Science Results October 27, 2023 Scientists from NRSC/ISRO estimate that about 2.06 tonnes of lunar epiregolith were ejected and displaced over an area of 108.4 m\u00b2 around the landing site.",
+    "note": "",
+    "title": "Chandrayaan-3 - Indian Space Research Organisation (ISRO)",
+    "domain": "isro.gov.in",
+    "url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+    "kind": "web",
+    "entailment": 0.955,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 2,
+    "n": 1,
+    "marker": "[1]",
+    "claim": "The APXS on-board the Ch-3 rover detected the presence of minor elements .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "August 31, 2023 ILSA listens to the movements around the landing site RAMBHA-LP on-board Chandrayaan-3 measures near-surface plasma content August 30, 2023 APXS on-board Ch-3 rover detects the presence of minor elements August 28, 2023 LIBS confirms the presence of Sulphur (S) on the lunar surface",
+    "note": "",
+    "title": "Chandrayaan-3 - Indian Space Research Organisation (ISRO)",
+    "domain": "isro.gov.in",
+    "url": "https://www.isro.gov.in/Ch3_ScienceResults.html",
+    "kind": "web",
+    "entailment": 0.991,
+    "judged_by": "nli"
+   }
+  ],
+  "counts": {
+   "supported": 3
+  },
+  "elapsed_s": 200.73,
+  "total_s": 270.16
+ },
+ "q": 8,
+ "seconds": 270.3
+}

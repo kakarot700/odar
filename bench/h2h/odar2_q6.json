@@ -1,0 +1,204 @@
+{
+ "thread_id": "985e3dd3811da073",
+ "share_token": "qhmO6TUzl1Ezghrr",
+ "title": "What are the health effects of microplastics in humans according to recent studies?",
+ "project_id": "",
+ "sources": [
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12213550/",
+   "title": "Microplastics and human health: unraveling the toxicological ...",
+   "domain": "pmc.ncbi.nlm.nih.gov",
+   "snippet": "The increasing prevalence of microplastics (MPs) in the environment has raised urgent concerns regarding their implications for human health. This comprehensive review integrates recent findings on the sources, classification, and pathways of MPs ...",
+   "kind": "web",
+   "n": 1
+  },
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "title": "Impact of Microplastic Exposure on Human Health: A Systematic ...",
+   "domain": "pmc.ncbi.nlm.nih.gov",
+   "snippet": "Longitudinal cohort studies are needed to provide stronger evidence on the chronic effects of microplastics on human health [15, 20]. Furthermore, the review emphasizes the necessity of standardizing biomarkers for microplastic exposure, as these are not yet reliable across studies, as acknowledged in the literature [14, 19].",
+   "kind": "web",
+   "n": 2
+  },
+  {
+   "url": "https://www.mdpi.com/2673-8929/4/2/23",
+   "title": "Impact of Microplastics on Human Health: Risks ... - MDPI",
+   "domain": "mdpi.com",
+   "snippet": "May 6, 2025 \u00b7 This review article aims to highlight the potential harm caused by microplastics (MPs) in different organs and systems and underscore the need for further investigation into their action mechanisms. MPs, such as polystyrene, polypropylene, and polyethylene, significantly impact human health, causing inflammation in the respiratory and gastrointestinal systems, compromising immune function, and ...",
+   "kind": "web",
+   "n": 3
+  },
+  {
+   "url": "https://www.sciencedirect.com/science/article/pii/S2213343725035031",
+   "title": "Microplastics and human health: Exposure pathways, toxicity ...",
+   "domain": "sciencedirect.com",
+   "snippet": "Oct 1, 2025 \u00b7 Microplastics have become pervasive environmental contaminants and are increasingly recognized as emerging threats to human health. This review presents a comprehensive and systematic analyses of human microplastic contamination across all major physiological systems, integrating the latest clinical findings and forensic evidence of microplastics presence in tissues such as the brain, bone ...",
+   "kind": "web",
+   "n": 4
+  },
+  {
+   "url": "https://www.mdpi.com/2071-1050/18/7/3527",
+   "title": "Microplastics and Health: A Review on Environmental Exposure ...",
+   "domain": "mdpi.com",
+   "snippet": "Despite numerous studies and reviews examining and reviews the environmental distribution, ecological effects, and overall toxicological impacts of microplastics (MPs), there remains a critical need to better understand the microplastics-induced toxicity.",
+   "kind": "web",
+   "n": 5
+  },
+  {
+   "url": "https://www.sciencedirect.com/science/article/pii/S0048969724043638",
+   "title": "Microplastics in the human body: A comprehensive review of ...",
+   "domain": "sciencedirect.com",
+   "snippet": "Oct 10, 2024 \u00b7 Microplastics (MPs) are pervasive across ecosystems, presenting substantial risks to human health. Developing a comprehensive review of MPs is crucial due to the growing evidence of their widespread presence and potential harmful effects. Despite the growth in research, considerable uncertainties persist regarding their transport dynamics, prevalence, toxicological impacts, and the potential ...",
+   "kind": "web",
+   "n": 6
+  }
+ ],
+ "answer": "Recent studies show microplastics have been confirmed in human stool, lung tissue, and blood [2]. Human exposure occurs mainly through ingestion of contaminated food and water, inhalation of airborne particles, and, to a lesser extent, dermal contact [2].\n\nAccording to the evidence, microplastics may cause inflammation in the respiratory and gastrointestinal systems and compromise immune function [3]. They may also induce inflammatory responses, oxidative stress, and cellular damage, contributing to various diseases [1]. Possible associations have been reported between microplastics in the body and gastrointestinal complications, inflammatory conditions, hormonal imbalances, and reproductive dysfunction [2]. The combination of microplastics with other environmental pollutants may amplify adverse health outcomes [1].\n\nOverall, human evidence is limited and largely observational, with studies mainly reporting associations between microplastic exposure and selected biological markers rather than confirmed clinical outcomes [2]. Long-term health effects are hard to assess because most studies are short-term or cross-sectional, and there is currently no standardized method to quantify the internal burden of microplastics in humans [2].",
+ "abstained": false,
+ "timing": {
+  "search_s": 0.67,
+  "fetch_s": 0.68,
+  "ttft_s": 11.33,
+  "total_s": 11.33
+ },
+ "verification": {
+  "citations": [
+   {
+    "occ": 0,
+    "n": 2,
+    "marker": "[2]",
+    "claim": "Recent studies show microplastics have been confirmed in human stool, lung tissue, and blood .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "Recent studies have confirmed the presence of microplastics in human stool, lung tissue, blood, and placental samples, providing direct evidence that these particles can enter and persist within the human body [1,2].",
+    "note": "",
+    "title": "Impact of Microplastic Exposure on Human Health: A Systematic ...",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+    "kind": "web",
+    "entailment": 0.994,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 1,
+    "n": 2,
+    "marker": "[2]",
+    "claim": "Human exposure occurs mainly through ingestion of contaminated food and water, inhalation of airborne particles, and, to a lesser extent, dermal contact .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "As a consequence of this widespread contamination, human exposure occurs primarily through ingestion of contaminated food and water, inhalation of airborne particles, and, to a lesser extent, dermal contact.",
+    "note": "",
+    "title": "Impact of Microplastic Exposure on Human Health: A Systematic ...",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+    "kind": "web",
+    "entailment": 0.993,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 2,
+    "n": 3,
+    "marker": "[3]",
+    "claim": "According to the evidence, microplastics may cause inflammation in the respiratory and gastrointestinal systems and compromise immune function .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "May 6, 2025 \u00b7 This review article aims to highlight the potential harm caused by microplastics (MPs) in different organs and systems and underscore the need for further investigation into their action mechanisms. MPs, such as polystyrene, polypropylene, and polyethylene, significantly impact human health, causing inflammation in the respiratory and gastrointestinal systems, compromising immune fun",
+    "note": "",
+    "title": "Impact of Microplastics on Human Health: Risks ... - MDPI",
+    "domain": "mdpi.com",
+    "url": "https://www.mdpi.com/2673-8929/4/2/23",
+    "kind": "web",
+    "entailment": 0.948,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 3,
+    "n": 1,
+    "marker": "[1]",
+    "claim": "They may also induce inflammatory responses, oxidative stress, and cellular damage, contributing to various diseases .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "We discuss the mechanisms by which MPs may induce inflammatory responses, oxidative stress, and cellular damage, thereby contributing to various diseases.",
+    "note": "",
+    "title": "Microplastics and human health: unraveling the toxicological ...",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12213550/",
+    "kind": "web",
+    "entailment": 0.97,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 4,
+    "n": 2,
+    "marker": "[2]",
+    "claim": "Possible associations have been reported between microplastics in the body and gastrointestinal complications, inflammatory conditions, hormonal imbalances, and reproductive dysfunction .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "Human epidemiologic evidence remains limited, but some studies have reported possible associations between microplastics in the body and gastrointestinal complications, inflammatory conditions, hormonal imbalances, and reproductive dysfunction.",
+    "note": "",
+    "title": "Impact of Microplastic Exposure on Human Health: A Systematic ...",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+    "kind": "web",
+    "entailment": 0.991,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 5,
+    "n": 1,
+    "marker": "[1]",
+    "claim": "The combination of microplastics with other environmental pollutants may amplify adverse health outcomes .",
+    "verdict": "partial",
+    "check_verdict": "PARTIALLY SUPPORTED",
+    "quote": "When these items are laundered, the microbeads may be released into aquatic environments, thereby exacerbating microplastic pollution. The ingestion of these MPs by aquatic life can lead to a range of ecological issues, including potential harm to the health of the organisms and the transfer of pollutants up the food chain (19).",
+    "note": "only a short or loosely matching passage supports this",
+    "title": "Microplastics and human health: unraveling the toxicological ...",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12213550/",
+    "kind": "web",
+    "entailment": 0.89,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 6,
+    "n": 2,
+    "marker": "[2]",
+    "claim": "Overall, human evidence is limited and largely observational, with studies mainly reporting associations between microplastic exposure and selected biological markers rather than confirmed clinical outcomes .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "In contrast, human evidence remains limited and largely observational, with studies primarily reporting associations between microplastic exposure and selected biological markers rather than confirmed clinical outcomes.",
+    "note": "",
+    "title": "Impact of Microplastic Exposure on Human Health: A Systematic ...",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+    "kind": "web",
+    "entailment": 0.99,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 7,
+    "n": 2,
+    "marker": "[2]",
+    "claim": "Long-term health effects are hard to assess because most studies are short-term or cross-sectional, and there is currently no standardized method to quantify the internal burden of microplastics in humans .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "Most existing studies are limited to short-term or cross-sectional designs, and longitudinal studies with extended follow-up periods are scarce, restricting the ability to evaluate long-term health effects of microplastic exposure. In addition, there is currently no standardized method to quantify the internal burden of microplastics in humans, and no consensus exists regarding exposure levels tha",
+    "note": "",
+    "title": "Impact of Microplastic Exposure on Human Health: A Systematic ...",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+    "kind": "web",
+    "entailment": 0.997,
+    "judged_by": "nli"
+   }
+  ],
+  "counts": {
+   "supported": 7,
+   "partial": 1
+  },
+  "elapsed_s": 20.19,
+  "total_s": 31.54
+ },
+ "q": 6,
+ "seconds": 31.6
+}

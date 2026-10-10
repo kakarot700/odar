@@ -1,0 +1,259 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_2e4a21f11636",
+ "trust_score": 100,
+ "grade": "citations hold up",
+ "counts": {
+  "SUPPORTED": 4,
+  "PARTIALLY SUPPORTED": 0,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 0,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 0
+ },
+ "claims": [
+  {
+   "claim_id": "c1.1",
+   "claim": "The 2023 Nobel Prize in Physiology or Medicine was awarded to Katalin Karik\u00f3 and Drew Weissman.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10663363/",
+     "marker": "[6]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.999,
+     "contradiction": 0.99,
+     "quote": "Katalin Karik\u00f3 and Drew Weissman were given the 2023 Nobel Prize in Physiology or Medicine for their findings of nucleoside base modifications that lead to the development of effective mRNA vaccines against COVID-19.",
+     "note": "another passage on the page may disagree: \"Likewise, there is no self-identified Black recipient of the Nobel Prize in Physiology or Medicine (23).\"",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Katalin Karik\u00f3 and Drew Weissman were given the 2023 Nobel Prize in Physiology or Medicine for their findings of nucleoside base modifications that lead to the development of effective mRNA vaccines against COVID-19.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10663363/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c1.2",
+   "claim": "The discoveries enabled the development of effective mRNA vaccines against COVID-19.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10663363/",
+     "marker": "[6]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.995,
+     "contradiction": 0.0,
+     "quote": "The COVID-19 pandemic has shown the importance of mRNA vaccine technology. mRNA vaccines have been highly effective (9) in preventing serious illness, hospitalization, and death from COVID-19.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "The COVID-19 pandemic has shown the importance of mRNA vaccine technology. mRNA vaccines have been highly effective (9) in preventing serious illness, hospitalization, and death from COVID-19.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10663363/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "Their work used modified RNA for therapeutic treatments, which enabled the development of life-saving COVID-19 RNA vaccines by Pfizer-BioNTech and Moderna.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10758357/",
+     "marker": "[4]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.998,
+     "contradiction": 0.0,
+     "quote": "The 2023 Nobel prize in physiology or medicine was awarded to Katalin Karik\u00f3 and Drew Weissman for their breakthrough discoveries to use modified RNA for therapeutic treatments. This enabled the development of life-saving COVID-19 RNA vaccines by the companies Pfizer-BioNTech and Moderna.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "The 2023 Nobel prize in physiology or medicine was awarded to Katalin Karik\u00f3 and Drew Weissman for their breakthrough discoveries to use modified RNA for therapeutic treatments. This enabled the development of life-saving COVID-19 RNA vaccines by the companies Pfizer-BioNTech and Moderna.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10758357/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "The discoveries concerning nucleoside base modifications allowed the development of effective mRNA vaccines against COVID-19.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://link.springer.com/article/10.1007/s11224-024-02281-w",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.996,
+     "contradiction": 0.0,
+     "quote": "Katalin Karik\u00f3 and Drew Weissman\u2019s discoveries regarding nucleoside-based modifications allowed the development of effective mRNA vaccines against COVID-19.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Katalin Karik\u00f3 and Drew Weissman\u2019s discoveries regarding nucleoside-based modifications allowed the development of effective mRNA vaccines against COVID-19.",
+   "quote_url": "https://link.springer.com/article/10.1007/s11224-024-02281-w",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10663363/",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10663363/",
+   "title": "From rejection to the Nobel Prize: Karik\u00f3 and Weissman\u2019s pioneering work on mRNA vaccines, and the need for diversity and inclusion in translational immunology - PMC",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "381b955adfaf15a18900ccda8602a6e153f02b73f02514103e12ecf441a08fbc",
+   "quarantined": false
+  },
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10758357/",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10758357/",
+   "title": "Nobel Prize for physiology or medicine in 2023: how to dupe the cellular innate immune system using modified RNA for therapeutic treatment - PMC",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "c84ee388f5af078792e89d15ded31bc2f78942c751a5f3f7fbe1048b1c07c5e1",
+   "quarantined": false
+  },
+  {
+   "url": "https://link.springer.com/article/10.1007/s11224-024-02281-w",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://link.springer.com/article/10.1007/s11224-024-02281-w",
+   "title": "The breakthrough in vaccination: Nobel Prize in Physiology or Medicine 2023 | Structural Chemistry | Springer Nature Link",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "19925ed34f61628e7a24dc8f5b10e67e8ab615f000d1a56573d6e5fc0b757ea3",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 37.6,
+ "usage": {
+  "fetches": 3,
+  "wayback_lookups": 0,
+  "searches": 0,
+  "llm_calls": 1,
+  "nli_checks": 4,
+  "scorer_load_ms": 3346
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 3,
+   "citations": 3
+  },
+  {
+   "t": 5.21,
+   "event": "fetch",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10758357/",
+   "state": "live",
+   "http_status": 200,
+   "chars": 7212,
+   "error": ""
+  },
+  {
+   "t": 5.26,
+   "event": "fetch",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10663363/",
+   "state": "live",
+   "http_status": 200,
+   "chars": 17631,
+   "error": ""
+  },
+  {
+   "t": 6.14,
+   "event": "fetch",
+   "url": "https://link.springer.com/article/10.1007/s11224-024-02281-w",
+   "state": "live",
+   "http_status": 200,
+   "chars": 15866,
+   "error": ""
+  },
+  {
+   "t": 19.55,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10663363/",
+   "claim": "The 2023 Nobel Prize in Physiology or Medicine was awarded to Katalin Karik\u00f3 and Drew Weissman.",
+   "verdict": "SUPPORTED",
+   "ent": 0.999,
+   "con": 0.99
+  },
+  {
+   "t": 25.18,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10663363/",
+   "claim": "The discoveries enabled the development of effective mRNA vaccines against COVID-19.",
+   "verdict": "SUPPORTED",
+   "ent": 0.995,
+   "con": 0.0
+  },
+  {
+   "t": 30.11,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10758357/",
+   "claim": "Their work used modified RNA for therapeutic treatments, which enabled the development of life-saving COVID-19 RNA vacci",
+   "verdict": "SUPPORTED",
+   "ent": 0.998,
+   "con": 0.0
+  },
+  {
+   "t": 37.62,
+   "event": "verify",
+   "url": "https://link.springer.com/article/10.1007/s11224-024-02281-w",
+   "claim": "The discoveries concerning nucleoside base modifications allowed the development of effective mRNA vaccines against COVI",
+   "verdict": "SUPPORTED",
+   "ent": 0.996,
+   "con": 0.0
+  },
+  {
+   "t": 37.63,
+   "event": "done",
+   "trust_score": 100
+  }
+ ],
+ "score_s": 41.0
+}

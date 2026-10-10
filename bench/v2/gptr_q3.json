@@ -1,0 +1,32 @@
+{
+ "qid": "q3",
+ "status": "ok",
+ "secs": 332.9,
+ "llm_calls": 5,
+ "other_tokenharbor_calls": 0,
+ "visited_urls": [
+  "https://academic.oup.com/restud/article-abstract/91/4/1843/7264776",
+  "https://epionline.org/studies/data-snapshot-three-quarters-of-economists-oppose-15-minimum-wage-proposals/",
+  "https://link.springer.com/chapter/10.1007/978-3-031-67604-8_4",
+  "https://minimumwage.com/2024/08/what-do-economists-really-say-about-wage-hikes/",
+  "https://minimumwage.com/2026/05/survey-three-quarters-of-economists-oppose-15-minimum-wage-proposals/",
+  "https://www.economist.com/finance-and-economics/2025/11/20/economists-get-cold-feet-about-high-minimum-wages",
+  "https://www.nber.org/papers/w26101",
+  "https://www.nber.org/system/files/working_papers/w12663/w12663.pdf",
+  "https://www.sciencedirect.com/science/article/pii/S0927537125001484",
+  "https://www.wsj.com/economy/jobs/minimum-wage-jobs-cost-debate-card-krueger-63b21af2"
+ ],
+ "source_urls": [
+  "https://www.economist.com/finance-and-economics/2025/11/20/economists-get-cold-feet-about-high-minimum-wages",
+  "https://www.nber.org/papers/w26101",
+  "https://minimumwage.com/2026/05/survey-three-quarters-of-economists-oppose-15-minimum-wage-proposals/",
+  "https://www.sciencedirect.com/science/article/pii/S0927537125001484",
+  "https://link.springer.com/chapter/10.1007/978-3-031-67604-8_4",
+  "https://www.nber.org/system/files/working_papers/w12663/w12663.pdf",
+  "https://www.wsj.com/economy/jobs/minimum-wage-jobs-cost-debate-card-krueger-63b21af2",
+  "https://minimumwage.com/2024/08/what-do-economists-really-say-about-wage-hikes/",
+  "https://epionline.org/studies/data-snapshot-three-quarters-of-economists-oppose-15-minimum-wage-proposals/",
+  "https://academic.oup.com/restud/article-abstract/91/4/1843/7264776"
+ ],
+ "costs_reported": 0.16702500000000003
+}

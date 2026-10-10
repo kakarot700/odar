@@ -1,0 +1,150 @@
+{
+ "thread_id": "ab76a6d9b9044bbf",
+ "share_token": "AcPSA3BiIyjXQ5Y7",
+ "title": "How much did global average temperature exceed pre-industrial levels in 2024?",
+ "project_id": "",
+ "sources": [
+  {
+   "url": "https://www.rmets.org/metmatters/world-exceeds-15degc-threshold-entire-year-first-time",
+   "title": "World exceeds 1.5\u00b0C threshold for entire year for the first time",
+   "domain": "rmets.org",
+   "snippet": "Jan 10, 2025 \u00b7 Key Messages: 2024 Global Climate Highlights 2024 is confirmed as the hottest year on record with a global average temperature of 15.10\u00b0C, overtaking 2023, the previous warmest year, by 0.12\u00b0C. 2024 is 1.60\u00b0C above an estimate of the pre-industrial level, making it the first calendar year to exceed the 1.5\u00b0C limit.",
+   "kind": "web",
+   "n": 1
+  },
+  {
+   "url": "https://climate.copernicus.eu/copernicus-2024-first-year-exceed-15degc-above-pre-industrial-level",
+   "title": "Copernicus: 2024 is the first year to exceed 1.5\u00b0C above pre ...",
+   "domain": "climate.copernicus.eu",
+   "snippet": "Jan 10, 2025 \u00b7 2024 is confirmed by the Copernicus Climate Change Service (C3S) to be the warmest year on record globally, and the first calendar year that the average global temperature exceeded 1.5\u00b0C above its pre-industrial level.",
+   "kind": "web",
+   "n": 2
+  },
+  {
+   "url": "https://wmo.int/news/media-centre/wmo-confirms-2024-warmest-year-record-about-155degc-above-pre-industrial-level",
+   "title": "WMO confirms 2024 as warmest year on record at about 1.55\u00b0C ...",
+   "domain": "wmo.int",
+   "snippet": "Jan 10, 2025 \u00b7 One or more individual years exceeding 1.5\u00b0C does not mean that we have missed the goal of \u201cholding the increase in the global average temperature to well below 2\u00b0C above pre-industrial levels and pursuing efforts to limit the temperature increase to 1.5\u00b0C above pre-industrial levels, recognizing that this would significantly reduce the ...",
+   "kind": "web",
+   "n": 3
+  },
+  {
+   "url": "https://www.nasa.gov/news-release/temperatures-rising-nasa-confirms-2024-warmest-year-on-record/",
+   "title": "Temperatures Rising: NASA Confirms 2024 Warmest Year on ...",
+   "domain": "nasa.gov",
+   "snippet": "Jan 10, 2025 \u00b7 Earth\u2019s average surface temperature in 2024 was the warmest on record, according to an analysis led by NASA scientists. Global temperatures in 2024 were 2.30 degrees Fahrenheit (1.28 degrees Celsius) above the agency\u2019s 20th-century baseline (1951-1980), which tops the record set in 2023.",
+   "kind": "web",
+   "n": 4
+  },
+  {
+   "url": "https://www.climate.gov/news-features/understanding-climate/climate-change-global-temperature",
+   "title": "Climate change: global temperature - NOAA Climate.gov",
+   "domain": "climate.gov",
+   "snippet": "May 29, 2025 \u00b7 2024 was the warmest year since global records began in 1850 by a wide margin. It was 2.32 \u00b0F (1.18 \u00b0C) above the 20th-century average of 57.0 \u00b0F (13.9 \u00b0C). It was 2.62 \u00b0F (1.35 \u00b0C) above the pre-industrial average of 56.7 \u00b0F (1850-1900). The 10 warmest years in the historical record have all occurred in the past decade (2015-2024).",
+   "kind": "web",
+   "n": 5
+  },
+  {
+   "url": "https://climate.copernicus.eu/sites/default/files/custom-uploads/GCH-2024/GCH2024.pdf",
+   "title": "2024 - a second record-breaking year, following the ...",
+   "domain": "climate.copernicus.eu",
+   "snippet": "2024 saw unprecedented global temperatures, following on from the remarkable warmth of 2023. It also became the first year with an average temperature clearly exceeding 1.5\u00b0C above the pre-industrial level \u2013 a threshold set by the Paris Agreement to significantly reduce the risks and impacts of climate change.",
+   "kind": "web",
+   "n": 6
+  }
+ ],
+ "answer": "In 2024, the global average temperature was 1.60\u00b0C above an estimate of the pre-industrial level, the first calendar year above 1.5\u00b0C [2].\n\nThe WMO\u2019s consolidated analysis put 2024 at 1.55\u00b0C above the 1850\u20131900 average, with a margin of uncertainty of \u00b10.13\u00b0C [3].\n\nNASA estimated 2024 was 1.47\u00b0C warmer than the 1850\u20131900 average [4].\n\nNOAA estimated 2024 was 1.46\u00b0C above the pre-industrial average [3].",
+ "abstained": false,
+ "timing": {
+  "search_s": 1.71,
+  "fetch_s": 0.0,
+  "ttft_s": 15.53,
+  "total_s": 15.53
+ },
+ "draft_answer": "In 2024, the global average temperature was 1.60\u00b0C above an estimate of the pre-industrial level, the first calendar year above 1.5\u00b0C [2].\n\nThe WMO\u2019s consolidated analysis put 2024 at 1.55\u00b0C above the 1850\u20131900 average, with a margin of uncertainty of \u00b10.13\u00b0C [3].\n\nNASA estimated 2024 was 1.47\u00b0C warmer than the 1850\u20131900 average [4].\n\nNOAA estimated 2024 was 1.46\u00b0C above the pre-industrial average [5].",
+ "verification": {
+  "citations": [
+   {
+    "occ": 0,
+    "n": 2,
+    "marker": "[2]",
+    "claim": "In 2024, the global average temperature was 1.60\u00b0C above an estimate of the pre-industrial level, the first calendar year above 1.5\u00b0C .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "According to ERA5 (1), the global average temperature of 15.10\u00b0C was 0.72\u00b0C above the 1991-2020 average, and 0.12\u00b0C above 2023, the previous warmest year on record. This is equivalent to 1.60\u00b0C above an estimate of the 1850-1900 temperature designated to be the pre-industrial level. 2024 is the first calendar year that has reached more than 1.5\u00b0C above the pre-industrial level.",
+    "note": "",
+    "title": "Copernicus: 2024 is the first year to exceed 1.5\u00b0C above pre ...",
+    "domain": "climate.copernicus.eu",
+    "url": "https://climate.copernicus.eu/copernicus-2024-first-year-exceed-15degc-above-pre-industrial-level",
+    "kind": "web",
+    "entailment": 0.995,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 1,
+    "n": 3,
+    "marker": "[3]",
+    "claim": "The WMO\u2019s consolidated analysis put 2024 at 1.55\u00b0C above the 1850\u20131900 average, with a margin of uncertainty of \u00b10.13\u00b0C .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "2024 saw exceptional land and sea surface temperatures and ocean heat Long-term temperature goal of the Paris Agreement not yet dead but in grave danger The global average surface temperature was 1.55 \u00b0C (with a margin of uncertainty of \u00b1 0.13 \u00b0C) above the 1850-1900 average, according to WMO\u2019s consolidated analysis of the six datasets.",
+    "note": "another passage on the page may disagree: \"To calculate the consolidated figures for temperatures relative to pre-industrial, WMO calculates anomalies relative to 1981-2010 for each dataset and then adds\"",
+    "title": "WMO confirms 2024 as warmest year on record at about 1.55\u00b0C ...",
+    "domain": "wmo.int",
+    "url": "https://wmo.int/news/media-centre/wmo-confirms-2024-warmest-year-record-about-155degc-above-pre-industrial-level",
+    "kind": "web",
+    "entailment": 0.992,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 2,
+    "n": 4,
+    "marker": "[4]",
+    "claim": "NASA estimated 2024 was 1.47\u00b0C warmer than the 1850\u20131900 average .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "NASA scientists further estimate Earth in 2024 was about 2.65 degrees Fahrenheit (1.47 degrees Celsius) warmer than the mid-19th century average (1850-1900).",
+    "note": "reworded match: Passages state the same figure and baseline as the claim.",
+    "title": "Temperatures Rising: NASA Confirms 2024 Warmest Year on ...",
+    "domain": "nasa.gov",
+    "url": "https://www.nasa.gov/news-release/temperatures-rising-nasa-confirms-2024-warmest-year-on-record/",
+    "kind": "web",
+    "entailment": 0.112,
+    "judged_by": "nli+llm"
+   },
+   {
+    "occ": 3,
+    "n": 3,
+    "marker": "[3]",
+    "claim": "NOAA estimated 2024 was 1.46\u00b0C above the pre-industrial average .",
+    "verdict": "partial",
+    "check_verdict": "PARTIALLY SUPPORTED",
+    "quote": "WMO confirms 2024 as warmest year on record at about 1.55\u00b0C above pre-industrial level",
+    "note": "the page supports the claim's gist but not the figure(s) 1.46",
+    "title": "WMO confirms 2024 as warmest year on record at about 1.55\u00b0C ...",
+    "domain": "wmo.int",
+    "url": "https://wmo.int/news/media-centre/wmo-confirms-2024-warmest-year-record-about-155degc-above-pre-industrial-level",
+    "kind": "web",
+    "entailment": 0.966,
+    "judged_by": "nli"
+   }
+  ],
+  "counts": {
+   "supported": 3,
+   "partial": 1
+  },
+  "elapsed_s": 47.78,
+  "answer": "In 2024, the global average temperature was 1.60\u00b0C above an estimate of the pre-industrial level, the first calendar year above 1.5\u00b0C [2].\n\nThe WMO\u2019s consolidated analysis put 2024 at 1.55\u00b0C above the 1850\u20131900 average, with a margin of uncertainty of \u00b10.13\u00b0C [3].\n\nNASA estimated 2024 was 1.47\u00b0C warmer than the 1850\u20131900 average [4].\n\nNOAA estimated 2024 was 1.46\u00b0C above the pre-industrial average [3].",
+  "repairs": [
+   {
+    "claim": "NOAA estimated 2024 was 1.46\u00b0C above the pre-industrial average .",
+    "from": 5,
+    "to": 3,
+    "action": "recited"
+   }
+  ],
+  "total_s": 63.34
+ },
+ "q": 7,
+ "seconds": 63.5
+}

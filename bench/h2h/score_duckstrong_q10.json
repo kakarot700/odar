@@ -1,0 +1,300 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_e93ac490fcdd",
+ "trust_score": 100,
+ "grade": "citations hold up",
+ "counts": {
+  "SUPPORTED": 2,
+  "PARTIALLY SUPPORTED": 0,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 0,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 6
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "The strongest evidence is the SELECT trial, a large randomized, placebo-controlled study of 17,604 adults with overweight or obesity, established cardiovascular disease, and no diabetes.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2.1",
+   "claim": "The average follow-up was about 3 years.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2.2",
+   "claim": "Weekly semaglutide 2.4 mg reduced the relative risk of cardiovascular death, nonfatal heart attack, or nonfatal stroke by 20% compared with placebo.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "The events occurred in 6.5% of participants taking semaglutide versus 8.0% taking placebo\u2014an absolute difference of 1.5 percentage points.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://newsroom.heart.org/news/major-cvd-event-risk-cut-by-20-in-adults-without-diabetes-with-overweight-or-obesity",
+     "marker": "[1]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.04,
+     "contradiction": 0.982,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli+llm",
+     "source_type": "organization",
+     "source_year": null
+    },
+    {
+     "url": "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/11/09/15/04/select",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.928,
+     "contradiction": 0.0,
+     "quote": "The primary outcome, major adverse CV events (MACE: composite of CV death, nonfatal MI, and nonfatal stroke), for semaglutide vs. placebo, was: 6.5% vs. 8.0% (hazard ratio [HR] 0.80, 95% confidence interval [CI] 0.72-0.90, p < 0.001).",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": 2023
+    }
+   ],
+   "quote": "The primary outcome, major adverse CV events (MACE: composite of CV death, nonfatal MI, and nonfatal stroke), for semaglutide vs. placebo, was: 6.5% vs. 8.0% (hazard ratio [HR] 0.80, 95% confidence interval [CI] 0.72-0.90, p < 0.001).",
+   "quote_url": "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/11/09/15/04/select",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4",
+   "claim": "Separate trials have also found cardiovascular benefit from GLP-1 drugs in people with type 2 diabetes.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5.1",
+   "claim": "The size of benefit and the groups studied vary by medication and trial.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5.2",
+   "claim": "SELECT\u2019s result should not be assumed to apply equally to everyone or to every GLP-1 drug.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6",
+   "claim": "In SELECT, gastrointestinal side effects led more people to stop semaglutide.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://newsroom.heart.org/news/major-cvd-event-risk-cut-by-20-in-adults-without-diabetes-with-overweight-or-obesity",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.975,
+     "contradiction": 0.874,
+     "quote": "Semaglutide was stopped more frequently than placebo for gastrointestinal intolerance, a known side effect of this class of medications; however, there was no higher rate of serious gastrointestinal events. The researchers noted that this medication did not lead to an increased rate of pancreatitis, which has been a concern with prior medications of this type.",
+     "note": "another passage on the page may disagree: \"The number of serious adverse events was lower in the semaglutide group. Previous studies of medications of the GLP-1 receptor agonist class have shown an assoc\"",
+     "judged_by": "nli",
+     "source_type": "organization",
+     "source_year": null
+    },
+    {
+     "url": "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/11/09/15/04/select",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.798,
+     "contradiction": 0.982,
+     "quote": "Study drug discontinuation was twice as common in the semaglutide arm and was primarily due to gastrointestinal intolerance, a known side effect of GLP-1 RAs.",
+     "note": "reworded match: Passage confirms GI intolerance primarily caused semaglutide discontinuation.",
+     "judged_by": "nli+llm",
+     "source_type": "web",
+     "source_year": 2023
+    }
+   ],
+   "quote": "Semaglutide was stopped more frequently than placebo for gastrointestinal intolerance, a known side effect of this class of medications; however, there was no higher rate of serious gastrointestinal events. The researchers noted that this medication did not lead to an increased rate of pancreatitis, which has been a concern with prior medications of this type.",
+   "quote_url": "https://newsroom.heart.org/news/major-cvd-event-risk-cut-by-20-in-adults-without-diabetes-with-overweight-or-obesity",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://newsroom.heart.org/news/major-cvd-event-risk-cut-by-20-in-adults-without-diabetes-with-overweight-or-obesity",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://newsroom.heart.org/news/major-cvd-event-risk-cut-by-20-in-adults-without-diabetes-with-overweight-or-obesity",
+   "title": "Major CVD event risk cut by 20% in adults without diabetes, with overweight or obesity | American Heart Association",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "97d7242c498920fb04c4e3b4b525fa6a10f375b2c3f56d194dfafc173fc2f133",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/11/09/15/04/select",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/11/09/15/04/select",
+   "title": "Semaglutide Effects on Cardiovascular Outcomes in People With Overweight or Obesity - American College of Cardiology",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "a9ee0777db2c329e365eea6cb4be89b32d1faa644d81654d9991a4afc1e30b41",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 54.6,
+ "usage": {
+  "fetches": 2,
+  "wayback_lookups": 0,
+  "searches": 0,
+  "llm_calls": 4,
+  "nli_checks": 4,
+  "scorer_load_ms": 1633
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 6,
+   "citations": 4
+  },
+  {
+   "t": 14.78,
+   "event": "fetch",
+   "url": "https://newsroom.heart.org/news/major-cvd-event-risk-cut-by-20-in-adults-without-diabetes-with-overweight-or-obesity",
+   "state": "live",
+   "http_status": 200,
+   "chars": 12190,
+   "error": ""
+  },
+  {
+   "t": 15.18,
+   "event": "fetch",
+   "url": "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/11/09/15/04/select",
+   "state": "live",
+   "http_status": 200,
+   "chars": 7260,
+   "error": ""
+  },
+  {
+   "t": 33.21,
+   "event": "paraphrase_judge",
+   "claim": "The events occurred in 6.5% of participants taking semaglutide versus 8.0% taking placebo\u2014an absolute difference of 1.5 ",
+   "verdict": "NOT_SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 33.21,
+   "event": "verify",
+   "url": "https://newsroom.heart.org/news/major-cvd-event-risk-cut-by-20-in-adults-without-diabetes-with-overweight-or-obesity",
+   "claim": "The events occurred in 6.5% of participants taking semaglutide versus 8.0% taking placebo\u2014an absolute difference of 1.5 ",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.04,
+   "con": 0.982
+  },
+  {
+   "t": 41.93,
+   "event": "verify",
+   "url": "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/11/09/15/04/select",
+   "claim": "The events occurred in 6.5% of participants taking semaglutide versus 8.0% taking placebo\u2014an absolute difference of 1.5 ",
+   "verdict": "SUPPORTED",
+   "ent": 0.928,
+   "con": 0.0
+  },
+  {
+   "t": 45.87,
+   "event": "verify",
+   "url": "https://newsroom.heart.org/news/major-cvd-event-risk-cut-by-20-in-adults-without-diabetes-with-overweight-or-obesity",
+   "claim": "In SELECT, gastrointestinal side effects led more people to stop semaglutide.",
+   "verdict": "SUPPORTED",
+   "ent": 0.975,
+   "con": 0.874
+  },
+  {
+   "t": 54.62,
+   "event": "paraphrase_judge",
+   "claim": "In SELECT, gastrointestinal side effects led more people to stop semaglutide.",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 54.62,
+   "event": "verify",
+   "url": "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/11/09/15/04/select",
+   "claim": "In SELECT, gastrointestinal side effects led more people to stop semaglutide.",
+   "verdict": "SUPPORTED",
+   "ent": 0.798,
+   "con": 0.982
+  },
+  {
+   "t": 54.62,
+   "event": "done",
+   "trust_score": 100
+  }
+ ],
+ "score_s": 56.3
+}

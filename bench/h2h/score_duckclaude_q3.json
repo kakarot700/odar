@@ -1,0 +1,284 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_652f09a32acd",
+ "trust_score": 80,
+ "grade": "mixed: check flagged claims",
+ "counts": {
+  "SUPPORTED": 4,
+  "PARTIALLY SUPPORTED": 0,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 1,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 1
+ },
+ "claims": [
+  {
+   "claim_id": "c1.1",
+   "claim": "The 2023 Nobel Prize in Physiology or Medicine was awarded jointly to Katalin Karik\u00f3 and Drew Weissman.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://www.nobelprize.org/prizes/medicine/2023/press-release",
+     "marker": "[1]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "archived_only",
+     "entailment": 0.619,
+     "contradiction": 1.0,
+     "quote": "",
+     "note": "the page is real but does not say this (verified against the Wayback Machine copy; live page is gone)",
+     "judged_by": "nli+llm",
+     "source_type": "web",
+     "source_year": 2023
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.nobelprize.org/prizes/medicine/2023/press-release",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c1.2",
+   "claim": "Katalin Karik\u00f3 and Drew Weissman made discoveries concerning nucleoside base modifications.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.nobelprize.org/prizes/medicine/2023/press-release",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "archived_only",
+     "entailment": 0.997,
+     "contradiction": 0.0,
+     "quote": "Katalin Karik\u00f3 and Drew Weissman for their discoveries concerning nucleoside base modifications that enabled the development of effective mRNA vaccines against COVID-19",
+     "note": "(verified against the Wayback Machine copy; live page is gone)",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": 2023
+    }
+   ],
+   "quote": "Katalin Karik\u00f3 and Drew Weissman for their discoveries concerning nucleoside base modifications that enabled the development of effective mRNA vaccines against COVID-19",
+   "quote_url": "https://www.nobelprize.org/prizes/medicine/2023/press-release",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c1.3",
+   "claim": "The discoveries enabled the development of effective mRNA vaccines against COVID-19.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.nobelprize.org/prizes/medicine/2023/press-release",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "archived_only",
+     "entailment": 0.994,
+     "contradiction": 0.0,
+     "quote": "for their discoveries concerning nucleoside base modifications that enabled the development of effective mRNA vaccines against COVID-19",
+     "note": "(verified against the Wayback Machine copy; live page is gone)",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": 2023
+    }
+   ],
+   "quote": "for their discoveries concerning nucleoside base modifications that enabled the development of effective mRNA vaccines against COVID-19",
+   "quote_url": "https://www.nobelprize.org/prizes/medicine/2023/press-release",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "Their groundbreaking work was crucial for developing mRNA vaccines rapidly during the COVID-19 pandemic.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3.1",
+   "claim": "Their discoveries fundamentally changed how scientists understand the interaction between mRNA and the immune system.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.nobelprize.org/prizes/medicine/2023/press-release",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "archived_only",
+     "entailment": 0.997,
+     "contradiction": 0.0,
+     "quote": "Through their groundbreaking findings, which have fundamentally changed our understanding of how mRNA interacts with our immune system, the laureates contributed to the unprecedented rate of vaccine development during one of the greatest threats to human health in modern times.",
+     "note": "(verified against the Wayback Machine copy; live page is gone)",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": 2023
+    }
+   ],
+   "quote": "Through their groundbreaking findings, which have fundamentally changed our understanding of how mRNA interacts with our immune system, the laureates contributed to the unprecedented rate of vaccine development during one of the greatest threats to human health in modern times.",
+   "quote_url": "https://www.nobelprize.org/prizes/medicine/2023/press-release",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3.2",
+   "claim": "Their discoveries allowed vaccines to be developed at an unprecedented pace during one of the greatest health threats of modern times.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.nobelprize.org/prizes/medicine/2023/press-release",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "archived_only",
+     "entailment": 0.998,
+     "contradiction": 0.0,
+     "quote": "Through their groundbreaking findings, which have fundamentally changed our understanding of how mRNA interacts with our immune system, the laureates contributed to the unprecedented rate of vaccine development during one of the greatest threats to human health in modern times.",
+     "note": "(verified against the Wayback Machine copy; live page is gone)",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": 2023
+    }
+   ],
+   "quote": "Through their groundbreaking findings, which have fundamentally changed our understanding of how mRNA interacts with our immune system, the laureates contributed to the unprecedented rate of vaccine development during one of the greatest threats to human health in modern times.",
+   "quote_url": "https://www.nobelprize.org/prizes/medicine/2023/press-release",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://www.nobelprize.org/prizes/medicine/2023/press-release",
+   "state": "archived_only",
+   "http_status": 403,
+   "error": "HTTP 403",
+   "resolved_url": "https://www.nobelprize.org/prizes/medicine/2023/press-release",
+   "title": "",
+   "archive_url": "http://web.archive.org/web/20261002080754/https://www.nobelprize.org/prizes/medicine/2023/press-release/",
+   "archive_timestamp": "20261002080754",
+   "text_source": "wayback",
+   "archive_check": "archived",
+   "content_hash": "d53492b4bdac61d70c30ddd3e63b9df3c4a6e86d6164cd875455390fcb3e7dcf",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 57.7,
+ "usage": {
+  "fetches": 2,
+  "wayback_lookups": 1,
+  "searches": 0,
+  "llm_calls": 3,
+  "nli_checks": 5,
+  "scorer_load_ms": 2117
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 3,
+   "citations": 2
+  },
+  {
+   "t": 15.29,
+   "event": "fetch",
+   "url": "https://www.nobelprize.org/prizes/medicine/2023/press-release",
+   "state": "blocked",
+   "http_status": 403,
+   "chars": 0,
+   "error": "HTTP 403"
+  },
+  {
+   "t": 19.7,
+   "event": "wayback",
+   "url": "https://www.nobelprize.org/prizes/medicine/2023/press-release",
+   "archived": true,
+   "snapshot": "http://web.archive.org/web/20261002080754/https://www.nobelprize.org/prizes/medicine/2023/press-release/"
+  },
+  {
+   "t": 20.67,
+   "event": "archive_fetch",
+   "url": "https://web.archive.org/web/20261002080754id_/https://www.nobelprize.org/prizes/medicine/2023/press-release",
+   "ok": true,
+   "chars": 9800,
+   "error": ""
+  },
+  {
+   "t": 33.02,
+   "event": "paraphrase_judge",
+   "claim": "The 2023 Nobel Prize in Physiology or Medicine was awarded jointly to Katalin Karik\u00f3 and Drew Weissman.",
+   "verdict": "SUPPORTED",
+   "grounded": false
+  },
+  {
+   "t": 33.02,
+   "event": "verify",
+   "url": "https://www.nobelprize.org/prizes/medicine/2023/press-release",
+   "claim": "The 2023 Nobel Prize in Physiology or Medicine was awarded jointly to Katalin Karik\u00f3 and Drew Weissman.",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.619,
+   "con": 1.0
+  },
+  {
+   "t": 39.36,
+   "event": "verify",
+   "url": "https://www.nobelprize.org/prizes/medicine/2023/press-release",
+   "claim": "Katalin Karik\u00f3 and Drew Weissman made discoveries concerning nucleoside base modifications.",
+   "verdict": "SUPPORTED",
+   "ent": 0.997,
+   "con": 0.0
+  },
+  {
+   "t": 45.21,
+   "event": "verify",
+   "url": "https://www.nobelprize.org/prizes/medicine/2023/press-release",
+   "claim": "The discoveries enabled the development of effective mRNA vaccines against COVID-19.",
+   "verdict": "SUPPORTED",
+   "ent": 0.994,
+   "con": 0.0
+  },
+  {
+   "t": 51.37,
+   "event": "verify",
+   "url": "https://www.nobelprize.org/prizes/medicine/2023/press-release",
+   "claim": "Their discoveries fundamentally changed how scientists understand the interaction between mRNA and the immune system.",
+   "verdict": "SUPPORTED",
+   "ent": 0.997,
+   "con": 0.0
+  },
+  {
+   "t": 57.71,
+   "event": "verify",
+   "url": "https://www.nobelprize.org/prizes/medicine/2023/press-release",
+   "claim": "Their discoveries allowed vaccines to be developed at an unprecedented pace during one of the greatest health threats of",
+   "verdict": "SUPPORTED",
+   "ent": 0.998,
+   "con": 0.0
+  },
+  {
+   "t": 57.72,
+   "event": "done",
+   "trust_score": 80
+  }
+ ],
+ "score_s": 59.9
+}

@@ -1,0 +1,317 @@
+{
+  "check_id": "chk_c742a7da3f42",
+  "trust_score": 0,
+  "grade": "unreliable citations",
+  "counts": {
+    "SUPPORTED": 0,
+    "PARTIALLY SUPPORTED": 0,
+    "CONTRADICTED": 0,
+    "WRONG SOURCE": 2,
+    "UNVERIFIABLE": 0,
+    "DEAD LINK": 3,
+    "NO CITATION": 4
+  },
+  "claims": [
+    {
+      "claim_id": "c1.1",
+      "claim": "The 2008 global financial crisis was triggered by a confluence of factors.",
+      "verdict": "NO CITATION",
+      "citations": [],
+      "quote": "",
+      "quote_url": "",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": "atomic part of a compound sentence"
+    },
+    {
+      "claim_id": "c1.2",
+      "claim": "The primarily factors were the collapse of the U.S. housing bubble.",
+      "verdict": "NO CITATION",
+      "citations": [],
+      "quote": "",
+      "quote_url": "",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": "atomic part of a compound sentence"
+    },
+    {
+      "claim_id": "c1.3",
+      "claim": "The primarily factors were its contagion through complex financial instruments.",
+      "verdict": "NO CITATION",
+      "citations": [],
+      "quote": "",
+      "quote_url": "",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": "atomic part of a compound sentence"
+    },
+    {
+      "claim_id": "c2",
+      "claim": "Starting in the early 2000s, low interest rates and lax lending standards fueled a surge in subprime mortgages—loans extended to borrowers with poor credit histories.",
+      "verdict": "DEAD LINK",
+      "citations": [
+        {
+          "url": "https://www.federalreservehistory.org/essays/great-recession-of-2007-2009",
+          "marker": "[1]",
+          "verdict": "DEAD LINK",
+          "link_state": "not_found",
+          "entailment": 0.0,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "page not found (soft 404); archive check unavailable",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://www.federalreservehistory.org/essays/great-recession-of-2007-2009",
+      "replacement": null,
+      "replacement_searched": true,
+      "note": ""
+    },
+    {
+      "claim_id": "c3",
+      "claim": "These loans were bundled into mortgage-backed securities (MBS) and collateralized debt obligations (CDOs), which were rated highly by credit agencies despite their underlying risk.",
+      "verdict": "WRONG SOURCE",
+      "citations": [
+        {
+          "url": "https://fcic.law.stanford.edu/report/conclusions",
+          "marker": "[2]",
+          "verdict": "WRONG SOURCE",
+          "link_state": "live",
+          "entailment": 0.0,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "the page is real but does not say this",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://fcic.law.stanford.edu/report/conclusions",
+      "replacement": null,
+      "replacement_searched": true,
+      "note": ""
+    },
+    {
+      "claim_id": "c4",
+      "claim": "Financial institutions, including banks and shadow banks, relied heavily on short-term funding and excessive leverage, creating a fragile system vulnerable to housing price declines.",
+      "verdict": "DEAD LINK",
+      "citations": [
+        {
+          "url": "https://www.federalreservehistory.org/essays/great-recession-of-2007-2009",
+          "marker": "[1]",
+          "verdict": "DEAD LINK",
+          "link_state": "not_found",
+          "entailment": 0.0,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "page not found (soft 404); archive check unavailable",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://www.federalreservehistory.org/essays/great-recession-of-2007-2009",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": ""
+    },
+    {
+      "claim_id": "c5",
+      "claim": "As interest rates rose and home prices fell starting in 2006–2007, subprime borrowers began defaulting in large numbers.",
+      "verdict": "NO CITATION",
+      "citations": [],
+      "quote": "",
+      "quote_url": "",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": ""
+    },
+    {
+      "claim_id": "c6",
+      "claim": "The value of MBS and CDOs plummeted, causing severe losses at global financial institutions and triggering a panic in short-term credit markets.",
+      "verdict": "WRONG SOURCE",
+      "citations": [
+        {
+          "url": "https://fcic.law.stanford.edu/report/conclusions",
+          "marker": "[2]",
+          "verdict": "WRONG SOURCE",
+          "link_state": "live",
+          "entailment": 0.0,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "the page is real but does not say this",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://fcic.law.stanford.edu/report/conclusions",
+      "replacement": null,
+      "replacement_searched": true,
+      "note": ""
+    },
+    {
+      "claim_id": "c7",
+      "claim": "The failure of Lehman Brothers in September 2008 intensified the crisis, leading to a global credit freeze and severe economic recession worldwide.",
+      "verdict": "DEAD LINK",
+      "citations": [
+        {
+          "url": "https://www.stlouisfed.org/the-great-recession/the-financial-crisis-and-the-great-recession",
+          "marker": "[3]",
+          "verdict": "DEAD LINK",
+          "link_state": "not_found",
+          "entailment": 0.0,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "page not found (soft 404); archive check unavailable",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://www.stlouisfed.org/the-great-recession/the-financial-crisis-and-the-great-recession",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": ""
+    }
+  ],
+  "links": [
+    {
+      "url": "https://www.federalreservehistory.org/essays/great-recession-of-2007-2009",
+      "state": "not_found",
+      "http_status": 200,
+      "error": "",
+      "resolved_url": "https://www.federalreservehistory.org/not-found",
+      "title": "Content Not Found | Federal Reserve History",
+      "archive_url": "",
+      "archive_timestamp": "",
+      "text_source": "",
+      "archive_check": "unavailable",
+      "content_hash": "95ada779656b1fb5311e9146c4668f588f887f58b2b3cec7a4a102858dd57b01",
+      "quarantined": false
+    },
+    {
+      "url": "https://fcic.law.stanford.edu/report/conclusions",
+      "state": "live",
+      "http_status": 200,
+      "error": "",
+      "resolved_url": "https://fcic.law.stanford.edu/report/conclusions",
+      "title": "Get the Report: Conclusions : Financial Crisis Inquiry Commission",
+      "archive_url": "",
+      "archive_timestamp": "",
+      "text_source": "live",
+      "archive_check": "",
+      "content_hash": "f112adf9ac5983677d1e5dab9734283c8c2f62ef15a1f144f4a08f6ed271ca7d",
+      "quarantined": false
+    },
+    {
+      "url": "https://www.stlouisfed.org/the-great-recession/the-financial-crisis-and-the-great-recession",
+      "state": "not_found",
+      "http_status": 200,
+      "error": "",
+      "resolved_url": "https://www.stlouisfed.org/404-error",
+      "title": "Page Not Found | St. Louis Fed",
+      "archive_url": "",
+      "archive_timestamp": "",
+      "text_source": "",
+      "archive_check": "unavailable",
+      "content_hash": "828028cd9d1334a68127bef1239d04184199713c6b3454c9e7792833d232ac43",
+      "quarantined": false
+    }
+  ],
+  "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+  "elapsed_s": 81.3,
+  "usage": {
+    "fetches": 3,
+    "wayback_lookups": 2,
+    "searches": 3,
+    "llm_calls": 1,
+    "nli_checks": 7,
+    "scorer_load_ms": 15251
+  },
+  "audit_trail": [
+    {
+      "t": 0.0,
+      "event": "parse",
+      "claims": 7,
+      "citations": 5
+    },
+    {
+      "t": 10.26,
+      "event": "fetch",
+      "url": "https://fcic.law.stanford.edu/report/conclusions",
+      "state": "live",
+      "http_status": 200,
+      "chars": 862,
+      "error": ""
+    },
+    {
+      "t": 10.64,
+      "event": "fetch",
+      "url": "https://www.stlouisfed.org/the-great-recession/the-financial-crisis-and-the-great-recession",
+      "state": "not_found",
+      "http_status": 200,
+      "chars": 503,
+      "error": ""
+    },
+    {
+      "t": 10.8,
+      "event": "fetch",
+      "url": "https://www.federalreservehistory.org/essays/great-recession-of-2007-2009",
+      "state": "not_found",
+      "http_status": 200,
+      "chars": 89,
+      "error": ""
+    },
+    {
+      "t": 19.17,
+      "event": "wayback",
+      "url": "https://www.federalreservehistory.org/essays/great-recession-of-2007-2009",
+      "error": "RuntimeError: wayback CDX HTTP 503"
+    },
+    {
+      "t": 26.93,
+      "event": "wayback",
+      "url": "https://www.stlouisfed.org/the-great-recession/the-financial-crisis-and-the-great-recession",
+      "error": "ReadTimeout: HTTPSConnectionPool(host='web.archive.org', port=443): Read timed out. (read timeout=12.0)"
+    },
+    {
+      "t": 30.84,
+      "event": "verify",
+      "url": "https://fcic.law.stanford.edu/report/conclusions",
+      "claim": "These loans were bundled into mortgage-backed securities (MBS) and collateralized debt obligations (CDOs), which were ra",
+      "verdict": "WRONG SOURCE",
+      "ent": 0.0,
+      "con": 0.0
+    },
+    {
+      "t": 34.37,
+      "event": "verify",
+      "url": "https://fcic.law.stanford.edu/report/conclusions",
+      "claim": "The value of MBS and CDOs plummeted, causing severe losses at global financial institutions and triggering a panic in sh",
+      "verdict": "WRONG SOURCE",
+      "ent": 0.0,
+      "con": 0.0
+    },
+    {
+      "t": 50.43,
+      "event": "search",
+      "query": "These loans were bundled into mortgage-backed securities (MBS) and collateralized debt obligations (CDOs), which were rated highly by credit agencies despite their",
+      "hits": 0
+    },
+    {
+      "t": 65.92,
+      "event": "search",
+      "query": "The value of MBS and CDOs plummeted, causing severe losses at global financial institutions and triggering a panic in short-term credit markets.",
+      "hits": 0
+    },
+    {
+      "t": 81.33,
+      "event": "search",
+      "query": "Starting in the early 2000s, low interest rates and lax lending standards fueled a surge in subprime mortgages—loans extended to borrowers with",
+      "hits": 0
+    },
+    {
+      "t": 81.33,
+      "event": "done",
+      "trust_score": 0
+    }
+  ]
+}

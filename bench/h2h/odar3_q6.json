@@ -1,0 +1,165 @@
+{
+ "thread_id": "1ae011ebf341d75c",
+ "share_token": "e7DPzjZXVdGlRZ-h",
+ "title": "What are the health effects of microplastics in humans according to recent studies?",
+ "project_id": "",
+ "sources": [
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12213550/",
+   "title": "Microplastics and human health: unraveling the toxicological ...",
+   "domain": "pmc.ncbi.nlm.nih.gov",
+   "snippet": "The increasing prevalence of microplastics (MPs) in the environment has raised urgent concerns regarding their implications for human health. This comprehensive review integrates recent findings on the sources, classification, and pathways of MPs ...",
+   "kind": "web",
+   "n": 1
+  },
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "title": "Impact of Microplastic Exposure on Human Health: A Systematic ...",
+   "domain": "pmc.ncbi.nlm.nih.gov",
+   "snippet": "Longitudinal cohort studies are needed to provide stronger evidence on the chronic effects of microplastics on human health [15, 20]. Furthermore, the review emphasizes the necessity of standardizing biomarkers for microplastic exposure, as these are not yet reliable across studies, as acknowledged in the literature [14, 19].",
+   "kind": "web",
+   "n": 2
+  },
+  {
+   "url": "https://link.springer.com/article/10.1007/s11356-026-38078-z",
+   "title": "A systematic review of the presence and potential health ...",
+   "domain": "link.springer.com",
+   "snippet": "Jul 25, 2026 \u00b7 Microplastics (MPs) and nanoplastics (NPs) have emerged as ubiquitous environmental contaminants, with increasing evidence of human exposure and growing concern regarding their potential health impacts. Recent investigations have documented their presence in multiple human biological matrices. This systematic review aimed to comprehensively synthesize current evidence on the occurrence ...",
+   "kind": "web",
+   "n": 3
+  },
+  {
+   "url": "https://www.mdpi.com/2673-8929/4/2/23",
+   "title": "Impact of Microplastics on Human Health: Risks ... - MDPI",
+   "domain": "mdpi.com",
+   "snippet": "May 6, 2025 \u00b7 This review article aims to highlight the potential harm caused by microplastics (MPs) in different organs and systems and underscore the need for further investigation into their action mechanisms. MPs, such as polystyrene, polypropylene, and polyethylene, significantly impact human health, causing inflammation in the respiratory and gastrointestinal systems, compromising immune function, and ...",
+   "kind": "web",
+   "n": 4
+  },
+  {
+   "url": "https://www.sciencedirect.com/science/article/pii/S2213343725035031",
+   "title": "Microplastics and human health: Exposure pathways, toxicity ...",
+   "domain": "sciencedirect.com",
+   "snippet": "Oct 1, 2025 \u00b7 Microplastics have become pervasive environmental contaminants and are increasingly recognized as emerging threats to human health. This review presents a comprehensive and systematic analyses of human microplastic contamination across all major physiological systems, integrating the latest clinical findings and forensic evidence of microplastics presence in tissues such as the brain, bone ...",
+   "kind": "web",
+   "n": 5
+  },
+  {
+   "url": "https://www.mdpi.com/2071-1050/18/7/3527",
+   "title": "Microplastics and Health: A Review on Environmental Exposure ...",
+   "domain": "mdpi.com",
+   "snippet": "Despite numerous studies and reviews examining and reviews the environmental distribution, ecological effects, and overall toxicological impacts of microplastics (MPs), there remains a critical need to better understand the microplastics-induced toxicity.",
+   "kind": "web",
+   "n": 6
+  }
+ ],
+ "answer": "Recent human evidence is largely observational, reporting associations rather than confirmed clinical outcomes [2]. Studies have reported possible associations between microplastics in the body and gastrointestinal complications, inflammatory conditions, hormonal imbalances, and reproductive dysfunction [2]. Microplastics may induce inflammatory responses, oxidative stress, and cellular damage, contributing to various diseases [2]. Their synergistic effects with other environmental pollutants may amplify adverse health outcomes [1]. Direct evidence linking mechanisms such as endocrine disruption and gut microbiota alterations to adverse human outcomes remains limited [2].",
+ "abstained": false,
+ "timing": {
+  "search_s": 16.27,
+  "fetch_s": 0.0,
+  "ttft_s": 26.61,
+  "total_s": 26.62
+ },
+ "draft_answer": "Recent human evidence is largely observational, reporting associations rather than confirmed clinical outcomes [2]. Studies have reported possible associations between microplastics in the body and gastrointestinal complications, inflammatory conditions, hormonal imbalances, and reproductive dysfunction [2]. Microplastics may induce inflammatory responses, oxidative stress, and cellular damage, contributing to various diseases [1]. Their synergistic effects with other environmental pollutants may amplify adverse health outcomes [1]. Direct evidence linking mechanisms such as endocrine disruption and gut microbiota alterations to adverse human outcomes remains limited [2].",
+ "verification": {
+  "citations": [
+   {
+    "occ": 0,
+    "n": 2,
+    "marker": "[2]",
+    "claim": "Recent human evidence is largely observational, reporting associations rather than confirmed clinical outcomes .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "However, such findings represent supportive mechanistic evidence only and do not constitute direct evidence of health effects in humans. In contrast, human evidence remains limited and largely observational, with studies primarily reporting associations between microplastic exposure and selected biological markers rather than confirmed clinical outcomes.",
+    "note": "another passage on the page may disagree: \"Recent studies have confirmed the presence of microplastics in human stool, lung tissue, blood, and placental samples, providing direct evidence that these part\"",
+    "title": "Impact of Microplastic Exposure on Human Health: A Systematic ...",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+    "kind": "web",
+    "entailment": 0.965,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 1,
+    "n": 2,
+    "marker": "[2]",
+    "claim": "Studies have reported possible associations between microplastics in the body and gastrointestinal complications, inflammatory conditions, hormonal imbalances, and reproductive dysfunction .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "Human epidemiologic evidence remains limited, but some studies have reported possible associations between microplastics in the body and gastrointestinal complications, inflammatory conditions, hormonal imbalances, and reproductive dysfunction.",
+    "note": "",
+    "title": "Impact of Microplastic Exposure on Human Health: A Systematic ...",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+    "kind": "web",
+    "entailment": 0.993,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 2,
+    "n": 2,
+    "marker": "[2]",
+    "claim": "Microplastics may induce inflammatory responses, oxidative stress, and cellular damage, contributing to various diseases .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "Laboratory and animal studies demonstrate that oxidative stress is a key determinant of damage caused by microplastics to various tissues. Several studies have demonstrated that polystyrene nanoparticles lead to the formation of reactive oxygen species (ROS), mitochondrial dysfunction, and DNA damage in human cell lines. These cellular abnormalities are usually followed by an increase in the conce",
+    "note": "",
+    "title": "Impact of Microplastic Exposure on Human Health: A Systematic ...",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+    "kind": "web",
+    "entailment": 0.972,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 3,
+    "n": 1,
+    "marker": "[1]",
+    "claim": "Their synergistic effects with other environmental pollutants may amplify adverse health outcomes .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "Notably, we examine the synergistic effects of MPs in conjunction with other environmental pollutants, which may amplify their adverse health outcomes.",
+    "note": "",
+    "title": "Microplastics and human health: unraveling the toxicological ...",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12213550/",
+    "kind": "web",
+    "entailment": 0.977,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 4,
+    "n": 2,
+    "marker": "[2]",
+    "claim": "Direct evidence linking mechanisms such as endocrine disruption and gut microbiota alterations to adverse human outcomes remains limited .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "Proposed biological pathways include oxidative stress, inflammation, endocrine disruption, and alterations in the gut microbiota; however, direct evidence linking these mechanisms to adverse health outcomes in humans remains limited.",
+    "note": "",
+    "title": "Impact of Microplastic Exposure on Human Health: A Systematic ...",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+    "kind": "web",
+    "entailment": 0.994,
+    "judged_by": "nli"
+   }
+  ],
+  "counts": {
+   "supported": 5
+  },
+  "elapsed_s": 36.05,
+  "answer": "Recent human evidence is largely observational, reporting associations rather than confirmed clinical outcomes [2]. Studies have reported possible associations between microplastics in the body and gastrointestinal complications, inflammatory conditions, hormonal imbalances, and reproductive dysfunction [2]. Microplastics may induce inflammatory responses, oxidative stress, and cellular damage, contributing to various diseases [2]. Their synergistic effects with other environmental pollutants may amplify adverse health outcomes [1]. Direct evidence linking mechanisms such as endocrine disruption and gut microbiota alterations to adverse human outcomes remains limited [2].",
+  "repairs": [
+   {
+    "claim": "Microplastics may induce inflammatory responses, oxidative stress, and cellular damage, contributing to various diseases .",
+    "from": 1,
+    "to": 2,
+    "action": "recited"
+   }
+  ],
+  "total_s": 62.69
+ },
+ "q": 6,
+ "seconds": 62.9
+}

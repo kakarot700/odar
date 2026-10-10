@@ -1,0 +1,30 @@
+{
+ "qid": "q1",
+ "status": "ok",
+ "secs": 175.4,
+ "llm_calls": 3,
+ "other_tokenharbor_calls": 0,
+ "visited_urls": [
+  "https://news.un.org/en/story/2025/11/1166433",
+  "https://unfccc.int/cop30",
+  "https://unfccc.int/cop30/auvs",
+  "https://www.c2es.org/wp-content/uploads/2026/02/COP30-Summary-FINAL5.pdf",
+  "https://www.carbonbrief.org/cop30-key-outcomes-agreed-at-the-un-climate-talks-in-belem",
+  "https://www.europarl.europa.eu/RegData/etudes/ATAG/2025/779230/EPRS_ATA(2025)779230_EN.pdf",
+  "https://www.globalcompactnetwork.org/en/news/ungcn-italy-news/2639-cop30-in-belem-main-outcomes-and-climate-agreements.html",
+  "https://www.wri.org/insights/cop30-outcomes-next-steps",
+  "https://www.wri.org/news/statement-cop30-delivers-forests-and-finance-underdelivers-fossil-fuels"
+ ],
+ "source_urls": [
+  "https://unfccc.int/cop30/auvs",
+  "https://www.europarl.europa.eu/RegData/etudes/ATAG/2025/779230/EPRS_ATA(2025)779230_EN.pdf",
+  "https://www.wri.org/news/statement-cop30-delivers-forests-and-finance-underdelivers-fossil-fuels",
+  "https://news.un.org/en/story/2025/11/1166433",
+  "https://www.c2es.org/wp-content/uploads/2026/02/COP30-Summary-FINAL5.pdf",
+  "https://www.wri.org/insights/cop30-outcomes-next-steps",
+  "https://www.globalcompactnetwork.org/en/news/ungcn-italy-news/2639-cop30-in-belem-main-outcomes-and-climate-agreements.html",
+  "https://www.carbonbrief.org/cop30-key-outcomes-agreed-at-the-un-climate-talks-in-belem",
+  "https://unfccc.int/cop30"
+ ],
+ "costs_reported": 0.1105
+}

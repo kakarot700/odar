@@ -1,0 +1,112 @@
+{
+ "references": [],
+ "confidence": "medium",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_abad53a84ec7",
+ "trust_score": 50,
+ "grade": "unreliable citations",
+ "counts": {
+  "SUPPORTED": 0,
+  "PARTIALLY SUPPORTED": 1,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 0,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 0
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "As of 2025-01-10, the WMO consolidated analysis estimated 2024\u00e2\u0080\u0099s global average surface temperature at 1.55\u00c2\u00b0C above the 1850-1900 average.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://wmo.int/news/media-centre/wmo-confirms-2024-warmest-year-record-about-155degc-above-pre-industrial-level",
+     "marker": "[2]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.001,
+     "contradiction": 0.0,
+     "quote": "The global average surface temperature was 1.55 \u00b0C (with a margin of uncertainty of \u00b1 0.13 \u00b0C) above the 1850-1900 average, according to WMO\u2019s consolidated analysis of the six datasets.",
+     "note": "partly supported: Passages confirm WMO analysis gave 1.55\u00b0C above 1850-1900.",
+     "judged_by": "nli+llm",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "The global average surface temperature was 1.55 \u00b0C (with a margin of uncertainty of \u00b1 0.13 \u00b0C) above the 1850-1900 average, according to WMO\u2019s consolidated analysis of the six datasets.",
+   "quote_url": "https://wmo.int/news/media-centre/wmo-confirms-2024-warmest-year-record-about-155degc-above-pre-industrial-level",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://wmo.int/news/media-centre/wmo-confirms-2024-warmest-year-record-about-155degc-above-pre-industrial-level",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://wmo.int/news/media-centre/wmo-confirms-2024-warmest-year-record-about-155degc-above-pre-industrial-level",
+   "title": "WMO confirms 2024 as warmest year on record at about 1.55\u00b0C above pre-industrial level",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "2eff9633f32a1368466eb41f4c3c30ec47af939fd88534c88c54baa6f85ee63f",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 20.4,
+ "usage": {
+  "fetches": 1,
+  "wayback_lookups": 0,
+  "searches": 0,
+  "llm_calls": 1,
+  "nli_checks": 1,
+  "scorer_load_ms": 34239
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 1,
+   "citations": 1
+  },
+  {
+   "t": 0.95,
+   "event": "fetch",
+   "url": "https://wmo.int/news/media-centre/wmo-confirms-2024-warmest-year-record-about-155degc-above-pre-industrial-level",
+   "state": "live",
+   "http_status": 200,
+   "chars": 8026,
+   "error": ""
+  },
+  {
+   "t": 20.39,
+   "event": "paraphrase_judge",
+   "claim": "As of 2025-01-10, the WMO consolidated analysis estimated 2024\u00e2\u0080\u0099s global average surface temperature at 1.55\u00c2\u00b0C above t",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 20.39,
+   "event": "verify",
+   "url": "https://wmo.int/news/media-centre/wmo-confirms-2024-warmest-year-record-about-155degc-above-pre-industrial-level",
+   "claim": "As of 2025-01-10, the WMO consolidated analysis estimated 2024\u00e2\u0080\u0099s global average surface temperature at 1.55\u00c2\u00b0C above t",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.001,
+   "con": 0.0
+  },
+  {
+   "t": 20.4,
+   "event": "done",
+   "trust_score": 50
+  }
+ ],
+ "score_s": 58.6
+}

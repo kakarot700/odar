@@ -1,0 +1,209 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_255f25c67142",
+ "trust_score": 0,
+ "grade": "unreliable citations",
+ "counts": {
+  "SUPPORTED": 0,
+  "PARTIALLY SUPPORTED": 0,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 1,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 8
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "Malaria control prevented an estimated 2.2 billion cases and 12.7 million deaths since 2000.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2.1",
+   "claim": "In 2023, malaria caused about 263 million cases worldwide.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2.2",
+   "claim": "In 2023, malaria caused about 597,000 deaths worldwide.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2.3",
+   "claim": "In 2023, malaria cases were up by about 11 million from 2022.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "The burden remained heavily concentrated in Africa: about 95% of malaria deaths occurred in the WHO African Region.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4",
+   "claim": "Progress is uneven: many countries are moving toward elimination, but the highest-burden countries continue to account for most cases and deaths.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5.1",
+   "claim": "The report added a new focus on inequity.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5.2",
+   "claim": "The report highlighted that people in remote areas are especially vulnerable.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6",
+   "claim": "The big message was that better access to prevention, diagnosis, treatment, and surveillance is needed to reverse stalled progress and reduce inequities.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+     "marker": "[1]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "title": "World malaria report 2024",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "2f9486af14504195e80d0ac8f93d5788202b6b610d73ea81a56c7aaef0f3240f",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 32.8,
+ "usage": {
+  "fetches": 1,
+  "wayback_lookups": 0,
+  "searches": 0,
+  "llm_calls": 2,
+  "nli_checks": 3,
+  "scorer_load_ms": 14602
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 6,
+   "citations": 1
+  },
+  {
+   "t": 19.66,
+   "event": "fetch",
+   "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "state": "live",
+   "http_status": 200,
+   "chars": 1506,
+   "error": ""
+  },
+  {
+   "t": 32.76,
+   "event": "verify",
+   "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "claim": "The big message was that better access to prevention, diagnosis, treatment, and surveillance is needed to reverse stalle",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 32.77,
+   "event": "done",
+   "trust_score": 0
+  }
+ ],
+ "score_s": 48.9
+}

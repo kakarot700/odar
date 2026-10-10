@@ -1,0 +1,156 @@
+{
+ "thread_id": "a929b5381e13be59",
+ "share_token": "Fb8OSxHtTkQHY6gn",
+ "title": "Is there evidence that GLP-1 drugs like semaglutide reduce cardiovascular events?",
+ "project_id": "",
+ "sources": [
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371/",
+   "title": "Cardiovascular benefits of semaglutide: a systematic review ...",
+   "domain": "pmc.ncbi.nlm.nih.gov",
+   "snippet": "These findings reinforce the role of GLP-1RAs, and semaglutide in particular, as an important therapeutic option for patients with type 2 diabetes and established cardiovascular disease, supporting their inclusion in evidence-based guideline recommendations.",
+   "kind": "web",
+   "n": 1
+  },
+  {
+   "url": "https://link.springer.com/article/10.1186/s12872-025-05278-3",
+   "title": "Cardiovascular benefits of semaglutide: a systematic review ...",
+   "domain": "link.springer.com",
+   "snippet": "Nov 21, 2025 \u00b7 Background Semaglutide, a GLP-1 receptor agonist (GLP-1RA), has shown potential in controlling type 2 diabetes due to their ability to lower blood glucose and improve cardiovascular outcomes. Although semaglutide is the newest GLP-1RA available, its cardiovascular effects have not yet been systematically reviewed. Methods This meta-analysis adhered to a pre-registered protocol (PROSPERO ID ...",
+   "kind": "web",
+   "n": 2
+  },
+  {
+   "url": "https://www.medscape.com/viewarticle/glp-1-drugs-gain-ground-cardiovascular-prevention-2026a1000759",
+   "title": "The Many Cardiovascular Benefits of GLP-1 Drugs - Medscape",
+   "domain": "medscape.com",
+   "snippet": "Mar 9, 2026 \u00b7 GLP-1 receptor agonists such as semaglutide are changing the way type 2 diabetes and obesity are treated. But these drugs have also shown a surprising ability to improve cardiovascular health ...",
+   "kind": "web",
+   "n": 3
+  },
+  {
+   "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "title": "Semaglutide reduces cardiovascular events in type 2 diabetes ...",
+   "domain": "link.springer.com",
+   "snippet": "Nov 4, 2025 \u00b7 Verma S, et al. Effects of glucagon-like peptide-1 receptor agonists liraglutide and semaglutide on cardiovascular and renal outcomes across body mass index categories in type 2 diabetes: results of the LEADER and SUSTAIN 6 trials.",
+   "kind": "web",
+   "n": 4
+  },
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11444620/",
+   "title": "Exploring the clinical effectiveness of glucagon-like peptide ...",
+   "domain": "pmc.ncbi.nlm.nih.gov",
+   "snippet": "The possible cardiovascular advantages of glucagon-like peptide-1 receptor agonists (GLP-1RAs), a class of drugs predominantly used to treat type 2 diabetes (T2D), have garnered increasing attention in recent years. Clinical trials have looked into ...",
+   "kind": "web",
+   "n": 5
+  },
+  {
+   "url": "https://www.sciencedirect.com/science/article/pii/S0168822725004875",
+   "title": "Comparative effectiveness of OW GLP-1 RAs and other glucose ...",
+   "domain": "sciencedirect.com",
+   "snippet": "Nov 1, 2025 \u00b7 Conclusion The study findings corroborate current guideline recommendations for GLP-1 RAs in people with T2D and ASCVD, and extend findings to lower HCRU and costs in a real-world setting, most notably for semaglutide.",
+   "kind": "web",
+   "n": 6
+  }
+ ],
+ "answer": "Potential final:\n\n\"Across 17 studies (n = 40,632 patients), semaglutide reduced cardiovascular death by 23% [4]. It reduced major adverse cardiovascular events (MACE) by 18% [4]. It reduced nonfatal myocardial infarction by 18% [4]. It reduced nonfatal stroke by 32% [4]. In the FLOW study (2024), semaglutide reduced MACE by 18% in type 2 diabetes patients with chronic kidney disease [4].",
+ "abstained": false,
+ "timing": {
+  "search_s": 26.76,
+  "fetch_s": -0.0,
+  "ttft_s": 44.86,
+  "total_s": 44.86
+ },
+ "verification": {
+  "citations": [
+   {
+    "occ": 0,
+    "n": 4,
+    "marker": "[4]",
+    "claim": "\"Across 17 studies (n = 40,632 patients), semaglutide reduced cardiovascular death by 23% .",
+    "verdict": "partial",
+    "check_verdict": "PARTIALLY SUPPORTED",
+    "quote": "Across 17 studies (n = 40, 632 patients), semaglutide significantly reduced the risk of cardiovascular (CV) death by 23% [HR 0.77, 95% CI (0.68, 0.88)], major adverse cardiovascular events (MACE) by 18% [HR 0.82, 95% CI (0.75, 0.90)], expanded MACE by 22% [HR 0.78, 95% CI (0.70, 0.85)], nonfatal",
+    "note": "the page supports the claim's gist but not the figure(s) 40,632",
+    "title": "Semaglutide reduces cardiovascular events in type 2 diabetes ...",
+    "domain": "link.springer.com",
+    "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+    "kind": "web",
+    "entailment": 0.992,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 1,
+    "n": 4,
+    "marker": "[4]",
+    "claim": "It reduced major adverse cardiovascular events (MACE) by 18% .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "Across 17 studies (n = 40, 632 patients), semaglutide significantly reduced the risk of cardiovascular (CV) death by 23% [HR 0.77, 95% CI (0.68, 0.88)], major adverse cardiovascular events (MACE) by 18% [HR 0.82, 95% CI (0.75, 0.90)], expanded MACE by 22% [HR 0.78, 95% CI (0.70, 0.85)], nonfatal",
+    "note": "",
+    "title": "Semaglutide reduces cardiovascular events in type 2 diabetes ...",
+    "domain": "link.springer.com",
+    "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+    "kind": "web",
+    "entailment": 0.989,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 2,
+    "n": 4,
+    "marker": "[4]",
+    "claim": "It reduced nonfatal myocardial infarction by 18% .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "Across 17 studies (n = 40, 632 patients), semaglutide significantly reduced the risk of cardiovascular (CV) death by 23% [HR 0.77, 95% CI (0.68, 0.88)], major adverse cardiovascular events (MACE) by 18% [HR 0.82, 95% CI (0.75, 0.90)], expanded MACE by 22% [HR 0.78, 95% CI (0.70, 0.85)], nonfatal myocardial infarction (MI) by 18% [HR 0.82, 95% CI (0.68, 0.92)], and nonfatal stroke by 32% [HR 0.68, ",
+    "note": "",
+    "title": "Semaglutide reduces cardiovascular events in type 2 diabetes ...",
+    "domain": "link.springer.com",
+    "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+    "kind": "web",
+    "entailment": 0.974,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 3,
+    "n": 4,
+    "marker": "[4]",
+    "claim": "It reduced nonfatal stroke by 32% .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "The heterogeneity among the studies was low (I2 = 11.1%, p = 0.276), therefore, the pooled HR with a fixed-effects model showed that semaglutide treatment was associated with significant reductions in multiple CV outcomes, as shown in Fig. 3. The most pronounced benefit was observed for nonfatal stroke, with a 32% risk reduction [I2 = 0%, HR 0.68, 95% CI (0.56, 0.83); p < 0.001].",
+    "note": "",
+    "title": "Semaglutide reduces cardiovascular events in type 2 diabetes ...",
+    "domain": "link.springer.com",
+    "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+    "kind": "web",
+    "entailment": 0.988,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 4,
+    "n": 4,
+    "marker": "[4]",
+    "claim": "In the FLOW study (2024), semaglutide reduced MACE by 18% in type 2 diabetes patients with chronic kidney disease .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "However, recent landmark trials such as the FLOW study (2024) have demonstrated that semaglutide reduces the risk of major kidney events by 24% and major adverse CV events (MACE) by 18% in T2D patients with CKD, suggesting a paradigm shift in managing CV risk [20].",
+    "note": "",
+    "title": "Semaglutide reduces cardiovascular events in type 2 diabetes ...",
+    "domain": "link.springer.com",
+    "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+    "kind": "web",
+    "entailment": 0.991,
+    "judged_by": "nli"
+   }
+  ],
+  "counts": {
+   "partial": 1,
+   "supported": 4
+  },
+  "elapsed_s": 37.13,
+  "total_s": 82.0
+ },
+ "q": 10,
+ "seconds": 82.2
+}

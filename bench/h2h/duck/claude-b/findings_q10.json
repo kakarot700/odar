@@ -1,0 +1,23 @@
+{
+  "q": 10,
+  "question": "Is there evidence that GLP-1 drugs like semaglutide reduce cardiovascular events?",
+  "model": "Claude Haiku 4.5",
+  "web_search_enabled": true,
+  "answer": "Yes, there is strong evidence that GLP-1 drugs like semaglutide reduce cardiovascular events. Multiple large clinical trials have demonstrated significant cardiovascular benefits.\n\nKey Clinical Evidence\n\nThe SELECT Trial is the landmark study showing cardiovascular protection with semaglutide. acc.org [1] In this trial of over 17,600 participants with overweight or obesity and existing cardiovascular disease (but without diabetes), semaglutide reduced major adverse cardiac events (MACE)—including cardiovascular death, heart attack, and stroke—by 20% compared to placebo over a mean follow-up period of 40 months. acc.org [1]\n\nAdditional benefits observed in SELECT included:\n\nAverage body weight loss of 9.4% (compared to 0.9% with placebo)\nReductions in systolic blood pressure, LDL cholesterol, and blood sugar levels\nBenefits even in patients with heart failure escardio.org\n\nBroader Evidence Across GLP-1 Drugs\n\nA 2024 meta-analysis found that GLP-1 inhibitors significantly reduced both major adverse cardiac events and all-cause mortality compared with placebo, with some benefits appearing as early as 6 months after starting treatment. ajmc.com\n\nThese findings have led medical societies to recommend GLP-1 receptor agonists with proven cardiovascular benefit. The European Society of Cardiology guidelines now recommend GLP-1 drugs for patients with type 2 diabetes and atherosclerotic cardiovascular disease to reduce cardiovascular events. escardio.org\n\nImportant Finding: Benefits Beyond Weight Loss\n\nA recent 2025 analysis of the SELECT trial found that approximately 33% of semaglutide's cardiovascular benefits were explained by reductions in waist circumference alone, suggesting that mechanisms beyond simple weight loss contribute to the drug's cardioprotective effects. docwirenews.com",
+  "note_on_citation_markers": "Inline citations are domain-name chips. Two sentences carry 'acc.org [1]' — an acc.org chip plus a numbered [1] superscript. Opening either [1] Show citations popup lists the same two sources: 'Semaglutide Effects on Cardiovascular Outcomes in ... (www.acc.org)' and 'Part II. Highlights from the clinical consensus statement by ... (www.escardio.org)'. Other inline chips are standalone 'escardio.org' (×2, both link to the same Part II consensus-statement page), 'ajmc.com', and 'docwirenews.com'.",
+  "sources_in_citation_order": [
+    "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/11/09/15/04/select",
+    "https://www.escardio.org/communities/councils/cardiology-practice/education/cardiopractice/part-II-highlights-from-the-clinical-consensus-statement-by-the-european-society/",
+    "https://www.ajmc.com/view/experts-encourage-use-of-glp-1s-in-cardiovascular-care",
+    "https://www.docwirenews.com/post/select-trial-semaglutide-reduces-cardiovascular-events-independent-of-weight-loss"
+  ],
+  "read_more_section_urls": [
+    "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/11/09/15/04/select",
+    "https://www.escardio.org/communities/councils/cardiology-practice/education/cardiopractice/part-II-highlights-from-the-clinical-consensus-statement-by-the-european-society/",
+    "https://www.ajmc.com/view/experts-encourage-use-of-glp-1s-in-cardiovascular-care",
+    "https://www.docwirenews.com/post/select-trial-semaglutide-reduces-cardiovascular-events-independent-of-weight-loss"
+  ],
+  "seconds_estimate": 10,
+  "searched": true,
+  "chat_title_generated_by_site": "Cardiovascular effects of GLP-1 drugs"
+}

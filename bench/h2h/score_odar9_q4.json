@@ -1,0 +1,184 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_821ed4762602",
+ "trust_score": 100,
+ "grade": "citations hold up",
+ "counts": {
+  "SUPPORTED": 3,
+  "PARTIALLY SUPPORTED": 0,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 0,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 0
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "India's current repo rate is 5.50%.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://stableinvestor.com/2021/10/rbi-repo-rate-history-india.html",
+     "marker": "[4]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.996,
+     "contradiction": 0.0,
+     "quote": "The latest RBI current Repo Rate is 5.50% in India (October 2026) as per the Reserve Bank of India (RBI).",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": 2021
+    }
+   ],
+   "quote": "The latest RBI current Repo Rate is 5.50% in India (October 2026) as per the Reserve Bank of India (RBI).",
+   "quote_url": "https://stableinvestor.com/2021/10/rbi-repo-rate-history-india.html",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": "time-sensitive claim backed by a source from 2021; check for newer data"
+  },
+  {
+   "claim_id": "c2",
+   "claim": "It was last changed on 7 October 2026, when it was set at 5.50%.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://stableinvestor.com/2021/10/rbi-repo-rate-history-india.html",
+     "marker": "[4]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.981,
+     "contradiction": 0.0,
+     "quote": "RBI Repo Rate on 7-Oct-2026: 5.50% (RBI Current Repo Rate)",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": 2021
+    }
+   ],
+   "quote": "RBI Repo Rate on 7-Oct-2026: 5.50% (RBI Current Repo Rate)",
+   "quote_url": "https://stableinvestor.com/2021/10/rbi-repo-rate-history-india.html",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": "source dates from 2021 but the claim is about 2026"
+  },
+  {
+   "claim_id": "c3",
+   "claim": "This followed a previous rate of 5.25%.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://stableinvestor.com/2021/10/rbi-repo-rate-history-india.html",
+     "marker": "[4]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.327,
+     "contradiction": 0.0,
+     "quote": "RBI Repo Rate on 5-Aug-2026 was: 5.25%",
+     "note": "reworded match: Passage confirms previous rate was 5.25% before 5.50%.",
+     "judged_by": "nli+llm",
+     "source_type": "web",
+     "source_year": 2021
+    }
+   ],
+   "quote": "RBI Repo Rate on 5-Aug-2026 was: 5.25%",
+   "quote_url": "https://stableinvestor.com/2021/10/rbi-repo-rate-history-india.html",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://stableinvestor.com/2021/10/rbi-repo-rate-history-india.html",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://stableinvestor.com/2021/10/rbi-repo-rate-history-india.html",
+   "title": "Complete RBI Repo Rate History in India (2000 to 2026) - Stable Investor",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "d0f4eb87dbf8b1fc369db23e1ad0df65539ba0d4814788ba55855577f6fe0574",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 22.5,
+ "usage": {
+  "fetches": 1,
+  "wayback_lookups": 0,
+  "searches": 0,
+  "llm_calls": 1,
+  "nli_checks": 3,
+  "scorer_load_ms": 56744
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 3,
+   "citations": 3
+  },
+  {
+   "t": 0.26,
+   "event": "fetch",
+   "url": "https://stableinvestor.com/2021/10/rbi-repo-rate-history-india.html",
+   "state": "live",
+   "http_status": 200,
+   "chars": 6853,
+   "error": ""
+  },
+  {
+   "t": 7.07,
+   "event": "verify",
+   "url": "https://stableinvestor.com/2021/10/rbi-repo-rate-history-india.html",
+   "claim": "India's current repo rate is 5.50%.",
+   "verdict": "SUPPORTED",
+   "ent": 0.996,
+   "con": 0.0
+  },
+  {
+   "t": 13.87,
+   "event": "verify",
+   "url": "https://stableinvestor.com/2021/10/rbi-repo-rate-history-india.html",
+   "claim": "It was last changed on 7 October 2026, when it was set at 5.50%.",
+   "verdict": "SUPPORTED",
+   "ent": 0.981,
+   "con": 0.0
+  },
+  {
+   "t": 22.45,
+   "event": "paraphrase_judge",
+   "claim": "This followed a previous rate of 5.25%.",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 22.45,
+   "event": "verify",
+   "url": "https://stableinvestor.com/2021/10/rbi-repo-rate-history-india.html",
+   "claim": "This followed a previous rate of 5.25%.",
+   "verdict": "SUPPORTED",
+   "ent": 0.327,
+   "con": 0.0
+  },
+  {
+   "t": 22.47,
+   "event": "done",
+   "trust_score": 100
+  }
+ ],
+ "score_s": 83.4
+}

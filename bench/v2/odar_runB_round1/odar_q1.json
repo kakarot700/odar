@@ -1,0 +1,292 @@
+{
+  "status": "COMPLETE",
+  "backend_state": "anthropic-tool-use",
+  "degraded": false,
+  "objective": "What were the main outcomes and agreements of the COP30 UN climate summit held in Belem, Brazil in November 2025?",
+  "run_id": "run_f997afd521364fb4",
+  "uncertainty": "EVIDENCE_FOR",
+  "termination_status": "COMPLETE",
+  "unmet_conditions": [],
+  "digest": {
+    "objective": "What were the main outcomes and agreements of the COP30 UN climate summit held in Belem, Brazil in November 2025?",
+    "iteration": 4,
+    "termination_status": "COMPLETE",
+    "uncertainty": "EVIDENCE_FOR",
+    "subquestions": [],
+    "hypotheses": [],
+    "claims": [
+      {
+        "id": "clm_0b398ff7cb4f4d6e",
+        "text": "A voluntary plan to curb fossil fuels, a goal to triple adaptation finance and new efforts to “strengthen” climate targets have been launched at the COP30 clima",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_c60a9d71266b4128",
+        "text": "One of the possible outcomes listed was a “mutirão decision”, widely interpreted as a possible overarching text containing the key agreements from COP30.",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_34e27c7c85f04125",
+        "text": "One of the biggest negotiated outcomes at COP30 concerned efforts to adapt to the impacts of climate change, with Corrêa do Lago dubbing it the “COP of adaptati",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_d10a4d50a9914c89",
+        "text": "Trade also featured in the new Integrated Forum on Climate Change and Trade, introduced by President Lula during the World Leaders’ Summit held just before COP3",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_7c4f3d3b59fd445d",
+        "text": "WRI experts unpack what the 2025 UN climate summit achieved, where it fell short, and what comes next.",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_37de917387dd4e50",
+        "text": "With efforts to halt temperature rise severely off track and climate disasters becoming ever-more destructive, the summit (COP30) aimed to establish clear pathw",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_a8930247b2494d22",
+        "text": "Together, these outcomes advance the implementation of the Paris Agreement and provide guidance for international cooperation on climate action.",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_cbc1c63136e44327",
+        "text": "The 30th UN Climate Change Conference of the Parties (COP 30) brought the world to Belém, Brazil, for a negotiating round surrounded by rising climate impacts a",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      }
+    ],
+    "evidence_summary": {
+      "total": 64,
+      "relevant": 10,
+      "supports": 9,
+      "refutes": 0,
+      "qualifies": 1,
+      "circular_rejected": 0
+    },
+    "sources": {
+      "total": 4,
+      "independent": 4,
+      "classes": {
+        "general_web": 3,
+        "university": 1
+      }
+    },
+    "contradictions": [],
+    "unanswered": [],
+    "attempted_queries": [
+      "COP30 Belem outcome agreement final text November 2025",
+      "COP30 agreement reached Belém Declaration fossil fuels",
+      "COP30 \"global mutirão\" decision text UNFCCC outcomes adaptation roadmap",
+      "COP30 outcomes Loss and Damage Fund replenishment finance NCQG implementation",
+      "Wikipedia 2025 United Nations Climate Change Conference Belém outcomes",
+      "COP30 adaptation finance tripled target decision global goal adaptation indicators Belém",
+      "COP30 Belém political package just transition mechanism indigenous peoples forests fund trade",
+      "COP30 Belém political package outcomes final agreement"
+    ],
+    "failed_approaches": [
+      "fetch:https://www.europarl.europa.eu/RegData/etudes/ATAG/2025/779230/EPRS_ATA(2025)779230_EN.pdf",
+      "fetch_domain:europarl.europa.eu",
+      "fetch:https://unfccc.int/cop30/belem-political-package",
+      "fetch_domain:unfccc.int",
+      "fetch:https://www.c2es.org/wp-content/uploads/2026/02/COP30-Summary-FINAL5.pdf",
+      "fetch_domain:c2es.org"
+    ],
+    "evidence_coverage": {
+      "clm_0b398ff7cb4f4d6e": true,
+      "clm_c60a9d71266b4128": true,
+      "clm_34e27c7c85f04125": true,
+      "clm_d10a4d50a9914c89": true,
+      "clm_7c4f3d3b59fd445d": true,
+      "clm_37de917387dd4e50": true,
+      "clm_a8930247b2494d22": true,
+      "clm_cbc1c63136e44327": true
+    },
+    "citation_coverage": {
+      "clm_0b398ff7cb4f4d6e": true,
+      "clm_c60a9d71266b4128": true,
+      "clm_34e27c7c85f04125": true,
+      "clm_d10a4d50a9914c89": true,
+      "clm_7c4f3d3b59fd445d": true,
+      "clm_37de917387dd4e50": true,
+      "clm_a8930247b2494d22": true,
+      "clm_cbc1c63136e44327": true
+    },
+    "quarantined_urls": 0,
+    "injection_blocked": 0
+  },
+  "synthesis": "# Research Report: What were the main outcomes and agreements of the COP30 UN climate summit held in Belem, Brazil in November 2025?\n\n## Answer (written only from the certified findings below)\nThe COP30 climate summit, which brought the world to Belém, Brazil in November 2025, launched a voluntary plan to curb fossil fuels, set a goal to triple adaptation finance, and put forward new efforts to \"strengthen\" climate targets [[1]](https://www.carbonbrief.org/cop30-key-outcomes-agreed-at-the-un-climate-talks-in-belem)[[4]](https://unu.edu/ehs/article/5-outcomes-cop-30-what-belem-political-package-really-delivered). Together, these outcomes advance the implementation of the Paris Agreement and provide guidance for international cooperation on climate action [[3]](https://cop30.br/en/cop30-outcomes). The summit aimed to establish clear pathways to deliver past pledges and put the world on a safer track, at a time when efforts to halt temperature rise are severely off track and climate disasters are becoming ever-more destructive [[2]](https://www.wri.org/insights/cop30-outcomes-next-steps).\n\nOne of the possible overarching outcomes was a so-called \"mutirão decision,\" widely interpreted as a text containing the key agreements from COP30 [[1]](https://www.carbonbrief.org/cop30-key-outcomes-agreed-at-the-un-climate-talks-in-belem), and one of the biggest negotiated outcomes concerned efforts to adapt to the impacts of climate change, which Corrêa do Lago dubbed the \"COP of adaptation\" [[1]](https://www.carbonbrief.org/cop30-key-outcomes-agreed-at-the-un-climate-talks-in-belem). Trade also featured in the new Integrated Forum on Climate Change and Trade, introduced by President Lula during the World Leaders' Summit held just before COP30 [[2]](https://www.wri.org/insights/cop30-outcomes-next-steps). WRI experts have set out to unpack what the 2025 UN climate summit achieved, where it fell short, and what comes next, though the facts provided do not specify what those shortfalls were [[2]](https://www.wri.org/insights/cop30-outcomes-next-steps).\n\n## Certified Findings (semantic NLI verification)\n- [clm_0b398ff7cb4f4d6e] A voluntary plan to curb fossil fuels, a goal to triple adaptation finance and new efforts to “strengthen” climate targets have been launched at the COP30 climate summit in Brazil.\n  - cited: [src_3aa2d0919ff049c5] [COP30: Key outcomes agreed at the UN climate talks in Belém - Carbon Brief](https://www.carbonbrief.org/cop30-key-outcomes-agreed-at-the-un-climate-talks-in-belem) (entailment p=0.98, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_c60a9d71266b4128] One of the possible outcomes listed was a “mutirão decision”, widely interpreted as a possible overarching text containing the key agreements from COP30.\n  - cited: [src_3aa2d0919ff049c5] [COP30: Key outcomes agreed at the UN climate talks in Belém - Carbon Brief](https://www.carbonbrief.org/cop30-key-outcomes-agreed-at-the-un-climate-talks-in-belem) (entailment p=0.97, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n  - cited: [src_3aa2d0919ff049c5] [COP30: Key outcomes agreed at the UN climate talks in Belém - Carbon Brief](https://www.carbonbrief.org/cop30-key-outcomes-agreed-at-the-un-climate-talks-in-belem) (entailment p=1.00, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_34e27c7c85f04125] One of the biggest negotiated outcomes at COP30 concerned efforts to adapt to the impacts of climate change, with Corrêa do Lago dubbing it the “COP of adaptation”.\n  - cited: [src_3aa2d0919ff049c5] [COP30: Key outcomes agreed at the UN climate talks in Belém - Carbon Brief](https://www.carbonbrief.org/cop30-key-outcomes-agreed-at-the-un-climate-talks-in-belem) (entailment p=0.97, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_d10a4d50a9914c89] Trade also featured in the new Integrated Forum on Climate Change and Trade, introduced by President Lula during the World Leaders’ Summit held just before COP30.\n  - cited: [src_f55f61b8ae1d4859] [COP30: Outcomes, Disappointments and What's Next | World Resources Institute](https://www.wri.org/insights/cop30-outcomes-next-steps) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_7c4f3d3b59fd445d] WRI experts unpack what the 2025 UN climate summit achieved, where it fell short, and what comes next.\n  - cited: [src_f55f61b8ae1d4859] [COP30: Outcomes, Disappointments and What's Next | World Resources Institute](https://www.wri.org/insights/cop30-outcomes-next-steps) (entailment p=0.97, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_37de917387dd4e50] With efforts to halt temperature rise severely off track and climate disasters becoming ever-more destructive, the summit (COP30) aimed to establish clear pathways to deliver past pledges and put the world on a safer track.\n  - cited: [src_f55f61b8ae1d4859] [COP30: Outcomes, Disappointments and What's Next | World Resources Institute](https://www.wri.org/insights/cop30-outcomes-next-steps) (entailment p=0.95, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_a8930247b2494d22] Together, these outcomes advance the implementation of the Paris Agreement and provide guidance for international cooperation on climate action.\n  - cited: [src_ee166d642b114e8c] [COP30 Outcomes](https://cop30.br/en/cop30-outcomes) (entailment p=0.98, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_cbc1c63136e44327] The 30th UN Climate Change Conference of the Parties (COP 30) brought the world to Belém, Brazil, for a negotiating round surrounded by rising climate impacts and growing expectations.\n  - cited: [src_f59da8b89d174fe8] [5 Outcomes from COP 30: What the Belém Political Package Really Delivered | United Nations University](https://unu.edu/ehs/article/5-outcomes-cop-30-what-belem-political-package-really-delivered) (entailment p=0.95, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n\n## Uncertainty and Limitations\n- No primary-research source was available; findings rest on secondary reporting and are limited accordingly.\n- Uncertainty classification: UNCERTAIN\n\n## Sources\n1. [src_3aa2d0919ff049c5] [COP30: Key outcomes agreed at the UN climate talks in Belém - Carbon Brief](https://www.carbonbrief.org/cop30-key-outcomes-agreed-at-the-un-climate-talks-in-belem)\n2. [src_f55f61b8ae1d4859] [COP30: Outcomes, Disappointments and What's Next | World Resources Institute](https://www.wri.org/insights/cop30-outcomes-next-steps)\n3. [src_ee166d642b114e8c] [COP30 Outcomes](https://cop30.br/en/cop30-outcomes)\n4. [src_f59da8b89d174fe8] [5 Outcomes from COP 30: What the Belém Political Package Really Delivered | United Nations University](https://unu.edu/ehs/article/5-outcomes-cop-30-what-belem-political-package-really-delivered)",
+  "audit": {
+    "status": "PASS",
+    "checks": {
+      "no_provisional_certifications": true,
+      "no_unsupported_critical_claims": true,
+      "citations_resolve": true,
+      "no_circular_citations": true,
+      "provenance_intact": true,
+      "numeric_consistency": true,
+      "causal_language_appropriate": true,
+      "contradictions_examined": true,
+      "uncertainty_explicit": true
+    },
+    "findings": [],
+    "unsupported_claims": [],
+    "hallucinated_citations": [],
+    "circular_citations": [],
+    "provisional_certifications": []
+  },
+  "errors": [],
+  "governance": {
+    "budget": {
+      "max_iterations": 4.0,
+      "max_tool_calls": 40.0,
+      "max_search_calls": 8.0,
+      "max_fetches": 8.0,
+      "max_sandbox_executions": 4.0,
+      "max_model_calls": 30.0,
+      "max_wall_clock_s": 540.0,
+      "max_response_chars": 18000.0,
+      "max_retries_per_call": 2.0,
+      "max_dependency_depth": 8.0,
+      "max_concurrent_fetches": 2.0,
+      "max_extensions": 2.0
+    },
+    "counters": {
+      "iterations": 4,
+      "tool_calls": 0,
+      "search_calls": 8,
+      "fetches": 7,
+      "sandbox_executions": 0,
+      "model_calls": 25,
+      "retries": 5
+    },
+    "denials": [
+      {
+        "resource": "search_calls",
+        "detail": "max 8 reached",
+        "ts": 1791337361.3628871
+      },
+      {
+        "resource": "search_calls",
+        "detail": "max 8 reached",
+        "ts": 1791337444.24126
+      },
+      {
+        "resource": "search_calls",
+        "detail": "max 8 reached",
+        "ts": 1791337482.8536243
+      }
+    ],
+    "extensions": [],
+    "cancelled": false,
+    "cancel_reason": null
+  },
+  "telemetry": {
+    "request_id": "req_2eefd0b5fcbb4a94",
+    "counters": {
+      "iterations": 4,
+      "search_calls": 8,
+      "fetch_calls": 7,
+      "fetch_failed": 3,
+      "claims_extracted": 8,
+      "evidence_evaluations": 16,
+      "claims_certified": 8,
+      "duplicate_fetch_suppressed": 3,
+      "answer_synthesized_llm": 1,
+      "final_audits": 1
+    },
+    "latencies": {
+      "search": {
+        "count": 8,
+        "p50_ms": 8338.04,
+        "p95_ms": 16509.21,
+        "max_ms": 16509.21
+      },
+      "fetch": {
+        "count": 7,
+        "p50_ms": 343.45,
+        "p95_ms": 5650.56,
+        "max_ms": 5650.56
+      },
+      "evidence_eval": {
+        "count": 8,
+        "p50_ms": 1753.55,
+        "p95_ms": 12569.84,
+        "max_ms": 12569.84
+      }
+    },
+    "event_count": 5
+  },
+  "events": [
+    {
+      "name": "run.start",
+      "ts": 1791337176.3388731,
+      "run_id": "run_f997afd521364fb4",
+      "data": {
+        "objective": "What were the main outcomes and agreements of the COP30 UN climate summit held in Belem, Brazil in November 2025?",
+        "resumed": "False",
+        "backend": "anthropic-tool-use"
+      }
+    },
+    {
+      "name": "tool_session",
+      "ts": 1791337324.1976838,
+      "run_id": "run_f997afd521364fb4",
+      "data": {
+        "turns": "6",
+        "tool_calls": "[{'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}]",
+        "final_text": "",
+        "finish_requested": "False",
+        "stop_cause": "tool_use",
+        "backend_state": "anthropic-tool-use"
+      }
+    },
+    {
+      "name": "tool_session",
+      "ts": 1791337429.6969016,
+      "run_id": "run_f997afd521364fb4",
+      "data": {
+        "turns": "5",
+        "tool_calls": "[{'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': True}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}]",
+        "final_text": "",
+        "finish_requested": "False",
+        "stop_cause": "max_tokens",
+        "backend_state": "anthropic-tool-use"
+      }
+    },
+    {
+      "name": "tool_session",
+      "ts": 1791337470.6817203,
+      "run_id": "run_f997afd521364fb4",
+      "data": {
+        "turns": "2",
+        "tool_calls": "[{'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': True}]",
+        "final_text": "",
+        "finish_requested": "False",
+        "stop_cause": "max_tokens",
+        "backend_state": "anthropic-tool-use"
+      }
+    },
+    {
+      "name": "tool_session",
+      "ts": 1791337498.5868564,
+      "run_id": "run_f997afd521364fb4",
+      "data": {
+        "turns": "2",
+        "tool_calls": "[{'tool': 'web_search', 'input_keys': ['query'], 'is_error': True}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'finish_research', 'input_keys': ['reasoning'], 'is_error': False}]",
+        "final_text": "",
+        "finish_requested": "True",
+        "stop_cause": "tool_use",
+        "backend_state": "anthropic-tool-use"
+      }
+    }
+  ]
+}

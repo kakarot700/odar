@@ -1,0 +1,22 @@
+{
+ "qid": "q2",
+ "status": "ok",
+ "secs": 280.6,
+ "llm_calls": 3,
+ "other_tokenharbor_calls": 0,
+ "visited_urls": [
+  "http://www.pginsights.dev/guides/postgres-dead-tuples-and-bloat",
+  "https://devgains.com/articles/postgres-vacuum-mvcc-dead-tuples-autovacuum-bloat",
+  "https://oneuptime.com/blog/post/2026-01-21-postgresql-table-bloat/view",
+  "https://pgviz.com/guides/vacuum-bloat/",
+  "https://www.urhoba.net/en/post/mvcc-vacuum-and-table-bloat"
+ ],
+ "source_urls": [
+  "https://pgviz.com/guides/vacuum-bloat/",
+  "https://oneuptime.com/blog/post/2026-01-21-postgresql-table-bloat/view",
+  "https://www.urhoba.net/en/post/mvcc-vacuum-and-table-bloat",
+  "http://www.pginsights.dev/guides/postgres-dead-tuples-and-bloat",
+  "https://devgains.com/articles/postgres-vacuum-mvcc-dead-tuples-autovacuum-bloat"
+ ],
+ "costs_reported": 0.16873000000000002
+}

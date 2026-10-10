@@ -1,0 +1,173 @@
+{
+ "thread_id": "341c57477d701713",
+ "share_token": "OxC74K4ZnccPBVFe",
+ "title": "What is India's current repo rate set by the RBI and when was it last changed?",
+ "project_id": "",
+ "sources": [
+  {
+   "url": "https://www.rbi.org.in/home.aspx//Scripts/Home.aspx/Webservice/Scripts/Statistics.aspx",
+   "title": "Home | Official website of Reserve Bank of India",
+   "domain": "rbi.org.in",
+   "snippet": "19 hours ago \u00b7 Official website of Reserve Bank of India RBI issues Amendment Directions on 'Standardised Approach for Counterparty Credit Risk (SA-CCR)\u2019 RBI issues Directions on 'Credit Valuation Adjustment (CVA) Framework\u2019 Penal Interest on shortfall in CRR and SLR requirements - Change in Bank Rate Standing Liquidity Facility for Primary Dealers Governor\u2019s Statement, October 7, 2026 Monetary Policy ...",
+   "kind": "web",
+   "n": 1
+  },
+  {
+   "url": "https://indiainflation.com/rbi/repo-rate",
+   "title": "RBI Repo Rate Today: 5.50% | History Since 2014, Next MPC ...",
+   "domain": "indiainflation.com",
+   "snippet": "Aug 1, 2026 \u00b7 The RBI repo rate is 5.50% (last changed 7 October 2026). Every change since 2014 with RBI sources, the real repo rate against CPI inflation (4.82%), and the next MPC date.",
+   "kind": "web",
+   "n": 2
+  },
+  {
+   "url": "https://www.bankbazaar.com/home-loan/repo-rate.html",
+   "title": "Check the Current Repo Rate 2026 - BankBazaarRBI cuts repo rate to 5.25%; upgrades GDP outlook as ...RBI Hikes Repo Rate to 5.50% After 3.5 Years: How Your Home ...RBI MPC: What Is Repo Rate And Why RBI Hiked It After 3.5 ...Repo Rate 2026: Current, Reverse, SDF, Meaning and Monetary ...",
+   "domain": "bankbazaar.com",
+   "snippet": "As mentioned earlier, the repo rate is used by the central bank of India to control the flow of money in the market. When the market is hit by inflation, RBI increases the repo rate. An increased repo rate denotes that the banks who borrow money during this period from the central bank will have to pay higher interest. This discourages the banks fr... See full list on bankbazaar.com On the basis of the economic condition, as discussed in the last paragraph, the RBI regulates the repo rate. The rates are decided by the central bank on the basis of inflation or recession in the market of the cou [...truncated by sanitizer]",
+   "kind": "web",
+   "n": 3
+  },
+  {
+   "url": "https://economictimes.indiatimes.com/markets/bonds/rbi-cuts-repo-rate-to-5-25-upgrades-gdp-outlook-as-liquidity-boosts-take-centre-stage/articleshow/125826257.cms",
+   "title": "RBI cuts repo rate to 5.25%; upgrades GDP outlook as ...",
+   "domain": "economictimes.indiatimes.com",
+   "snippet": "Dec 8, 2025 \u00b7 The Reserve Bank of India cut the repo rate by 25 basis points to 5.25% and raised its GDP growth forecast to 7.3% for FY26. The central bank also announced significant liquidity measures, including open market purchases of government bonds worth \u20b91 lakh crore, signaling a supportive stance for economic growth.",
+   "kind": "web",
+   "n": 4
+  },
+  {
+   "url": "https://indianexpress.com/article/business/rbi-hikes-repo-rate-25-bps-to-5-50-pc-emi-10910143/",
+   "title": "RBI Hikes Repo Rate to 5.50% After 3.5 Years: How Your Home ...",
+   "domain": "indianexpress.com",
+   "snippet": "11 hours ago \u00b7 The Reserve Bank of India (RBI) has increased its policy repo rate by 25 basis points (bps) to 5.50 per cent, marking the first rate hike since February 2023 and signalling a shift towards tighter monetary policy amid rising inflationary pressures, elevated crude oil prices and a challenging global interest-rate environment. The Monetary Policy Committee (MPC) has changed the policy stance to ...",
+   "kind": "web",
+   "n": 5
+  },
+  {
+   "url": "https://www.thedailyjagran.com/business/news/rbi-mpc-what-is-repo-rate-and-why-rbi-hiked-it-after-35-years-how-it-will-impact-you-10331864",
+   "title": "RBI MPC: What Is Repo Rate And Why RBI Hiked It After 3.5 ...",
+   "domain": "thedailyjagran.com",
+   "snippet": "45 minutes ago \u00b7 The RBI's Monetary Policy Committee increased the repo rate by 25 bps to 5.50% due to rising inflation and global uncertainties, marking the first hike in over 3.5 years.This move will make loans costlier, increase EMIs, but offer better returns on fixed deposits, while the Indian economy is projected for resilient growth.",
+   "kind": "web",
+   "n": 6
+  }
+ ],
+ "answer": "India's current repo rate, set by the Reserve Bank of India (RBI), is 5.50% [2][6]. It was last changed on 7 October 2026, when the Monetary Policy Committee raised the rate by 25 basis points\u2014the first hike in over 3.5 years [2][5][6]. The hike was attributed to rising inflation, higher oil prices, and a weaker rupee [6].",
+ "abstained": false,
+ "timing": {
+  "search_s": 0.66,
+  "fetch_s": 1.39,
+  "ttft_s": 7.57,
+  "total_s": 7.57
+ },
+ "verification": {
+  "citations": [
+   {
+    "occ": 0,
+    "n": 2,
+    "marker": "[2]",
+    "claim": "India's current repo rate, set by the Reserve Bank of India (RBI), is 5.50% .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "Aug 1, 2026 \u00b7 The RBI repo rate is 5.50% (last changed 7 October 2026).",
+    "note": "",
+    "title": "RBI Repo Rate Today: 5.50% | History Since 2014, Next MPC ...",
+    "domain": "indiainflation.com",
+    "url": "https://indiainflation.com/rbi/repo-rate",
+    "kind": "web",
+    "entailment": 0.986,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 1,
+    "n": 6,
+    "marker": "[6]",
+    "claim": "India's current repo rate, set by the Reserve Bank of India (RBI), is 5.50% .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "Indian economy resilient; GDP growth forecast upgraded to 7.1%. RBI MPC October 2026: The Monetary Policy Committee (MPC) of the Reserve Bank of India (RBI) on Wednesday increased the repo rate by 25 bps, taking it to 5.50 per cent.",
+    "note": "",
+    "title": "RBI MPC: What Is Repo Rate And Why RBI Hiked It After 3.5 ...",
+    "domain": "thedailyjagran.com",
+    "url": "https://www.thedailyjagran.com/business/news/rbi-mpc-what-is-repo-rate-and-why-rbi-hiked-it-after-35-years-how-it-will-impact-you-10331864",
+    "kind": "web",
+    "entailment": 0.967,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 2,
+    "n": 2,
+    "marker": "[2]",
+    "claim": "It was last changed on 7 October 2026, when the Monetary Policy Committee raised the rate by 25 basis points\u2014the first hike in over 3.5 years .",
+    "verdict": "partial",
+    "check_verdict": "PARTIALLY SUPPORTED",
+    "quote": "The RBI repo rate is 5.50% (last changed 7 October 2026).",
+    "note": "partly supported: Only date supported; rate hike and first hike absent.",
+    "title": "RBI Repo Rate Today: 5.50% | History Since 2014, Next MPC ...",
+    "domain": "indiainflation.com",
+    "url": "https://indiainflation.com/rbi/repo-rate",
+    "kind": "web",
+    "entailment": 0.0,
+    "judged_by": "nli+llm"
+   },
+   {
+    "occ": 3,
+    "n": 5,
+    "marker": "[5]",
+    "claim": "It was last changed on 7 October 2026, when the Monetary Policy Committee raised the rate by 25 basis points\u2014the first hike in over 3.5 years .",
+    "verdict": "unsupported",
+    "check_verdict": "WRONG SOURCE",
+    "quote": "",
+    "note": "the page is real but does not say this",
+    "title": "RBI Hikes Repo Rate to 5.50% After 3.5 Years: How Your Home ...",
+    "domain": "indianexpress.com",
+    "url": "https://indianexpress.com/article/business/rbi-hikes-repo-rate-25-bps-to-5-50-pc-emi-10910143/",
+    "kind": "web",
+    "entailment": 0.015,
+    "judged_by": "nli+llm"
+   },
+   {
+    "occ": 4,
+    "n": 6,
+    "marker": "[6]",
+    "claim": "It was last changed on 7 October 2026, when the Monetary Policy Committee raised the rate by 25 basis points\u2014the first hike in over 3.5 years .",
+    "verdict": "partial",
+    "check_verdict": "PARTIALLY SUPPORTED",
+    "quote": "RBI MPC October 2026: The Monetary Policy Committee (MPC) of the Reserve Bank of India (RBI) on Wednesday increased the repo rate by 25 bps, taking it to 5.50 per cent. This is the first hike in over 3.5 years after the central bank hiked the key lending rates in February 2023.",
+    "note": "partly supported: Passages confirm October 2026 Wednesday 25bps hike, first in over 3.5 years.",
+    "title": "RBI MPC: What Is Repo Rate And Why RBI Hiked It After 3.5 ...",
+    "domain": "thedailyjagran.com",
+    "url": "https://www.thedailyjagran.com/business/news/rbi-mpc-what-is-repo-rate-and-why-rbi-hiked-it-after-35-years-how-it-will-impact-you-10331864",
+    "kind": "web",
+    "entailment": 0.0,
+    "judged_by": "nli+llm"
+   },
+   {
+    "occ": 5,
+    "n": 6,
+    "marker": "[6]",
+    "claim": "The hike was attributed to rising inflation, higher oil prices, and a weaker rupee .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "According to the RBI, the repo rate has been hiked due to rising inflation, higher oil prices, and a weaker rupee.",
+    "note": "",
+    "title": "RBI MPC: What Is Repo Rate And Why RBI Hiked It After 3.5 ...",
+    "domain": "thedailyjagran.com",
+    "url": "https://www.thedailyjagran.com/business/news/rbi-mpc-what-is-repo-rate-and-why-rbi-hiked-it-after-35-years-how-it-will-impact-you-10331864",
+    "kind": "web",
+    "entailment": 0.997,
+    "judged_by": "nli"
+   }
+  ],
+  "counts": {
+   "supported": 3,
+   "partial": 2,
+   "unsupported": 1
+  },
+  "elapsed_s": 21.42,
+  "total_s": 29.01
+ },
+ "q": 4,
+ "seconds": 29.1
+}

@@ -1,0 +1,662 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_d1437f132a76",
+ "trust_score": 97,
+ "grade": "citations hold up",
+ "counts": {
+  "SUPPORTED": 14,
+  "PARTIALLY SUPPORTED": 1,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 0,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 0
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "The World Malaria Report 2024 estimated 263 million malaria cases and 597,000 deaths worldwide in 2023.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+     "marker": "[1]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.009,
+     "contradiction": 0.0,
+     "quote": "According to WHO\u2019s latest World malaria report, there were an estimated 263 million cases and 597 000 malaria deaths worldwide in 2023.",
+     "note": "partly supported: Passage states same estimates and year as claim.",
+     "judged_by": "nli+llm",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "According to WHO\u2019s latest World malaria report, there were an estimated 263 million cases and 597 000 malaria deaths worldwide in 2023.",
+   "quote_url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "This was about 11 million more cases than in 2022, and nearly the same number of deaths.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.997,
+     "contradiction": 0.0,
+     "quote": "This represents about 11 million more cases in 2023 compared to 2022, and nearly the same number of deaths.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "This represents about 11 million more cases in 2023 compared to 2022, and nearly the same number of deaths.",
+   "quote_url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "Approximately 95% of the deaths occurred in the WHO African Region.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.994,
+     "contradiction": 0.0,
+     "quote": "Approximately 95% of the deaths occurred in the WHO African Region, where many at risk still lack access to the services they need to prevent, detect and treat the disease.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "Approximately 95% of the deaths occurred in the WHO African Region, where many at risk still lack access to the services they need to prevent, detect and treat the disease.",
+   "quote_url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4",
+   "claim": "An estimated 2.2 billion cases and 12.7 million deaths have been averted since 2000.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.992,
+     "contradiction": 0.0,
+     "quote": "New data from the WHO reveal that an estimated 2.2 billion cases of malaria and 12.7 million deaths have been averted since 2000, but the disease remains a serious global health threat, particularly in the WHO African Region.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "New data from the WHO reveal that an estimated 2.2 billion cases of malaria and 12.7 million deaths have been averted since 2000, but the disease remains a serious global health threat, particularly in the WHO African Region.",
+   "quote_url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5",
+   "claim": "The report introduced a dedicated chapter on reaching populations most vulnerable to malaria.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.who.int/publications/i/item/9789240104440",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.997,
+     "contradiction": 0.0,
+     "quote": "This year\u2019s report introduces, for the first time, a dedicated chapter emphasizing the need for a more inclusive and effective response, with a focus on reaching the populations most vulnerable to malaria.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "This year\u2019s report introduces, for the first time, a dedicated chapter emphasizing the need for a more inclusive and effective response, with a focus on reaching the populations most vulnerable to malaria.",
+   "quote_url": "https://www.who.int/publications/i/item/9789240104440",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6.1",
+   "claim": "Groups at high risk include children under five.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.who.int/publications/i/item/9789240104440",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.992,
+     "contradiction": 0.0,
+     "quote": "Groups at high risk of a malaria infection include children under five, women and girls, Indigenous Peoples, migrants, persons with disabilities, and people in remote areas with limited healthcare access.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "Groups at high risk of a malaria infection include children under five, women and girls, Indigenous Peoples, migrants, persons with disabilities, and people in remote areas with limited healthcare access.",
+   "quote_url": "https://www.who.int/publications/i/item/9789240104440",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6.2",
+   "claim": "Groups at high risk include women and girls.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.who.int/publications/i/item/9789240104440",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.993,
+     "contradiction": 0.0,
+     "quote": "Groups at high risk of a malaria infection include children under five, women and girls, Indigenous Peoples, migrants, persons with disabilities, and people in remote areas with limited healthcare access.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "Groups at high risk of a malaria infection include children under five, women and girls, Indigenous Peoples, migrants, persons with disabilities, and people in remote areas with limited healthcare access.",
+   "quote_url": "https://www.who.int/publications/i/item/9789240104440",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6.3",
+   "claim": "Groups at high risk include Indigenous Peoples.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.who.int/publications/i/item/9789240104440",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.992,
+     "contradiction": 0.0,
+     "quote": "Groups at high risk of a malaria infection include children under five, women and girls, Indigenous Peoples, migrants, persons with disabilities, and people in remote areas with limited healthcare access.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "Groups at high risk of a malaria infection include children under five, women and girls, Indigenous Peoples, migrants, persons with disabilities, and people in remote areas with limited healthcare access.",
+   "quote_url": "https://www.who.int/publications/i/item/9789240104440",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6.4",
+   "claim": "Groups at high risk include migrants.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.who.int/publications/i/item/9789240104440",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.99,
+     "contradiction": 0.0,
+     "quote": "Groups at high risk of a malaria infection include children under five, women and girls, Indigenous Peoples, migrants, persons with disabilities, and people in remote areas with limited healthcare access.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "Groups at high risk of a malaria infection include children under five, women and girls, Indigenous Peoples, migrants, persons with disabilities, and people in remote areas with limited healthcare access.",
+   "quote_url": "https://www.who.int/publications/i/item/9789240104440",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c7",
+   "claim": "The report covered malaria in 83 countries worldwide.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.996,
+     "contradiction": 0.0,
+     "quote": "Each year, the World malaria report serves as a vital tool to assess global progress and gaps in the fight against malaria. This year\u2019s report provides a critical and up-to-date snapshot of efforts to control and eliminate the disease in 83 countries worldwide.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "Each year, the World malaria report serves as a vital tool to assess global progress and gaps in the fight against malaria. This year\u2019s report provides a critical and up-to-date snapshot of efforts to control and eliminate the disease in 83 countries worldwide.",
+   "quote_url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c8",
+   "claim": "Partial resistance to artemisinin derivatives has been confirmed or suspected in at least 8 countries in Africa.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2025",
+     "marker": "[4]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.986,
+     "contradiction": 0.0,
+     "quote": "Partial resistance to artemisinin derivatives \u2013 the backbone of malaria treatments after failures of chloroquine and sulfadoxine-pyrimethamine \u2013 has now been confirmed or suspected in at least 8 countries in Africa, and there are potential signs of declining efficacy of some of the drugs that are",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "Partial resistance to artemisinin derivatives \u2013 the backbone of malaria treatments after failures of chloroquine and sulfadoxine-pyrimethamine \u2013 has now been confirmed or suspected in at least 8 countries in Africa, and there are potential signs of declining efficacy of some of the drugs that are",
+   "quote_url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2025",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c9.1",
+   "claim": "The 2024 edition reviews progress across prevention.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2025",
+     "marker": "[4]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.978,
+     "contradiction": 0.0,
+     "quote": "The 2024 edition reviews investments in malaria programmes and research and assesses progress across all major intervention areas \u2013 prevention, diagnosis, treatment, elimination and surveillance \u2013 in 80 malaria-endemic countries.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "The 2024 edition reviews investments in malaria programmes and research and assesses progress across all major intervention areas \u2013 prevention, diagnosis, treatment, elimination and surveillance \u2013 in 80 malaria-endemic countries.",
+   "quote_url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2025",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c9.2",
+   "claim": "The 2024 edition reviews progress across diagnosis.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2025",
+     "marker": "[4]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.759,
+     "contradiction": 0.0,
+     "quote": "Each year, WHO\u2019s World malaria report provides a comprehensive and up-to-date assessment of trends in malaria control and elimination across the globe. The 2024 edition reviews investments in malaria programmes and research and assesses progress across all major intervention areas \u2013 prevention, diagnosis, treatment, elimination and surveillance \u2013 in 80 malaria-endemic countries.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "Each year, WHO\u2019s World malaria report provides a comprehensive and up-to-date assessment of trends in malaria control and elimination across the globe. The 2024 edition reviews investments in malaria programmes and research and assesses progress across all major intervention areas \u2013 prevention, diagnosis, treatment, elimination and surveillance \u2013 in 80 malaria-endemic countries.",
+   "quote_url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2025",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c9.3",
+   "claim": "The 2024 edition reviews progress across treatment.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2025",
+     "marker": "[4]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.946,
+     "contradiction": 0.0,
+     "quote": "The 2024 edition reviews investments in malaria programmes and research and assesses progress across all major intervention areas \u2013 prevention, diagnosis, treatment, elimination and surveillance \u2013 in 80 malaria-endemic countries.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "The 2024 edition reviews investments in malaria programmes and research and assesses progress across all major intervention areas \u2013 prevention, diagnosis, treatment, elimination and surveillance \u2013 in 80 malaria-endemic countries.",
+   "quote_url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2025",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c9.4",
+   "claim": "The 2024 edition reviews progress across elimination.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2025",
+     "marker": "[4]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.987,
+     "contradiction": 0.0,
+     "quote": "Each year, WHO\u2019s World malaria report provides a comprehensive and up-to-date assessment of trends in malaria control and elimination across the globe. The 2024 edition reviews investments in malaria programmes and research and assesses progress across all major intervention areas \u2013 prevention, diagnosis, treatment, elimination and surveillance \u2013 in 80 malaria-endemic countries.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "Each year, WHO\u2019s World malaria report provides a comprehensive and up-to-date assessment of trends in malaria control and elimination across the globe. The 2024 edition reviews investments in malaria programmes and research and assesses progress across all major intervention areas \u2013 prevention, diagnosis, treatment, elimination and surveillance \u2013 in 80 malaria-endemic countries.",
+   "quote_url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2025",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "title": "World malaria report 2024",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "2f9486af14504195e80d0ac8f93d5788202b6b610d73ea81a56c7aaef0f3240f",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.who.int/publications/i/item/9789240104440",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.who.int/publications/i/item/9789240104440",
+   "title": "World malaria report 2024",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "b5255db8aac328d66f7a9d2452d90ac13f29c5332b87d53f112c4829ac07b5b0",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2025",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2025",
+   "title": "World malaria report 2025",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "cb87052e2a23711302eaa65deb6aaa3a3e38cc1120fda0624e805f014bea271b",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 142.8,
+ "usage": {
+  "fetches": 3,
+  "wayback_lookups": 0,
+  "searches": 0,
+  "llm_calls": 3,
+  "nli_checks": 15,
+  "scorer_load_ms": 32671
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 9,
+   "citations": 9
+  },
+  {
+   "t": 18.47,
+   "event": "fetch",
+   "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "state": "live",
+   "http_status": 200,
+   "chars": 1506,
+   "error": ""
+  },
+  {
+   "t": 18.49,
+   "event": "fetch",
+   "url": "https://www.who.int/publications/i/item/9789240104440",
+   "state": "live",
+   "http_status": 200,
+   "chars": 681,
+   "error": ""
+  },
+  {
+   "t": 18.51,
+   "event": "fetch",
+   "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2025",
+   "state": "live",
+   "http_status": 200,
+   "chars": 1619,
+   "error": ""
+  },
+  {
+   "t": 31.83,
+   "event": "paraphrase_judge",
+   "claim": "The World Malaria Report 2024 estimated 263 million malaria cases and 597,000 deaths worldwide in 2023.",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 31.83,
+   "event": "verify",
+   "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "claim": "The World Malaria Report 2024 estimated 263 million malaria cases and 597,000 deaths worldwide in 2023.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.009,
+   "con": 0.0
+  },
+  {
+   "t": 45.62,
+   "event": "verify",
+   "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "claim": "This was about 11 million more cases than in 2022, and nearly the same number of deaths.",
+   "verdict": "SUPPORTED",
+   "ent": 0.997,
+   "con": 0.0
+  },
+  {
+   "t": 53.9,
+   "event": "verify",
+   "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "claim": "Approximately 95% of the deaths occurred in the WHO African Region.",
+   "verdict": "SUPPORTED",
+   "ent": 0.994,
+   "con": 0.0
+  },
+  {
+   "t": 65.13,
+   "event": "verify",
+   "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "claim": "An estimated 2.2 billion cases and 12.7 million deaths have been averted since 2000.",
+   "verdict": "SUPPORTED",
+   "ent": 0.992,
+   "con": 0.0
+  },
+  {
+   "t": 67.92,
+   "event": "verify",
+   "url": "https://www.who.int/publications/i/item/9789240104440",
+   "claim": "The report introduced a dedicated chapter on reaching populations most vulnerable to malaria.",
+   "verdict": "SUPPORTED",
+   "ent": 0.997,
+   "con": 0.0
+  },
+  {
+   "t": 71.27,
+   "event": "verify",
+   "url": "https://www.who.int/publications/i/item/9789240104440",
+   "claim": "Groups at high risk include children under five.",
+   "verdict": "SUPPORTED",
+   "ent": 0.992,
+   "con": 0.0
+  },
+  {
+   "t": 75.66,
+   "event": "verify",
+   "url": "https://www.who.int/publications/i/item/9789240104440",
+   "claim": "Groups at high risk include women and girls.",
+   "verdict": "SUPPORTED",
+   "ent": 0.993,
+   "con": 0.0
+  },
+  {
+   "t": 79.04,
+   "event": "verify",
+   "url": "https://www.who.int/publications/i/item/9789240104440",
+   "claim": "Groups at high risk include Indigenous Peoples.",
+   "verdict": "SUPPORTED",
+   "ent": 0.992,
+   "con": 0.0
+  },
+  {
+   "t": 82.25,
+   "event": "verify",
+   "url": "https://www.who.int/publications/i/item/9789240104440",
+   "claim": "Groups at high risk include migrants.",
+   "verdict": "SUPPORTED",
+   "ent": 0.99,
+   "con": 0.0
+  },
+  {
+   "t": 93.3,
+   "event": "verify",
+   "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "claim": "The report covered malaria in 83 countries worldwide.",
+   "verdict": "SUPPORTED",
+   "ent": 0.996,
+   "con": 0.0
+  },
+  {
+   "t": 102.74,
+   "event": "verify",
+   "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2025",
+   "claim": "Partial resistance to artemisinin derivatives has been confirmed or suspected in at least 8 countries in Africa.",
+   "verdict": "SUPPORTED",
+   "ent": 0.986,
+   "con": 0.0
+  },
+  {
+   "t": 113.63,
+   "event": "verify",
+   "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2025",
+   "claim": "The 2024 edition reviews progress across prevention.",
+   "verdict": "SUPPORTED",
+   "ent": 0.978,
+   "con": 0.0
+  },
+  {
+   "t": 127.17,
+   "event": "verify",
+   "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2025",
+   "claim": "The 2024 edition reviews progress across diagnosis.",
+   "verdict": "SUPPORTED",
+   "ent": 0.759,
+   "con": 0.0
+  },
+  {
+   "t": 136.14,
+   "event": "verify",
+   "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2025",
+   "claim": "The 2024 edition reviews progress across treatment.",
+   "verdict": "SUPPORTED",
+   "ent": 0.946,
+   "con": 0.0
+  },
+  {
+   "t": 142.79,
+   "event": "verify",
+   "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2025",
+   "claim": "The 2024 edition reviews progress across elimination.",
+   "verdict": "SUPPORTED",
+   "ent": 0.987,
+   "con": 0.0
+  },
+  {
+   "t": 142.8,
+   "event": "done",
+   "trust_score": 97
+  }
+ ],
+ "score_s": 178.7
+}

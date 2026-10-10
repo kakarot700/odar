@@ -1,0 +1,192 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_65862c98fab0",
+ "trust_score": 50,
+ "grade": "unreliable citations",
+ "counts": {
+  "SUPPORTED": 0,
+  "PARTIALLY SUPPORTED": 1,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 0,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 5
+ },
+ "claims": [
+  {
+   "claim_id": "c1.1",
+   "claim": "In phase 3 trials, R21/Matrix-M showed about 75% efficacy against symptomatic malaria in children when given before the high-transmission season.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c1.2",
+   "claim": "In phase 3 trials, R21/Matrix-M showed about 68% efficacy against symptomatic malaria in perennial transmission settings over the first 12 months after the primary 3-dose series.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "In the Burkina Faso phase 2b trial, it also met the WHO target of 75% efficacy in young children over one year, with a booster helping maintain protection.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.ox.ac.uk/news/2024-02-01-new-phase-3-trial-data-confirm-uniquely-high-efficacy-and-good-safety-profile",
+     "marker": "[1]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "archived_only",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "A phase II trial in Burkina Faso, reporting in 2021, was the first to show that R21/Matrix-M could reach the WHO-specified target of 75% efficacy in African children.",
+     "note": "partly supported: Passages support efficacy target but omit booster details. (verified against the Wayback Machine copy; live page is gone)",
+     "judged_by": "nli+llm",
+     "source_type": "academic",
+     "source_year": 2024
+    }
+   ],
+   "quote": "A phase II trial in Burkina Faso, reporting in 2021, was the first to show that R21/Matrix-M could reach the WHO-specified target of 75% efficacy in African children.",
+   "quote_url": "https://www.ox.ac.uk/news/2024-02-01-new-phase-3-trial-data-confirm-uniquely-high-efficacy-and-good-safety-profile",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3.1",
+   "claim": "The short version is very effective in the trial setting.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3.2",
+   "claim": "Protection still needs boosting.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3.3",
+   "claim": "Protection varies by transmission pattern.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://www.ox.ac.uk/news/2024-02-01-new-phase-3-trial-data-confirm-uniquely-high-efficacy-and-good-safety-profile",
+   "state": "archived_only",
+   "http_status": 403,
+   "error": "HTTP 403",
+   "resolved_url": "https://www.ox.ac.uk/news/2024-02-01-new-phase-3-trial-data-confirm-uniquely-high-efficacy-and-good-safety-profile",
+   "title": "",
+   "archive_url": "http://web.archive.org/web/20260902090811/https://www.ox.ac.uk/news/2024-02-01-new-phase-3-trial-data-confirm-uniquely-high-efficacy-and-good-safety-profile",
+   "archive_timestamp": "20260902090811",
+   "text_source": "wayback",
+   "archive_check": "archived",
+   "content_hash": "4b1269f703309c845ce9efd1088cab91d76151400055a00097b14f16982ee17f",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 48.3,
+ "usage": {
+  "fetches": 2,
+  "wayback_lookups": 1,
+  "searches": 0,
+  "llm_calls": 4,
+  "nli_checks": 1,
+  "scorer_load_ms": 1722
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 3,
+   "citations": 1
+  },
+  {
+   "t": 29.7,
+   "event": "fetch",
+   "url": "https://www.ox.ac.uk/news/2024-02-01-new-phase-3-trial-data-confirm-uniquely-high-efficacy-and-good-safety-profile",
+   "state": "blocked",
+   "http_status": 403,
+   "chars": 0,
+   "error": "HTTP 403"
+  },
+  {
+   "t": 30.61,
+   "event": "wayback",
+   "url": "https://www.ox.ac.uk/news/2024-02-01-new-phase-3-trial-data-confirm-uniquely-high-efficacy-and-good-safety-profile",
+   "archived": true,
+   "snapshot": "http://web.archive.org/web/20260902090811/https://www.ox.ac.uk/news/2024-02-01-new-phase-3-trial-data-confirm-uniquely-high-efficacy-and-good-safety-profile"
+  },
+  {
+   "t": 31.25,
+   "event": "archive_fetch",
+   "url": "https://web.archive.org/web/20260902090811id_/https://www.ox.ac.uk/news/2024-02-01-new-phase-3-trial-data-confirm-uniquely-high-efficacy-and-good-safety-profile",
+   "ok": true,
+   "chars": 5221,
+   "error": ""
+  },
+  {
+   "t": 48.29,
+   "event": "paraphrase_judge",
+   "claim": "In the Burkina Faso phase 2b trial, it also met the WHO target of 75% efficacy in young children over one year, with a b",
+   "verdict": "PARTIAL",
+   "grounded": true
+  },
+  {
+   "t": 48.29,
+   "event": "verify",
+   "url": "https://www.ox.ac.uk/news/2024-02-01-new-phase-3-trial-data-confirm-uniquely-high-efficacy-and-good-safety-profile",
+   "claim": "In the Burkina Faso phase 2b trial, it also met the WHO target of 75% efficacy in young children over one year, with a b",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 48.29,
+   "event": "done",
+   "trust_score": 50
+  }
+ ],
+ "score_s": 50.0
+}

@@ -1,0 +1,505 @@
+{
+  "status": "COMPLETE",
+  "backend_state": "multi-agent-router",
+  "degraded": false,
+  "objective": "What were the main outcomes and agreements of the COP30 UN climate summit held in Belem, Brazil in November 2025?",
+  "run_id": "run_e002ff377cb54f95",
+  "uncertainty": "EVIDENCE_FOR",
+  "termination_status": "COMPLETE",
+  "unmet_conditions": [],
+  "digest": {
+    "objective": "What were the main outcomes and agreements of the COP30 UN climate summit held in Belem, Brazil in November 2025?",
+    "iteration": 2,
+    "termination_status": "COMPLETE",
+    "uncertainty": "EVIDENCE_FOR",
+    "subquestions": [
+      "What was the COP30 summit in Belém, Brazil — its official mandate, schedule, leadership, and pre-summit expectations from UNFCCC?",
+      "What were the main negotiated outcomes and agreements reached at COP30 — such as decisions on mitigation, adaptation, and a new climate finance or emission-reduction framework?",
+      "How was climate finance addressed at COP30, including the New Collective Quantified Goal, the loss and damage fund, and the $1.3 trillion developing-country proposal?",
+      "Which points of disagreement and limitations dominated COP30 — fossil fuel phase-out language, transparency, US participation — and what are the latest developments and reactions since the summit ende"
+    ],
+    "hypotheses": [],
+    "claims": [
+      {
+        "id": "clm_c4bbcb19a3ff43cf",
+        "text": "COP30 served as the primary intergovernmental forum for climate action, convening under the mandate of the UNFCCC and the Paris Agreement.",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_ed2d050ebdf0450b",
+        "text": "On this page, you will find all official documents related to the Belém Climate Summit.",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_e87961d85f3044f2",
+        "text": "This development suggests that while the official summit may have disappointed, momentum for climate action continues to build among willing nations.",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_d3059a38e30e476b",
+        "text": "The 30th Conference of the Parties (COP30) convened in Belém, Brazil, from 10–21 November 2025, marking the 10th anniversary of the Paris Agreement.",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_08b7775e7a624f53",
+        "text": "The next year — when Brazil produces its science-based roadmaps — will shape both expectations and pressure ahead of COP31.",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_412957c0a0804909",
+        "text": "Twenty percent of funds are reserved for Indigenous peoples, and more than 70 tropical forest-rich developing countries are eligible.By the close of COP30, the ",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_82251ff0568b4c08",
+        "text": "Unusually for a COP, the two-day “high level segment” – where world leaders give speeches with their views and plans on climate change – took place before the s",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_9e03d74c7771447f",
+        "text": "Expectations were high: COP30 was meant to be a transformative moment for the Paris Agreement, ushering in a new era of ambition through the third round of Nati",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      }
+    ],
+    "evidence_summary": {
+      "total": 256,
+      "relevant": 54,
+      "supports": 53,
+      "refutes": 0,
+      "qualifies": 1,
+      "circular_rejected": 0
+    },
+    "sources": {
+      "total": 11,
+      "independent": 11,
+      "classes": {
+        "general_web": 10,
+        "university": 1
+      }
+    },
+    "contradictions": [],
+    "unanswered": [],
+    "attempted_queries": [
+      "COP30 Belem outcomes main agreements results",
+      "UNFCCC COP30 decision texts final outcome document",
+      "COP30 Belem outcomes analysis reaction latest developments",
+      "COP30 climate finance outcome NCQG trillion",
+      "COP30 Belem loss and damage fund finance pledge",
+      "COP30 final decision text main outcomes",
+      "COP30 United States position outcome",
+      "COP30 loss and damage fund details"
+    ],
+    "failed_approaches": [
+      "fetch:https://pasifika.news/2025/11/belem-cop30-delivers-climate-finance-boost-and-a-pledge-to-plan-fossil-fuel-transition/",
+      "fetch:https://thebulletin.org/2026/01/cop30-ended-without-a-clear-fossil-fuel-roadmap-but-new-initiatives-emerged/",
+      "fetch:https://www.ciel.org/news/cop30-flounder-countries-look-beyond-unfccc-to-phase-out-fossil-fuels/",
+      "fetch:https://www.europarl.europa.eu/RegData/etudes/ATAG/2025/779230/EPRS_ATA(2025)779230_EN.pdf",
+      "fetch:https://www.c2es.org/wp-content/uploads/2026/02/COP30-Summary-FINAL5.pdf"
+    ],
+    "evidence_coverage": {
+      "clm_c4bbcb19a3ff43cf": true,
+      "clm_ed2d050ebdf0450b": true,
+      "clm_e87961d85f3044f2": true,
+      "clm_d3059a38e30e476b": true,
+      "clm_08b7775e7a624f53": true,
+      "clm_412957c0a0804909": true,
+      "clm_82251ff0568b4c08": true,
+      "clm_9e03d74c7771447f": true,
+      "clm_6a07e123fa3c4894": true,
+      "clm_1d309cb3885144d0": true,
+      "clm_b453924a81a3466d": true,
+      "clm_1d33ec3b001e408a": true,
+      "clm_94e510389b8841a4": true,
+      "clm_e561b3e9a01e4792": true,
+      "clm_d9aeb660284b4ed9": true,
+      "clm_c84dcbd2d12f4d26": true,
+      "clm_f47f9f9c0b90474a": true,
+      "clm_da3d078bff1148ff": true,
+      "clm_e4a22de970ba48b8": true,
+      "clm_da8ac5eb9bb14e64": true,
+      "clm_93d0b753584647dd": true,
+      "clm_4f77e3011de6491c": true,
+      "clm_932112d12bf24497": true,
+      "clm_b1d4e662531b47fa": true,
+      "clm_3f89c80a339b481c": true,
+      "clm_c4a624f3d2214279": true,
+      "clm_1d6d2ff7fa77446a": true,
+      "clm_dfd4498936ab43a6": true,
+      "clm_bec295a48dca4c95": true,
+      "clm_82e956eee4ae4e1d": true,
+      "clm_fa54c69f85874405": true,
+      "clm_6da0b877b9844e29": true
+    },
+    "citation_coverage": {
+      "clm_c4bbcb19a3ff43cf": true,
+      "clm_ed2d050ebdf0450b": true,
+      "clm_e87961d85f3044f2": true,
+      "clm_d3059a38e30e476b": true,
+      "clm_08b7775e7a624f53": true,
+      "clm_412957c0a0804909": true,
+      "clm_82251ff0568b4c08": true,
+      "clm_9e03d74c7771447f": true,
+      "clm_6a07e123fa3c4894": true,
+      "clm_1d309cb3885144d0": true,
+      "clm_b453924a81a3466d": true,
+      "clm_1d33ec3b001e408a": true,
+      "clm_94e510389b8841a4": true,
+      "clm_e561b3e9a01e4792": true,
+      "clm_d9aeb660284b4ed9": true,
+      "clm_c84dcbd2d12f4d26": true,
+      "clm_f47f9f9c0b90474a": true,
+      "clm_da3d078bff1148ff": true,
+      "clm_e4a22de970ba48b8": true,
+      "clm_da8ac5eb9bb14e64": true,
+      "clm_93d0b753584647dd": true,
+      "clm_4f77e3011de6491c": true,
+      "clm_932112d12bf24497": true,
+      "clm_b1d4e662531b47fa": true,
+      "clm_3f89c80a339b481c": true,
+      "clm_c4a624f3d2214279": true,
+      "clm_1d6d2ff7fa77446a": true,
+      "clm_dfd4498936ab43a6": true,
+      "clm_bec295a48dca4c95": true,
+      "clm_82e956eee4ae4e1d": true,
+      "clm_fa54c69f85874405": true,
+      "clm_6da0b877b9844e29": true
+    },
+    "quarantined_urls": 0,
+    "injection_blocked": 0
+  },
+  "synthesis": "# Research Report: What were the main outcomes and agreements of the COP30 UN climate summit held in Belem, Brazil in November 2025?\n\n## Answer (written only from the certified findings below)\n### Summary\nCOP30 in Belém served as the primary intergovernmental forum for climate action under the UNFCCC and Paris Agreement, with all official summit documents available [[1]](https://cop30.br.com/)[[2]](https://cop30.br/en/news-about-cop30/documents). The main outcomes included a voluntary plan to curb fossil fuels, a goal to triple adaptation finance, and new efforts to strengthen climate targets [[6]](https://www.carbonbrief.org/cop30-key-outcomes-agreed-at-the-un-climate-talks-in-belem)[[7]](https://www.ecolur.org/en/news/climate-change/16233/). The adopted text called for mobilizing at least $1.3 trillion per year by 2035 for climate action, alongside tripling adaptation finance and operationalizing the COP28 loss and damage fund [[7]](https://www.ecolur.org/en/news/climate-change/16233/)[[1]](https://cop30.br.com/)[[6]](https://www.carbonbrief.org/cop30-key-outcomes-agreed-at-the-un-climate-talks-in-belem). Governments backed climate finance ambitions of $1.3 trillion annually for developing countries by 2035 and pledged to triple adaptation finance to $300 billion per year [[4]](https://esgnews.com/cop30-outcomes-draw-global-criticism-as-scientists-warn-climate-action-remains-insufficient/). UN climate chief Simon Stiell pointed to these as major gains [[7]](https://www.ecolur.org/en/news/climate-change/16233/).\n\nStiell admitted COP30 had not delivered everything needed, warning that overshooting 1.5°C demands deep, rapid emission cuts and massive finance [[7]](https://www.ecolur.org/en/news/climate-change/16233/). Brazilian scientist Carlos Nobre warned that fossil fuel use must fall to zero by 2040–2045 to avoid catastrophic rises of up to 2.5°C [[7]](https://www.ecolur.org/en/news/climate-change/16233/). Oil-producing nations Russia and Saudi Arabia influenced the final text, blocking stronger language on fossil fuel transitions [[3]](https://www.envirolink.org/2025/11/24/cop30-climate-summit-fails-to-address-fossil-fuels-despite-scientific-warnings-say-critics/). A director added that decisions to phase out fossil fuels and halt deforestation fall short [[4]](https://esgnews.com/cop30-outcomes-draw-global-criticism-as-scientists-warn-climate-action-remains-insufficient/). Despite official disappointment, momentum for climate action continues to build among willing nations [[3]](https://www.envirolink.org/2025/11/24/cop30-climate-summit-fails-to-address-fossil-fuels-despite-scientific-warnings-say-critics/).\n\n### What was the COP30 summit in Belém, Brazil — its official mandate, schedule, leadership, and pre-summit expectations from UNFCCC?\nCOP30 served as the primary intergovernmental forum for climate action, convening under the mandate of the UNFCCC and the Paris Agreement [[1]](https://cop30.br.com/). The 30th Conference of the Parties (COP30) convened in Belém, Brazil, from 10–21 November 2025, marking the 10th anniversary of the Paris Agreement [[1]](https://cop30.br.com/). Unusually for a COP, the two-day “high level segment” – where world leaders give speeches with their views and plans on climate change – took place before the summit’s official opening from 6-7 November [[6]](https://www.carbonbrief.org/cop30-key-outcomes-agreed-at-the-un-climate-talks-in-belem).\n\nExpectations were high: COP30 was meant to be a transformative moment for the Paris Agreement, ushering in a new era of ambition through the third round of Nationally Determined Contributions (NDCs 3.0) [[5]](https://www.ccap.org/post/cop30-the-good-the-bad-and-the-ugly). These pre-summit expectations from the UNFCCC process centered on the delivery of these strengthened national climate plans [[5]](https://www.ccap.org/post/cop30-the-good-the-bad-and-the-ugly). The next year — when Brazil produces its science-based roadmaps — was expected to shape both expectations and pressure ahead of COP31 [[4]](https://esgnews.com/cop30-outcomes-draw-global-criticism-as-scientists-warn-climate-action-remains-insufficient/).\n\n### What were the main negotiated outcomes and agreements reached at COP30 — such as decisions on mitigation, adaptation, and a new climate finance or emission-reduction framework?\nUN climate chief Simon Stiell pointed to a series of major gains as COP30 closed, including new strategies to accelerate Paris Agreement implementation, a push to triple adaptation finance, and commitments toward a just energy transition [[7]](https://www.ecolur.org/en/news/climate-change/16233/). One of the biggest negotiated outcomes concerned efforts to adapt to the impacts of climate change, with Corrêa do Lago dubbing it the \"COP of adaptation\" [[6]](https://www.carbonbrief.org/cop30-key-outcomes-agreed-at-the-un-climate-talks-in-belem). Delegates spent two weeks debating adaptation, rainforest protection, climate finance and cooperation frameworks [[4]](https://esgnews.com/cop30-outcomes-draw-global-criticism-as-scientists-warn-climate-action-remains-insufficient/). The proceedings focused on finalizing operational details of finance, adaptation, and the Enhanced Transparency Framework (ETF) [[1]](https://cop30.br.com/). Negotiations centered on translating commitments into verifiable pathways, prioritizing mechanisms for finance, adaptation, and just transition required under the UNFCCC framework [[1]](https://cop30.br.com/).\n\nThe summit's close was accompanied by a stark warning: overshoot of 1.5°C is a stark warning that deep, rapid emission cuts and massive climate finance are essential, alongside the acknowledgment that \"I cannot pretend that COP30 has delivered everything that is needed\" [[7]](https://www.ecolur.org/en/news/climate-change/16233/).\n\n### How was climate finance addressed at COP30, including the New Collective Quantified Goal, the loss and damage fund, and the $1.3 trillion developing-country proposal?\nAfter two weeks of intense negotiations, the adopted text calls for mobilizing at least $1.3 trillion annually by 2035, alongside tripling adaptation finance and operationalizing the loss and damage fund agreed at COP28 [[7]](https://www.ecolur.org/en/news/climate-change/16233/). Under the New Collective Quantified Goal (NCQG), parties agreed to a new political commitment to triple global adaptation finance by 2035 [[1]](https://cop30.br.com/)[[6]](https://www.carbonbrief.org/cop30-key-outcomes-agreed-at-the-un-climate-talks-in-belem). Governments backed climate finance ambitions of $1.3 trillion annually for developing countries by 2035, alongside a pledge to triple adaptation finance to $300 billion per year [[4]](https://esgnews.com/cop30-outcomes-draw-global-criticism-as-scientists-warn-climate-action-remains-insufficient/).\n\nThe Belém outcome stabilizes the loss-and-damage architecture around three pillars: the Warsaw International Mechanism (WIM), the Santiago Network and the new Fund for Responding to Loss and Damage (FRLD) [[9]](https://www.cities-and-regions.org/cop30-outcomes-on-climate-finance-and-loss-damage/). The Mutirão decision links \"urgent and enhanced action and support\" on loss and damage to tripling finance outflows by 2030 and to the broader ramp-up of climate finance [[7]](https://www.ecolur.org/en/news/climate-change/16233/)[[9]](https://www.cities-and-regions.org/cop30-outcomes-on-climate-finance-and-loss-damage/).\n\nThis push on adaptation windows aligns with the agreement to triple adaptation finance to $300 billion per year by 2035 [[4]](https://esgnews.com/cop30-outcomes-draw-global-criticism-as-scientists-warn-climate-action-remains-insufficient/)[[9]](https://www.cities-and-regions.org/cop30-outcomes-on-climate-finance-and-loss-damage/).\n\n### Which points of disagreement and limitations dominated COP30 — fossil fuel phase-out language, transparency, US participation — and what are the latest developments and reactions since the summit ende\nCOP30 concluded in Brazil this week amid sharp criticism that the final agreement fails to adequately address the role of fossil fuels in driving global warming [[3]](https://www.envirolink.org/2025/11/24/cop30-climate-summit-fails-to-address-fossil-fuels-despite-scientific-warnings-say-critics/). Expectations were high that COP30's final decision would include explicit reference to phasing out fossil fuels, and indeed more than 80 countries pushed for explicit fossil fuel language and a roadmap to transition away from coal, oil and gas [[7]](https://www.ecolur.org/en/news/climate-change/16233/)[[4]](https://esgnews.com/cop30-outcomes-draw-global-criticism-as-scientists-warn-climate-action-remains-insufficient/). However, COP30 ended without a roadmap to phase out coal, oil and gas, despite that support from more than 80 countries [[4]](https://esgnews.com/cop30-outcomes-draw-global-criticism-as-scientists-warn-climate-action-remains-insufficient/). Guenther suggests that oil-producing nations Russia and Saudi Arabia influenced the final text, effectively blocking stronger language on fossil fuel transitions [[3]](https://www.envirolink.org/2025/11/24/cop30-climate-summit-fails-to-address-fossil-fuels-despite-scientific-warnings-say-critics/).\n\nBefore the final plenary, Brazilian scientist Carlos Nobre issued a stark warning: fossil fuel use must fall to zero by 2040 – 2045 at the latest to avoid catastrophic temperature rises of up to 2.5°C by mid-century [[7]](https://www.ecolur.org/en/news/climate-change/16233/).\n\n## Certified Findings (semantic NLI verification)\n- [clm_c4bbcb19a3ff43cf] COP30 served as the primary intergovernmental forum for climate action, convening under the mandate of the UNFCCC and the Paris Agreement.\n  - cited: [src_a8e61fe457de4da5] [COP30 Belém Climate Summit 2025: Key Decisions and Mandates](https://cop30.br.com/) (entailment p=0.98, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_ed2d050ebdf0450b] On this page, you will find all official documents related to the Belém Climate Summit.\n  - cited: [src_5c568641cfd4482f] [Belém Climate Summit Documents](https://cop30.br/en/news-about-cop30/documents) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_e87961d85f3044f2] This development suggests that while the official summit may have disappointed, momentum for climate action continues to build among willing nations.\n  - cited: [src_285926e983d347d7] [COP30 Climate Summit Fails to Address Fossil Fuels Despite Scientific Warnings, Say Critics - EnviroLink Network](https://www.envirolink.org/2025/11/24/cop30-climate-summit-fails-to-address-fossil-fuels-despite-scientific-warnings-say-critics/) (entailment p=0.96, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_d3059a38e30e476b] The 30th Conference of the Parties (COP30) convened in Belém, Brazil, from 10–21 November 2025, marking the 10th anniversary of the Paris Agreement.\n  - cited: [src_a8e61fe457de4da5] [COP30 Belém Climate Summit 2025: Key Decisions and Mandates](https://cop30.br.com/) (entailment p=0.97, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_08b7775e7a624f53] The next year — when Brazil produces its science-based roadmaps — will shape both expectations and pressure ahead of COP31.\n  - cited: [src_4b9c4b49374d4acd] [COP30 Outcomes Draw Global Criticism as Scientists Warn Climate Action Remains Insufficient - ESG News](https://esgnews.com/cop30-outcomes-draw-global-criticism-as-scientists-warn-climate-action-remains-insufficient/) (entailment p=0.98, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_412957c0a0804909] Twenty percent of funds are reserved for Indigenous peoples, and more than 70 tropical forest-rich developing countries are eligible.By the close of COP30, the Facility had already raised USD $6.5 billion, with expectations for more contributions in 2025.\n  - cited: [src_cbb0c5a96ac24a43] [COP30: The Good, the Bad, and the Ugly](https://www.ccap.org/post/cop30-the-good-the-bad-and-the-ugly) (entailment p=0.98, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_82251ff0568b4c08] Unusually for a COP, the two-day “high level segment” – where world leaders give speeches with their views and plans on climate change – took place before the summit’s official opening from 6-7 November.\n  - cited: [src_0b618f7ae48d425b] [COP30: Key outcomes agreed at the UN climate talks in Belém - Carbon Brief](https://www.carbonbrief.org/cop30-key-outcomes-agreed-at-the-un-climate-talks-in-belem) (entailment p=0.95, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_9e03d74c7771447f] Expectations were high: COP30 was meant to be a transformative moment for the Paris Agreement, ushering in a new era of ambition through the third round of Nationally Determined Contributions (NDCs 3.0).\n  - cited: [src_cbb0c5a96ac24a43] [COP30: The Good, the Bad, and the Ugly](https://www.ccap.org/post/cop30-the-good-the-bad-and-the-ugly) (entailment p=0.92, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_6a07e123fa3c4894] A voluntary plan to curb fossil fuels, a goal to triple adaptation finance and new efforts to “strengthen” climate targets have been launched at the COP30 climate summit in Brazil.\n  - cited: [src_0b618f7ae48d425b] [COP30: Key outcomes agreed at the UN climate talks in Belém - Carbon Brief](https://www.carbonbrief.org/cop30-key-outcomes-agreed-at-the-un-climate-talks-in-belem) (entailment p=0.98, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n  - cited: [src_80f72d7dd95a4a2f] [Belém COP30 delivers climate finance boost and a pledge to plan fossil fuel transition - Ecolur](https://www.ecolur.org/en/news/climate-change/16233/) (entailment p=0.93, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n  - cited: [src_48d649343bc24312] [Belém COP30 delivers climate finance boost and a pledge to plan fossil fuel transition | UN News](https://news.un.org/en/story/2025/11/1166433) (entailment p=0.93, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_1d309cb3885144d0] UN climate chief Simon Stiell pointed to a series of major gains as COP30 closed in Belém: new strategies to accelerate Paris Agreement implementation, a push to triple adaptation finance, and commitments toward a just energy transition.\n  - cited: [src_80f72d7dd95a4a2f] [Belém COP30 delivers climate finance boost and a pledge to plan fossil fuel transition - Ecolur](https://www.ecolur.org/en/news/climate-change/16233/) (entailment p=0.95, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n  - cited: [src_80f72d7dd95a4a2f] [Belém COP30 delivers climate finance boost and a pledge to plan fossil fuel transition - Ecolur](https://www.ecolur.org/en/news/climate-change/16233/) (entailment p=0.95, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_b453924a81a3466d] I cannot pretend that COP30 has delivered everything that is needed.” Overshoot of 1.5°C is a stark warning: deep, rapid emission cuts and massive climate finance are essential.\n  - cited: [src_80f72d7dd95a4a2f] [Belém COP30 delivers climate finance boost and a pledge to plan fossil fuel transition - Ecolur](https://www.ecolur.org/en/news/climate-change/16233/) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n  - cited: [src_80f72d7dd95a4a2f] [Belém COP30 delivers climate finance boost and a pledge to plan fossil fuel transition - Ecolur](https://www.ecolur.org/en/news/climate-change/16233/) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_1d33ec3b001e408a] One of the biggest negotiated outcomes at COP30 concerned efforts to adapt to the impacts of climate change, with Corrêa do Lago dubbing it the “COP of adaptation”.\n  - cited: [src_0b618f7ae48d425b] [COP30: Key outcomes agreed at the UN climate talks in Belém - Carbon Brief](https://www.carbonbrief.org/cop30-key-outcomes-agreed-at-the-un-climate-talks-in-belem) (entailment p=0.97, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_94e510389b8841a4] Negotiations focused on translating these commitments into verifiable pathways, prioritizing mechanisms for finance, adaptation, and just transition required under the UNFCCC framework.\n  - cited: [src_a8e61fe457de4da5] [COP30 Belém Climate Summit 2025: Key Decisions and Mandates](https://cop30.br.com/) (entailment p=0.94, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_e561b3e9a01e4792] Delegates spent two weeks debating adaptation, rainforest protection, climate finance and cooperation frameworks.\n  - cited: [src_4b9c4b49374d4acd] [COP30 Outcomes Draw Global Criticism as Scientists Warn Climate Action Remains Insufficient - ESG News](https://esgnews.com/cop30-outcomes-draw-global-criticism-as-scientists-warn-climate-action-remains-insufficient/) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_d9aeb660284b4ed9] The European Union (EU) submitted its new NDC, committing to a net greenhouse gas emission reduction of 66.25% to 72.5% below 1990 levels by 2035.\n  - cited: [src_a8e61fe457de4da5] [COP30 Belém Climate Summit 2025: Key Decisions and Mandates](https://cop30.br.com/) (entailment p=0.98, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_c84dcbd2d12f4d26] The proceedings focused on finalizing operational details of finance, adaptation, and the Enhanced Transparency Framework (ETF).\n  - cited: [src_a8e61fe457de4da5] [COP30 Belém Climate Summit 2025: Key Decisions and Mandates](https://cop30.br.com/) (entailment p=0.97, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_f47f9f9c0b90474a] After two weeks of intense negotiations, the adopted text calls for mobilizing at least $1.3 trillion per year by 2035 for climate action, alongside tripling adaptation finance and operationalizing the loss and damage fund agreed at COP28.\n  - cited: [src_80f72d7dd95a4a2f] [Belém COP30 delivers climate finance boost and a pledge to plan fossil fuel transition - Ecolur](https://www.ecolur.org/en/news/climate-change/16233/) (entailment p=0.92, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n  - cited: [src_80f72d7dd95a4a2f] [Belém COP30 delivers climate finance boost and a pledge to plan fossil fuel transition - Ecolur](https://www.ecolur.org/en/news/climate-change/16233/) (entailment p=0.92, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_da3d078bff1148ff] Parties agreed to a new political commitment to triple global adaptation finance by 2035 under the New Collective Quantified Goal (NCQG).\n  - cited: [src_a8e61fe457de4da5] [COP30 Belém Climate Summit 2025: Key Decisions and Mandates](https://cop30.br.com/) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n  - cited: [src_0b618f7ae48d425b] [COP30: Key outcomes agreed at the UN climate talks in Belém - Carbon Brief](https://www.carbonbrief.org/cop30-key-outcomes-agreed-at-the-un-climate-talks-in-belem) (entailment p=0.97, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n  - cited: [src_80f72d7dd95a4a2f] [Belém COP30 delivers climate finance boost and a pledge to plan fossil fuel transition - Ecolur](https://www.ecolur.org/en/news/climate-change/16233/) (entailment p=0.83, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_e4a22de970ba48b8] Governments backed climate finance ambitions of $1.3 trillion annually for developing countries by 2035, alongside a pledge to triple adaptation finance to $300 billion per year.\n  - cited: [src_4b9c4b49374d4acd] [COP30 Outcomes Draw Global Criticism as Scientists Warn Climate Action Remains Insufficient - ESG News](https://esgnews.com/cop30-outcomes-draw-global-criticism-as-scientists-warn-climate-action-remains-insufficient/) (entailment p=0.97, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n  - cited: [src_4b9c4b49374d4acd] [COP30 Outcomes Draw Global Criticism as Scientists Warn Climate Action Remains Insufficient - ESG News](https://esgnews.com/cop30-outcomes-draw-global-criticism-as-scientists-warn-climate-action-remains-insufficient/) (entailment p=0.83, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_da8ac5eb9bb14e64] The guidance given to the SCF, GCF, GEF, Adaptation Fund and the new Loss and Damage Fund points toward simpler and faster procedures, stronger direct access, and a significant push on adaptation windows and locally led approaches.\n  - cited: [src_eedb0b852e684f54] [COP30 outcomes on Climate Finance and Loss & Damage – Home to the Local Governments and Municipal Authorities Constituency (LGMA) in the UNFCCC](https://www.cities-and-regions.org/cop30-outcomes-on-climate-finance-and-loss-damage/) (entailment p=0.98, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_93d0b753584647dd] Belém stabilizes the loss-and-damage architecture around three pillars: The Warsaw International Mechanism (WIM), the Santiago Network and the new Fund for Responding to Loss and Damage (FRLD).\n  - cited: [src_eedb0b852e684f54] [COP30 outcomes on Climate Finance and Loss & Damage – Home to the Local Governments and Municipal Authorities Constituency (LGMA) in the UNFCCC](https://www.cities-and-regions.org/cop30-outcomes-on-climate-finance-and-loss-damage/) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_4f77e3011de6491c] The Mutirão decision links “urgent and enhanced action and support” on loss and damage to tripling finance outflows by 2030 and to the broader ramp-up of climate finance.\n  - cited: [src_eedb0b852e684f54] [COP30 outcomes on Climate Finance and Loss & Damage – Home to the Local Governments and Municipal Authorities Constituency (LGMA) in the UNFCCC](https://www.cities-and-regions.org/cop30-outcomes-on-climate-finance-and-loss-damage/) (entailment p=0.98, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n  - cited: [src_eedb0b852e684f54] [COP30 outcomes on Climate Finance and Loss & Damage – Home to the Local Governments and Municipal Authorities Constituency (LGMA) in the UNFCCC](https://www.cities-and-regions.org/cop30-outcomes-on-climate-finance-and-loss-damage/) (entailment p=0.77, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n  - cited: [src_80f72d7dd95a4a2f] [Belém COP30 delivers climate finance boost and a pledge to plan fossil fuel transition - Ecolur](https://www.ecolur.org/en/news/climate-change/16233/) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_932112d12bf24497] COP30 addressed the urgent requirement to align global climate action with the 1.5°C goal.\n  - cited: [src_a8e61fe457de4da5] [COP30 Belém Climate Summit 2025: Key Decisions and Mandates](https://cop30.br.com/) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n  - cited: [src_80f72d7dd95a4a2f] [Belém COP30 delivers climate finance boost and a pledge to plan fossil fuel transition - Ecolur](https://www.ecolur.org/en/news/climate-change/16233/) (entailment p=0.79, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n  - cited: [src_80f72d7dd95a4a2f] [Belém COP30 delivers climate finance boost and a pledge to plan fossil fuel transition - Ecolur](https://www.ecolur.org/en/news/climate-change/16233/) (entailment p=0.79, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_b1d4e662531b47fa] Finance at scale: Mobilise $1.3 trillion annually by 2035 for climate action.\n  - cited: [src_80f72d7dd95a4a2f] [Belém COP30 delivers climate finance boost and a pledge to plan fossil fuel transition - Ecolur](https://www.ecolur.org/en/news/climate-change/16233/) (entailment p=0.93, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n  - cited: [src_80f72d7dd95a4a2f] [Belém COP30 delivers climate finance boost and a pledge to plan fossil fuel transition - Ecolur](https://www.ecolur.org/en/news/climate-change/16233/) (entailment p=0.93, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n  - cited: [src_80f72d7dd95a4a2f] [Belém COP30 delivers climate finance boost and a pledge to plan fossil fuel transition - Ecolur](https://www.ecolur.org/en/news/climate-change/16233/) (entailment p=0.94, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_3f89c80a339b481c] Guenther suggests that oil-producing nations Russia and Saudi Arabia influenced the final text, effectively blocking stronger language on fossil fuel transitions.\n  - cited: [src_285926e983d347d7] [COP30 Climate Summit Fails to Address Fossil Fuels Despite Scientific Warnings, Say Critics - EnviroLink Network](https://www.envirolink.org/2025/11/24/cop30-climate-summit-fails-to-address-fossil-fuels-despite-scientific-warnings-say-critics/) (entailment p=0.98, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_c4a624f3d2214279] Before the final plenary, Brazilian scientist Carlos Nobre issued a stark warning: fossil fuel use must fall to zero by 2040 – 2045 at the latest to avoid catastrophic temperature rises of up to 2.5°C by mid-century.\n  - cited: [src_80f72d7dd95a4a2f] [Belém COP30 delivers climate finance boost and a pledge to plan fossil fuel transition - Ecolur](https://www.ecolur.org/en/news/climate-change/16233/) (entailment p=0.95, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n  - cited: [src_80f72d7dd95a4a2f] [Belém COP30 delivers climate finance boost and a pledge to plan fossil fuel transition - Ecolur](https://www.ecolur.org/en/news/climate-change/16233/) (entailment p=0.95, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_1d6d2ff7fa77446a] “Measured against the requirements, the decisions to phase out fossil fuels and halt global deforestation fall short,” said director Sascha Müller-Kraenner.\n  - cited: [src_4b9c4b49374d4acd] [COP30 Outcomes Draw Global Criticism as Scientists Warn Climate Action Remains Insufficient - ESG News](https://esgnews.com/cop30-outcomes-draw-global-criticism-as-scientists-warn-climate-action-remains-insufficient/) (entailment p=0.97, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_dfd4498936ab43a6] More than 80 countries pushed for explicit fossil fuel language and a roadmap to transition away from coal, oil and gas.\n  - cited: [src_4b9c4b49374d4acd] [COP30 Outcomes Draw Global Criticism as Scientists Warn Climate Action Remains Insufficient - ESG News](https://esgnews.com/cop30-outcomes-draw-global-criticism-as-scientists-warn-climate-action-remains-insufficient/) (entailment p=0.98, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_bec295a48dca4c95] COP30 ended without a roadmap to phase out coal, oil and gas, despite support from more than 80 countries.\n  - cited: [src_4b9c4b49374d4acd] [COP30 Outcomes Draw Global Criticism as Scientists Warn Climate Action Remains Insufficient - ESG News](https://esgnews.com/cop30-outcomes-draw-global-criticism-as-scientists-warn-climate-action-remains-insufficient/) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_82e956eee4ae4e1d] Brazil committed to develop voluntary science-based roadmaps on fossil fuel transition and deforestation, but these will sit outside the UN system.\n  - cited: [src_4b9c4b49374d4acd] [COP30 Outcomes Draw Global Criticism as Scientists Warn Climate Action Remains Insufficient - ESG News](https://esgnews.com/cop30-outcomes-draw-global-criticism-as-scientists-warn-climate-action-remains-insufficient/) (entailment p=0.98, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_fa54c69f85874405] The 30th UN Climate Change Conference (COP30) concluded in Brazil this week amid sharp criticism that the final agreement fails to adequately address the role of fossil fuels in driving global warming.\n  - cited: [src_285926e983d347d7] [COP30 Climate Summit Fails to Address Fossil Fuels Despite Scientific Warnings, Say Critics - EnviroLink Network](https://www.envirolink.org/2025/11/24/cop30-climate-summit-fails-to-address-fossil-fuels-despite-scientific-warnings-say-critics/) (entailment p=0.96, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_6da0b877b9844e29] Expectations were high that COP30's final decision would include explicit reference to phasing out fossil fuels.\n  - cited: [src_80f72d7dd95a4a2f] [Belém COP30 delivers climate finance boost and a pledge to plan fossil fuel transition - Ecolur](https://www.ecolur.org/en/news/climate-change/16233/) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n  - cited: [src_80f72d7dd95a4a2f] [Belém COP30 delivers climate finance boost and a pledge to plan fossil fuel transition - Ecolur](https://www.ecolur.org/en/news/climate-change/16233/) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n\n## Uncertainty and Limitations\n- No primary-research source was available; findings rest on secondary reporting and are limited accordingly.\n- Uncertainty classification: UNCERTAIN\n\n## Sources\n1. [src_a8e61fe457de4da5] [COP30 Belém Climate Summit 2025: Key Decisions and Mandates](https://cop30.br.com/)\n2. [src_5c568641cfd4482f] [Belém Climate Summit Documents](https://cop30.br/en/news-about-cop30/documents)\n3. [src_285926e983d347d7] [COP30 Climate Summit Fails to Address Fossil Fuels Despite Scientific Warnings, Say Critics - EnviroLink Network](https://www.envirolink.org/2025/11/24/cop30-climate-summit-fails-to-address-fossil-fuels-despite-scientific-warnings-say-critics/)\n4. [src_4b9c4b49374d4acd] [COP30 Outcomes Draw Global Criticism as Scientists Warn Climate Action Remains Insufficient - ESG News](https://esgnews.com/cop30-outcomes-draw-global-criticism-as-scientists-warn-climate-action-remains-insufficient/)\n5. [src_cbb0c5a96ac24a43] [COP30: The Good, the Bad, and the Ugly](https://www.ccap.org/post/cop30-the-good-the-bad-and-the-ugly)\n6. [src_0b618f7ae48d425b] [COP30: Key outcomes agreed at the UN climate talks in Belém - Carbon Brief](https://www.carbonbrief.org/cop30-key-outcomes-agreed-at-the-un-climate-talks-in-belem)\n7. [src_80f72d7dd95a4a2f] [Belém COP30 delivers climate finance boost and a pledge to plan fossil fuel transition - Ecolur](https://www.ecolur.org/en/news/climate-change/16233/)\n8. [src_48d649343bc24312] [Belém COP30 delivers climate finance boost and a pledge to plan fossil fuel transition | UN News](https://news.un.org/en/story/2025/11/1166433)\n9. [src_eedb0b852e684f54] [COP30 outcomes on Climate Finance and Loss & Damage – Home to the Local Governments and Municipal Authorities Constituency (LGMA) in the UNFCCC](https://www.cities-and-regions.org/cop30-outcomes-on-climate-finance-and-loss-damage/)",
+  "audit": {
+    "status": "PASS",
+    "checks": {
+      "no_provisional_certifications": true,
+      "no_unsupported_critical_claims": true,
+      "citations_resolve": true,
+      "no_circular_citations": true,
+      "provenance_intact": true,
+      "numeric_consistency": true,
+      "causal_language_appropriate": true,
+      "contradictions_examined": true,
+      "uncertainty_explicit": true
+    },
+    "findings": [],
+    "unsupported_claims": [],
+    "hallucinated_citations": [],
+    "circular_citations": [],
+    "provisional_certifications": []
+  },
+  "errors": [],
+  "governance": {
+    "budget": {
+      "max_iterations": 4.0,
+      "max_tool_calls": 40.0,
+      "max_search_calls": 14.0,
+      "max_fetches": 16.0,
+      "max_sandbox_executions": 4.0,
+      "max_model_calls": 20.0,
+      "max_wall_clock_s": 540.0,
+      "max_response_chars": 18000.0,
+      "max_retries_per_call": 2.0,
+      "max_dependency_depth": 8.0,
+      "max_concurrent_fetches": 2.0,
+      "max_extensions": 2.0,
+      "max_verifications": 80.0
+    },
+    "counters": {
+      "iterations": 2,
+      "tool_calls": 0,
+      "search_calls": 11,
+      "fetches": 16,
+      "sandbox_executions": 0,
+      "model_calls": 15,
+      "retries": 2,
+      "verifications": 32
+    },
+    "denials": [],
+    "extensions": [],
+    "cancelled": false,
+    "cancel_reason": null,
+    "pipeline": {
+      "subquestions": [
+        {
+          "index": 1,
+          "question": "What was the COP30 summit in Belém, Brazil — its official mandate, schedule, leadership, and pre-summit expectations from UNFCCC?",
+          "queries": [
+            "COP30 Belém Brazil summit overview mandate",
+            "unfccc.org COP30 official documents Brazil"
+          ],
+          "sources": 3,
+          "claims": 8
+        },
+        {
+          "index": 2,
+          "question": "What were the main negotiated outcomes and agreements reached at COP30 — such as decisions on mitigation, adaptation, and a new climate finance or emission-reduction framework?",
+          "queries": [
+            "COP30 Belem outcomes main agreements results",
+            "UNFCCC COP30 decision texts final outcome document",
+            "COP30 final decision text main outcomes"
+          ],
+          "sources": 1,
+          "claims": 8
+        },
+        {
+          "index": 3,
+          "question": "How was climate finance addressed at COP30, including the New Collective Quantified Goal, the loss and damage fund, and the $1.3 trillion developing-country proposal?",
+          "queries": [
+            "COP30 climate finance outcome NCQG trillion",
+            "COP30 Belem loss and damage fund finance pledge",
+            "COP30 loss and damage fund details"
+          ],
+          "sources": 3,
+          "claims": 8
+        },
+        {
+          "index": 4,
+          "question": "Which points of disagreement and limitations dominated COP30 — fossil fuel phase-out language, transparency, US participation — and what are the latest developments and reactions since the summit ende",
+          "queries": [
+            "COP30 criticism fossil fuel phase out disagreement",
+            "COP30 Belem outcomes analysis reaction latest developments",
+            "COP30 United States position outcome"
+          ],
+          "sources": 4,
+          "claims": 8
+        }
+      ],
+      "router": {
+        "routes": {
+          "planner": [
+            "mimo-v2.5:free",
+            "deepseek-v4-flash:free",
+            "mimo-v2.6-flash:free"
+          ],
+          "reflect": [
+            "mimo-v2.5:free",
+            "deepseek-v4-flash:free",
+            "mimo-v2.6-flash:free"
+          ],
+          "writer": [
+            "mimo-v2.5:free",
+            "deepseek-v4-flash:free",
+            "mimo-v2.6-flash:free"
+          ],
+          "judge": [
+            "mimo-v2.5:free",
+            "deepseek-v4-flash:free"
+          ],
+          "extract": [
+            "mimo-v2.5:free",
+            "deepseek-v4-flash:free"
+          ]
+        },
+        "calls_by_role": {
+          "planner": 1,
+          "judge": 6,
+          "reflect": 1,
+          "writer": 5
+        },
+        "failures": {
+          "mimo-v2.5:free": 2
+        },
+        "disabled": {
+          "mimo-v2.5:free": "mimo-v2.5:free returned no text"
+        },
+        "attempts": [
+          {
+            "role": "planner",
+            "model": "mimo-v2.5:free",
+            "ok": true,
+            "seconds": 10.902035192000085,
+            "error": ""
+          },
+          {
+            "role": "judge",
+            "model": "mimo-v2.5:free",
+            "ok": false,
+            "seconds": 7.17520855500004,
+            "error": "mimo-v2.5:free returned no text"
+          },
+          {
+            "role": "judge",
+            "model": "deepseek-v4-flash:free",
+            "ok": true,
+            "seconds": 6.751888514000029,
+            "error": ""
+          },
+          {
+            "role": "judge",
+            "model": "mimo-v2.5:free",
+            "ok": true,
+            "seconds": 4.0924284620000435,
+            "error": ""
+          },
+          {
+            "role": "judge",
+            "model": "mimo-v2.5:free",
+            "ok": false,
+            "seconds": 8.988077248000081,
+            "error": "mimo-v2.5:free returned no text"
+          },
+          {
+            "role": "judge",
+            "model": "deepseek-v4-flash:free",
+            "ok": true,
+            "seconds": 9.92115831500007,
+            "error": ""
+          },
+          {
+            "role": "judge",
+            "model": "deepseek-v4-flash:free",
+            "ok": true,
+            "seconds": 4.916849458999991,
+            "error": ""
+          },
+          {
+            "role": "judge",
+            "model": "deepseek-v4-flash:free",
+            "ok": true,
+            "seconds": 4.8500453510000625,
+            "error": ""
+          },
+          {
+            "role": "judge",
+            "model": "deepseek-v4-flash:free",
+            "ok": true,
+            "seconds": 3.407621833999997,
+            "error": ""
+          },
+          {
+            "role": "reflect",
+            "model": "deepseek-v4-flash:free",
+            "ok": true,
+            "seconds": 11.30634983699997,
+            "error": ""
+          },
+          {
+            "role": "writer",
+            "model": "deepseek-v4-flash:free",
+            "ok": true,
+            "seconds": 9.49397121100003,
+            "error": ""
+          },
+          {
+            "role": "writer",
+            "model": "deepseek-v4-flash:free",
+            "ok": true,
+            "seconds": 12.263798399000052,
+            "error": ""
+          },
+          {
+            "role": "writer",
+            "model": "deepseek-v4-flash:free",
+            "ok": true,
+            "seconds": 13.230409523999924,
+            "error": ""
+          },
+          {
+            "role": "writer",
+            "model": "deepseek-v4-flash:free",
+            "ok": true,
+            "seconds": 15.989810661999968,
+            "error": ""
+          },
+          {
+            "role": "writer",
+            "model": "deepseek-v4-flash:free",
+            "ok": true,
+            "seconds": 15.615876112000024,
+            "error": ""
+          }
+        ]
+      }
+    }
+  },
+  "telemetry": {
+    "request_id": "req_dcf4dccebe0648f5",
+    "counters": {
+      "search_calls": 11,
+      "search_hits": 23,
+      "fetch_calls": 16,
+      "fetch_failed": 5,
+      "sources_added": 11,
+      "claims_extracted": 32,
+      "evidence_evaluations": 64,
+      "claims_certified": 32,
+      "writer_sentences_not_entailed": 12,
+      "final_audits": 1
+    },
+    "latencies": {
+      "search": {
+        "count": 11,
+        "p50_ms": 2032.28,
+        "p95_ms": 16541.4,
+        "max_ms": 16541.4
+      },
+      "fetch": {
+        "count": 16,
+        "p50_ms": 628.56,
+        "p95_ms": 6857.05,
+        "max_ms": 6857.05
+      },
+      "evidence_eval": {
+        "count": 32,
+        "p50_ms": 1918.63,
+        "p95_ms": 20631.42,
+        "max_ms": 21847.62
+      }
+    },
+    "event_count": 5
+  },
+  "events": [
+    {
+      "name": "run.start",
+      "ts": 1791341604.3534422,
+      "run_id": "run_e002ff377cb54f95",
+      "data": {
+        "objective": "What were the main outcomes and agreements of the COP30 UN climate summit held in Belem, Brazil in November 2025?",
+        "resumed": "False",
+        "backend": "multi-agent-router"
+      }
+    },
+    {
+      "name": "plan",
+      "ts": 1791341615.2578187,
+      "run_id": "run_e002ff377cb54f95",
+      "data": {
+        "subquestions": "[{'index': 1, 'question': 'What was the COP30 summit in Belém, Brazil — its official mandate, schedule, leadership, and pre-summit expectations from UNFCCC?', 'queries': ['COP30 Belém Brazil summit overview mandate', 'unfccc.org COP30 official documents Brazil'], 'sources': 0, 'claims': 0}, {'index': 2, 'question': 'What were the main negotiated outcomes and agreements reached at COP30 — such as decisions on mitigation, adaptation, and a new climate finance or emission-reduction framework?', 'queries': ['COP30 Belem outcomes main agreements results', 'UNFCCC COP30 decision texts final outcome document'], 'sources': 0, 'claims': 0}, {'index': 3, 'question': 'How was climate finance addressed at COP30, including the New Collective Quantified Goal, the loss and damage fund, and the $1.3 trillion developing-country proposal?', 'queries': ['COP30 climate finance outcome NCQG trillion', 'COP30 Belem loss and damage fund finance pledge'], 'sources': 0, 'claims': 0}, {'index': 4, 'question': 'Which points of disagreement and limitations dominated COP30 — fossil fuel phase-out language, transparency, US participation — and what are the latest developments and reactions since the summit ende', 'queries': ['COP30 criticism fossil fuel phase out disagreement', 'COP30 Belem outcomes analysis reaction latest developments'], 'sources': 0, 'claims': 0}]"
+      }
+    },
+    {
+      "name": "research_round",
+      "ts": 1791341641.3594053,
+      "run_id": "run_e002ff377cb54f95",
+      "data": {
+        "subquestions": "4",
+        "sources": "9"
+      }
+    },
+    {
+      "name": "reflection",
+      "ts": 1791341761.966609,
+      "run_id": "run_e002ff377cb54f95",
+      "data": {
+        "followups": "3"
+      }
+    },
+    {
+      "name": "research_round",
+      "ts": 1791341778.5109818,
+      "run_id": "run_e002ff377cb54f95",
+      "data": {
+        "subquestions": "3",
+        "sources": "11"
+      }
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+ "thread_id": "4cdd920ede229590",
+ "share_token": "BdbpdqRvudjTTaMJ",
+ "title": "What is India's current repo rate set by the RBI and when was it last changed?",
+ "project_id": "",
+ "sources": [
+  {
+   "url": "https://www.rbi.org.in/home.aspx//Scripts/Home.aspx/Webservice/Scripts/Statistics.aspx",
+   "title": "Home | Official website of Reserve Bank of India",
+   "domain": "rbi.org.in",
+   "snippet": "Official website of Reserve Bank of India RBI issues Amendment Directions on 'Standardised Approach for Counterparty Credit Risk (SA-CCR)\u2019 RBI issues Directions on 'Credit Valuation Adjustment (CVA) Framework\u2019 Penal Interest on shortfall in CRR and SLR requirements - Change in Bank Rate Standing Liquidity Facility for Primary Dealers Governor\u2019s Statement, October 7, 2026 Monetary Policy",
+   "kind": "web",
+   "n": 1
+  },
+  {
+   "url": "https://www.rbi.org.in/Home.aspx",
+   "title": "Home | Official website of Reserve Bank of India",
+   "domain": "rbi.org.in",
+   "snippet": "Official website of Reserve Bank of India PREAMBLE \u201cto regulate the issue of Bank notes and keeping of reserves with a view to securing monetary stability in India and generally to operate the currency and credit system of the country to its advantage; to have a modern monetary policy framework to meet the challenge of an increasingly complex economy, to maintain price stability while",
+   "kind": "web",
+   "n": 2
+  },
+  {
+   "url": "https://www.rbi.org.in/scripts/Annualpolicy.aspx",
+   "title": "Monetary Policy| Official Website of Reserve Bank of India",
+   "domain": "rbi.org.in",
+   "snippet": "# Monetary Policy\n**Oct 07, 2026**\n**Bi-monthly Monetary Policy Statement, 2026-2027**\n\n## Archives\nWebsite owned and managed by Reserve Bank of India. Contact us on helpdoc[at]rbi[dot]org[dot]in\nWebsite last updated date: Oct 07, 2026\n[Web Information Manager](https://www.rbi.org.in/scripts/wim.aspx)",
+   "kind": "web",
+   "n": 3
+  },
+  {
+   "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=62169",
+   "title": "Press Release| Official Website of Reserve Bank of India",
+   "domain": "rbi.org.in",
+   "snippet": "# Press Releases\n[PDF - Monetary Policy Statement, 2025-26 Resolution of the Monetary Policy Committee February 4 to 6, 2026](https://rbidocs.rbi.org.in/rdocs/PressRelease/PDFs/PR20530D3EAF28B417497981BA800A7B3C0DCC.PDF) ( 457 kb )\n**Date : Feb 06, 2026**\n\n...\n\n2. After a detailed assessment of the evolving macroeconomic and financial developments and the outlook, the MPC voted unanimously to keep the policy repo rate under the liquidity adjustment facility (LAF) unchanged at 5.25 per cent. Consequently, the standing deposit facility (SDF) rate remains at 5.00 per cent and the marginal standin [...truncated by sanitizer]",
+   "kind": "web",
+   "n": 4
+  },
+  {
+   "url": "https://www.rbi.org.in/Scripts/BS_ViewMMO.aspx",
+   "title": "Money Market Operation | Official Website of Reserve Bank of India",
+   "domain": "rbi.org.in",
+   "snippet": "# Money Market Operation\n|RBI Operations @ |Auction Date |Tenor (Days) |Maturity Date |Amount |Current Rate /\nCut off Rate |\n| --- | --- | --- | --- | --- | --- |\n|C. Liquidity Adjustment Facility (LAF), Marginal Standing Facility (MSF) & Standing Deposit Facility (SDF) |\n|I. Today's Operations |\n|1. Fixed Rate | | | | | |\n|2. Variable Rate & | | | | | |\n|(a) Repo Operation | | | | | |\n|(b) Reverse Repo Operation |Tue, 06/10/2026 |1 |Wed, 07/10/2026 |1,92,357.00 |5.24 |\n|3.\nMSF # |Tue, 06/10/2026 |1 |Wed, 07/10/2026 |475.00 |5.50 |\n|4. SDF \u0394# |Tue, 06/10/2026 |1 |Wed, 07/10/2026 |1,67,822.00 | [...truncated by sanitizer]",
+   "kind": "web",
+   "n": 5
+  },
+  {
+   "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=62863",
+   "title": "Press Release| Official Website of Reserve Bank of India",
+   "domain": "rbi.org.in",
+   "snippet": "# Press Releases\n[PDF - Monetary Policy Statement, 2026-27 Resolution of the Monetary Policy Committee June 3 to 5, 2026](https://rbidocs.rbi.org.in/rdocs/PressRelease/PDFs/PR3855508EB4A59FF46F9B57BBA200AA250B8.PDF) ( 351 kb )\n**Date : Jun 05, 2026**\n\n...\n\n2. After a detailed assessment of the evolving macroeconomic and financial developments and the outlook, the MPC voted unanimously to keep the policy repo rate under the liquidity adjustment facility (LAF) unchanged at 5.25 per cent. Consequently, the standing deposit facility (SDF) rate remains at 5.00 per cent and the marginal standing fac [...truncated by sanitizer]",
+   "kind": "web",
+   "n": 6
+  }
+ ],
+ "answer": "As of June 5, 2026, the RBI's policy repo rate was 5.25 per cent [6]. The Monetary Policy Committee voted unanimously to keep it unchanged at that level [6]. At its February 4-6, 2026 meeting, the MPC also kept the repo rate unchanged at 5.25 per cent [4].",
+ "abstained": false,
+ "timing": {
+  "search_s": 8.56,
+  "fetch_s": 0.0,
+  "ttft_s": 16.69,
+  "total_s": 16.7
+ },
+ "draft_answer": "As of June 5, 2026, the RBI's policy repo rate was 5.25 per cent [6]. The Monetary Policy Committee voted unanimously to keep it unchanged at that level [6]. At its February 4-6, 2026 meeting, the MPC also kept the repo rate unchanged at 5.25 per cent [4]. The sources do not state when the rate was last changed.",
+ "verification": {
+  "citations": [
+   {
+    "occ": 0,
+    "n": 6,
+    "marker": "[6]",
+    "claim": "As of June 5, 2026, the RBI's policy repo rate was 5.25 per cent .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "**Date : Jun 05, 2026** After a detailed assessment of the evolving macroeconomic and financial developments and the outlook, the MPC voted unanimously to keep the policy repo rate under the liquidity adjustment facility (LAF) unchanged at 5.25 per cent.",
+    "note": "",
+    "title": "Press Release| Official Website of Reserve Bank of India",
+    "domain": "rbi.org.in",
+    "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=62863",
+    "kind": "web",
+    "entailment": 0.96,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 1,
+    "n": 6,
+    "marker": "[6]",
+    "claim": "The Monetary Policy Committee voted unanimously to keep it unchanged at that level .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "After a detailed assessment of the evolving macroeconomic and financial developments and the outlook, the MPC voted unanimously to keep the policy repo rate under the liquidity adjustment facility (LAF) unchanged at 5.25 per cent.",
+    "note": "",
+    "title": "Press Release| Official Website of Reserve Bank of India",
+    "domain": "rbi.org.in",
+    "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=62863",
+    "kind": "web",
+    "entailment": 0.989,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 2,
+    "n": 4,
+    "marker": "[4]",
+    "claim": "At its February 4-6, 2026 meeting, the MPC also kept the repo rate unchanged at 5.25 per cent .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "[PDF - Monetary Policy Statement, 2025-26 Resolution of the Monetary Policy Committee February 4 to 6, 2026](https://rbidocs.rbi.org.in/rdocs/PressRelease/PDFs/PR20530D3EAF28B417497981BA800A7B3C0DCC.PDF) ( 457 kb ) **Date : Feb 06, 2026** After a detailed assessment of the evolving macroeconomic and financial developments and the outlook, the MPC voted unanimously to keep the policy repo rate unde",
+    "note": "",
+    "title": "Press Release| Official Website of Reserve Bank of India",
+    "domain": "rbi.org.in",
+    "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=62169",
+    "kind": "web",
+    "entailment": 0.991,
+    "judged_by": "nli"
+   }
+  ],
+  "counts": {
+   "supported": 3
+  },
+  "elapsed_s": 71.57,
+  "answer": "As of June 5, 2026, the RBI's policy repo rate was 5.25 per cent [6]. The Monetary Policy Committee voted unanimously to keep it unchanged at that level [6]. At its February 4-6, 2026 meeting, the MPC also kept the repo rate unchanged at 5.25 per cent [4].",
+  "repairs": [],
+  "total_s": 88.53
+ },
+ "q": 4,
+ "seconds": 89.1
+}

@@ -1,0 +1,506 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_917ce68fdd7a",
+ "trust_score": 94,
+ "grade": "citations hold up",
+ "counts": {
+  "SUPPORTED": 8,
+  "PARTIALLY SUPPORTED": 1,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 0,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 0
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "A small 2025 trial of 165 people found that 4:3 intermittent fasting led to about 6 more pounds of weight loss after one year than daily calorie restriction.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.health.harvard.edu/healthy-aging-and-longevity/fasting-vs-calorie-restriction-for-weight-loss-which-one-wins",
+     "marker": "[1]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "After one year, people in the 4:3 group had lost more weight - an average of about 6 more pounds - than people in the calorie restriction group.",
+     "note": "partly supported: Passages support weight-loss finding but omit trial size and year.",
+     "judged_by": "nli+llm",
+     "source_type": "academic",
+     "source_year": null
+    }
+   ],
+   "quote": "After one year, people in the 4:3 group had lost more weight - an average of about 6 more pounds - than people in the calorie restriction group.",
+   "quote_url": "https://www.health.harvard.edu/healthy-aging-and-longevity/fasting-vs-calorie-restriction-for-weight-loss-which-one-wins",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2.1",
+   "claim": "The 4:3 group had a -7.6% change in body weight at 12 months.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.cbsnews.com/news/intermittent-fasting-calorie-restriction-weight-loss-study/",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.987,
+     "contradiction": 0.975,
+     "quote": "\"Participants in the 4:3 intermittent fasting group had a -7.6% change in body weight compared to -5% in the calorie restriction group,\" the researchers reported. \"58% of those in the fasting group achieved weight loss of at least 5% at 12 months vs 47% in the calorie restriction group.\"",
+     "note": "another passage on the page may disagree: \"nonconsecutive fasting days per week. \"On non-fast days, participants in the 4:3 intermittent fasting group did not have to restrict energy intake, but were enc\"",
+     "judged_by": "nli",
+     "source_type": "news",
+     "source_year": null
+    }
+   ],
+   "quote": "\"Participants in the 4:3 intermittent fasting group had a -7.6% change in body weight compared to -5% in the calorie restriction group,\" the researchers reported. \"58% of those in the fasting group achieved weight loss of at least 5% at 12 months vs 47% in the calorie restriction group.\"",
+   "quote_url": "https://www.cbsnews.com/news/intermittent-fasting-calorie-restriction-weight-loss-study/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2.2",
+   "claim": "The calorie restriction group had a -5% change in body weight at 12 months.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.cbsnews.com/news/intermittent-fasting-calorie-restriction-weight-loss-study/",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.991,
+     "contradiction": 0.0,
+     "quote": "After 12 months, results showed the intermittent fasting group saw greater reductions in weight than the calorie-counting group. \"Participants in the 4:3 intermittent fasting group had a -7.6% change in body weight compared to -5% in the calorie restriction group,\" the researchers reported.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "news",
+     "source_year": null
+    }
+   ],
+   "quote": "After 12 months, results showed the intermittent fasting group saw greater reductions in weight than the calorie-counting group. \"Participants in the 4:3 intermittent fasting group had a -7.6% change in body weight compared to -5% in the calorie restriction group,\" the researchers reported.",
+   "quote_url": "https://www.cbsnews.com/news/intermittent-fasting-calorie-restriction-weight-loss-study/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2.3",
+   "claim": "58% of the fasting group achieved at least 5% weight loss at 12 months.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.cbsnews.com/news/intermittent-fasting-calorie-restriction-weight-loss-study/",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.996,
+     "contradiction": 0.0,
+     "quote": "\"58% of those in the fasting group achieved weight loss of at least 5% at 12 months vs 47% in the calorie restriction group.\"",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "news",
+     "source_year": null
+    }
+   ],
+   "quote": "\"58% of those in the fasting group achieved weight loss of at least 5% at 12 months vs 47% in the calorie restriction group.\"",
+   "quote_url": "https://www.cbsnews.com/news/intermittent-fasting-calorie-restriction-weight-loss-study/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2.4",
+   "claim": "47% of the calorie restriction group achieved at least 5% weight loss at 12 months.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.cbsnews.com/news/intermittent-fasting-calorie-restriction-weight-loss-study/",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.885,
+     "contradiction": 0.944,
+     "quote": "\"58% of those in the fasting group achieved weight loss of at least 5% at 12 months vs 47% in the calorie restriction group.\"",
+     "note": "another passage on the page may disagree: \"\"Participants in the 4:3 intermittent fasting group had a -7.6% change in body weight compared to -5% in the calorie restriction group,\" the researchers reporte\"",
+     "judged_by": "nli",
+     "source_type": "news",
+     "source_year": null
+    }
+   ],
+   "quote": "\"58% of those in the fasting group achieved weight loss of at least 5% at 12 months vs 47% in the calorie restriction group.\"",
+   "quote_url": "https://www.cbsnews.com/news/intermittent-fasting-calorie-restriction-weight-loss-study/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "A systematic review and meta-analysis concluded that intermittent fasting appears slightly advantageous over energy restriction for body weight and cardiometabolic factors.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11930668",
+     "marker": "[4]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.001,
+     "contradiction": 0.0,
+     "quote": "IF appears to be slightly advantageous over ER in terms of body weight, cardiometabolic factors, and plasma glucose levels.",
+     "note": "reworded match: Passage states the exact conclusion from the systematic review and meta-analysis.",
+     "judged_by": "nli+llm",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "IF appears to be slightly advantageous over ER in terms of body weight, cardiometabolic factors, and plasma glucose levels.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11930668",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4",
+   "claim": "Another meta-analysis found that intermittent fasting may be superior to continuous calorie restriction for weight loss in some respects.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9099935",
+     "marker": "[3]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "These findings suggest that IF may be superior to CCR for weight loss in some respects.",
+     "note": "reworded match: Passages explicitly state the same conclusion about meta-analysis findings.",
+     "judged_by": "nli+llm",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "These findings suggest that IF may be superior to CCR for weight loss in some respects.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9099935",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5",
+   "claim": "However, a review of existing evidence concluded that, overall, intermittent fasting produced as much weight loss as calorie restriction.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.medicalnewstoday.com/articles/43-intermittent-fasting-better-for-weight-loss-than-cutting-calories",
+     "marker": "[6]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.979,
+     "contradiction": 0.0,
+     "quote": "Additionally, a new review of the existing evidence looking at several intermittent fasting strategies found that, overall, intermittent fasting produced as much weight loss as calorie restriction.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "Additionally, a new review of the existing evidence looking at several intermittent fasting strategies found that, overall, intermittent fasting produced as much weight loss as calorie restriction.",
+   "quote_url": "https://www.medicalnewstoday.com/articles/43-intermittent-fasting-better-for-weight-loss-than-cutting-calories",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6",
+   "claim": "That review noted that alternate-day fasting specifically seemed to lead to greater weight loss than calorie restriction.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.medicalnewstoday.com/articles/43-intermittent-fasting-better-for-weight-loss-than-cutting-calories",
+     "marker": "[6]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.999,
+     "contradiction": 0.998,
+     "quote": "Alternate-day fasting, specifically, seemed to lead to greater weight loss than calorie restriction. \u201cThe current evidence provides some indication that intermittent fasting diets have similar benefits to continuous energy restriction for weight loss and cardiometabolic risk factors,\u201d the review authors conclude in their paper.",
+     "note": "another passage on the page may disagree: \"Additionally, a review of 99 randomized clinical trials published in The BMJ in June 2025 found that different intermittent fasting strategies were about as eff\"",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "Alternate-day fasting, specifically, seemed to lead to greater weight loss than calorie restriction. \u201cThe current evidence provides some indication that intermittent fasting diets have similar benefits to continuous energy restriction for weight loss and cardiometabolic risk factors,\u201d the review authors conclude in their paper.",
+   "quote_url": "https://www.medicalnewstoday.com/articles/43-intermittent-fasting-better-for-weight-loss-than-cutting-calories",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://www.health.harvard.edu/healthy-aging-and-longevity/fasting-vs-calorie-restriction-for-weight-loss-which-one-wins",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.health.harvard.edu/healthy-aging-and-longevity/fasting-vs-calorie-restriction-for-weight-loss-which-one-wins",
+   "title": "Fasting vs. calorie restriction for weight loss: Which one wins? - Harvard Health",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "2e9394feb7b7fea8cb8b2d0735a7334d49ec49a61f709e54447b88d90bba1878",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.cbsnews.com/news/intermittent-fasting-calorie-restriction-weight-loss-study/",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.cbsnews.com/news/intermittent-fasting-calorie-restriction-weight-loss-study/",
+   "title": "Is intermittent fasting or calorie restriction better for weight loss? Here's what a new study found. - CBS News",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "b4fe8a018d47fac2def7f2ef055a5f2c54a3324bc73c3aabf056259f57c03d33",
+   "quarantined": false
+  },
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11930668",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11930668/",
+   "title": "Evaluation of the effectiveness of intermittent fasting versus caloric restriction in weight loss and improving cardiometabolic health: A systematic review and meta-analysis - PMC",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "607bb903399cc11d631998a6550ec79a08d17098d88ca0c7e4f6b67293d09853",
+   "quarantined": false
+  },
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9099935",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9099935/",
+   "title": "Intermittent Fasting versus Continuous Calorie Restriction: Which Is Better for Weight Loss? - PMC",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "b6530224f63fc75973f1f116f983e2828434e808bdf71dbaf858e73e914ee3a1",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.medicalnewstoday.com/articles/43-intermittent-fasting-better-for-weight-loss-than-cutting-calories",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.medicalnewstoday.com/articles/43-intermittent-fasting-better-for-weight-loss-than-cutting-calories",
+   "title": "Weight loss: Intermittent fasting may be more efficient than dieting",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "acf89cf56f52c98092fb548462b0d5aadc64264936628ef335cb05d2ae0beeee",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 157.3,
+ "usage": {
+  "fetches": 5,
+  "wayback_lookups": 0,
+  "searches": 0,
+  "llm_calls": 5,
+  "nli_checks": 9,
+  "scorer_load_ms": 32710
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 6,
+   "citations": 6
+  },
+  {
+   "t": 20.36,
+   "event": "fetch",
+   "url": "https://www.cbsnews.com/news/intermittent-fasting-calorie-restriction-weight-loss-study/",
+   "state": "live",
+   "http_status": 200,
+   "chars": 3181,
+   "error": ""
+  },
+  {
+   "t": 20.66,
+   "event": "fetch",
+   "url": "https://www.medicalnewstoday.com/articles/43-intermittent-fasting-better-for-weight-loss-than-cutting-calories",
+   "state": "live",
+   "http_status": 200,
+   "chars": 10013,
+   "error": ""
+  },
+  {
+   "t": 20.91,
+   "event": "fetch",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11930668",
+   "state": "live",
+   "http_status": 200,
+   "chars": 40965,
+   "error": ""
+  },
+  {
+   "t": 20.99,
+   "event": "fetch",
+   "url": "https://www.health.harvard.edu/healthy-aging-and-longevity/fasting-vs-calorie-restriction-for-weight-loss-which-one-wins",
+   "state": "live",
+   "http_status": 200,
+   "chars": 1669,
+   "error": ""
+  },
+  {
+   "t": 21.13,
+   "event": "fetch",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9099935",
+   "state": "live",
+   "http_status": 200,
+   "chars": 50210,
+   "error": ""
+  },
+  {
+   "t": 40.55,
+   "event": "paraphrase_judge",
+   "claim": "A small 2025 trial of 165 people found that 4:3 intermittent fasting led to about 6 more pounds of weight loss after one",
+   "verdict": "PARTIAL",
+   "grounded": true
+  },
+  {
+   "t": 40.55,
+   "event": "verify",
+   "url": "https://www.health.harvard.edu/healthy-aging-and-longevity/fasting-vs-calorie-restriction-for-weight-loss-which-one-wins",
+   "claim": "A small 2025 trial of 165 people found that 4:3 intermittent fasting led to about 6 more pounds of weight loss after one",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 54.76,
+   "event": "verify",
+   "url": "https://www.cbsnews.com/news/intermittent-fasting-calorie-restriction-weight-loss-study/",
+   "claim": "The 4:3 group had a -7.6% change in body weight at 12 months.",
+   "verdict": "SUPPORTED",
+   "ent": 0.987,
+   "con": 0.975
+  },
+  {
+   "t": 65.43,
+   "event": "verify",
+   "url": "https://www.cbsnews.com/news/intermittent-fasting-calorie-restriction-weight-loss-study/",
+   "claim": "The calorie restriction group had a -5% change in body weight at 12 months.",
+   "verdict": "SUPPORTED",
+   "ent": 0.991,
+   "con": 0.0
+  },
+  {
+   "t": 80.24,
+   "event": "verify",
+   "url": "https://www.cbsnews.com/news/intermittent-fasting-calorie-restriction-weight-loss-study/",
+   "claim": "58% of the fasting group achieved at least 5% weight loss at 12 months.",
+   "verdict": "SUPPORTED",
+   "ent": 0.996,
+   "con": 0.0
+  },
+  {
+   "t": 94.95,
+   "event": "verify",
+   "url": "https://www.cbsnews.com/news/intermittent-fasting-calorie-restriction-weight-loss-study/",
+   "claim": "47% of the calorie restriction group achieved at least 5% weight loss at 12 months.",
+   "verdict": "SUPPORTED",
+   "ent": 0.885,
+   "con": 0.944
+  },
+  {
+   "t": 114.66,
+   "event": "paraphrase_judge",
+   "claim": "A systematic review and meta-analysis concluded that intermittent fasting appears slightly advantageous over energy rest",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 114.66,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11930668",
+   "claim": "A systematic review and meta-analysis concluded that intermittent fasting appears slightly advantageous over energy rest",
+   "verdict": "SUPPORTED",
+   "ent": 0.001,
+   "con": 0.0
+  },
+  {
+   "t": 132.94,
+   "event": "paraphrase_judge",
+   "claim": "Another meta-analysis found that intermittent fasting may be superior to continuous calorie restriction for weight loss ",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 132.94,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9099935",
+   "claim": "Another meta-analysis found that intermittent fasting may be superior to continuous calorie restriction for weight loss ",
+   "verdict": "SUPPORTED",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 141.85,
+   "event": "verify",
+   "url": "https://www.medicalnewstoday.com/articles/43-intermittent-fasting-better-for-weight-loss-than-cutting-calories",
+   "claim": "However, a review of existing evidence concluded that, overall, intermittent fasting produced as much weight loss as cal",
+   "verdict": "SUPPORTED",
+   "ent": 0.979,
+   "con": 0.0
+  },
+  {
+   "t": 157.31,
+   "event": "verify",
+   "url": "https://www.medicalnewstoday.com/articles/43-intermittent-fasting-better-for-weight-loss-than-cutting-calories",
+   "claim": "That review noted that alternate-day fasting specifically seemed to lead to greater weight loss than calorie restriction",
+   "verdict": "SUPPORTED",
+   "ent": 0.999,
+   "con": 0.998
+  },
+  {
+   "t": 157.32,
+   "event": "done",
+   "trust_score": 94
+  }
+ ],
+ "score_s": 193.7
+}

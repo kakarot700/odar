@@ -1,0 +1,159 @@
+{
+ "thread_id": "745fad759364569e",
+ "share_token": "0bhlHZ4K_JZ3581I",
+ "title": "Does intermittent fasting lead to more weight loss than daily calorie restriction?",
+ "project_id": "",
+ "sources": [
+  {
+   "url": "https://www.sciencedirect.com/science/article/pii/S1658361225000186",
+   "title": "Evaluation of the effectiveness of intermittent fasting ...",
+   "domain": "sciencedirect.com",
+   "snippet": "# Original Article\n## Abstract\n### Results\nA total of 2931 records were identified through a database search. The study included 17 publications: 16 RCTs identified after two stages of screening and an additional publication identified from a bibliographic search. All trials were published between 2011 and 2022, and included a total of 1258 participants (24\u2013209 per study). Pooled analysis revealed that IF led to a more significant decrease in BMI than ER (\u22120.44 [-0.88 to \u22120.01]; p < 0.01).\nAdditionally, IF resulted in a slightly greater, but statistically nonsignificant, decrease in weight, tr [...truncated by sanitizer]",
+   "kind": "web",
+   "date": "2025-04-01T00:00:00",
+   "n": 1
+  },
+  {
+   "url": "https://www.health.harvard.edu/healthy-aging-and-longevity/fasting-vs-calorie-restriction-for-weight-loss-which-one-wins",
+   "title": "Fasting vs. calorie restriction for weight loss: Which one wins? - Harvard Health",
+   "domain": "health.harvard.edu",
+   "snippet": "# Fasting vs. calorie restriction for weight loss: Which one wins?\n## News briefs\nIf you're tired of counting calories to lose weight, you might consider a style of intermittent fasting called 4:3. It allows you to eat normally on four days of the week, and eat very little (fast) on the other three days, which can be spread throughout the week.\nThis approach might even help you lose more weight than counting calories, notes a small randomized controlled trial published in the May 20, 2025, issue of _Annals of Internal Medicine_ .\n\n# Fasting vs. calorie restriction for weight loss: Which one wi [...truncated by sanitizer]",
+   "kind": "web",
+   "date": "2025-07-01T00:00:00",
+   "n": 2
+  },
+  {
+   "url": "https://www.health.com/intermittent-fasting-vs-calorie-counting-11882023",
+   "title": "Intermittent Fasting vs. Calorie Counting: Which ... - Health",
+   "domain": "health.com",
+   "snippet": "* A new study found that a 4:3 intermittent fasting plan\u2014with three days of fasting per week\u2014helped people lose more weight than daily calorie counting.\n* The fasting group simply consumed fewer calories overall than the calorie-counting group, leading to greater weight loss.\n* Talk to a healthcare provider before trying intermittent fasting, as it has several health risks and may be hard to stick to.",
+   "kind": "web",
+   "date": "2026-01-09T00:00:00",
+   "n": 3
+  },
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9099935",
+   "title": "Intermittent Fasting versus Continuous Calorie Restriction: Which Is Better for Weight Loss? - PMC",
+   "domain": "pmc.ncbi.nlm.nih.gov",
+   "snippet": "# Intermittent Fasting versus Continuous Calorie Restriction: Which Is Better for Weight Loss?\n## Abstract\nStandardized mean differences (SMDs) with 95% confidence intervals (CIs) were used to measure the effectiveness. Publication bias was assessed using Egger\u2019s test. The stability of the results was evaluated using sensitivity analyses. The significance of body weight change (SMD = \u22120.21, 95% CI (\u22120.40, \u22120.02) _p_ = 0.028) was more significant after IF than CCR.\n\n...\n\n## 4. Discussion\nWe also analyzed changes in body weight. As articulated in the results, the differences in weight between th [...truncated by sanitizer]",
+   "kind": "web",
+   "date": "2024-04-22T00:00:00",
+   "n": 4
+  },
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12195750",
+   "title": "Effects of Intermittent Fasting and Calorie Restriction on ... - PMC",
+   "domain": "pmc.ncbi.nlm.nih.gov",
+   "snippet": "# Effects of Intermittent Fasting and Calorie Restriction on Exercise Performance: A Systematic Review and Meta-Analysis\n## Abstract\n**Conclusions:** IF (hypocaloric or eucaloric) and CR can be effectively integrated into exercise training without negatively impacting most measures of physical performance, while significantly enhancing weight loss and adiposity-related outcomes.\n\n...\n\n## 3. Results\n### 3.2. Participant Characteristics\n#### Table 1.\nExe alone: 31 \u00b1 2.7 |Participants were guided to decrease their daily energy intake by about 600 kcal below estimated expenditure, aiming for a 5\u20131 [...truncated by sanitizer]",
+   "kind": "web",
+   "date": "2013-06-25T00:00:00",
+   "n": 5
+  },
+  {
+   "url": "https://www.health.com/intermittent-fasting-vs-calorie-counting-weight-loss-7557026",
+   "title": "Is Intermittent Fasting or Calorie Counting More Effective for Weight Loss?",
+   "domain": "health.com",
+   "snippet": "A study published in January 2023 in the _Journal of the American Heart Association_ found that after six years, participants who restricted calories lost more weight than those who continued an intermittent fasting diet.",
+   "kind": "web",
+   "date": "2023-07-10T00:00:00",
+   "n": 6
+  }
+ ],
+ "answer": "Intermittent fasting can produce more weight loss than daily calorie restriction, but results vary across studies. In a 2025 randomized trial of 165 people, those on a 4:3 fasting plan lost an average of about 6 more pounds after one year than the calorie-restriction group [2]. A meta-analysis of 17 publications (1,258 participants) found IF led to a more significant decrease in BMI than energy restriction, but the decrease in weight was slightly greater and statistically nonsignificant [1]. A 2024 meta-analysis found IF was more effective than continuous calorie restriction for weight loss, with no difference in BMI improvement [4]. A 2023 study found that after six years, participants who restricted calories lost more weight than those on intermittent fasting [6]. Another review concluded that IF (hypocaloric or eucaloric) and calorie restriction can be integrated into exercise training without negatively impacting most physical performance measures [5].",
+ "abstained": false,
+ "timing": {
+  "search_s": 12.52,
+  "fetch_s": -0.0,
+  "ttft_s": 27.05,
+  "total_s": 27.05
+ },
+ "verification": {
+  "citations": [
+   {
+    "occ": 0,
+    "n": 2,
+    "marker": "[2]",
+    "claim": "In a 2025 randomized trial of 165 people, those on a 4:3 fasting plan lost an average of about 6 more pounds after one year than the calorie-restriction group .",
+    "verdict": "partial",
+    "check_verdict": "PARTIALLY SUPPORTED",
+    "quote": "After one year, people in the 4:3 group had lost more weight - an average of about 6 more pounds - than people in the calorie restriction group.",
+    "note": "partly supported: Weight-loss difference confirmed; no mention of 2025, randomized design, or 165 participants.",
+    "title": "Fasting vs. calorie restriction for weight loss: Which one wins? - Harvard Health",
+    "domain": "health.harvard.edu",
+    "url": "https://www.health.harvard.edu/healthy-aging-and-longevity/fasting-vs-calorie-restriction-for-weight-loss-which-one-wins",
+    "kind": "web",
+    "entailment": 0.0,
+    "judged_by": "nli+llm"
+   },
+   {
+    "occ": 1,
+    "n": 1,
+    "marker": "[1]",
+    "claim": "A meta-analysis of 17 publications (1,258 participants) found IF led to a more significant decrease in BMI than energy restriction, but the decrease in weight was slightly greater and statistically nonsignificant .",
+    "verdict": "unchecked",
+    "check_verdict": "",
+    "quote": "",
+    "note": "verification timed out",
+    "title": "Evaluation of the effectiveness of intermittent fasting ...",
+    "domain": "sciencedirect.com",
+    "url": "https://www.sciencedirect.com/science/article/pii/S1658361225000186",
+    "kind": "web"
+   },
+   {
+    "occ": 2,
+    "n": 4,
+    "marker": "[4]",
+    "claim": "A 2024 meta-analysis found IF was more effective than continuous calorie restriction for weight loss, with no difference in BMI improvement .",
+    "verdict": "partial",
+    "check_verdict": "PARTIALLY SUPPORTED",
+    "quote": "In summary, we found that IF was more effective than CCR for weight loss; however, there was no difference in BMI improvement.",
+    "note": "partly supported: Findings are stated verbatim, but year 2024 and 'meta-analysis' are unstated.",
+    "title": "Intermittent Fasting versus Continuous Calorie Restriction: Which Is Better for Weight Loss? - PMC",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9099935",
+    "kind": "web",
+    "entailment": 0.0,
+    "judged_by": "nli+llm"
+   },
+   {
+    "occ": 3,
+    "n": 6,
+    "marker": "[6]",
+    "claim": "A 2023 study found that after six years, participants who restricted calories lost more weight than those on intermittent fasting .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "A study published in January 2023 in the _Journal of the American Heart Association_ found that after six years, participants who restricted calories lost more weight than those who continued an intermittent fasting diet.",
+    "note": "",
+    "title": "Is Intermittent Fasting or Calorie Counting More Effective for Weight Loss?",
+    "domain": "health.com",
+    "url": "https://www.health.com/intermittent-fasting-vs-calorie-counting-weight-loss-7557026",
+    "kind": "web",
+    "entailment": 0.988,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 4,
+    "n": 5,
+    "marker": "[5]",
+    "claim": "Another review concluded that IF (hypocaloric or eucaloric) and calorie restriction can be integrated into exercise training without negatively impacting most physical performance measures .",
+    "verdict": "unchecked",
+    "check_verdict": "",
+    "quote": "",
+    "note": "verification timed out",
+    "title": "Effects of Intermittent Fasting and Calorie Restriction on ... - PMC",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12195750",
+    "kind": "web"
+   }
+  ],
+  "counts": {
+   "partial": 2,
+   "unchecked": 2,
+   "supported": 1
+  },
+  "elapsed_s": 75.01,
+  "total_s": 102.15
+ },
+ "q": 5,
+ "seconds": 103.3
+}

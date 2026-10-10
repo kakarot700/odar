@@ -1,0 +1,10 @@
+{
+ "answer": "Yes. The strongest evidence is the SELECT trial, a large randomized, placebo-controlled study of 17,604 adults with overweight or obesity, established cardiovascular disease, and no diabetes. Over an average follow-up of about 3 years, weekly semaglutide 2.4 mg reduced the relative risk of cardiovascular death, nonfatal heart attack, or nonfatal stroke by 20% compared with placebo. The events occurred in 6.5% of participants taking semaglutide versus 8.0% taking placebo\u2014an absolute difference of 1.5 percentage points. [1][2]\n\nSeparate trials have also found cardiovascular benefit from GLP-1 drugs in people with type 2 diabetes. The size of benefit and the groups studied vary by medication and trial, so SELECT\u2019s result should not be assumed to apply equally to everyone or to every GLP-1 drug. In SELECT, gastrointestinal side effects led more people to stop semaglutide. [1][2]",
+ "sources": [
+  "https://newsroom.heart.org/news/major-cvd-event-risk-cut-by-20-in-adults-without-diabetes-with-overweight-or-obesity",
+  "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/11/09/15/04/select"
+ ],
+ "raw_answer": "Yes. The strongest evidence is the **SELECT trial**, a large randomized, placebo-controlled study of 17,604 adults with overweight or obesity, established cardiovascular disease, and no diabetes. Over an average follow-up of about 3 years, weekly semaglutide 2.4 mg reduced the relative risk of cardiovascular death, nonfatal heart attack, or nonfatal stroke by **20%** compared with placebo. The events occurred in **6.5%** of participants taking semaglutide versus **8.0%** taking placebo\u2014an absolute difference of 1.5 percentage points. [American Heart Association]\n\nSeparate trials have also found cardiovascular benefit from GLP-1 drugs in people with type 2 diabetes. The size of benefit and the groups studied vary by medication and trial, so SELECT\u2019s result should not be assumed to apply equally to everyone or to every GLP-1 drug. In SELECT, gastrointestinal side effects led more people to stop semaglutide. [American Heart Association]",
+ "approx_seconds": 7,
+ "model": "GPT-6 Luna"
+}

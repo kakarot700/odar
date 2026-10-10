@@ -1,0 +1,9 @@
+{
+ "answer": "It recognized Katalin Karik\u00f3 and Drew Weissman for discovering nucleoside base modifications that enabled effective mRNA vaccines against COVID-19. [1]",
+ "sources": [
+  "https://www.nobelprize.org/prizes/medicine/2023/press-release"
+ ],
+ "raw_answer": "It recognized Katalin Karik\u00f3 and Drew Weissman for discovering nucleoside base modifications that enabled effective mRNA vaccines against COVID-19. [Nobel Prize]",
+ "approx_seconds": "~7-12s estimate; site shows no timer. Note: Q3 took noticeably longer than Q1/Q2, likely because web search returned before the model generated only one short sentence.",
+ "model": "GPT-6 Luna"
+}

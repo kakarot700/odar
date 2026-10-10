@@ -1,0 +1,605 @@
+{
+ "references": [],
+ "confidence": "medium",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_ae9097ec138c",
+ "trust_score": 69,
+ "grade": "mixed: check flagged claims",
+ "counts": {
+  "SUPPORTED": 4,
+  "PARTIALLY SUPPORTED": 3,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 1,
+  "UNVERIFIABLE": 2,
+  "DEAD LINK": 0,
+  "NO CITATION": 0
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "Recent studies show microplastics have been detected in human stool, lung tissue, and blood.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.998,
+     "contradiction": 0.0,
+     "quote": "Recent studies have confirmed the presence of microplastics in human stool, lung tissue, blood, and placental samples, providing direct evidence that these particles can enter and persist within the human body [1,2].",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Recent studies have confirmed the presence of microplastics in human stool, lung tissue, blood, and placental samples, providing direct evidence that these particles can enter and persist within the human body [1,2].",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "They may trigger inflammation in the respiratory and gastrointestinal systems and can compromise immune function.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://www.mdpi.com/2673-8929/4/2/23",
+     "marker": "[3]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "archived_only",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this (verified against the Wayback Machine copy; live page is gone)",
+     "judged_by": "nli+llm",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.mdpi.com/2673-8929/4/2/23",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "Proposed toxicity mechanisms include inflammatory responses, oxidative stress, and cellular damage.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12213550/",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.984,
+     "contradiction": 0.0,
+     "quote": "We discuss the mechanisms by which MPs may induce inflammatory responses, oxidative stress, and cellular damage, thereby contributing to various diseases.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "We discuss the mechanisms by which MPs may induce inflammatory responses, oxidative stress, and cellular damage, thereby contributing to various diseases.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12213550/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4",
+   "claim": "Observational human studies report possible associations between microplastic exposure and gastrointestinal complications, inflammatory conditions, hormonal imbalances, and reproductive dysfunction.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.994,
+     "contradiction": 0.0,
+     "quote": "These observations raise concern because hormonal imbalance has been associated with reproductive, metabolic, and neuroendocrine functions in prior human and experimental research, although causal relationships cannot be inferred from the available evidence [6,17]. In addition, several studies reported associations between microplastic exposure and alterations in gut microbiota composition, sugges",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "These observations raise concern because hormonal imbalance has been associated with reproductive, metabolic, and neuroendocrine functions in prior human and experimental research, although causal relationships cannot be inferred from the available evidence [6,17]. In addition, several studies reported associations between microplastic exposure and alterations in gut microbiota composition, sugges",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5",
+   "claim": "Microplastics also appear to pose a risk to human reproduction, with concerns about effects on fertility and developmental health.",
+   "verdict": "UNVERIFIABLE",
+   "citations": [
+    {
+     "url": "https://www.sciencedirect.com/science/article/pii/S2213343725035031",
+     "marker": "[6]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "blocked",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "page exists but could not be read (HTTP 403); archive check unavailable",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.sciencedirect.com/science/article/pii/S2213343725035031",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "low",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6",
+   "claim": "High concentrations in stool have been linked to adverse outcomes.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.969,
+     "contradiction": 0.0,
+     "quote": "Research published in 2021 showed that high concentrations of microplastics were present in stool samples, which were associated with increased inflammatory characteristics in the digestive tract. In another study, individuals with ulcerative colitis were found to harbor more microplastics in their stool compared with healthy individuals [24,25].",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Research published in 2021 showed that high concentrations of microplastics were present in stool samples, which were associated with increased inflammatory characteristics in the digestive tract. In another study, individuals with ulcerative colitis were found to harbor more microplastics in their stool compared with healthy individuals [24,25].",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c7",
+   "claim": "However, human evidence remains limited and largely observational, with no standardized method for measuring internal microplastic burden.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+     "marker": "[2]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.251,
+     "contradiction": 0.0,
+     "quote": "However, the application of these biomarkers in large-scale human studies remains limited, as they lack specificity and may reflect exposure to multiple environmental stressors rather than microplastics alone [26-28].",
+     "note": "the page supports part of this claim, not all of it",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "However, the application of these biomarkers in large-scale human studies remains limited, as they lack specificity and may reflect exposure to multiple environmental stressors rather than microplastics alone [26-28].",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c8",
+   "claim": "Long-term health effects are poorly understood because most studies focus on short-term or acute exposure.",
+   "verdict": "UNVERIFIABLE",
+   "citations": [
+    {
+     "url": "https://www.sciencedirect.com/science/article/pii/S0048969724043638",
+     "marker": "[4]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "blocked",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "page exists but could not be read (HTTP 403); no archive copy",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.sciencedirect.com/science/article/pii/S0048969724043638",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "low",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c9",
+   "claim": "Additionally, microplastics may act synergistically with other environmental pollutants, potentially amplifying harm.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12213550/",
+     "marker": "[1]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.996,
+     "contradiction": 0.0,
+     "quote": "Notably, we examine the synergistic effects of MPs in conjunction with other environmental pollutants, which may amplify their adverse health outcomes. This synthesis of current research underscores the critical need for multidisciplinary approaches to investigate the multifaceted interactions between MPs and human health, ultimately guiding future studies and informing public health strategies to",
+     "note": "only a short or loosely matching passage supports this",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Notably, we examine the synergistic effects of MPs in conjunction with other environmental pollutants, which may amplify their adverse health outcomes. This synthesis of current research underscores the critical need for multidisciplinary approaches to investigate the multifaceted interactions between MPs and human health, ultimately guiding future studies and informing public health strategies to",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12213550/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c10",
+   "claim": "Overall, while these findings indicate potential health risks, confirmed clinical outcomes in humans still require further investigation.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12213550/",
+     "marker": "[1]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.185,
+     "contradiction": 0.0,
+     "quote": "This comprehensive review integrates recent findings on the sources, classification, and pathways of MPs into the human body, highlighting their potential cellular toxicity and systemic health risks.",
+     "note": "partly supported: Supports potential risks but doesn't mention needing further investigation in humans.",
+     "judged_by": "nli+llm",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    },
+    {
+     "url": "https://www.mdpi.com/2071-1050/18/7/3527",
+     "marker": "[5]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "archived_only",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this (verified against the Wayback Machine copy; live page is gone)",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "This comprehensive review integrates recent findings on the sources, classification, and pathways of MPs into the human body, highlighting their potential cellular toxicity and systemic health risks.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12213550/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "title": "Impact of Microplastic Exposure on Human Health: A Systematic Review of Mechanisms, Biomarkers, and Clinical Outcomes - PMC",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "5524d4ba200bb8e70983b6f1dadbd8c78c67f6f35be489c8c636b34a0d585d8d",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.mdpi.com/2673-8929/4/2/23",
+   "state": "archived_only",
+   "http_status": 403,
+   "error": "HTTP 403",
+   "resolved_url": "https://www.mdpi.com/2673-8929/4/2/23",
+   "title": "",
+   "archive_url": "https://web.archive.org/web/20261004162646/https://www.mdpi.com/2673-8929/4/2/23",
+   "archive_timestamp": "20261004162646",
+   "text_source": "wayback",
+   "archive_check": "archived",
+   "content_hash": "9555f179865306e18da1aface49788d3a13495885bbecc2c919beaa4c9e79979",
+   "quarantined": false
+  },
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12213550/",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12213550/",
+   "title": "Microplastics and human health: unraveling the toxicological pathways and implications for public health - PMC",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "6bc301b4d8022ee2934403fc163756f86dbf722bc1810629c7e5522f2bcbb374",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.sciencedirect.com/science/article/pii/S2213343725035031",
+   "state": "blocked",
+   "http_status": 403,
+   "error": "HTTP 403",
+   "resolved_url": "https://www.sciencedirect.com/science/article/pii/S2213343725035031",
+   "title": "",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "",
+   "archive_check": "unavailable",
+   "content_hash": "",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.sciencedirect.com/science/article/pii/S0048969724043638",
+   "state": "blocked",
+   "http_status": 403,
+   "error": "HTTP 403",
+   "resolved_url": "https://www.sciencedirect.com/science/article/pii/S0048969724043638",
+   "title": "",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "",
+   "archive_check": "never_archived",
+   "content_hash": "",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.mdpi.com/2071-1050/18/7/3527",
+   "state": "archived_only",
+   "http_status": 403,
+   "error": "HTTP 403",
+   "resolved_url": "https://www.mdpi.com/2071-1050/18/7/3527",
+   "title": "",
+   "archive_url": "http://web.archive.org/web/20260418113115/https://www.mdpi.com/2071-1050/18/7/3527",
+   "archive_timestamp": "20260418113115",
+   "text_source": "wayback",
+   "archive_check": "archived",
+   "content_hash": "63ee29ab0dbf7335eb0df0158351fe6507bad3787434840d31bc794ca9b63bca",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 71.0,
+ "usage": {
+  "fetches": 8,
+  "wayback_lookups": 4,
+  "searches": 0,
+  "llm_calls": 2,
+  "nli_checks": 13,
+  "scorer_load_ms": 1481
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 10,
+   "citations": 11
+  },
+  {
+   "t": 0.13,
+   "event": "fetch",
+   "url": "https://www.mdpi.com/2673-8929/4/2/23",
+   "state": "blocked",
+   "http_status": 403,
+   "chars": 0,
+   "error": "HTTP 403"
+  },
+  {
+   "t": 0.18,
+   "event": "fetch",
+   "url": "https://www.sciencedirect.com/science/article/pii/S2213343725035031",
+   "state": "blocked",
+   "http_status": 403,
+   "chars": 0,
+   "error": "HTTP 403"
+  },
+  {
+   "t": 0.46,
+   "event": "fetch",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "state": "live",
+   "http_status": 200,
+   "chars": 52968,
+   "error": ""
+  },
+  {
+   "t": 0.54,
+   "event": "fetch",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12213550/",
+   "state": "live",
+   "http_status": 200,
+   "chars": 82462,
+   "error": ""
+  },
+  {
+   "t": 0.57,
+   "event": "fetch",
+   "url": "https://www.sciencedirect.com/science/article/pii/S0048969724043638",
+   "state": "blocked",
+   "http_status": 403,
+   "chars": 0,
+   "error": "HTTP 403"
+  },
+  {
+   "t": 0.66,
+   "event": "fetch",
+   "url": "https://www.mdpi.com/2071-1050/18/7/3527",
+   "state": "blocked",
+   "http_status": 403,
+   "chars": 0,
+   "error": "HTTP 403"
+  },
+  {
+   "t": 1.92,
+   "event": "wayback",
+   "url": "https://www.mdpi.com/2071-1050/18/7/3527",
+   "archived": true,
+   "snapshot": "http://web.archive.org/web/20260418113115/https://www.mdpi.com/2071-1050/18/7/3527"
+  },
+  {
+   "t": 3.62,
+   "event": "archive_fetch",
+   "url": "https://web.archive.org/web/20260418113115id_/https://www.mdpi.com/2071-1050/18/7/3527",
+   "ok": true,
+   "chars": 63469,
+   "error": ""
+  },
+  {
+   "t": 10.24,
+   "event": "wayback",
+   "url": "https://www.mdpi.com/2673-8929/4/2/23",
+   "archived": true,
+   "snapshot": "https://web.archive.org/web/20261004162646/https://www.mdpi.com/2673-8929/4/2/23"
+  },
+  {
+   "t": 10.25,
+   "event": "wayback",
+   "url": "https://www.sciencedirect.com/science/article/pii/S0048969724043638",
+   "archived": false,
+   "snapshot": ""
+  },
+  {
+   "t": 10.87,
+   "event": "archive_fetch",
+   "url": "https://web.archive.org/web/20261004162646id_/https://www.mdpi.com/2673-8929/4/2/23",
+   "ok": true,
+   "chars": 42899,
+   "error": ""
+  },
+  {
+   "t": 17.43,
+   "event": "wayback",
+   "url": "https://www.sciencedirect.com/science/article/pii/S2213343725035031",
+   "error": "ReadTimeout: HTTPSConnectionPool(host='web.archive.org', port=443): Read timed out. (read timeout=12.0)"
+  },
+  {
+   "t": 20.62,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "claim": "Recent studies show microplastics have been detected in human stool, lung tissue, and blood.",
+   "verdict": "SUPPORTED",
+   "ent": 0.998,
+   "con": 0.0
+  },
+  {
+   "t": 36.17,
+   "event": "paraphrase_judge",
+   "claim": "They may trigger inflammation in the respiratory and gastrointestinal systems and can compromise immune function.",
+   "verdict": "NOT_SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 36.17,
+   "event": "verify",
+   "url": "https://www.mdpi.com/2673-8929/4/2/23",
+   "claim": "They may trigger inflammation in the respiratory and gastrointestinal systems and can compromise immune function.",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 39.45,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12213550/",
+   "claim": "Proposed toxicity mechanisms include inflammatory responses, oxidative stress, and cellular damage.",
+   "verdict": "SUPPORTED",
+   "ent": 0.984,
+   "con": 0.0
+  },
+  {
+   "t": 42.9,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "claim": "Observational human studies report possible associations between microplastic exposure and gastrointestinal complication",
+   "verdict": "SUPPORTED",
+   "ent": 0.994,
+   "con": 0.0
+  },
+  {
+   "t": 46.74,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "claim": "High concentrations in stool have been linked to adverse outcomes.",
+   "verdict": "SUPPORTED",
+   "ent": 0.969,
+   "con": 0.0
+  },
+  {
+   "t": 55.3,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848325/",
+   "claim": "However, human evidence remains limited and largely observational, with no standardized method for measuring internal mi",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.251,
+   "con": 0.0
+  },
+  {
+   "t": 57.95,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12213550/",
+   "claim": "Additionally, microplastics may act synergistically with other environmental pollutants, potentially amplifying harm.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.996,
+   "con": 0.0
+  },
+  {
+   "t": 66.88,
+   "event": "paraphrase_judge",
+   "claim": "Overall, while these findings indicate potential health risks, confirmed clinical outcomes in humans still require furth",
+   "verdict": "PARTIAL",
+   "grounded": true
+  },
+  {
+   "t": 66.88,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12213550/",
+   "claim": "Overall, while these findings indicate potential health risks, confirmed clinical outcomes in humans still require furth",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.185,
+   "con": 0.0
+  },
+  {
+   "t": 70.99,
+   "event": "verify",
+   "url": "https://www.mdpi.com/2071-1050/18/7/3527",
+   "claim": "Overall, while these findings indicate potential health risks, confirmed clinical outcomes in humans still require furth",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 70.99,
+   "event": "done",
+   "trust_score": 69
+  }
+ ],
+ "score_s": 72.5
+}

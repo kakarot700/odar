@@ -1,0 +1,188 @@
+{
+ "thread_id": "3641579e31e6ea6c",
+ "share_token": "5ymN4t4qSMZ4rt3P",
+ "title": "Is there evidence that GLP-1 drugs like semaglutide reduce cardiovascular events?",
+ "project_id": "",
+ "sources": [
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371/",
+   "title": "Cardiovascular benefits of semaglutide: a systematic review ...",
+   "domain": "pmc.ncbi.nlm.nih.gov",
+   "snippet": "These findings reinforce the role of GLP-1RAs, and semaglutide in particular, as an important therapeutic option for patients with type 2 diabetes and established cardiovascular disease, supporting their inclusion in evidence-based guideline recommendations.",
+   "kind": "web",
+   "n": 1
+  },
+  {
+   "url": "https://link.springer.com/article/10.1186/s12872-025-05278-3",
+   "title": "Cardiovascular benefits of semaglutide: a systematic review ...",
+   "domain": "link.springer.com",
+   "snippet": "Nov 21, 2025 \u00b7 Background Semaglutide, a GLP-1 receptor agonist (GLP-1RA), has shown potential in controlling type 2 diabetes due to their ability to lower blood glucose and improve cardiovascular outcomes. Although semaglutide is the newest GLP-1RA available, its cardiovascular effects have not yet been systematically reviewed. Methods This meta-analysis adhered to a pre-registered protocol (PROSPERO ID ...",
+   "kind": "web",
+   "n": 2
+  },
+  {
+   "url": "https://www.sciencedirect.com/science/article/pii/S0168822725004875",
+   "title": "Comparative effectiveness of OW GLP-1 RAs and other glucose ...",
+   "domain": "sciencedirect.com",
+   "snippet": "Nov 1, 2025 \u00b7 Conclusion The study findings corroborate current guideline recommendations for GLP-1 RAs in people with T2D and ASCVD, and extend findings to lower HCRU and costs in a real-world setting, most notably for semaglutide.",
+   "kind": "web",
+   "n": 3
+  },
+  {
+   "url": "https://www.medscape.com/viewarticle/glp-1-drugs-gain-ground-cardiovascular-prevention-2026a1000759",
+   "title": "The Many Cardiovascular Benefits of GLP-1 Drugs - Medscape",
+   "domain": "medscape.com",
+   "snippet": "Mar 9, 2026 \u00b7 GLP-1 receptor agonists such as semaglutide are changing the way type 2 diabetes and obesity are treated. But these drugs have also shown a surprising ability to improve cardiovascular health ...",
+   "kind": "web",
+   "n": 4
+  },
+  {
+   "url": "https://www.sciencedirect.com/science/article/pii/S2666602225000217",
+   "title": "Emerging role of GLP-1 agonists in cardio-metabolic therapy ...",
+   "domain": "sciencedirect.com",
+   "snippet": "Apr 1, 2025 \u00b7 Semaglutide, a GLP-1 receptor agonist, has emerged as a promising agent in cardiovascular disease management, particularly for patients with obesity and diabetes. Recent studies have demonstrated significant benefits of Semaglutide beyond glycemic control, including reduced major adverse cardiovascular events (MACE), improvements in heart failure symptoms, and weight reduction. Notably, the ...",
+   "kind": "web",
+   "n": 5
+  },
+  {
+   "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+   "title": "Semaglutide reduces cardiovascular events in type 2 diabetes ...",
+   "domain": "link.springer.com",
+   "snippet": "Nov 4, 2025 \u00b7 Verma S, et al. Effects of glucagon-like peptide-1 receptor agonists liraglutide and semaglutide on cardiovascular and renal outcomes across body mass index categories in type 2 diabetes: results of the LEADER and SUSTAIN 6 trials.",
+   "kind": "web",
+   "n": 6
+  }
+ ],
+ "answer": "Yes. Multiple sources report that GLP-1 receptor agonists, especially semaglutide, reduce cardiovascular events. In a meta-analysis of 17 studies with over 40,000 patients, semaglutide significantly reduced cardiovascular death by 23%, major adverse cardiovascular events (MACE) by 18%, expanded MACE by 22%, nonfatal myocardial infarction by 18%, and nonfatal stroke by 32% [6]. Network meta-analyses also suggest semaglutide has the highest probability of cardiovascular benefit among GLP-1RAs and reduces MACE more than several other agents [1][2].\n\nThe benefits appear independent of weight loss, as earlier drug versions that produced little weight loss still cut MACE by about 20% [4]. Semaglutide also improved blood pressure, lipoproteins, and other risk factors, and in patients with chronic kidney disease, the FLOW trial showed an 18% MACE reduction [6]. Clinical guidelines now recommend considering GLP-1s as first-line treatment for weight management in obesity to reduce cardiovascular risk [4], and real-world evidence supports lower healthcare resource use with semaglutide in patients with type 2 diabetes and established cardiovascular disease [3]. Overall, the evidence clearly supports cardiovascular protection with semaglutide.",
+ "abstained": false,
+ "timing": {
+  "search_s": 0.66,
+  "fetch_s": 1.7,
+  "ttft_s": 8.96,
+  "total_s": 8.96
+ },
+ "verification": {
+  "citations": [
+   {
+    "occ": 0,
+    "n": 6,
+    "marker": "[6]",
+    "claim": "In a meta-analysis of 17 studies with over 40,000 patients, semaglutide significantly reduced cardiovascular death by 23%, major adverse cardiovascular events (MACE) by 18%, expanded MACE by 22%, nonfatal myocardial infarction by 18%, and nonfatal stroke by 32% .",
+    "verdict": "partial",
+    "check_verdict": "PARTIALLY SUPPORTED",
+    "quote": "The heterogeneity among the studies was low (I2 = 11.1%, p = 0.276), therefore, the pooled HR with a fixed-effects model showed that semaglutide treatment was associated with significant reductions in multiple CV outcomes, as shown in Fig. 3. The most pronounced benefit was observed for nonfatal stroke, with a 32% risk reduction [I2 = 0%, HR 0.68, 95% CI (0.56, 0.83); p < 0.001].",
+    "note": "the page supports part of this claim, not all of it",
+    "title": "Semaglutide reduces cardiovascular events in type 2 diabetes ...",
+    "domain": "link.springer.com",
+    "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+    "kind": "web",
+    "entailment": 0.675,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 1,
+    "n": 1,
+    "marker": "[1]",
+    "claim": "Network meta-analyses also suggest semaglutide has the highest probability of cardiovascular benefit among GLP-1RAs and reduces MACE more than several other agents .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "Indirect comparisons of semaglutide with other GLP-1RAs via network meta-analysis suggest that semaglutide has the highest probability of having cardiovascular benefits [17]. Furthermore, a network meta-analysis comparing GLP-1RAs and SGLT2 inhibitors has found that semaglutide and albiglutide reduce MACE more than others, suggesting that they are the most cardioprotective agents [18].",
+    "note": "",
+    "title": "Cardiovascular benefits of semaglutide: a systematic review ...",
+    "domain": "pmc.ncbi.nlm.nih.gov",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12752371/",
+    "kind": "web",
+    "entailment": 0.946,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 2,
+    "n": 2,
+    "marker": "[2]",
+    "claim": "Network meta-analyses also suggest semaglutide has the highest probability of cardiovascular benefit among GLP-1RAs and reduces MACE more than several other agents .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "Indirect comparisons of semaglutide with other GLP-1RAs via network meta-analysis suggest that semaglutide has the highest probability of having cardiovascular benefits [17]. Furthermore, a network meta-analysis comparing GLP-1RAs and SGLT2 inhibitors has found that semaglutide and albiglutide reduce MACE more than others, suggesting that they are the most cardioprotective agents [18].",
+    "note": "",
+    "title": "Cardiovascular benefits of semaglutide: a systematic review ...",
+    "domain": "link.springer.com",
+    "url": "https://link.springer.com/article/10.1186/s12872-025-05278-3",
+    "kind": "web",
+    "entailment": 0.946,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 3,
+    "n": 4,
+    "marker": "[4]",
+    "claim": "The benefits appear independent of weight loss, as earlier drug versions that produced little weight loss still cut MACE by about 20% .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "Drucker points out that even early versions of the drugs, which didn\u2019t lead to much weight loss, still reduced MACE by around 20%.",
+    "note": "",
+    "title": "The Many Cardiovascular Benefits of GLP-1 Drugs - Medscape",
+    "domain": "medscape.com",
+    "url": "https://www.medscape.com/viewarticle/glp-1-drugs-gain-ground-cardiovascular-prevention-2026a1000759",
+    "kind": "web",
+    "entailment": 0.996,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 4,
+    "n": 6,
+    "marker": "[6]",
+    "claim": "Semaglutide also improved blood pressure, lipoproteins, and other risk factors, and in patients with chronic kidney disease, the FLOW trial showed an 18% MACE reduction .",
+    "verdict": "partial",
+    "check_verdict": "PARTIALLY SUPPORTED",
+    "quote": "Semaglutide also significantly improved modifiable CV risk factors, reducing systolic/diastolic blood pressure (SBP/DBP) decreased by 8.02/3.71 mmHg, and low-density Lipoprotein (LDL) decreased by 12.62 mg/dL, while increasing high-density lipoprotein (HDL) by 1.44 mg/dL.",
+    "note": "the page supports part of this claim, not all of it",
+    "title": "Semaglutide reduces cardiovascular events in type 2 diabetes ...",
+    "domain": "link.springer.com",
+    "url": "https://link.springer.com/article/10.1186/s40001-025-03241-8",
+    "kind": "web",
+    "entailment": 0.657,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 5,
+    "n": 4,
+    "marker": "[4]",
+    "claim": "Clinical guidelines now recommend considering GLP-1s as first-line treatment for weight management in obesity to reduce cardiovascular risk , and real-world evidence supports lower healthcare resource use with semaglutide in patients with type 2 diabetes and established cardiovascular disease .",
+    "verdict": "unchecked",
+    "check_verdict": "",
+    "quote": "",
+    "note": "verification timed out",
+    "title": "The Many Cardiovascular Benefits of GLP-1 Drugs - Medscape",
+    "domain": "medscape.com",
+    "url": "https://www.medscape.com/viewarticle/glp-1-drugs-gain-ground-cardiovascular-prevention-2026a1000759",
+    "kind": "web"
+   },
+   {
+    "occ": 6,
+    "n": 3,
+    "marker": "[3]",
+    "claim": "Clinical guidelines now recommend considering GLP-1s as first-line treatment for weight management in obesity to reduce cardiovascular risk , and real-world evidence supports lower healthcare resource use with semaglutide in patients with type 2 diabetes and established cardiovascular disease .",
+    "verdict": "unsupported",
+    "check_verdict": "WRONG SOURCE",
+    "quote": "",
+    "note": "the page is real but does not say this",
+    "title": "Comparative effectiveness of OW GLP-1 RAs and other glucose ...",
+    "domain": "sciencedirect.com",
+    "url": "https://www.sciencedirect.com/science/article/pii/S0168822725004875",
+    "kind": "web",
+    "entailment": 0.004,
+    "judged_by": "nli"
+   }
+  ],
+  "counts": {
+   "partial": 2,
+   "supported": 3,
+   "unchecked": 1,
+   "unsupported": 1
+  },
+  "elapsed_s": 50.04,
+  "total_s": 59.02
+ },
+ "q": 10,
+ "seconds": 59.1
+}

@@ -1,0 +1,25 @@
+/workspace/work/venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+Loading weights:   0%|          | 0/106 [00:00<?, ?it/s]Loading weights: 100%|██████████| 106/106 [00:00<00:00, 16215.49it/s]
+/workspace/work/odar/odar/retrieval.py:265: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  raw_results = _DDGS().text(query, max_results=max_results) or []
+/workspace/work/odar/odar/retrieval.py:265: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  raw_results = _DDGS().text(query, max_results=max_results) or []
+/workspace/work/odar/odar/retrieval.py:265: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  raw_results = _DDGS().text(query, max_results=max_results) or []
+/workspace/work/odar/odar/retrieval.py:265: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  raw_results = _DDGS().text(query, max_results=max_results) or []
+/workspace/work/odar/odar/retrieval.py:265: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  raw_results = _DDGS().text(query, max_results=max_results) or []
+/workspace/work/odar/odar/retrieval.py:265: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  raw_results = _DDGS().text(query, max_results=max_results) or []
+/workspace/work/odar/odar/retrieval.py:265: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  raw_results = _DDGS().text(query, max_results=max_results) or []
+/workspace/work/odar/odar/retrieval.py:265: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  raw_results = _DDGS().text(query, max_results=max_results) or []
+/usr/local/lib/python3.12/asyncio/selector_events.py:879: ResourceWarning: unclosed transport <_SelectorSocketTransport closing fd=27>
+  _warn(f"unclosed transport {self!r}", ResourceWarning, source=self)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/local/lib/python3.12/asyncio/selector_events.py:879: ResourceWarning: unclosed transport <_SelectorSocketTransport fd=37>
+  _warn(f"unclosed transport {self!r}", ResourceWarning, source=self)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback

@@ -1,0 +1,218 @@
+{
+ "thread_id": "72ed153b1d99c1f7",
+ "share_token": "rAEYN0ZohFxDDuJm",
+ "title": "How much did global average temperature exceed pre-industrial levels in 2024?",
+ "project_id": "",
+ "sources": [
+  {
+   "url": "https://www.rmets.org/metmatters/world-exceeds-15degc-threshold-entire-year-first-time",
+   "title": "World exceeds 1.5\u00b0C threshold for entire year for the first time",
+   "domain": "rmets.org",
+   "snippet": "Jan 10, 2025 \u00b7 Key Messages: 2024 Global Climate Highlights 2024 is confirmed as the hottest year on record with a global average temperature of 15.10\u00b0C, overtaking 2023, the previous warmest year, by 0.12\u00b0C. 2024 is 1.60\u00b0C above an estimate of the pre-industrial level, making it the first calendar year to exceed the 1.5\u00b0C limit.",
+   "kind": "web",
+   "n": 1
+  },
+  {
+   "url": "https://climate.copernicus.eu/copernicus-2024-first-year-exceed-15degc-above-pre-industrial-level",
+   "title": "Copernicus: 2024 is the first year to exceed 1.5\u00b0C above pre ...",
+   "domain": "climate.copernicus.eu",
+   "snippet": "Jan 10, 2025 \u00b7 2024 is confirmed by the Copernicus Climate Change Service (C3S) to be the warmest year on record globally, and the first calendar year that the average global temperature exceeded 1.5\u00b0C above its pre-industrial level.",
+   "kind": "web",
+   "n": 2
+  },
+  {
+   "url": "https://www.nasa.gov/news-release/temperatures-rising-nasa-confirms-2024-warmest-year-on-record/",
+   "title": "Temperatures Rising: NASA Confirms 2024 Warmest Year on ...",
+   "domain": "nasa.gov",
+   "snippet": "Jan 10, 2025 \u00b7 Earth\u2019s average surface temperature in 2024 was the warmest on record, according to an analysis led by NASA scientists. Global temperatures in 2024 were 2.30 degrees Fahrenheit (1.28 degrees Celsius) above the agency\u2019s 20th-century baseline (1951-1980), which tops the record set in 2023.",
+   "kind": "web",
+   "n": 3
+  },
+  {
+   "url": "https://wmo.int/news/media-centre/wmo-confirms-2024-warmest-year-record-about-155degc-above-pre-industrial-level",
+   "title": "WMO confirms 2024 as warmest year on record at about 1.55\u00b0C ...",
+   "domain": "wmo.int",
+   "snippet": "Jan 10, 2025 \u00b7 One or more individual years exceeding 1.5\u00b0C does not mean that we have missed the goal of \u201cholding the increase in the global average temperature to well below 2\u00b0C above pre-industrial levels and pursuing efforts to limit the temperature increase to 1.5\u00b0C above pre-industrial levels, recognizing that this would significantly reduce the ...",
+   "kind": "web",
+   "n": 4
+  },
+  {
+   "url": "https://www.climate.gov/news-features/understanding-climate/climate-change-global-temperature",
+   "title": "Climate change: global temperature - NOAA Climate.gov",
+   "domain": "climate.gov",
+   "snippet": "May 29, 2025 \u00b7 2024 was the warmest year since global records began in 1850 by a wide margin. It was 2.32 \u00b0F (1.18 \u00b0C) above the 20th-century average of 57.0 \u00b0F (13.9 \u00b0C). It was 2.62 \u00b0F (1.35 \u00b0C) above the pre-industrial average of 56.7 \u00b0F (1850-1900). The 10 warmest years in the historical record have all occurred in the past decade (2015-2024).",
+   "kind": "web",
+   "n": 5
+  },
+  {
+   "url": "https://climate.copernicus.eu/sites/default/files/custom-uploads/GCH-2024/GCH2024.pdf",
+   "title": "2024 - a second record-breaking year, following the ...",
+   "domain": "climate.copernicus.eu",
+   "snippet": "2024 saw unprecedented global temperatures, following on from the remarkable warmth of 2023. It also became the first year with an average temperature clearly exceeding 1.5\u00b0C above the pre-industrial level \u2013 a threshold set by the Paris Agreement to significantly reduce the risks and impacts of climate change.",
+   "kind": "web",
+   "n": 6
+  }
+ ],
+ "answer": "In 2024, the global average temperature exceeded pre-industrial levels by about 1.6\u00b0C, according to analyses cited by the Royal Meteorological Society and the Copernicus Climate Change Service [1][2]. Copernicus specifically reports 1.60\u00b0C above the estimated 1850\u20131900 pre-industrial level [2].\n\nOther estimates are slightly lower. The World Meteorological Organization\u2019s consolidated analysis puts the figure at about 1.55\u00b0C, with a margin of uncertainty of \u00b10.13\u00b0C [4]. NOAA\u2019s calculation gives 1.46\u00b0C above the pre-industrial average [5]. The differences reflect varied methodologies and datasets, but all sources agree 2024 was the warmest year on record and the first calendar year to pass the 1.5\u00b0C threshold [1][2][4][5].",
+ "abstained": false,
+ "timing": {
+  "search_s": 0.64,
+  "fetch_s": 1.27,
+  "ttft_s": 7.22,
+  "total_s": 7.22
+ },
+ "verification": {
+  "citations": [
+   {
+    "occ": 0,
+    "n": 1,
+    "marker": "[1]",
+    "claim": "In 2024, the global average temperature exceeded pre-industrial levels by about 1.6\u00b0C, according to analyses cited by the Royal Meteorological Society and the Copernicus Climate Change Service .",
+    "verdict": "partial",
+    "check_verdict": "PARTIALLY SUPPORTED",
+    "quote": "To highlight the significance of 2024\u2019s exceptional warmth, organisations involved in global climate monitoring \u2014 the Copernicus Climate Change Service, ECMWF, NASA, NOAA, the Met Office, Berkeley Earth and the World Meteorological Organization \u2014 have coordinated the release of their annual temperature data. And the record temperature data from 2024 has been incorporated into the global climate st",
+    "note": "only a short or loosely matching passage supports this",
+    "title": "World exceeds 1.5\u00b0C threshold for entire year for the first time",
+    "domain": "rmets.org",
+    "url": "https://www.rmets.org/metmatters/world-exceeds-15degc-threshold-entire-year-first-time",
+    "kind": "web",
+    "entailment": 0.866,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 1,
+    "n": 2,
+    "marker": "[2]",
+    "claim": "In 2024, the global average temperature exceeded pre-industrial levels by about 1.6\u00b0C, according to analyses cited by the Royal Meteorological Society and the Copernicus Climate Change Service .",
+    "verdict": "partial",
+    "check_verdict": "PARTIALLY SUPPORTED",
+    "quote": "2024 was the warmest year in global temperature records going back to 1850. According to ERA5 (1), the global average temperature of 15.10\u00b0C was 0.72\u00b0C above the 1991-2020 average, and 0.12\u00b0C above 2023, the previous warmest year on record.",
+    "note": "only a short or loosely matching passage supports this",
+    "title": "Copernicus: 2024 is the first year to exceed 1.5\u00b0C above pre ...",
+    "domain": "climate.copernicus.eu",
+    "url": "https://climate.copernicus.eu/copernicus-2024-first-year-exceed-15degc-above-pre-industrial-level",
+    "kind": "web",
+    "entailment": 0.951,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 2,
+    "n": 2,
+    "marker": "[2]",
+    "claim": "Copernicus specifically reports 1.60\u00b0C above the estimated 1850\u20131900 pre-industrial level .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "This is equivalent to 1.60\u00b0C above an estimate of the 1850-1900 temperature designated to be the pre-industrial level.",
+    "note": "reworded match: Passages explicitly report the 1.60\u00b0C figure above pre-industrial.",
+    "title": "Copernicus: 2024 is the first year to exceed 1.5\u00b0C above pre ...",
+    "domain": "climate.copernicus.eu",
+    "url": "https://climate.copernicus.eu/copernicus-2024-first-year-exceed-15degc-above-pre-industrial-level",
+    "kind": "web",
+    "entailment": 0.003,
+    "judged_by": "nli+llm"
+   },
+   {
+    "occ": 3,
+    "n": 4,
+    "marker": "[4]",
+    "claim": "The World Meteorological Organization\u2019s consolidated analysis puts the figure at about 1.55\u00b0C, with a margin of uncertainty of \u00b10.13\u00b0C .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "The global average surface temperature was 1.55 \u00b0C (with a margin of uncertainty of \u00b1 0.13 \u00b0C) above the 1850-1900 average, according to WMO\u2019s consolidated analysis of the six datasets.",
+    "note": "another passage on the page may disagree: \"Reanalyses also provide a globally complete analysis using the model to estimate temperatures in all regions. To calculate the consolidated figures for temperat\"",
+    "title": "WMO confirms 2024 as warmest year on record at about 1.55\u00b0C ...",
+    "domain": "wmo.int",
+    "url": "https://wmo.int/news/media-centre/wmo-confirms-2024-warmest-year-record-about-155degc-above-pre-industrial-level",
+    "kind": "web",
+    "entailment": 0.994,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 4,
+    "n": 5,
+    "marker": "[5]",
+    "claim": "NOAA\u2019s calculation gives 1.46\u00b0C above the pre-industrial average .",
+    "verdict": "unsupported",
+    "check_verdict": "CONTRADICTED",
+    "quote": "According to the latest Synthesis Report (pdf) from the Intergovernmental Panel on Climate Change, there is no debate about the cause of this warming trend: Human activities, principally through emissions of greenhouse gases, have unequivocally caused global warming, with global surface temperature reaching 1.1\u00b0C above 1850-1900 in 2011-2020. In the IPCC's Sixth Assessment Report on the Physical B",
+    "note": "the source says otherwise",
+    "title": "Climate change: global temperature - NOAA Climate.gov",
+    "domain": "climate.gov",
+    "url": "https://www.climate.gov/news-features/understanding-climate/climate-change-global-temperature",
+    "kind": "web",
+    "entailment": 0.476,
+    "judged_by": "nli+llm"
+   },
+   {
+    "occ": 5,
+    "n": 1,
+    "marker": "[1]",
+    "claim": "The differences reflect varied methodologies and datasets, but all sources agree 2024 was the warmest year on record and the first calendar year to pass the 1.5\u00b0C threshold .",
+    "verdict": "partial",
+    "check_verdict": "PARTIALLY SUPPORTED",
+    "quote": "2024 was the hottest year ever recorded on Earth and the first calendar year to exceed the 1.5\u00b0C warming threshold.",
+    "note": "the page supports part of this claim, not all of it",
+    "title": "World exceeds 1.5\u00b0C threshold for entire year for the first time",
+    "domain": "rmets.org",
+    "url": "https://www.rmets.org/metmatters/world-exceeds-15degc-threshold-entire-year-first-time",
+    "kind": "web",
+    "entailment": 0.0,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 6,
+    "n": 2,
+    "marker": "[2]",
+    "claim": "The differences reflect varied methodologies and datasets, but all sources agree 2024 was the warmest year on record and the first calendar year to pass the 1.5\u00b0C threshold .",
+    "verdict": "partial",
+    "check_verdict": "PARTIALLY SUPPORTED",
+    "quote": "2024 is the first calendar year that has reached more than 1.5\u00b0C above the pre-industrial level.",
+    "note": "the page supports part of this claim, not all of it",
+    "title": "Copernicus: 2024 is the first year to exceed 1.5\u00b0C above pre ...",
+    "domain": "climate.copernicus.eu",
+    "url": "https://climate.copernicus.eu/copernicus-2024-first-year-exceed-15degc-above-pre-industrial-level",
+    "kind": "web",
+    "entailment": 0.0,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 7,
+    "n": 4,
+    "marker": "[4]",
+    "claim": "The differences reflect varied methodologies and datasets, but all sources agree 2024 was the warmest year on record and the first calendar year to pass the 1.5\u00b0C threshold .",
+    "verdict": "unchecked",
+    "check_verdict": "",
+    "quote": "",
+    "note": "verification timed out",
+    "title": "WMO confirms 2024 as warmest year on record at about 1.55\u00b0C ...",
+    "domain": "wmo.int",
+    "url": "https://wmo.int/news/media-centre/wmo-confirms-2024-warmest-year-record-about-155degc-above-pre-industrial-level",
+    "kind": "web"
+   },
+   {
+    "occ": 8,
+    "n": 5,
+    "marker": "[5]",
+    "claim": "The differences reflect varied methodologies and datasets, but all sources agree 2024 was the warmest year on record and the first calendar year to pass the 1.5\u00b0C threshold .",
+    "verdict": "unchecked",
+    "check_verdict": "",
+    "quote": "",
+    "note": "verification timed out",
+    "title": "Climate change: global temperature - NOAA Climate.gov",
+    "domain": "climate.gov",
+    "url": "https://www.climate.gov/news-features/understanding-climate/climate-change-global-temperature",
+    "kind": "web"
+   }
+  ],
+  "counts": {
+   "partial": 4,
+   "supported": 2,
+   "unsupported": 1,
+   "unchecked": 2
+  },
+  "elapsed_s": 50.04,
+  "total_s": 57.27
+ },
+ "q": 7,
+ "seconds": 57.4
+}

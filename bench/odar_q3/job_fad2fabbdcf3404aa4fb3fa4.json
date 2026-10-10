@@ -1,0 +1,275 @@
+{
+  "status": "COMPLETE",
+  "backend_state": "anthropic-tool-use",
+  "degraded": false,
+  "objective": "Does raising the minimum wage reduce employment? Summarize what the empirical evidence says, including where economists disagree.",
+  "run_id": "run_55d587d8969c4c95",
+  "uncertainty": "CONFLICTING_EVIDENCE",
+  "termination_status": "COMPLETE",
+  "unmet_conditions": [],
+  "digest": {
+    "objective": "Does raising the minimum wage reduce employment? Summarize what the empirical evidence says, including where economists disagree.",
+    "iteration": 3,
+    "termination_status": "COMPLETE",
+    "uncertainty": "CONFLICTING_EVIDENCE",
+    "subquestions": [],
+    "hypotheses": [],
+    "claims": [
+      {
+        "id": "clm_429ee3d559ab4dbe",
+        "text": "Myth or Measurement: What Does the New Minimum Wage Research Say about Minimum Wages and Job Loss in the United States?",
+        "status": "CONFLICTING",
+        "uncertainty": "CONFLICTING_EVIDENCE"
+      },
+      {
+        "id": "clm_330be0f6bc854b42",
+        "text": "The disagreement among studies of the employment effects of minimum wages in the United States is well known.",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_e60c7f7f30f546cb",
+        "text": "Less well known, and more puzzling, is the absence of agreement on what the research literature says – that is, how economists summarize the body of evidence on",
+        "status": "CONFLICTING",
+        "uncertainty": "CONFLICTING_EVIDENCE"
+      },
+      {
+        "id": "clm_c7b63819125b4df7",
+        "text": "\"Myth or measurement: What does the new minimum wage research say about minimum wages and job loss in the United States?,\" Industrial Relations: A Journal of Ec",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      }
+    ],
+    "evidence_summary": {
+      "total": 32,
+      "relevant": 11,
+      "supports": 6,
+      "refutes": 4,
+      "qualifies": 1,
+      "circular_rejected": 0
+    },
+    "sources": {
+      "total": 1,
+      "independent": 1,
+      "classes": {
+        "general_web": 1
+      }
+    },
+    "contradictions": [
+      {
+        "claim_id": "clm_429ee3d559ab4dbe",
+        "examined": true,
+        "note": "support p=0.98 vs refutation p=0.75",
+        "stance": "UNDECIDED"
+      },
+      {
+        "claim_id": "clm_e60c7f7f30f546cb",
+        "examined": true,
+        "note": "support p=0.91 vs refutation p=0.96",
+        "stance": "UNDECIDED"
+      }
+    ],
+    "unanswered": [],
+    "attempted_queries": [
+      "Card Krueger 1994 minimum wage employment New Jersey fast food restaurants",
+      "Cengiz Dube Lindner Zipperer 2019 minimum wage jobs bunching estimator QJE",
+      "Dube 2019 review minimum wage effects on employment literature",
+      "IGM forum survey economists minimum wage employment effects",
+      "CBO report $15 federal minimum wage employment effects projection",
+      "Autor Manning Smith 2016 monopsony implications minimum wage employment",
+      "minimum wage employment effects evidence Neumark Wasler Card Krueger",
+      "CBO minimum wage $15 report employment effects"
+    ],
+    "failed_approaches": [
+      "fetch:https://kentclarkcenter.org/surveys/minimum-wage/",
+      "fetch:https://www.cbo.gov/publication/55684",
+      "fetch:https://www.kentclarkcenter.org/surveys/minimum-wage/",
+      "fetch:https://scholar.harvard.edu/files/ddube/files/dube_min_wage_review.pdf",
+      "fetch:https://www.cbo.gov/publication/52508",
+      "fetch:https://www.igmchicago.org/surveys/minimum-wage/",
+      "fetch:https://en.wikipedia.org/wiki/Minimum_wage"
+    ],
+    "evidence_coverage": {
+      "clm_429ee3d559ab4dbe": true,
+      "clm_330be0f6bc854b42": true,
+      "clm_e60c7f7f30f546cb": true,
+      "clm_c7b63819125b4df7": true
+    },
+    "citation_coverage": {
+      "clm_429ee3d559ab4dbe": true,
+      "clm_330be0f6bc854b42": true,
+      "clm_e60c7f7f30f546cb": true,
+      "clm_c7b63819125b4df7": true
+    },
+    "quarantined_urls": 0,
+    "injection_blocked": 0
+  },
+  "synthesis": "# Research Report: Does raising the minimum wage reduce employment? Summarize what the empirical evidence says, including where economists disagree.\n\n## Certified Findings (semantic NLI verification)\n- [clm_330be0f6bc854b42] The disagreement among studies of the employment effects of minimum wages in the United States is well known.\n  - cited: [src_9337a1fb30f04a37] Myth or Measurement: What Does the New Minimum Wage Research Say about Minimum Wages and Job Loss in the United States? | NBER (entailment p=0.98, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_c7b63819125b4df7] \"Myth or measurement: What does the new minimum wage research say about minimum wages and job loss in the United States?,\" Industrial Relations: A Journal of Economy and Society, vol 61(4), pages 384-417.\n  - cited: [src_9337a1fb30f04a37] Myth or Measurement: What Does the New Minimum Wage Research Say about Minimum Wages and Job Loss in the United States? | NBER (entailment p=0.93, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n\n## Contradicted / Refuted / Conflicting\n- [clm_429ee3d559ab4dbe] Myth or Measurement: What Does the New Minimum Wage Research Say about Minimum Wages and Job Loss in the United States? *(status: CONFLICTING)*\n- [clm_e60c7f7f30f546cb] Less well known, and more puzzling, is the absence of agreement on what the research literature says – that is, how economists summarize the body of evidence on the employment effects of minimum wages. *(status: CONFLICTING)*\n\n## Contradictions Examined\n- clm_429ee3d559ab4dbe: examined=True stance=UNDECIDED\n- clm_e60c7f7f30f546cb: examined=True stance=UNDECIDED\n\n## Uncertainty and Limitations\n- No primary-research source was available; findings rest on secondary reporting and are limited accordingly.\n- Uncertainty classification: UNCERTAIN",
+  "audit": {
+    "status": "PASS",
+    "checks": {
+      "no_provisional_certifications": true,
+      "no_unsupported_critical_claims": true,
+      "citations_resolve": true,
+      "no_circular_citations": true,
+      "provenance_intact": true,
+      "numeric_consistency": true,
+      "causal_language_appropriate": true,
+      "contradictions_examined": true,
+      "uncertainty_explicit": true
+    },
+    "findings": [],
+    "unsupported_claims": [],
+    "hallucinated_citations": [],
+    "circular_citations": [],
+    "provisional_certifications": []
+  },
+  "errors": [],
+  "governance": {
+    "budget": {
+      "max_iterations": 4.0,
+      "max_tool_calls": 40.0,
+      "max_search_calls": 8.0,
+      "max_fetches": 8.0,
+      "max_sandbox_executions": 4.0,
+      "max_model_calls": 30.0,
+      "max_wall_clock_s": 540.0,
+      "max_response_chars": 18000.0,
+      "max_retries_per_call": 2.0,
+      "max_dependency_depth": 8.0,
+      "max_concurrent_fetches": 2.0,
+      "max_extensions": 2.0
+    },
+    "counters": {
+      "iterations": 3,
+      "tool_calls": 0,
+      "search_calls": 8,
+      "fetches": 8,
+      "sandbox_executions": 0,
+      "model_calls": 14,
+      "retries": 0
+    },
+    "denials": [
+      {
+        "resource": "search_calls",
+        "detail": "max 8 reached",
+        "ts": 1791334899.6643503
+      },
+      {
+        "resource": "search_calls",
+        "detail": "max 8 reached",
+        "ts": 1791334899.664363
+      },
+      {
+        "resource": "search_calls",
+        "detail": "max 8 reached",
+        "ts": 1791334928.472197
+      },
+      {
+        "resource": "search_calls",
+        "detail": "max 8 reached",
+        "ts": 1791334954.4071465
+      },
+      {
+        "resource": "fetches",
+        "detail": "max 8 reached",
+        "ts": 1791334989.6656604
+      },
+      {
+        "resource": "fetches",
+        "detail": "max 8 reached",
+        "ts": 1791334989.6656806
+      }
+    ],
+    "extensions": [],
+    "cancelled": false,
+    "cancel_reason": null
+  },
+  "telemetry": {
+    "request_id": "req_bef5f578975e4745",
+    "counters": {
+      "iterations": 3,
+      "search_calls": 8,
+      "fetch_calls": 8,
+      "fetch_failed": 7,
+      "claims_extracted": 4,
+      "evidence_evaluations": 8,
+      "contradictions_recorded": 2,
+      "claims_certified": 2,
+      "dialectic_attacks": 2,
+      "final_audits": 1
+    },
+    "latencies": {
+      "search": {
+        "count": 8,
+        "p50_ms": 685.05,
+        "p95_ms": 3705.39,
+        "max_ms": 3705.39
+      },
+      "fetch": {
+        "count": 8,
+        "p50_ms": 333.49,
+        "p95_ms": 531.91,
+        "max_ms": 531.91
+      },
+      "evidence_eval": {
+        "count": 4,
+        "p50_ms": 1516.06,
+        "p95_ms": 1625.98,
+        "max_ms": 1625.98
+      }
+    },
+    "event_count": 4
+  },
+  "events": [
+    {
+      "name": "run.start",
+      "ts": 1791334838.7080438,
+      "run_id": "run_55d587d8969c4c95",
+      "data": {
+        "objective": "Does raising the minimum wage reduce employment? Summarize what the empirical evidence says, including where economists disagree.",
+        "resumed": "False",
+        "backend": "anthropic-tool-use"
+      }
+    },
+    {
+      "name": "tool_session",
+      "ts": 1791334922.707218,
+      "run_id": "run_55d587d8969c4c95",
+      "data": {
+        "turns": "4",
+        "tool_calls": "[{'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': False}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': True}, {'tool': 'web_search', 'input_keys': ['query'], 'is_error': True}]",
+        "final_text": "",
+        "finish_requested": "False",
+        "stop_cause": "max_tokens",
+        "backend_state": "anthropic-tool-use"
+      }
+    },
+    {
+      "name": "tool_session",
+      "ts": 1791334954.4070914,
+      "run_id": "run_55d587d8969c4c95",
+      "data": {
+        "turns": "1",
+        "tool_calls": "[]",
+        "final_text": "",
+        "finish_requested": "False",
+        "stop_cause": "max_tokens",
+        "backend_state": "anthropic-tool-use"
+      }
+    },
+    {
+      "name": "tool_session",
+      "ts": 1791335015.2142217,
+      "run_id": "run_55d587d8969c4c95",
+      "data": {
+        "turns": "5",
+        "tool_calls": "[{'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'fetch_page', 'input_keys': ['url'], 'is_error': True}, {'tool': 'finish_research', 'input_keys': [], 'is_error': False}]",
+        "final_text": "Let me try IZA World of Labor and Our World in Data.",
+        "finish_requested": "True",
+        "stop_cause": "tool_use",
+        "backend_state": "anthropic-tool-use"
+      }
+    }
+  ]
+}

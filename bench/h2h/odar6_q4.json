@@ -1,0 +1,76 @@
+{
+ "thread_id": "4b1c0f2d4c1ee8f3",
+ "share_token": "95060GgJnugDm0bL",
+ "title": "What is India's current repo rate set by the RBI and when was it last changed?",
+ "project_id": "",
+ "sources": [
+  {
+   "url": "https://www.rbi.org.in/home.aspx//Scripts/Home.aspx/Webservice/Scripts/Statistics.aspx",
+   "title": "Home | Official website of Reserve Bank of India",
+   "domain": "rbi.org.in",
+   "snippet": "# Home-Reserve Bank of India\n## 1. Current Rates\n### Policy Rates\n|Policy Repo Rate |:\n5.50% |\n| --- | --- |\n|Standing Deposit Facility Rate |:\n5.25% |\n|Marginal Standing Facility Rate |:\n5.75% |\n|Bank Rate |:\n5.75% |\n|Fixed Reverse Repo Rate |:\n3.35% |\n\n...\n\n### Money Market\n|Call Rates |:\n4.60% - 5.25%\n* |\n  | --- | --- |\n* as on October 06, 2026\n\n...\n\n## Functionwise Sites\n### Research\nWebsite owned and managed by Reserve Bank of India. Contact us on helpdoc[at]rbi[dot]org[dot]in\nWebsite last updated date: Oct 07, 2026\n[Web Information Manager](https://www.rbi.org.in/scripts/wim.aspx)",
+   "kind": "web",
+   "n": 1
+  },
+  {
+   "url": "https://stableinvestor.com/2021/10/rbi-repo-rate-history-india.html",
+   "title": "Complete RBI Repo Rate History in India (2000 to 2026)",
+   "domain": "stableinvestor.com",
+   "snippet": "# Complete RBI Repo Rate History in India (2000 to 2026)\nThe **latest RBI current Repo Rate** is **5.25%** in India (August 2026) as per the Reserve Bank of India (RBI).\nSo that\u2019s your answer to the **Current Repo Rate 2026,** as it stands at **5.25%** (the latest repo rate)\nNow, let\u2019s take a look at the History of Repo Rates in India. You can even call it the RBI Repo Rate History Chart. We will discuss the repo rate a bit later.\nSo, what is the RBI repo rate history?\n**RBI Repo Rate History (Updated 2026)**\nHere is the RBI Repo Rate Chart with Repo rates as the dark blue line and the % chang [...truncated by sanitizer]",
+   "kind": "web",
+   "date": "2021-10-21T00:00:00",
+   "n": 2
+  },
+  {
+   "url": "https://www.rbi.org.in/Home.aspx",
+   "title": "Home | Official website of Reserve Bank of India",
+   "domain": "rbi.org.in",
+   "snippet": "RBI issues Amendment Directions on \u2018Simplified approval process for subsequent acquisitions of major shareholding in a banking company by mutual funds, insurance companies and pension funds\u2019",
+   "kind": "web",
+   "n": 3
+  },
+  {
+   "url": "https://www.thehindubusinessline.com/money-and-banking/rbi-monetary-policy-committee-mpc-meeting-octobe-7-2026-live-news-updates/article71551632.ece",
+   "title": "RBI MPC Meeting Oct 7 Live: Will the RBI increase repo rate? - The HinduBusinessLine",
+   "domain": "thehindubusinessline.com",
+   "snippet": "# RBI MPC Meeting Oct 2026 Live: Will the RBI increase repo rate?\n## A businessline poll of bank economists points to a 25 basis point hike to 5.50 per cent on Wednesday \u2014 the first increase since February 2023 \u2014 as firmer inflation, costly crude and a weak rupee end the pause\n### Share\nThe Monetary Policy Committee is a six-member panel under the RBI Act that sets the policy repo rate. Its job is to keep inflation at 4 per cent, within a band of 2\u20136 per cent. Decisions are by majority.\n\n...\n\n**What was decided at the last meet?**\nIn August 2026, the MPC left the repo rate unchanged at 5.25 pe [...truncated by sanitizer]",
+   "kind": "web",
+   "date": "2026-10-07T00:00:00",
+   "n": 4
+  },
+  {
+   "url": "https://www.thehindu.com/business/rbi-monetary-policy-meeting-decision-on-repo-rate-live-updates-october-7-2026/article71554262.ece",
+   "title": "RBI MPC meeting highlights: Repo rate hiked to 5.5%",
+   "domain": "thehindu.com",
+   "snippet": "The Reserve Bank of India announced its bi-monthly monetary policy on Wednesday (October 7, 2026), unanimously deciding to increase the repo rate by 25 basis points, from 5.25% to 5.50%. The key rate hike after nearly three-and-a half years comes as inflation pressures rise due to the continuing West Asia conflict.\nRepo rate was cut to 5.25% in December 2025 and since then it was put on hold till today.",
+   "kind": "web",
+   "date": "2026-10-07T00:00:00",
+   "n": 5
+  },
+  {
+   "url": "https://www.moneycontrol.com/news/business/markets/rbi-policy-highlights-october-2026-repo-rate-decision-today-inflation-growth-forecasts-and-policy-stance-in-focus-14046325.html",
+   "title": "RBI Policy Highlights October 2026: Repo rate hiked 25 bps to 5.5%, stance changed to 'calibrated tightening'",
+   "domain": "moneycontrol.com",
+   "snippet": "# RBI Policy Highlights October 2026: Repo rate hiked 25 bps to 5.5%, stance changed to 'calibrated tightening'\nThe Reserve Bank of India\u2019s Monetary Policy Committee (MPC) on Wednesday unanimously raised the benchmark repo rate by 25 basis points to 5.5 percent, marking the first rate increase since February 2023, as elevated crude oil prices and global uncertainty complicate the inflation outlook. The MPC also changed its monetary policy stance from \u2018neutral\u2019 to \u2018calibrated tightening\u2019.",
+   "kind": "web",
+   "date": "2026-10-07T00:00:00",
+   "n": 6
+  }
+ ],
+ "answer": "India's policy repo rate is 5.50% [1]. The RBI last changed it on October 7, 2026, hiking it by 25 basis points from 5.25% to 5.50% [5]. The previous cut to 5.25% had been in December 2025 [5].",
+ "abstained": false,
+ "timing": {
+  "search_s": 3.15,
+  "fetch_s": 0.0,
+  "ttft_s": 92.34,
+  "total_s": 92.35
+ },
+ "verification": {
+  "citations": [],
+  "counts": {},
+  "error": "verification timed out",
+  "total_s": 182.37
+ },
+ "q": 4,
+ "seconds": 182.5
+}

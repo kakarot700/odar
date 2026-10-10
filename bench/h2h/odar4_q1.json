@@ -1,0 +1,223 @@
+{
+ "thread_id": "47edb669fe18da00",
+ "share_token": "qTCUPEdtUCVkjkHr",
+ "title": "What were the main findings of WHO's World Malaria Report 2024?",
+ "project_id": "",
+ "sources": [
+  {
+   "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "title": "World malaria report 2024 - World Health Organization (WHO)",
+   "domain": "who.int",
+   "snippet": "Dec 11, 2024 \u00b7 According to WHO\u2019s latest World malaria report, there were an estimated 263 million cases and 597 000 malaria deaths worldwide in 2023. This represents about 11 million more cases in 2023 compared to 2022, and nearly the same number of deaths.",
+   "kind": "web",
+   "n": 1
+  },
+  {
+   "url": "https://www.thelancet.com/journals/lanmic/article/PIIS2666-5247(25)00001-1/fulltext",
+   "title": "WHO world malaria report 2024 - The Lancet Microbe",
+   "domain": "thelancet.com",
+   "snippet": "Dec 11, 2024 \u00b7 On Dec 11, 2024, WHO published their annual report on global trends in malaria control and elimination. The data show that, despite progress in malaria control, including routine immunisations, the number of cases in 2023 still exceeded that of 2022 by around 11 million.",
+   "kind": "web",
+   "n": 2
+  },
+  {
+   "url": "https://www.who.int/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024.pdf",
+   "title": "World malaria report 2024: addressing inequity in the global ...",
+   "domain": "who.int",
+   "snippet": "Each year, the world malaria report serves as a vital tool to evaluate global progress and gaps in the fight against malaria. This year\u2019s report provides a snapshot of efforts to control and eliminate the disease in 83 countries.",
+   "kind": "web",
+   "n": 3
+  },
+  {
+   "url": "https://cdn.who.int/media/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024-regional-briefing-kit-eng.pdf?sfvrsn=bceac4ae_9&download=true",
+   "title": "Regional data & trends briefing kit: World malaria report 2024",
+   "domain": "cdn.who.int",
+   "snippet": "Dec 11, 2024 \u00b7 The increases in cases and deaths from 2021\u20132022 were mainly due to the malaria situation in Papua New Guinea. Trends in Papua New Guinea have been attributed, among other factors, to low treatment seeking and testing rates, stock-outs of commodities, human resource capacity and management constraints, unstable sources of domestic and ...",
+   "kind": "web",
+   "n": 4
+  },
+  {
+   "url": "https://cdn.who.int/media/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024-global-briefing-kit-eng.pdf?sfvrsn=affbbec7_6&download=true",
+   "title": "Global messaging briefing kit: World malaria report 2024",
+   "domain": "cdn.who.int",
+   "snippet": "Dec 11, 2024 \u00b7 The 2024 report highlights positive trends in the scale-up of effective prevention tools, including new generation nets, the malaria vaccines and seasonal malaria chemoprevention.",
+   "kind": "web",
+   "n": 5
+  },
+  {
+   "url": "https://www.thelancet.com/pdfs/journals/lanmic/PIIS2666-5247(25)00001-1.pdf",
+   "title": "WHO world malaria report 2024 - The Lancet",
+   "domain": "thelancet.com",
+   "snippet": "Apr 6, 2025 \u00b7 WHO world malaria report 2024 On Dec 11, 2024, WHO published their annual report on global trends in malaria control and elimination. The data show that, despite progress in malaria control, including routine immunisations, the number of cases in 2023 still exceeded that of 2022 by around 11 million.",
+   "kind": "web",
+   "n": 6
+  }
+ ],
+ "answer": "In 2023, there were an estimated 263 million malaria cases worldwide [1]. \nThere were an estimated 597,000 malaria deaths worldwide in 2023 [1]. \nCases in 2023 exceeded those in 2022 by around 11 million [2]. \nDeath numbers in 2023 were nearly the same as in 2022 [1]. \nAbout 95% of the malaria deaths occurred in the WHO African Region [1]. \n\nSince 2000, an estimated 2.2 billion malaria cases and 12.7 million deaths have been averted [1]. \nThe report covers efforts to control and eliminate malaria in 83 countries [1]. \nIt introduced a chapter focused on reaching populations most vulnerable to malaria, including children under 5 and migrants [1]. \nPositive trends included the scale-up of new generation nets, malaria vaccines, and seasonal malaria chemoprevention [5].",
+ "abstained": false,
+ "timing": {
+  "search_s": 1.05,
+  "fetch_s": 0.0,
+  "ttft_s": 15.7,
+  "total_s": 15.7
+ },
+ "draft_answer": "In 2023, there were an estimated 263 million malaria cases worldwide [1].  \nThere were an estimated 597,000 malaria deaths worldwide in 2023 [1].  \nCases in 2023 exceeded those in 2022 by around 11 million [2].  \nDeath numbers in 2023 were nearly the same as in 2022 [1].  \nAbout 95% of the malaria deaths occurred in the WHO African Region [1].  \n\nSince 2000, an estimated 2.2 billion malaria cases and 12.7 million deaths have been averted [1].  \nThe report covers efforts to control and eliminate malaria in 83 countries [1].  \nIt introduced a chapter focused on reaching populations most vulnerable to malaria, including children under 5 and migrants [1].  \nPositive trends included the scale-up of new generation nets, malaria vaccines, and seasonal malaria chemoprevention [5].",
+ "verification": {
+  "citations": [
+   {
+    "occ": 0,
+    "n": 1,
+    "marker": "[1]",
+    "claim": "In 2023, there were an estimated 263 million malaria cases worldwide .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "According to WHO\u2019s latest World malaria report, there were an estimated 263 million cases and 597 000 malaria deaths worldwide in 2023.",
+    "note": "",
+    "title": "World malaria report 2024 - World Health Organization (WHO)",
+    "domain": "who.int",
+    "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+    "kind": "web",
+    "entailment": 0.993,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 1,
+    "n": 1,
+    "marker": "[1]",
+    "claim": "There were an estimated 597,000 malaria deaths worldwide in 2023 .",
+    "verdict": "partial",
+    "check_verdict": "PARTIALLY SUPPORTED",
+    "quote": "According to WHO\u2019s latest World malaria report, there were an estimated 263 million cases and 597 000 malaria deaths worldwide in 2023.",
+    "note": "the page supports the claim's gist but not the figure(s) 597,000",
+    "title": "World malaria report 2024 - World Health Organization (WHO)",
+    "domain": "who.int",
+    "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+    "kind": "web",
+    "entailment": 0.996,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 2,
+    "n": 2,
+    "marker": "[2]",
+    "claim": "Cases in 2023 exceeded those in 2022 by around 11 million .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "The data show that, despite progress in malaria control, including routine immunisations, the number of cases in 2023 still exceeded that of 2022 by around 11 million.",
+    "note": "",
+    "title": "WHO world malaria report 2024 - The Lancet Microbe",
+    "domain": "thelancet.com",
+    "url": "https://www.thelancet.com/journals/lanmic/article/PIIS2666-5247(25)00001-1/fulltext",
+    "kind": "web",
+    "entailment": 0.993,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 3,
+    "n": 1,
+    "marker": "[1]",
+    "claim": "Death numbers in 2023 were nearly the same as in 2022 .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "This represents about 11 million more cases in 2023 compared to 2022, and nearly the same number of deaths.",
+    "note": "",
+    "title": "World malaria report 2024 - World Health Organization (WHO)",
+    "domain": "who.int",
+    "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+    "kind": "web",
+    "entailment": 0.989,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 4,
+    "n": 1,
+    "marker": "[1]",
+    "claim": "About 95% of the malaria deaths occurred in the WHO African Region .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "According to WHO\u2019s latest World malaria report, there were an estimated 263 million cases and 597 000 malaria deaths worldwide in 2023. This represents about 11 million more cases in 2023 compared to 2022, and nearly the same number of deaths. Approximately 95% of the deaths occurred in the WHO African Region, where many at risk still lack access to the services they need to prevent, detect and tr",
+    "note": "",
+    "title": "World malaria report 2024 - World Health Organization (WHO)",
+    "domain": "who.int",
+    "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+    "kind": "web",
+    "entailment": 0.987,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 5,
+    "n": 1,
+    "marker": "[1]",
+    "claim": "Since 2000, an estimated 2.2 billion malaria cases and 12.7 million deaths have been averted .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "New data from the WHO reveal that an estimated 2.2 billion cases of malaria and 12.7 million deaths have been averted since 2000, but the disease remains a serious global health threat, particularly in the WHO African Region.",
+    "note": "",
+    "title": "World malaria report 2024 - World Health Organization (WHO)",
+    "domain": "who.int",
+    "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+    "kind": "web",
+    "entailment": 0.967,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 6,
+    "n": 1,
+    "marker": "[1]",
+    "claim": "The report covers efforts to control and eliminate malaria in 83 countries .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "Each year, the World malaria report serves as a vital tool to assess global progress and gaps in the fight against malaria. This year\u2019s report provides a critical and up-to-date snapshot of efforts to control and eliminate the disease in 83 countries worldwide.",
+    "note": "",
+    "title": "World malaria report 2024 - World Health Organization (WHO)",
+    "domain": "who.int",
+    "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+    "kind": "web",
+    "entailment": 0.986,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 7,
+    "n": 1,
+    "marker": "[1]",
+    "claim": "It introduced a chapter focused on reaching populations most vulnerable to malaria, including children under 5 and migrants .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "The report also introduces, for the first time, a dedicated chapter emphasizing the need for a more inclusive and effective response, with a focus on reaching the populations most vulnerable to malaria. Groups at high risk of a malaria infection include children under 5, women and girls, Indigenous Peoples, migrants, people with disabilities, and people in remote areas with limited healthcare acce",
+    "note": "",
+    "title": "World malaria report 2024 - World Health Organization (WHO)",
+    "domain": "who.int",
+    "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+    "kind": "web",
+    "entailment": 0.994,
+    "judged_by": "nli"
+   },
+   {
+    "occ": 8,
+    "n": 5,
+    "marker": "[5]",
+    "claim": "Positive trends included the scale-up of new generation nets, malaria vaccines, and seasonal malaria chemoprevention .",
+    "verdict": "supported",
+    "check_verdict": "SUPPORTED",
+    "quote": "Dec 11, 2024 \u00b7 The 2024 report highlights positive trends in the scale-up of effective prevention tools, including new generation nets, the malaria vaccines and seasonal malaria chemoprevention.",
+    "note": "",
+    "title": "Global messaging briefing kit: World malaria report 2024",
+    "domain": "cdn.who.int",
+    "url": "https://cdn.who.int/media/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024-global-briefing-kit-eng.pdf?sfvrsn=affbbec7_6&download=true",
+    "kind": "web",
+    "entailment": 0.996,
+    "judged_by": "nli"
+   }
+  ],
+  "counts": {
+   "supported": 8,
+   "partial": 1
+  },
+  "elapsed_s": 32.91,
+  "answer": "In 2023, there were an estimated 263 million malaria cases worldwide [1]. \nThere were an estimated 597,000 malaria deaths worldwide in 2023 [1]. \nCases in 2023 exceeded those in 2022 by around 11 million [2]. \nDeath numbers in 2023 were nearly the same as in 2022 [1]. \nAbout 95% of the malaria deaths occurred in the WHO African Region [1]. \n\nSince 2000, an estimated 2.2 billion malaria cases and 12.7 million deaths have been averted [1]. \nThe report covers efforts to control and eliminate malaria in 83 countries [1]. \nIt introduced a chapter focused on reaching populations most vulnerable to malaria, including children under 5 and migrants [1]. \nPositive trends included the scale-up of new generation nets, malaria vaccines, and seasonal malaria chemoprevention [5].",
+  "repairs": [],
+  "total_s": 48.7
+ },
+ "q": 1,
+ "seconds": 48.9
+}

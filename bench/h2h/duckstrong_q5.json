@@ -1,0 +1,10 @@
+{
+ "answer": "Usually, no. Most studies find intermittent fasting and daily calorie restriction produce similar weight loss when they create a similar calorie deficit. A 2025 trial found one exception: a 4:3 plan (three days of substantial restriction each week) led to greater average weight loss after a year\u20147.6% versus 5%\u2014but that result was specific to that plan and doesn\u2019t mean all forms of fasting work better. [1][2]\n\nThe practical choice is the approach you can sustain. Intermittent fasting may help some people eat less by limiting when they eat; daily calorie restriction may suit others better. Either way, the calorie deficit over time is the main driver of weight loss. [1]",
+ "sources": [
+  "https://www.sciencedirect.com/science/article/pii/S0939475324004393",
+  "https://news.cuanschutz.edu/news-stories/intermittent-fasting-outperforms-calorie-counting-in-weight-loss-study"
+ ],
+ "raw_answer": "Usually, no. Most studies find intermittent fasting and daily calorie restriction produce similar weight loss when they create a similar calorie deficit. A 2025 trial found one exception: a 4:3 plan (three days of substantial restriction each week) led to greater average weight loss after a year\u20147.6% versus 5%\u2014but that result was specific to that plan and doesn\u2019t mean all forms of fasting work better. [ScienceDirect +1]\n\nThe practical choice is the approach you can sustain. Intermittent fasting may help some people eat less by limiting when they eat; daily calorie restriction may suit others better. Either way, the calorie deficit over time is the main driver of weight loss. [ScienceDirect]",
+ "approx_seconds": "~8-10s estimate; site shows no timer. Response complete observed immediately on first poll.",
+ "model": "GPT-6 Luna"
+}

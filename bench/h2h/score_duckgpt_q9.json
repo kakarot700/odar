@@ -1,0 +1,308 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_f36ad87e861d",
+ "trust_score": 70,
+ "grade": "mixed: check flagged claims",
+ "counts": {
+  "SUPPORTED": 3,
+  "PARTIALLY SUPPORTED": 1,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 1,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 4
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "Unacceptable-risk AI is banned, including certain manipulative systems, social scoring, and some biometric uses.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "High-risk AI has the toughest compliance duties, such as risk management, data governance, documentation, transparency, human oversight, and accuracy/cybersecurity controls.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "Limited-risk AI mainly has transparency duties, like telling users when they're interacting with AI or when content is AI-generated.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4",
+   "claim": "General-purpose AI (GPAI) models have their own rules for documentation, transparency, and copyright compliance.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5",
+   "claim": "Lower-risk AI is mostly unregulated beyond existing law and voluntary practices.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+     "marker": "[1]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.664,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli+llm",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6.1",
+   "claim": "The Act entered into force on 1 August 2024.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.997,
+     "contradiction": 0.999,
+     "quote": "The AI Act entered into force on 1 August 2024 and became applicable on 2 August 2026, with some exceptions:",
+     "note": "another passage on the page may disagree: \"This legislative proposal (dubbed as the 'AI Omnibus') was adopted on 19 November 2025, a political agreement was reached on 7 May 2026 and entered into force o\"",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "The AI Act entered into force on 1 August 2024 and became applicable on 2 August 2026, with some exceptions:",
+   "quote_url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6.2",
+   "claim": "The Act applies in phases.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+     "marker": "[1]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.872,
+     "contradiction": 0.0,
+     "quote": "The AI Act entered into force on 1 August 2024 and became applicable on 2 August 2026, with some exceptions:",
+     "note": "only a short or loosely matching passage supports this",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "The AI Act entered into force on 1 August 2024 and became applicable on 2 August 2026, with some exceptions:",
+   "quote_url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6.3",
+   "claim": "Bans and AI literacy rules started on 2 February 2025.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.999,
+     "contradiction": 1.0,
+     "quote": "prohibited AI practices and AI literacy obligations entered into application from 2 February 2025",
+     "note": "another passage on the page may disagree: \"The AI Act rules on GPAI became effective in August 2025.\"",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "prohibited AI practices and AI literacy obligations entered into application from 2 February 2025",
+   "quote_url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6.4",
+   "claim": "GPAI governance rules started on 2 August 2025.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.993,
+     "contradiction": 0.993,
+     "quote": "the governance rules and the obligations for GPAI models became applicable on 2 August 2025",
+     "note": "another passage on the page may disagree: \"Rules for systems used in certain high-risk areas \u2014 including biometrics, critical infrastructure, education, employment, migration, asylum and border control \u2014\"",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "the governance rules and the obligations for GPAI models became applicable on 2 August 2025",
+   "quote_url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+   "title": "AI Act | Shaping Europe\u2019s digital future",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "beaad56d6808108286cd86baa800132189bc1e756ae88a52a8fcf43be6e5636d",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 43.8,
+ "usage": {
+  "fetches": 1,
+  "wayback_lookups": 0,
+  "searches": 0,
+  "llm_calls": 2,
+  "nli_checks": 5,
+  "scorer_load_ms": 1610
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 6,
+   "citations": 2
+  },
+  {
+   "t": 15.26,
+   "event": "fetch",
+   "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+   "state": "live",
+   "http_status": 200,
+   "chars": 13605,
+   "error": ""
+  },
+  {
+   "t": 32.11,
+   "event": "paraphrase_judge",
+   "claim": "Lower-risk AI is mostly unregulated beyond existing law and voluntary practices.",
+   "verdict": "NOT_SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 32.11,
+   "event": "verify",
+   "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+   "claim": "Lower-risk AI is mostly unregulated beyond existing law and voluntary practices.",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.0,
+   "con": 0.664
+  },
+  {
+   "t": 34.64,
+   "event": "verify",
+   "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+   "claim": "The Act entered into force on 1 August 2024.",
+   "verdict": "SUPPORTED",
+   "ent": 0.997,
+   "con": 0.999
+  },
+  {
+   "t": 36.3,
+   "event": "verify",
+   "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+   "claim": "The Act applies in phases.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.872,
+   "con": 0.0
+  },
+  {
+   "t": 40.17,
+   "event": "verify",
+   "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+   "claim": "Bans and AI literacy rules started on 2 February 2025.",
+   "verdict": "SUPPORTED",
+   "ent": 0.999,
+   "con": 1.0
+  },
+  {
+   "t": 43.84,
+   "event": "verify",
+   "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+   "claim": "GPAI governance rules started on 2 August 2025.",
+   "verdict": "SUPPORTED",
+   "ent": 0.993,
+   "con": 0.993
+  },
+  {
+   "t": 43.84,
+   "event": "done",
+   "trust_score": 70
+  }
+ ],
+ "score_s": 45.5
+}

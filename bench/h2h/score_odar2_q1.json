@@ -1,0 +1,640 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_94a7f09bebe2",
+ "trust_score": 96,
+ "grade": "citations hold up",
+ "counts": {
+  "SUPPORTED": 13,
+  "PARTIALLY SUPPORTED": 1,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 0,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 0
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "The WHO World Malaria Report 2024 estimated 263 million malaria cases and 597,000 malaria deaths worldwide in 2023.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+     "marker": "[1]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.008,
+     "contradiction": 0.0,
+     "quote": "According to WHO\u2019s latest World malaria report, there were an estimated 263 million cases and 597 000 malaria deaths worldwide in 2023.",
+     "note": "partly supported: Passage confirms same cases and deaths attributed to WHO report.",
+     "judged_by": "nli+llm",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "According to WHO\u2019s latest World malaria report, there were an estimated 263 million cases and 597 000 malaria deaths worldwide in 2023.",
+   "quote_url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "That was about 11 million more cases than in 2022 and nearly the same number of deaths.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.997,
+     "contradiction": 0.0,
+     "quote": "This represents about 11 million more cases in 2023 compared to 2022, and nearly the same number of deaths.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "This represents about 11 million more cases in 2023 compared to 2022, and nearly the same number of deaths.",
+   "quote_url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "About 95% of the deaths occurred in the WHO African Region.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.998,
+     "contradiction": 0.0,
+     "quote": "Approximately 95% of the deaths occurred in the WHO African Region, where many at risk still lack access to the services they need to prevent, detect and treat the disease.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "Approximately 95% of the deaths occurred in the WHO African Region, where many at risk still lack access to the services they need to prevent, detect and treat the disease.",
+   "quote_url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4",
+   "claim": "Since 2000, an estimated 2.2 billion malaria cases and 12.7 million deaths have been averted.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.992,
+     "contradiction": 0.0,
+     "quote": "New data from the WHO reveal that an estimated 2.2 billion cases of malaria and 12.7 million deaths have been averted since 2000, but the disease remains a serious global health threat, particularly in the WHO African Region.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "New data from the WHO reveal that an estimated 2.2 billion cases of malaria and 12.7 million deaths have been averted since 2000, but the disease remains a serious global health threat, particularly in the WHO African Region.",
+   "quote_url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5",
+   "claim": "The report covers efforts in 83 countries.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.996,
+     "contradiction": 0.0,
+     "quote": "This year\u2019s report provides a critical and up-to-date snapshot of efforts to control and eliminate the disease in 83 countries worldwide.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "This year\u2019s report provides a critical and up-to-date snapshot of efforts to control and eliminate the disease in 83 countries worldwide.",
+   "quote_url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6.1",
+   "claim": "It introduced, for the first time, a dedicated chapter on inequity.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.006,
+     "contradiction": 0.0,
+     "quote": "The report also introduces, for the first time, a dedicated chapter emphasizing the need for a more inclusive and effective response, with a focus on reaching the populations most vulnerable to malaria.",
+     "note": "reworded match: Passage describes first dedicated chapter addressing inequity via vulnerable populations.",
+     "judged_by": "nli+llm",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "The report also introduces, for the first time, a dedicated chapter emphasizing the need for a more inclusive and effective response, with a focus on reaching the populations most vulnerable to malaria.",
+   "quote_url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6.2",
+   "claim": "The dedicated chapter focused on populations most vulnerable to malaria.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.986,
+     "contradiction": 0.0,
+     "quote": "The report also introduces, for the first time, a dedicated chapter emphasizing the need for a more inclusive and effective response, with a focus on reaching the populations most vulnerable to malaria.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "The report also introduces, for the first time, a dedicated chapter emphasizing the need for a more inclusive and effective response, with a focus on reaching the populations most vulnerable to malaria.",
+   "quote_url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6.3",
+   "claim": "The populations most vulnerable to malaria included children under 5.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.998,
+     "contradiction": 0.0,
+     "quote": "Groups at high risk of a malaria infection include children under 5, women and girls, Indigenous Peoples, migrants, people with disabilities, and people in remote areas with limited healthcare access.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "Groups at high risk of a malaria infection include children under 5, women and girls, Indigenous Peoples, migrants, people with disabilities, and people in remote areas with limited healthcare access.",
+   "quote_url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6.4",
+   "claim": "The populations most vulnerable to malaria included women and girls.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.998,
+     "contradiction": 0.0,
+     "quote": "Groups at high risk of a malaria infection include children under 5, women and girls, Indigenous Peoples, migrants, people with disabilities, and people in remote areas with limited healthcare access.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "Groups at high risk of a malaria infection include children under 5, women and girls, Indigenous Peoples, migrants, people with disabilities, and people in remote areas with limited healthcare access.",
+   "quote_url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c7",
+   "claim": "The report also highlighted positive trends in the scale-up of prevention tools, including new generation nets, malaria vaccines, and seasonal malaria chemoprevention.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://cdn.who.int/media/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024-global-briefing-kit-eng.pdf?sfvrsn=affbbec7_6&download=true",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.976,
+     "contradiction": 0.0,
+     "quote": "Encouraging trends include the wider rollout of new generation nets, vaccines and seasonal malaria There has also been notable progress",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "Encouraging trends include the wider rollout of new generation nets, vaccines and seasonal malaria There has also been notable progress",
+   "quote_url": "https://cdn.who.int/media/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024-global-briefing-kit-eng.pdf?sfvrsn=affbbec7_6&download=true",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c8.1",
+   "claim": "Regional data showed that increases in cases and deaths from 2021\u20132022 were mainly due to the malaria situation in Papua New Guinea.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://cdn.who.int/media/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024-regional-briefing-kit-eng.pdf?sfvrsn=bceac4ae_9&download=true",
+     "marker": "[4]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.997,
+     "contradiction": 0.984,
+     "quote": "New Guinea accounted for nearly 92% of deaths in the Region The increases in cases and deaths from 2021\u20132022 were mainly due to the malaria situation in Papua New Guinea.",
+     "note": "another passage on the page may disagree: \"and deaths since 2021 Estimated malaria cases in the Region fell by 48.1% between\"",
+     "judged_by": "nli",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "New Guinea accounted for nearly 92% of deaths in the Region The increases in cases and deaths from 2021\u20132022 were mainly due to the malaria situation in Papua New Guinea.",
+   "quote_url": "https://cdn.who.int/media/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024-regional-briefing-kit-eng.pdf?sfvrsn=bceac4ae_9&download=true",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c8.2",
+   "claim": "The malaria situation in Papua New Guinea was linked to low treatment seeking and testing rates.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://cdn.who.int/media/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024-regional-briefing-kit-eng.pdf?sfvrsn=bceac4ae_9&download=true",
+     "marker": "[4]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.998,
+     "contradiction": 0.0,
+     "quote": "due to the malaria situation in Papua New Guinea. in Papua New Guinea have been attributed, among other factors, to low treatment seeking and testing rates, stock-outs",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "due to the malaria situation in Papua New Guinea. in Papua New Guinea have been attributed, among other factors, to low treatment seeking and testing rates, stock-outs",
+   "quote_url": "https://cdn.who.int/media/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024-regional-briefing-kit-eng.pdf?sfvrsn=bceac4ae_9&download=true",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c8.3",
+   "claim": "The malaria situation in Papua New Guinea was linked to stock-outs of commodities.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://cdn.who.int/media/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024-regional-briefing-kit-eng.pdf?sfvrsn=bceac4ae_9&download=true",
+     "marker": "[4]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "in Papua New Guinea have been attributed, among other factors, to low treatment seeking and testing rates, stock-outs of commodities",
+     "note": "reworded match: Passage attributes malaria situation partly to stock-outs.",
+     "judged_by": "nli+llm",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "in Papua New Guinea have been attributed, among other factors, to low treatment seeking and testing rates, stock-outs of commodities",
+   "quote_url": "https://cdn.who.int/media/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024-regional-briefing-kit-eng.pdf?sfvrsn=bceac4ae_9&download=true",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c8.4",
+   "claim": "The malaria situation in Papua New Guinea was linked to human resource and management constraints.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://cdn.who.int/media/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024-regional-briefing-kit-eng.pdf?sfvrsn=bceac4ae_9&download=true",
+     "marker": "[4]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.988,
+     "contradiction": 0.0,
+     "quote": "due to the malaria situation in Papua New Guinea. in Papua New Guinea have been attributed, among other factors, to low treatment seeking and testing rates, stock-outs",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "organization",
+     "source_year": null
+    }
+   ],
+   "quote": "due to the malaria situation in Papua New Guinea. in Papua New Guinea have been attributed, among other factors, to low treatment seeking and testing rates, stock-outs",
+   "quote_url": "https://cdn.who.int/media/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024-regional-briefing-kit-eng.pdf?sfvrsn=bceac4ae_9&download=true",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "title": "World malaria report 2024",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "2f9486af14504195e80d0ac8f93d5788202b6b610d73ea81a56c7aaef0f3240f",
+   "quarantined": false
+  },
+  {
+   "url": "https://cdn.who.int/media/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024-global-briefing-kit-eng.pdf?sfvrsn=affbbec7_6&download=true",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://cdn.who.int/media/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024-global-briefing-kit-eng.pdf?sfvrsn=affbbec7_6&download=true",
+   "title": "",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "e043c419f16ff7dd400782b16f957905cea904a5d129438fed1e85b3849ca0c9",
+   "quarantined": false
+  },
+  {
+   "url": "https://cdn.who.int/media/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024-regional-briefing-kit-eng.pdf?sfvrsn=bceac4ae_9&download=true",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://cdn.who.int/media/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024-regional-briefing-kit-eng.pdf?sfvrsn=bceac4ae_9&download=true",
+   "title": "",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "3b50574187c73c490eeaef25231e9157adc4645170be8b1b5da325d9005e11a4",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 123.7,
+ "usage": {
+  "fetches": 3,
+  "wayback_lookups": 0,
+  "searches": 0,
+  "llm_calls": 5,
+  "nli_checks": 14,
+  "scorer_load_ms": 24932
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 8,
+   "citations": 8
+  },
+  {
+   "t": 14.23,
+   "event": "fetch",
+   "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "state": "live",
+   "http_status": 200,
+   "chars": 1506,
+   "error": ""
+  },
+  {
+   "t": 26.15,
+   "event": "fetch",
+   "url": "https://cdn.who.int/media/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024-regional-briefing-kit-eng.pdf?sfvrsn=bceac4ae_9&download=true",
+   "state": "live",
+   "http_status": 200,
+   "chars": 32030,
+   "error": ""
+  },
+  {
+   "t": 41.76,
+   "event": "fetch",
+   "url": "https://cdn.who.int/media/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024-global-briefing-kit-eng.pdf?sfvrsn=affbbec7_6&download=true",
+   "state": "live",
+   "http_status": 200,
+   "chars": 49831,
+   "error": ""
+  },
+  {
+   "t": 57.26,
+   "event": "paraphrase_judge",
+   "claim": "The WHO World Malaria Report 2024 estimated 263 million malaria cases and 597,000 malaria deaths worldwide in 2023.",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 57.26,
+   "event": "verify",
+   "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "claim": "The WHO World Malaria Report 2024 estimated 263 million malaria cases and 597,000 malaria deaths worldwide in 2023.",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.008,
+   "con": 0.0
+  },
+  {
+   "t": 64.36,
+   "event": "verify",
+   "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "claim": "That was about 11 million more cases than in 2022 and nearly the same number of deaths.",
+   "verdict": "SUPPORTED",
+   "ent": 0.997,
+   "con": 0.0
+  },
+  {
+   "t": 73.16,
+   "event": "verify",
+   "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "claim": "About 95% of the deaths occurred in the WHO African Region.",
+   "verdict": "SUPPORTED",
+   "ent": 0.998,
+   "con": 0.0
+  },
+  {
+   "t": 79.27,
+   "event": "verify",
+   "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "claim": "Since 2000, an estimated 2.2 billion malaria cases and 12.7 million deaths have been averted.",
+   "verdict": "SUPPORTED",
+   "ent": 0.992,
+   "con": 0.0
+  },
+  {
+   "t": 85.43,
+   "event": "verify",
+   "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "claim": "The report covers efforts in 83 countries.",
+   "verdict": "SUPPORTED",
+   "ent": 0.996,
+   "con": 0.0
+  },
+  {
+   "t": 96.57,
+   "event": "paraphrase_judge",
+   "claim": "It introduced, for the first time, a dedicated chapter on inequity.",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 96.57,
+   "event": "verify",
+   "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "claim": "It introduced, for the first time, a dedicated chapter on inequity.",
+   "verdict": "SUPPORTED",
+   "ent": 0.006,
+   "con": 0.0
+  },
+  {
+   "t": 99.5,
+   "event": "verify",
+   "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "claim": "The dedicated chapter focused on populations most vulnerable to malaria.",
+   "verdict": "SUPPORTED",
+   "ent": 0.986,
+   "con": 0.0
+  },
+  {
+   "t": 102.92,
+   "event": "verify",
+   "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "claim": "The populations most vulnerable to malaria included children under 5.",
+   "verdict": "SUPPORTED",
+   "ent": 0.998,
+   "con": 0.0
+  },
+  {
+   "t": 105.79,
+   "event": "verify",
+   "url": "https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024",
+   "claim": "The populations most vulnerable to malaria included women and girls.",
+   "verdict": "SUPPORTED",
+   "ent": 0.998,
+   "con": 0.0
+  },
+  {
+   "t": 107.51,
+   "event": "verify",
+   "url": "https://cdn.who.int/media/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024-global-briefing-kit-eng.pdf?sfvrsn=affbbec7_6&download=true",
+   "claim": "The report also highlighted positive trends in the scale-up of prevention tools, including new generation nets, malaria ",
+   "verdict": "SUPPORTED",
+   "ent": 0.976,
+   "con": 0.0
+  },
+  {
+   "t": 109.72,
+   "event": "verify",
+   "url": "https://cdn.who.int/media/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024-regional-briefing-kit-eng.pdf?sfvrsn=bceac4ae_9&download=true",
+   "claim": "Regional data showed that increases in cases and deaths from 2021\u20132022 were mainly due to the malaria situation in Papua",
+   "verdict": "SUPPORTED",
+   "ent": 0.997,
+   "con": 0.984
+  },
+  {
+   "t": 111.68,
+   "event": "verify",
+   "url": "https://cdn.who.int/media/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024-regional-briefing-kit-eng.pdf?sfvrsn=bceac4ae_9&download=true",
+   "claim": "The malaria situation in Papua New Guinea was linked to low treatment seeking and testing rates.",
+   "verdict": "SUPPORTED",
+   "ent": 0.998,
+   "con": 0.0
+  },
+  {
+   "t": 119.85,
+   "event": "paraphrase_judge",
+   "claim": "The malaria situation in Papua New Guinea was linked to stock-outs of commodities.",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 119.85,
+   "event": "verify",
+   "url": "https://cdn.who.int/media/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024-regional-briefing-kit-eng.pdf?sfvrsn=bceac4ae_9&download=true",
+   "claim": "The malaria situation in Papua New Guinea was linked to stock-outs of commodities.",
+   "verdict": "SUPPORTED",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 123.72,
+   "event": "verify",
+   "url": "https://cdn.who.int/media/docs/default-source/malaria/world-malaria-reports/world-malaria-report-2024-regional-briefing-kit-eng.pdf?sfvrsn=bceac4ae_9&download=true",
+   "claim": "The malaria situation in Papua New Guinea was linked to human resource and management constraints.",
+   "verdict": "SUPPORTED",
+   "ent": 0.988,
+   "con": 0.0
+  },
+  {
+   "t": 123.72,
+   "event": "done",
+   "trust_score": 96
+  }
+ ],
+ "score_s": 151.5
+}

@@ -1,0 +1,441 @@
+{
+  "check_id": "chk_9c39a0211eb5",
+  "trust_score": 8,
+  "grade": "unreliable citations",
+  "counts": {
+    "SUPPORTED": 0,
+    "PARTIALLY SUPPORTED": 1,
+    "CONTRADICTED": 0,
+    "WRONG SOURCE": 3,
+    "UNVERIFIABLE": 0,
+    "DEAD LINK": 2,
+    "NO CITATION": 2
+  },
+  "claims": [
+    {
+      "claim_id": "c1",
+      "claim": "For backend services, Rust and Go differ primarily in memory management, concurrency, and performance.",
+      "verdict": "NO CITATION",
+      "citations": [],
+      "quote": "",
+      "quote_url": "",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": ""
+    },
+    {
+      "claim_id": "c2",
+      "claim": "Rust guarantees memory safety at compile time through ownership and borrowing, eliminating garbage collection (GC) pauses.",
+      "verdict": "PARTIALLY SUPPORTED",
+      "citations": [
+        {
+          "url": "https://doc.rust-lang.org/book/ch04-00-understanding-ownership.html",
+          "marker": "[1]",
+          "verdict": "PARTIALLY SUPPORTED",
+          "link_state": "live",
+          "entailment": 0.001,
+          "contradiction": 0.0,
+          "quote": "It enables Rust to make memory safety guarantees without needing a garbage collector, so it’s important to understand how ownership works.",
+          "note": "partly supported: Supports memory safety without GC via ownership, but no compile-time detail.",
+          "judged_by": "nli+llm"
+        }
+      ],
+      "quote": "It enables Rust to make memory safety guarantees without needing a garbage collector, so it’s important to understand how ownership works.",
+      "quote_url": "https://doc.rust-lang.org/book/ch04-00-understanding-ownership.html",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": ""
+    },
+    {
+      "claim_id": "c3",
+      "claim": "Go uses a runtime GC, which simplifies development but adds latency and memory overhead.",
+      "verdict": "WRONG SOURCE",
+      "citations": [
+        {
+          "url": "https://go.dev/doc/faq#garbage_collection",
+          "marker": "[2]",
+          "verdict": "WRONG SOURCE",
+          "link_state": "live",
+          "entailment": 0.0,
+          "contradiction": 0.996,
+          "quote": "",
+          "note": "the page is real but does not say this",
+          "judged_by": "nli+llm"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://go.dev/doc/faq#garbage_collection",
+      "replacement": null,
+      "replacement_searched": true,
+      "note": ""
+    },
+    {
+      "claim_id": "c4",
+      "claim": "Concurrency-wise, Go offers lightweight goroutines and channels natively, making it straightforward to build high-concurrency network services.",
+      "verdict": "WRONG SOURCE",
+      "citations": [
+        {
+          "url": "https://go.dev/doc/effective_go#concurrency",
+          "marker": "[3]",
+          "verdict": "WRONG SOURCE",
+          "link_state": "live",
+          "entailment": 0.0,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "the page is real but does not say this",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://go.dev/doc/effective_go#concurrency",
+      "replacement": null,
+      "replacement_searched": true,
+      "note": ""
+    },
+    {
+      "claim_id": "c5",
+      "claim": "Rust supports concurrency via OS threads and async/await (e.g., Tokio), giving finer control but requiring more design effort.",
+      "verdict": "WRONG SOURCE",
+      "citations": [
+        {
+          "url": "https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html",
+          "marker": "[4]",
+          "verdict": "WRONG SOURCE",
+          "link_state": "live",
+          "entailment": 0.001,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "the page is real but does not say this",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html",
+      "replacement": null,
+      "replacement_searched": true,
+      "note": ""
+    },
+    {
+      "claim_id": "c6.1",
+      "claim": "Rust generally outperforms Go in CPU-bound and low-latency workloads due to zero-cost abstractions and no runtime.",
+      "verdict": "DEAD LINK",
+      "citations": [
+        {
+          "url": "https://www.rust-lang.org/performance",
+          "marker": "[5]",
+          "verdict": "DEAD LINK",
+          "link_state": "not_found",
+          "entailment": 0.0,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "page not found (404); archive check unavailable",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://www.rust-lang.org/performance",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": "atomic part of a compound sentence"
+    },
+    {
+      "claim_id": "c6.2",
+      "claim": "Go emphasizes fast compilation and operational simplicity.",
+      "verdict": "DEAD LINK",
+      "citations": [
+        {
+          "url": "https://www.rust-lang.org/performance",
+          "marker": "[5]",
+          "verdict": "DEAD LINK",
+          "link_state": "not_found",
+          "entailment": 0.0,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "page not found (404); archive check unavailable",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://www.rust-lang.org/performance",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": "atomic part of a compound sentence"
+    },
+    {
+      "claim_id": "c7",
+      "claim": "The ecosystems also differ: Go’s standard library excels at HTTP and microservices, while Rust’s crate ecosystem is rich but demands a steeper learning curve.",
+      "verdict": "NO CITATION",
+      "citations": [],
+      "quote": "",
+      "quote_url": "",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": ""
+    }
+  ],
+  "links": [
+    {
+      "url": "https://doc.rust-lang.org/book/ch04-00-understanding-ownership.html",
+      "state": "live",
+      "http_status": 200,
+      "error": "",
+      "resolved_url": "https://doc.rust-lang.org/book/ch04-00-understanding-ownership.html",
+      "title": "Understanding Ownership - The Rust Programming Language",
+      "archive_url": "",
+      "archive_timestamp": "",
+      "text_source": "live",
+      "archive_check": "",
+      "content_hash": "91988c9f2dc9a70349260f6abfc1a396b9a5c41178fa7cc1204f3434c2ac1c74",
+      "quarantined": false
+    },
+    {
+      "url": "https://go.dev/doc/faq#garbage_collection",
+      "state": "live",
+      "http_status": 200,
+      "error": "",
+      "resolved_url": "https://go.dev/doc/faq#garbage_collection",
+      "title": "Frequently Asked Questions (FAQ) - The Go Programming Language",
+      "archive_url": "",
+      "archive_timestamp": "",
+      "text_source": "live",
+      "archive_check": "",
+      "content_hash": "b71e61251bea07609b60325adf050cdee315aa4753af41e75a29f97b7c521b0b",
+      "quarantined": false
+    },
+    {
+      "url": "https://go.dev/doc/effective_go#concurrency",
+      "state": "live",
+      "http_status": 200,
+      "error": "",
+      "resolved_url": "https://go.dev/doc/effective_go#concurrency",
+      "title": "Effective Go - The Go Programming Language",
+      "archive_url": "",
+      "archive_timestamp": "",
+      "text_source": "live",
+      "archive_check": "",
+      "content_hash": "d492f613a8e49c6ee671a5efb1603a6a37adabd096ceb3dcb617a7990c3e355c",
+      "quarantined": false
+    },
+    {
+      "url": "https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html",
+      "state": "live",
+      "http_status": 200,
+      "error": "",
+      "resolved_url": "https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html",
+      "title": "Getting Started - Asynchronous Programming in Rust",
+      "archive_url": "",
+      "archive_timestamp": "",
+      "text_source": "live",
+      "archive_check": "",
+      "content_hash": "16e69d5b163e4afbcf7de22145252cb653157f4c7bed61fc7107135879bab09f",
+      "quarantined": false
+    },
+    {
+      "url": "https://www.rust-lang.org/performance",
+      "state": "not_found",
+      "http_status": 404,
+      "error": "HTTP 404",
+      "resolved_url": "https://rust-lang.org/performance",
+      "title": "",
+      "archive_url": "",
+      "archive_timestamp": "",
+      "text_source": "",
+      "archive_check": "unavailable",
+      "content_hash": "",
+      "quarantined": false
+    }
+  ],
+  "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+  "elapsed_s": 94.4,
+  "usage": {
+    "fetches": 10,
+    "wayback_lookups": 2,
+    "searches": 3,
+    "llm_calls": 3,
+    "nli_checks": 12,
+    "scorer_load_ms": 12577
+  },
+  "audit_trail": [
+    {
+      "t": 0.0,
+      "event": "parse",
+      "claims": 7,
+      "citations": 5
+    },
+    {
+      "t": 0.7,
+      "event": "fetch",
+      "url": "https://doc.rust-lang.org/book/ch04-00-understanding-ownership.html",
+      "state": "live",
+      "http_status": 200,
+      "chars": 372,
+      "error": ""
+    },
+    {
+      "t": 0.79,
+      "event": "fetch",
+      "url": "https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html",
+      "state": "live",
+      "http_status": 200,
+      "chars": 1040,
+      "error": ""
+    },
+    {
+      "t": 0.88,
+      "event": "fetch",
+      "url": "https://go.dev/doc/faq#garbage_collection",
+      "state": "live",
+      "http_status": 200,
+      "chars": 86849,
+      "error": ""
+    },
+    {
+      "t": 0.96,
+      "event": "fetch",
+      "url": "https://go.dev/doc/effective_go#concurrency",
+      "state": "live",
+      "http_status": 200,
+      "chars": 95813,
+      "error": ""
+    },
+    {
+      "t": 1.12,
+      "event": "fetch",
+      "url": "https://www.rust-lang.org/performance",
+      "state": "not_found",
+      "http_status": 404,
+      "chars": 0,
+      "error": "HTTP 404"
+    },
+    {
+      "t": 13.36,
+      "event": "wayback",
+      "url": "https://www.rust-lang.org/performance",
+      "error": "ReadTimeout: HTTPSConnectionPool(host='web.archive.org', port=443): Read timed out. (read timeout=12.0)"
+    },
+    {
+      "t": 14.7,
+      "event": "paraphrase_judge",
+      "claim": "Rust guarantees memory safety at compile time through ownership and borrowing, eliminating garbage collection (GC) pause",
+      "verdict": "PARTIAL",
+      "grounded": true
+    },
+    {
+      "t": 14.7,
+      "event": "verify",
+      "url": "https://doc.rust-lang.org/book/ch04-00-understanding-ownership.html",
+      "claim": "Rust guarantees memory safety at compile time through ownership and borrowing, eliminating garbage collection (GC) pause",
+      "verdict": "PARTIALLY SUPPORTED",
+      "ent": 0.001,
+      "con": 0.0
+    },
+    {
+      "t": 18.21,
+      "event": "paraphrase_judge",
+      "claim": "Go uses a runtime GC, which simplifies development but adds latency and memory overhead.",
+      "verdict": "NOT_SUPPORTED",
+      "grounded": true
+    },
+    {
+      "t": 18.21,
+      "event": "verify",
+      "url": "https://go.dev/doc/faq#garbage_collection",
+      "claim": "Go uses a runtime GC, which simplifies development but adds latency and memory overhead.",
+      "verdict": "WRONG SOURCE",
+      "ent": 0.0,
+      "con": 0.996
+    },
+    {
+      "t": 26.18,
+      "event": "verify",
+      "url": "https://go.dev/doc/effective_go#concurrency",
+      "claim": "Concurrency-wise, Go offers lightweight goroutines and channels natively, making it straightforward to build high-concur",
+      "verdict": "WRONG SOURCE",
+      "ent": 0.0,
+      "con": 0.0
+    },
+    {
+      "t": 32.04,
+      "event": "verify",
+      "url": "https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html",
+      "claim": "Rust supports concurrency via OS threads and async/await (e.g., Tokio), giving finer control but requiring more design e",
+      "verdict": "WRONG SOURCE",
+      "ent": 0.001,
+      "con": 0.0
+    },
+    {
+      "t": 41.71,
+      "event": "search",
+      "query": "Go uses a runtime GC, which simplifies development but adds latency and memory overhead.",
+      "hits": 2
+    },
+    {
+      "t": 41.81,
+      "event": "fetch",
+      "url": "https://go.dev/blog/go119runtime",
+      "state": "live",
+      "http_status": 200,
+      "chars": 6166,
+      "error": ""
+    },
+    {
+      "t": 46.08,
+      "event": "fetch",
+      "url": "http://zorinto.com/go-1-26-runtime-performance-benchmarking-green-tea/",
+      "state": "not_found",
+      "http_status": 404,
+      "chars": 0,
+      "error": "HTTP 404"
+    },
+    {
+      "t": 53.6,
+      "event": "wayback",
+      "url": "http://zorinto.com/go-1-26-runtime-performance-benchmarking-green-tea/",
+      "error": "RuntimeError: wayback CDX HTTP 503"
+    },
+    {
+      "t": 69.32,
+      "event": "search",
+      "query": "Concurrency-wise, Go offers lightweight goroutines and channels natively, making it straightforward to build high-concurrency network services.",
+      "hits": 0
+    },
+    {
+      "t": 83.58,
+      "event": "search",
+      "query": "Rust supports concurrency via OS threads and async/await (e.g., Tokio), giving finer control but requiring more design effort.",
+      "hits": 6
+    },
+    {
+      "t": 84.08,
+      "event": "fetch",
+      "url": "https://tutorials.dodatech.com/rust-systems/rust-concurrency-async/",
+      "state": "live",
+      "http_status": 200,
+      "chars": 8924,
+      "error": ""
+    },
+    {
+      "t": 88.07,
+      "event": "fetch",
+      "url": "https://sharpskill.dev/en/blog/rust/rust-async-await-tokio-futures-concurrency",
+      "state": "live",
+      "http_status": 200,
+      "chars": 12548,
+      "error": ""
+    },
+    {
+      "t": 91.43,
+      "event": "fetch",
+      "url": "https://doc.rust-lang.org/book/ch17-00-async-await.html",
+      "state": "live",
+      "http_status": 200,
+      "chars": 8042,
+      "error": ""
+    },
+    {
+      "t": 94.37,
+      "event": "done",
+      "trust_score": 8
+    }
+  ]
+}

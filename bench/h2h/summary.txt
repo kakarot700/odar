@@ -1,0 +1,4 @@
+odar [86, 88, 100, 100, 79, 69, 88, 50, 96, 61] avgtrust 82 cited 91 sup 56 part 18 bad 7 contra 1 uncited 3 of 94 sup% 62 sup+part% 81 bad% 8 cov% 97
+duckgpt [0, 50, 100, 100, 0, 75, 50, None, 70, 50] avgtrust 55 cited 18 sup 7 part 4 bad 4 contra 1 uncited 33 of 51 sup% 39 sup+part% 61 bad% 22 cov% 35
+duckclaude [80, 77, 80, 12, 44, 38, 67, 83, 62, 77] avgtrust 62 cited 81 sup 44 part 10 bad 25 contra 4 uncited 66 of 147 sup% 54 sup+part% 67 bad% 31 cov% 55
+duckstrong [30, 0, 100, 50, 88, 50, 100, 0, 62, 100] avg 58.0 n 10 claims 72 cited% 40 (29/72) sup% 34 sup+part% 79 bad% 17 contra 0 {'SUPPORTED': 10, 'PARTIALLY SUPPORTED': 13, 'CONTRADICTED': 0, 'WRONG SOURCE': 5, 'UNVERIFIABLE': 1, 'DEAD LINK': 0, 'NO CITATION': 43}

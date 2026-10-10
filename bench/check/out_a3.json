@@ -1,0 +1,406 @@
+{
+  "check_id": "chk_616116c1b61a",
+  "trust_score": 0,
+  "grade": "unreliable citations",
+  "counts": {
+    "SUPPORTED": 0,
+    "PARTIALLY SUPPORTED": 0,
+    "CONTRADICTED": 0,
+    "WRONG SOURCE": 0,
+    "UNVERIFIABLE": 0,
+    "DEAD LINK": 7,
+    "NO CITATION": 7
+  },
+  "claims": [
+    {
+      "claim_id": "c1",
+      "claim": "mRNA vaccines like Pfizer-BioNTech and Moderna deliver synthetic messenger RNA that encodes a harmless piece of the target virus (e.g., the spike protein of SARS-CoV-2).",
+      "verdict": "NO CITATION",
+      "citations": [],
+      "quote": "",
+      "quote_url": "",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": ""
+    },
+    {
+      "claim_id": "c2",
+      "claim": "Once injected into muscle cells, the mRNA is translated into the spike protein by the cell's ribosomes.",
+      "verdict": "DEAD LINK",
+      "citations": [
+        {
+          "url": "https://www.cdc.gov/coronavirus/2019-ncov/vaccines/how-they-work.html",
+          "marker": "[1]",
+          "verdict": "DEAD LINK",
+          "link_state": "not_found",
+          "entailment": 0.0,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "page not found (404); archive check unavailable",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://www.cdc.gov/coronavirus/2019-ncov/vaccines/how-they-work.html",
+      "replacement": {
+        "url": "https://about.ebsco.com/blogs/health-notes/mrna-vaccines-covid-19-how-do-they-work",
+        "title": "mRNA Vaccines for COVID-19 – How Do They Work? | EBSCO",
+        "quote": "Once the lipids are associated with cells in the muscle, the mRNA is released into the cytoplasm of the cell. In the cytoplasm, the vaccine mRNA does what cellular mRNA does: gets translated by a ribosome into protein – in this case, the SARS-CoV-2 spike protein.",
+        "entailment": 0.969
+      },
+      "replacement_searched": true,
+      "note": ""
+    },
+    {
+      "claim_id": "c3",
+      "claim": "The protein is then displayed on the cell surface, which triggers the immune system to produce neutralizing antibodies and memory T/B cells.",
+      "verdict": "NO CITATION",
+      "citations": [],
+      "quote": "",
+      "quote_url": "",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": ""
+    },
+    {
+      "claim_id": "c4",
+      "claim": "The mRNA itself is rapidly degraded shortly after translation, so it does not enter the nucleus or alter DNA.",
+      "verdict": "DEAD LINK",
+      "citations": [
+        {
+          "url": "https://www.cdc.gov/coronavirus/2019-ncov/vaccines/how-they-work.html",
+          "marker": "[1]",
+          "verdict": "DEAD LINK",
+          "link_state": "not_found",
+          "entailment": 0.0,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "page not found (404); archive check unavailable",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://www.cdc.gov/coronavirus/2019-ncov/vaccines/how-they-work.html",
+      "replacement": null,
+      "replacement_searched": true,
+      "note": ""
+    },
+    {
+      "claim_id": "c5",
+      "claim": "Later, if the person encounters the actual virus, their immune system recognizes the spike protein and mounts a rapid defense.",
+      "verdict": "NO CITATION",
+      "citations": [],
+      "quote": "",
+      "quote_url": "",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": ""
+    },
+    {
+      "claim_id": "c6",
+      "claim": "Regarding immunity duration, for COVID-19, data show that while neutralizing antibody levels decline over several months, protective memory cells (B and T cells) remain.",
+      "verdict": "NO CITATION",
+      "citations": [],
+      "quote": "",
+      "quote_url": "",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": ""
+    },
+    {
+      "claim_id": "c7.1",
+      "claim": "Short-term protection against infection wanes noticeably by 4–6 months after the primary series.",
+      "verdict": "DEAD LINK",
+      "citations": [
+        {
+          "url": "https://www.who.int/news-room/feature-stories/detail/coronavirus-disease-covid-19-vaccines-safety-and-immunity",
+          "marker": "[2]",
+          "verdict": "DEAD LINK",
+          "link_state": "not_found",
+          "entailment": 0.0,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "page not found (404) and never archived: likely fabricated URL",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://www.who.int/news-room/feature-stories/detail/coronavirus-disease-covid-19-vaccines-safety-and-immunity",
+      "replacement": null,
+      "replacement_searched": true,
+      "note": "atomic part of a compound sentence"
+    },
+    {
+      "claim_id": "c7.2",
+      "claim": "Protection against severe disease and hospitalization remains substantial for at least 6 months.",
+      "verdict": "DEAD LINK",
+      "citations": [
+        {
+          "url": "https://www.who.int/news-room/feature-stories/detail/coronavirus-disease-covid-19-vaccines-safety-and-immunity",
+          "marker": "[2]",
+          "verdict": "DEAD LINK",
+          "link_state": "not_found",
+          "entailment": 0.0,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "page not found (404) and never archived: likely fabricated URL",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://www.who.int/news-room/feature-stories/detail/coronavirus-disease-covid-19-vaccines-safety-and-immunity",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": "atomic part of a compound sentence"
+    },
+    {
+      "claim_id": "c7.3",
+      "claim": "Protection against severe disease and hospitalization is greatly extended by booster doses.",
+      "verdict": "DEAD LINK",
+      "citations": [
+        {
+          "url": "https://www.who.int/news-room/feature-stories/detail/coronavirus-disease-covid-19-vaccines-safety-and-immunity",
+          "marker": "[2]",
+          "verdict": "DEAD LINK",
+          "link_state": "not_found",
+          "entailment": 0.0,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "page not found (404) and never archived: likely fabricated URL",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://www.who.int/news-room/feature-stories/detail/coronavirus-disease-covid-19-vaccines-safety-and-immunity",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": "atomic part of a compound sentence"
+    },
+    {
+      "claim_id": "c8.1",
+      "claim": "Longer-term studies indicate that immune memory may persist for at least a year following infection or vaccination.",
+      "verdict": "DEAD LINK",
+      "citations": [
+        {
+          "url": "https://www.nature.com/articles/s41586-021-04030-5",
+          "marker": "[3]",
+          "verdict": "DEAD LINK",
+          "link_state": "not_found",
+          "entailment": 0.0,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "page not found (404); archive check unavailable",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://www.nature.com/articles/s41586-021-04030-5",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": "atomic part of a compound sentence"
+    },
+    {
+      "claim_id": "c8.2",
+      "claim": "New variants can evade some immune responses.",
+      "verdict": "DEAD LINK",
+      "citations": [
+        {
+          "url": "https://www.nature.com/articles/s41586-021-04030-5",
+          "marker": "[3]",
+          "verdict": "DEAD LINK",
+          "link_state": "not_found",
+          "entailment": 0.0,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "page not found (404); archive check unavailable",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://www.nature.com/articles/s41586-021-04030-5",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": "atomic part of a compound sentence"
+    },
+    {
+      "claim_id": "c9.1",
+      "claim": "For other mRNA vaccines in development, similar principles apply.",
+      "verdict": "NO CITATION",
+      "citations": [],
+      "quote": "",
+      "quote_url": "",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": "atomic part of a compound sentence"
+    },
+    {
+      "claim_id": "c9.2",
+      "claim": "The durability of immunity will likely depend on the antigen.",
+      "verdict": "NO CITATION",
+      "citations": [],
+      "quote": "",
+      "quote_url": "",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": "atomic part of a compound sentence"
+    },
+    {
+      "claim_id": "c9.3",
+      "claim": "The durability of immunity will likely depend on the speed of viral mutation.",
+      "verdict": "NO CITATION",
+      "citations": [],
+      "quote": "",
+      "quote_url": "",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": "atomic part of a compound sentence"
+    }
+  ],
+  "links": [
+    {
+      "url": "https://www.cdc.gov/coronavirus/2019-ncov/vaccines/how-they-work.html",
+      "state": "not_found",
+      "http_status": 404,
+      "error": "HTTP 404",
+      "resolved_url": "https://www.cdc.gov/coronavirus/2019-ncov/vaccines/how-they-work.html",
+      "title": "",
+      "archive_url": "",
+      "archive_timestamp": "",
+      "text_source": "",
+      "archive_check": "unavailable",
+      "content_hash": "",
+      "quarantined": false
+    },
+    {
+      "url": "https://www.who.int/news-room/feature-stories/detail/coronavirus-disease-covid-19-vaccines-safety-and-immunity",
+      "state": "not_found",
+      "http_status": 404,
+      "error": "HTTP 404",
+      "resolved_url": "https://www.who.int/news-room/feature-stories/detail/coronavirus-disease-covid-19-vaccines-safety-and-immunity",
+      "title": "",
+      "archive_url": "",
+      "archive_timestamp": "",
+      "text_source": "",
+      "archive_check": "never_archived",
+      "content_hash": "",
+      "quarantined": false
+    },
+    {
+      "url": "https://www.nature.com/articles/s41586-021-04030-5",
+      "state": "not_found",
+      "http_status": 404,
+      "error": "HTTP 404",
+      "resolved_url": "https://www.nature.com/articles/s41586-021-04030-5",
+      "title": "",
+      "archive_url": "",
+      "archive_timestamp": "",
+      "text_source": "",
+      "archive_check": "unavailable",
+      "content_hash": "",
+      "quarantined": false
+    }
+  ],
+  "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+  "elapsed_s": 77.8,
+  "usage": {
+    "fetches": 4,
+    "wayback_lookups": 3,
+    "searches": 3,
+    "llm_calls": 3,
+    "nli_checks": 1,
+    "scorer_load_ms": 16451
+  },
+  "audit_trail": [
+    {
+      "t": 0.0,
+      "event": "parse",
+      "claims": 9,
+      "citations": 4
+    },
+    {
+      "t": 22.2,
+      "event": "fetch",
+      "url": "https://www.who.int/news-room/feature-stories/detail/coronavirus-disease-covid-19-vaccines-safety-and-immunity",
+      "state": "not_found",
+      "http_status": 404,
+      "chars": 0,
+      "error": "HTTP 404"
+    },
+    {
+      "t": 22.21,
+      "event": "fetch",
+      "url": "https://www.cdc.gov/coronavirus/2019-ncov/vaccines/how-they-work.html",
+      "state": "not_found",
+      "http_status": 404,
+      "chars": 0,
+      "error": "HTTP 404"
+    },
+    {
+      "t": 23.51,
+      "event": "fetch",
+      "url": "https://www.nature.com/articles/s41586-021-04030-5",
+      "state": "not_found",
+      "http_status": 404,
+      "chars": 0,
+      "error": "HTTP 404"
+    },
+    {
+      "t": 27.84,
+      "event": "wayback",
+      "url": "https://www.cdc.gov/coronavirus/2019-ncov/vaccines/how-they-work.html",
+      "error": "RuntimeError: wayback CDX HTTP 503"
+    },
+    {
+      "t": 31.63,
+      "event": "wayback",
+      "url": "https://www.nature.com/articles/s41586-021-04030-5",
+      "error": "RuntimeError: wayback CDX HTTP 503"
+    },
+    {
+      "t": 33.86,
+      "event": "wayback",
+      "url": "https://www.who.int/news-room/feature-stories/detail/coronavirus-disease-covid-19-vaccines-safety-and-immunity",
+      "archived": false,
+      "snapshot": ""
+    },
+    {
+      "t": 40.03,
+      "event": "search",
+      "query": "Once injected into muscle cells, the mRNA is translated into the spike protein by the cell's ribosomes.",
+      "hits": 6
+    },
+    {
+      "t": 40.17,
+      "event": "fetch",
+      "url": "https://about.ebsco.com/blogs/health-notes/mrna-vaccines-covid-19-how-do-they-work",
+      "state": "live",
+      "http_status": 200,
+      "chars": 6217,
+      "error": ""
+    },
+    {
+      "t": 46.6,
+      "event": "replacement",
+      "claim_id": "c2",
+      "url": "https://about.ebsco.com/blogs/health-notes/mrna-vaccines-covid-19-how-do-they-work",
+      "ent": 0.969
+    },
+    {
+      "t": 61.95,
+      "event": "search",
+      "query": "The mRNA itself is rapidly degraded shortly after translation, so it does not enter the nucleus or alter DNA.",
+      "hits": 0
+    },
+    {
+      "t": 77.84,
+      "event": "search",
+      "query": "Short-term protection against infection wanes noticeably by 4–6 months after the primary series.",
+      "hits": 0
+    },
+    {
+      "t": 77.84,
+      "event": "done",
+      "trust_score": 0
+    }
+  ]
+}

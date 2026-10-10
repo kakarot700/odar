@@ -1,0 +1,720 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_4478fed99482",
+ "trust_score": 62,
+ "grade": "mixed: check flagged claims",
+ "counts": {
+  "SUPPORTED": 5,
+  "PARTIALLY SUPPORTED": 0,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 3,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 21
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "Main Provisions of the EU AI Act",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "The EU AI Act is the world's first comprehensive regulatory framework for artificial intelligence, designed to ensure trustworthy AI development while protecting fundamental rights.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "It takes a risk-based approach, with different obligations depending on the level of risk posed by AI systems.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4",
+   "claim": "Risk Level \u2014 What It Covers \u2014 Requirements",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5.1",
+   "claim": "AI that manipulates behavior banned with limited exemptions.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5.2",
+   "claim": "Real-time facial recognition in public spaces banned with limited exemptions.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5.3",
+   "claim": "Social scoring systems banned with limited exemptions.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5.4",
+   "claim": "Systems generating non-consensual sexual content or child exploitation material banned with limited exemptions.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6.1",
+   "claim": "AI is used in hiring, education, critical infrastructure, biometrics, border control, and other sensitive areas.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6.2",
+   "claim": "High-risk AI involves conformity assessments, transparency, quality assurance, human oversight, and post-market surveillance.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c7",
+   "claim": "Limited-Risk \u2014 Chatbots and other AI with some risks to users \u2014 Transparency obligations only (disclosure that it's AI)",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c8",
+   "claim": "Minimal-Risk \u2014 Most AI systems with negligible risk \u2014 No specific regulations",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c9",
+   "claim": "The Act includes special rules for foundation models and large generative AI systems like ChatGPT.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c10",
+   "claim": "Open-source models have reduced requirements, while closed-source models must provide transparency documentation.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c11",
+   "claim": "High-impact models (those trained with exceptional computational power) face additional evaluation requirements to assess systemic risks.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+     "marker": "[1]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.001,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c12.1",
+   "claim": "The EU must establish an AI Board to oversee compliance.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Artificial_Intelligence_Act",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "archived_only",
+     "entailment": 0.995,
+     "contradiction": 0.0,
+     "quote": "Each EU Member State must also designate a national supervisory authority to monitor compliance, handle complaints, and share information with the European AI Office, which coordinates enforcement across the Union.[6] Together, these actors form a multi-level supervision system. National market surveillance and supervisory authorities carry out checks and enforce the rules on high-risk AI systems ",
+     "note": "(verified against the Wayback Machine copy; live page is gone)",
+     "judged_by": "nli",
+     "source_type": "encyclopedia",
+     "source_year": null
+    }
+   ],
+   "quote": "Each EU Member State must also designate a national supervisory authority to monitor compliance, handle complaints, and share information with the European AI Office, which coordinates enforcement across the Union.[6] Together, these actors form a multi-level supervision system. National market surveillance and supervisory authorities carry out checks and enforce the rules on high-risk AI systems ",
+   "quote_url": "https://en.wikipedia.org/wiki/Artificial_Intelligence_Act",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c12.2",
+   "claim": "The EU must establish national competent authorities to oversee compliance.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Artificial_Intelligence_Act",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "archived_only",
+     "entailment": 0.997,
+     "contradiction": 0.0,
+     "quote": "Each EU Member State must also designate a national supervisory authority to monitor compliance, handle complaints, and share information with the European AI Office, which coordinates enforcement across the Union.[6]",
+     "note": "(verified against the Wayback Machine copy; live page is gone)",
+     "judged_by": "nli",
+     "source_type": "encyclopedia",
+     "source_year": null
+    }
+   ],
+   "quote": "Each EU Member State must also designate a national supervisory authority to monitor compliance, handle complaints, and share information with the European AI Office, which coordinates enforcement across the Union.[6]",
+   "quote_url": "https://en.wikipedia.org/wiki/Artificial_Intelligence_Act",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c12.3",
+   "claim": "The EU AI Office centralizes oversight of general-purpose AI systems.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Artificial_Intelligence_Act",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "archived_only",
+     "entailment": 0.989,
+     "contradiction": 0.999,
+     "quote": "AI Office: attached to the European Commission, this authority will coordinate the implementation of the AI Act in all Member States and oversee the compliance of general-purpose AI providers.",
+     "note": "another passage on the page may disagree: \"Together, these actors form a multi-level supervision system. National market surveillance and supervisory authorities carry out checks and enforce the rules on\" (verified against the Wayback Machine copy; live page is gone)",
+     "judged_by": "nli",
+     "source_type": "encyclopedia",
+     "source_year": null
+    }
+   ],
+   "quote": "AI Office: attached to the European Commission, this authority will coordinate the implementation of the AI Act in all Member States and oversee the compliance of general-purpose AI providers.",
+   "quote_url": "https://en.wikipedia.org/wiki/Artificial_Intelligence_Act",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c13",
+   "claim": "Innovation support: The Act creates regulatory sandboxes where companies can test AI solutions in controlled environments before full deployment.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+     "marker": "[1]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli+llm",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c14",
+   "claim": "Penalties: Non-compliance carries significant fines of up to \u20ac35 million or 7% of global annual turnover, whichever is higher.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.goodwinlaw.com/en/insights/publications/2024/10/insights-technology-aiml-eu-ai-act-implementation-timeline",
+     "marker": "[3]",
+     "verdict": "SUPPORTED",
+     "link_state": "archived_only",
+     "entailment": 0.98,
+     "contradiction": 0.0,
+     "quote": "This is followed by a wave of obligations over the next two to three years, with full compliance for high-risk AI systems expected by 2027. Non-compliance could lead to significant penalties, with fines reaching up to \u20ac35 million or 7% of global turnover, underscoring the importance of early preparation.",
+     "note": "(verified against the Wayback Machine copy; live page is gone)",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": 2024
+    }
+   ],
+   "quote": "This is followed by a wave of obligations over the next two to three years, with full compliance for high-risk AI systems expected by 2027. Non-compliance could lead to significant penalties, with fines reaching up to \u20ac35 million or 7% of global turnover, underscoring the importance of early preparation.",
+   "quote_url": "https://www.goodwinlaw.com/en/insights/publications/2024/10/insights-technology-aiml-eu-ai-act-implementation-timeline",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c15",
+   "claim": "2 February 2025 \u2014 Prohibitions on unacceptable-risk AI (social scoring, facial recognition bans, deepfakes/CSAM) and AI literacy obligations",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c16",
+   "claim": "2 August 2025 \u2014 General-purpose AI obligations and governance structures (Member States designate authorities, EU board established)",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c17.1",
+   "claim": "Transparency rules and enforcement begins on 2 August 2026.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c17.2",
+   "claim": "The majority of the Act's main rules apply on 2 August 2026.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c18",
+   "claim": "2 December 2026 \u2014 New prohibitions on deepfakes and CSAM take effect",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c19",
+   "claim": "2 August 2027 \u2014 Regulatory sandboxes become operational in Member States",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c20",
+   "claim": "2 December 2027 \u2014 High-risk AI systems in sensitive areas (Annex III) must comply",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c21",
+   "claim": "2 August 2028 \u2014 High-risk AI embedded in regulated products (lifts, toys, etc.) must comply",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.062,
+     "contradiction": 0.0,
+     "quote": "02 Aug 2028Rules for high-risk AI embedded in regulated products covered by Annex I apply **",
+     "note": "reworded match: Passage states exact rule and date.",
+     "judged_by": "nli+llm",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "02 Aug 2028Rules for high-risk AI embedded in regulated products covered by Annex I apply **",
+   "quote_url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c22",
+   "claim": "The Digital Omnibus amendments (which entered into force on 27 July 2026) simplified implementation by extending some deadlines and clarifying rules to reduce complexity for businesses while maintaining strong protections.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+     "marker": "[1]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.001,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+   "title": "Timeline for the Implementation of the EU AI Act | AI Act Service Desk",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "c1b80b2a1296cea8115204d46a08f1cebe0bace7691307f8730d26b49578bbd2",
+   "quarantined": false
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Artificial_Intelligence_Act",
+   "state": "archived_only",
+   "http_status": 403,
+   "error": "HTTP 403",
+   "resolved_url": "https://en.wikipedia.org/wiki/Artificial_Intelligence_Act",
+   "title": "",
+   "archive_url": "https://web.archive.org/web/20261005143219/https://en.wikipedia.org/wiki/Artificial_Intelligence_Act",
+   "archive_timestamp": "20261005143219",
+   "text_source": "wayback",
+   "archive_check": "archived",
+   "content_hash": "4095772cc08dbf93337862444783851b2fe32eb365173f381e1d472ad16020ec",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.goodwinlaw.com/en/insights/publications/2024/10/insights-technology-aiml-eu-ai-act-implementation-timeline",
+   "state": "archived_only",
+   "http_status": 403,
+   "error": "HTTP 403",
+   "resolved_url": "https://www.goodwinlaw.com/en/insights/publications/2024/10/insights-technology-aiml-eu-ai-act-implementation-timeline",
+   "title": "",
+   "archive_url": "http://web.archive.org/web/20260419172511/https://www.goodwinlaw.com/en/insights/publications/2024/10/insights-technology-aiml-eu-ai-act-implementation-timeline",
+   "archive_timestamp": "20260419172511",
+   "text_source": "wayback",
+   "archive_check": "archived",
+   "content_hash": "7e8d54083d8116d641a8dc63a17c1d137ff49fd24546c99eaf2532ab30bccbd7",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 105.5,
+ "usage": {
+  "fetches": 5,
+  "wayback_lookups": 2,
+  "searches": 0,
+  "llm_calls": 7,
+  "nli_checks": 10,
+  "scorer_load_ms": 1437
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 22,
+   "citations": 6
+  },
+  {
+   "t": 47.8,
+   "event": "fetch",
+   "url": "https://en.wikipedia.org/wiki/Artificial_Intelligence_Act",
+   "state": "blocked",
+   "http_status": 403,
+   "chars": 0,
+   "error": "HTTP 403"
+  },
+  {
+   "t": 47.83,
+   "event": "fetch",
+   "url": "https://www.goodwinlaw.com/en/insights/publications/2024/10/insights-technology-aiml-eu-ai-act-implementation-timeline",
+   "state": "blocked",
+   "http_status": 403,
+   "chars": 0,
+   "error": "HTTP 403"
+  },
+  {
+   "t": 48.86,
+   "event": "fetch",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+   "state": "live",
+   "http_status": 200,
+   "chars": 1707,
+   "error": ""
+  },
+  {
+   "t": 51.59,
+   "event": "wayback",
+   "url": "https://www.goodwinlaw.com/en/insights/publications/2024/10/insights-technology-aiml-eu-ai-act-implementation-timeline",
+   "archived": true,
+   "snapshot": "http://web.archive.org/web/20260419172511/https://www.goodwinlaw.com/en/insights/publications/2024/10/insights-technology-aiml-eu-ai-act-implementation-timeline"
+  },
+  {
+   "t": 52.1,
+   "event": "archive_fetch",
+   "url": "https://web.archive.org/web/20260419172511id_/https://www.goodwinlaw.com/en/insights/publications/2024/10/insights-technology-aiml-eu-ai-act-implementation-timeline",
+   "ok": true,
+   "chars": 1445,
+   "error": ""
+  },
+  {
+   "t": 65.62,
+   "event": "wayback",
+   "url": "https://en.wikipedia.org/wiki/Artificial_Intelligence_Act",
+   "archived": true,
+   "snapshot": "https://web.archive.org/web/20261005143219/https://en.wikipedia.org/wiki/Artificial_Intelligence_Act"
+  },
+  {
+   "t": 66.02,
+   "event": "archive_fetch",
+   "url": "https://web.archive.org/web/20261005143219id_/https://en.wikipedia.org/wiki/Artificial_Intelligence_Act",
+   "ok": true,
+   "chars": 36099,
+   "error": ""
+  },
+  {
+   "t": 68.3,
+   "event": "verify",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+   "claim": "High-impact models (those trained with exceptional computational power) face additional evaluation requirements to asses",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.001,
+   "con": 0.0
+  },
+  {
+   "t": 71.72,
+   "event": "verify",
+   "url": "https://en.wikipedia.org/wiki/Artificial_Intelligence_Act",
+   "claim": "The EU must establish an AI Board to oversee compliance.",
+   "verdict": "SUPPORTED",
+   "ent": 0.995,
+   "con": 0.0
+  },
+  {
+   "t": 75.32,
+   "event": "verify",
+   "url": "https://en.wikipedia.org/wiki/Artificial_Intelligence_Act",
+   "claim": "The EU must establish national competent authorities to oversee compliance.",
+   "verdict": "SUPPORTED",
+   "ent": 0.997,
+   "con": 0.0
+  },
+  {
+   "t": 79.24,
+   "event": "verify",
+   "url": "https://en.wikipedia.org/wiki/Artificial_Intelligence_Act",
+   "claim": "The EU AI Office centralizes oversight of general-purpose AI systems.",
+   "verdict": "SUPPORTED",
+   "ent": 0.989,
+   "con": 0.999
+  },
+  {
+   "t": 85.4,
+   "event": "paraphrase_judge",
+   "claim": "Innovation support: The Act creates regulatory sandboxes where companies can test AI solutions in controlled environment",
+   "verdict": "NOT_SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 85.4,
+   "event": "verify",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+   "claim": "Innovation support: The Act creates regulatory sandboxes where companies can test AI solutions in controlled environment",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 88.4,
+   "event": "verify",
+   "url": "https://www.goodwinlaw.com/en/insights/publications/2024/10/insights-technology-aiml-eu-ai-act-implementation-timeline",
+   "claim": "Penalties: Non-compliance carries significant fines of up to \u20ac35 million or 7% of global annual turnover, whichever is h",
+   "verdict": "SUPPORTED",
+   "ent": 0.98,
+   "con": 0.0
+  },
+  {
+   "t": 97.51,
+   "event": "paraphrase_judge",
+   "claim": "2 August 2028 \u2014 High-risk AI embedded in regulated products (lifts, toys, etc.) must comply",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 97.51,
+   "event": "verify",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+   "claim": "2 August 2028 \u2014 High-risk AI embedded in regulated products (lifts, toys, etc.) must comply",
+   "verdict": "SUPPORTED",
+   "ent": 0.062,
+   "con": 0.0
+  },
+  {
+   "t": 105.51,
+   "event": "verify",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+   "claim": "The Digital Omnibus amendments (which entered into force on 27 July 2026) simplified implementation by extending some de",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.001,
+   "con": 0.0
+  },
+  {
+   "t": 105.51,
+   "event": "done",
+   "trust_score": 62
+  }
+ ],
+ "score_s": 107.0
+}

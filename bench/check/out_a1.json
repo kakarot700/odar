@@ -1,0 +1,403 @@
+{
+  "check_id": "chk_f8111ea5f569",
+  "trust_score": null,
+  "grade": "no checkable citations",
+  "counts": {
+    "SUPPORTED": 0,
+    "PARTIALLY SUPPORTED": 0,
+    "CONTRADICTED": 0,
+    "WRONG SOURCE": 0,
+    "UNVERIFIABLE": 6,
+    "DEAD LINK": 0,
+    "NO CITATION": 6
+  },
+  "claims": [
+    {
+      "claim_id": "c1",
+      "claim": "Intermittent fasting (IF) is not inherently better than daily calorie restriction (CR) for weight loss.",
+      "verdict": "NO CITATION",
+      "citations": [],
+      "quote": "",
+      "quote_url": "",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": ""
+    },
+    {
+      "claim_id": "c2.1",
+      "claim": "A 12-month randomized trial compared alternate-day fasting with daily CR.",
+      "verdict": "UNVERIFIABLE",
+      "citations": [
+        {
+          "url": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/10.1001/jamainternmed.2017.0936",
+          "marker": "[1]",
+          "verdict": "UNVERIFIABLE",
+          "link_state": "blocked",
+          "entailment": 0.0,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "page exists but could not be read (HTTP 403); no archive copy",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/10.1001/jamainternmed.2017.0936",
+      "replacement": {
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7183822/",
+        "title": "Eating behavior traits of successful weight losers during 12 ...Scholars@Duke publication: Effect of Alternate-Day Fasting on ...Effect of Alternate-Day Fasting on Weight Loss, Weight ...Alternate-day fasting elicits larger changes in fat mass than ...The Effect of 4:3 Intermittent Fasting on Weight [...truncated by sanitizer]",
+        "quote": "Participants were randomized to an ADF or CR group for 12 months. The 12-month intervention was divided into a 6-month weight loss phase followed by a 6-month weight maintenance phase. During months 0 to 6, ADF participants were instructed to consume 25% of energy needs on the fast day and 125% of energy needs on the feast day, whereas CR participants were instructed to consume 75% of energy needs",
+        "entailment": 0.988
+      },
+      "replacement_searched": true,
+      "note": "atomic part of a compound sentence"
+    },
+    {
+      "claim_id": "c2.2",
+      "claim": "The trial found no significant difference in weight loss.",
+      "verdict": "UNVERIFIABLE",
+      "citations": [
+        {
+          "url": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/10.1001/jamainternmed.2017.0936",
+          "marker": "[1]",
+          "verdict": "UNVERIFIABLE",
+          "link_state": "blocked",
+          "entailment": 0.0,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "page exists but could not be read (HTTP 403); no archive copy",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/10.1001/jamainternmed.2017.0936",
+      "replacement": null,
+      "replacement_searched": true,
+      "note": "atomic part of a compound sentence"
+    },
+    {
+      "claim_id": "c2.3",
+      "claim": "Participants in both groups lost around 5–6% of body weight.",
+      "verdict": "UNVERIFIABLE",
+      "citations": [
+        {
+          "url": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/10.1001/jamainternmed.2017.0936",
+          "marker": "[1]",
+          "verdict": "UNVERIFIABLE",
+          "link_state": "blocked",
+          "entailment": 0.0,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "page exists but could not be read (HTTP 403); no archive copy",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/10.1001/jamainternmed.2017.0936",
+      "replacement": null,
+      "replacement_searched": true,
+      "note": "atomic part of a compound sentence"
+    },
+    {
+      "claim_id": "c3",
+      "claim": "Likewise, a study on time-restricted eating (8-hour eating window) showed weight loss comparable to daily CR among adults with obesity.",
+      "verdict": "UNVERIFIABLE",
+      "citations": [
+        {
+          "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa1904836",
+          "marker": "[2]",
+          "verdict": "UNVERIFIABLE",
+          "link_state": "blocked",
+          "entailment": 0.0,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "page exists but could not be read (HTTP 403); archive check unavailable",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://www.nejm.org/doi/full/10.1056/NEJMoa1904836",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": ""
+    },
+    {
+      "claim_id": "c4",
+      "claim": "The primary driver of weight loss is a sustained energy deficit, not meal timing.",
+      "verdict": "NO CITATION",
+      "citations": [],
+      "quote": "",
+      "quote_url": "",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": ""
+    },
+    {
+      "claim_id": "c5",
+      "claim": "IF often works because it helps individuals reduce total intake automatically, but daily CR can achieve the same effect through portion control.",
+      "verdict": "NO CITATION",
+      "citations": [],
+      "quote": "",
+      "quote_url": "",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": ""
+    },
+    {
+      "claim_id": "c6",
+      "claim": "Adherence is the strongest predictor of success—some people find IF easier to follow, while others prefer flexible daily tracking.",
+      "verdict": "UNVERIFIABLE",
+      "citations": [
+        {
+          "url": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/10.1001/jamainternmed.2017.0936",
+          "marker": "[1]",
+          "verdict": "UNVERIFIABLE",
+          "link_state": "blocked",
+          "entailment": 0.0,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "page exists but could not be read (HTTP 403); no archive copy",
+          "judged_by": "nli"
+        },
+        {
+          "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa1904836",
+          "marker": "[2]",
+          "verdict": "UNVERIFIABLE",
+          "link_state": "blocked",
+          "entailment": 0.0,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "page exists but could not be read (HTTP 403); archive check unavailable",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/10.1001/jamainternmed.2017.0936",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": ""
+    },
+    {
+      "claim_id": "c7",
+      "claim": "Practical differences exist: IF may cause short-term side effects like hunger, headaches, or fatigue, and can be harder to maintain in social settings.",
+      "verdict": "NO CITATION",
+      "citations": [],
+      "quote": "",
+      "quote_url": "",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": ""
+    },
+    {
+      "claim_id": "c8",
+      "claim": "Daily CR allows more frequent eating but requires ongoing calorie counting.",
+      "verdict": "NO CITATION",
+      "citations": [],
+      "quote": "",
+      "quote_url": "",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": ""
+    },
+    {
+      "claim_id": "c9",
+      "claim": "Neither method consistently outperforms the other in long-term trials, so the best choice depends on personal lifestyle and sustainability.",
+      "verdict": "UNVERIFIABLE",
+      "citations": [
+        {
+          "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa1904836",
+          "marker": "[2]",
+          "verdict": "UNVERIFIABLE",
+          "link_state": "blocked",
+          "entailment": 0.0,
+          "contradiction": 0.0,
+          "quote": "",
+          "note": "page exists but could not be read (HTTP 403); archive check unavailable",
+          "judged_by": "nli"
+        }
+      ],
+      "quote": "",
+      "quote_url": "https://www.nejm.org/doi/full/10.1056/NEJMoa1904836",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": ""
+    },
+    {
+      "claim_id": "c10",
+      "claim": "Experts recommend selecting a strategy you can maintain rather than chasing superior meal timing.",
+      "verdict": "NO CITATION",
+      "citations": [],
+      "quote": "",
+      "quote_url": "",
+      "replacement": null,
+      "replacement_searched": false,
+      "note": ""
+    }
+  ],
+  "links": [
+    {
+      "url": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/10.1001/jamainternmed.2017.0936",
+      "state": "blocked",
+      "http_status": 403,
+      "error": "HTTP 403",
+      "resolved_url": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/10.1001/jamainternmed.2017.0936",
+      "title": "",
+      "archive_url": "",
+      "archive_timestamp": "",
+      "text_source": "",
+      "archive_check": "never_archived",
+      "content_hash": "",
+      "quarantined": false
+    },
+    {
+      "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa1904836",
+      "state": "blocked",
+      "http_status": 403,
+      "error": "HTTP 403",
+      "resolved_url": "https://www.nejm.org/doi/full/10.1056/NEJMoa1904836",
+      "title": "",
+      "archive_url": "",
+      "archive_timestamp": "",
+      "text_source": "",
+      "archive_check": "unavailable",
+      "content_hash": "",
+      "quarantined": false
+    }
+  ],
+  "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+  "elapsed_s": 58.9,
+  "usage": {
+    "fetches": 7,
+    "wayback_lookups": 4,
+    "searches": 3,
+    "llm_calls": 1,
+    "nli_checks": 3,
+    "scorer_load_ms": 16401
+  },
+  "audit_trail": [
+    {
+      "t": 0.0,
+      "event": "parse",
+      "claims": 10,
+      "citations": 5
+    },
+    {
+      "t": 6.04,
+      "event": "fetch",
+      "url": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/10.1001/jamainternmed.2017.0936",
+      "state": "blocked",
+      "http_status": 403,
+      "chars": 0,
+      "error": "HTTP 403"
+    },
+    {
+      "t": 6.05,
+      "event": "fetch",
+      "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa1904836",
+      "state": "blocked",
+      "http_status": 403,
+      "chars": 0,
+      "error": "HTTP 403"
+    },
+    {
+      "t": 18.91,
+      "event": "wayback",
+      "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa1904836",
+      "error": "ReadTimeout: HTTPSConnectionPool(host='web.archive.org', port=443): Read timed out. (read timeout=12.0)"
+    },
+    {
+      "t": 19.54,
+      "event": "wayback",
+      "url": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/10.1001/jamainternmed.2017.0936",
+      "archived": false,
+      "snapshot": ""
+    },
+    {
+      "t": 21.12,
+      "event": "search",
+      "query": "A 12-month randomized trial compared alternate-day fasting with daily CR.",
+      "hits": 6
+    },
+    {
+      "t": 21.81,
+      "event": "fetch",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7183822/",
+      "state": "live",
+      "http_status": 200,
+      "chars": 27136,
+      "error": ""
+    },
+    {
+      "t": 25.72,
+      "event": "replacement",
+      "claim_id": "c2.1",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7183822/",
+      "ent": 0.988
+    },
+    {
+      "t": 30.05,
+      "event": "search",
+      "query": "The trial found no significant difference in weight loss.",
+      "hits": 5
+    },
+    {
+      "t": 30.3,
+      "event": "fetch",
+      "url": "https://www.msn.com/en-us/news/other/two-year-trial-finds-diet-drinks-match-water-for-weight-loss/ss-AA2do2fS",
+      "state": "blocked",
+      "http_status": 200,
+      "chars": 0,
+      "error": "no extractable text"
+    },
+    {
+      "t": 38.48,
+      "event": "wayback",
+      "url": "https://www.msn.com/en-us/news/other/two-year-trial-finds-diet-drinks-match-water-for-weight-loss/ss-AA2do2fS",
+      "archived": false,
+      "snapshot": ""
+    },
+    {
+      "t": 38.59,
+      "event": "fetch",
+      "url": "https://onlinelibrary.wiley.com/doi/full/10.1002/oby.20145",
+      "state": "blocked",
+      "http_status": 403,
+      "chars": 0,
+      "error": "HTTP 403"
+    },
+    {
+      "t": 39.48,
+      "event": "wayback",
+      "url": "https://onlinelibrary.wiley.com/doi/full/10.1002/oby.20145",
+      "archived": true,
+      "snapshot": "http://web.archive.org/web/20250806075516/https://onlinelibrary.wiley.com/doi/full/10.1002/oby.20145"
+    },
+    {
+      "t": 40.23,
+      "event": "archive_fetch",
+      "url": "https://web.archive.org/web/20250806075516id_/https://onlinelibrary.wiley.com/doi/full/10.1002/oby.20145",
+      "ok": true,
+      "chars": 33114,
+      "error": ""
+    },
+    {
+      "t": 47.35,
+      "event": "fetch",
+      "url": "https://appliedevidence.com/guides/no-significant-difference",
+      "state": "live",
+      "http_status": 200,
+      "chars": 4314,
+      "error": ""
+    },
+    {
+      "t": 58.87,
+      "event": "search",
+      "query": "Participants in both groups lost around 5–6% of body weight.",
+      "hits": 0
+    },
+    {
+      "t": 58.87,
+      "event": "done",
+      "trust_score": null
+    }
+  ]
+}

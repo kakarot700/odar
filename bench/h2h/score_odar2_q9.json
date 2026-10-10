@@ -1,0 +1,724 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_a04aa45a4fc7",
+ "trust_score": 100,
+ "grade": "citations hold up",
+ "counts": {
+  "SUPPORTED": 9,
+  "PARTIALLY SUPPORTED": 0,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 0,
+  "UNVERIFIABLE": 1,
+  "DEAD LINK": 0,
+  "NO CITATION": 0
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "The EU AI Act (Regulation 2024/1689) entered into force on 1 August 2024 and applies progressively.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pandromeda.com/ai/eu-ai-act-explained-what-applies-now-and-every-deadline-to-2028",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.949,
+     "contradiction": 0.957,
+     "quote": "Is the EU AI Act in force now? It entered into force on August 1, 2024 and became generally applicable on August 2, 2026, when the Commission's AI Office and national authorities began enforcing it.",
+     "note": "another passage on the page may disagree: \"Parliament and Council reached a political agreement on the AI Omnibus on May 7, 2026, and the final text, published as Regulation (EU) 2026/1744, entered into \"",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "Is the EU AI Act in force now? It entered into force on August 1, 2024 and became generally applicable on August 2, 2026, when the Commission's AI Office and national authorities began enforcing it.",
+   "quote_url": "https://pandromeda.com/ai/eu-ai-act-explained-what-applies-now-and-every-deadline-to-2028",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "The prohibitions, definitions and AI-literacy rules became applicable on 2 February 2025.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.993,
+     "contradiction": 0.998,
+     "quote": "The prohibitions, definitions and provisions related to AI literacy became applicable on 2 February 2025;",
+     "note": "another passage on the page may disagree: \"The rules on governance and the obligations for general-purpose AI models became applicable on 2 August 2025; The transparency requirements (Article 50) as well\"",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    }
+   ],
+   "quote": "The prohibitions, definitions and provisions related to AI literacy became applicable on 2 February 2025;",
+   "quote_url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "Governance rules and obligations for general-purpose AI models took effect on 2 August 2025.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.999,
+     "contradiction": 0.998,
+     "quote": "The rules on governance and the obligations for general-purpose AI models became applicable on 2 August 2025;",
+     "note": "another passage on the page may disagree: \"The obligations regarding high-risk systems listed in Annex III will enter into force on 2 December 2027 and the obligations for high-risk AI systems that class\"",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    },
+    {
+     "url": "https://www.aigovernancecore.com/blog/eu-ai-act-explained-complete-guide",
+     "marker": "[3]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.974,
+     "contradiction": 0.731,
+     "quote": "Every provider of a general-purpose AI model, the kind that can be adapted to many downstream tasks, has baseline duties that took effect on 2 August 2025. They must maintain up-to-date technical documentation, provide information and documentation to downstream providers who build on the model, put in place a policy to respect EU copyright law, and publish a sufficiently detailed summary of the c",
+     "note": "another passage on the page may disagree: \"Prohibited practices and the AI literacy duty applied from 2 February 2025. General-purpose AI obligations and the Article 99 penalty powers applied from 2 Augu\"",
+     "judged_by": "nli",
+     "source_type": "blog",
+     "source_year": null
+    }
+   ],
+   "quote": "The rules on governance and the obligations for general-purpose AI models became applicable on 2 August 2025;",
+   "quote_url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4.1",
+   "claim": "On 2 August 2026 the Act became generally applicable.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.aigovernancecore.com/blog/eu-ai-act-explained-complete-guide",
+     "marker": "[3]",
+     "verdict": "CONTRADICTED",
+     "link_state": "live",
+     "entailment": 0.674,
+     "contradiction": 0.986,
+     "quote": "Prohibited practices and the AI literacy duty applied from 2 February 2025. General-purpose AI obligations and the Article 99 penalty powers applied from 2 August 2025. Article 50 transparency duties apply from 2 August 2026.",
+     "note": "",
+     "judged_by": "nli+llm",
+     "source_type": "blog",
+     "source_year": null
+    },
+    {
+     "url": "https://pandromeda.com/ai/eu-ai-act-explained-what-applies-now-and-every-deadline-to-2028",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.995,
+     "contradiction": 0.0,
+     "quote": "| August 2, 2026 | Act becomes generally applicable; Article 50 transparency rules apply; AI Office and national authorities start enforcing | In effect |",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "| August 2, 2026 | Act becomes generally applicable; Article 50 transparency rules apply; AI Office and national authorities start enforcing | In effect |",
+   "quote_url": "https://pandromeda.com/ai/eu-ai-act-explained-what-applies-now-and-every-deadline-to-2028",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "another cited source contradicts this claim",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4.2",
+   "claim": "Article 50 transparency duties for chatbots, deepfakes and AI-generated content applied.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.aigovernancecore.com/blog/eu-ai-act-explained-complete-guide",
+     "marker": "[3]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.995,
+     "contradiction": 0.996,
+     "quote": "| Limited | Transparency | Transparency duties under Article 50: tell people they are interacting with AI or viewing synthetic content. | Chatbots and virtual assistants, deepfakes, AI-generated images, audio, video, and text intended to inform the public |",
+     "note": "another passage on the page may disagree: \"| Chatbots and virtual assistants, deepfakes, AI-generated images, audio, video, and text intended to inform the public | | Minimal | Unrestricted | No mandator\"",
+     "judged_by": "nli",
+     "source_type": "blog",
+     "source_year": null
+    },
+    {
+     "url": "https://pandromeda.com/ai/eu-ai-act-explained-what-applies-now-and-every-deadline-to-2028",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.997,
+     "contradiction": 0.982,
+     "quote": "Second, the transparency obligations in Article 50 started to apply. In the Commission\u2019s words, \u201cchatbots and other interactive AI systems will have to tell users they are dealing with AI, not a human. Deepfakes (images, videos, or audio that have been edited or generated using AI) will have to be labelled.",
+     "note": "another passage on the page may disagree: \"The EU AI Act has been fully enforceable since August 2, 2026, when the European Commission\u2019s AI Office and national regulators began supervising it and new tra\"",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "| Limited | Transparency | Transparency duties under Article 50: tell people they are interacting with AI or viewing synthetic content. | Chatbots and virtual assistants, deepfakes, AI-generated images, audio, video, and text intended to inform the public |",
+   "quote_url": "https://www.aigovernancecore.com/blog/eu-ai-act-explained-complete-guide",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4.3",
+   "claim": "The AI Office and national authorities began enforcing the Act.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.aigovernancecore.com/blog/eu-ai-act-explained-complete-guide",
+     "marker": "[3]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.129,
+     "contradiction": 0.784,
+     "quote": "Rules for general-purpose AI models took effect, governance bodies (the AI Office and national authorities) became operational, and the penalty provisions of Article 99 became applicable.",
+     "note": "reworded match: Operational bodies and applicable penalties mean enforcement began.",
+     "judged_by": "nli+llm",
+     "source_type": "blog",
+     "source_year": null
+    },
+    {
+     "url": "https://pandromeda.com/ai/eu-ai-act-explained-what-applies-now-and-every-deadline-to-2028",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.995,
+     "contradiction": 0.0,
+     "quote": "| August 2, 2026 | Act becomes generally applicable; Article 50 transparency rules apply; AI Office and national authorities start enforcing | In effect |",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "Rules for general-purpose AI models took effect, governance bodies (the AI Office and national authorities) became operational, and the penalty provisions of Article 99 became applicable.",
+   "quote_url": "https://www.aigovernancecore.com/blog/eu-ai-act-explained-complete-guide",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5",
+   "claim": "A further ban on AI systems generating non-consensual intimate imagery or child sexual abuse material takes effect on 2 December 2026.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pandromeda.com/ai/eu-ai-act-explained-what-applies-now-and-every-deadline-to-2028",
+     "marker": "[5]",
+     "verdict": "PARTIALLY SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.992,
+     "contradiction": 0.0,
+     "quote": "The Commission says the high-risk rules now apply from December 2, 2027 for systems used in sensitive areas and from August 2, 2028 for systems built into products, so that \u201ctechnical standards and other support tools are in place before the rules start to apply.\u201d The Omnibus also: adds a ninth prohibited practice, banning AI systems that generate non-consensual sexually explicit or intimate conte",
+     "note": "only a short or loosely matching passage supports this",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    },
+    {
+     "url": "https://artificialintelligenceact.eu/high-level-summary/",
+     "marker": "[6]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.876,
+     "contradiction": 0.0,
+     "quote": "After the AI Act entered into force on 1 August 2024, the application of the Act\u2019s provisions has been and is continued to be rolled out gradually. Most prohibitions of AI systems have been applicable since 2 February 2025, with prohibitions on AI systems generating non-consensual intimate imagery and child sexual abuse material (CSAM) coming into play on 2 December 2026. GPAI model obligations ki",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": 2026
+    }
+   ],
+   "quote": "After the AI Act entered into force on 1 August 2024, the application of the Act\u2019s provisions has been and is continued to be rolled out gradually. Most prohibitions of AI systems have been applicable since 2 February 2025, with prohibitions on AI systems generating non-consensual intimate imagery and child sexual abuse material (CSAM) coming into play on 2 December 2026. GPAI model obligations ki",
+   "quote_url": "https://artificialintelligenceact.eu/high-level-summary/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6.1",
+   "claim": "Obligations for high-risk systems listed in Annex III apply from 2 December 2027.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.996,
+     "contradiction": 0.0,
+     "quote": "The obligations regarding high-risk systems listed in Annex III will enter into force on 2 December 2027 and the obligations for high-risk AI systems that classify as high-risk because they are embedded in regulated products, listed in Annex I (list of Union harmonisation legislation), will enter",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    },
+    {
+     "url": "https://www.regulation-ai.eu/en/ai-act/",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.989,
+     "contradiction": 0.965,
+     "quote": "| Codes of practice for GPAI | 2 August 2025 | | High-risk AI \u2014 Annex III standalone | 2 December 2027 (extended by 2026 omnibus) |",
+     "note": "another passage on the page may disagree: \"| High-risk AI \u2014 Annex I embedded | 2 August 2028 (extended by 2026 omnibus) | The 2026 Digital Omnibus on AI extended the two high-risk AI deadlines by 16 and \"",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    },
+    {
+     "url": "https://pandromeda.com/ai/eu-ai-act-explained-what-applies-now-and-every-deadline-to-2028",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.993,
+     "contradiction": 0.964,
+     "quote": "High-risk rules: December 2, 2027 (Annex III uses) and August 2, 2028 (AI in regulated products)",
+     "note": "another passage on the page may disagree: \"If you build or sell AI products: check whether any use falls into Annex III. You now have until December 2, 2027 rather than August 2026, but conformity work t\"",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "The obligations regarding high-risk systems listed in Annex III will enter into force on 2 December 2027 and the obligations for high-risk AI systems that classify as high-risk because they are embedded in regulated products, listed in Annex I (list of Union harmonisation legislation), will enter",
+   "quote_url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6.2",
+   "claim": "Obligations for high-risk AI embedded in regulated products (Annex I) apply from 2 August 2028.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+     "marker": "[1]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.949,
+     "contradiction": 0.999,
+     "quote": "This is also the date when the enforcement of AI Act will start; The obligations regarding high-risk systems listed in Annex III will enter into force on 2 December 2027 and the obligations for high-risk AI systems that classify as high-risk because they are embedded in regulated products, listed in Annex I (list of Union harmonisation legislation), will enter into force on 2 August 2028.",
+     "note": "another passage on the page may disagree: \"The obligations regarding high-risk systems listed in Annex III will enter into force on 2 December 2027 and the obligations for high-risk AI systems that class\"",
+     "judged_by": "nli",
+     "source_type": "government",
+     "source_year": null
+    },
+    {
+     "url": "https://www.regulation-ai.eu/en/ai-act/",
+     "marker": "[2]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.993,
+     "contradiction": 0.0,
+     "quote": "High-risk AI embedded in regulated products (Annex I): 2 August 2028.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    },
+    {
+     "url": "https://pandromeda.com/ai/eu-ai-act-explained-what-applies-now-and-every-deadline-to-2028",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.993,
+     "contradiction": 0.991,
+     "quote": "| August 2, 2028 | High-risk rules for AI in products covered by Annex I, such as lifts and toys | Upcoming |",
+     "note": "another passage on the page may disagree: \"If you build or sell AI products: check whether any use falls into Annex III. You now have until December 2, 2027 rather than August 2026, but conformity work t\"",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "This is also the date when the enforcement of AI Act will start; The obligations regarding high-risk systems listed in Annex III will enter into force on 2 December 2027 and the obligations for high-risk AI systems that classify as high-risk because they are embedded in regulated products, listed in Annex I (list of Union harmonisation legislation), will enter into force on 2 August 2028.",
+   "quote_url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c7",
+   "claim": "The maximum fine for prohibited practices is \u20ac35 million or 7% of global annual turnover.",
+   "verdict": "UNVERIFIABLE",
+   "citations": [
+    {
+     "url": "https://pandromeda.com/ai/eu-ai-act-explained-what-applies-now-and-every-deadline-to-2028",
+     "marker": "[5]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "time limit reached",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://pandromeda.com/ai/eu-ai-act-explained-what-applies-now-and-every-deadline-to-2028",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "low",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://pandromeda.com/ai/eu-ai-act-explained-what-applies-now-and-every-deadline-to-2028",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://pandromeda.com/ai/eu-ai-act-explained-what-applies-now-and-every-deadline-to-2028",
+   "title": "EU AI Act Timeline: What Applies Now and What\u2019s Next [2026] | Pandromeda",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "891914747adde461c31e6025a632e0ea020caaf57e075fa879e27588528617de",
+   "quarantined": false
+  },
+  {
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+   "title": "When does the AI Act go into effect? What is its timeline for implementation? | AI Act Service Desk",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "da0bebd5ed7dc72c3125bb40dbf7387a81f1e3c00ead462c1fec94a2b71f9c22",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.aigovernancecore.com/blog/eu-ai-act-explained-complete-guide",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.aigovernancecore.com/blog/eu-ai-act-explained-complete-guide",
+   "title": "The EU AI Act, Explained | AI Governance Core",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "18edbd1e9fe784060d726007b7b4fa9b9cb6c91350763e1566ba1eb89997d2a0",
+   "quarantined": false
+  },
+  {
+   "url": "https://artificialintelligenceact.eu/high-level-summary/",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://artificialintelligenceact.eu/high-level-summary/",
+   "title": "High-level summary of the AI Act | EU Artificial Intelligence Act",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "2ee7fbbf4e81676e70d9c81d5ce595f037e2543c7d07bae8813b00262efaf6b0",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.regulation-ai.eu/en/ai-act/",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.regulation-ai.eu/en/ai-act/",
+   "title": "EU AI Act in 2026: What Applies, What Was Deferred | Regulation AI",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "14325f34556485126539c485d2912e5bc220f2fd1413077df050eaca91de8a15",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 151.7,
+ "usage": {
+  "fetches": 5,
+  "wayback_lookups": 0,
+  "searches": 0,
+  "llm_calls": 4,
+  "nli_checks": 18,
+  "scorer_load_ms": 3627
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 7,
+   "citations": 12
+  },
+  {
+   "t": 9.56,
+   "event": "fetch",
+   "url": "https://www.aigovernancecore.com/blog/eu-ai-act-explained-complete-guide",
+   "state": "live",
+   "http_status": 200,
+   "chars": 24536,
+   "error": ""
+  },
+  {
+   "t": 9.71,
+   "event": "fetch",
+   "url": "https://artificialintelligenceact.eu/high-level-summary/",
+   "state": "live",
+   "http_status": 200,
+   "chars": 19727,
+   "error": ""
+  },
+  {
+   "t": 10.23,
+   "event": "fetch",
+   "url": "https://pandromeda.com/ai/eu-ai-act-explained-what-applies-now-and-every-deadline-to-2028",
+   "state": "live",
+   "http_status": 200,
+   "chars": 16178,
+   "error": ""
+  },
+  {
+   "t": 10.37,
+   "event": "fetch",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+   "state": "live",
+   "http_status": 200,
+   "chars": 812,
+   "error": ""
+  },
+  {
+   "t": 10.8,
+   "event": "fetch",
+   "url": "https://www.regulation-ai.eu/en/ai-act/",
+   "state": "live",
+   "http_status": 200,
+   "chars": 7794,
+   "error": ""
+  },
+  {
+   "t": 24.39,
+   "event": "verify",
+   "url": "https://pandromeda.com/ai/eu-ai-act-explained-what-applies-now-and-every-deadline-to-2028",
+   "claim": "The EU AI Act (Regulation 2024/1689) entered into force on 1 August 2024 and applies progressively.",
+   "verdict": "SUPPORTED",
+   "ent": 0.949,
+   "con": 0.957
+  },
+  {
+   "t": 28.63,
+   "event": "verify",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+   "claim": "The prohibitions, definitions and AI-literacy rules became applicable on 2 February 2025.",
+   "verdict": "SUPPORTED",
+   "ent": 0.993,
+   "con": 0.998
+  },
+  {
+   "t": 35.03,
+   "event": "verify",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+   "claim": "Governance rules and obligations for general-purpose AI models took effect on 2 August 2025.",
+   "verdict": "SUPPORTED",
+   "ent": 0.999,
+   "con": 0.998
+  },
+  {
+   "t": 43.4,
+   "event": "verify",
+   "url": "https://www.aigovernancecore.com/blog/eu-ai-act-explained-complete-guide",
+   "claim": "Governance rules and obligations for general-purpose AI models took effect on 2 August 2025.",
+   "verdict": "SUPPORTED",
+   "ent": 0.974,
+   "con": 0.731
+  },
+  {
+   "t": 63.28,
+   "event": "paraphrase_judge",
+   "claim": "On 2 August 2026 the Act became generally applicable.",
+   "verdict": "CONTRADICTED",
+   "grounded": true
+  },
+  {
+   "t": 63.28,
+   "event": "verify",
+   "url": "https://www.aigovernancecore.com/blog/eu-ai-act-explained-complete-guide",
+   "claim": "On 2 August 2026 the Act became generally applicable.",
+   "verdict": "CONTRADICTED",
+   "ent": 0.674,
+   "con": 0.986
+  },
+  {
+   "t": 70.2,
+   "event": "verify",
+   "url": "https://pandromeda.com/ai/eu-ai-act-explained-what-applies-now-and-every-deadline-to-2028",
+   "claim": "On 2 August 2026 the Act became generally applicable.",
+   "verdict": "SUPPORTED",
+   "ent": 0.995,
+   "con": 0.0
+  },
+  {
+   "t": 77.28,
+   "event": "verify",
+   "url": "https://www.aigovernancecore.com/blog/eu-ai-act-explained-complete-guide",
+   "claim": "Article 50 transparency duties for chatbots, deepfakes and AI-generated content applied.",
+   "verdict": "SUPPORTED",
+   "ent": 0.995,
+   "con": 0.996
+  },
+  {
+   "t": 84.57,
+   "event": "verify",
+   "url": "https://pandromeda.com/ai/eu-ai-act-explained-what-applies-now-and-every-deadline-to-2028",
+   "claim": "Article 50 transparency duties for chatbots, deepfakes and AI-generated content applied.",
+   "verdict": "SUPPORTED",
+   "ent": 0.997,
+   "con": 0.982
+  },
+  {
+   "t": 95.56,
+   "event": "paraphrase_judge",
+   "claim": "The AI Office and national authorities began enforcing the Act.",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 95.56,
+   "event": "verify",
+   "url": "https://www.aigovernancecore.com/blog/eu-ai-act-explained-complete-guide",
+   "claim": "The AI Office and national authorities began enforcing the Act.",
+   "verdict": "SUPPORTED",
+   "ent": 0.129,
+   "con": 0.784
+  },
+  {
+   "t": 99.14,
+   "event": "verify",
+   "url": "https://pandromeda.com/ai/eu-ai-act-explained-what-applies-now-and-every-deadline-to-2028",
+   "claim": "The AI Office and national authorities began enforcing the Act.",
+   "verdict": "SUPPORTED",
+   "ent": 0.995,
+   "con": 0.0
+  },
+  {
+   "t": 105.31,
+   "event": "verify",
+   "url": "https://pandromeda.com/ai/eu-ai-act-explained-what-applies-now-and-every-deadline-to-2028",
+   "claim": "A further ban on AI systems generating non-consensual intimate imagery or child sexual abuse material takes effect on 2 ",
+   "verdict": "PARTIALLY SUPPORTED",
+   "ent": 0.992,
+   "con": 0.0
+  },
+  {
+   "t": 112.02,
+   "event": "verify",
+   "url": "https://artificialintelligenceact.eu/high-level-summary/",
+   "claim": "A further ban on AI systems generating non-consensual intimate imagery or child sexual abuse material takes effect on 2 ",
+   "verdict": "SUPPORTED",
+   "ent": 0.876,
+   "con": 0.0
+  },
+  {
+   "t": 116.25,
+   "event": "verify",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+   "claim": "Obligations for high-risk systems listed in Annex III apply from 2 December 2027.",
+   "verdict": "SUPPORTED",
+   "ent": 0.996,
+   "con": 0.0
+  },
+  {
+   "t": 123.67,
+   "event": "verify",
+   "url": "https://www.regulation-ai.eu/en/ai-act/",
+   "claim": "Obligations for high-risk systems listed in Annex III apply from 2 December 2027.",
+   "verdict": "SUPPORTED",
+   "ent": 0.989,
+   "con": 0.965
+  },
+  {
+   "t": 131.44,
+   "event": "verify",
+   "url": "https://pandromeda.com/ai/eu-ai-act-explained-what-applies-now-and-every-deadline-to-2028",
+   "claim": "Obligations for high-risk systems listed in Annex III apply from 2 December 2027.",
+   "verdict": "SUPPORTED",
+   "ent": 0.993,
+   "con": 0.964
+  },
+  {
+   "t": 137.1,
+   "event": "verify",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation",
+   "claim": "Obligations for high-risk AI embedded in regulated products (Annex I) apply from 2 August 2028.",
+   "verdict": "SUPPORTED",
+   "ent": 0.949,
+   "con": 0.999
+  },
+  {
+   "t": 144.35,
+   "event": "verify",
+   "url": "https://www.regulation-ai.eu/en/ai-act/",
+   "claim": "Obligations for high-risk AI embedded in regulated products (Annex I) apply from 2 August 2028.",
+   "verdict": "SUPPORTED",
+   "ent": 0.993,
+   "con": 0.0
+  },
+  {
+   "t": 151.72,
+   "event": "verify",
+   "url": "https://pandromeda.com/ai/eu-ai-act-explained-what-applies-now-and-every-deadline-to-2028",
+   "claim": "Obligations for high-risk AI embedded in regulated products (Annex I) apply from 2 August 2028.",
+   "verdict": "SUPPORTED",
+   "ent": 0.993,
+   "con": 0.991
+  },
+  {
+   "t": 151.73,
+   "event": "done",
+   "trust_score": 100
+  }
+ ],
+ "score_s": 155.4
+}

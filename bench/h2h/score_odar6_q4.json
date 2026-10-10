@@ -1,0 +1,200 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_c327bcfbaf4a",
+ "trust_score": 67,
+ "grade": "mixed: check flagged claims",
+ "counts": {
+  "SUPPORTED": 2,
+  "PARTIALLY SUPPORTED": 0,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 1,
+  "UNVERIFIABLE": 0,
+  "DEAD LINK": 0,
+  "NO CITATION": 0
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "India's policy repo rate is 5.50%.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://www.rbi.org.in/home.aspx//Scripts/Home.aspx/Webservice/Scripts/Statistics.aspx",
+     "marker": "[1]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this",
+     "judged_by": "nli",
+     "source_type": "web",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.rbi.org.in/home.aspx//Scripts/Home.aspx/Webservice/Scripts/Statistics.aspx",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "The RBI last changed it on October 7, 2026, hiking it by 25 basis points from 5.25% to 5.50%.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.thehindu.com/business/rbi-monetary-policy-meeting-decision-on-repo-rate-live-updates-october-7-2026/article71554262.ece",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.991,
+     "contradiction": 0.993,
+     "quote": "The Monetary Policy Committee (MPC) of the Reserve Bank of India (RBI) on Wednesday (October 7, 2026) raised the policy repo rate under the liquidity adjustment facility (LAF) by 25 basis points to 5.50% and shifted its stance to \u2018calibrated tightening\u2019 from \u2018neutral\u2019, signalling that rate cuts are",
+     "note": "another passage on the page may disagree: \"In the easing cycle, the MPC had cut the rate by 125 basis points in phases, from 6.50% to 5.25%, before increasing it on Wednesday (October 7).\"",
+     "judged_by": "nli",
+     "source_type": "news",
+     "source_year": null
+    }
+   ],
+   "quote": "The Monetary Policy Committee (MPC) of the Reserve Bank of India (RBI) on Wednesday (October 7, 2026) raised the policy repo rate under the liquidity adjustment facility (LAF) by 25 basis points to 5.50% and shifted its stance to \u2018calibrated tightening\u2019 from \u2018neutral\u2019, signalling that rate cuts are",
+   "quote_url": "https://www.thehindu.com/business/rbi-monetary-policy-meeting-decision-on-repo-rate-live-updates-october-7-2026/article71554262.ece",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "The previous cut to 5.25% had been in December 2025.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://www.thehindu.com/business/rbi-monetary-policy-meeting-decision-on-repo-rate-live-updates-october-7-2026/article71554262.ece",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.992,
+     "contradiction": 0.977,
+     "quote": "The policy repo rate, which was cut to 5.25% in December 2025, had been kept on hold at the next four MPC meetings.",
+     "note": "another passage on the page may disagree: \"The policy repo rate, which was cut to 5.25% in December 2025, had been kept on hold at the next four MPC meetings. In the easing cycle, the MPC had cut the rat\"",
+     "judged_by": "nli",
+     "source_type": "news",
+     "source_year": null
+    }
+   ],
+   "quote": "The policy repo rate, which was cut to 5.25% in December 2025, had been kept on hold at the next four MPC meetings.",
+   "quote_url": "https://www.thehindu.com/business/rbi-monetary-policy-meeting-decision-on-repo-rate-live-updates-october-7-2026/article71554262.ece",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://www.rbi.org.in/home.aspx//Scripts/Home.aspx/Webservice/Scripts/Statistics.aspx",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.rbi.org.in/home.aspx//Scripts/Home.aspx/Webservice/Scripts/Statistics.aspx",
+   "title": "Home | Official website of Reserve Bank of India",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "824560e33f742dac716adb2fb1e8321549413e26b705486145a7f77f249e554d",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.thehindu.com/business/rbi-monetary-policy-meeting-decision-on-repo-rate-live-updates-october-7-2026/article71554262.ece",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://www.thehindu.com/business/rbi-monetary-policy-meeting-decision-on-repo-rate-live-updates-october-7-2026/article71554262.ece",
+   "title": "RBI MPC meeting highlights: Repo rate hiked to 5.5%; rate cuts off the table in near term, Governor Sanjay Malhotra says - The Hindu",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "e6408ac703dfb12d9c782c64eb7381acbb50928750ecd3bc88db5bcd61819916",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 24.7,
+ "usage": {
+  "fetches": 2,
+  "wayback_lookups": 0,
+  "searches": 0,
+  "llm_calls": 0,
+  "nli_checks": 3,
+  "scorer_load_ms": 91698
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 3,
+   "citations": 3
+  },
+  {
+   "t": 0.56,
+   "event": "fetch",
+   "url": "https://www.thehindu.com/business/rbi-monetary-policy-meeting-decision-on-repo-rate-live-updates-october-7-2026/article71554262.ece",
+   "state": "live",
+   "http_status": 200,
+   "chars": 1405,
+   "error": ""
+  },
+  {
+   "t": 1.62,
+   "event": "fetch",
+   "url": "https://www.rbi.org.in/home.aspx//Scripts/Home.aspx/Webservice/Scripts/Statistics.aspx",
+   "state": "live",
+   "http_status": 200,
+   "chars": 828,
+   "error": ""
+  },
+  {
+   "t": 3.98,
+   "event": "verify",
+   "url": "https://www.rbi.org.in/home.aspx//Scripts/Home.aspx/Webservice/Scripts/Statistics.aspx",
+   "claim": "India's policy repo rate is 5.50%.",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 12.82,
+   "event": "verify",
+   "url": "https://www.thehindu.com/business/rbi-monetary-policy-meeting-decision-on-repo-rate-live-updates-october-7-2026/article71554262.ece",
+   "claim": "The RBI last changed it on October 7, 2026, hiking it by 25 basis points from 5.25% to 5.50%.",
+   "verdict": "SUPPORTED",
+   "ent": 0.991,
+   "con": 0.993
+  },
+  {
+   "t": 24.67,
+   "event": "verify",
+   "url": "https://www.thehindu.com/business/rbi-monetary-policy-meeting-decision-on-repo-rate-live-updates-october-7-2026/article71554262.ece",
+   "claim": "The previous cut to 5.25% had been in December 2025.",
+   "verdict": "SUPPORTED",
+   "ent": 0.992,
+   "con": 0.977
+  },
+  {
+   "t": 24.71,
+   "event": "done",
+   "trust_score": 67
+  }
+ ],
+ "score_s": 118.0
+}

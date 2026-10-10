@@ -1,0 +1,559 @@
+{
+  "status": "COMPLETE",
+  "backend_state": "multi-agent-router",
+  "degraded": false,
+  "objective": "How does PostgreSQL's MVCC implementation provide transaction isolation, and why does it cause table bloat that VACUUM must clean up?",
+  "run_id": "run_ab205f7867c14db8",
+  "uncertainty": "CONFLICTING_EVIDENCE",
+  "termination_status": "COMPLETE",
+  "unmet_conditions": [],
+  "digest": {
+    "objective": "How does PostgreSQL's MVCC implementation provide transaction isolation, and why does it cause table bloat that VACUUM must clean up?",
+    "iteration": 2,
+    "termination_status": "COMPLETE",
+    "uncertainty": "CONFLICTING_EVIDENCE",
+    "subquestions": [
+      "What is MVCC in PostgreSQL and how does it differ from other concurrency models like lock-based serializable approaches?",
+      "How does PostgreSQL implement tuple versioning using xmin/xmax, cmin/cmax, and transaction status to enforce isolation levels?",
+      "Why does the no-overwrite, append-only versioning of rows cause dead tuples, table and index bloat, and what performance limitations does MVCC impose?",
+      "How does VACUUM, autovacuum, free space map, and related maintenance (bloat monitoring, index cleanup) reclaim MVCC leftovers, and what recent developments like vacuum scaling or freeze improvements a"
+    ],
+    "hypotheses": [],
+    "claims": [
+      {
+        "id": "clm_e92815a3706f4629",
+        "text": "PostgreSQL uses MVCC (Multi-Version Concurrency Control) to allow readers and writers to operate without blocking each other.",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_edaaab2c623b4a65",
+        "text": "PostgreSQL uses Multi-Version Concurrency Control (MVCC) to let readers and writers work simultaneously without blocking each other.",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_255bbaaf88044933",
+        "text": "PostgreSQL powers everything from fintech transaction processors to social‑media timelines, and a large part of its scalability comes from its implementation of",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_c3d5f21769714de2",
+        "text": "PostgreSQL implements Multiversion Concurrency Control (MVCC) to ensure transaction isolation and consistent reads.",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_0c275c14c8cc43fd",
+        "text": "This approach is necessary to gain the benefits of multiversion concurrency control (MVCC, see Chapter 13): the row version must not be deleted while it is stil",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_7777405ccf7240f8",
+        "text": "Through a consistent database snapshot for every transaction, the multi-version concurrency control (MVCC) of PostgreSQL enables high concurrency and data consi",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_dee3b83f4a6b4103",
+        "text": "Now that we know what is xmin, xmax, ctid and cid looks like on the disk, we use them to understand how the concurrency works in PostgreSQL.",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      },
+      {
+        "id": "clm_931772b3585b45a6",
+        "text": "One of its key features that sets it apart from other databases is Multiversion Concurrency Control (MVCC).",
+        "status": "CERTIFIED",
+        "uncertainty": "EVIDENCE_FOR"
+      }
+    ],
+    "evidence_summary": {
+      "total": 264,
+      "relevant": 46,
+      "supports": 36,
+      "refutes": 9,
+      "qualifies": 1,
+      "circular_rejected": 0
+    },
+    "sources": {
+      "total": 13,
+      "independent": 13,
+      "classes": {
+        "general_web": 13
+      }
+    },
+    "contradictions": [
+      {
+        "claim_id": "clm_f8595e6d551d4d60",
+        "examined": true,
+        "note": "support p=0.97 vs refutation p=0.80",
+        "stance": "UNDECIDED"
+      },
+      {
+        "claim_id": "clm_a0146efae7ce43be",
+        "examined": true,
+        "note": "support p=0.97 vs refutation p=1.00",
+        "stance": "UNDECIDED"
+      },
+      {
+        "claim_id": "clm_5b76455b1b5b4be4",
+        "examined": true,
+        "note": "support p=0.95 vs refutation p=1.00",
+        "stance": "UNDECIDED"
+      },
+      {
+        "claim_id": "clm_5978f737a38a4193",
+        "examined": true,
+        "note": "support p=0.97 vs refutation p=0.98",
+        "stance": "UNDECIDED"
+      }
+    ],
+    "unanswered": [],
+    "attempted_queries": [
+      "PostgreSQL tuple header xmin xmax snapshot visibility",
+      "PostgreSQL documentation MVCC primary source",
+      "PostgreSQL snapshot isolation transaction visibility rules",
+      "PostgreSQL vacuum dead tuples table bloat performance",
+      "PostgreSQL VACUUM freeze autovacuum recent improvements 2024",
+      "MVCC versus lock-based serializable concurrency control tradeoffs",
+      "PostgreSQL 16 17 vacuum improvements HOT pruning scalability",
+      "PostgreSQL snapshot isolation vs serializable SSI predicate locking"
+    ],
+    "failed_approaches": [
+      "fetch:http://www.pginsights.dev/guides/postgres-dead-tuples-and-bloat",
+      "fetch:https://devgains.com/articles/postgres-vacuum-mvcc-dead-tuples-autovacuum-bloat",
+      "fetch:https://www.mssqltips.com/sqlservertip/8150/postgresql-vacuum-autovacuum-analyze-processes/"
+    ],
+    "evidence_coverage": {
+      "clm_e92815a3706f4629": true,
+      "clm_edaaab2c623b4a65": true,
+      "clm_255bbaaf88044933": true,
+      "clm_c3d5f21769714de2": true,
+      "clm_0c275c14c8cc43fd": true,
+      "clm_7777405ccf7240f8": true,
+      "clm_dee3b83f4a6b4103": true,
+      "clm_931772b3585b45a6": true,
+      "clm_c3c04ddf38cc46e6": true,
+      "clm_33bbb31afeda4a80": true,
+      "clm_c0f0a0625feb4c58": true,
+      "clm_d18fe371464e47c9": true,
+      "clm_cba5cc84a9b940ac": true,
+      "clm_a1a90170f6694904": true,
+      "clm_416af1428cb54be0": false,
+      "clm_03a9c4130e494dc5": true,
+      "clm_f8595e6d551d4d60": true,
+      "clm_a8bcec1bf6db46af": true,
+      "clm_94d32758184f4574": true,
+      "clm_708efd10b7a14708": true,
+      "clm_f5daf2fefe944ed7": true,
+      "clm_5d5c087775ed421a": true,
+      "clm_3a429af1a6364027": true,
+      "clm_8559e86ed8004aa2": true,
+      "clm_85f1d5ce105b45b3": true,
+      "clm_c1b32397a2564845": true,
+      "clm_03cc577430d94e5d": true,
+      "clm_c9df482c55e64326": true,
+      "clm_a0146efae7ce43be": true,
+      "clm_5b76455b1b5b4be4": true,
+      "clm_8e2a2be240c44ec0": true,
+      "clm_5978f737a38a4193": true
+    },
+    "citation_coverage": {
+      "clm_e92815a3706f4629": true,
+      "clm_edaaab2c623b4a65": true,
+      "clm_255bbaaf88044933": true,
+      "clm_c3d5f21769714de2": true,
+      "clm_0c275c14c8cc43fd": true,
+      "clm_7777405ccf7240f8": true,
+      "clm_dee3b83f4a6b4103": true,
+      "clm_931772b3585b45a6": true,
+      "clm_c3c04ddf38cc46e6": true,
+      "clm_33bbb31afeda4a80": true,
+      "clm_c0f0a0625feb4c58": true,
+      "clm_d18fe371464e47c9": true,
+      "clm_cba5cc84a9b940ac": true,
+      "clm_a1a90170f6694904": true,
+      "clm_416af1428cb54be0": true,
+      "clm_03a9c4130e494dc5": true,
+      "clm_f8595e6d551d4d60": true,
+      "clm_a8bcec1bf6db46af": true,
+      "clm_94d32758184f4574": true,
+      "clm_708efd10b7a14708": true,
+      "clm_f5daf2fefe944ed7": true,
+      "clm_5d5c087775ed421a": true,
+      "clm_3a429af1a6364027": true,
+      "clm_8559e86ed8004aa2": true,
+      "clm_85f1d5ce105b45b3": true,
+      "clm_c1b32397a2564845": true,
+      "clm_03cc577430d94e5d": true,
+      "clm_c9df482c55e64326": true,
+      "clm_a0146efae7ce43be": true,
+      "clm_5b76455b1b5b4be4": true,
+      "clm_8e2a2be240c44ec0": true,
+      "clm_5978f737a38a4193": true
+    },
+    "quarantined_urls": 0,
+    "injection_blocked": 0
+  },
+  "synthesis": "# Research Report: How does PostgreSQL's MVCC implementation provide transaction isolation, and why does it cause table bloat that VACUUM must clean up?\n\n## Answer (written only from the certified findings below)\n### Summary\nPostgreSQL provides transaction isolation through MVCC, which keeps multiple versions of each row and decides visibility using a tuple's xmin, xmax, and the current snapshot; the MVCC engine carries most of the load behind the SQL standard isolation levels [[4]](https://kenwagatsuma.com/blog/postgresql-dead-tuples-and-vacuum)[[8]](https://mdsanwarhossain.me/blog-postgresql-mvcc-internals.html)[[7]](https://sambasivareddy.in/blog/postgresql-internals-module-3-mvcc-transaction-isolation-levels)[[3]](https://martinuke0.github.io/posts/2026-05-27-deep-dive-into-postgresql-mvcc-internals-transaction-isolation-and-performance-at-scale/). Readers and writers can operate at the same time without blocking one another, and this implementation underpins PostgreSQL's scalability across workloads such as fintech transaction processors and social-media timelines [[1]](https://monpg.app/blog/postgresql-vacuum-guide)[[2]](https://goldlapel.com/grounds/postgres-internals/postgresql-vacuum-guide)[[3]](https://martinuke0.github.io/posts/2026-05-27-deep-dive-into-postgresql-mvcc-internals-transaction-isolation-and-performance-at-scale/).\n\nThese invisible versions inflate table and index storage and force sequential scans to read and skip garbage data; a table holding 20% dead space loses roughly 20% of sequential scan performance [[8]](https://mdsanwarhossain.me/blog-postgresql-mvcc-internals.html)[[2]](https://goldlapel.com/grounds/postgres-internals/postgresql-vacuum-guide). VACUUM, manual or autovacuum, is therefore what reclaims this space and prevents XID wraparound, yet a table with few dead tuples can still suffer bloated indexes if index vacuum lags, and long-running transactions can block cleanup [[8]](https://mdsanwarhossain.me/blog-postgresql-mvcc-internals.html)[[3]](https://martinuke0.github.io/posts/2026-05-27-deep-dive-into-postgresql-mvcc-internals-transaction-isolation-and-performance-at-scale/)[[2]](https://goldlapel.com/grounds/postgres-internals/postgresql-vacuum-guide).\n\n### What is MVCC in PostgreSQL and how does it differ from other concurrency models like lock-based serializable approaches?\nPostgreSQL uses MVCC (Multi-Version Concurrency Control) to allow readers and writers to operate without blocking each other [[1]](https://monpg.app/blog/postgresql-vacuum-guide)[[2]](https://goldlapel.com/grounds/postgres-internals/postgresql-vacuum-guide). This implementation lets readers and writers work simultaneously without blocking each other [[1]](https://monpg.app/blog/postgresql-vacuum-guide)[[2]](https://goldlapel.com/grounds/postgres-internals/postgresql-vacuum-guide). PostgreSQL implements Multiversion Concurrency Control (MVCC) to ensure transaction isolation and consistent reads [[4]](https://kenwagatsuma.com/blog/postgresql-dead-tuples-and-vacuum)[[5]](https://www.geeksforgeeks.org/postgresql/multiversion-concurrency-control-mvcc-in-postgresql/). A large part of PostgreSQL's scalability comes from its implementation of MVCC [[3]](https://martinuke0.github.io/posts/2026-05-27-deep-dive-into-postgresql-mvcc-internals-transaction-isolation-and-performance-at-scale/), which powers everything from fintech transaction processors to social-media timelines [[3]](https://martinuke0.github.io/posts/2026-05-27-deep-dive-into-postgresql-mvcc-internals-transaction-isolation-and-performance-at-scale/).\n\nThrough a consistent database snapshot for every transaction, the multi-version concurrency control (MVCC) of PostgreSQL enables high concurrency and data consistency [[5]](https://www.geeksforgeeks.org/postgresql/multiversion-concurrency-control-mvcc-in-postgresql/). This approach is necessary to gain the benefits of multiversion concurrency control, because the row version must not be deleted while it is still potentially visible to other transactions [[6]](https://www.postgresql.org/docs/current/routine-vacuuming.html). The concurrency mechanism relies on fields on disk such as xmin, xmax, ctid and cid, which are used to understand how concurrency works in PostgreSQL [[7]](https://sambasivareddy.in/blog/postgresql-internals-module-3-mvcc-transaction-isolation-levels). Consequently, readers and writers do not need to wait for each other, and each transaction sees a consistent snapshot of the data [[1]](https://monpg.app/blog/postgresql-vacuum-guide)[[2]](https://goldlapel.com/grounds/postgres-internals/postgresql-vacuum-guide)[[5]](https://www.geeksforgeeks.org/postgresql/multiversion-concurrency-control-mvcc-in-postgresql/). The combination of per-transaction snapshots and retained row versions is what underpins PostgreSQL's high concurrency and data consistency [[5]](https://www.geeksforgeeks.org/postgresql/multiversion-concurrency-control-mvcc-in-postgresql/)[[6]](https://www.postgresql.org/docs/current/routine-vacuuming.html).\n\n### How does PostgreSQL implement tuple versioning using xmin/xmax, cmin/cmax, and transaction status to enforce isolation levels?\nPostgreSQL implements transaction isolation using Multi-Version Concurrency Control (MVCC) [[4]](https://kenwagatsuma.com/blog/postgresql-dead-tuples-and-vacuum)[[8]](https://mdsanwarhossain.me/blog-postgresql-mvcc-internals.html). The underlying MVCC engine makes most of the heavy lifting for the SQL standard isolation levels [[3]](https://martinuke0.github.io/posts/2026-05-27-deep-dive-into-postgresql-mvcc-internals-transaction-isolation-and-performance-at-scale/). Isolation levels are implemented on top of MVCC: READ COMMITTED takes per-statement snapshots, while REPEATABLE READ fixes the snapshot for the whole transaction, and SERIALIZABLE adds SSI conflict detection [[3]](https://martinuke0.github.io/posts/2026-05-27-deep-dive-into-postgresql-mvcc-internals-transaction-isolation-and-performance-at-scale/). For applications that do not generally need full transaction isolation and prefer to explicitly manage particular points of conflict, table- and row-level locking facilities are also available in PostgreSQL [[9]](https://www.postgresql.org/docs/current/mvcc-intro.html).\n\nA transaction can see a row version if the inserting transaction (xmin) committed before the current transaction's snapshot was taken, and the deleting transaction (xmax) either hasn't committed yet or hasn't started [[8]](https://mdsanwarhossain.me/blog-postgresql-mvcc-internals.html). Because visibility is determined by comparing tuple header fields against the snapshot, the MVCC engine enforces the isolation levels without requiring locking for reads, while the optional locking facilities give applications explicit control over conflicts [[3]](https://martinuke0.github.io/posts/2026-05-27-deep-dive-into-postgresql-mvcc-internals-transaction-isolation-and-performance-at-scale/)[[9]](https://www.postgresql.org/docs/current/mvcc-intro.html). Thus, the same xmin/xmax mechanism underpins both ordinary snapshot isolation and the stricter SSI level, which adds conflict detection on top of the versioned tuples [[7]](https://sambasivareddy.in/blog/postgresql-internals-module-3-mvcc-transaction-isolation-levels)[[3]](https://martinuke0.github.io/posts/2026-05-27-deep-dive-into-postgresql-mvcc-internals-transaction-isolation-and-performance-at-scale/)[[9]](https://www.postgresql.org/docs/current/mvcc-intro.html).\n\n### Why does the no-overwrite, append-only versioning of rows cause dead tuples, table and index bloat, and what performance limitations does MVCC impose?\nPostgreSQL's MVCC model — the engine behind its transaction isolation guarantees — is the only way to prevent this class of performance degradation in production [[8]](https://mdsanwarhossain.me/blog-postgresql-mvcc-internals.html).\n\nThe damage is not merely wasted disk space: a table that accumulates 20% dead space does not just waste 20% of disk, it also degrades sequential scan performance by 20%, because every scan must read and skip those dead tuples [[2]](https://goldlapel.com/grounds/postgres-internals/postgresql-vacuum-guide).\n\nThe effects compound under load, since a high-churn table gets busier, autovacuum falls behind, dead tuples pile up, indexes grow, cache hit ratio drops, and queries that used to touch useful rows now walk through old row versions first [[1]](https://monpg.app/blog/postgresql-vacuum-guide).\n\n### How does VACUUM, autovacuum, free space map, and related maintenance (bloat monitoring, index cleanup) reclaim MVCC leftovers, and what recent developments like vacuum scaling or freeze improvements a\nIndexes need the same kind of care, and the tool of choice for rebuilding them while the database stays online is REINDEX CONCURRENTLY [[8]](https://mdsanwarhossain.me/blog-postgresql-mvcc-internals.html).\n\nThe difficulty with vacuuming according to a fixed schedule is that an unexpected spike in update activity can bloat a table to the point where VACUUM FULL becomes necessary to reclaim space [[6]](https://www.postgresql.org/docs/current/routine-vacuuming.html). VACUUM FULL takes exclusive locks and requires a maintenance window, so it should be used only when space must actually be returned to the operating system [[8]](https://mdsanwarhossain.me/blog-postgresql-mvcc-internals.html).\n\n## Certified Findings (semantic NLI verification)\n- [clm_e92815a3706f4629] PostgreSQL uses MVCC (Multi-Version Concurrency Control) to allow readers and writers to operate without blocking each other.\n  - cited: [src_eebb963e2d86461e] [PostgreSQL VACUUM and Autovacuum: A Practical Guide | Gold Lapel](https://goldlapel.com/grounds/postgres-internals/postgresql-vacuum-guide) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n  - cited: [src_fe42ec90aad14806] [PostgreSQL VACUUM: Dead Tuples, Bloat, and Wraparound | MonPG](https://monpg.app/blog/postgresql-vacuum-guide) (entailment p=1.00, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_edaaab2c623b4a65] PostgreSQL uses Multi-Version Concurrency Control (MVCC) to let readers and writers work simultaneously without blocking each other.\n  - cited: [src_fe42ec90aad14806] [PostgreSQL VACUUM: Dead Tuples, Bloat, and Wraparound | MonPG](https://monpg.app/blog/postgresql-vacuum-guide) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n  - cited: [src_eebb963e2d86461e] [PostgreSQL VACUUM and Autovacuum: A Practical Guide | Gold Lapel](https://goldlapel.com/grounds/postgres-internals/postgresql-vacuum-guide) (entailment p=0.97, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_255bbaaf88044933] PostgreSQL powers everything from fintech transaction processors to social‑media timelines, and a large part of its scalability comes from its implementation of Multi‑Version Concurrency Control (MVCC).\n  - cited: [src_889c67b9f36e458c] [Deep Dive into PostgreSQL MVCC: Internals, Transaction Isolation, and Performance at Scale | martinuke0's Blog](https://martinuke0.github.io/posts/2026-05-27-deep-dive-into-postgresql-mvcc-internals-transaction-isolation-and-performance-at-scale/) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_c3d5f21769714de2] PostgreSQL implements Multiversion Concurrency Control (MVCC) to ensure transaction isolation and consistent reads.\n  - cited: [src_71d08795a37b426b] [PostgreSQL's Dead Tuples and VACUUM Process - Ken Wagatsuma's Homepage](https://kenwagatsuma.com/blog/postgresql-dead-tuples-and-vacuum) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n  - cited: [src_ddaf6a8960994e73] [Multiversion Concurrency Control (MVCC) in PostgreSQL - GeeksforGeeks](https://www.geeksforgeeks.org/postgresql/multiversion-concurrency-control-mvcc-in-postgresql/) (entailment p=0.94, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_0c275c14c8cc43fd] This approach is necessary to gain the benefits of multiversion concurrency control (MVCC, see Chapter 13): the row version must not be deleted while it is still potentially visible to other transactions.\n  - cited: [src_1abeb7249b0c4081] [PostgreSQL: Documentation: 18: 24.1. Routine Vacuuming](https://www.postgresql.org/docs/current/routine-vacuuming.html) (entailment p=0.98, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_7777405ccf7240f8] Through a consistent database snapshot for every transaction, the multi-version concurrency control (MVCC) of PostgreSQL enables high concurrency and data consistency.\n  - cited: [src_ddaf6a8960994e73] [Multiversion Concurrency Control (MVCC) in PostgreSQL - GeeksforGeeks](https://www.geeksforgeeks.org/postgresql/multiversion-concurrency-control-mvcc-in-postgresql/) (entailment p=0.95, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_dee3b83f4a6b4103] Now that we know what is xmin, xmax, ctid and cid looks like on the disk, we use them to understand how the concurrency works in PostgreSQL.\n  - cited: [src_4738a603ead94808] [PostgreSQL MVCC & Transaction Isolation Levels | PGInternal3 | Samba Siva Reddy](https://sambasivareddy.in/blog/postgresql-internals-module-3-mvcc-transaction-isolation-levels) (entailment p=0.96, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_931772b3585b45a6] One of its key features that sets it apart from other databases is Multiversion Concurrency Control (MVCC).\n  - cited: [src_ddaf6a8960994e73] [Multiversion Concurrency Control (MVCC) in PostgreSQL - GeeksforGeeks](https://www.geeksforgeeks.org/postgresql/multiversion-concurrency-control-mvcc-in-postgresql/) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_c3c04ddf38cc46e6] PostgreSQL implements transaction isolation using Multi-Version Concurrency Control (MVCC).\n  - cited: [src_67ad4083b51e4d54] [PostgreSQL MVCC Dead Tuples & Autovacuum: Production Tuning Guide | Md Sanwar Hossain](https://mdsanwarhossain.me/blog-postgresql-mvcc-internals.html) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n  - cited: [src_71d08795a37b426b] [PostgreSQL's Dead Tuples and VACUUM Process - Ken Wagatsuma's Homepage](https://kenwagatsuma.com/blog/postgresql-dead-tuples-and-vacuum) (entailment p=1.00, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_33bbb31afeda4a80] Given a tuple with xmin, xmax, and a snapshot, here is the complete visibility check PostgreSQL runs.\n  - cited: [src_4738a603ead94808] [PostgreSQL MVCC & Transaction Isolation Levels | PGInternal3 | Samba Siva Reddy](https://sambasivareddy.in/blog/postgresql-internals-module-3-mvcc-transaction-isolation-levels) (entailment p=0.92, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_c0f0a0625feb4c58] PostgreSQL implements the SQL standard isolation levels, but the underlying MVCC engine makes most of the heavy lifting.\n  - cited: [src_889c67b9f36e458c] [Deep Dive into PostgreSQL MVCC: Internals, Transaction Isolation, and Performance at Scale | martinuke0's Blog](https://martinuke0.github.io/posts/2026-05-27-deep-dive-into-postgresql-mvcc-internals-transaction-isolation-and-performance-at-scale/) (entailment p=0.98, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_d18fe371464e47c9] Isolation levels are implemented on top of MVCC: READ COMMITTED takes per‑statement snapshots, while REPEATABLE READ fixes the snapshot for the whole transaction, and SERIALIZABLE adds SSI conflict detection.\n  - cited: [src_889c67b9f36e458c] [Deep Dive into PostgreSQL MVCC: Internals, Transaction Isolation, and Performance at Scale | martinuke0's Blog](https://martinuke0.github.io/posts/2026-05-27-deep-dive-into-postgresql-mvcc-internals-transaction-isolation-and-performance-at-scale/) (entailment p=0.98, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_cba5cc84a9b940ac] PostgreSQL maintains this guarantee even when providing the strictest level of transaction isolation through the use of an innovative Serializable Snapshot Isolation (SSI) level.\n  - cited: [src_7771fd36fff94e37] [PostgreSQL: Documentation: 18: 13.1. Introduction](https://www.postgresql.org/docs/current/mvcc-intro.html) (entailment p=0.93, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_a1a90170f6694904] Table- and row-level locking facilities are also available in PostgreSQL for applications which don't generally need full transaction isolation and prefer to explicitly manage particular points of conflict.\n  - cited: [src_7771fd36fff94e37] [PostgreSQL: Documentation: 18: 13.1. Introduction](https://www.postgresql.org/docs/current/mvcc-intro.html) (entailment p=1.00, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_03a9c4130e494dc5] A transaction can see a row version if: the inserting transaction (xmin) committed before the current transaction's snapshot was taken, and the deleting transaction (xmax) either hasn't committed yet or hasn't started.\n  - cited: [src_67ad4083b51e4d54] [PostgreSQL MVCC Dead Tuples & Autovacuum: Production Tuning Guide | Md Sanwar Hossain](https://mdsanwarhossain.me/blog-postgresql-mvcc-internals.html) (entailment p=0.97, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_a8bcec1bf6db46af] The real culprit is invisible to most developers: dead tuples silently inflating table and index storage, forcing sequential scans through gigabytes of garbage data on tables that contain millions of live rows but tens of millions of dead ones.\n  - cited: [src_67ad4083b51e4d54] [PostgreSQL MVCC Dead Tuples & Autovacuum: Production Tuning Guide | Md Sanwar Hossain](https://mdsanwarhossain.me/blog-postgresql-mvcc-internals.html) (entailment p=0.94, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_94d32758184f4574] A table that accumulates 20% dead space does not just waste 20% of disk — it also degrades sequential scan performance by 20%, because every scan must read and skip those dead tuples.\n  - cited: [src_eebb963e2d86461e] [PostgreSQL VACUUM and Autovacuum: A Practical Guide | Gold Lapel](https://goldlapel.com/grounds/postgres-internals/postgresql-vacuum-guide) (entailment p=1.00, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_708efd10b7a14708] A well-vacuumed table with minimal dead tuples can still have severely bloated indexes if index vacuum is lagging, and vice versa.\n  - cited: [src_67ad4083b51e4d54] [PostgreSQL MVCC Dead Tuples & Autovacuum: Production Tuning Guide | Md Sanwar Hossain](https://mdsanwarhossain.me/blog-postgresql-mvcc-internals.html) (entailment p=0.94, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_f5daf2fefe944ed7] A high-churn table gets busier, autovacuum falls behind, dead tuples pile up, indexes grow, cache hit ratio drops, and queries that used to touch useful rows now walk through old row versions first.\n  - cited: [src_fe42ec90aad14806] [PostgreSQL VACUUM: Dead Tuples, Bloat, and Wraparound | MonPG](https://monpg.app/blog/postgresql-vacuum-guide) (entailment p=0.96, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_5d5c087775ed421a] Since PostgreSQL doesn’t overwrite row data in place (due to MVCC), deleted and updated tuples become dead tuples, generating internal fragmentation.\n  - cited: [src_f0c2cc0befba4db2] [PostgreSQL Free Space Management Explained: FSM, Dead Tuples & Vacuum Optimization](https://learnomate.org/postgresql-free-space-management-learnomate/) (entailment p=0.97, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_3a429af1a6364027] Understanding PostgreSQL's MVCC model — the engine behind its transaction isolation guarantees — is the only way to prevent this class of performance degradation in production.\n  - cited: [src_67ad4083b51e4d54] [PostgreSQL MVCC Dead Tuples & Autovacuum: Production Tuning Guide | Md Sanwar Hossain](https://mdsanwarhossain.me/blog-postgresql-mvcc-internals.html) (entailment p=0.98, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_8559e86ed8004aa2] Dead tuples occupy space in the table, which can lead to table bloat if not cleaned up.\n  - cited: [src_71d08795a37b426b] [PostgreSQL's Dead Tuples and VACUUM Process - Ken Wagatsuma's Homepage](https://kenwagatsuma.com/blog/postgresql-dead-tuples-and-vacuum) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n  - cited: [src_67ad4083b51e4d54] [PostgreSQL MVCC Dead Tuples & Autovacuum: Production Tuning Guide | Md Sanwar Hossain](https://mdsanwarhossain.me/blog-postgresql-mvcc-internals.html) (entailment p=0.99, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_85f1d5ce105b45b3] The Free Space Map (FSM) is a PostgreSQL internal data structure that tracks how much free space exists on each data page of a table or index.\n  - cited: [src_f0c2cc0befba4db2] [PostgreSQL Free Space Management Explained: FSM, Dead Tuples & Vacuum Optimization](https://learnomate.org/postgresql-free-space-management-learnomate/) (entailment p=0.98, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_c1b32397a2564845] Vacuum (manual or autovacuum) is essential to reclaim space and prevent XID wrap‑around; tune thresholds for write‑heavy tables.\n  - cited: [src_889c67b9f36e458c] [Deep Dive into PostgreSQL MVCC: Internals, Transaction Isolation, and Performance at Scale | martinuke0's Blog](https://martinuke0.github.io/posts/2026-05-27-deep-dive-into-postgresql-mvcc-internals-transaction-isolation-and-performance-at-scale/) (entailment p=0.98, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_03cc577430d94e5d] VACUUM and autovacuum require ongoing attention — monitoring dead tuple ratios, adjusting per-table settings as workload patterns change, watching for long-running transactions that block cleanup.\n  - cited: [src_eebb963e2d86461e] [PostgreSQL VACUUM and Autovacuum: A Practical Guide | Gold Lapel](https://goldlapel.com/grounds/postgres-internals/postgresql-vacuum-guide) (entailment p=0.98, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_c9df482c55e64326] VACUUM FULL requires a maintenance window — it takes exclusive locks; use it only when space reclamation to OS is required; REINDEX CONCURRENTLY is your online index rebuild tool.\n  - cited: [src_67ad4083b51e4d54] [PostgreSQL MVCC Dead Tuples & Autovacuum: Production Tuning Guide | Md Sanwar Hossain](https://mdsanwarhossain.me/blog-postgresql-mvcc-internals.html) (entailment p=0.92, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n- [clm_8e2a2be240c44ec0] The difficulty with doing vacuuming according to a fixed schedule is that if a table has an unexpected spike in update activity, it may get bloated to the point that VACUUM FULL is really necessary to reclaim space.\n  - cited: [src_1abeb7249b0c4081] [PostgreSQL: Documentation: 18: 24.1. Routine Vacuuming](https://www.postgresql.org/docs/current/routine-vacuuming.html) (entailment p=0.97, evaluator: cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8)\n\n## Contradicted / Refuted / Conflicting\n- [clm_f8595e6d551d4d60] Table bloat and index bloat are separate problems — VACUUM cleans dead tuples; REINDEX CONCURRENTLY fixes index bloat; both are needed for full recovery. *(status: CONFLICTING)*\n- [clm_a0146efae7ce43be] When VACUUM FULL is justified: only when the table has massive free space — 50% or more of the file is reusable but not reclaimable by regular VACUUM — and you genuinely need the disk space returned to the operating system. *(status: CONFLICTING)*\n- [clm_5b76455b1b5b4be4] But HOT is impossible when: the updated column is indexed (the index entry must change), or there's no free space on the same page for the new tuple. *(status: CONFLICTING)*\n- [clm_5978f737a38a4193] You shred the papers (removing dead tuples from the table) and free up drawer space (updating the free space map or FSM) for future use. *(status: CONFLICTING)*\n\n## Contradictions Examined\n- clm_f8595e6d551d4d60: examined=True stance=UNDECIDED\n- clm_a0146efae7ce43be: examined=True stance=UNDECIDED\n- clm_5b76455b1b5b4be4: examined=True stance=UNDECIDED\n- clm_5978f737a38a4193: examined=True stance=UNDECIDED\n\n## Uncertainty and Limitations\n- 1 claim(s) remain uncertain or insufficiently evidenced.\n- No primary-research source was available; findings rest on secondary reporting and are limited accordingly.\n- Uncertainty classification: UNCERTAIN\n\n## Sources\n1. [src_fe42ec90aad14806] [PostgreSQL VACUUM: Dead Tuples, Bloat, and Wraparound | MonPG](https://monpg.app/blog/postgresql-vacuum-guide)\n2. [src_eebb963e2d86461e] [PostgreSQL VACUUM and Autovacuum: A Practical Guide | Gold Lapel](https://goldlapel.com/grounds/postgres-internals/postgresql-vacuum-guide)\n3. [src_889c67b9f36e458c] [Deep Dive into PostgreSQL MVCC: Internals, Transaction Isolation, and Performance at Scale | martinuke0's Blog](https://martinuke0.github.io/posts/2026-05-27-deep-dive-into-postgresql-mvcc-internals-transaction-isolation-and-performance-at-scale/)\n4. [src_71d08795a37b426b] [PostgreSQL's Dead Tuples and VACUUM Process - Ken Wagatsuma's Homepage](https://kenwagatsuma.com/blog/postgresql-dead-tuples-and-vacuum)\n5. [src_ddaf6a8960994e73] [Multiversion Concurrency Control (MVCC) in PostgreSQL - GeeksforGeeks](https://www.geeksforgeeks.org/postgresql/multiversion-concurrency-control-mvcc-in-postgresql/)\n6. [src_1abeb7249b0c4081] [PostgreSQL: Documentation: 18: 24.1. Routine Vacuuming](https://www.postgresql.org/docs/current/routine-vacuuming.html)\n7. [src_4738a603ead94808] [PostgreSQL MVCC & Transaction Isolation Levels | PGInternal3 | Samba Siva Reddy](https://sambasivareddy.in/blog/postgresql-internals-module-3-mvcc-transaction-isolation-levels)\n8. [src_67ad4083b51e4d54] [PostgreSQL MVCC Dead Tuples & Autovacuum: Production Tuning Guide | Md Sanwar Hossain](https://mdsanwarhossain.me/blog-postgresql-mvcc-internals.html)\n9. [src_7771fd36fff94e37] [PostgreSQL: Documentation: 18: 13.1. Introduction](https://www.postgresql.org/docs/current/mvcc-intro.html)\n10. [src_f0c2cc0befba4db2] [PostgreSQL Free Space Management Explained: FSM, Dead Tuples & Vacuum Optimization](https://learnomate.org/postgresql-free-space-management-learnomate/)",
+  "audit": {
+    "status": "PASS_WITH_FLAGS",
+    "checks": {
+      "no_provisional_certifications": true,
+      "no_unsupported_critical_claims": true,
+      "citations_resolve": true,
+      "no_circular_citations": true,
+      "provenance_intact": true,
+      "numeric_consistency": true,
+      "causal_language_appropriate": false,
+      "contradictions_examined": true,
+      "uncertainty_explicit": true
+    },
+    "findings": [
+      "causal language without primary-source backing: ['cause', 'guarantee', 'guarantees']"
+    ],
+    "unsupported_claims": [],
+    "hallucinated_citations": [],
+    "circular_citations": [],
+    "provisional_certifications": []
+  },
+  "errors": [],
+  "governance": {
+    "budget": {
+      "max_iterations": 4.0,
+      "max_tool_calls": 40.0,
+      "max_search_calls": 14.0,
+      "max_fetches": 16.0,
+      "max_sandbox_executions": 4.0,
+      "max_model_calls": 20.0,
+      "max_wall_clock_s": 540.0,
+      "max_response_chars": 18000.0,
+      "max_retries_per_call": 2.0,
+      "max_dependency_depth": 8.0,
+      "max_concurrent_fetches": 2.0,
+      "max_extensions": 2.0,
+      "max_verifications": 80.0
+    },
+    "counters": {
+      "iterations": 2,
+      "tool_calls": 0,
+      "search_calls": 14,
+      "fetches": 16,
+      "sandbox_executions": 0,
+      "model_calls": 16,
+      "retries": 3,
+      "verifications": 33
+    },
+    "denials": [
+      {
+        "resource": "fetches",
+        "detail": "max 16 reached",
+        "ts": 1791342041.2789133
+      },
+      {
+        "resource": "fetches",
+        "detail": "max 16 reached",
+        "ts": 1791342044.5347407
+      },
+      {
+        "resource": "fetches",
+        "detail": "max 16 reached",
+        "ts": 1791342052.2053025
+      },
+      {
+        "resource": "search_calls",
+        "detail": "max 14 reached",
+        "ts": 1791342072.6439426
+      }
+    ],
+    "extensions": [],
+    "cancelled": false,
+    "cancel_reason": null,
+    "pipeline": {
+      "subquestions": [
+        {
+          "index": 1,
+          "question": "What is MVCC in PostgreSQL and how does it differ from other concurrency models like lock-based serializable approaches?",
+          "queries": [
+            "PostgreSQL MVCC multiversion concurrency control basics",
+            "PostgreSQL documentation MVCC primary source",
+            "MVCC versus lock-based serializable concurrency control tradeoffs"
+          ],
+          "sources": 4,
+          "claims": 8
+        },
+        {
+          "index": 2,
+          "question": "How does PostgreSQL implement tuple versioning using xmin/xmax, cmin/cmax, and transaction status to enforce isolation levels?",
+          "queries": [
+            "PostgreSQL tuple header xmin xmax snapshot visibility",
+            "PostgreSQL snapshot isolation transaction visibility rules",
+            "PostgreSQL snapshot isolation vs serializable SSI predicate locking"
+          ],
+          "sources": 3,
+          "claims": 8
+        },
+        {
+          "index": 3,
+          "question": "Why does the no-overwrite, append-only versioning of rows cause dead tuples, table and index bloat, and what performance limitations does MVCC impose?",
+          "queries": [
+            "PostgreSQL MVCC dead tuple bloat vacuum explanation",
+            "PostgreSQL vacuum dead tuples table bloat performance"
+          ],
+          "sources": 3,
+          "claims": 8
+        },
+        {
+          "index": 4,
+          "question": "How does VACUUM, autovacuum, free space map, and related maintenance (bloat monitoring, index cleanup) reclaim MVCC leftovers, and what recent developments like vacuum scaling or freeze improvements a",
+          "queries": [
+            "PostgreSQL autovacuum free space map vacuum process",
+            "PostgreSQL VACUUM freeze autovacuum recent improvements 2024",
+            "PostgreSQL 16 17 vacuum improvements HOT pruning scalability"
+          ],
+          "sources": 3,
+          "claims": 8
+        }
+      ],
+      "router": {
+        "routes": {
+          "planner": [
+            "mimo-v2.5:free",
+            "deepseek-v4-flash:free",
+            "mimo-v2.6-flash:free"
+          ],
+          "reflect": [
+            "mimo-v2.5:free",
+            "deepseek-v4-flash:free",
+            "mimo-v2.6-flash:free"
+          ],
+          "writer": [
+            "mimo-v2.5:free",
+            "deepseek-v4-flash:free",
+            "mimo-v2.6-flash:free"
+          ],
+          "judge": [
+            "mimo-v2.5:free",
+            "deepseek-v4-flash:free"
+          ],
+          "extract": [
+            "mimo-v2.5:free",
+            "deepseek-v4-flash:free"
+          ]
+        },
+        "calls_by_role": {
+          "planner": 1,
+          "judge": 6,
+          "reflect": 1,
+          "writer": 5
+        },
+        "failures": {
+          "mimo-v2.5:free": 3
+        },
+        "disabled": {
+          "mimo-v2.5:free": "mimo-v2.5:free returned no text"
+        },
+        "attempts": [
+          {
+            "role": "planner",
+            "model": "mimo-v2.5:free",
+            "ok": true,
+            "seconds": 7.582962520000024,
+            "error": ""
+          },
+          {
+            "role": "judge",
+            "model": "mimo-v2.5:free",
+            "ok": true,
+            "seconds": 50.09461119900004,
+            "error": ""
+          },
+          {
+            "role": "judge",
+            "model": "mimo-v2.5:free",
+            "ok": true,
+            "seconds": 6.35837793799999,
+            "error": ""
+          },
+          {
+            "role": "judge",
+            "model": "mimo-v2.5:free",
+            "ok": false,
+            "seconds": 7.5167194130000325,
+            "error": "mimo-v2.5:free returned no text"
+          },
+          {
+            "role": "judge",
+            "model": "deepseek-v4-flash:free",
+            "ok": true,
+            "seconds": 3.488022139000009,
+            "error": ""
+          },
+          {
+            "role": "judge",
+            "model": "mimo-v2.5:free",
+            "ok": true,
+            "seconds": 3.0732547249999698,
+            "error": ""
+          },
+          {
+            "role": "judge",
+            "model": "mimo-v2.5:free",
+            "ok": true,
+            "seconds": 3.725482982000017,
+            "error": ""
+          },
+          {
+            "role": "judge",
+            "model": "mimo-v2.5:free",
+            "ok": true,
+            "seconds": 2.193697690000022,
+            "error": ""
+          },
+          {
+            "role": "reflect",
+            "model": "mimo-v2.5:free",
+            "ok": true,
+            "seconds": 5.609169626000039,
+            "error": ""
+          },
+          {
+            "role": "writer",
+            "model": "mimo-v2.5:free",
+            "ok": true,
+            "seconds": 14.246881288000168,
+            "error": ""
+          },
+          {
+            "role": "writer",
+            "model": "mimo-v2.5:free",
+            "ok": false,
+            "seconds": 29.08868848299994,
+            "error": "mimo-v2.5:free returned no text"
+          },
+          {
+            "role": "writer",
+            "model": "mimo-v2.5:free",
+            "ok": false,
+            "seconds": 30.812778963000028,
+            "error": "mimo-v2.5:free returned no text"
+          },
+          {
+            "role": "writer",
+            "model": "mimo-v2.5:free",
+            "ok": true,
+            "seconds": 33.82984688600004,
+            "error": ""
+          },
+          {
+            "role": "writer",
+            "model": "mimo-v2.5:free",
+            "ok": true,
+            "seconds": 21.784114039000087,
+            "error": ""
+          },
+          {
+            "role": "writer",
+            "model": "deepseek-v4-flash:free",
+            "ok": true,
+            "seconds": 9.680543415999864,
+            "error": ""
+          },
+          {
+            "role": "writer",
+            "model": "deepseek-v4-flash:free",
+            "ok": true,
+            "seconds": 12.556634200999952,
+            "error": ""
+          }
+        ]
+      }
+    }
+  },
+  "telemetry": {
+    "request_id": "req_41266f8a95874016",
+    "counters": {
+      "search_calls": 14,
+      "search_hits": 52,
+      "fetch_calls": 16,
+      "fetch_failed": 3,
+      "sources_added": 13,
+      "claims_extracted": 32,
+      "evidence_evaluations": 66,
+      "claims_certified": 27,
+      "contradictions_recorded": 4,
+      "dialectic_attacks": 4,
+      "writer_sentences_not_entailed": 24,
+      "final_audits": 1
+    },
+    "latencies": {
+      "search": {
+        "count": 14,
+        "p50_ms": 6668.93,
+        "p95_ms": 15184.74,
+        "max_ms": 15184.74
+      },
+      "fetch": {
+        "count": 16,
+        "p50_ms": 385.77,
+        "p95_ms": 1477.88,
+        "max_ms": 1477.88
+      },
+      "evidence_eval": {
+        "count": 33,
+        "p50_ms": 2788.15,
+        "p95_ms": 19841.23,
+        "max_ms": 51408.82
+      }
+    },
+    "event_count": 5
+  },
+  "events": [
+    {
+      "name": "run.start",
+      "ts": 1791341830.955792,
+      "run_id": "run_ab205f7867c14db8",
+      "data": {
+        "objective": "How does PostgreSQL's MVCC implementation provide transaction isolation, and why does it cause table bloat that VACUUM must clean up?",
+        "resumed": "False",
+        "backend": "multi-agent-router"
+      }
+    },
+    {
+      "name": "plan",
+      "ts": 1791341838.5405114,
+      "run_id": "run_ab205f7867c14db8",
+      "data": {
+        "subquestions": "[{'index': 1, 'question': 'What is MVCC in PostgreSQL and how does it differ from other concurrency models like lock-based serializable approaches?', 'queries': ['PostgreSQL MVCC multiversion concurrency control basics', 'PostgreSQL documentation MVCC primary source'], 'sources': 0, 'claims': 0}, {'index': 2, 'question': 'How does PostgreSQL implement tuple versioning using xmin/xmax, cmin/cmax, and transaction status to enforce isolation levels?', 'queries': ['PostgreSQL tuple header xmin xmax snapshot visibility', 'PostgreSQL snapshot isolation transaction visibility rules'], 'sources': 0, 'claims': 0}, {'index': 3, 'question': 'Why does the no-overwrite, append-only versioning of rows cause dead tuples, table and index bloat, and what performance limitations does MVCC impose?', 'queries': ['PostgreSQL MVCC dead tuple bloat vacuum explanation', 'PostgreSQL vacuum dead tuples table bloat performance'], 'sources': 0, 'claims': 0}, {'index': 4, 'question': 'How does VACUUM, autovacuum, free space map, and related maintenance (bloat monitoring, index cleanup) reclaim MVCC leftovers, and what recent developments like vacuum scaling or freeze improvements a', 'queries': ['PostgreSQL autovacuum free space map vacuum process', 'PostgreSQL VACUUM freeze autovacuum recent improvements 2024'], 'sources': 0, 'claims': 0}]"
+      }
+    },
+    {
+      "name": "research_round",
+      "ts": 1791341857.391367,
+      "run_id": "run_ab205f7867c14db8",
+      "data": {
+        "subquestions": "4",
+        "sources": "12"
+      }
+    },
+    {
+      "name": "reflection",
+      "ts": 1791342037.8632329,
+      "run_id": "run_ab205f7867c14db8",
+      "data": {
+        "followups": "3"
+      }
+    },
+    {
+      "name": "research_round",
+      "ts": 1791342052.205671,
+      "run_id": "run_ab205f7867c14db8",
+      "data": {
+        "subquestions": "3",
+        "sources": "13"
+      }
+    }
+  ]
+}

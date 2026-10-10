@@ -1,0 +1,615 @@
+{
+ "references": [],
+ "confidence": "high",
+ "language": "en",
+ "translated": false,
+ "check_id": "chk_37ce4daeb2ed",
+ "trust_score": 88,
+ "grade": "citations hold up",
+ "counts": {
+  "SUPPORTED": 7,
+  "PARTIALLY SUPPORTED": 0,
+  "CONTRADICTED": 0,
+  "WRONG SOURCE": 1,
+  "UNVERIFIABLE": 5,
+  "DEAD LINK": 0,
+  "NO CITATION": 1
+ },
+ "claims": [
+  {
+   "claim_id": "c1",
+   "claim": "The R21/Matrix-M malaria vaccine has shown high efficacy in clinical trials, although reported figures vary by trial phase and setting.",
+   "verdict": "NO CITATION",
+   "citations": [],
+   "quote": "",
+   "quote_url": "",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c2",
+   "claim": "It was well tolerated and offered high efficacy against clinical malaria in African children.",
+   "verdict": "UNVERIFIABLE",
+   "citations": [
+    {
+     "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(23",
+     "marker": "[1]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "blocked",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "page exists but could not be read (HTTP 403); archive check unavailable",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(23",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "low",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c3",
+   "claim": "In Phase 2 trials, it demonstrated remarkable effectiveness reaching 77%.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.996,
+     "contradiction": 0.0,
+     "quote": "Developed through a collaboration between the University of Oxford and Novavax, this vaccine has demonstrated remarkable efficacy, reaching 77% effectiveness in Phase 2 clinical trials.",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Developed through a collaboration between the University of Oxford and Novavax, this vaccine has demonstrated remarkable efficacy, reaching 77% effectiveness in Phase 2 clinical trials.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4.1",
+   "claim": "Phase 3 trials reported 12-month vaccine efficacy of 75% at seasonal-transmission sites.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.994,
+     "contradiction": 0.0,
+     "quote": "Notably, phase 3 clinical trials have shown the R21/Matrix-M 12-month Vaccine Efficacy (VE) to be 75% in locations characterized by seasonal variations, while it registered at 68% in standard locations [1].",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Notably, phase 3 clinical trials have shown the R21/Matrix-M 12-month Vaccine Efficacy (VE) to be 75% in locations characterized by seasonal variations, while it registered at 68% in standard locations [1].",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4.2",
+   "claim": "Phase 3 trials reported 12-month vaccine efficacy of 68% at standard sites.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.998,
+     "contradiction": 0.0,
+     "quote": "Notably, phase 3 clinical trials have shown the R21/Matrix-M 12-month Vaccine Efficacy (VE) to be 75% in locations characterized by seasonal variations, while it registered at 68% in standard locations [1].",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Notably, phase 3 clinical trials have shown the R21/Matrix-M 12-month Vaccine Efficacy (VE) to be 75% in locations characterized by seasonal variations, while it registered at 68% in standard locations [1].",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4.3",
+   "claim": "Phase 3 trials reported efficacy against multiple clinical malaria episodes at 75% at seasonal-transmission sites.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.973,
+     "contradiction": 0.0,
+     "quote": "It represents a significant advancement in providing enhanced protection against malaria [4]. Notably, phase 3 clinical trials have shown the R21/Matrix-M 12-month Vaccine Efficacy (VE) to be 75% in locations characterized by seasonal variations, while it registered at 68% in standard locations [1].",
+     "note": "",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "It represents a significant advancement in providing enhanced protection against malaria [4]. Notably, phase 3 clinical trials have shown the R21/Matrix-M 12-month Vaccine Efficacy (VE) to be 75% in locations characterized by seasonal variations, while it registered at 68% in standard locations [1].",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c4.4",
+   "claim": "Phase 3 trials reported efficacy against multiple clinical malaria episodes at 67% at standard sites.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.99,
+     "contradiction": 0.961,
+     "quote": "While the recently released Phase III results did not identify significant differences in VE between seasonal and standard sites, a discernible trend toward higher efficacy in seasonal sites was noted [1]. Specifically, over 12 months, VE for the time leading up to the initial clinical malaria episode was 75% in the seasonal sites and 68% in the standard sites [1]. Similarly, VE against multiple c",
+     "note": "another passage on the page may disagree: \"Notably, phase 3 clinical trials have shown the R21/Matrix-M 12-month Vaccine Efficacy (VE) to be 75% in locations characterized by seasonal variations, while i\"",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "While the recently released Phase III results did not identify significant differences in VE between seasonal and standard sites, a discernible trend toward higher efficacy in seasonal sites was noted [1]. Specifically, over 12 months, VE for the time leading up to the initial clinical malaria episode was 75% in the seasonal sites and 68% in the standard sites [1]. Similarly, VE against multiple c",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "atomic part of a compound sentence",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c5",
+   "claim": "Other reports describe up to 77% protection against the malaria parasite.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.014,
+     "contradiction": 0.0,
+     "quote": "Notably, the R21/Matrix-M vaccine boasts higher efficacy than previous malaria vaccines, offering up to 77% protection against the malaria parasite in clinical trials.",
+     "note": "reworded match: Passages explicitly state up to 77% protection against malaria parasite.",
+     "judged_by": "nli+llm",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "Notably, the R21/Matrix-M vaccine boasts higher efficacy than previous malaria vaccines, offering up to 77% protection against the malaria parasite in clinical trials.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c6",
+   "claim": "Efficacy has not been uniform: results have varied across clinical trials conducted in different populations and settings.",
+   "verdict": "WRONG SOURCE",
+   "citations": [
+    {
+     "url": "https://www.sciencedirect.com/science/article/pii/S1876034126000948",
+     "marker": "[4]",
+     "verdict": "WRONG SOURCE",
+     "link_state": "archived_only",
+     "entailment": 0.043,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "the page is real but does not say this (verified against the Wayback Machine copy; live page is gone)",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.sciencedirect.com/science/article/pii/S1876034126000948",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "",
+   "confidence": "medium",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c7.1",
+   "claim": "A booster dose was given one year after the primary three-dose regimen.",
+   "verdict": "UNVERIFIABLE",
+   "citations": [
+    {
+     "url": "https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(22",
+     "marker": "[3]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "blocked",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "page exists but could not be read (HTTP 403); archive check unavailable",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(22",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "low",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c7.2",
+   "claim": "A booster dose given one year after the primary three-dose regimen maintained high efficacy against first episodes of clinical malaria.",
+   "verdict": "UNVERIFIABLE",
+   "citations": [
+    {
+     "url": "https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(22",
+     "marker": "[3]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "blocked",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "page exists but could not be read (HTTP 403); archive check unavailable",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(22",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "low",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c7.3",
+   "claim": "A booster dose given one year after the primary three-dose regimen maintained high efficacy against multiple episodes of clinical malaria.",
+   "verdict": "UNVERIFIABLE",
+   "citations": [
+    {
+     "url": "https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(22",
+     "marker": "[3]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "blocked",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "page exists but could not be read (HTTP 403); archive check unavailable",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(22",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "low",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c7.4",
+   "claim": "Antibody concentrations correlated with vaccine efficacy.",
+   "verdict": "UNVERIFIABLE",
+   "citations": [
+    {
+     "url": "https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(22",
+     "marker": "[3]",
+     "verdict": "UNVERIFIABLE",
+     "link_state": "blocked",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "",
+     "note": "page exists but could not be read (HTTP 403); archive check unavailable",
+     "judged_by": "nli",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "",
+   "quote_url": "https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(22",
+   "replacement": null,
+   "replacement_searched": true,
+   "note": "atomic part of a compound sentence",
+   "confidence": "low",
+   "freshness": ""
+  },
+  {
+   "claim_id": "c8",
+   "claim": "Overall, the vaccine is considered among the most promising candidates, designed to be low-dose, cost-effective, and accessible.",
+   "verdict": "SUPPORTED",
+   "citations": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+     "marker": "[5]",
+     "verdict": "SUPPORTED",
+     "link_state": "live",
+     "entailment": 0.0,
+     "contradiction": 0.0,
+     "quote": "It is designed to be low-dose, cost-effective, and accessible, with approval for use in children under three years old.",
+     "note": "reworded match: P1 confirms most promising; P2 confirms design attributes.",
+     "judged_by": "nli+llm",
+     "source_type": "peer-reviewed",
+     "source_year": null
+    }
+   ],
+   "quote": "It is designed to be low-dose, cost-effective, and accessible, with approval for use in children under three years old.",
+   "quote_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+   "replacement": null,
+   "replacement_searched": false,
+   "note": "",
+   "confidence": "high",
+   "freshness": ""
+  }
+ ],
+ "links": [
+  {
+   "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(23",
+   "state": "blocked",
+   "http_status": 403,
+   "error": "HTTP 403",
+   "resolved_url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(23",
+   "title": "",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "",
+   "archive_check": "unavailable",
+   "content_hash": "",
+   "quarantined": false
+  },
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+   "state": "live",
+   "http_status": 200,
+   "error": "",
+   "resolved_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+   "title": "A perspective on Oxford\u2019s R21/Matrix-M\u2122 malaria vaccine and the future of global eradication efforts - PMC",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "live",
+   "archive_check": "",
+   "content_hash": "443ea52a77b0c250f341ce43cb7c5ec3d13363656ef9759730eb63155e222af9",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.sciencedirect.com/science/article/pii/S1876034126000948",
+   "state": "archived_only",
+   "http_status": 403,
+   "error": "HTTP 403",
+   "resolved_url": "https://www.sciencedirect.com/science/article/pii/S1876034126000948",
+   "title": "",
+   "archive_url": "http://web.archive.org/web/20260420074647/https://www.sciencedirect.com/science/article/pii/S1876034126000948",
+   "archive_timestamp": "20260420074647",
+   "text_source": "wayback",
+   "archive_check": "archived",
+   "content_hash": "e9dba03925a9aa7ea30000226cab3a9d897da78cbb1623519fbcddc61033520b",
+   "quarantined": false
+  },
+  {
+   "url": "https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(22",
+   "state": "blocked",
+   "http_status": 403,
+   "error": "HTTP 403",
+   "resolved_url": "https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(22",
+   "title": "",
+   "archive_url": "",
+   "archive_timestamp": "",
+   "text_source": "",
+   "archive_check": "unavailable",
+   "content_hash": "",
+   "quarantined": false
+  }
+ ],
+ "evaluator": "cross-encoder/nli-deberta-v3-small@cross-encoder/nli-deberta-v3-small/thr=0.75",
+ "elapsed_s": 94.6,
+ "usage": {
+  "fetches": 5,
+  "wayback_lookups": 3,
+  "searches": 0,
+  "llm_calls": 4,
+  "nli_checks": 8,
+  "scorer_load_ms": 1443
+ },
+ "audit_trail": [
+  {
+   "t": 0.0,
+   "event": "parse",
+   "claims": 8,
+   "citations": 7
+  },
+  {
+   "t": 21.21,
+   "event": "fetch",
+   "url": "https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(22",
+   "state": "blocked",
+   "http_status": 403,
+   "chars": 0,
+   "error": "HTTP 403"
+  },
+  {
+   "t": 21.24,
+   "event": "fetch",
+   "url": "https://www.sciencedirect.com/science/article/pii/S1876034126000948",
+   "state": "blocked",
+   "http_status": 403,
+   "chars": 0,
+   "error": "HTTP 403"
+  },
+  {
+   "t": 21.43,
+   "event": "fetch",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+   "state": "live",
+   "http_status": 200,
+   "chars": 15508,
+   "error": ""
+  },
+  {
+   "t": 22.03,
+   "event": "fetch",
+   "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(23",
+   "state": "blocked",
+   "http_status": 403,
+   "chars": 0,
+   "error": "HTTP 403"
+  },
+  {
+   "t": 23.01,
+   "event": "wayback",
+   "url": "https://www.sciencedirect.com/science/article/pii/S1876034126000948",
+   "archived": true,
+   "snapshot": "http://web.archive.org/web/20260420074647/https://www.sciencedirect.com/science/article/pii/S1876034126000948"
+  },
+  {
+   "t": 24.01,
+   "event": "archive_fetch",
+   "url": "https://web.archive.org/web/20260420074647id_/https://www.sciencedirect.com/science/article/pii/S1876034126000948",
+   "ok": true,
+   "chars": 318,
+   "error": ""
+  },
+  {
+   "t": 34.36,
+   "event": "wayback",
+   "url": "https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(22",
+   "error": "ReadTimeout: HTTPSConnectionPool(host='web.archive.org', port=443): Read timed out. (read timeout=12.0)"
+  },
+  {
+   "t": 38.18,
+   "event": "wayback",
+   "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(23",
+   "error": "ReadTimeout: HTTPSConnectionPool(host='web.archive.org', port=443): Read timed out. (read timeout=12.0)"
+  },
+  {
+   "t": 41.49,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+   "claim": "In Phase 2 trials, it demonstrated remarkable effectiveness reaching 77%.",
+   "verdict": "SUPPORTED",
+   "ent": 0.996,
+   "con": 0.0
+  },
+  {
+   "t": 45.01,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+   "claim": "Phase 3 trials reported 12-month vaccine efficacy of 75% at seasonal-transmission sites.",
+   "verdict": "SUPPORTED",
+   "ent": 0.994,
+   "con": 0.0
+  },
+  {
+   "t": 48.47,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+   "claim": "Phase 3 trials reported 12-month vaccine efficacy of 68% at standard sites.",
+   "verdict": "SUPPORTED",
+   "ent": 0.998,
+   "con": 0.0
+  },
+  {
+   "t": 52.1,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+   "claim": "Phase 3 trials reported efficacy against multiple clinical malaria episodes at 75% at seasonal-transmission sites.",
+   "verdict": "SUPPORTED",
+   "ent": 0.973,
+   "con": 0.0
+  },
+  {
+   "t": 55.69,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+   "claim": "Phase 3 trials reported efficacy against multiple clinical malaria episodes at 67% at standard sites.",
+   "verdict": "SUPPORTED",
+   "ent": 0.99,
+   "con": 0.961
+  },
+  {
+   "t": 73.28,
+   "event": "paraphrase_judge",
+   "claim": "Other reports describe up to 77% protection against the malaria parasite.",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 73.28,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+   "claim": "Other reports describe up to 77% protection against the malaria parasite.",
+   "verdict": "SUPPORTED",
+   "ent": 0.014,
+   "con": 0.0
+  },
+  {
+   "t": 73.81,
+   "event": "verify",
+   "url": "https://www.sciencedirect.com/science/article/pii/S1876034126000948",
+   "claim": "Efficacy has not been uniform: results have varied across clinical trials conducted in different populations and setting",
+   "verdict": "WRONG SOURCE",
+   "ent": 0.043,
+   "con": 0.0
+  },
+  {
+   "t": 94.57,
+   "event": "paraphrase_judge",
+   "claim": "Overall, the vaccine is considered among the most promising candidates, designed to be low-dose, cost-effective, and acc",
+   "verdict": "SUPPORTED",
+   "grounded": true
+  },
+  {
+   "t": 94.57,
+   "event": "verify",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787413/",
+   "claim": "Overall, the vaccine is considered among the most promising candidates, designed to be low-dose, cost-effective, and acc",
+   "verdict": "SUPPORTED",
+   "ent": 0.0,
+   "con": 0.0
+  },
+  {
+   "t": 94.58,
+   "event": "done",
+   "trust_score": 88
+  }
+ ],
+ "score_s": 96.0
+}

@@ -1,0 +1,10 @@
+{
+ "answer": "Yes. The best evidence comes from randomized trials showing fewer major cardiovascular events with semaglutide.\n\nIn SELECT, adults with overweight/obesity and established cardiovascular disease but no diabetes had about a 20% lower risk of cardiovascular death, nonfatal heart attack, or nonfatal stroke versus placebo. \n [1]\n In people with type 2 diabetes and high cardiovascular risk, oral semaglutide also reduced major adverse cardiovascular events (HR 0.86). \n [3]\n\nSo the answer is yes: GLP-1 drugs like semaglutide have evidence for reducing cardiovascular events, especially in higher-risk patients. \n [1]",
+ "sources": [
+  "https://newsroom.heart.org/news/major-cvd-event-risk-cut-by-20-in-adults-without-diabetes-with-overweight-or-obesity",
+  "https://www.acc.org/latest-in-cardiology/clinical-trials/2023/11/09/15/04/select",
+  "https://www.2minutemedicine.com/oral-semaglutide-reduces-cardiovascular-event-rates-in-high-risk-patients/"
+ ],
+ "raw_answer": "Yes. The best evidence comes from randomized trials showing fewer major cardiovascular events with semaglutide.\n\nIn SELECT, adults with overweight/obesity and established cardiovascular disease but no diabetes had about a 20% lower risk of cardiovascular death, nonfatal heart attack, or nonfatal stroke versus placebo. \nAmerican Heart Association\n1\n In people with type 2 diabetes and high cardiovascular risk, oral semaglutide also reduced major adverse cardiovascular events (HR 0.86). \n2minutemedicine.com\n\nSo the answer is yes: GLP-1 drugs like semaglutide have evidence for reducing cardiovascular events, especially in higher-risk patients. \nAmerican Heart Association\n2",
+ "markers_mapped": 3
+}
