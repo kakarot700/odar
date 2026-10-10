@@ -734,3 +734,48 @@ def test_echoed_question_is_cleared_and_asked_again():
     names = [e for e, _ in events]
     done = [d for e, d in events if e == "done"][0]
     assert len(prompts) == 2 and "reset" in names and done["answer"] == "Mars is red [1]."
+
+
+# ---------------------------------------------------------------------- web app shell
+def test_projects_route_serves_frontend(tmp_path):
+    c, _ = make(tmp_path)
+    page = c.get("/projects")
+    assert page.status_code == 200 and "ODAR" in page.text
+
+
+def test_thread_returns_latest_messages_oldest_first(tmp_path):
+    c, store = make(tmp_path)
+    first = parse_sse(c.post("/api/ask/stream", json={"question": "What is Mars?"}).text)
+    tid = dict(first)["thread"]["thread_id"]
+    for i in range(6):
+        store.add_message(tid, "user", f"note {i}")
+    msgs = c.get(f"/api/threads/{tid}", params={"limit": 3}).json()["messages"]
+    assert [m["content"] for m in msgs] == ["note 3", "note 4", "note 5"]
+    assert len(c.get(f"/api/threads/{tid}").json()["messages"]) == 8
+
+
+def test_run_attached_to_chat_thread(tmp_path):
+    store = RunStore(str(tmp_path / "r.db"))
+
+    def fake_research(store, run_id, question, **options):
+        store.update(run_id, status="COMPLETE", stage="finished", result={"synthesis": "# A\n\nB [1]."})
+
+    c = TestClient(create_app(store, ask_deps=fake_deps(), research_runner=fake_research, synchronous=True))
+    r = c.post("/api/runs", data={"mode": "research", "text": "How do vaccines work?", "thread_id": "new"})
+    assert r.status_code == 201
+    tid = r.json()["thread_id"]
+    msgs = c.get(f"/api/threads/{tid}").json()["messages"]
+    assert [m["role"] for m in msgs] == ["user", "assistant"]
+    assert msgs[0]["content"] == "How do vaccines work?" and msgs[0]["data"]["kind"] == "run"
+    assert msgs[1]["data"] == {"kind": "run", "mode": "research", "run_id": r.json()["run_id"]}
+    # a follow-up Ask in the same thread does not treat the run as chat context
+    seen = []
+    c2 = TestClient(create_app(store, ask_deps=fake_deps(seen=seen), synchronous=True))
+    c2.cookies.update(c.cookies)
+    out = parse_sse(c2.post("/api/ask/stream", json={"question": "and Mars?", "thread_id": tid}).text)
+    assert dict(out)["thread"]["thread_id"] == tid
+    assert seen[0] == ("and Mars?", "all")
+    # someone else's thread is refused
+    other = TestClient(create_app(store, research_runner=fake_research, synchronous=True))
+    r = other.post("/api/runs", data={"mode": "research", "text": "How do vaccines work?", "thread_id": tid})
+    assert r.status_code == 404

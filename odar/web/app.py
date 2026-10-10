@@ -206,6 +206,7 @@ def create_app(
     @app.get("/c/{thread_id}", include_in_schema=False)
     @app.get("/s/{token}", include_in_schema=False)
     @app.get("/p/{project_id}", include_in_schema=False)
+    @app.get("/projects", include_in_schema=False)
     def index(run_id: str = "", token: str = "", thread_id: str = "", project_id: str = "") -> FileResponse:
         return FileResponse(os.path.join(STATIC, "index.html"), headers={"Cache-Control": "no-cache"})
 
@@ -226,6 +227,7 @@ def create_app(
         academic: bool = Form(True),
         style: str = Form("apa"),
         language: str = Form("auto"),
+        thread_id: str = Form(""),
     ) -> JSONResponse:
         if language not in LANG_CHOICES:
             raise HTTPException(400, "language must be auto, en or hi")
@@ -235,6 +237,11 @@ def create_app(
         if style not in ("apa", "mla", "chicago", "ieee"):
             raise HTTPException(400, "style must be apa, mla, chicago or ieee")
         owner = owner_of(request)
+        thread = None
+        if thread_id and thread_id != "new":
+            thread = store.get_thread(thread_id)
+            if thread is None or thread["owner"] != owner:
+                raise HTTPException(404, "thread not found")
         with lock:
             active = [r for r in store.history(owner, limit=20) if r["status"] in ACTIVE]
             if len(active) >= MAX_ACTIVE_PER_USER:
@@ -289,7 +296,17 @@ def create_app(
             _execute(run["run_id"], mode, body, options)
         else:
             pool.submit(_execute, run["run_id"], mode, body, options)
-        return JSONResponse({"run_id": run["run_id"], "share_token": run["share_token"]}, status_code=201)
+        out = {"run_id": run["run_id"], "share_token": run["share_token"]}
+        if thread_id:
+            # Show the run inside a chat thread: the request as a user bubble, the run as a card.
+            if thread is None:
+                thread = store.create_thread(owner, title[:120] or mode)
+            label = title if mode == "research" or source != "text" else body[:600]
+            store.add_message(thread["thread_id"], "user", label, {"kind": "run", "mode": mode})
+            card = {"kind": "run", "mode": mode, "run_id": run["run_id"]}
+            store.add_message(thread["thread_id"], "assistant", "", card)
+            out["thread_id"] = thread["thread_id"]
+        return JSONResponse(out, status_code=201)
 
     @app.get("/api/runs")
     def history(request: Request, limit: int = 50) -> Dict[str, Any]:
@@ -498,6 +515,8 @@ def _add_ask_routes(
     def history_of(thread_id: str) -> List[Dict[str, Any]]:
         turns: List[Dict[str, Any]] = []
         for msg in store.messages(thread_id):
+            if msg["data"].get("kind") == "run":
+                continue  # Research / Check / References cards are not chat context
             if msg["role"] == "user":
                 turns.append({"q": msg["content"], "a": "", "sources": []})
             elif turns and msg["role"] == "assistant":
@@ -649,9 +668,10 @@ def _add_ask_routes(
         return {"threads": store.list_threads(owner, project_id=project_id, limit=min(limit, 200)) if owner else []}
 
     @app.get("/api/threads/{thread_id}")
-    def get_thread(request: Request, thread_id: str) -> Dict[str, Any]:
+    def get_thread(request: Request, thread_id: str, limit: int = 200) -> Dict[str, Any]:
+        """The thread and its latest ``limit`` messages (oldest first)."""
         thread = own_thread(request, thread_id)
-        return {"thread": thread, "messages": store.messages(thread_id)}
+        return {"thread": thread, "messages": store.messages(thread_id, limit=max(1, min(limit, 500)))}
 
     @app.patch("/api/threads/{thread_id}")
     def rename_thread(request: Request, thread_id: str, body: ThreadPatch) -> Dict[str, Any]:

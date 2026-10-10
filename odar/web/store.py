@@ -453,10 +453,12 @@ class RunStore:
     def messages(self, thread_id: str, limit: int = 200) -> List[Dict[str, Any]]:
         with self._lock:
             rows = self._conn.execute(
-                "SELECT seq, role, content, data, created FROM messages WHERE thread_id = ? ORDER BY seq LIMIT ?",
+                "SELECT seq, role, content, data, created FROM messages WHERE thread_id = ? "
+                "ORDER BY seq DESC LIMIT ?",
                 (thread_id, limit),
             ).fetchall()
-        return [dict(r, data=json.loads(r["data"] or "{}")) for r in rows]
+        # the latest ``limit`` messages, oldest first (a long chat keeps its newest turns)
+        return [dict(r, data=json.loads(r["data"] or "{}")) for r in reversed(rows)]
 
     # ------------------------------------------------------------------ #
     # Projects: custom instructions + uploaded files (extracted text chunks)
