@@ -18,7 +18,7 @@ from odar.deep import (
     parse_plan,
 )
 from odar.llm import AuthBackendError, ModelBackendError, RateLimitedBackendError, ServerBackendError
-from odar.router import DEFAULT_FREE_ROUTES, ModelRouter, load_routes
+from odar.router import DEFAULT_FREE_ROUTES, ModelRouter, active_default_routes, load_routes
 from odar.schemas import ExtractedPage, SearchHit
 
 
@@ -102,8 +102,16 @@ class TestModelRouter:
         routes = load_routes({"ODAR_MODEL_ROUTES": json.dumps({"writer": ["x:free"], "bogus": ["y"]})})
         assert routes["writer"] == ["x:free"]
         assert "bogus" not in routes
-        assert routes["planner"] == DEFAULT_FREE_ROUTES["planner"]
-        assert load_routes({"ODAR_MODEL_ROUTES": "{not json"})["writer"] == DEFAULT_FREE_ROUTES["writer"]
+        assert routes["planner"] == active_default_routes()["planner"]
+        assert load_routes({"ODAR_MODEL_ROUTES": "{not json"})["writer"] == active_default_routes()["writer"]
+
+    def test_retired_models_drop_out_of_default_routes(self):
+        before = active_default_routes("2026-10-20")
+        after = active_default_routes("2026-10-21")
+        assert before["judge"][0] == "mimo-v2.5:free"
+        for models in after.values():
+            assert "mimo-v2.5:free" not in models and models
+        assert after["judge"] == ["deepseek-v4-flash:free", "mimo-v2.6-flash:free"]
 
     def test_default_routes_are_free_models_only(self):
         for models in DEFAULT_FREE_ROUTES.values():

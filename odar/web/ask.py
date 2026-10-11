@@ -74,7 +74,9 @@ def safe_link(url: str, https_only: bool = False) -> bool:
     """Public http(s) URL by the SSRF policy (no DNS: the server never fetches it here)."""
     from odar.url_safety import UnsafeURLError, validate_url
 
-    if not isinstance(url, str) or not url.startswith(("https://",) if https_only else ("http://", "https://")):
+    if not isinstance(url, str) or not url.startswith(
+        ("https://",) if https_only else ("http://", "https://")
+    ):
         return False
     try:
         validate_url(url, resolve_dns=False)
@@ -185,8 +187,12 @@ def parallel_search(query: str, n: int = 10, timeout: float = 20.0) -> List[Dict
         "advanced_settings": {"max_results": n, "excerpt_settings": {"max_chars_per_result": 4000}},
     }
     try:
-        r = requests.post(PARALLEL_URL, json=body, timeout=timeout,
-                          headers={"x-api-key": key, "Content-Type": "application/json"})
+        r = requests.post(
+            PARALLEL_URL,
+            json=body,
+            timeout=timeout,
+            headers={"x-api-key": key, "Content-Type": "application/json"},
+        )
         r.raise_for_status()
         rows = r.json().get("results") or []
     except Exception as exc:  # noqa: BLE001 - fall back to free search
@@ -200,9 +206,17 @@ def parallel_search(query: str, n: int = 10, timeout: float = 20.0) -> List[Dict
         if not text:
             continue
         out.append(
-            {"url": row.get("url") or "", "title": _clean(row.get("title"), 300), "snippet": _clean(text, 600),
-             "text": text[:12000], "fetched": True, "excerpted": True, "kind": "web",
-             "date": parse_date(row.get("publish_date")), "publisher": ""}
+            {
+                "url": row.get("url") or "",
+                "title": _clean(row.get("title"), 300),
+                "snippet": _clean(text, 600),
+                "text": text[:12000],
+                "fetched": True,
+                "excerpted": True,
+                "kind": "web",
+                "date": parse_date(row.get("publish_date")),
+                "publisher": "",
+            }
         )
     return out
 
@@ -271,16 +285,28 @@ def search_sources(
                 url = r.get("href") or ""
                 if domain(url).endswith("youtube.com") or domain(url) == "youtu.be":
                     out.append(
-                        {"url": url, "title": _clean(r.get("title"), 300), "snippet": _clean(r.get("body"), 800),
-                         "kind": "video", "date": "", "publisher": "YouTube"}
+                        {
+                            "url": url,
+                            "title": _clean(r.get("title"), 300),
+                            "snippet": _clean(r.get("body"), 800),
+                            "kind": "video",
+                            "date": "",
+                            "publisher": "YouTube",
+                        }
                     )
     elif focus == "reddit":
         rows = _text_rows(ddgs, f"{query} site:reddit.com", n)
         rows += _text_rows(ddgs, f"{query} forum discussion", 4, budget_s=8.0)
         for r in rows:
             out.append(
-                {"url": r.get("href") or "", "title": _clean(r.get("title"), 300),
-                 "snippet": _clean(r.get("body"), 600), "kind": "forum", "date": "", "publisher": ""}
+                {
+                    "url": r.get("href") or "",
+                    "title": _clean(r.get("title"), 300),
+                    "snippet": _clean(r.get("body"), 600),
+                    "kind": "forum",
+                    "date": "",
+                    "publisher": "",
+                }
             )
     else:
         out = parallel_search(query, n + 2)
@@ -288,8 +314,14 @@ def search_sources(
             return _finish(out, n)
         for r in _text_rows(ddgs, query, n + 2):
             out.append(
-                {"url": r.get("href") or "", "title": _clean(r.get("title"), 300),
-                 "snippet": _clean(r.get("body"), 600), "kind": "web", "date": "", "publisher": ""}
+                {
+                    "url": r.get("href") or "",
+                    "title": _clean(r.get("title"), 300),
+                    "snippet": _clean(r.get("body"), 600),
+                    "kind": "web",
+                    "date": "",
+                    "publisher": "",
+                }
             )
     return _finish(out, n)
 
@@ -437,7 +469,9 @@ def history_context(history: Sequence[Dict[str, Any]], limit: int = 3000, turns:
     """The last few Q&A turns, answers and source lists trimmed, newest kept."""
     blocks: List[str] = []
     for turn in list(history)[-turns:]:
-        srcs = "; ".join(f"{s.get('title', '')[:70]} ({s.get('domain', '')})" for s in turn.get("sources", [])[:5])
+        srcs = "; ".join(
+            f"{s.get('title', '')[:70]} ({s.get('domain', '')})" for s in turn.get("sources", [])[:5]
+        )
         blocks.append(
             f"Q: {str(turn.get('q', ''))[:300]}\nA: {_MARK.sub('', str(turn.get('a', '')))[:900]}"
             + (f"\nSources then: {srcs}" if srcs else "")
@@ -503,7 +537,11 @@ OPENCODE_URL = "https://opencode.ai/zen/v1/chat/completions"
 def _anthropic_stream(model: str, system: str, prompt: str, max_tokens: int) -> Iterator[str]:
     import anthropic
 
-    kwargs: Dict[str, Any] = {"api_key": os.environ.get("ANTHROPIC_API_KEY", ""), "max_retries": 0, "timeout": 45.0}
+    kwargs: Dict[str, Any] = {
+        "api_key": os.environ.get("ANTHROPIC_API_KEY", ""),
+        "max_retries": 0,
+        "timeout": 45.0,
+    }
     if os.environ.get("ODAR_ANTHROPIC_BASE_URL"):
         kwargs["base_url"] = os.environ["ODAR_ANTHROPIC_BASE_URL"]
     client = anthropic.Anthropic(**kwargs)
@@ -515,14 +553,25 @@ def _anthropic_stream(model: str, system: str, prompt: str, max_tokens: int) -> 
                 yield text
 
 
-def _openai_stream(url: str, key: str, model: str, system: str, prompt: str, max_tokens: int) -> Iterator[str]:
+def _openai_stream(
+    url: str, key: str, model: str, system: str, prompt: str, max_tokens: int
+) -> Iterator[str]:
     """OpenAI-compatible chat/completions SSE (OpenCode Zen); reasoning deltas are skipped."""
     import requests
 
-    body = {"model": model, "stream": True, "max_tokens": max_tokens,
-            "messages": [{"role": "system", "content": system}, {"role": "user", "content": prompt}]}
-    with requests.post(url, json=body, stream=True, timeout=(10, 45),
-                       headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"}) as r:
+    body = {
+        "model": model,
+        "stream": True,
+        "max_tokens": max_tokens,
+        "messages": [{"role": "system", "content": system}, {"role": "user", "content": prompt}],
+    }
+    with requests.post(
+        url,
+        json=body,
+        stream=True,
+        timeout=(10, 45),
+        headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"},
+    ) as r:
         if r.status_code != 200:
             raise RuntimeError(f"{model}: HTTP {r.status_code} {r.text[:160]}")
         for line in r.iter_lines(decode_unicode=True):
@@ -548,24 +597,36 @@ def writer_routes(role: str = "writer") -> List[Tuple[str, Callable[..., Iterato
     oc: List[Tuple[str, Callable[..., Iterator[str]]]] = []
     key = os.environ.get("OPENCODE_API_KEY", "")
     if key:
-        for m in [x for x in os.environ.get("ODAR_OPENCODE_MODELS", "space-bunny-free").split(",") if x.strip()]:
-            oc.append((f"opencode/{m.strip()}",
-                       lambda s, p, n, m=m.strip(): _openai_stream(OPENCODE_URL, key, m, s, p, n)))
+        for m in [
+            x for x in os.environ.get("ODAR_OPENCODE_MODELS", "space-bunny-free").split(",") if x.strip()
+        ]:
+            oc.append(
+                (
+                    f"opencode/{m.strip()}",
+                    lambda s, p, n, m=m.strip(): _openai_stream(OPENCODE_URL, key, m, s, p, n),
+                )
+            )
     out: List[Tuple[str, Callable[..., Iterator[str]]]] = []
     for i in range(max(len(th), len(oc))):
-        out += th[i:i + 1] + oc[i:i + 1]
+        out += th[i : i + 1] + oc[i : i + 1]
     return out
 
 
-def race_stream(routes: Sequence[Tuple[str, Callable[..., Iterator[str]]]], system: str, prompt: str,
-                max_tokens: int = 900, width: int = 2, hedge_after_s: float = 12.0) -> Iterator[str]:
+def race_stream(
+    routes: Sequence[Tuple[str, Callable[..., Iterator[str]]]],
+    system: str,
+    prompt: str,
+    max_tokens: int = 900,
+    width: int = 2,
+    hedge_after_s: float = 12.0,
+) -> Iterator[str]:
     """Hedged generation: start ``width`` routes at once and stream whichever speaks first; the
     losers are abandoned. When every racer fails, the next routes race in turn."""
     import queue
 
     last: Optional[Exception] = None
     for start in range(0, len(routes), max(1, width)):
-        batch = routes[start:start + max(1, width)]
+        batch = routes[start : start + max(1, width)]
         q: "queue.Queue[Tuple[int, str, Any]]" = queue.Queue()
         stop = threading.Event()
 
@@ -590,8 +651,10 @@ def race_stream(routes: Sequence[Tuple[str, Callable[..., Iterator[str]]]], syst
         pending: Dict[int, List[str]] = {i: [] for i in range(len(batch))}
         alive = {0}
         while alive or len(started) < len(batch):
-            if winner is None and len(started) < len(batch) and (
-                not alive or time.monotonic() - t_start >= hedge_after_s
+            if (
+                winner is None
+                and len(started) < len(batch)
+                and (not alive or time.monotonic() - t_start >= hedge_after_s)
             ):
                 nxt = len(started)
                 started.add(nxt)
@@ -639,8 +702,14 @@ def default_stream(system: str, prompt: str, max_tokens: int = 900) -> Iterator[
     routes = writer_routes()
     if not routes:
         raise RuntimeError("no free model route configured (ANTHROPIC_API_KEY / OPENCODE_API_KEY)")
-    yield from race_stream(routes, system, prompt, max_tokens, width=int(os.environ.get("ODAR_RACE_WIDTH", "2")),
-                           hedge_after_s=float(os.environ.get("ODAR_HEDGE_AFTER_S", "12")))
+    yield from race_stream(
+        routes,
+        system,
+        prompt,
+        max_tokens,
+        width=int(os.environ.get("ODAR_RACE_WIDTH", "2")),
+        hedge_after_s=float(os.environ.get("ODAR_HEDGE_AFTER_S", "12")),
+    )
 
 
 PLAN_SYSTEM = (
@@ -692,16 +761,16 @@ class AnswerFilter:
             i = self.buf.find(self.OPEN)
             if i < 0:
                 return ""
-            self.buf = self.buf[i + len(self.OPEN):].lstrip()
+            self.buf = self.buf[i + len(self.OPEN) :].lstrip()
             self.state = "inside"
         if self.state == "inside":
             j = self.buf.find(self.CLOSE)
             if j >= 0:
-                out = self.buf[self.sent:j]
+                out = self.buf[self.sent : j]
                 self.state, self.sent = "after", j
                 return out
             safe = max(self.sent, len(self.buf) - len(self.CLOSE))
-            out = self.buf[self.sent:safe]
+            out = self.buf[self.sent : safe]
             self.sent = safe
             return out
         return ""
@@ -710,7 +779,7 @@ class AnswerFilter:
         if self.state == "before":
             return clean_leak(self.buf)
         if self.state == "inside":
-            out = self.buf[self.sent:]
+            out = self.buf[self.sent :]
             self.sent = len(self.buf)
             return out
         return ""
@@ -747,7 +816,7 @@ def clean_leak(text: str) -> str:
     text = text.replace("<answer>", "").replace("</answer>", "")
     m = list(re.finditer(r"(?im)^\s*(?:final answer|answer)\s*:\s*", text))
     if m:
-        tail = text[m[-1].end():].strip()
+        tail = text[m[-1].end() :].strip()
         if _MARK.search(tail):
             text = tail
     pars = [p.strip() for p in re.split(r"\n\s*\n|\n(?=\S)", text) if p.strip()]
@@ -882,7 +951,7 @@ def _strip_meta_markers(answer: str) -> str:
                 sentence = re.sub(r"\s*\[\d{1,2}\]", "", sentence)
             m = _SOURCE_TALK.match(sentence)
             if m and _MARK.search(sentence):
-                rest = re.sub(r"^\s*that\s+", "", sentence[m.end():]).strip()
+                rest = re.sub(r"^\s*that\s+", "", sentence[m.end() :]).strip()
                 if len(rest.split()) >= 4:
                     sentence = rest[0].upper() + rest[1:]
             sents.append(sentence)
@@ -898,11 +967,13 @@ def _rewrite(answer: str, actions: Dict[int, Optional[int]], drop_sentences: set
         sents = []
         for sentence in _SENT.split(para):
             first = occ
+
             def sub(m: "re.Match[str]") -> str:
                 nonlocal occ
                 act = actions.get(occ, int(m.group(1)))
                 occ += 1
                 return f"[{act}]" if act else ""
+
             new = _MARK.sub(sub, sentence)
             if first in drop_sentences and _MARK.search(sentence):
                 continue
@@ -954,8 +1025,13 @@ def verify_answer(
             return
         src = sources[n - 1]
         url = src.get("url") or f"file:{src.get('title', 'file')}"
-        link = LinkCheck(url=url, state="live", title=src.get("title", ""), text_source="live",
-                         text=src.get("text") or src.get("snippet", ""))
+        link = LinkCheck(
+            url=url,
+            state="live",
+            title=src.get("title", ""),
+            text_source="live",
+            text=src.get("text") or src.get("snippet", ""),
+        )
         v = get_checker().judge(claim, Citation(url=url, marker=f"[{n}]"), link)
         res = {
             "check_verdict": v.verdict,
@@ -1004,12 +1080,20 @@ def verify_answer(
     # 2) repair weak citations against the best-matching other readable sources
     repairs: List[Dict[str, Any]] = []
     if repair and finished:
-        weak = [p for p in pairs if cache.get((p["claim"], p["n"]), {}).get("verdict") in ("unsupported", "partial")]
+        weak = [
+            p
+            for p in pairs
+            if cache.get((p["claim"], p["n"]), {}).get("verdict") in ("unsupported", "partial")
+        ]
         alt_jobs: List[Tuple[str, int]] = []
         plan: Dict[int, List[int]] = {}
-        pool_idx = [i for i in citable_indexes(sources) if readable(sources[i - 1])] or citable_indexes(sources)
-        docs = [{"text": (sources[i - 1].get("text") or sources[i - 1].get("snippet", ""))[:20000], "n": i}
-                for i in pool_idx]
+        pool_idx = [i for i in citable_indexes(sources) if readable(sources[i - 1])] or citable_indexes(
+            sources
+        )
+        docs = [
+            {"text": (sources[i - 1].get("text") or sources[i - 1].get("snippet", ""))[:20000], "n": i}
+            for i in pool_idx
+        ]
         seen_claims: Dict[str, List[int]] = {}
         for p in weak:
             if p["claim"] in seen_claims:
@@ -1062,10 +1146,18 @@ def verify_answer(
         n = p["n"]
         src = sources[n - 1] if 1 <= n <= len(sources) else None
         item = {
-            "occ": p["occ"], "n": n, "marker": f"[{n}]", "claim": p["claim"][:400],
-            "verdict": "unchecked", "check_verdict": "", "quote": "", "note": "",
-            "title": (src or {}).get("title", ""), "domain": (src or {}).get("domain", ""),
-            "url": (src or {}).get("url", ""), "kind": (src or {}).get("kind", ""),
+            "occ": p["occ"],
+            "n": n,
+            "marker": f"[{n}]",
+            "claim": p["claim"][:400],
+            "verdict": "unchecked",
+            "check_verdict": "",
+            "quote": "",
+            "note": "",
+            "title": (src or {}).get("title", ""),
+            "domain": (src or {}).get("domain", ""),
+            "url": (src or {}).get("url", ""),
+            "kind": (src or {}).get("kind", ""),
         }
         reason = checkable(p["claim"], n)
         if (p["claim"], n) in cache:
@@ -1082,7 +1174,11 @@ def verify_answer(
     counts: Dict[str, int] = {}
     for r in results:
         counts[r["verdict"]] = counts.get(r["verdict"], 0) + 1
-    out: Dict[str, Any] = {"citations": results, "counts": counts, "elapsed_s": round(time.monotonic() - started, 2)}
+    out: Dict[str, Any] = {
+        "citations": results,
+        "counts": counts,
+        "elapsed_s": round(time.monotonic() - started, 2),
+    }
     if answer != original:
         out["answer"] = answer
         out["repairs"] = repairs
@@ -1161,8 +1257,20 @@ class AskDeps:
 
 
 def public_source(src: Dict[str, Any], n: int) -> Dict[str, Any]:
-    keys = ("url", "title", "domain", "snippet", "kind", "date", "publisher", "year", "passage",
-            "file_id", "peer_reviewed", "note")
+    keys = (
+        "url",
+        "title",
+        "domain",
+        "snippet",
+        "kind",
+        "date",
+        "publisher",
+        "year",
+        "passage",
+        "file_id",
+        "peer_reviewed",
+        "note",
+    )
     data = {k: src[k] for k in keys if src.get(k) not in (None, "")}
     data["n"] = n
     return data
@@ -1208,7 +1316,10 @@ def run_ask(
         sources += file_sources(question, chunks, k=5 if source_mode == "files" else 3)
     sources = sources[:MAX_SOURCES]
     search_s = round(time.monotonic() - t0, 2)
-    yield "sources", {"sources": [public_source(s, i) for i, s in enumerate(sources, 1)], "search_s": search_s}
+    yield (
+        "sources",
+        {"sources": [public_source(s, i) for i, s in enumerate(sources, 1)], "search_s": search_s},
+    )
 
     def images_event() -> Optional[Event]:
         if image_future is None:
@@ -1227,8 +1338,14 @@ def run_ask(
         ev = images_event()
         if ev:
             yield ev
-        yield "done", {"answer": NO_SOURCES, "abstained": True,
-                       "timing": {"search_s": search_s, "total_s": round(time.monotonic() - t0, 2)}}
+        yield (
+            "done",
+            {
+                "answer": NO_SOURCES,
+                "abstained": True,
+                "timing": {"search_s": search_s, "total_s": round(time.monotonic() - t0, 2)},
+            },
+        )
         yield "verification", {"citations": [], "counts": {}, "elapsed_s": 0.0}
         return
 
@@ -1266,8 +1383,13 @@ def run_ask(
                 ev = images_event()
                 if ev:
                     yield ev
-                yield "error", {"message": "The free models are busy right now; the sources above are still useful.",
-                                "detail": str(exc)[:200]}
+                yield (
+                    "error",
+                    {
+                        "message": "The free models are busy right now; the sources above are still useful.",
+                        "detail": str(exc)[:200],
+                    },
+                )
                 return
         answer = clean_leak(filt.text())
         if not _MARK.search(answer) and _MARK.search("".join(parts)):
@@ -1285,11 +1407,14 @@ def run_ask(
     if ev:
         yield ev
     answer_s = round(time.monotonic() - t0, 2)
-    yield "done", {
-        "answer": answer,
-        "abstained": False,
-        "timing": {"search_s": search_s, "fetch_s": fetch_s, "ttft_s": ttft, "total_s": answer_s},
-    }
+    yield (
+        "done",
+        {
+            "answer": answer,
+            "abstained": False,
+            "timing": {"search_s": search_s, "fetch_s": fetch_s, "ttft_s": ttft, "total_s": answer_s},
+        },
+    )
     if verify:
         vpool = ThreadPoolExecutor(max_workers=1, thread_name_prefix="odar-ask-verify-all")
         vfut = vpool.submit(deps.verify, answer, sources)

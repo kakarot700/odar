@@ -49,9 +49,30 @@ DEFAULT_FREE_ROUTES: Dict[str, List[str]] = {
     ROLE_PLANNER: ["deepseek-v4-flash:free", "mimo-v2.5:free", "mimo-v2.6-flash:free"],
     ROLE_REFLECT: ["deepseek-v4-flash:free", "mimo-v2.5:free", "mimo-v2.6-flash:free"],
     ROLE_WRITER: ["deepseek-v4-flash:free", "mimo-v2.5:free", "mimo-v2.6-flash:free"],
-    ROLE_JUDGE: ["mimo-v2.5:free", "deepseek-v4-flash:free"],
-    ROLE_EXTRACT: ["mimo-v2.5:free", "deepseek-v4-flash:free"],
+    ROLE_JUDGE: ["mimo-v2.5:free", "deepseek-v4-flash:free", "mimo-v2.6-flash:free"],
+    ROLE_EXTRACT: ["mimo-v2.5:free", "deepseek-v4-flash:free", "mimo-v2.6-flash:free"],
 }
+
+# Provider retirement dates (UTC).  A retired model is dropped from the
+# default routes on that date so no request is wasted on a dead model;
+# the next model in each list takes over.  Xiaomi retires MiMo V2.5 on
+# 2026-10-21.  Explicit ODAR_MODEL_ROUTES overrides are left untouched.
+MODEL_RETIREMENTS: Dict[str, str] = {
+    "mimo-v2.5:free": "2026-10-21",
+}
+
+
+def active_default_routes(today: Optional[str] = None) -> Dict[str, List[str]]:
+    """DEFAULT_FREE_ROUTES minus models retired on or before ``today``
+    (ISO date, UTC; defaults to the current date)."""
+    day = today or time.strftime("%Y-%m-%d", time.gmtime())
+    routes: Dict[str, List[str]] = {}
+    for role, models in DEFAULT_FREE_ROUTES.items():
+        live = [m for m in models if MODEL_RETIREMENTS.get(m, "9999-12-31") > day]
+        routes[role] = live or list(models)
+    return routes
+
+
 MAX_FAILURES_PER_MODEL = 2
 
 
@@ -100,7 +121,7 @@ class AnthropicMessagesClient:
 def load_routes(env: Optional[Dict[str, str]] = None) -> Dict[str, List[str]]:
     """Default free routes, optionally overridden per role by
     ``ODAR_MODEL_ROUTES`` JSON.  Unknown roles and empty lists are ignored."""
-    routes = {role: list(models) for role, models in DEFAULT_FREE_ROUTES.items()}
+    routes = active_default_routes()
     raw = (env if env is not None else os.environ).get("ODAR_MODEL_ROUTES", "").strip()
     if not raw:
         return routes
