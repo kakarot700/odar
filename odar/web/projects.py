@@ -25,7 +25,9 @@ _STOP = frozenset(
 
 
 def tokens(text: str) -> List[str]:
-    return [t for t in (m.group(0).lower() for m in _TOKEN.finditer(text or "")) if t not in _STOP and len(t) > 1]
+    return [
+        t for t in (m.group(0).lower() for m in _TOKEN.finditer(text or "")) if t not in _STOP and len(t) > 1
+    ]
 
 
 def chunk_text(text: str, size: int = CHUNK_CHARS, overlap: int = CHUNK_OVERLAP) -> List[str]:

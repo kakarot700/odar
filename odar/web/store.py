@@ -250,7 +250,9 @@ class RunStore:
             ids = [r[0] for r in self._conn.execute("SELECT run_id FROM runs WHERE created < ?", (cutoff,))]
             self._conn.executemany("DELETE FROM run_events WHERE run_id = ?", [(i,) for i in ids])
             self._conn.execute("DELETE FROM runs WHERE created < ?", (cutoff,))
-            old = [r[0] for r in self._conn.execute("SELECT thread_id FROM threads WHERE updated < ?", (cutoff,))]
+            old = [
+                r[0] for r in self._conn.execute("SELECT thread_id FROM threads WHERE updated < ?", (cutoff,))
+            ]
             self._conn.executemany("DELETE FROM messages WHERE thread_id = ?", [(i,) for i in old])
             self._conn.execute("DELETE FROM threads WHERE updated < ?", (cutoff,))
             self._conn.execute("DELETE FROM usage WHERE expires < ?", (time.time(),))
@@ -266,10 +268,14 @@ class RunStore:
             self._conn.executemany("DELETE FROM run_events WHERE run_id = ?", [(i,) for i in ids])
             self._conn.execute("DELETE FROM runs WHERE owner = ?", (owner,))
             self._conn.execute("UPDATE api_keys SET revoked = 1 WHERE owner = ?", (owner,))
-            tids = [r[0] for r in self._conn.execute("SELECT thread_id FROM threads WHERE owner = ?", (owner,))]
+            tids = [
+                r[0] for r in self._conn.execute("SELECT thread_id FROM threads WHERE owner = ?", (owner,))
+            ]
             self._conn.executemany("DELETE FROM messages WHERE thread_id = ?", [(i,) for i in tids])
             self._conn.execute("DELETE FROM threads WHERE owner = ?", (owner,))
-            pids = [r[0] for r in self._conn.execute("SELECT project_id FROM projects WHERE owner = ?", (owner,))]
+            pids = [
+                r[0] for r in self._conn.execute("SELECT project_id FROM projects WHERE owner = ?", (owner,))
+            ]
             for table in ("file_chunks", "project_files"):
                 self._conn.executemany(f"DELETE FROM {table} WHERE project_id = ?", [(i,) for i in pids])
             self._conn.execute("DELETE FROM projects WHERE owner = ?", (owner,))
@@ -369,7 +375,9 @@ class RunStore:
     # ------------------------------------------------------------------ #
     # Ask threads (chat history) and messages
     # ------------------------------------------------------------------ #
-    def create_thread(self, owner: str, title: str, focus: str = "all", project_id: str = "") -> Dict[str, Any]:
+    def create_thread(
+        self, owner: str, title: str, focus: str = "all", project_id: str = ""
+    ) -> Dict[str, Any]:
         thread_id = secrets.token_hex(8)
         now = time.time()
         with self._lock:
@@ -393,7 +401,9 @@ class RunStore:
             row = self._conn.execute("SELECT * FROM threads WHERE share_token = ?", (token,)).fetchone()
         return dict(row) if row else None
 
-    def list_threads(self, owner: str, project_id: Optional[str] = None, limit: int = 50) -> List[Dict[str, Any]]:
+    def list_threads(
+        self, owner: str, project_id: Optional[str] = None, limit: int = 50
+    ) -> List[Dict[str, Any]]:
         sql = "SELECT thread_id, share_token, project_id, title, focus, created, updated FROM threads WHERE owner = ?"
         args: List[Any] = [owner]
         if project_id is not None:
@@ -420,7 +430,9 @@ class RunStore:
             self._conn.commit()
         return cur.rowcount > 0
 
-    def add_message(self, thread_id: str, role: str, content: str, data: Optional[Dict[str, Any]] = None) -> int:
+    def add_message(
+        self, thread_id: str, role: str, content: str, data: Optional[Dict[str, Any]] = None
+    ) -> int:
         with self._lock:
             row = self._conn.execute(
                 "SELECT COALESCE(MAX(seq), 0) FROM messages WHERE thread_id = ?", (thread_id,)
@@ -428,7 +440,14 @@ class RunStore:
             seq = int(row[0]) + 1
             self._conn.execute(
                 "INSERT INTO messages (thread_id, seq, role, content, data, created) VALUES (?,?,?,?,?,?)",
-                (thread_id, seq, role, content, json.dumps(data or {}, ensure_ascii=False, default=str), time.time()),
+                (
+                    thread_id,
+                    seq,
+                    role,
+                    content,
+                    json.dumps(data or {}, ensure_ascii=False, default=str),
+                    time.time(),
+                ),
             )
             self._conn.execute("UPDATE threads SET updated = ? WHERE thread_id = ?", (time.time(), thread_id))
             self._conn.commit()
@@ -500,7 +519,9 @@ class RunStore:
         sets["updated"] = time.time()
         cols = ", ".join(f"{k} = ?" for k in sets)
         with self._lock:
-            self._conn.execute(f"UPDATE projects SET {cols} WHERE project_id = ?", (*sets.values(), project_id))
+            self._conn.execute(
+                f"UPDATE projects SET {cols} WHERE project_id = ?", (*sets.values(), project_id)
+            )
             self._conn.commit()
 
     def delete_project(self, project_id: str) -> bool:
@@ -508,7 +529,12 @@ class RunStore:
             cur = self._conn.execute("DELETE FROM projects WHERE project_id = ?", (project_id,))
             self._conn.execute("DELETE FROM project_files WHERE project_id = ?", (project_id,))
             self._conn.execute("DELETE FROM file_chunks WHERE project_id = ?", (project_id,))
-            tids = [r[0] for r in self._conn.execute("SELECT thread_id FROM threads WHERE project_id = ?", (project_id,))]
+            tids = [
+                r[0]
+                for r in self._conn.execute(
+                    "SELECT thread_id FROM threads WHERE project_id = ?", (project_id,)
+                )
+            ]
             self._conn.executemany("DELETE FROM messages WHERE thread_id = ?", [(i,) for i in tids])
             self._conn.execute("DELETE FROM threads WHERE project_id = ?", (project_id,))
             self._conn.commit()
@@ -529,7 +555,13 @@ class RunStore:
             )
             self._conn.execute("UPDATE projects SET updated = ? WHERE project_id = ?", (now, project_id))
             self._conn.commit()
-        return {"file_id": file_id, "name": name[:200], "kind": kind, "chars": len(text), "chunks": len(chunks)}
+        return {
+            "file_id": file_id,
+            "name": name[:200],
+            "kind": kind,
+            "chars": len(text),
+            "chunks": len(chunks),
+        }
 
     def list_files(self, project_id: str) -> List[Dict[str, Any]]:
         with self._lock:

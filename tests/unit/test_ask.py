@@ -27,7 +27,9 @@ class FakeDDGS:
     def text(self, query, **kw):
         self.calls.append(("text", query, kw))
         if "site:reddit.com" in query:
-            return [{"href": "https://www.reddit.com/r/space/x", "title": "Mars thread", "body": "people discuss"}]
+            return [
+                {"href": "https://www.reddit.com/r/space/x", "title": "Mars thread", "body": "people discuss"}
+            ]
         if "forum" in query:
             return [{"href": "https://forum.example.org/t/1", "title": "Forum post", "body": "forum talk"}]
         if "site:youtube.com" in query:
@@ -35,7 +37,11 @@ class FakeDDGS:
         return [
             {"href": "https://nasa.gov/mars", "title": "Mars facts", "body": "Mars is the fourth planet."},
             {"href": "http://127.0.0.1/admin", "title": "internal", "body": "ssrf"},
-            {"href": "https://en.wikipedia.org/wiki/Mars", "title": "Mars - Wikipedia", "body": "Red planet."},
+            {
+                "href": "https://en.wikipedia.org/wiki/Mars",
+                "title": "Mars - Wikipedia",
+                "body": "Red planet.",
+            },
             {"href": "https://nasa.gov/mars", "title": "dup", "body": "dup"},
         ]
 
@@ -58,20 +64,39 @@ class FakeDDGS:
 
     def images(self, query, **kw):
         return [
-            {"title": "ok", "image": "https://cdn.example.com/m.jpg", "thumbnail": "https://tse.example.com/t",
-             "url": "https://britannica.com/mars", "width": "800", "height": "600"},
-            {"title": "http thumb", "image": "http://cdn.example.com/x.jpg", "thumbnail": "http://t.example.com/t",
-             "url": "https://example.com/p"},
-            {"title": "internal", "image": "https://169.254.169.254/latest", "thumbnail": "https://169.254.169.254/x",
-             "url": "https://example.com/q"},
-            {"title": "js", "image": "javascript:alert(1)", "thumbnail": "javascript:alert(1)", "url": "https://e.com"},
+            {
+                "title": "ok",
+                "image": "https://cdn.example.com/m.jpg",
+                "thumbnail": "https://tse.example.com/t",
+                "url": "https://britannica.com/mars",
+                "width": "800",
+                "height": "600",
+            },
+            {
+                "title": "http thumb",
+                "image": "http://cdn.example.com/x.jpg",
+                "thumbnail": "http://t.example.com/t",
+                "url": "https://example.com/p",
+            },
+            {
+                "title": "internal",
+                "image": "https://169.254.169.254/latest",
+                "thumbnail": "https://169.254.169.254/x",
+                "url": "https://example.com/q",
+            },
+            {
+                "title": "js",
+                "image": "javascript:alert(1)",
+                "thumbnail": "javascript:alert(1)",
+                "url": "https://e.com",
+            },
         ]
+
 
 @pytest.fixture(autouse=True)
 def _no_paid_search(monkeypatch):
     monkeypatch.delenv("PARALLEL_API_KEY", raising=False)
     monkeypatch.setenv("ODAR_PLAN_QUERIES", "0")
-
 
 
 class FakeExtractor:
@@ -94,14 +119,22 @@ class FakeChecker:
     def judge(self, claim, cit, link):
         self.calls.append((claim, cit.url, link.text[:40]))
         if "fourth planet" in claim:
-            return CitationVerdict(url=cit.url, marker=cit.marker, verdict=SUPPORTED,
-                                   quote="Mars is the fourth planet from the Sun.")
+            return CitationVerdict(
+                url=cit.url,
+                marker=cit.marker,
+                verdict=SUPPORTED,
+                quote="Mars is the fourth planet from the Sun.",
+            )
         if "red" in claim.lower():
             return CitationVerdict(url=cit.url, marker=cit.marker, verdict=PARTIAL, quote="Red planet.")
         return CitationVerdict(url=cit.url, marker=cit.marker, verdict=WRONG_SOURCE)
 
 
-ANSWER = ["Mars is the fourth planet ", "from the Sun.[1] It looks red", " [2]. It has rings made of cheese [1, 2]."]
+ANSWER = [
+    "Mars is the fourth planet ",
+    "from the Sun.[1] It looks red",
+    " [2]. It has rings made of cheese [1, 2].",
+]
 
 
 def fake_deps(answer=ANSWER, fail=False, seen=None):
@@ -169,7 +202,10 @@ def test_search_focus_modes_filter_unsafe_and_label():
     assert len(news) == 1 and news[0]["kind"] == "news" and news[0]["publisher"] == "Example News"
     assert news[0]["date"] == "2026-10-07T21:52:00+05:30"  # freshness shown in the UI
     forum = ask.search_sources("mars", "reddit", 6, ddgs=d)
-    assert {s["kind"] for s in forum} == {"forum"} and {s["domain"] for s in forum} == {"reddit.com", "forum.example.org"}
+    assert {s["kind"] for s in forum} == {"forum"} and {s["domain"] for s in forum} == {
+        "reddit.com",
+        "forum.example.org",
+    }
     vids = ask.search_sources("mars", "youtube", 6, ddgs=d)  # videos() raised: falls back to site:youtube.com
     assert vids[0]["kind"] == "video" and vids[0]["domain"] == "youtube.com"
 
@@ -177,14 +213,23 @@ def test_search_focus_modes_filter_unsafe_and_label():
 def test_academic_focus_uses_scholar():
     class P:
         title, abstract, link, open_access_url, year, venue, peer_reviewed = (
-            "Mars paper", "An abstract about Mars.", "https://doi.org/10.1/x", "", 2021, "Icarus", True)
+            "Mars paper",
+            "An abstract about Mars.",
+            "https://doi.org/10.1/x",
+            "",
+            2021,
+            "Icarus",
+            True,
+        )
 
     class S:
         def search(self, q, rows=5):
             return [P()]
 
     out = ask.search_sources("mars", "academic", 6, scholar=S())
-    assert out[0]["kind"] == "paper" and out[0]["snippet"].startswith("An abstract") and out[0]["date"] == "2021"
+    assert (
+        out[0]["kind"] == "paper" and out[0]["snippet"].startswith("An abstract") and out[0]["date"] == "2021"
+    )
 
 
 def test_parse_date_variants():
@@ -203,7 +248,9 @@ def test_fetch_uses_extractor_and_keeps_snippet_on_failure():
     ask.fetch_sources(sources, extractor=ext)
     assert sources[0]["text"].startswith("Full page") and sources[0]["fetched"]
     assert sources[1]["text"] == "s2" and sources[1]["year"] == 2019
-    assert sources[2]["text"] == "vid" and "https://youtube.com/w" not in ext.seen  # videos: titles/descriptions only
+    assert (
+        sources[2]["text"] == "vid" and "https://youtube.com/w" not in ext.seen
+    )  # videos: titles/descriptions only
 
 
 def test_real_extractor_keeps_ssrf_guard():
@@ -223,7 +270,12 @@ def test_markers_normalized_and_pairs_in_reading_order():
 
 def test_verify_answer_maps_verdicts_and_bad_numbers():
     sources = [
-        {"url": "https://nasa.gov/mars", "title": "Mars", "domain": "nasa.gov", "text": "Mars is the fourth planet."},
+        {
+            "url": "https://nasa.gov/mars",
+            "title": "Mars",
+            "domain": "nasa.gov",
+            "text": "Mars is the fourth planet.",
+        },
         {"url": "https://w.org", "title": "W", "domain": "w.org", "text": "Red planet."},
     ]
     answer = "Mars is the fourth planet from the Sun [1]. It looks red in the sky [2]. Moons are cheese [7]."
@@ -240,7 +292,9 @@ def test_prompt_has_sources_history_and_instructions():
     system, prompt = ask.build_prompt(
         "and its moons?",
         [{"title": "Mars", "domain": "nasa.gov", "text": "Mars has two moons, Phobos and Deimos."}],
-        history=[{"q": "What is Mars?", "a": "A planet [1].", "sources": [{"title": "NASA", "domain": "nasa.gov"}]}],
+        history=[
+            {"q": "What is Mars?", "a": "A planet [1].", "sources": [{"title": "NASA", "domain": "nasa.gov"}]}
+        ],
         instructions="Answer like a teacher.",
     )
     assert "Answer like a teacher." in system and "[n]" not in system
@@ -256,13 +310,19 @@ def test_history_context_is_trimmed():
 
 def test_image_search_only_safe_https_links():
     imgs = ask.image_search("mars", ddgs=FakeDDGS())
-    assert len(imgs) == 1 and imgs[0]["thumbnail"].startswith("https://") and imgs[0]["domain"] == "britannica.com"
+    assert (
+        len(imgs) == 1
+        and imgs[0]["thumbnail"].startswith("https://")
+        and imgs[0]["domain"] == "britannica.com"
+    )
     assert imgs[0]["width"] == 800
 
 
 def test_discover_topic_items():
     items = ask.discover_topic("india", ddgs=FakeDDGS())
-    assert len(items) == 1 and items[0]["source"] == "Example News" and items[0]["date"].startswith("2026-10-07")
+    assert (
+        len(items) == 1 and items[0]["source"] == "Example News" and items[0]["date"].startswith("2026-10-07")
+    )
 
 
 def test_free_models_only(monkeypatch):
@@ -341,7 +401,9 @@ def test_ask_validation_and_llm_failure(tmp_path):
     c, _ = make(tmp_path, deps=fake_deps(fail=True))
     assert c.post("/api/ask/stream", json={"question": "hi"}).status_code == 400
     assert c.post("/api/ask/stream", json={"question": "What is Mars?", "focus": "tiktok"}).status_code == 400
-    assert c.post("/api/ask/stream", json={"question": "What is Mars?", "thread_id": "nope"}).status_code == 404
+    assert (
+        c.post("/api/ask/stream", json={"question": "What is Mars?", "thread_id": "nope"}).status_code == 404
+    )
     events = parse_sse(c.post("/api/ask/stream", json={"question": "What is Mars?"}).text)
     names = [n for n, _ in events]
     assert "sources" in names and names[-1] == "error" and "done" not in names
@@ -382,7 +444,10 @@ def test_thread_rename_share_delete(tmp_path):
     c, _ = make(tmp_path)
     out = c.post("/api/ask", json={"question": "What is Mars?"}).json()
     tid, token = out["thread_id"], out["share_token"]
-    assert c.patch(f"/api/threads/{tid}", json={"title": "Mars basics"}).json()["thread"]["title"] == "Mars basics"
+    assert (
+        c.patch(f"/api/threads/{tid}", json={"title": "Mars basics"}).json()["thread"]["title"]
+        == "Mars basics"
+    )
     assert c.patch(f"/api/threads/{tid}", json={"title": "  "}).status_code == 400
     shared = TestClient(c.app).get(f"/api/shared-threads/{token}")
     assert shared.status_code == 200 and shared.json()["thread"]["title"] == "Mars basics"
@@ -396,31 +461,61 @@ def test_thread_rename_share_delete(tmp_path):
 def test_projects_files_and_scoped_ask(tmp_path):
     seen = []
     c, store = make(tmp_path, deps=fake_deps(seen=seen))
-    pid = c.post("/api/projects", json={"name": "Biology", "instructions": "Explain simply."}).json()["project"]["project_id"]
+    pid = c.post("/api/projects", json={"name": "Biology", "instructions": "Explain simply."}).json()[
+        "project"
+    ]["project_id"]
     up = c.post(
         f"/api/projects/{pid}/files",
-        files={"file": ("notes.md", b"Photosynthesis converts light energy into chemical energy in chloroplasts.\n\n"
-                        b"Mitochondria make ATP.", "text/markdown")},
+        files={
+            "file": (
+                "notes.md",
+                b"Photosynthesis converts light energy into chemical energy in chloroplasts.\n\n"
+                b"Mitochondria make ATP.",
+                "text/markdown",
+            )
+        },
     )
     assert up.status_code == 201 and up.json()["file"]["chunks"] >= 1
-    assert c.post(f"/api/projects/{pid}/files", files={"file": ("x.exe", b"MZ..", "application/x")}).status_code == 400
-    ev = dict(parse_sse(c.post("/api/ask/stream", json={
-        "question": "How does photosynthesis use light?", "project_id": pid, "sources": "files"}).text))
+    assert (
+        c.post(f"/api/projects/{pid}/files", files={"file": ("x.exe", b"MZ..", "application/x")}).status_code
+        == 400
+    )
+    ev = dict(
+        parse_sse(
+            c.post(
+                "/api/ask/stream",
+                json={
+                    "question": "How does photosynthesis use light?",
+                    "project_id": pid,
+                    "sources": "files",
+                },
+            ).text
+        )
+    )
     srcs = ev["sources"]["sources"]
     assert srcs and all(s["kind"] == "file" for s in srcs)
     assert srcs[0]["title"] == "notes.md" and "chloroplasts" in srcs[0]["passage"]
     prompt = [s for s in seen if s[0] == "prompt"][0]
     assert "Explain simply." in prompt[1] and "[1] notes.md (My files)" in prompt[2]
     assert not [s for s in seen if s[0] != "prompt"]  # files only: no web search
-    both = dict(parse_sse(c.post("/api/ask/stream", json={
-        "question": "How does photosynthesis use light?", "project_id": pid, "sources": "both"}).text))
+    both = dict(
+        parse_sse(
+            c.post(
+                "/api/ask/stream",
+                json={"question": "How does photosynthesis use light?", "project_id": pid, "sources": "both"},
+            ).text
+        )
+    )
     kinds = [s["kind"] for s in both["sources"]["sources"]]
     assert "web" in kinds and "file" in kinds
     proj = c.get(f"/api/projects/{pid}").json()
     assert len(proj["threads"]) == 2 and proj["files"][0]["name"] == "notes.md"
     assert c.get("/api/threads", params={"project_id": pid}).json()["threads"][0]["project_id"] == pid
     assert TestClient(c.app).get(f"/api/projects/{pid}").status_code == 404
-    assert c.patch(f"/api/projects/{pid}", json={"instructions": "Be brief."}).json()["project"]["instructions"] == "Be brief."
+    assert (
+        c.patch(f"/api/projects/{pid}", json={"instructions": "Be brief."}).json()["project"]["instructions"]
+        == "Be brief."
+    )
     fid = proj["files"][0]["file_id"]
     assert c.delete(f"/api/projects/{pid}/files/{fid}").json()["deleted"]
     assert c.delete(f"/api/projects/{pid}").json()["deleted"]
@@ -431,7 +526,9 @@ def test_project_upload_size_cap(tmp_path):
     c, _ = make(tmp_path)
     pid = c.post("/api/projects", json={"name": "P"}).json()["project"]["project_id"]
     big = b"x" * (10_000_001)
-    assert c.post(f"/api/projects/{pid}/files", files={"file": ("a.txt", big, "text/plain")}).status_code == 400
+    assert (
+        c.post(f"/api/projects/{pid}/files", files={"file": ("a.txt", big, "text/plain")}).status_code == 400
+    )
 
 
 def test_images_endpoint(tmp_path):
@@ -446,7 +543,9 @@ def test_discover_cached(tmp_path):
 
     def disc(topic):
         calls.append(topic)
-        return [{"title": f"{topic} story", "url": "https://n.example.com/1", "source": "N", "date": "2026-10-07"}]
+        return [
+            {"title": f"{topic} story", "url": "https://n.example.com/1", "source": "N", "date": "2026-10-07"}
+        ]
 
     c, _ = make(tmp_path, discover_fn=disc)
     first = c.get("/api/discover").json()
@@ -489,7 +588,9 @@ class RepairChecker:
 
     def judge(self, claim, cit, link):
         if "1.8 kg" in claim and "1.8 kg" in link.text:
-            return CitationVerdict(url=cit.url, marker=cit.marker, verdict=SUPPORTED, quote="a 1.8 kg difference")
+            return CitationVerdict(
+                url=cit.url, marker=cit.marker, verdict=SUPPORTED, quote="a 1.8 kg difference"
+            )
         if "calories" in claim and "calories" in link.text:
             return CitationVerdict(url=cit.url, marker=cit.marker, verdict=SUPPORTED, quote="calories")
         return CitationVerdict(url=cit.url, marker=cit.marker, verdict=WRONG_SOURCE)
@@ -497,28 +598,49 @@ class RepairChecker:
 
 def _srcs():
     return [
-        {"url": "https://a.org/x", "title": "A", "kind": "web", "fetched": True,
-         "text": "Fasting and cutting calories gave similar results overall."},
-        {"url": "https://b.org/y", "title": "B", "kind": "web", "fetched": True,
-         "text": "The trial found a 1.8 kg difference in weight after a year."},
-        {"url": "https://c.org/z", "title": "C", "kind": "web", "fetched": True,
-         "text": "Unrelated page about gardening tools."},
+        {
+            "url": "https://a.org/x",
+            "title": "A",
+            "kind": "web",
+            "fetched": True,
+            "text": "Fasting and cutting calories gave similar results overall.",
+        },
+        {
+            "url": "https://b.org/y",
+            "title": "B",
+            "kind": "web",
+            "fetched": True,
+            "text": "The trial found a 1.8 kg difference in weight after a year.",
+        },
+        {
+            "url": "https://c.org/z",
+            "title": "C",
+            "kind": "web",
+            "fetched": True,
+            "text": "Unrelated page about gardening tools.",
+        },
     ]
 
 
 def test_repair_moves_marker_to_supporting_source():
     answer = "Both cut calories with similar results [1]. One trial found a 1.8 kg difference in weight [1]."
     res = ask.verify_answer(answer, _srcs(), checker=RepairChecker())
-    assert res["answer"] == "Both cut calories with similar results [1]. One trial found a 1.8 kg difference in weight [2]."
+    assert (
+        res["answer"]
+        == "Both cut calories with similar results [1]. One trial found a 1.8 kg difference in weight [2]."
+    )
     assert [c["verdict"] for c in res["citations"]] == ["supported", "supported"]
-    assert res["repairs"] == [{"claim": "One trial found a 1.8 kg difference in weight .", "from": 1, "to": 2,
-                               "action": "recited"}]
+    assert res["repairs"] == [
+        {"claim": "One trial found a 1.8 kg difference in weight .", "from": 1, "to": 2, "action": "recited"}
+    ]
 
 
 def test_repair_removes_unsupported_sentence_and_meta_markers():
-    answer = ("Both cut calories with similar results [1]. The sources do not single out one key result [3]. "
-              "One summary states that a trial found a 1.8 kg difference in weight after a year [2]. "
-              "Fasting cures baldness in all adults [3].")
+    answer = (
+        "Both cut calories with similar results [1]. The sources do not single out one key result [3]. "
+        "One summary states that a trial found a 1.8 kg difference in weight after a year [2]. "
+        "Fasting cures baldness in all adults [3]."
+    )
     res = ask.verify_answer(answer, _srcs(), checker=RepairChecker())
     assert "baldness" not in res["answer"] and "single out" not in res["answer"]
     assert "A trial found a 1.8 kg difference in weight after a year [2]." in res["answer"]
@@ -552,11 +674,20 @@ def test_empty_search_is_retried_once():
 
     def search(q, focus, n, **kw):
         calls.append(q)
-        return [] if len(calls) == 1 else [{"url": "https://a.org", "title": "A", "kind": "paper", "snippet": "Mars is red."}]
+        return (
+            []
+            if len(calls) == 1
+            else [{"url": "https://a.org", "title": "A", "kind": "paper", "snippet": "Mars is red."}]
+        )
 
-    deps = ask.AskDeps(search=search, fetch=lambda s: None, stream=lambda *a: iter(["Mars is red [1]."]),
-                       verify=lambda a, s: {"citations": [], "counts": {}}, images=lambda q: [],
-                       extra={"search_retry_s": 0})
+    deps = ask.AskDeps(
+        search=search,
+        fetch=lambda s: None,
+        stream=lambda *a: iter(["Mars is red [1]."]),
+        verify=lambda a, s: {"citations": [], "counts": {}},
+        images=lambda q: [],
+        extra={"search_retry_s": 0},
+    )
     names = [e for e, _ in ask.run_ask("Is Mars red?", want_images=False, deps=deps)]
     assert len(calls) == 2 and "done" in names
     assert ask._keywords("What are the health effects of microplastics?") == "health effects microplastics"
@@ -564,8 +695,14 @@ def test_empty_search_is_retried_once():
 
 def test_answer_filter_hides_thinking_and_streams_inside_tags():
     f = ask.AnswerFilter()
-    chunks = ["Let me plan. Need [1] here.", " Draft: x <ans", "wer>Mars is red [1].", " It has two", " moons [2].</ans",
-              "wer> trailing notes"]
+    chunks = [
+        "Let me plan. Need [1] here.",
+        " Draft: x <ans",
+        "wer>Mars is red [1].",
+        " It has two",
+        " moons [2].</ans",
+        "wer> trailing notes",
+    ]
     out = "".join(f.feed(c) for c in chunks) + f.finish()
     assert out == "Mars is red [1]. It has two moons [2]."
     assert f.text() == "Mars is red [1]. It has two moons [2]."
@@ -581,10 +718,12 @@ def test_answer_filter_untagged_falls_back_to_whole_text():
 
 
 def test_clean_leak_keeps_final_draft_and_drops_notes():
-    leaked = ("Need avoid 'and' joining two figures. So separate them [4].\n\n"
-              "Better: rephrase as one finding per sentence. Let's write.\n\n"
-              "Semaglutide cut cardiovascular death by 23% [4]. It cut MACE by 18% [4].\n\n"
-              "Trials show GLP-1 drugs reduce non-fatal stroke [5].")
+    leaked = (
+        "Need avoid 'and' joining two figures. So separate them [4].\n\n"
+        "Better: rephrase as one finding per sentence. Let's write.\n\n"
+        "Semaglutide cut cardiovascular death by 23% [4]. It cut MACE by 18% [4].\n\n"
+        "Trials show GLP-1 drugs reduce non-fatal stroke [5]."
+    )
     out = ask.clean_leak(leaked)
     assert out.startswith("Semaglutide cut") and "Need avoid" not in out and "[5]" in out
 
@@ -603,10 +742,16 @@ def test_planning_only_reply_is_asked_again():
             return iter(["Need to cite [1] for this. Let's write short sentences. Also [1]: \"Mars is"])
         return iter(["<answer>Mars is red [1].</answer>"])
 
-    deps = ask.AskDeps(search=lambda q, f, n, **kw: [{"url": "https://a.org", "title": "A", "kind": "paper",
-                                                       "snippet": "Mars is red."}],
-                       fetch=lambda s: None, stream=stream, verify=lambda a, s: {"citations": [], "counts": {}},
-                       images=lambda q: [], extra={"search_retry_s": 0})
+    deps = ask.AskDeps(
+        search=lambda q, f, n, **kw: [
+            {"url": "https://a.org", "title": "A", "kind": "paper", "snippet": "Mars is red."}
+        ],
+        fetch=lambda s: None,
+        stream=stream,
+        verify=lambda a, s: {"citations": [], "counts": {}},
+        images=lambda q: [],
+        extra={"search_retry_s": 0},
+    )
     events = list(ask.run_ask("Is Mars red?", want_images=False, deps=deps))
     done = [d for e, d in events if e == "done"][0]
     deltas = "".join(d["text"] for e, d in events if e == "delta")
@@ -622,9 +767,17 @@ def test_parallel_search_maps_excerpts_and_falls_back(monkeypatch):
             pass
 
         def json(self):
-            return {"results": [{"url": "https://who.int/r", "title": "WHO report", "publish_date": "2024-12-10",
-                                 "excerpts": ["263 million cases in 2023.", "597 000 deaths."]},
-                                {"url": "https://x.org", "title": "empty", "excerpts": []}]}
+            return {
+                "results": [
+                    {
+                        "url": "https://who.int/r",
+                        "title": "WHO report",
+                        "publish_date": "2024-12-10",
+                        "excerpts": ["263 million cases in 2023.", "597 000 deaths."],
+                    },
+                    {"url": "https://x.org", "title": "empty", "excerpts": []},
+                ]
+            }
 
     monkeypatch.setenv("PARALLEL_API_KEY", "k")
     monkeypatch.setattr(requests, "post", lambda *a, **kw: R())
@@ -677,13 +830,16 @@ def test_race_stream_falls_through_failures():
 
 def test_plan_queries_parses_lines_and_respects_timeout():
     def stream(s, p, n):
-        return iter(["1. WHO World Malaria Report 2024 key findings\n", "- malaria deaths 2023 estimate WHO\nok"])
+        return iter(
+            ["1. WHO World Malaria Report 2024 key findings\n", "- malaria deaths 2023 estimate WHO\nok"]
+        )
 
     qs = ask.plan_queries("malaria report?", stream=stream)
     assert qs == ["WHO World Malaria Report 2024 key findings", "malaria deaths 2023 estimate WHO"]
 
     def hang(s, p, n):
         import time as _t
+
         _t.sleep(2)
         return iter(["late query one two"])
 
@@ -699,8 +855,10 @@ def test_blocked_parallel_page_is_not_citable():
         def extract(self, url):
             return Page(403 if "lancet" in url else 200)
 
-    rows = [{"url": "https://thelancet.com/a", "kind": "web", "text": "x", "fetched": True, "excerpted": True},
-            {"url": "https://who.int/b", "kind": "web", "text": "y", "fetched": True, "excerpted": True}]
+    rows = [
+        {"url": "https://thelancet.com/a", "kind": "web", "text": "x", "fetched": True, "excerpted": True},
+        {"url": "https://who.int/b", "kind": "web", "text": "y", "fetched": True, "excerpted": True},
+    ]
     ask.fetch_sources(rows, extractor=Ex())
     assert not ask.readable(rows[0]) and ask.readable(rows[1]) and rows[1]["text"] == "y"
 
@@ -712,7 +870,10 @@ def test_fix_mojibake():
 
 def test_pubmed_reads_through_eutils_and_walls_are_not_pages():
     from odar import retrieval
-    assert "eutils.ncbi.nlm.nih.gov" in retrieval._readable_mirror("https://pubmed.ncbi.nlm.nih.gov/38310910/")
+
+    assert "eutils.ncbi.nlm.nih.gov" in retrieval._readable_mirror(
+        "https://pubmed.ncbi.nlm.nih.gov/38310910/"
+    )
     assert retrieval._readable_mirror("https://who.int/x") == "https://who.int/x"
     assert retrieval._CHALLENGE_RE.search("Enable cookies for pubmed.ncbi.nlm.nih.gov and reload this page")
 
@@ -726,10 +887,16 @@ def test_echoed_question_is_cleared_and_asked_again():
             return iter(["<answer>Is Mars red?</answer>"])
         return iter(["<answer>Mars is red [1].</answer>"])
 
-    deps = ask.AskDeps(search=lambda q, f, n, **kw: [{"url": "https://a.org", "title": "A", "kind": "paper",
-                                                       "snippet": "Mars is red."}],
-                       fetch=lambda s: None, stream=stream, verify=lambda a, s: {"citations": [], "counts": {}},
-                       images=lambda q: [], extra={"search_retry_s": 0})
+    deps = ask.AskDeps(
+        search=lambda q, f, n, **kw: [
+            {"url": "https://a.org", "title": "A", "kind": "paper", "snippet": "Mars is red."}
+        ],
+        fetch=lambda s: None,
+        stream=stream,
+        verify=lambda a, s: {"citations": [], "counts": {}},
+        images=lambda q: [],
+        extra={"search_retry_s": 0},
+    )
     events = list(ask.run_ask("Is Mars red?", want_images=False, deps=deps))
     names = [e for e, _ in events]
     done = [d for e, d in events if e == "done"][0]

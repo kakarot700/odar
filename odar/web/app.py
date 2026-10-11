@@ -411,7 +411,10 @@ def create_app(
     @app.get("/api/limits")
     def limits(request: Request) -> Dict[str, Any]:
         key = request.state.key
-        ask_quota = {"ask_hourly_limit": ask_hourly, "ask_used_this_hour": store.used(ask_subject(request), 3600)}
+        ask_quota = {
+            "ask_hourly_limit": ask_hourly,
+            "ask_used_this_hour": store.used(ask_subject(request), 3600),
+        }
         if key is not None:
             return {
                 "daily_limit": key["daily_limit"],
@@ -545,7 +548,9 @@ def _add_ask_routes(
             thread = store.create_thread(owner, question[:120], focus, project_id=project_id or "")
         else:
             store.update_thread(thread["thread_id"], focus=focus)
-        store.add_message(thread["thread_id"], "user", question, {"focus": focus, "sources_mode": source_mode})
+        store.add_message(
+            thread["thread_id"], "user", question, {"focus": focus, "sources_mode": source_mode}
+        )
         return {
             "thread": thread,
             "question": question,
@@ -561,12 +566,15 @@ def _add_ask_routes(
     def events(ctx: Dict[str, Any]) -> Any:
         thread = ctx["thread"]
         tid = thread["thread_id"]
-        yield "thread", {
-            "thread_id": tid,
-            "share_token": thread["share_token"],
-            "title": thread["title"],
-            "project_id": thread["project_id"],
-        }
+        yield (
+            "thread",
+            {
+                "thread_id": tid,
+                "share_token": thread["share_token"],
+                "title": thread["title"],
+                "project_id": thread["project_id"],
+            },
+        )
         record: Dict[str, Any] = {"focus": ctx["focus"], "sources_mode": ctx["source_mode"]}
         seq = 0
         try:
@@ -665,7 +673,11 @@ def _add_ask_routes(
     @app.get("/api/threads")
     def list_threads(request: Request, project_id: Optional[str] = None, limit: int = 50) -> Dict[str, Any]:
         owner = owner_of(request)
-        return {"threads": store.list_threads(owner, project_id=project_id, limit=min(limit, 200)) if owner else []}
+        return {
+            "threads": store.list_threads(owner, project_id=project_id, limit=min(limit, 200))
+            if owner
+            else []
+        }
 
     @app.get("/api/threads/{thread_id}")
     def get_thread(request: Request, thread_id: str, limit: int = 200) -> Dict[str, Any]:
@@ -731,7 +743,9 @@ def _add_ask_routes(
         return {"deleted": store.delete_project(project_id)}
 
     @app.post("/api/projects/{project_id}/files", status_code=201)
-    async def add_project_file(request: Request, project_id: str, file: UploadFile = File(...)) -> Dict[str, Any]:
+    async def add_project_file(
+        request: Request, project_id: str, file: UploadFile = File(...)
+    ) -> Dict[str, Any]:
         own_project(request, project_id)
         if len(store.list_files(project_id)) >= MAX_FILES_PER_PROJECT:
             raise HTTPException(400, f"at most {MAX_FILES_PER_PROJECT} files per project")
@@ -782,9 +796,7 @@ def _add_ask_routes(
                 store.cache_put(f"discover:{t}", 200, _json.dumps(payload), discover_ttl if items else 600)
                 out[t] = payload
         return {
-            "topics": [
-                {"id": t, "label": askmod.DISCOVER_TOPICS[t]["label"], **out[t]} for t in topics
-            ],
+            "topics": [{"id": t, "label": askmod.DISCOVER_TOPICS[t]["label"], **out[t]} for t in topics],
             "ttl_s": discover_ttl,
         }
 
