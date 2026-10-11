@@ -21,7 +21,14 @@ from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional
 
 from odar.budget import Budget, BudgetExceeded, CancellationToken, CancelledError, Governor
-from odar.citation_auditor import CitationAuditor, normalize_span, split_sentences
+from odar.citation_auditor import (
+    CitationAuditor,
+    anchors_claim,
+    has_mangled_number,
+    lexical_coverage,
+    normalize_span,
+    split_sentences,
+)
 from odar.evidence import (
     CIRCULARITY_THRESHOLD,
     Claim,
@@ -106,6 +113,8 @@ def _candidate_sentences(text: str, minimum: int = 40, maximum: int = 260) -> Li
                 continue
             if len(part.split()) < 8 or _looks_like_headline(part):
                 continue
+            if has_mangled_number(part):
+                continue  # a decimal lost its "0." on the source page: wrong value
             if part.lower() in seen:
                 continue
             seen.add(part.lower())
@@ -675,9 +684,14 @@ class ResearchEngine:
             lines.append("## Certified Findings (semantic NLI verification)")
             for claim in certified:
                 evidence = state.evidence_for_claim(claim.claim_id)
+                cited_ids = claim_sources.get(claim.claim_id, [])
                 supports = [e for e in evidence if e.relation is Relation.SUPPORTS]
+                best: Dict[str, Any] = {}
+                for e in sorted(supports, key=lambda e: e.entailment_probability, reverse=True):
+                    best.setdefault(e.source_id, e)
                 lines.append(f"- [{claim.claim_id}] {claim.text}")
-                for e in supports[:3]:
+                # the same sources the answer cites, one line each (strongest span)
+                for e in [best[sid] for sid in cited_ids if sid in best]:
                     source = state.sources.get(e.source_id)
                     if source is not None:
                         lines.append(
@@ -737,18 +751,31 @@ class ResearchEngine:
     # ------------------------------------------------------------------ #
     @staticmethod
     def _claim_sources(state: ResearchState, certified: List[Claim]) -> Dict[str, List[str]]:
-        """claim_id -> ids of sources with a SUPPORTS span (strongest first)."""
+        """claim_id -> ids of the sources a claim is cited to.
+
+        The best-anchored SUPPORTS span comes first (for a mined claim, its own
+        page).  Further sources are cited only when their span lexically carries
+        the claim (``anchors_claim``: most of its words and every name/number it
+        states): an NLI-only match on a topically similar span was the commonest
+        wrong citation in the DRB v1 audit (16 of 56 unsupported pairs)."""
         mapping: Dict[str, List[str]] = {}
         for claim in certified:
-            supports = sorted(
-                (e for e in state.evidence_for_claim(claim.claim_id) if e.relation is Relation.SUPPORTS),
-                key=lambda e: e.entailment_probability,
+            supports = [
+                e
+                for e in state.evidence_for_claim(claim.claim_id)
+                if e.relation is Relation.SUPPORTS and e.source_id in state.sources
+            ]
+            supports.sort(
+                key=lambda e: (lexical_coverage(claim.text, e.span), e.entailment_probability),
                 reverse=True,
             )
             ids: List[str] = []
-            for e in supports:
-                if e.source_id in state.sources and e.source_id not in ids:
-                    ids.append(e.source_id)
+            for rank, e in enumerate(supports):
+                if e.source_id in ids:
+                    continue
+                if rank and not anchors_claim(claim.text, e.span):
+                    continue
+                ids.append(e.source_id)
             mapping[claim.claim_id] = ids[:3]
         return mapping
 

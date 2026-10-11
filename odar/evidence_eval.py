@@ -29,7 +29,8 @@ class SemanticStanceEvaluator:
 
     def __init__(self, auditor: Optional[CitationAuditor] = None) -> None:
         self.auditor = auditor or CitationAuditor()
-        self.auditor.ensure_scorer()
+        # The scorer loads lazily (process-wide cache, see citation_auditor),
+        # so building an engine no longer blocks ~10 s before the first step.
 
     # ------------------------------------------------------------------ #
     def stance(self, hypothesis: str, snippet: str) -> Tuple[Relation, float]:
@@ -45,6 +46,7 @@ class SemanticStanceEvaluator:
         snippet = (snippet or "").strip()
         if not hypothesis or not snippet:
             return Relation.INSUFFICIENT, 0.0
+        self.auditor.ensure_scorer()
         try:
             raw = self.auditor.scorer.predict([(snippet, hypothesis)])
             probs = softmax([float(v) for v in raw[0]])

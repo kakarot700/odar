@@ -21,7 +21,9 @@ from __future__ import annotations
 
 import logging
 import math
+import os
 import re
+import threading
 from typing import Any, Dict, List, Optional, Sequence, Tuple
 
 from odar.evidence import (
@@ -55,6 +57,74 @@ MAX_SPANS = 8
 CHUNK_SIZE = 300
 
 _SENTENCE_RE = re.compile(r"(?<=[.!?])\s+")
+
+# --------------------------------------------------------------------------- #
+# Process-wide cross-encoder cache.  Loading the NLI model costs ~9-14 s of CPU
+# (and, when the Hub is consulted, network round-trips that stalled for minutes
+# under contention).  Every auditor in a process (deep runs, Check, the web
+# server) shares ONE loaded model, keyed by (model, device).
+# --------------------------------------------------------------------------- #
+_SCORER_CACHE: Dict[Tuple[str, str], Any] = {}
+_SCORER_LOCKS: Dict[Tuple[str, str], threading.Lock] = {}
+_CACHE_GUARD = threading.Lock()
+
+
+class _SerializedScorer:
+    """Thread-safe wrapper: one ``predict`` at a time on the shared model."""
+
+    def __init__(self, model: Any) -> None:
+        self.model = model
+        self._lock = threading.Lock()
+
+    def predict(self, pairs: Any, *args: Any, **kwargs: Any) -> Any:
+        with self._lock:
+            return self.model.predict(pairs, *args, **kwargs)
+
+
+def _load_cross_encoder(model_name: str, device: str) -> Any:
+    """Load from the local Hugging Face cache first (no Hub round-trips); only
+    when the model is not cached yet, download it."""
+    from sentence_transformers import CrossEncoder
+
+    if os.environ.get("ODAR_NLI_ALLOW_HUB_CHECK", "").strip() not in ("1", "true"):
+        try:
+            return CrossEncoder(model_name, device=device, local_files_only=True)
+        except Exception as exc:  # not cached yet (or a partial cache): fall through
+            logger.info("NLI model not in local cache (%s); downloading", type(exc).__name__)
+    return CrossEncoder(model_name, device=device)
+
+
+def shared_scorer(model_name: str = DEFAULT_MODEL_NAME, device: str = "cpu") -> Any:
+    """The process-wide scorer for ``model_name``; loads it on first use.
+    Raises when the neural model cannot be loaded (callers degrade)."""
+    key = (model_name, device)
+    with _CACHE_GUARD:
+        if key in _SCORER_CACHE:
+            return _SCORER_CACHE[key]
+        lock = _SCORER_LOCKS.setdefault(key, threading.Lock())
+    with lock:  # concurrent first callers wait for one load instead of loading twice
+        with _CACHE_GUARD:
+            if key in _SCORER_CACHE:
+                return _SCORER_CACHE[key]
+        scorer = _SerializedScorer(_load_cross_encoder(model_name, device))
+        with _CACHE_GUARD:
+            _SCORER_CACHE[key] = scorer
+        return scorer
+
+
+def preload_scorer(model_name: str = DEFAULT_MODEL_NAME, device: str = "cpu") -> threading.Thread:
+    """Start loading the shared scorer in the background (e.g. while the planner
+    model call is in flight).  Failures are left for ``ensure_scorer`` to handle."""
+
+    def _load() -> None:
+        try:
+            shared_scorer(model_name, device)
+        except Exception:  # noqa: BLE001 - ensure_scorer degrades and logs
+            pass
+
+    thread = threading.Thread(target=_load, name="odar-nli-preload", daemon=True)
+    thread.start()
+    return thread
 
 
 def softmax(row: Sequence[float]) -> List[float]:
@@ -115,6 +185,39 @@ def split_sentences(line: str) -> List[str]:
     return merged
 
 
+# A number glued to a parenthetical percentage that disagrees with it by a
+# power of ten ("The default value is usually 2 (or 20%)", "Set the scale factor
+# to 005 (0.5%)") is a decimal that lost its "0." on the SOURCE page (seen on
+# machine-rewritten doc mirrors such as runebook.dev in the 2026-10-10 f2 run).
+# Such a sentence states a wrong value, so it is never a fact and never evidence.
+_NUM_PCT_RE = re.compile(
+    r"(?<![\w.,$\u20ac\u00a3\u20b9])(\d+(?:\.\d+)?)\s*\(\s*(?:or\s+|about\s+|approx\.?\s+|~\s*|i\.e\.,?\s+)?"
+    r"(\d+(?:\.\d+)?)\s?(?:%|percent\b)",
+    re.I,
+)
+_LEADING_ZERO_PCT_RE = re.compile(r"(?<![\w.,:/#-])0\d+(?![\d.,:/-])\s*(?:%|percent\b|\(\s*\d)", re.I)
+
+
+def has_mangled_number(sentence: str) -> bool:
+    """True when ``sentence`` carries a figure that is internally inconsistent in
+    a way only a lost decimal point explains (see ``_NUM_PCT_RE``)."""
+    text = sentence or ""
+    if _LEADING_ZERO_PCT_RE.search(text):
+        return True  # "005 (0.5%)", "05%": an integer never has a leading zero
+    for match in _NUM_PCT_RE.finditer(text):
+        raw, pct = match.group(1), float(match.group(2))
+        value = float(raw)
+        if "." in raw or value == 0 or pct == 0:
+            continue
+        ratio = pct / value
+        # consistent: same figure (20 (20%)) or a fraction written as percent
+        # (0.2 (20%)); a stray factor of 10 or 0.1 means "0." was lost
+        for power in (10.0, 0.1):
+            if abs(ratio - power) <= 1e-9 * max(1.0, power):
+                return True
+    return False
+
+
 def _sentence_split(text: str) -> List[str]:
     """Sentence spans; line breaks are hard boundaries (headlines, nav items)."""
     spans: List[str] = []
@@ -150,6 +253,51 @@ def topical_overlap(span: str, claim: str) -> float:
     if not claim_tokens:
         return 0.0
     return len(content_tokens(span) & claim_tokens) / len(claim_tokens)
+
+
+def _stem(token: str) -> str:
+    """Crude plural fold so 'prebiotics' anchors 'prebiotic' (lexical anchoring only)."""
+    return token[:-1] if len(token) > 4 and token.endswith("s") and not token.endswith("ss") else token
+
+
+def lexical_coverage(text: str, premise: str) -> float:
+    """Share of ``text``'s content tokens (plural-folded) that ``premise`` contains."""
+    wanted = {_stem(t) for t in content_tokens(text)}
+    if not wanted:
+        return 1.0
+    have = {_stem(t) for t in content_tokens(premise)}
+    return len(wanted & have) / len(wanted)
+
+
+_ENTITY_RE = re.compile(r"(?<!^)(?<![.!?]\s)\b([A-Z][A-Za-z0-9\-]{2,})")
+_NUMBER_TOKEN_RE = re.compile(r"\d+(?:[.,]\d+)?")
+# A corroborating source must contain most of the claim's words and every name and
+# number it states (DRB v1: a PMC page whose span NLI-matched "South Korea operates a
+# commercially important chub mackerel fishery" at p=0.95 never mentions Korea).
+CORROBORATION_MIN_COVERAGE = 0.6
+
+
+def anchor_terms(text: str) -> Tuple[set, set]:
+    """(names, numbers) a claim states: capitalised words that do not open a
+    sentence, and numeric figures."""
+    names = {m.group(1).lower() for m in _ENTITY_RE.finditer(text or "")}
+    numbers = {n.replace(",", "") for n in _NUMBER_TOKEN_RE.findall(text or "")}
+    return names - STOPWORDS, numbers
+
+
+def anchors_claim(claim: str, span: str, min_coverage: float = CORROBORATION_MIN_COVERAGE) -> bool:
+    """True when ``span`` lexically carries ``claim``: >= ``min_coverage`` of its
+    content words and every name and number it states.  NLI alone attached
+    sources whose span was only topically similar."""
+    if lexical_coverage(claim, span) < min_coverage:
+        return False
+    names, numbers = anchor_terms(claim)
+    low = (span or "").lower()
+    span_tokens = set(tokenize(low))
+    if any(name not in span_tokens and name not in low for name in names):
+        return False
+    span_numbers = {n.replace(",", "") for n in _NUMBER_TOKEN_RE.findall(span or "")}
+    return numbers <= span_numbers
 
 
 def _chunk(sentence: str, size: int = CHUNK_SIZE) -> List[str]:
@@ -368,9 +516,7 @@ class CitationAuditor:
     # ------------------------------------------------------------------ #
     def _try_load_neural(self) -> Any:
         """Load the neural cross-encoder; raise on any failure."""
-        from sentence_transformers import CrossEncoder
-
-        return CrossEncoder(self.model_name, device=self.device)
+        return shared_scorer(self.model_name, self.device)
 
     def ensure_scorer(self) -> None:
         if self.scorer is not None:
@@ -393,7 +539,7 @@ class CitationAuditor:
     # ------------------------------------------------------------------ #
     def prepare_spans(self, text: str, claim: str = "") -> List[str]:
         """Split text into 4-8 ranked sentence spans when possible."""
-        sentences = _sentence_split(text)
+        sentences = [s for s in _sentence_split(text) if not has_mangled_number(s)]
         if not sentences:
             return []
         spans: List[str] = []

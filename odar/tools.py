@@ -22,13 +22,15 @@ violation and is covered by regression tests.
 from __future__ import annotations
 
 import logging
+import threading
 import time
 from dataclasses import dataclass, field
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 
 from odar.budget import BudgetExceeded, Governor
 from odar.citation_auditor import CitationAuditor
 from odar.evidence import Claim, Relation, SourceRecord
+from odar.freshness import source_year
 from odar.loop_breaker import ACTION_BLOCK, SemanticLoopBreaker
 from odar.retry import RetryPolicy, classify_exception
 from odar.sandbox import ExecutionSandbox
@@ -57,6 +59,13 @@ class DialecticOutcome:
     semantic_relations: List[Dict[str, Any]] = field(default_factory=list)
     cue_diagnostics: List[Dict[str, Any]] = field(default_factory=list)
     denied: str = ""
+
+
+def _route_of(engine: str) -> str:
+    engine = engine or ""
+    if engine == "jina-reader" or engine.startswith("wayback:"):
+        return engine
+    return "direct"
 
 
 class GovernedExecutor:
@@ -88,6 +97,14 @@ class GovernedExecutor:
         )
         self.telemetry = telemetry or TelemetryRecorder()
         self.token = token
+        # Run-scoped caches: an identical search or a page already read in this
+        # run is served from memory (no network call, so no budget unit).
+        # Opt-in (the deep pipeline turns it on); the single-agent tool loop keeps
+        # one budget unit per requested search so a looping model hits its cap.
+        self.cache_enabled = False
+        self._cache_lock = threading.Lock()
+        self._search_cache: Dict[Tuple[str, int], List[SearchHit]] = {}
+        self._page_cache: Dict[str, Any] = {}
 
     # ------------------------------------------------------------------ #
     def _check_cancel(self) -> None:
@@ -101,6 +118,12 @@ class GovernedExecutor:
         """Governed search.  Raises BudgetExceeded when denied; the caller
         decides how to represent the denial.  One approval == one call."""
         self._check_cancel()
+        key = (" ".join((query or "").lower().split()), int(max_results))
+        with self._cache_lock:
+            cached = self._search_cache.get(key) if self.cache_enabled else None
+        if cached is not None:
+            self.telemetry.count("search_cache_hits")
+            return list(cached)
         self.governor.approve_search()  # BEFORE any side effect
         guard = self.loop_breaker.guard(query)
         if guard.action == ACTION_BLOCK:
@@ -117,6 +140,9 @@ class GovernedExecutor:
                 hits = self.search_backend.text(query, max_results=max_results) or []
                 self.telemetry.count("search_calls")
                 self.telemetry.latency("search", time.perf_counter() - started)
+                if hits and self.cache_enabled:  # an empty answer may be transient: never cache it
+                    with self._cache_lock:
+                        self._search_cache[key] = list(hits)
                 return list(hits)
             except BudgetExceeded:
                 raise
@@ -147,12 +173,21 @@ class GovernedExecutor:
         if url in fetched_urls:
             self.telemetry.count("duplicate_fetch_suppressed")
             return FetchOutcome(denied="duplicate fetch suppressed")
-        self.governor.approve_fetch()  # BEFORE any side effect
-        fetched_urls.append(url)
-        started = time.perf_counter()
-        page = self.extractor.extract(url)
-        self.telemetry.count("fetch_calls")
-        self.telemetry.latency("fetch", time.perf_counter() - started)
+        with self._cache_lock:
+            page = self._page_cache.get(url) if self.cache_enabled else None
+        if page is not None:
+            fetched_urls.append(url)
+            self.telemetry.count("fetch_cache_hits")
+        else:
+            self.governor.approve_fetch()  # BEFORE any side effect
+            fetched_urls.append(url)
+            started = time.perf_counter()
+            page = self.extractor.extract(url)
+            self.telemetry.count("fetch_calls")
+            self.telemetry.latency("fetch", time.perf_counter() - started)
+            if self.cache_enabled and page.ok and page.text and not page.quarantined:
+                with self._cache_lock:
+                    self._page_cache[url] = page
         if page.quarantined:
             self.telemetry.count("injection_quarantined")
             return FetchOutcome(quarantined=True)
@@ -184,7 +219,11 @@ class GovernedExecutor:
             content_type=page.content_type,
             content_chars=len(page.text),
             extracted_text=page.text,
+            retrieved_via=_route_of(page.engine),
         )
+        year = source_year(page.url, page.text)
+        if year:
+            record.publication_date = str(year)
         ranked = rank_sources(
             objective, [SearchHit(url=page.url, title=page.title, snippet="", engine="fetch")]
         )

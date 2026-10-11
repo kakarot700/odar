@@ -82,6 +82,12 @@ ODAR reads configuration from environment variables; it does not require a commi
 | `ANTHROPIC_API_KEY` | Enables the Anthropic-backed controller when set; treat it as a secret. |
 | `ODAR_ANTHROPIC_BASE_URL` | Optional alternate Anthropic-compatible endpoint. |
 | `ODAR_DB` | Default SQLite job-store path; defaults to `odar_jobs.db`. |
+| `ODAR_MODEL_ROUTES` | Optional JSON `{"role": ["model", ...]}` overriding the deep-mode model routes. |
+| `ODAR_READER_FALLBACK` | `0` turns off the Jina Reader fallback for pages that block scripted readers (default on, keyless, 20 requests/min). |
+| `ODAR_WAYBACK_FALLBACK` | `0` turns off the Internet Archive snapshot fallback (default on). |
+| `ODAR_SEARCH_BING_RSS` | `1` adds Bing's RSS results as a search tier. Off by default: Microsoft limits that feed to personal, non-commercial use. |
+| `ODAR_NLI_ALLOW_HUB_CHECK` | `1` lets the NLI model loader ask the Hugging Face Hub for updates (default: load from the local cache, download only when missing). |
+| `ODAR_SEARCH_MARGINALIA` | `1` adds Marginalia's public search API. Off by default: its results are CC-BY-NC-SA. |
 
 Set `ANTHROPIC_API_KEY` in the local process environment or deployment secret store; never commit a populated `.env` file. The current GitHub Actions workflows use a mock provider and do not need this key. If provider-backed CI is added later, supply it through GitHub Actions Secrets to only the job that needs it.
 
