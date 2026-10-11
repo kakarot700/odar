@@ -243,6 +243,7 @@ class ResearchState:
                     origin=source_dict.get("origin", "external"),
                     independent=bool(source_dict.get("independent", True)),
                     duplicate_of=source_dict.get("duplicate_of"),
+                    retrieved_via=source_dict.get("retrieved_via", "direct"),
                 )
                 state.sources[record.source_id] = record
             except (KeyError, TypeError, ValueError):

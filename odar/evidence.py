@@ -83,6 +83,8 @@ class SourceRecord:
     origin: str = "external"  # "external" | "agent" (agent = produced by ODAR itself)
     independent: bool = True
     duplicate_of: Optional[str] = None
+    # How the text was read: "direct" | "jina-reader" | "wayback:YYYYMMDD".
+    retrieved_via: str = "direct"
 
     def __post_init__(self) -> None:
         if not self.domain and self.url:
@@ -105,6 +107,7 @@ class SourceRecord:
             "origin": self.origin,
             "independent": self.independent,
             "duplicate_of": self.duplicate_of,
+            "retrieved_via": self.retrieved_via,
         }
 
 

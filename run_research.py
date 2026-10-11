@@ -119,8 +119,12 @@ def build_deep_engine(
         client=client,
         routes=routes,
         max_subquestions=getattr(args, "subquestions", 4),
+        fetch_per_subquestion=getattr(args, "fetch_per_subquestion", 5),
         reflection_rounds=getattr(args, "reflection_rounds", 1),
         scholar=_scholar() if getattr(args, "academic", False) else None,
+        # Planner may switch free scholarly APIs on when peer-reviewed evidence matters.
+        scholar_factory=None if getattr(args, "no_auto_academic", False) else _scholar,
+        writer_mode=getattr(args, "writer", "single"),
         budget=budget,
         telemetry=_live_telemetry(jobstore, job_id),
         token=token,
@@ -372,6 +376,20 @@ def build_parser() -> argparse.ArgumentParser:
         help="deep mode: also search free scholarly APIs (Crossref, PubMed, arXiv, OpenAlex)",
     )
     p_run.add_argument("--subquestions", type=int, default=4, help="deep mode: sub-questions to plan")
+    p_run.add_argument(
+        "--fetch-per-subquestion", type=int, default=5, help="deep mode: pages read per sub-question"
+    )
+    p_run.add_argument(
+        "--writer",
+        choices=("single", "sections"),
+        default="single",
+        help="deep mode: write the whole report in one model call (default) or one call per section",
+    )
+    p_run.add_argument(
+        "--no-auto-academic",
+        action="store_true",
+        help="deep mode: never let the planner switch on scholarly search by itself",
+    )
     p_run.add_argument("--reflection-rounds", type=int, default=1, help="deep mode: gap-filling rounds")
     p_run.add_argument("--max-verifications", type=int, default=64, help="deep mode: NLI verification budget")
     p_run.add_argument("--max-iterations", type=int, default=12)
