@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(native-now push:*)",
+      "Bash(native-now doctor:*)",
+      "Bash(agent-device:*)"
+    ]
+  }
+}
