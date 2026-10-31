@@ -142,6 +142,23 @@ def _stem_token(token: str) -> str:
     return token
 
 
+def _answer_relevance_bar(term_count: int) -> int:
+    """Stemmed objective-term hits a certified claim needs to anchor the Answer.
+
+    One above the mining floor.  Mining is deliberately loose (recall), but
+    the Answer is the highest-stakes surface: a claim that only just qualified
+    for mining can still be a tangent.  Observed 2026-10-31 (BP run): a
+    mortality sentence with a dangling "This effect" hit exactly the 3-term
+    mining floor and was presented as the answer to a blood-pressure question.
+    """
+    return (2 if term_count <= 4 else 3) + 1
+
+
+def _stemmed_term_hits(text: str, stemmed_terms: set) -> int:
+    tokens = {_stem_token(token.lower().strip(".,;:()[]\"'")) for token in text.split()}
+    return len(tokens & stemmed_terms)
+
+
 def _candidate_sentences(text: str, minimum: int = 40, maximum: int = 260) -> List[str]:
     """Grammatically complete declarative sentences only.
 
@@ -737,6 +754,24 @@ class ResearchEngine:
             self._action_finish({"uncertainty": state.uncertainty.value}, state, outcome)
 
     # ------------------------------------------------------------------ #
+    def _answer_anchor_claims(self, state: ResearchState, certified: List[Claim]) -> List[Claim]:
+        """Certified claims allowed to anchor the Answer.
+
+        Answer-level relevance is stricter than mining: a claim needs one
+        stemmed objective-term hit above the mining floor.  A certified
+        tangent stays listed under Certified Findings but must never be
+        presented AS the answer (observed 2026-10-31, BP run: a mortality
+        sentence with a dangling "This effect" at exactly the mining floor
+        was the entire answer to a blood-pressure question).  The deep
+        pipeline overrides this: it has its own answer machinery.
+        """
+        stemmed_objective = {
+            _stem_token(token) for token in compact_query(state.objective, max_terms=24).split()
+        }
+        bar = _answer_relevance_bar(len(stemmed_objective))
+        return [c for c in certified if _stemmed_term_hits(c.text, stemmed_objective) >= bar]
+
+    # ------------------------------------------------------------------ #
     def _build_synthesis(self, state: ResearchState, outcome: ResearchOutcome) -> str:
         """Pure builder: the report is generated strictly from the evidence
         graph - no claim that is absent from the research state may appear."""
@@ -755,10 +790,27 @@ class ResearchEngine:
             for claim in certified:
                 for source_id in claim_sources[claim.claim_id]:
                     source_numbers.setdefault(source_id, len(source_numbers) + 1)
-            answer = self._answer_text(state, certified, claim_sources, source_numbers)
-            if answer:
-                lines.append("## Answer (written only from the certified findings below)")
-                lines.append(answer)
+            on_question = self._answer_anchor_claims(state, certified)
+            on_question_ids = {c.claim_id for c in on_question}
+            uncertain = [c for c in state.claims.values() if c.status in ("UNCERTAIN", "INSUFFICIENT")]
+            if on_question:
+                answer = self._answer_text(state, on_question, claim_sources, source_numbers)
+                if answer:
+                    lines.append("## Answer (written only from the certified findings below)")
+                    lines.append(answer)
+                    lines.append("")
+            else:
+                note = (
+                    "Insufficient on-question evidence: none of the certified findings "
+                    "below addresses the asked outcome, so no answer is asserted."
+                )
+                if uncertain:
+                    note += (
+                        " The claims that do address the question could not be certified "
+                        "and are listed under Uncertain Findings."
+                    )
+                lines.append("## Answer")
+                lines.append(note)
                 lines.append("")
             lines.append("## Certified Findings (semantic NLI verification)")
             for claim in certified:
@@ -768,7 +820,9 @@ class ResearchEngine:
                 best: Dict[str, Any] = {}
                 for e in sorted(supports, key=lambda e: e.entailment_probability, reverse=True):
                     best.setdefault(e.source_id, e)
-                lines.append(f"- [{claim.claim_id}] {claim.text}")
+                tangent = " *(certified, but tangential to the asked outcome)*"
+                suffix = "" if claim.claim_id in on_question_ids else tangent
+                lines.append(f"- [{claim.claim_id}] {claim.text}{suffix}")
                 # the same sources the answer cites, one line each (strongest span)
                 for e in [best[sid] for sid in cited_ids if sid in best]:
                     source = state.sources.get(e.source_id)
@@ -777,6 +831,11 @@ class ResearchEngine:
                             f"  - cited: [{source.source_id}] {_md_link(source.title or source.url, source.url)} "
                             f"(entailment p={e.entailment_probability:.2f}, evaluator: {e.evaluated_by})"
                         )
+        if certified and not on_question and uncertain:
+            lines.append("")
+            lines.append("## Uncertain Findings (not certified)")
+            for claim in uncertain:
+                lines.append(f"- [{claim.claim_id}] {claim.text} *(status: {claim.status})*")
         if provisional:
             lines.append("")
             lines.append("## Provisional Findings (HEURISTIC verification only - NOT certified)")

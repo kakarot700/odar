@@ -1444,6 +1444,12 @@ class DeepResearchEngine(ResearchEngine):
     # ------------------------------------------------------------------ #
     # Writers: structured, cited report from certified claims only
     # ------------------------------------------------------------------ #
+    def _answer_anchor_claims(self, state: ResearchState, certified: List[Claim]) -> List[Claim]:
+        """The deep pipeline already gates its answer separately (per-subquestion
+        writers, the entailment gate and lead_with_answer); the base engine's
+        mining-floor+1 answer bar would double-gate it."""
+        return certified
+
     def _answer_text(
         self,
         state: ResearchState,

@@ -303,3 +303,77 @@ def test_engine_abstains_instead_of_certifying_over_disputed(monkeypatch):
     assert claim.status == "UNCERTAIN"
     assert not state.supporting_claims()
     assert state.contradictions and state.contradictions[0]["stance"] == "unconfirmed-offline"
+
+
+# Verbatim from the same run's report (the claims that stayed UNCERTAIN).
+BP_CLAIM_RHR = (
+    "Regular physical exercise decreases resting heart rate, blood pressure, and atherogenic "
+    "markers, and increases physiological cardiac hypertrophy (13–15, 28)."
+)
+BP_CLAIM_METABOLIC = (
+    "Studies have shown that exercise can improve metabolic and cardiovascular health independent "
+    "of changes in body weight, including improved glucose homeostasis (80, 81), endothelial "
+    "function (82), blood pressure (83), and HDL levels (84, 85)."
+)
+
+
+def _answer_section(report: str) -> str:
+    return report.split("## Answer", 1)[1].split("\n## ", 1)[0]
+
+
+class TestAnswerRelevanceGate:
+    """Observed 2026-10-31, same BP run: the certified mortality tangent (3
+    stemmed hits - exactly the mining floor, none of them blood-pressure
+    terms, with a dangling "This effect") was presented as THE answer while
+    the on-question BP claims stayed UNCERTAIN.  The Answer is now anchored
+    only by certified claims one hit above the mining floor; otherwise the
+    report says the on-question evidence is insufficient and lists the
+    certified tangent and the uncertain findings separately."""
+
+    def _report(self, claims, objective=BP_QUESTION) -> str:
+        from odar.engine import ResearchOutcome, ResearchEngine
+        from odar.llm import ScriptedResearchController
+
+        state = ResearchState(objective=objective)
+        state.add_source(source(FINDING_SENTENCE))
+        for text, status in claims:
+            claim = Claim(claim_id=new_id("clm"), text=text, status=status)
+            state.add_claim(claim)
+        engine = ResearchEngine(model=ScriptedResearchController())
+        return engine._build_synthesis(state, ResearchOutcome(state=state))
+
+    def test_bar_is_one_above_mining_floor(self):
+        from odar.engine import _answer_relevance_bar, _stemmed_term_hits
+        from odar.llm import compact_query
+
+        assert _answer_relevance_bar(8) == 4 and _answer_relevance_bar(4) == 3
+        terms = {_stem_token(t) for t in compact_query(BP_QUESTION, max_terms=24).split()}
+        assert _stemmed_term_hits(MORTALITY_SENTENCE, terms) == 3  # tangent: below the bar
+        assert _stemmed_term_hits(FINDING_SENTENCE, terms) >= 4  # finding: above the bar
+
+    def test_certified_tangent_is_not_presented_as_the_answer(self):
+        report = self._report(
+            [
+                (MORTALITY_SENTENCE, "CERTIFIED"),
+                (BP_CLAIM_RHR, "UNCERTAIN"),
+                (BP_CLAIM_METABOLIC, "UNCERTAIN"),
+            ]
+        )
+        answer = _answer_section(report)
+        assert "Insufficient on-question evidence" in answer
+        assert MORTALITY_SENTENCE not in answer
+        # the tangent stays visible, marked tangential - not deleted
+        assert f"{MORTALITY_SENTENCE} *(certified, but tangential to the asked outcome)*" in report
+        # the useful on-question findings are preserved, separately
+        uncertain = report.split("## Uncertain Findings (not certified)", 1)[1]
+        assert BP_CLAIM_RHR in uncertain and BP_CLAIM_METABOLIC in uncertain
+
+    def test_on_question_certified_claim_still_composes_the_answer(self):
+        report = self._report([(FINDING_SENTENCE, "CERTIFIED")])
+        assert "Insufficient on-question evidence" not in report
+        assert FINDING_SENTENCE in _answer_section(report)
+        assert "tangential" not in report
+
+    def test_uncertain_section_only_when_the_answer_abstains(self):
+        report = self._report([(FINDING_SENTENCE, "CERTIFIED"), (BP_CLAIM_RHR, "UNCERTAIN")])
+        assert "## Uncertain Findings (not certified)" not in report
