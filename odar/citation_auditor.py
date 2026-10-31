@@ -239,6 +239,20 @@ def content_tokens(text: str) -> set:
     return {t for t in tokenize(text or "") if t not in STOPWORDS}
 
 
+def content_bigrams(text: str) -> set:
+    """Adjacent pairs over the stopword-filtered token sequence."""
+    tokens = [t for t in tokenize(text or "") if t not in STOPWORDS]
+    return {(tokens[i], tokens[i + 1]) for i in range(len(tokens) - 1)}
+
+
+def shares_content_bigram(span: str, claim: str) -> bool:
+    """Does the span engage the claim's own terms, not just its topic?"""
+    claim_bigrams = content_bigrams(claim)
+    if not claim_bigrams:
+        return True  # one-term claims: fall back to the topical gate alone
+    return bool(content_bigrams(span) & claim_bigrams)
+
+
 def is_about_claim(span: str, claim: str) -> bool:
     """Topical gate for refutations (see REFUTE_MIN_SHARED_TOKENS)."""
     shared = content_tokens(span) & content_tokens(claim)
@@ -593,6 +607,8 @@ class CitationAuditor:
 
         1. contradiction dominates (p_con >= 0.5 and p_con > p_ent);
         2. the span is about the claim (topical overlap gate);
+        2b. when no refutation judge is configured, the span shares a
+           content bigram with the claim (engages its terms, not its topic);
         3. for neural scorers, the contradiction is SYMMETRIC: NLI
            contradiction is a symmetric relation, so the reversed pair
            (claim as premise, span as hypothesis) must also score
@@ -608,6 +624,15 @@ class CitationAuditor:
             if p_con < REFUTE_THRESHOLD or p_con <= p_ent:
                 continue
             if not is_about_claim(spans[index], claim):
+                continue
+            if self.refutation_judge is None and not shares_content_bigram(spans[index], claim):
+                # No LLM judge (free/scripted tier): "same topic, different
+                # fact" cross-encoder noise is symmetric, so the reverse check
+                # cannot catch it (observed 2026-10-31: "exercise decreases
+                # blood pressure ..." REFUTED p=0.99 both ways by "exercise
+                # improves myocardial perfusion ...").  Without a judge, a
+                # refutation must engage the claim's own terms - share at
+                # least one content bigram - to count.
                 continue
             candidates.append(index)
         if not candidates or self._is_heuristic_scorer():
