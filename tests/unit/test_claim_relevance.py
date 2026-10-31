@@ -125,3 +125,98 @@ def test_pyproject_declares_ddgs_for_web_app():
 
     pyproject = (Path(__file__).resolve().parents[2] / "pyproject.toml").read_text()
     assert '"ddgs>=' in pyproject
+
+
+# --------------------------------------------------------------------------- #
+# Free-tier refutation gate: symmetric NLI noise without an LLM judge
+# --------------------------------------------------------------------------- #
+BP_CLAIM = (
+    "Regular physical exercise decreases resting heart rate, blood pressure, and atherogenic "
+    "markers, and increases physiological cardiac hypertrophy (13–15, 28)."
+)
+# Same-topic, different-fact span the small cross-encoder scored p_con=0.99 BOTH
+# ways against BP_CLAIM on the 2026-10-31 live run - symmetric noise, so the
+# reverse check alone could not save the claim, and with no LLM judge in the
+# scripted tier it flipped the most on-question claim to CONFLICTING.
+NOISE_SPAN = (
+    "Exercise improves myocardial perfusion and increases high-density lipoprotein (HDL) "
+    "cholesterol levels, all of which reduce stress on the heart and improve cardiovascular "
+    "function in healthy and diseased individuals (11, 15, 29, 30)."
+)
+GENUINE_REFUTATION = (
+    "However, aerobic exercise did not significantly reduce resting systolic blood pressure "
+    "in the pooled analysis of the included trials."
+)
+
+
+class TestFreeTierRefutationGate:
+    """Without a refutation judge, a refutation must engage the claim's terms."""
+
+    def _auditor(self):
+        from odar.citation_auditor import CitationAuditor
+
+        auditor = CitationAuditor()
+        auditor.scorer_backend = "table-neural-stub"
+        return auditor
+
+    def test_noise_span_shares_no_content_bigram(self):
+        from odar.citation_auditor import shares_content_bigram
+
+        assert not shares_content_bigram(NOISE_SPAN, BP_CLAIM)
+        assert shares_content_bigram(GENUINE_REFUTATION, BP_CLAIM)
+
+    def test_noise_span_is_not_a_candidate_without_judge(self, monkeypatch):
+        auditor = self._auditor()
+        auditor.refutation_judge = None
+        monkeypatch.setattr(auditor, "_is_heuristic_scorer", lambda: True)  # skip reverse NLI
+        assert auditor.confirm_refutations([NOISE_SPAN], BP_CLAIM, [[0.99, 0.0, 0.01]]) == []
+
+    def test_genuine_refutation_survives_without_judge(self, monkeypatch):
+        auditor = self._auditor()
+        auditor.refutation_judge = None
+        monkeypatch.setattr(auditor, "_is_heuristic_scorer", lambda: True)
+        assert auditor.confirm_refutations([GENUINE_REFUTATION], BP_CLAIM, [[0.99, 0.0, 0.01]]) == [0]
+
+    def test_judge_path_unchanged(self, monkeypatch):
+        """With a judge configured the topical gate alone admits candidates;
+        the judge adjudicates (COP30 contract in test_benchmark_fixes)."""
+        auditor = self._auditor()
+        auditor.refutation_judge = lambda claim, span: True
+        monkeypatch.setattr(auditor, "_is_heuristic_scorer", lambda: True)
+        assert auditor.confirm_refutations([NOISE_SPAN], BP_CLAIM, [[0.99, 0.0, 0.01]]) == [0]
+
+
+def test_report_uncertainty_line_is_not_stale():
+    """Observed 2026-10-31: report body said "UNCERTAIN" while the run payload
+    said EVIDENCE_FOR - _action_synthesize classified AFTER building the text."""
+    from odar.engine import ResearchEngine, ResearchOutcome
+    from odar.evidence import Claim, EvidenceItem, Relation, Uncertainty
+    from odar.llm import ScriptedResearchController
+
+    state = ResearchState(objective=BP_QUESTION)
+    src = source(FINDING_SENTENCE)
+    state.add_source(src)
+    claim = Claim(claim_id=new_id("clm"), text=FINDING_SENTENCE, uncertainty=Uncertainty.UNCERTAIN)
+    claim.status = "CERTIFIED"
+    claim.provisional = False
+    claim.uncertainty = Uncertainty.EVIDENCE_FOR
+    state.add_claim(claim)
+    state.add_evidence(
+        EvidenceItem(
+            evidence_id=new_id("ev"),
+            claim_id=claim.claim_id,
+            source_id=src.source_id,
+            span=FINDING_SENTENCE,
+            relation=Relation.SUPPORTS,
+            entailment_probability=0.99,
+            contradiction_probability=0.0,
+            relevance_score=1.0,
+            circularity_score=0.0,
+            evaluated_by="cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8",
+        )
+    )
+    state.uncertainty = Uncertainty.UNCERTAIN  # stale mid-loop value
+    outcome = ResearchOutcome(state=state)
+    ResearchEngine(model=ScriptedResearchController())._action_synthesize(state, outcome)
+    assert "Uncertainty classification: EVIDENCE FOR" in outcome.synthesis
+    assert "UNCERTAIN" not in outcome.synthesis

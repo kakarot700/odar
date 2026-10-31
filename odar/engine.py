@@ -901,6 +901,10 @@ class ResearchEngine:
             self._action_finish({"uncertainty": state.uncertainty.value}, state, outcome)
             return
 
+        # Classify BEFORE building: the report embeds state.uncertainty, and
+        # building first left it one classification stale (observed 2026-10-31:
+        # report body said "UNCERTAIN" while the run payload said EVIDENCE_FOR).
+        state.uncertainty = self._classify_uncertainty(state)
         synthesis = self._build_synthesis(state, outcome)
         report = self.final_auditor.audit(state, synthesis)
         self.telemetry.count("final_audits")
@@ -923,6 +927,7 @@ class ResearchEngine:
                 state.uncertainty = Uncertainty.INSUFFICIENT_EVIDENCE
                 self._action_finish({"uncertainty": state.uncertainty.value}, state, outcome)
                 return
+            state.uncertainty = self._classify_uncertainty(state)  # claims were demoted
             synthesis = self._build_synthesis(state, outcome)
             report = self.final_auditor.audit(state, synthesis)
         outcome.audit = report
