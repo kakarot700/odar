@@ -34,6 +34,10 @@ class Relation(str, Enum):
     IRRELEVANT = "IRRELEVANT"
     INSUFFICIENT = "INSUFFICIENT"
     CIRCULAR = "CIRCULAR"  # evidence duplicates the claim text itself
+    # Contradiction signal that could not be adjudicated offline (no LLM
+    # judge, span never engages the claim's own terms): NOT a refutation,
+    # but its claim must not certify on it either.  Abstain, don't discard.
+    DISPUTED = "DISPUTED"
 
 
 class Uncertainty(str, Enum):

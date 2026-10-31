@@ -523,6 +523,7 @@ class CitationAuditor:
         # ``judge(claim, span) -> True (genuine) | False (not a refutation) | None (unavailable)``.
         # None keeps the refutation (conservative: never hide a conflict).
         self.refutation_judge: Optional[Any] = None
+        self._last_unadjudicated: List[int] = []
         self._judge_cache: Dict[str, Optional[bool]] = {}
 
     # ------------------------------------------------------------------ #
@@ -607,13 +608,19 @@ class CitationAuditor:
 
         1. contradiction dominates (p_con >= 0.5 and p_con > p_ent);
         2. the span is about the claim (topical overlap gate);
-        2b. when no refutation judge is configured, the span shares a
-           content bigram with the claim (engages its terms, not its topic);
         3. for neural scorers, the contradiction is SYMMETRIC: NLI
            contradiction is a symmetric relation, so the reversed pair
            (claim as premise, span as hypothesis) must also score
-           p_con >= 0.5.  One-directional "contradiction" from a small
-           cross-encoder is neutral-with-noise, not counter-evidence.
+           p_con >= 0.5;
+        3b. when no refutation judge is configured, the span also shares a
+           content bigram with the claim (engages its terms, not its topic).
+
+        Without a judge, signals failing 3 or 3b are neither confirmed nor
+        discarded: they are recorded as unadjudicated so the claim abstains
+        instead of certifying over a possible genuine dispute.  With a
+        judge, one-directional "contradiction" from a small cross-encoder is
+        treated as neutral-with-noise (COP30, 2026-10-07) and only symmetric
+        signals reach adjudication.
 
         The lexical fallback scorer is asymmetric by construction (it is
         provisional and can never certify), so step 3 is skipped for it.
@@ -625,16 +632,8 @@ class CitationAuditor:
                 continue
             if not is_about_claim(spans[index], claim):
                 continue
-            if self.refutation_judge is None and not shares_content_bigram(spans[index], claim):
-                # No LLM judge (free/scripted tier): "same topic, different
-                # fact" cross-encoder noise is symmetric, so the reverse check
-                # cannot catch it (observed 2026-10-31: "exercise decreases
-                # blood pressure ..." REFUTED p=0.99 both ways by "exercise
-                # improves myocardial perfusion ...").  Without a judge, a
-                # refutation must engage the claim's own terms - share at
-                # least one content bigram - to count.
-                continue
             candidates.append(index)
+        self._last_unadjudicated = []
         if not candidates or self._is_heuristic_scorer():
             return candidates
         try:
@@ -646,8 +645,24 @@ class CitationAuditor:
         symmetric = [
             i for i, row in zip(candidates, reverse) if row[0] >= REFUTE_THRESHOLD and row[0] > row[1]
         ]
-        if not symmetric or self.refutation_judge is None:
-            return symmetric
+        asymmetric = [i for i in candidates if i not in symmetric]
+        if self.refutation_judge is None:
+            # Free/scripted tier - no adjudicator.  Confirmed refutation
+            # requires BOTH a symmetric contradiction AND engagement with the
+            # claim's own terms (content bigram).  Every other credible
+            # signal - asymmetric ("one-directional"), or on-topic but never
+            # engaging the claim's terms - can be cross-encoder noise OR a
+            # paraphrased genuine dispute, indistinguishable offline (real
+            # nli-deberta-v3-small, 2026-10-31: the genuine "trials found
+            # exercise raised pressure; hypertrophy not observed" scored
+            # 0.995/1.000 symmetric, identical to noise).  None of these are
+            # discarded: the claim must abstain, not certify over them.
+            self._last_unadjudicated = asymmetric + [
+                i for i in symmetric if not shares_content_bigram(spans[i], claim)
+            ]
+            return [i for i in symmetric if shares_content_bigram(spans[i], claim)]
+        if not symmetric:
+            return []
         # 4. Adjudication: even symmetric cross-encoder contradictions are
         #    often "different event, same topic" (SNLI annotation artefact:
         #    e.g. "the summit concluded in Belem" vs "Antalya will host next
@@ -844,6 +859,7 @@ class CitationAuditor:
                 probs = [[0.0, 0.0, 1.0] for _ in ranked]
             claim_tokens = {t for t in tokenize(claim.text) if t not in STOPWORDS}
             confirmed = set(self.confirm_refutations(ranked, claim.text, probs))
+            unadjudicated = set(self._last_unadjudicated)
             for position, span in enumerate(ranked):
                 source_index = pool_source[ranked_pool_index[position]]
                 source = sources[source_index] if source_index < len(sources) else None
@@ -857,6 +873,8 @@ class CitationAuditor:
                     relation = Relation.SUPPORTS
                 elif position in confirmed:
                     relation = Relation.REFUTES
+                elif position in unadjudicated:
+                    relation = Relation.DISPUTED
                 elif overlap == 0:
                     relation = Relation.IRRELEVANT
                 elif p_ent >= self.threshold * 0.5:

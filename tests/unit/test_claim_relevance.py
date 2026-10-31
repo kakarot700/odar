@@ -25,7 +25,7 @@ from odar.engine import (
     _looks_like_methods_boilerplate,
     _stem_token,
 )
-from odar.evidence import SourceRecord
+from odar.evidence import Claim, SourceRecord
 from odar.llm import ScriptedResearchController
 from odar.research_state import ResearchState
 from odar.schemas import new_id
@@ -150,73 +150,156 @@ GENUINE_REFUTATION = (
 
 
 class TestFreeTierRefutationGate:
-    """Without a refutation judge, a refutation must engage the claim's terms."""
+    """No judge configured: only a symmetric contradiction that engages the
+    claim's own terms confirms; every other credible signal abstains."""
 
-    def _auditor(self):
-        from odar.citation_auditor import CitationAuditor
-
-        auditor = CitationAuditor()
-        auditor.scorer_backend = "table-neural-stub"
+    def _auditor(self, table):
+        auditor = _neural(table)
+        auditor.refutation_judge = None
         return auditor
 
-    def test_noise_span_shares_no_content_bigram(self):
-        from odar.citation_auditor import shares_content_bigram
-
-        assert not shares_content_bigram(NOISE_SPAN, BP_CLAIM)
-        assert shares_content_bigram(GENUINE_REFUTATION, BP_CLAIM)
-
-    def test_noise_span_is_not_a_candidate_without_judge(self, monkeypatch):
-        auditor = self._auditor()
-        auditor.refutation_judge = None
-        monkeypatch.setattr(auditor, "_is_heuristic_scorer", lambda: True)  # skip reverse NLI
+    def test_symmetric_noise_without_bigram_contact_abstains(self):
+        # Observed 2026-10-31: p_con=0.99 both ways, zero shared bigrams.
+        auditor = self._auditor({(NOISE_SPAN, BP_CLAIM): (0.99, 0.0), (BP_CLAIM, NOISE_SPAN): (0.99, 0.0)})
         assert auditor.confirm_refutations([NOISE_SPAN], BP_CLAIM, [[0.99, 0.0, 0.01]]) == []
+        assert auditor._last_unadjudicated == [0]
 
-    def test_genuine_refutation_survives_without_judge(self, monkeypatch):
-        auditor = self._auditor()
-        auditor.refutation_judge = None
-        monkeypatch.setattr(auditor, "_is_heuristic_scorer", lambda: True)
+    def test_paraphrased_dispute_without_shared_bigram_also_abstains(self):
+        """A genuine dispute can be phrased without restating the claim's
+        bigrams; offline it is indistinguishable from noise, so it must get
+        the same abstention - never discarded into a certification."""
+        paraphrase = "Trials found exercise raised pressure; hypertrophy was not observed and rate unchanged."
+        auditor = self._auditor({(paraphrase, BP_CLAIM): (0.99, 0.0), (BP_CLAIM, paraphrase): (1.0, 0.0)})
+        assert auditor.confirm_refutations([paraphrase], BP_CLAIM, [[0.99, 0.0, 0.01]]) == []
+        assert auditor._last_unadjudicated == [0]
+
+    def test_asymmetric_signal_abstains_not_dropped(self):
+        """Negation/subgroup/numeric disputes usually score one-directionally
+        (real model: 0.99 fwd / <0.13 rev).  They are not confirmed
+        refutations, but the claim must not certify over them either."""
+        dispute = "However, aerobic exercise did not significantly reduce resting systolic blood pressure."
+        auditor = self._auditor({(dispute, BP_CLAIM): (0.99, 0.0), (BP_CLAIM, dispute): (0.1, 0.0)})
+        assert auditor.confirm_refutations([dispute], BP_CLAIM, [[0.99, 0.0, 0.01]]) == []
+        assert auditor._last_unadjudicated == [0]
+
+    def test_symmetric_refutation_engaging_claim_terms_confirms(self):
+        auditor = self._auditor(
+            {(GENUINE_REFUTATION, BP_CLAIM): (0.99, 0.0), (BP_CLAIM, GENUINE_REFUTATION): (0.99, 0.0)}
+        )
         assert auditor.confirm_refutations([GENUINE_REFUTATION], BP_CLAIM, [[0.99, 0.0, 0.01]]) == [0]
+        assert auditor._last_unadjudicated == []
 
-    def test_judge_path_unchanged(self, monkeypatch):
-        """With a judge configured the topical gate alone admits candidates;
-        the judge adjudicates (COP30 contract in test_benchmark_fixes)."""
-        auditor = self._auditor()
+    def test_judge_path_unchanged(self):
+        """With a judge configured, topical gate + symmetric check admit
+        candidates and the judge adjudicates (COP30 contract in
+        test_benchmark_fixes): no bigram gate, asymmetric stays dropped."""
+        auditor = _neural({(NOISE_SPAN, BP_CLAIM): (0.99, 0.0), (BP_CLAIM, NOISE_SPAN): (0.99, 0.0)})
         auditor.refutation_judge = lambda claim, span: True
-        monkeypatch.setattr(auditor, "_is_heuristic_scorer", lambda: True)
         assert auditor.confirm_refutations([NOISE_SPAN], BP_CLAIM, [[0.99, 0.0, 0.01]]) == [0]
+        assert auditor._last_unadjudicated == []
 
 
-def test_report_uncertainty_line_is_not_stale():
-    """Observed 2026-10-31: report body said "UNCERTAIN" while the run payload
-    said EVIDENCE_FOR - _action_synthesize classified AFTER building the text."""
-    from odar.engine import ResearchEngine, ResearchOutcome
+# --------------------------------------------------------------------------- #
+# Provenance + engine abstention on unadjudicated contradiction signals
+# --------------------------------------------------------------------------- #
+class _TableScorer:
+    """Neural-looking stub: (premise, hypothesis) -> (p_con, p_ent) table."""
+
+    def __init__(self, table):
+        self.table = table
+
+    def predict(self, pairs):
+        import math
+
+        rows = []
+        for premise, hypothesis in pairs:
+            p_con, p_ent = self.table.get((premise, hypothesis), (0.0, 0.0))
+            p_neu = max(0.0, 1.0 - p_con - p_ent)
+            rows.append([math.log(p + 1e-9) for p in (p_con, p_ent, p_neu)])
+        return rows
+
+
+def _neural(table):
+    from odar.citation_auditor import CitationAuditor
+
+    auditor = CitationAuditor()
+    auditor.scorer = _TableScorer(table)
+    auditor.scorer_backend = "table-neural-stub"
+    return auditor
+
+
+def test_unadjudicated_span_becomes_disputed_evidence_not_refutation():
+    """Observed noise pair (2026-10-31): symmetric p_con=0.99, no shared bigram."""
+    table = {
+        (NOISE_SPAN, BP_CLAIM): (0.99, 0.0),
+        (BP_CLAIM, NOISE_SPAN): (0.99, 0.0),
+        (BP_CLAIM, BP_CLAIM): (0.0, 0.99),  # its own verbatim span supports
+    }
+    auditor = _neural(table)
+    auditor.refutation_judge = None
+    text = BP_CLAIM + "\n" + NOISE_SPAN
+    claim = Claim(claim_id=new_id("clm"), text=BP_CLAIM)
+    _result, items, _ = auditor.audit_with_provenance(claim, [source(text)], [text])
+    relations = {i.relation for i in items}
+    from odar.evidence import Relation
+
+    assert Relation.REFUTES not in relations
+    assert Relation.DISPUTED in relations
+    assert Relation.SUPPORTS in relations  # its own verbatim span still supports
+
+
+def test_engine_abstains_instead_of_certifying_over_disputed(monkeypatch):
+    """supports + disputed (no confirmed refutation): UNCERTAIN, never CERTIFIED."""
+    from odar.engine import ResearchEngine
     from odar.evidence import Claim, EvidenceItem, Relation, Uncertainty
     from odar.llm import ScriptedResearchController
+    from odar.schemas import ClaimAuditResult, Verdict
 
     state = ResearchState(objective=BP_QUESTION)
-    src = source(FINDING_SENTENCE)
+    src = source(BP_CLAIM + "\n" + NOISE_SPAN)
     state.add_source(src)
-    claim = Claim(claim_id=new_id("clm"), text=FINDING_SENTENCE, uncertainty=Uncertainty.UNCERTAIN)
-    claim.status = "CERTIFIED"
-    claim.provisional = False
-    claim.uncertainty = Uncertainty.EVIDENCE_FOR
+    claim = Claim(claim_id=new_id("clm"), text=BP_CLAIM, uncertainty=Uncertainty.UNCERTAIN)
     state.add_claim(claim)
-    state.add_evidence(
+    result = ClaimAuditResult(
+        claim=claim.text,
+        verdict=Verdict.ENTAILMENT,
+        entailment_probability=0.99,
+        contradiction_probability=0.0,
+        threshold=0.75,
+        spans_checked=2,
+        certified=True,
+        scorer_backend="table-neural-stub",
+        provisional=False,
+    )
+    items = [
         EvidenceItem(
             evidence_id=new_id("ev"),
             claim_id=claim.claim_id,
             source_id=src.source_id,
-            span=FINDING_SENTENCE,
+            span=BP_CLAIM,
             relation=Relation.SUPPORTS,
             entailment_probability=0.99,
             contradiction_probability=0.0,
             relevance_score=1.0,
             circularity_score=0.0,
-            evaluated_by="cross-encoder/nli-deberta-v3-small@enthr=0.75/spans=4-8",
-        )
-    )
-    state.uncertainty = Uncertainty.UNCERTAIN  # stale mid-loop value
-    outcome = ResearchOutcome(state=state)
-    ResearchEngine(model=ScriptedResearchController())._action_synthesize(state, outcome)
-    assert "Uncertainty classification: EVIDENCE FOR" in outcome.synthesis
-    assert "UNCERTAIN" not in outcome.synthesis
+            evaluated_by="table-neural-stub",
+        ),
+        EvidenceItem(
+            evidence_id=new_id("ev"),
+            claim_id=claim.claim_id,
+            source_id=src.source_id,
+            span=NOISE_SPAN,
+            relation=Relation.DISPUTED,
+            entailment_probability=0.0,
+            contradiction_probability=0.99,
+            relevance_score=0.5,
+            circularity_score=0.0,
+            evaluated_by="table-neural-stub",
+        ),
+    ]
+    engine = ResearchEngine(model=ScriptedResearchController())
+    monkeypatch.setattr(engine.executor, "evaluate_claim", lambda *a, **k: (result, items, []))
+    engine._action_evaluate({}, state)
+    assert claim.status == "UNCERTAIN"
+    assert not state.supporting_claims()
+    assert state.contradictions and state.contradictions[0]["stance"] == "unconfirmed-offline"

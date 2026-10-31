@@ -628,6 +628,7 @@ class ResearchEngine:
                 state.note(f"provenance gaps for {claim_id}: {gaps[0]}")
             supports = [i for i in items if i.relation is Relation.SUPPORTS]
             refutes = [i for i in items if i.relation is Relation.REFUTES]
+            disputed = [i for i in items if i.relation is Relation.DISPUTED]
             if supports and refutes:
                 # Genuinely conflicting evidence: never certify, never hide.
                 claim.status = "CONFLICTING"
@@ -645,7 +646,28 @@ class ResearchEngine:
                 )
                 self.telemetry.count("contradictions_recorded")
                 continue
-            if result.certified and supports and not result.provisional:
+            if result.certified and supports and not result.provisional and disputed:
+                # A symmetric contradiction signal that never engaged the
+                # claim's own terms: cross-encoder noise and a paraphrased
+                # genuine dispute are indistinguishable offline, so the run
+                # ABSTAINS instead of certifying over it or calling it a
+                # conflict.  The Anthropic path's LLM judge adjudicates these.
+                claim.status = "UNCERTAIN"
+                claim.provisional = False
+                claim.uncertainty = Uncertainty.INSUFFICIENT_EVIDENCE
+                state.contradictions.append(
+                    {
+                        "claim_id": claim_id,
+                        "examined": True,
+                        "stance": "unconfirmed-offline",
+                        "note": (
+                            f"contradiction signal p={max(i.contradiction_probability for i in disputed):.2f} "
+                            "from span(s) not engaging the claim's terms; cannot adjudicate without a judge"
+                        ),
+                    }
+                )
+                self.telemetry.count("claims_unadjudicated")
+            elif result.certified and supports and not result.provisional:
                 # CERTIFIED requires a real (non-provisional) verifier.
                 claim.status = "CERTIFIED"
                 claim.provisional = False
@@ -776,6 +798,13 @@ class ResearchEngine:
                     f"- {conflict.get('claim_id')}: examined={conflict.get('examined')} "
                     f"stance={conflict.get('stance', 'n/a')}"
                 )
+                # The claim text must be visible: an abstained or conflicting
+                # claim the reader cannot read is a hidden claim.
+                conflict_claim = state.claims.get(conflict.get("claim_id", ""))
+                if conflict_claim is not None:
+                    lines.append(f"  - claim: {conflict_claim.text}")
+                if conflict.get("note"):
+                    lines.append(f"  - note: {conflict['note']}")
         lines.append("")
         lines.append("## Uncertainty and Limitations")
         insufficient = [c for c in state.claims.values() if c.status in ("UNCERTAIN", "INSUFFICIENT")]
