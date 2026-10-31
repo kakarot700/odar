@@ -95,6 +95,53 @@ def _looks_like_headline(sentence: str) -> bool:
     return sentence.rstrip().endswith("?")  # questions are not assertions
 
 
+# Research-reporting boilerplate: methods, aims and eligibility text that a
+# source always "entails" about itself but that never answers the research
+# question.  Observed 2026-10-31: a blood-pressure run certified "The search
+# term applied was: ..." and inclusion-criteria sentences at p=1.00.
+_METHODS_BOILERPLATE = re.compile(
+    r"("
+    r"\bsearch (term|terms|strategy|string|strings)\w* (applied|used|was|were|included|comprised)"
+    r"|\b(we|the authors?) searched\b"
+    r"|\bdatabases? (were|was) (systematically )?searched\b"
+    r"|\bthe (aim|purpose|objective) of (the|this|our) "
+    r"(study|review|systematic review|meta-analysis|trial|paper|analysis) (was|is|were)\b"
+    r"|\bthis (study|review|systematic review|meta-analysis|trial|analysis) "
+    r"(aimed|aims|sought|seeks) to\b"
+    r"|\bstudies (were|are) (included|excluded|eligible|identified|selected)\b"
+    r"|\b(inclusion|exclusion|eligibility) criteria\b"
+    r"|\b(interventions?|participants?|subjects?) (should|had to|were required to) "
+    r"(have )?(comprised|included|been)\b"
+    r"|\bdata (were|was) extracted\b"
+    r"|\brisk of bias (was|were) assessed\b"
+    r"|\bprisma\b"
+    r"|\bethical approval\b|\binformed consent\b"
+    r")",
+    re.IGNORECASE,
+)
+
+
+def _looks_like_methods_boilerplate(sentence: str) -> bool:
+    """Aims, search strategies and eligibility criteria are reporting text,
+    not findings: a verifier can always entail them from the paper itself,
+    so mining them as claims wastes the claim budget on non-answers."""
+    return bool(_METHODS_BOILERPLATE.search(sentence))
+
+
+def _stem_token(token: str) -> str:
+    """Crude suffix stripping for question-overlap scoring only.
+
+    Lets "reduces"/"reduced"/"reduction" or "trains"/"training" count as the
+    same term; not a linguistically correct stemmer and never used for output.
+    """
+    if token.endswith("ies") and len(token) > 5:
+        return token[:-3] + "y"
+    for suffix in ("ation", "tion", "ing", "ed", "es", "s"):
+        if token.endswith(suffix) and len(token) - len(suffix) >= 4:
+            return token[: -len(suffix)]
+    return token
+
+
 def _candidate_sentences(text: str, minimum: int = 40, maximum: int = 260) -> List[str]:
     """Grammatically complete declarative sentences only.
 
@@ -112,6 +159,8 @@ def _candidate_sentences(text: str, minimum: int = 40, maximum: int = 260) -> Li
             if not (minimum <= len(part) <= maximum) or not part.endswith((".", "!")):
                 continue
             if len(part.split()) < 8 or _looks_like_headline(part):
+                continue
+            if _looks_like_methods_boilerplate(part):
                 continue
             if has_mangled_number(part):
                 continue  # a decimal lost its "0." on the source page: wrong value
@@ -506,6 +555,14 @@ class ResearchEngine:
             reverse=True,
         )
         objective_tokens = set(compact_query(state.objective, max_terms=24).split())
+        # Stemmed overlap: "reduces" must match "reduction"/"reduced".  A bare
+        # 2-token floor certified vague or tangential sentences ("Regular
+        # physical exercise has several beneficial effects on overall health.")
+        # on an 8-term question (observed 2026-10-31, RHR/BP run); longer
+        # questions demand a third matching term.  Short questions keep the
+        # old floor so they still mine anything.
+        stemmed_objective = {_stem_token(token) for token in objective_tokens}
+        required_hits = 2 if len(stemmed_objective) <= 4 else 3
         added = 0
         for source in best:
             state.mined_source_ids.append(source.source_id)
@@ -513,9 +570,9 @@ class ResearchEngine:
                 continue
             scored = []
             for position, sentence in enumerate(_candidate_sentences(source.extracted_text)):
-                tokens = {token.lower().strip(".,;:()[]\"'") for token in sentence.split()}
-                hits = len(tokens & objective_tokens)
-                if hits >= 2:
+                tokens = {_stem_token(token.lower().strip(".,;:()[]\"'")) for token in sentence.split()}
+                hits = len(tokens & stemmed_objective)
+                if hits >= required_hits:
                     scored.append((-hits, position, sentence))
             scored.sort()
             taken = 0
