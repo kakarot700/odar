@@ -108,7 +108,13 @@ def parse_date(raw: Any) -> str:
 
 
 def _ddgs() -> Any:
-    from ddgs import DDGS
+    # ``ddgs`` is the maintained package; fall back to the legacy
+    # ``duckduckgo_search`` module like odar.retrieval does, so an install
+    # that only has the classic package still serves the web app.
+    try:
+        from ddgs import DDGS
+    except ModuleNotFoundError:
+        from duckduckgo_search import DDGS
 
     return DDGS(timeout=10)
 

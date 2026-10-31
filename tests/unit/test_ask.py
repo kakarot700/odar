@@ -946,3 +946,21 @@ def test_run_attached_to_chat_thread(tmp_path):
     other = TestClient(create_app(store, research_runner=fake_research, synchronous=True))
     r = other.post("/api/runs", data={"mode": "research", "text": "How do vaccines work?", "thread_id": tid})
     assert r.status_code == 404
+
+
+def test_ddgs_falls_back_to_legacy_package(monkeypatch):
+    """pyproject declares both packages, but an env with only the classic
+    duckduckgo-search installed must still serve the web app (2026-10-31:
+    fresh pip install crashed here with "No module named 'ddgs'")."""
+    import builtins
+
+    real_import = builtins.__import__
+
+    def fake_import(name, *args, **kwargs):
+        if name == "ddgs":
+            raise ModuleNotFoundError("No module named 'ddgs'")
+        return real_import(name, *args, **kwargs)
+
+    monkeypatch.setattr(builtins, "__import__", fake_import)
+    client = ask._ddgs()
+    assert hasattr(client, "text")

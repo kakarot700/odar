@@ -20,6 +20,10 @@ dependencies = [
     "networkx>=3.0",
     "requests>=2.31",
     "numpy>=1.24",
+    # ddgs is the maintained successor to duckduckgo-search; the engine
+    # accepts either (odar.retrieval / odar.web.ask fall back), so both are
+    # declared. A bare `pip install` must satisfy the web app's ddgs import.
+    "ddgs>=9.0",
     "duckduckgo-search>=6.1",
     "trafilatura>=1.9",
     "sentence-transformers>=2.6",
